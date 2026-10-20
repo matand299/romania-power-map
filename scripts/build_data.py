@@ -8,6 +8,7 @@ Reads data/source/*.xlsx, cleans it, geocodes each plant to its locality
 Run from the project root:  python3 scripts/build_data.py
 """
 import json
+import math
 import re
 import unicodedata
 import urllib.request
@@ -137,6 +138,56 @@ def simplify_ring(ring, step=0.004):
     return out
 
 
+# Map labels use the Romanian spelling; the boundary file has plain ASCII names.
+COUNTY_LABELS = {
+    "Arges": "Argeș", "Bacau": "Bacău", "Bistrita-Nasaud": "Bistrița-Năsăud", "Botosani": "Botoșani",
+    "Braila": "Brăila", "Brasov": "Brașov", "Bucuresti": "București", "Bucharest": "București", "Buzau": "Buzău",
+    "Calarasi": "Călărași", "Caras-Severin": "Caraș-Severin", "Constanta": "Constanța", "Dambovita": "Dâmbovița",
+    "Galati": "Galați", "Ialomita": "Ialomița", "Iasi": "Iași", "Maramures": "Maramureș", "Mehedinti": "Mehedinți",
+    "Mures": "Mureș", "Neamt": "Neamț", "Salaj": "Sălaj", "Timis": "Timiș", "Valcea": "Vâlcea",
+}
+
+
+def point_in_ring(x, y, ring):
+    inside = False
+    for (x1, y1), (x2, y2) in zip(ring, ring[1:]):
+        if (y1 > y) != (y2 > y) and x < (x2 - x1) * (y - y1) / (y2 - y1) + x1:
+            inside = not inside
+    return inside
+
+
+def dist_to_ring(x, y, ring, kx):
+    best = float("inf")
+    for (x1, y1), (x2, y2) in zip(ring, ring[1:]):
+        dx, dy = (x2 - x1) * kx, y2 - y1
+        px, py = (x - x1) * kx, y - y1
+        t = max(0.0, min(1.0, (px * dx + py * dy) / (dx * dx + dy * dy or 1)))
+        best = min(best, (px - t * dx) ** 2 + (py - t * dy) ** 2)
+    return best ** 0.5
+
+
+def label_point(polys):
+    """Point deepest inside the county's largest polygon, so the name sits well clear of borders."""
+    def area(r):
+        return abs(sum(x1 * y2 - x2 * y1 for (x1, y1), (x2, y2) in zip(r, r[1:]))) / 2
+    poly = max(polys, key=lambda p: area(p[0]))
+    outer, holes = poly[0], poly[1:]
+    xs, ys = [x for x, _ in outer], [y for _, y in outer]
+    kx = math.cos(math.radians(sum(ys) / len(ys)))
+    best, best_d = (sum(xs) / len(xs), sum(ys) / len(ys)), -1
+    n = 36
+    for i in range(n + 1):
+        for j in range(n + 1):
+            x = min(xs) + (max(xs) - min(xs)) * i / n
+            y = min(ys) + (max(ys) - min(ys)) * j / n
+            if not point_in_ring(x, y, outer) or any(point_in_ring(x, y, h) for h in holes):
+                continue
+            d = min(dist_to_ring(x, y, r, kx) for r in poly)
+            if d > best_d:
+                best, best_d = (x, y), d
+    return [round(best[1], 4), round(best[0], 4)]
+
+
 def build_counties():
     src = json.loads(COUNTIES_IN.read_text(encoding="utf-8"))
     feats = []
@@ -144,11 +195,13 @@ def build_counties():
         geom = f["geometry"]
         polys = geom["coordinates"] if geom["type"] == "MultiPolygon" else [geom["coordinates"]]
         polys = [[simplify_ring(r) for r in p] for p in polys]
-        feats.append({"type": "Feature", "properties": {"name": f["properties"]["name"]},
+        name = f["properties"]["name"]
+        feats.append({"type": "Feature",
+                      "properties": {"name": name, "label": COUNTY_LABELS.get(name, name), "lp": label_point(polys)},
                       "geometry": {"type": "MultiPolygon", "coordinates": polys}})
     out = ROOT / "data" / "counties.json"
     out.write_text(json.dumps({"type": "FeatureCollection", "features": feats},
-                              separators=(",", ":")), encoding="utf-8")
+                              separators=(",", ":"), ensure_ascii=False), encoding="utf-8")
     print(f"counties.json: {out.stat().st_size // 1024} KB")
 
 
