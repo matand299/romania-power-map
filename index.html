@@ -6,57 +6,74 @@
 <title>Romania Power Plant Map</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Interactive map of licensed electricity generation capacity in Romania (ANRE data).">
+<link rel="icon" type="image/png" href="assets/logo-on-dark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Public+Sans:wght@400;500;600;700&display=swap">
+<script>
+  // Navy is the house look; cream is the alternative. Applied before paint to avoid a flash.
+  try { const t = localStorage.getItem("rpm-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
 <style>/* Leaflet 1.9.4 */.leaflet-image-layer,.leaflet-layer,.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-pane,.leaflet-pane>canvas,.leaflet-pane>svg,.leaflet-tile,.leaflet-tile-container,.leaflet-zoom-box{position:absolute;left:0;top:0}.leaflet-container{overflow:hidden}.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-tile{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-user-drag:none}.leaflet-tile::selection{background:0 0}.leaflet-safari .leaflet-tile{image-rendering:-webkit-optimize-contrast}.leaflet-safari .leaflet-tile-container{width:1600px;height:1600px;-webkit-transform-origin:0 0}.leaflet-marker-icon,.leaflet-marker-shadow{display:block}.leaflet-container .leaflet-overlay-pane svg{max-width:none!important;max-height:none!important}.leaflet-container .leaflet-marker-pane img,.leaflet-container .leaflet-shadow-pane img,.leaflet-container .leaflet-tile,.leaflet-container .leaflet-tile-pane img,.leaflet-container img.leaflet-image-layer{max-width:none!important;max-height:none!important;width:auto;padding:0}.leaflet-container img.leaflet-tile{mix-blend-mode:plus-lighter}.leaflet-container.leaflet-touch-zoom{-ms-touch-action:pan-x pan-y;touch-action:pan-x pan-y}.leaflet-container.leaflet-touch-drag{-ms-touch-action:pinch-zoom;touch-action:none;touch-action:pinch-zoom}.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom{-ms-touch-action:none;touch-action:none}.leaflet-container{-webkit-tap-highlight-color:transparent}.leaflet-container a{-webkit-tap-highlight-color:rgba(51,181,229,.4)}.leaflet-tile{filter:inherit;visibility:hidden}.leaflet-tile-loaded{visibility:inherit}.leaflet-zoom-box{width:0;height:0;-moz-box-sizing:border-box;box-sizing:border-box;z-index:800}.leaflet-overlay-pane svg{-moz-user-select:none}.leaflet-pane{z-index:400}.leaflet-tile-pane{z-index:200}.leaflet-overlay-pane{z-index:400}.leaflet-shadow-pane{z-index:500}.leaflet-marker-pane{z-index:600}.leaflet-tooltip-pane{z-index:650}.leaflet-popup-pane{z-index:700}.leaflet-map-pane canvas{z-index:100}.leaflet-map-pane svg{z-index:200}.leaflet-vml-shape{width:1px;height:1px}.lvml{behavior:url(#default#VML);display:inline-block;position:absolute}.leaflet-control{position:relative;z-index:800;pointer-events:visiblePainted;pointer-events:auto}.leaflet-bottom,.leaflet-top{position:absolute;z-index:1000;pointer-events:none}.leaflet-top{top:0}.leaflet-right{right:0}.leaflet-bottom{bottom:0}.leaflet-left{left:0}.leaflet-control{float:left;clear:both}.leaflet-right .leaflet-control{float:right}.leaflet-top .leaflet-control{margin-top:10px}.leaflet-bottom .leaflet-control{margin-bottom:10px}.leaflet-left .leaflet-control{margin-left:10px}.leaflet-right .leaflet-control{margin-right:10px}.leaflet-fade-anim .leaflet-popup{opacity:0;-webkit-transition:opacity .2s linear;-moz-transition:opacity .2s linear;transition:opacity .2s linear}.leaflet-fade-anim .leaflet-map-pane .leaflet-popup{opacity:1}.leaflet-zoom-animated{-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0}svg.leaflet-zoom-animated{will-change:transform}.leaflet-zoom-anim .leaflet-zoom-animated{-webkit-transition:-webkit-transform .25s cubic-bezier(0,0,.25,1);-moz-transition:-moz-transform .25s cubic-bezier(0,0,.25,1);transition:transform .25s cubic-bezier(0,0,.25,1)}.leaflet-pan-anim .leaflet-tile,.leaflet-zoom-anim .leaflet-tile{-webkit-transition:none;-moz-transition:none;transition:none}.leaflet-zoom-anim .leaflet-zoom-hide{visibility:hidden}.leaflet-interactive{cursor:pointer}.leaflet-grab{cursor:-webkit-grab;cursor:-moz-grab;cursor:grab}.leaflet-crosshair,.leaflet-crosshair .leaflet-interactive{cursor:crosshair}.leaflet-control,.leaflet-popup-pane{cursor:auto}.leaflet-dragging .leaflet-grab,.leaflet-dragging .leaflet-grab .leaflet-interactive,.leaflet-dragging .leaflet-marker-draggable{cursor:move;cursor:-webkit-grabbing;cursor:-moz-grabbing;cursor:grabbing}.leaflet-image-layer,.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-pane>svg path,.leaflet-tile-container{pointer-events:none}.leaflet-image-layer.leaflet-interactive,.leaflet-marker-icon.leaflet-interactive,.leaflet-pane>svg path.leaflet-interactive,svg.leaflet-image-layer.leaflet-interactive path{pointer-events:visiblePainted;pointer-events:auto}.leaflet-container{background:#ddd;outline-offset:1px}.leaflet-container a{color:#0078a8}.leaflet-zoom-box{border:2px dotted #38f;background:rgba(255,255,255,.5)}.leaflet-container{font-family:"Helvetica Neue",Arial,Helvetica,sans-serif;font-size:12px;font-size:.75rem;line-height:1.5}.leaflet-bar{box-shadow:0 1px 5px rgba(0,0,0,.65);border-radius:4px}.leaflet-bar a{background-color:#fff;border-bottom:1px solid #ccc;width:26px;height:26px;line-height:26px;display:block;text-align:center;text-decoration:none;color:#000}.leaflet-bar a,.leaflet-control-layers-toggle{background-position:50% 50%;background-repeat:no-repeat;display:block}.leaflet-bar a:focus,.leaflet-bar a:hover{background-color:#f4f4f4}.leaflet-bar a:first-child{border-top-left-radius:4px;border-top-right-radius:4px}.leaflet-bar a:last-child{border-bottom-left-radius:4px;border-bottom-right-radius:4px;border-bottom:none}.leaflet-bar a.leaflet-disabled{cursor:default;background-color:#f4f4f4;color:#bbb}.leaflet-touch .leaflet-bar a{width:30px;height:30px;line-height:30px}.leaflet-touch .leaflet-bar a:first-child{border-top-left-radius:2px;border-top-right-radius:2px}.leaflet-touch .leaflet-bar a:last-child{border-bottom-left-radius:2px;border-bottom-right-radius:2px}.leaflet-control-zoom-in,.leaflet-control-zoom-out{font:bold 18px 'Lucida Console',Monaco,monospace;text-indent:1px}.leaflet-touch .leaflet-control-zoom-in,.leaflet-touch .leaflet-control-zoom-out{font-size:22px}.leaflet-control-layers{box-shadow:0 1px 5px rgba(0,0,0,.4);background:#fff;border-radius:5px}.leaflet-control-layers-toggle{background-image:url(images/layers.png);width:36px;height:36px}.leaflet-retina .leaflet-control-layers-toggle{background-image:url(images/layers-2x.png);background-size:26px 26px}.leaflet-touch .leaflet-control-layers-toggle{width:44px;height:44px}.leaflet-control-layers .leaflet-control-layers-list,.leaflet-control-layers-expanded .leaflet-control-layers-toggle{display:none}.leaflet-control-layers-expanded .leaflet-control-layers-list{display:block;position:relative}.leaflet-control-layers-expanded{padding:6px 10px 6px 6px;color:#333;background:#fff}.leaflet-control-layers-scrollbar{overflow-y:scroll;overflow-x:hidden;padding-right:5px}.leaflet-control-layers-selector{margin-top:2px;position:relative;top:1px}.leaflet-control-layers label{display:block;font-size:13px;font-size:1.08333em}.leaflet-control-layers-separator{height:0;border-top:1px solid #ddd;margin:5px -10px 5px -6px}.leaflet-default-icon-path{background-image:url(images/marker-icon.png)}.leaflet-container .leaflet-control-attribution{background:#fff;background:rgba(255,255,255,.8);margin:0}.leaflet-control-attribution,.leaflet-control-scale-line{padding:0 5px;color:#333;line-height:1.4}.leaflet-control-attribution a{text-decoration:none}.leaflet-control-attribution a:focus,.leaflet-control-attribution a:hover{text-decoration:underline}.leaflet-attribution-flag{display:inline!important;vertical-align:baseline!important;width:1em;height:.6669em}.leaflet-left .leaflet-control-scale{margin-left:5px}.leaflet-bottom .leaflet-control-scale{margin-bottom:5px}.leaflet-control-scale-line{border:2px solid #777;border-top:none;line-height:1.1;padding:2px 5px 1px;white-space:nowrap;-moz-box-sizing:border-box;box-sizing:border-box;background:rgba(255,255,255,.8);text-shadow:1px 1px #fff}.leaflet-control-scale-line:not(:first-child){border-top:2px solid #777;border-bottom:none;margin-top:-2px}.leaflet-control-scale-line:not(:first-child):not(:last-child){border-bottom:2px solid #777}.leaflet-touch .leaflet-bar,.leaflet-touch .leaflet-control-attribution,.leaflet-touch .leaflet-control-layers{box-shadow:none}.leaflet-touch .leaflet-bar,.leaflet-touch .leaflet-control-layers{border:2px solid rgba(0,0,0,.2);background-clip:padding-box}.leaflet-popup{position:absolute;text-align:center;margin-bottom:20px}.leaflet-popup-content-wrapper{padding:1px;text-align:left;border-radius:12px}.leaflet-popup-content{margin:13px 24px 13px 20px;line-height:1.3;font-size:13px;font-size:1.08333em;min-height:1px}.leaflet-popup-content p{margin:17px 0;margin:1.3em 0}.leaflet-popup-tip-container{width:40px;height:20px;position:absolute;left:50%;margin-top:-1px;margin-left:-20px;overflow:hidden;pointer-events:none}.leaflet-popup-tip{width:17px;height:17px;padding:1px;margin:-10px auto 0;pointer-events:auto;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#fff;color:#333;box-shadow:0 3px 14px rgba(0,0,0,.4)}.leaflet-container a.leaflet-popup-close-button{position:absolute;top:0;right:0;border:none;text-align:center;width:24px;height:24px;font:16px/24px Tahoma,Verdana,sans-serif;color:#757575;text-decoration:none;background:0 0}.leaflet-container a.leaflet-popup-close-button:focus,.leaflet-container a.leaflet-popup-close-button:hover{color:#585858}.leaflet-popup-scrolled{overflow:auto}.leaflet-oldie .leaflet-popup-content-wrapper{-ms-zoom:1}.leaflet-oldie .leaflet-popup-tip{width:24px;margin:0 auto}.leaflet-oldie .leaflet-control-layers,.leaflet-oldie .leaflet-control-zoom,.leaflet-oldie .leaflet-popup-content-wrapper,.leaflet-oldie .leaflet-popup-tip{border:1px solid #999}.leaflet-div-icon{background:#fff;border:1px solid #666}.leaflet-tooltip{position:absolute;padding:6px;background-color:#fff;border:1px solid #fff;border-radius:3px;color:#222;white-space:nowrap;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none;box-shadow:0 1px 3px rgba(0,0,0,.4)}.leaflet-tooltip.leaflet-interactive{cursor:pointer;pointer-events:auto}.leaflet-tooltip-bottom:before,.leaflet-tooltip-left:before,.leaflet-tooltip-right:before,.leaflet-tooltip-top:before{position:absolute;pointer-events:none;border:6px solid transparent;background:0 0;content:""}.leaflet-tooltip-bottom{margin-top:6px}.leaflet-tooltip-top{margin-top:-6px}.leaflet-tooltip-bottom:before,.leaflet-tooltip-top:before{left:50%;margin-left:-6px}.leaflet-tooltip-top:before{bottom:0;margin-bottom:-12px;border-top-color:#fff}.leaflet-tooltip-bottom:before{top:0;margin-top:-12px;margin-left:-6px;border-bottom-color:#fff}.leaflet-tooltip-left{margin-left:-6px}.leaflet-tooltip-right{margin-left:6px}.leaflet-tooltip-left:before,.leaflet-tooltip-right:before{top:50%;margin-top:-6px}.leaflet-tooltip-left:before{right:0;margin-right:-12px;border-left-color:#fff}.leaflet-tooltip-right:before{left:0;margin-left:-12px;border-right-color:#fff}@media print{.leaflet-control{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style>
 <style>
-/* Layout: full-height app. Header strip with live totals, filter/insight rail on the left, map fills the rest; list drawer slides over the map. Stacks on phones. */
+/* Layout: brand header band (logo, serif title, gold serif figures, line-art wave), filter rail on the left,
+   map of Romania drawn as a navy landmass with a gold outline, list drawer over the map. Stacks on phones. */
 :root {
-  --bg: #eef2f4;
-  --panel: #ffffff;
-  --ink: #13202a;
-  --muted: #586774;
-  --line: #d6dee4;
-  --soft: #e4eaee;
-  --accent: #0d5e7c;
-  --accent-ink: #ffffff;
-  --land: #f7f9fa;
-  --land-hover: #e3edf2;
-  --border-county: #a9b8c3;
-  --shadow: 0 1px 2px rgba(19, 32, 42, .08), 0 4px 14px rgba(19, 32, 42, .08);
+  --bg: #020b1a;
+  --panel: #061429;
+  --panel-2: #0b1f3f;
+  --ink: #f3efe2;
+  --muted: #9ba7bc;
+  --line: #233452;
+  --gold: #c99a4a;
+  --gold-soft: #6f5630;
+  --gold-ink: #d9b26a;
+  --on-gold: #061429;
+  --land: #0a1c3a;
+  --tile-opacity: .45;
+  --tile-filter: sepia(1) hue-rotate(180deg) saturate(2.2) brightness(.75);
+  --shadow: 0 2px 4px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.35);
 
-  --t-solar: #eda100;
+  --t-solar: #e0a21a;
+  --t-wind: #3987e5;
+  --t-hydro: #1fb27c;
+  --t-gas: #e5672f;
+  --t-coal: #b9b3a5;
+  --t-nuclear: #9a8ff0;
+  --t-bio: #3aa33a;
+  --t-other: #e06b98;
+  --ring: #020b1a;
+
+  --f-display: "Playfair Display", "Didot", "Bodoni MT", Georgia, serif;
+  --f-body: "Public Sans", Arial, Helvetica, sans-serif;
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  --bg: #f2edda;
+  --panel: #f8f4e7;
+  --panel-2: #ebe4cc;
+  --ink: #072154;
+  --muted: #5d6680;
+  --line: #ddd1ae;
+  --gold: #a9792c;
+  --gold-soft: #d9c79b;
+  --gold-ink: #94681f;
+  --on-gold: #ffffff;
+  --land: #fbf8ee;
+  --tile-opacity: .5;
+  --tile-filter: sepia(.35) saturate(.8);
+  --shadow: 0 1px 2px rgba(7,33,84,.08), 0 8px 22px rgba(7,33,84,.10);
+
+  --t-solar: #d89400;
   --t-wind: #2a78d6;
-  --t-hydro: #1baf7a;
-  --t-gas: #eb6834;
+  --t-hydro: #159c6c;
+  --t-gas: #e05a24;
   --t-coal: #4f4b45;
   --t-nuclear: #6250d6;
-  --t-bio: #008300;
-  --t-other: #e87ba4;
-  --ring: #ffffff;
-  --ok: #1d7a46;
-
-  --f-display: "Barlow Semi Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
-  --f-body: "Public Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0d1419; --panel: #141e25; --ink: #e5ecf1; --muted: #93a3af; --line: #26343e; --soft: #1c2831;
-    --accent: #5fb3d4; --accent-ink: #08151c; --land: #18242c; --land-hover: #213440; --border-county: #3d5260;
-    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.35);
-    --t-solar: #c98500; --t-wind: #3987e5; --t-hydro: #199e70; --t-gas: #d95926; --t-coal: #a8a397;
-    --t-nuclear: #9085e9; --t-bio: #008300; --t-other: #d55181; --ring: #141e25; --ok: #5cc98a;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #0d1419; --panel: #141e25; --ink: #e5ecf1; --muted: #93a3af; --line: #26343e; --soft: #1c2831;
-  --accent: #5fb3d4; --accent-ink: #08151c; --land: #18242c; --land-hover: #213440; --border-county: #3d5260;
-  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.35);
-  --t-solar: #c98500; --t-wind: #3987e5; --t-hydro: #199e70; --t-gas: #d95926; --t-coal: #a8a397;
-  --t-nuclear: #9085e9; --t-bio: #008300; --t-other: #d55181; --ring: #141e25; --ok: #5cc98a;
-  color-scheme: dark;
+  --t-bio: #1f7f1f;
+  --t-other: #d4588a;
+  --ring: #fbf8ee;
+  color-scheme: light;
 }
 
 * { box-sizing: border-box; }
@@ -68,60 +85,78 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 button, input, select { font: inherit; color: inherit; }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 .num { font-variant-numeric: tabular-nums; }
 
 .app { height: 100%; display: grid; grid-template-rows: auto 1fr; }
 
-/* Header */
+/* Header band */
 .top {
-  background: var(--panel); border-bottom: 1px solid var(--line);
-  padding-block: 10px;
+  position: relative; overflow: hidden; isolation: isolate;
+  background: linear-gradient(100deg, var(--bg) 0%, var(--panel) 55%, var(--panel-2) 100%);
+  border-bottom: 1px solid var(--gold-soft);
+  padding-block: 14px;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
-  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px;
 }
-.brand { display: flex; flex-direction: column; min-width: 0; }
+#wave { position: absolute; inset: 0 0 0 auto; width: min(560px, 60%); height: 100%; z-index: -1; pointer-events: none; }
+.brand { display: flex; align-items: center; gap: 18px; min-width: 0; }
+.brand img { height: 46px; width: auto; display: block; }
+.brand .logo-light { display: none; }
+:root[data-theme="light"] .brand .logo-dark { display: none; }
+:root[data-theme="light"] .brand .logo-light { display: block; }
+.brand .rule { width: 1px; align-self: stretch; background: var(--gold-soft); }
 .brand h1 {
-  margin: 0; font: 700 22px/1.1 var(--f-display); letter-spacing: .01em; text-wrap: balance;
+  margin: 0; font: 400 30px/1.05 var(--f-display); letter-spacing: .005em; text-wrap: balance;
 }
-.brand p { margin: 2px 0 0; color: var(--muted); font-size: 12px; }
-.stats { display: flex; gap: 24px; flex-wrap: wrap; margin-left: auto; }
-.stat { display: flex; flex-direction: column; }
-.stat b { font: 600 22px/1.05 var(--f-display); font-variant-numeric: tabular-nums; }
-.stat span { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.brand h1 em { font-style: normal; color: var(--gold); }
+.brand p { margin: 5px 0 0; color: var(--gold-ink); font-size: 13px; }
+.stats { display: flex; align-items: stretch; margin-left: auto; }
+.stat { display: flex; flex-direction: column; justify-content: center; padding: 0 22px; border-left: 1px solid var(--gold-soft); }
+.stat:first-child { border-left: 0; padding-left: 0; }
+.stat b { font: 500 30px/1 var(--f-display); color: var(--gold); font-variant-numeric: lining-nums tabular-nums; }
+.stat span { margin-top: 4px; font-size: 12px; color: var(--ink); opacity: .85; }
+.iconbtn {
+  width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--gold); background: transparent; color: var(--gold);
+  display: grid; place-items: center; cursor: pointer;
+}
+.iconbtn:hover { background: var(--gold); color: var(--on-gold); }
+.iconbtn svg { width: 17px; height: 17px; }
 
 /* Main */
-.main { min-height: 0; display: grid; grid-template-columns: 340px minmax(0, 1fr); }
+.main { min-height: 0; display: grid; grid-template-columns: 350px minmax(0, 1fr); }
 .rail {
-  min-height: 0; overflow-y: auto; background: var(--panel); border-right: 1px solid var(--line);
-  padding-block: 14px 24px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: 16px;
-  display: flex; flex-direction: column; gap: 22px;
+  min-height: 0; overflow-y: auto; background: var(--panel); border-right: 1px solid var(--gold-soft);
+  padding-block: 18px 26px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: 16px;
+  display: flex; flex-direction: column; gap: 24px;
 }
-.section { display: flex; flex-direction: column; gap: 8px; }
+.section { display: flex; flex-direction: column; gap: 9px; }
 .section h2 {
-  margin: 0; font: 600 12px/1.2 var(--f-body); text-transform: uppercase; letter-spacing: .08em; color: var(--muted);
+  margin: 0; font: 700 11px/1.2 var(--f-body); text-transform: uppercase; letter-spacing: .14em; color: var(--gold);
   display: flex; justify-content: space-between; align-items: baseline; gap: 8px;
 }
-.linkbtn { border: 0; background: none; padding: 0; color: var(--accent); cursor: pointer; font-size: 12px; text-transform: none; letter-spacing: 0; font-weight: 500; }
+.linkbtn { border: 0; background: none; padding: 0; color: var(--gold-ink); cursor: pointer; font-size: 12px; text-transform: none; letter-spacing: 0; font-weight: 500; }
 .linkbtn:hover { text-decoration: underline; }
 
 .search {
-  width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg);
+  width: 100%; padding: 9px 12px; border: 1px solid var(--gold-soft); border-radius: 8px; background: var(--bg);
 }
 .search::placeholder { color: var(--muted); }
+.search:hover { border-color: var(--gold); }
 
 /* Technology rows: legend + filter + bar chart in one */
 .techlist { display: flex; flex-direction: column; gap: 2px; }
 .tech {
-  display: grid; grid-template-columns: 14px minmax(0, 1fr) auto; gap: 2px 10px; align-items: center;
-  padding: 6px 8px; border-radius: 6px; border: 0; background: none; text-align: left; cursor: pointer; width: 100%;
+  display: grid; grid-template-columns: 14px minmax(0, 1fr) auto; gap: 3px 10px; align-items: center;
+  padding: 7px 8px; border-radius: 8px; border: 1px solid transparent; background: none; text-align: left; cursor: pointer; width: 100%;
 }
-.tech:hover { background: var(--soft); }
+.tech:hover { background: var(--panel-2); border-color: var(--line); }
 .tech .sw { width: 12px; height: 12px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 2px var(--panel), 0 0 0 3px var(--c); margin-left: 1px; }
 .tech .name { font-weight: 600; }
-.tech .val { font-weight: 600; text-align: right; }
-.tech .bar { grid-column: 2 / 4; height: 6px; border-radius: 3px; background: var(--soft); overflow: hidden; }
+.tech .val { font: 500 15px/1 var(--f-display); text-align: right; font-variant-numeric: lining-nums tabular-nums; }
+.tech .val small { font: 500 11px var(--f-body); color: var(--muted); margin-left: 3px; }
+.tech .bar { grid-column: 2 / 4; height: 5px; border-radius: 3px; background: var(--panel-2); overflow: hidden; }
 .tech .bar i { display: block; height: 100%; width: var(--w); background: var(--c); border-radius: 0 3px 3px 0; transition: width .25s; }
 .tech .sub { grid-column: 2 / 4; font-size: 12px; color: var(--muted); }
 .tech[aria-pressed="false"] .sw { background: transparent; }
@@ -130,122 +165,135 @@ button, input, select { font: inherit; color: inherit; }
 
 .seg { display: flex; flex-wrap: wrap; gap: 6px; }
 .seg button {
-  border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: 4px 11px; cursor: pointer; font-size: 13px;
+  border: 1px solid var(--gold-soft); background: transparent; border-radius: 999px; padding: 5px 12px; cursor: pointer; font-size: 13px;
 }
-.seg button:hover { border-color: var(--accent); }
-.seg .n { opacity: .7; margin-left: 4px; font-variant-numeric: tabular-nums; }
-.statuskey { display: flex; gap: 14px; font-size: 12px; color: var(--muted); }
+.seg button:hover { border-color: var(--gold); }
+.seg button[aria-pressed="true"] { background: var(--gold); color: var(--on-gold); border-color: var(--gold); font-weight: 600; }
+.seg .n { opacity: .7; margin-left: 5px; font-variant-numeric: tabular-nums; }
+.statuskey { display: flex; gap: 16px; font-size: 12px; color: var(--muted); }
 .statuskey span { display: inline-flex; align-items: center; gap: 6px; }
-.statuskey i { width: 11px; height: 11px; border-radius: 50%; border: 2px solid var(--muted); }
-.statuskey i.solid { background: var(--muted); }
-.pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; border: 1px solid var(--line); }
-.pill.ok { color: var(--ok); border-color: var(--ok); }
-.pill.exp { color: var(--muted); border-style: dashed; }
-.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.statuskey i { width: 11px; height: 11px; border-radius: 50%; border: 2px solid var(--gold); }
+.statuskey i.solid { background: var(--gold); }
+.pill { display: inline-block; padding: 1px 9px; border-radius: 999px; font-size: 12px; font-weight: 600; border: 1px solid var(--gold); color: var(--gold-ink); }
+.pill.exp { color: var(--muted); border-color: var(--muted); border-style: dashed; font-weight: 500; }
 
 select.search { appearance: auto; }
 
 .counties { display: flex; flex-direction: column; gap: 1px; }
 .crow {
-  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3px 10px; padding: 5px 8px; border-radius: 6px;
-  border: 0; background: none; cursor: pointer; text-align: left; width: 100%;
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; padding: 6px 8px; border-radius: 8px;
+  border: 1px solid transparent; background: none; cursor: pointer; text-align: left; width: 100%;
 }
-.crow:hover { background: var(--soft); }
-.crow[aria-pressed="true"] { background: var(--soft); box-shadow: inset 2px 0 0 var(--accent); }
-.crow .stack { grid-column: 1 / 3; display: flex; gap: 2px; height: 5px; }
+.crow:hover { background: var(--panel-2); border-color: var(--line); }
+.crow[aria-pressed="true"] { background: var(--panel-2); border-color: var(--gold); }
+.crow b { font: 500 15px/1 var(--f-display); font-variant-numeric: lining-nums tabular-nums; }
+.crow .meta { color: var(--muted); font-size: 12px; }
+.crow .stack { grid-column: 1 / 3; display: flex; gap: 2px; height: 4px; }
 .crow .stack i { display: block; height: 100%; background: var(--c); border-radius: 1px; }
 
-.about { font-size: 12px; color: var(--muted); display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--line); padding-top: 14px; }
+.about { font-size: 12px; color: var(--muted); display: flex; flex-direction: column; gap: 7px; }
+.about::before { content: ""; width: 34px; height: 1px; background: var(--gold); margin-bottom: 6px; }
 .about p { margin: 0; }
-.about a { color: var(--accent); }
+.about b { color: var(--ink); font-weight: 600; }
 
 /* Map */
 .mapwrap { position: relative; min-height: 0; min-width: 0; }
 #map { position: absolute; inset: 0; background: var(--bg); }
 .leaflet-container { font: inherit; background: var(--bg); }
+.leaflet-tile-pane { opacity: var(--tile-opacity); filter: var(--tile-filter); }
 .mapbar {
-  position: absolute; z-index: 500; top: 12px; right: max(12px, env(safe-area-inset-right, 0px));
-  display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end;
+  position: absolute; z-index: 500; top: 14px; right: max(14px, env(safe-area-inset-right, 0px));
+  display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end;
 }
 .chip {
-  background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 6px 11px;
-  box-shadow: var(--shadow); cursor: pointer; font-weight: 500; font-size: 13px;
+  background: var(--panel); color: var(--ink); border: 1px solid var(--gold); border-radius: 8px; padding: 7px 13px;
+  box-shadow: var(--shadow); cursor: pointer; font-weight: 600; font-size: 13px;
 }
-.chip:hover { border-color: var(--accent); }
-.chip[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.chip:hover, .chip[aria-pressed="true"] { background: var(--gold); color: var(--on-gold); }
 
-.sizekey {
-  position: absolute; z-index: 500; left: max(12px, env(safe-area-inset-left, 0px)); bottom: 22px;
-  background: var(--panel); border: 1px solid var(--line); border-radius: 6px; box-shadow: var(--shadow);
-  padding: 8px 10px; font-size: 11px; color: var(--muted);
+.legendbox {
+  position: absolute; z-index: 500; left: max(14px, env(safe-area-inset-left, 0px)); bottom: 24px;
+  background: var(--panel); border: 1px solid var(--gold); border-radius: 10px; box-shadow: var(--shadow);
+  padding: 10px 12px; font-size: 11px; color: var(--muted); display: flex; flex-direction: column; gap: 4px;
 }
-.sizekey svg { display: block; }
-.sizekey text { fill: var(--muted); font-size: 10px; font-family: var(--f-body); }
-.sizekey circle { fill: none; stroke: var(--muted); stroke-width: 1; }
+.legendbox h3 { margin: 0; font: 700 10px/1.2 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.legendbox svg { display: block; }
+.legendbox text { fill: var(--muted); font-size: 10px; font-family: var(--f-body); }
+.legendbox circle { fill: none; stroke: var(--gold); stroke-width: 1; }
 
 .leaflet-control-attribution { background: color-mix(in srgb, var(--panel) 85%, transparent) !important; color: var(--muted) !important; font-size: 10px; }
-.leaflet-control-attribution a { color: var(--accent) !important; }
-.leaflet-bar a { background: var(--panel) !important; color: var(--ink) !important; border-color: var(--line) !important; }
-.leaflet-bar { border: 1px solid var(--line) !important; box-shadow: var(--shadow) !important; }
-.leaflet-top.leaflet-left { top: 0; left: env(safe-area-inset-left, 0px); }
+.leaflet-control-attribution a { color: var(--gold-ink) !important; }
+.leaflet-bar a { background: var(--panel) !important; color: var(--gold) !important; border-color: var(--gold-soft) !important; }
+.leaflet-bar a:hover { background: var(--panel-2) !important; }
+.leaflet-bar { border: 1px solid var(--gold) !important; box-shadow: var(--shadow) !important; border-radius: 8px !important; overflow: hidden; }
+.leaflet-top.leaflet-left { top: 4px; left: env(safe-area-inset-left, 0px); }
 
 /* Popup */
 .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: var(--panel); color: var(--ink); box-shadow: var(--shadow); }
-.leaflet-popup-content-wrapper { border-radius: 8px; border: 1px solid var(--line); }
-.leaflet-popup-content { margin: 14px 16px; font-size: 13px; line-height: 1.4; min-width: 230px; }
-.leaflet-container a.leaflet-popup-close-button { color: var(--muted); }
-.pp-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; }
+.leaflet-popup-content-wrapper { border-radius: 10px; border: 1px solid var(--gold); }
+.leaflet-popup-tip { border: 1px solid var(--gold); }
+.leaflet-popup-content { margin: 16px 18px; font-size: 13px; line-height: 1.45; min-width: 240px; }
+.leaflet-container a.leaflet-popup-close-button { color: var(--gold); top: 6px; right: 6px; }
+.pp-tag { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: var(--gold); font-weight: 700; }
 .pp-tag i { width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
-.pp-name { font: 700 18px/1.15 var(--f-display); margin: 4px 0 2px; }
-.pp-mw { font: 600 26px/1 var(--f-display); margin: 6px 0 10px; font-variant-numeric: tabular-nums; }
-.pp-mw small { font-size: 14px; color: var(--muted); font-weight: 500; }
-.pp dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 3px 12px; margin: 0; }
+.pp-name { font: 500 20px/1.15 var(--f-display); margin: 6px 0 2px; }
+.pp-mw { font: 500 30px/1 var(--f-display); color: var(--gold); margin: 8px 0 12px; font-variant-numeric: lining-nums tabular-nums; }
+.pp-mw small { font: 500 13px var(--f-body); color: var(--muted); margin-left: 2px; }
+.pp dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 14px; margin: 0; padding-top: 10px; border-top: 1px solid var(--gold-soft); }
 .pp dt { color: var(--muted); }
 .pp dd { margin: 0; overflow-wrap: anywhere; }
-.pp .note { margin-top: 10px; font-size: 12px; color: var(--muted); }
-.pp .note.warn::before { content: "⚠ "; }
-.pp a { color: var(--accent); }
+.pp .note { margin-top: 12px; font-size: 12px; color: var(--muted); }
+.pp .note.warn::before { content: "⚠ "; color: var(--gold); }
+.pp a { color: var(--gold-ink); }
 
-/* Tooltip */
-.leaflet-tooltip { background: var(--panel); color: var(--ink); border: 1px solid var(--line); box-shadow: var(--shadow); font-size: 12px; padding: 4px 8px; }
-.leaflet-tooltip-top:before { border-top-color: var(--panel); }
+.leaflet-tooltip { background: var(--panel); color: var(--ink); border: 1px solid var(--gold-soft); box-shadow: var(--shadow); font-size: 12px; padding: 4px 9px; border-radius: 6px; }
+.leaflet-tooltip-top:before { border-top-color: var(--gold-soft); }
 
 /* List drawer */
 .drawer {
   position: absolute; z-index: 600; left: 0; right: 0; bottom: 0; height: min(52%, 460px);
-  background: var(--panel); border-top: 1px solid var(--line); box-shadow: 0 -6px 18px rgba(0,0,0,.12);
+  background: var(--panel); border-top: 1px solid var(--gold); box-shadow: 0 -8px 24px rgba(0,0,0,.25);
   display: flex; flex-direction: column;
 }
 .drawer header {
   display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
-  padding-block: 10px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
-  border-bottom: 1px solid var(--line);
+  padding-block: 12px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  border-bottom: 1px solid var(--gold-soft);
 }
-.drawer header h2 { margin: 0; font: 600 16px/1.2 var(--f-display); }
+.drawer header h2 { margin: 0; font: 500 20px/1.2 var(--f-display); }
 .drawer header .sp { flex: 1; }
 .tablewrap { overflow: auto; flex: 1; min-height: 0; }
 table { width: 100%; border-collapse: collapse; font-size: 13px; }
-th, td { padding: 6px 12px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
-th { position: sticky; top: 0; background: var(--panel); font-weight: 600; color: var(--muted); font-size: 12px; z-index: 1; }
-th button { border: 0; background: none; padding: 0; cursor: pointer; font-weight: 600; color: inherit; }
+th, td { padding: 7px 12px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { position: sticky; top: 0; background: var(--panel); z-index: 1; }
+th button { border: 0; background: none; padding: 0; cursor: pointer; font-weight: 700; color: var(--gold); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; }
 th button[data-dir]::after { content: attr(data-dir); margin-left: 4px; }
 td.r, th.r { text-align: right; }
 tbody tr { cursor: pointer; }
-tbody tr:hover { background: var(--soft); }
-td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--c); margin-right: 7px; vertical-align: 0; }
-.more { padding: 10px 16px; }
+tbody tr:hover { background: var(--panel-2); }
+td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--c); margin-right: 7px; }
+.more { padding: 12px 16px; }
 
 .empty { padding: 24px 16px; color: var(--muted); }
 
 @media (max-width: 860px) {
-  .sizekey { display: none; }
   .app { height: auto; display: block; }
+  .brand img { height: 38px; }
+  .brand h1 { font-size: 24px; }
+  .stats { margin-left: 0; width: 100%; }
+  .stat { padding: 0 14px; }
+  .stat b { font-size: 24px; }
+  .iconbtn { position: absolute; top: 14px; right: max(16px, env(safe-area-inset-right, 0px)); }
   .main { display: flex; flex-direction: column-reverse; }
   .mapwrap { height: 64svh; min-height: 360px; }
   .rail { border-right: 0; overflow: visible; padding-right: max(16px, env(safe-area-inset-right, 0px)); }
-  .stats { margin-left: 0; gap: 18px; }
+  .legendbox { display: none; }
   .drawer { height: 75%; }
   th, td { padding: 6px 8px; }
+}
+@media (max-width: 480px) {
+  .brand { flex-wrap: wrap; gap: 10px 14px; }
+  .brand .rule { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
@@ -253,22 +301,30 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
 <body>
 <div class="app">
   <header class="top">
+    <canvas id="wave" aria-hidden="true"></canvas>
     <div class="brand">
-      <h1>Romania Power Plant Map</h1>
-      <p>Electricity generation licences · ANRE register, 24 April 2023</p>
+      <img class="logo-dark" src="assets/logo-on-dark.png" alt="Hagag Energy" width="112" height="46">
+      <img class="logo-light" src="assets/logo-on-light.png" alt="Hagag Energy" width="112" height="46">
+      <span class="rule" aria-hidden="true"></span>
+      <div>
+        <h1>Romania <em>Power Map</em></h1>
+        <p>Licensed generation capacity &nbsp;|&nbsp; ANRE register, April 2023</p>
+      </div>
     </div>
     <div class="stats" aria-live="polite">
-      <div class="stat"><b id="sPlants" class="num">–</b><span>Plants shown</span></div>
-      <div class="stat"><b id="sMW" class="num">–</b><span>Installed MW</span></div>
-      <div class="stat"><b id="sCos" class="num">–</b><span>Companies</span></div>
+      <div class="stat"><b id="sPlants" class="num">–</b><span>plants shown</span></div>
+      <div class="stat"><b id="sMW" class="num">–</b><span>MW installed</span></div>
+      <div class="stat"><b id="sCos" class="num">–</b><span>companies</span></div>
     </div>
+    <button class="iconbtn" id="themeBtn" type="button" title="Switch to cream theme" aria-label="Switch colour theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+    </button>
   </header>
 
   <div class="main">
     <aside class="rail">
       <div class="section">
-        <label for="q" class="sr" hidden>Search</label>
-        <input id="q" class="search" type="search" placeholder="Search plant, company or locality" autocomplete="off">
+        <input id="q" class="search" type="search" placeholder="Search plant, company or locality" autocomplete="off" aria-label="Search">
       </div>
 
       <div class="section">
@@ -279,7 +335,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
       <div class="section">
         <h2>Status</h2>
         <div class="seg" id="statusSeg" role="group" aria-label="Licence status"></div>
-        <div class="statuskey" aria-hidden="true"><span><i class="solid"></i>Operating</span><span><i class="ring"></i>Licence expired</span></div>
+        <div class="statuskey" aria-hidden="true"><span><i class="solid"></i>Operating</span><span><i></i>Licence expired</span></div>
       </div>
 
       <div class="section">
@@ -298,9 +354,9 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
       </div>
 
       <div class="about">
-        <p><b>Source:</b> ANRE (Romanian Energy Regulatory Authority), list of licensed power generation capacities, 24.04.2023. Status comes from the register: <b>Operating</b> means the generation licence is valid, <b>Licence expired</b> means it has lapsed. The register does not cover projects in planning or construction.</p>
+        <p><b>Source:</b> ANRE (Romanian Energy Regulatory Authority), licensed power generation capacities, 24.04.2023. <b>Operating</b> means the generation licence is valid; <b>Licence expired</b> means it has lapsed. The register does not cover projects in planning or construction.</p>
         <p><b>Locations</b> are placed at the plant's locality (GeoNames gazetteer), not the exact site. <span id="approxNote"></span></p>
-        <p>The source file's own TOTAL row reads 18,923 MW, but its plant rows add up to 11,587 MW. This map uses the plant rows.</p>
+        <p>The source file's TOTAL row reads 18,923 MW, but its plant rows add up to 11,587 MW. This map uses the plant rows.</p>
         <p><button class="linkbtn" id="reset" type="button">Reset all filters</button></p>
       </div>
     </aside>
@@ -311,7 +367,8 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
         <button class="chip" id="listBtn" type="button" aria-pressed="false">List view</button>
         <button class="chip" id="csvBtn" type="button">Download CSV</button>
       </div>
-      <div class="sizekey" aria-hidden="true">
+      <div class="legendbox" aria-hidden="true">
+        <h3>Installed MW</h3>
         <svg id="sizeKey" width="128" height="62"></svg>
       </div>
       <div class="drawer" id="drawer" hidden>
@@ -360,10 +417,12 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     { v: 0, label: "All" }, { v: 1, label: "≥ 1 MW" }, { v: 10, label: "≥ 10 MW" },
     { v: 50, label: "≥ 50 MW" }, { v: 100, label: "≥ 100 MW" },
   ];
+  const STATUS = [{ v: "", label: "All" }, { v: "Operating", label: "Operating" }, { v: "Expired", label: "Licence expired" }];
   const LIST_PAGE = 300;
 
-  const state = { techs: new Set(TECH.map(t => t.key)), status: "", minMW: 0, county: "", q: "", sortK: "mw", sortDir: -1, listAll: false };
-  let plants = [], counties = null, colors = {}, map, pointLayer, countyLayer, tiles, renderer;
+  const allTechs = () => new Set(TECH.map(t => t.key));
+  const state = { techs: allTechs(), status: "", minMW: 0, county: "", q: "", sortK: "mw", sortDir: -1, listAll: false };
+  let plants = [], colors = {}, map, pointLayer, glowLayer, landLayer, countyLayer, tiles, renderer, romaniaBounds, current = [];
 
   const $ = id => document.getElementById(id);
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -372,16 +431,13 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
   const fmtDate = d => d ? new Date(d + "T00:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }) : "–";
   const radius = mw => 3 + 1.2 * Math.sqrt(Math.max(mw, 0));
   const norm = s => String(s).normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase();
-  const isDark = () => getComputedStyle(document.documentElement).colorScheme.includes("dark");
+  const isLight = () => document.documentElement.dataset.theme === "light";
 
   function readColors() {
     const cs = getComputedStyle(document.documentElement);
-    TECH.forEach(t => (colors[t.key] = cs.getPropertyValue("--t-" + t.key).trim()));
-    colors.ring = cs.getPropertyValue("--ring").trim();
-    colors.land = cs.getPropertyValue("--land").trim();
-    colors.landHover = cs.getPropertyValue("--land-hover").trim();
-    colors.border = cs.getPropertyValue("--border-county").trim();
-    colors.accent = cs.getPropertyValue("--accent").trim();
+    const v = n => cs.getPropertyValue(n).trim();
+    TECH.forEach(t => (colors[t.key] = v("--t-" + t.key)));
+    Object.assign(colors, { ring: v("--ring"), land: v("--land"), gold: v("--gold"), goldSoft: v("--gold-soft"), ink: v("--ink") });
   }
 
   // Plants sharing one locality point are fanned out in a small spiral so each stays clickable.
@@ -411,19 +467,11 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     return true;
   }
 
-  const STATUS = [{ v: "", label: "All" }, { v: "Operating", label: "Operating" }, { v: "Expired", label: "Licence expired" }];
-  const statusPill = p => p.st === "Expired" ? '<span class="pill exp">Licence expired</span>' : '<span class="pill ok">Operating</span>';
+  const statusPill = p => p.st === "Expired" ? '<span class="pill exp">Licence expired</span>' : '<span class="pill">Operating</span>';
   // Expired licences draw as rings so status reads without relying on colour.
   const markerStyle = (p, hover) => p.st === "Expired"
-    ? { color: hover ? colors.accent : colors[p.tk], weight: hover ? 3 : 2, fillColor: colors[p.tk], fillOpacity: 0.12 }
-    : { color: hover ? colors.accent : colors.ring, weight: hover ? 2.5 : 1, fillColor: colors[p.tk], fillOpacity: 0.82 };
-
-  function renderStatus() {
-    const base = plants.filter(p => matchesExcept(p, "status"));
-    const n = { "": base.length, Operating: 0, Expired: 0 };
-    base.forEach(p => n[p.st]++);
-    $("statusSeg").innerHTML = STATUS.map(s => `<button type="button" data-v="${s.v}" aria-pressed="${state.status === s.v}">${s.label}<span class="n">${n[s.v].toLocaleString("en-US")}</span></button>`).join("");
-  }
+    ? { color: hover ? colors.ink : colors[p.tk], weight: hover ? 3 : 2, fillColor: colors[p.tk], fillOpacity: 0.12 }
+    : { color: hover ? colors.ink : colors.ring, weight: hover ? 2.5 : 1, fillColor: colors[p.tk], fillOpacity: 0.9 };
 
   function popupHtml(p) {
     const t = TECH_OF[p.t];
@@ -431,7 +479,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     return `<div class="pp">
       <span class="pp-tag" style="--c:${colors[t.key]}"><i></i>${esc(t.label)}${sub}</span>
       <div class="pp-name">${esc(p.n)}</div>
-      <div class="pp-mw">${fmtMW(p.mw)} <small>MW installed</small></div>
+      <div class="pp-mw">${fmtMW(p.mw)}<small>MW installed</small></div>
       <dl>
         <dt>Company</dt><dd>${esc(p.co)}</dd>
         <dt>Locality</dt><dd>${esc(p.loc)}</dd>
@@ -452,7 +500,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     [...list].sort((a, b) => b.mw - a.mw).forEach(p => {
       const m = L.circleMarker([p.y, p.x], { renderer, radius: radius(p.mw), ...markerStyle(p, false) });
       m.bindTooltip(`<b>${esc(p.n)}</b> · ${fmtMW(p.mw)} MW`, { direction: "top", offset: [0, -radius(p.mw)] });
-      m.bindPopup(() => popupHtml(p), { maxWidth: 320 });
+      m.bindPopup(() => popupHtml(p), { maxWidth: 330 });
       m.on("mouseover", () => m.setStyle(markerStyle(p, true)));
       m.on("mouseout", () => m.setStyle(markerStyle(p, false)));
       p.marker = m;
@@ -468,11 +516,18 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     $("techList").innerHTML = TECH.map(t => {
       const a = agg[t.key], on = state.techs.has(t.key);
       return `<button type="button" class="tech" data-k="${t.key}" aria-pressed="${on}" style="--c:${colors[t.key]};--w:${(a.mw / max * 100).toFixed(1)}%" title="${esc(t.hint || t.label)}">
-        <span class="sw"></span><span class="name">${t.label}</span><span class="val num">${fmtBig(a.mw)} MW</span>
+        <span class="sw"></span><span class="name">${t.label}</span><span class="val num">${fmtBig(a.mw)}<small>MW</small></span>
         <span class="bar"><i></i></span>
         <span class="sub num">${a.n.toLocaleString("en-US")} plant${a.n === 1 ? "" : "s"}${t.hint ? " · " + t.hint : ""}</span>
       </button>`;
     }).join("");
+  }
+
+  function renderStatus() {
+    const base = plants.filter(p => matchesExcept(p, "status"));
+    const n = { "": base.length, Operating: 0, Expired: 0 };
+    base.forEach(p => n[p.st]++);
+    $("statusSeg").innerHTML = STATUS.map(s => `<button type="button" data-v="${s.v}" aria-pressed="${state.status === s.v}">${s.label}<span class="n">${n[s.v].toLocaleString("en-US")}</span></button>`).join("");
   }
 
   function renderCounties(list) {
@@ -487,7 +542,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
       const segs = TECH.filter(t => a.by[t.key] > 0)
         .map(t => `<i style="--c:${colors[t.key]};width:${(a.by[t.key] / max * 100).toFixed(2)}%" title="${t.label}: ${fmtBig(a.by[t.key])} MW"></i>`).join("");
       return `<button type="button" class="crow" data-c="${esc(c)}" aria-pressed="${state.county === c}">
-        <span>${esc(c)}</span><span class="num"><b>${fmtBig(a.mw)}</b> MW · ${a.n}</span>
+        <span>${esc(c)}</span><span class="num"><b>${fmtBig(a.mw)}</b> <span class="meta">MW · ${a.n} plants</span></span>
         <span class="stack">${segs}</span></button>`;
     }).join("") : `<div class="empty">No plants match these filters.</div>`;
   }
@@ -509,7 +564,8 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     $("listTitle").textContent = `${list.length.toLocaleString("en-US")} plants`;
     $("rows").innerHTML = shown.map(p => `<tr data-i="${p.i}">
       <td>${esc(p.n)}</td><td><span class="dot" style="--c:${colors[p.tk]}"></span>${esc(p.t)}</td>
-      <td class="r num">${fmtMW(p.mw)}</td><td>${esc(p.co)}</td><td>${esc(p.loc)}</td><td>${esc(p.cty)}</td><td>${statusPill(p)}</td><td class="num">${p.exp ?? "–"}</td></tr>`).join("");
+      <td class="r num">${fmtMW(p.mw)}</td><td>${esc(p.co)}</td><td>${esc(p.loc)}</td><td>${esc(p.cty)}</td>
+      <td>${statusPill(p)}</td><td class="num">${p.exp ?? "–"}</td></tr>`).join("");
     $("moreWrap").hidden = state.listAll || rows.length <= LIST_PAGE;
     $("moreBtn").textContent = `Show all ${rows.length.toLocaleString("en-US")}`;
     document.querySelectorAll("th button").forEach(b => {
@@ -517,18 +573,18 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     });
   }
 
-  function styleCounties() {
+  // Romania is drawn in three passes: a thick gold stroke, a land fill that hides the stroke's inner half
+  // (leaving a gold national outline), then fine county lines that also take clicks.
+  function styleLand() {
     if (!countyLayer) return;
+    glowLayer.setStyle({ color: colors.gold, weight: 3.2, opacity: 0.95, fill: false });
+    landLayer.setStyle({ stroke: false, fillColor: colors.land, fillOpacity: 0.9 });
     countyLayer.setStyle(f => {
       const sel = state.county && f.properties.key === state.county;
-      return {
-        color: sel ? colors.accent : colors.border, weight: sel ? 2.2 : 0.8,
-        fillColor: colors.land, fillOpacity: tilesOk ? 0.0 : 1, opacity: 1,
-      };
+      return { color: colors.gold, weight: sel ? 2.4 : 0.7, opacity: sel ? 1 : 0.4, fillColor: colors.gold, fillOpacity: sel ? 0.1 : 0 };
     });
   }
 
-  let current = [];
   function update() {
     current = plants.filter(p => matchesExcept(p, null));
     drawPoints(current);
@@ -537,7 +593,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     renderCounties(current);
     renderStats(current);
     renderTable(current);
-    styleCounties();
+    styleLand();
     $("countyClear").hidden = !state.county;
     $("county").value = state.county;
     document.querySelectorAll("#sizeSeg button").forEach(b => b.setAttribute("aria-pressed", +b.dataset.v === state.minMW));
@@ -550,7 +606,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
 
   function exportCsv() {
     const cols = [["n", "Plant"], ["t", "Technology"], ["mw", "Installed MW"], ["co", "Company"], ["loc", "Locality"], ["cty", "County"],
-      ["lic", "Licence no."], ["st", "Status"], ["iss", "Licence issued"], ["exp", "Licence expires"], ["lat", "Latitude"], ["lon", "Longitude"]];
+      ["st", "Status"], ["lic", "Licence no."], ["iss", "Licence issued"], ["exp", "Licence expires"], ["lat", "Latitude"], ["lon", "Longitude"]];
     const q = v => { const s = String(v ?? ""); return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
     const csv = [cols.map(c => c[1]).join(","), ...current.map(p => cols.map(c => q(p[c[0]])).join(","))].join("\n");
     const url = URL.createObjectURL(new Blob(["﻿" + csv], { type: "text/csv" }));
@@ -561,29 +617,72 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
 
   function drawSizeKey() {
     const vals = [10, 100, 500], svg = $("sizeKey");
-    const rMax = radius(500), base = 4 + 2 * rMax;
-    let x = 4, out = "";
+    const rMax = radius(500), base = 2 + 2 * rMax;
+    let x = 2, out = "";
     vals.forEach(v => {
       const r = radius(v);
       out += `<circle cx="${x + r}" cy="${base - r}" r="${r}"></circle><text x="${x + r}" y="${base + 13}" text-anchor="middle">${v}</text>`;
       x += 2 * r + 10;
     });
-    svg.setAttribute("width", x + 18);
+    svg.setAttribute("width", x);
     svg.setAttribute("height", base + 16);
-    svg.innerHTML = out + `<text x="${x - 4}" y="${base + 13}">MW</text>`;
+    svg.innerHTML = out;
   }
 
-  // Basemap tiles: used where the host allows them; county outlines carry the map otherwise.
-  let tilesOk = false;
+  // Gold line-art wave behind the header, after the swept-line motif of the brand deck.
+  function drawWave() {
+    const cv = $("wave"), dpr = window.devicePixelRatio || 1;
+    const w = cv.clientWidth, h = cv.clientHeight;
+    if (!w || !h) return;
+    cv.width = w * dpr; cv.height = h * dpr;
+    const ctx = cv.getContext("2d");
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, w, h);
+    ctx.strokeStyle = colors.gold;
+    ctx.lineWidth = 0.5;
+    const n = 30;
+    for (let i = 0; i < n; i++) {
+      const t = i / (n - 1);
+      ctx.globalAlpha = 0.05 + 0.16 * Math.sin(Math.PI * t);
+      ctx.beginPath();
+      ctx.moveTo(w * 0.05, h * (1.15 - t * 0.25));
+      ctx.bezierCurveTo(w * (0.35 + t * 0.1), h * (1.1 - t * 1.4), w * (0.55 + t * 0.2), h * (0.9 - t * 0.2), w * 1.02, h * (-0.2 + t * 0.55));
+      ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+  }
+
   function setTiles() {
     if (tiles) map.removeLayer(tiles);
-    const style = isDark() ? "World_Dark_Gray_Base" : "World_Light_Gray_Base";
+    const style = isLight() ? "World_Light_Gray_Base" : "World_Dark_Gray_Base";
     tiles = L.tileLayer(`https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/${style}/MapServer/tile/{z}/{y}/{x}`, {
       maxZoom: 16,
       attribution: 'Basemap &copy; <a href="https://www.esri.com/" target="_blank" rel="noopener">Esri</a>, HERE, Garmin, &copy; OpenStreetMap contributors',
-    });
-    tiles.once("tileload", () => { tilesOk = true; styleCounties(); });
-    tiles.addTo(map);
+    }).addTo(map);
+  }
+
+  function applyTheme() {
+    readColors();
+    setTiles();
+    drawWave();
+    update();
+    $("themeBtn").title = isLight() ? "Switch to navy theme" : "Switch to cream theme";
+  }
+
+  function selectCounty(c) {
+    state.county = c;
+    update();
+    if (c) {
+      countyLayer.eachLayer(l => { if (l.feature.properties.key === c) map.flyToBounds(l.getBounds(), { padding: [30, 30], duration: 0.6 }); });
+    } else map.flyToBounds(romaniaBounds, { duration: 0.6 });
+  }
+
+  function toggleList(force) {
+    const open = force ?? $("drawer").hidden;
+    $("drawer").hidden = !open;
+    $("listBtn").setAttribute("aria-pressed", open);
+    state.listAll = false;
+    if (open) renderTable(current);
   }
 
   function bind() {
@@ -592,13 +691,13 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
       const k = b.dataset.k;
       // First click isolates a technology; later clicks add or remove.
       if (state.techs.size === TECH.length) state.techs = new Set([k]);
-      else if (state.techs.has(k)) { state.techs.delete(k); if (!state.techs.size) state.techs = new Set(TECH.map(t => t.key)); }
+      else if (state.techs.has(k)) { state.techs.delete(k); if (!state.techs.size) state.techs = allTechs(); }
       else state.techs.add(k);
       update();
     });
-    $("techAll").onclick = () => { state.techs = new Set(TECH.map(t => t.key)); update(); };
-    $("sizeSeg").innerHTML = SIZES.map(s => `<button type="button" data-v="${s.v}" aria-pressed="false">${s.label}</button>`).join("");
+    $("techAll").onclick = () => { state.techs = allTechs(); update(); };
     $("statusSeg").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { state.status = b.dataset.v; update(); } });
+    $("sizeSeg").innerHTML = SIZES.map(s => `<button type="button" data-v="${s.v}" aria-pressed="false">${s.label}</button>`).join("");
     $("sizeSeg").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { state.minMW = +b.dataset.v; update(); } });
     let qt;
     $("q").addEventListener("input", e => { clearTimeout(qt); qt = setTimeout(() => { state.q = norm(e.target.value.trim()); update(); }, 150); });
@@ -606,7 +705,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     $("countyClear").onclick = () => selectCounty("");
     $("topCounties").addEventListener("click", e => { const b = e.target.closest(".crow"); if (b) selectCounty(state.county === b.dataset.c ? "" : b.dataset.c); });
     $("reset").onclick = () => {
-      Object.assign(state, { techs: new Set(TECH.map(t => t.key)), status: "", minMW: 0, county: "", q: "" });
+      Object.assign(state, { techs: allTechs(), status: "", minMW: 0, county: "", q: "" });
       $("q").value = ""; update(); map.flyToBounds(romaniaBounds, { duration: 0.6 });
     };
     $("listBtn").onclick = () => toggleList();
@@ -628,30 +727,19 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     // Inside an embedded preview the browser blocks downloads, so hide the button there.
     if (window.self !== window.top) $("csvBtn").hidden = true;
 
-    const onTheme = () => { readColors(); setTiles(); drawSizeKey(); update(); };
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", onTheme);
-    new MutationObserver(onTheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
-  }
-
-  function toggleList(force) {
-    const open = force ?? $("drawer").hidden;
-    $("drawer").hidden = !open;
-    $("listBtn").setAttribute("aria-pressed", open);
-    state.listAll = false;
-    if (open) renderTable(current);
-  }
-
-  let romaniaBounds;
-  function selectCounty(c) {
-    state.county = c;
-    update();
-    if (c && countyLayer) {
-      countyLayer.eachLayer(l => { if (l.feature.properties.key === c) map.flyToBounds(l.getBounds(), { padding: [30, 30], duration: 0.6 }); });
-    } else if (!c) map.flyToBounds(romaniaBounds, { duration: 0.6 });
+    $("themeBtn").onclick = () => {
+      const next = isLight() ? "dark" : "light";
+      document.documentElement.dataset.theme = next;
+      try { localStorage.setItem("rpm-theme", next); } catch (e) {}
+    };
+    new MutationObserver(applyTheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+    let rt;
+    window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(drawWave, 150); });
   }
 
   async function init() {
     readColors();
+    drawWave();
     const [pd, cd] = await Promise.all([
       fetch("data/plants.json").then(r => r.json()),
       fetch("data/counties.json").then(r => r.json()),
@@ -676,15 +764,16 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
       f.properties.key = alias[n] || byNorm[n.replace(/[^a-z]/g, "")] || f.properties.name;
     });
 
-    map = L.map("map", { zoomSnap: 1, minZoom: 6, preferCanvas: true, attributionControl: true });
+    map = L.map("map", { zoomSnap: 1, minZoom: 6, preferCanvas: true });
     renderer = L.canvas({ padding: 0.5, tolerance: 4 });
+    glowLayer = L.geoJSON(cd, { interactive: false }).addTo(map);
+    landLayer = L.geoJSON(cd, { interactive: false }).addTo(map);
     countyLayer = L.geoJSON(cd, {
-      style: { color: colors.border, weight: 0.8, fillColor: colors.land, fillOpacity: 1 },
       onEachFeature: (f, l) => {
         l.bindTooltip(f.properties.key, { sticky: true, direction: "top" });
         l.on("click", () => selectCounty(state.county === f.properties.key ? "" : f.properties.key));
-        l.on("mouseover", () => l.setStyle({ fillColor: colors.landHover, fillOpacity: tilesOk ? 0.35 : 1 }));
-        l.on("mouseout", () => styleCounties());
+        l.on("mouseover", () => l.setStyle({ fillOpacity: 0.07 }));
+        l.on("mouseout", () => styleLand());
       },
     }).addTo(map);
     romaniaBounds = countyLayer.getBounds();
@@ -695,7 +784,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
 
     bind();
     drawSizeKey();
-    update();
+    applyTheme();
   }
 
   init().catch(err => {
