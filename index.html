@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Romania Power Plant Map</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Interactive map of licensed electricity generation capacity in Romania (ANRE data).">
+<meta name="description" content="Interactive map of power generation and storage projects in Romania, operating and in development.">
 <link rel="icon" type="image/png" href="assets/logo-on-dark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,10 +16,10 @@
 </script>
 <style>/* Leaflet 1.9.4 */.leaflet-image-layer,.leaflet-layer,.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-pane,.leaflet-pane>canvas,.leaflet-pane>svg,.leaflet-tile,.leaflet-tile-container,.leaflet-zoom-box{position:absolute;left:0;top:0}.leaflet-container{overflow:hidden}.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-tile{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-user-drag:none}.leaflet-tile::selection{background:0 0}.leaflet-safari .leaflet-tile{image-rendering:-webkit-optimize-contrast}.leaflet-safari .leaflet-tile-container{width:1600px;height:1600px;-webkit-transform-origin:0 0}.leaflet-marker-icon,.leaflet-marker-shadow{display:block}.leaflet-container .leaflet-overlay-pane svg{max-width:none!important;max-height:none!important}.leaflet-container .leaflet-marker-pane img,.leaflet-container .leaflet-shadow-pane img,.leaflet-container .leaflet-tile,.leaflet-container .leaflet-tile-pane img,.leaflet-container img.leaflet-image-layer{max-width:none!important;max-height:none!important;width:auto;padding:0}.leaflet-container img.leaflet-tile{mix-blend-mode:plus-lighter}.leaflet-container.leaflet-touch-zoom{-ms-touch-action:pan-x pan-y;touch-action:pan-x pan-y}.leaflet-container.leaflet-touch-drag{-ms-touch-action:pinch-zoom;touch-action:none;touch-action:pinch-zoom}.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom{-ms-touch-action:none;touch-action:none}.leaflet-container{-webkit-tap-highlight-color:transparent}.leaflet-container a{-webkit-tap-highlight-color:rgba(51,181,229,.4)}.leaflet-tile{filter:inherit;visibility:hidden}.leaflet-tile-loaded{visibility:inherit}.leaflet-zoom-box{width:0;height:0;-moz-box-sizing:border-box;box-sizing:border-box;z-index:800}.leaflet-overlay-pane svg{-moz-user-select:none}.leaflet-pane{z-index:400}.leaflet-tile-pane{z-index:200}.leaflet-overlay-pane{z-index:400}.leaflet-shadow-pane{z-index:500}.leaflet-marker-pane{z-index:600}.leaflet-tooltip-pane{z-index:650}.leaflet-popup-pane{z-index:700}.leaflet-map-pane canvas{z-index:100}.leaflet-map-pane svg{z-index:200}.leaflet-vml-shape{width:1px;height:1px}.lvml{behavior:url(#default#VML);display:inline-block;position:absolute}.leaflet-control{position:relative;z-index:800;pointer-events:visiblePainted;pointer-events:auto}.leaflet-bottom,.leaflet-top{position:absolute;z-index:1000;pointer-events:none}.leaflet-top{top:0}.leaflet-right{right:0}.leaflet-bottom{bottom:0}.leaflet-left{left:0}.leaflet-control{float:left;clear:both}.leaflet-right .leaflet-control{float:right}.leaflet-top .leaflet-control{margin-top:10px}.leaflet-bottom .leaflet-control{margin-bottom:10px}.leaflet-left .leaflet-control{margin-left:10px}.leaflet-right .leaflet-control{margin-right:10px}.leaflet-fade-anim .leaflet-popup{opacity:0;-webkit-transition:opacity .2s linear;-moz-transition:opacity .2s linear;transition:opacity .2s linear}.leaflet-fade-anim .leaflet-map-pane .leaflet-popup{opacity:1}.leaflet-zoom-animated{-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0}svg.leaflet-zoom-animated{will-change:transform}.leaflet-zoom-anim .leaflet-zoom-animated{-webkit-transition:-webkit-transform .25s cubic-bezier(0,0,.25,1);-moz-transition:-moz-transform .25s cubic-bezier(0,0,.25,1);transition:transform .25s cubic-bezier(0,0,.25,1)}.leaflet-pan-anim .leaflet-tile,.leaflet-zoom-anim .leaflet-tile{-webkit-transition:none;-moz-transition:none;transition:none}.leaflet-zoom-anim .leaflet-zoom-hide{visibility:hidden}.leaflet-interactive{cursor:pointer}.leaflet-grab{cursor:-webkit-grab;cursor:-moz-grab;cursor:grab}.leaflet-crosshair,.leaflet-crosshair .leaflet-interactive{cursor:crosshair}.leaflet-control,.leaflet-popup-pane{cursor:auto}.leaflet-dragging .leaflet-grab,.leaflet-dragging .leaflet-grab .leaflet-interactive,.leaflet-dragging .leaflet-marker-draggable{cursor:move;cursor:-webkit-grabbing;cursor:-moz-grabbing;cursor:grabbing}.leaflet-image-layer,.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-pane>svg path,.leaflet-tile-container{pointer-events:none}.leaflet-image-layer.leaflet-interactive,.leaflet-marker-icon.leaflet-interactive,.leaflet-pane>svg path.leaflet-interactive,svg.leaflet-image-layer.leaflet-interactive path{pointer-events:visiblePainted;pointer-events:auto}.leaflet-container{background:#ddd;outline-offset:1px}.leaflet-container a{color:#0078a8}.leaflet-zoom-box{border:2px dotted #38f;background:rgba(255,255,255,.5)}.leaflet-container{font-family:"Helvetica Neue",Arial,Helvetica,sans-serif;font-size:12px;font-size:.75rem;line-height:1.5}.leaflet-bar{box-shadow:0 1px 5px rgba(0,0,0,.65);border-radius:4px}.leaflet-bar a{background-color:#fff;border-bottom:1px solid #ccc;width:26px;height:26px;line-height:26px;display:block;text-align:center;text-decoration:none;color:#000}.leaflet-bar a,.leaflet-control-layers-toggle{background-position:50% 50%;background-repeat:no-repeat;display:block}.leaflet-bar a:focus,.leaflet-bar a:hover{background-color:#f4f4f4}.leaflet-bar a:first-child{border-top-left-radius:4px;border-top-right-radius:4px}.leaflet-bar a:last-child{border-bottom-left-radius:4px;border-bottom-right-radius:4px;border-bottom:none}.leaflet-bar a.leaflet-disabled{cursor:default;background-color:#f4f4f4;color:#bbb}.leaflet-touch .leaflet-bar a{width:30px;height:30px;line-height:30px}.leaflet-touch .leaflet-bar a:first-child{border-top-left-radius:2px;border-top-right-radius:2px}.leaflet-touch .leaflet-bar a:last-child{border-bottom-left-radius:2px;border-bottom-right-radius:2px}.leaflet-control-zoom-in,.leaflet-control-zoom-out{font:bold 18px 'Lucida Console',Monaco,monospace;text-indent:1px}.leaflet-touch .leaflet-control-zoom-in,.leaflet-touch .leaflet-control-zoom-out{font-size:22px}.leaflet-control-layers{box-shadow:0 1px 5px rgba(0,0,0,.4);background:#fff;border-radius:5px}.leaflet-control-layers-toggle{background-image:url(images/layers.png);width:36px;height:36px}.leaflet-retina .leaflet-control-layers-toggle{background-image:url(images/layers-2x.png);background-size:26px 26px}.leaflet-touch .leaflet-control-layers-toggle{width:44px;height:44px}.leaflet-control-layers .leaflet-control-layers-list,.leaflet-control-layers-expanded .leaflet-control-layers-toggle{display:none}.leaflet-control-layers-expanded .leaflet-control-layers-list{display:block;position:relative}.leaflet-control-layers-expanded{padding:6px 10px 6px 6px;color:#333;background:#fff}.leaflet-control-layers-scrollbar{overflow-y:scroll;overflow-x:hidden;padding-right:5px}.leaflet-control-layers-selector{margin-top:2px;position:relative;top:1px}.leaflet-control-layers label{display:block;font-size:13px;font-size:1.08333em}.leaflet-control-layers-separator{height:0;border-top:1px solid #ddd;margin:5px -10px 5px -6px}.leaflet-default-icon-path{background-image:url(images/marker-icon.png)}.leaflet-container .leaflet-control-attribution{background:#fff;background:rgba(255,255,255,.8);margin:0}.leaflet-control-attribution,.leaflet-control-scale-line{padding:0 5px;color:#333;line-height:1.4}.leaflet-control-attribution a{text-decoration:none}.leaflet-control-attribution a:focus,.leaflet-control-attribution a:hover{text-decoration:underline}.leaflet-attribution-flag{display:inline!important;vertical-align:baseline!important;width:1em;height:.6669em}.leaflet-left .leaflet-control-scale{margin-left:5px}.leaflet-bottom .leaflet-control-scale{margin-bottom:5px}.leaflet-control-scale-line{border:2px solid #777;border-top:none;line-height:1.1;padding:2px 5px 1px;white-space:nowrap;-moz-box-sizing:border-box;box-sizing:border-box;background:rgba(255,255,255,.8);text-shadow:1px 1px #fff}.leaflet-control-scale-line:not(:first-child){border-top:2px solid #777;border-bottom:none;margin-top:-2px}.leaflet-control-scale-line:not(:first-child):not(:last-child){border-bottom:2px solid #777}.leaflet-touch .leaflet-bar,.leaflet-touch .leaflet-control-attribution,.leaflet-touch .leaflet-control-layers{box-shadow:none}.leaflet-touch .leaflet-bar,.leaflet-touch .leaflet-control-layers{border:2px solid rgba(0,0,0,.2);background-clip:padding-box}.leaflet-popup{position:absolute;text-align:center;margin-bottom:20px}.leaflet-popup-content-wrapper{padding:1px;text-align:left;border-radius:12px}.leaflet-popup-content{margin:13px 24px 13px 20px;line-height:1.3;font-size:13px;font-size:1.08333em;min-height:1px}.leaflet-popup-content p{margin:17px 0;margin:1.3em 0}.leaflet-popup-tip-container{width:40px;height:20px;position:absolute;left:50%;margin-top:-1px;margin-left:-20px;overflow:hidden;pointer-events:none}.leaflet-popup-tip{width:17px;height:17px;padding:1px;margin:-10px auto 0;pointer-events:auto;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#fff;color:#333;box-shadow:0 3px 14px rgba(0,0,0,.4)}.leaflet-container a.leaflet-popup-close-button{position:absolute;top:0;right:0;border:none;text-align:center;width:24px;height:24px;font:16px/24px Tahoma,Verdana,sans-serif;color:#757575;text-decoration:none;background:0 0}.leaflet-container a.leaflet-popup-close-button:focus,.leaflet-container a.leaflet-popup-close-button:hover{color:#585858}.leaflet-popup-scrolled{overflow:auto}.leaflet-oldie .leaflet-popup-content-wrapper{-ms-zoom:1}.leaflet-oldie .leaflet-popup-tip{width:24px;margin:0 auto}.leaflet-oldie .leaflet-control-layers,.leaflet-oldie .leaflet-control-zoom,.leaflet-oldie .leaflet-popup-content-wrapper,.leaflet-oldie .leaflet-popup-tip{border:1px solid #999}.leaflet-div-icon{background:#fff;border:1px solid #666}.leaflet-tooltip{position:absolute;padding:6px;background-color:#fff;border:1px solid #fff;border-radius:3px;color:#222;white-space:nowrap;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none;box-shadow:0 1px 3px rgba(0,0,0,.4)}.leaflet-tooltip.leaflet-interactive{cursor:pointer;pointer-events:auto}.leaflet-tooltip-bottom:before,.leaflet-tooltip-left:before,.leaflet-tooltip-right:before,.leaflet-tooltip-top:before{position:absolute;pointer-events:none;border:6px solid transparent;background:0 0;content:""}.leaflet-tooltip-bottom{margin-top:6px}.leaflet-tooltip-top{margin-top:-6px}.leaflet-tooltip-bottom:before,.leaflet-tooltip-top:before{left:50%;margin-left:-6px}.leaflet-tooltip-top:before{bottom:0;margin-bottom:-12px;border-top-color:#fff}.leaflet-tooltip-bottom:before{top:0;margin-top:-12px;margin-left:-6px;border-bottom-color:#fff}.leaflet-tooltip-left{margin-left:-6px}.leaflet-tooltip-right{margin-left:6px}.leaflet-tooltip-left:before,.leaflet-tooltip-right:before{top:50%;margin-top:-6px}.leaflet-tooltip-left:before{right:0;margin-right:-12px;border-left-color:#fff}.leaflet-tooltip-right:before{left:0;margin-left:-12px;border-right-color:#fff}@media print{.leaflet-control{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style>
 <style>
-/* Layout: the map fills the screen. A floating side panel holds the country/county story (KPI gauges,
-   capacity mix, county ranking) with a licence timeline at its foot; map controls float top-right,
-   the colour legend bottom-right, and the plant list slides up as a floating card. On phones the
-   map sits on top and the panel flows below it. */
+/* Layout: the map fills the screen. A floating side panel holds the country/county story (KPI cards,
+   capacity mix, filters, county ranking) with the project pipeline by stage at its foot; map controls
+   float top-right, the legend bottom-right, and the project list slides up as a floating card.
+   On phones the map sits on top and the panel flows below it. */
 :root {
   --bg: #020b1a;
   --panel: #061429;
@@ -44,9 +44,17 @@
   --t-gas: #e5672f;
   --t-coal: #b9b3a5;
   --t-nuclear: #9a8ff0;
-  --t-bio: #3aa33a;
-  --t-other: #e06b98;
+  --t-storage: #e06b98;
+  --t-other: #6f8fa8;
   --ring: #020b1a;
+
+  --s-1: #e6bd6c;
+  --s-2: #c99a4a;
+  --s-3: #9c7638;
+  --s-4: #6f5630;
+  --s-5: #4d3f2a;
+  --s-6: #4a5568;
+  --s-7: #343d4d;
 
   --f-display: "Playfair Display", "Didot", "Bodoni MT", Georgia, serif;
   --f-body: "Public Sans", Arial, Helvetica, sans-serif;
@@ -77,9 +85,17 @@
   --t-gas: #e05a24;
   --t-coal: #4f4b45;
   --t-nuclear: #6250d6;
-  --t-bio: #1f7f1f;
-  --t-other: #d4588a;
+  --t-storage: #d4588a;
+  --t-other: #5b7489;
   --ring: #fbf8ee;
+
+  --s-1: #8f641c;
+  --s-2: #a9792c;
+  --s-3: #c49a52;
+  --s-4: #d9bd84;
+  --s-5: #e9d9b3;
+  --s-6: #a3a9b8;
+  --s-7: #c9ccd4;
   color-scheme: light;
 }
 
@@ -94,7 +110,6 @@ body {
 button, input, select { font: inherit; color: inherit; }
 :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 .num { font-variant-numeric: tabular-nums; }
-.serif { font-family: var(--f-display); font-variant-numeric: lining-nums tabular-nums; }
 
 /* Map stage */
 .stage { position: fixed; inset: 0; }
@@ -122,10 +137,7 @@ button, input, select { font: inherit; color: inherit; }
   display: flex; flex-direction: column; gap: 8px;
 }
 .cgroup { display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--gold-soft); border-radius: 12px; box-shadow: var(--shadow); overflow: hidden; }
-.cgroup + .cgroup { margin-top: 2px; }
-.cbtn {
-  width: 42px; height: 42px; display: grid; place-items: center; border: 0; background: transparent; color: var(--gold); cursor: pointer;
-}
+.cbtn { width: 42px; height: 42px; display: grid; place-items: center; border: 0; background: transparent; color: var(--gold); cursor: pointer; }
 .cgroup .cbtn + .cbtn { border-top: 1px solid var(--line); }
 .cbtn:hover { background: var(--panel-2); }
 .cbtn[aria-pressed="true"] { background: var(--gold); color: var(--on-gold); }
@@ -134,23 +146,20 @@ button, input, select { font: inherit; color: inherit; }
 /* Legend */
 .legend {
   position: absolute; z-index: 800; right: max(16px, env(safe-area-inset-right, 0px)); bottom: 28px;
-  width: 248px; background: var(--panel); border: 1px solid var(--gold-soft); border-radius: 12px; box-shadow: var(--shadow);
-  padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; font-size: 11px; color: var(--muted);
+  width: 262px; background: var(--panel); border: 1px solid var(--gold-soft); border-radius: 12px; box-shadow: var(--shadow);
+  padding: 12px 14px; display: flex; flex-direction: column; gap: 11px; font-size: 11px; color: var(--muted);
 }
 .legend h3 { margin: 0 0 6px; font: 700 10px/1.2 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
 .ramp { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
 .ramp i { height: 9px; background: var(--c); border-radius: 2px; }
 .ramp i:first-child { border: 1px solid var(--line); }
 .ramp-labels { display: grid; grid-template-columns: repeat(7, 1fr); margin-top: 3px; font-variant-numeric: tabular-nums; }
-.ramp-labels span { text-align: left; }
 .legend .row { display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; }
 .legend svg { display: block; }
 .legend svg text { fill: var(--muted); font-size: 9.5px; font-family: var(--f-body); }
-.legend svg circle { fill: none; stroke: var(--gold); stroke-width: 1; }
-.skey { display: flex; flex-direction: column; gap: 4px; }
-.skey span { display: inline-flex; align-items: center; gap: 6px; }
-.skey i { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--gold); }
-.skey i.solid { background: var(--gold); }
+#sizeKey circle { fill: none; stroke: var(--gold); stroke-width: 1; }
+.mkey { display: grid; grid-template-columns: 14px 1fr; gap: 4px 7px; align-items: center; }
+.mkey svg circle { stroke: var(--gold); }
 
 /* Side panel */
 .panel {
@@ -170,13 +179,11 @@ button, input, select { font: inherit; color: inherit; }
 .brand h1 { margin: 0; font: 400 23px/1.05 var(--f-display); }
 .brand h1 em { font-style: normal; color: var(--gold); }
 .brand p { margin: 3px 0 0; color: var(--gold-ink); font-size: 11.5px; }
-.search {
-  width: 100%; padding: 9px 12px 9px 34px; border: 1px solid var(--gold-soft); border-radius: 10px; background: var(--bg) no-repeat 11px 50% / 15px;
-}
-.search::placeholder { color: var(--muted); }
-.search:hover { border-color: var(--gold); }
 .searchwrap { position: relative; }
 .searchwrap svg { position: absolute; left: 11px; top: 50%; width: 15px; height: 15px; transform: translateY(-50%); color: var(--gold); pointer-events: none; }
+.search { width: 100%; padding: 9px 12px 9px 34px; border: 1px solid var(--gold-soft); border-radius: 10px; background: var(--bg); }
+.search::placeholder { color: var(--muted); }
+.search:hover { border-color: var(--gold); }
 
 .pbody { flex: 1; min-height: 0; overflow-y: auto; padding: 16px 18px 20px; display: flex; flex-direction: column; gap: 22px; }
 .sec { display: flex; flex-direction: column; gap: 9px; }
@@ -193,18 +200,14 @@ button, input, select { font: inherit; color: inherit; }
 .zone h2 { margin: 0; font: 400 30px/1.05 var(--f-display); }
 .zone p { margin: 0; color: var(--muted); font-size: 12.5px; }
 
-/* KPI gauges */
+/* KPI cards */
 .kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.kpi { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel-2); min-width: 0; }
-.kpi .ring { width: 46px; height: 46px; flex: none; }
-.kpi .ring circle { fill: none; stroke-width: 5; }
-.kpi .ring .trk { stroke: var(--line); }
-.kpi .ring .val { stroke: var(--gold); stroke-linecap: round; transition: stroke-dasharray .4s; }
-.kpi .ring text { fill: var(--ink); font: 500 13px var(--f-display); }
-.kpi b { display: block; font: 500 22px/1 var(--f-display); color: var(--gold); font-variant-numeric: lining-nums tabular-nums; }
-.kpi span { display: block; font-size: 11.5px; color: var(--muted); margin-top: 3px; line-height: 1.25; }
-.kpi .ico { width: 46px; height: 46px; flex: none; border-radius: 50%; border: 1px solid var(--gold); display: grid; place-items: center; color: var(--gold); }
-.kpi .ico svg { width: 21px; height: 21px; }
+.kpi { display: flex; align-items: center; gap: 11px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel-2); min-width: 0; }
+.kpi b { display: block; font: 500 21px/1 var(--f-display); color: var(--gold); font-variant-numeric: lining-nums tabular-nums; white-space: nowrap; }
+.kpi b small { font: 500 11px var(--f-body); color: var(--muted); margin-left: 3px; }
+.kpi span { display: block; font-size: 11.5px; color: var(--muted); margin-top: 4px; line-height: 1.25; }
+.kpi .ico { width: 40px; height: 40px; flex: none; border-radius: 50%; border: 1px solid var(--gold); display: grid; place-items: center; color: var(--gold); }
+.kpi .ico svg { width: 19px; height: 19px; }
 
 /* Capacity mix rows: legend + filter + bar chart in one */
 .techlist { display: flex; flex-direction: column; gap: 1px; }
@@ -216,7 +219,7 @@ button, input, select { font: inherit; color: inherit; }
 .tech .sw { width: 10px; height: 10px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 2px var(--panel), 0 0 0 3px var(--c); margin-left: 1px; }
 .tech .name { font-weight: 600; font-size: 13px; }
 .tech .pct { font-size: 12px; color: var(--muted); text-align: right; min-width: 34px; font-variant-numeric: tabular-nums; }
-.tech .val { font: 500 14px/1 var(--f-display); text-align: right; min-width: 64px; font-variant-numeric: lining-nums tabular-nums; }
+.tech .val { font: 500 14px/1 var(--f-display); text-align: right; min-width: 72px; font-variant-numeric: lining-nums tabular-nums; }
 .tech .bar { grid-column: 2 / 5; height: 5px; border-radius: 3px; background: var(--panel-2); overflow: hidden; }
 .tech .bar i { display: block; height: 100%; width: var(--w); background: var(--c); border-radius: 0 3px 3px 0; transition: width .3s; }
 .tech[aria-pressed="false"] .sw { background: transparent; }
@@ -227,9 +230,10 @@ button, input, select { font: inherit; color: inherit; }
 .seg button { border: 1px solid var(--gold-soft); background: transparent; border-radius: 999px; padding: 4px 11px; cursor: pointer; font-size: 12.5px; }
 .seg button:hover { border-color: var(--gold); }
 .seg button[aria-pressed="true"] { background: var(--gold); color: var(--on-gold); border-color: var(--gold); font-weight: 600; }
-.seg .n { opacity: .7; margin-left: 5px; font-variant-numeric: tabular-nums; }
-.filters { display: grid; grid-template-columns: auto 1fr; gap: 8px 12px; align-items: center; }
+.filters { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px 12px; align-items: center; }
 .filters label { font-size: 12px; color: var(--muted); }
+.select { width: 100%; padding: 6px 10px; border: 1px solid var(--gold-soft); border-radius: 8px; background: var(--bg); font-size: 13px; }
+.select:hover { border-color: var(--gold); }
 
 /* County ranking */
 .tabs { display: inline-flex; border: 1px solid var(--gold-soft); border-radius: 999px; padding: 2px; gap: 2px; }
@@ -244,61 +248,63 @@ button, input, select { font: inherit; color: inherit; }
 .rrow .ix { font-size: 11px; color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
 .rrow .nm { font-weight: 600; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .rrow .nm small { display: block; font-weight: 400; color: var(--muted); font-size: 11.5px; }
-.badge { min-width: 78px; text-align: center; padding: 3px 9px; border-radius: 6px; background: var(--c); color: var(--t); font: 600 12.5px/1.2 var(--f-body); font-variant-numeric: tabular-nums; border: 1px solid var(--line); }
+.badge { min-width: 84px; text-align: center; padding: 3px 9px; border-radius: 6px; background: var(--c); color: var(--t); font: 600 12.5px/1.2 var(--f-body); font-variant-numeric: tabular-nums; border: 1px solid var(--line); }
 
-/* Largest plants in a county */
+/* Largest projects in a county */
 .plist { display: flex; flex-direction: column; }
 .prow { display: grid; grid-template-columns: 10px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 6px 8px; border-radius: 8px; border: 1px solid transparent; background: none; cursor: pointer; text-align: left; width: 100%; }
 .prow:hover { background: var(--panel-2); border-color: var(--line); }
 .prow .d { width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
-.prow .d.exp { background: transparent; border: 2px solid var(--c); }
+.prow .d.ring { background: transparent; border: 2px solid var(--c); }
 .prow .nm { font-size: 13px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .prow .nm small { display: block; font-weight: 400; color: var(--muted); font-size: 11.5px; }
-.prow b { font: 500 14px var(--f-display); font-variant-numeric: lining-nums tabular-nums; }
+.prow b { font: 500 14px var(--f-display); font-variant-numeric: lining-nums tabular-nums; white-space: nowrap; }
 .wide { border: 1px solid var(--gold); background: transparent; color: var(--gold-ink); border-radius: 10px; padding: 8px 12px; cursor: pointer; font-weight: 600; font-size: 13px; }
 .wide:hover { background: var(--gold); color: var(--on-gold); }
 
 .about { font-size: 11.5px; color: var(--muted); display: flex; flex-direction: column; gap: 6px; }
 .about::before { content: ""; width: 34px; height: 1px; background: var(--gold); margin-bottom: 4px; }
 .about p { margin: 0; }
+.about ul { margin: 0; padding-left: 16px; }
 .about b { color: var(--ink); font-weight: 600; }
 
-/* Licence timeline */
-.pfoot { border-top: 1px solid var(--gold-soft); padding: 12px 18px 14px; background: var(--panel); display: flex; flex-direction: column; gap: 6px; }
-.tl-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-.tl-head h2 { margin: 0; font: 700 10.5px/1.2 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
-.tl-head .yr { font-size: 12px; color: var(--muted); }
-.tl-head .yr b { font: 500 18px var(--f-display); color: var(--ink); font-variant-numeric: lining-nums; }
-.tl-row { display: grid; grid-template-columns: 32px 1fr; gap: 10px; align-items: end; }
-.play { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--gold); background: transparent; color: var(--gold); display: grid; place-items: center; cursor: pointer; }
-.play:hover, .play[aria-pressed="true"] { background: var(--gold); color: var(--on-gold); }
-.play svg { width: 13px; height: 13px; }
-#hist { display: block; width: 100%; height: 40px; }
-#hist rect { fill: var(--gold); }
-#hist rect.after { fill: var(--line); }
-#hist rect.hit { fill: transparent; cursor: pointer; }
-#year { width: 100%; margin: 2px 0 0; accent-color: var(--gold); }
-.tl-axis { display: flex; justify-content: space-between; font-size: 10.5px; color: var(--muted); padding-left: 42px; font-variant-numeric: tabular-nums; }
+/* Project pipeline by stage */
+.pfoot { border-top: 1px solid var(--gold-soft); padding: 12px 18px 12px; background: var(--panel); display: flex; flex-direction: column; gap: 8px; }
+.pl-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.pl-head h2 { margin: 0; font: 700 10.5px/1.2 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.pl-head span { font-size: 12px; color: var(--muted); }
+.pl-head b { font: 500 16px var(--f-display); color: var(--ink); font-variant-numeric: lining-nums tabular-nums; }
+.plbar { display: flex; height: 12px; border-radius: 4px; overflow: hidden; gap: 2px; background: var(--panel-2); }
+.plbar i { display: block; height: 100%; background: var(--c); min-width: 2px; transition: flex-grow .3s; }
+.plbar i.off { opacity: .2; }
+.stages { display: grid; grid-template-columns: 1fr 1fr; gap: 1px 8px; }
+.stage-btn { display: grid; grid-template-columns: 10px minmax(0, 1fr) auto; gap: 7px; align-items: center; padding: 3px 6px; border: 1px solid transparent; border-radius: 6px; background: none; cursor: pointer; text-align: left; font-size: 11.5px; width: 100%; }
+.stage-btn:hover { background: var(--panel-2); border-color: var(--line); }
+.stage-btn i { width: 10px; height: 10px; border-radius: 2px; background: var(--c); }
+.stage-btn span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.stage-btn b { font-weight: 600; font-variant-numeric: tabular-nums; color: var(--muted); }
+.stage-btn[aria-pressed="false"] i { background: transparent; border: 1px solid var(--c); }
+.stage-btn[aria-pressed="false"] span { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--line); }
 
 /* Popup and tooltips */
 .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: var(--panel); color: var(--ink); box-shadow: var(--shadow); }
 .leaflet-popup-content-wrapper { border-radius: 12px; border: 1px solid var(--gold); }
 .leaflet-popup-tip { border: 1px solid var(--gold); }
-.leaflet-popup-content { margin: 16px 18px; font-size: 13px; line-height: 1.45; min-width: 240px; }
+.leaflet-popup-content { margin: 16px 18px; font-size: 13px; line-height: 1.45; min-width: 250px; }
 .leaflet-container a.leaflet-popup-close-button { color: var(--gold); top: 6px; right: 6px; }
 .pp-tag { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: var(--gold); font-weight: 700; }
 .pp-tag i { width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
-.pp-name { font: 500 20px/1.15 var(--f-display); margin: 6px 0 2px; }
+.pp-name { font: 500 19px/1.2 var(--f-display); margin: 6px 0 2px; overflow-wrap: anywhere; }
 .pp-mw { font: 500 30px/1 var(--f-display); color: var(--gold); margin: 8px 0 12px; font-variant-numeric: lining-nums tabular-nums; }
 .pp-mw small { font: 500 13px var(--f-body); color: var(--muted); margin-left: 4px; }
 .pp dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 14px; margin: 0; padding-top: 10px; border-top: 1px solid var(--gold-soft); }
 .pp dt { color: var(--muted); }
 .pp dd { margin: 0; overflow-wrap: anywhere; }
-.pp .note { margin-top: 12px; font-size: 12px; color: var(--muted); }
-.pp .note.warn::before { content: "⚠ "; color: var(--gold); }
+.pp .desc { margin-top: 10px; font-size: 12px; color: var(--muted); max-height: 7.5em; overflow: auto; }
+.pp .note { margin-top: 10px; font-size: 12px; color: var(--muted); }
 .pp a { color: var(--gold-ink); }
-.pill { display: inline-block; padding: 1px 9px; border-radius: 999px; font-size: 12px; font-weight: 600; border: 1px solid var(--gold); color: var(--gold-ink); }
-.pill.exp { color: var(--muted); border-color: var(--muted); border-style: dashed; font-weight: 500; }
+.pill { display: inline-flex; align-items: center; gap: 6px; padding: 1px 9px 1px 7px; border-radius: 999px; font-size: 12px; font-weight: 600; border: 1px solid var(--line); white-space: nowrap; }
+.pill i { width: 8px; height: 8px; border-radius: 2px; background: var(--c); }
 
 .leaflet-tooltip { background: var(--panel); color: var(--ink); border: 1px solid var(--gold-soft); box-shadow: var(--shadow); font-size: 12px; padding: 6px 10px; border-radius: 8px; }
 .leaflet-tooltip-top:before { border-top-color: var(--gold-soft); }
@@ -306,7 +312,7 @@ button, input, select { font: inherit; color: inherit; }
 .tt .m { color: var(--muted); }
 .tt .v { color: var(--gold-ink); font-weight: 600; }
 
-/* Plant list card */
+/* Project list card */
 .drawer {
   position: fixed; z-index: 950; left: calc(var(--panel-w) + 32px + env(safe-area-inset-left, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); bottom: 16px; height: min(52%, 460px);
   background: var(--panel); border: 1px solid var(--gold); border-radius: 16px; box-shadow: var(--shadow);
@@ -320,6 +326,7 @@ button, input, select { font: inherit; color: inherit; }
 .tablewrap { overflow: auto; flex: 1; min-height: 0; }
 table { width: 100%; border-collapse: collapse; font-size: 13px; }
 th, td { padding: 7px 12px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td.name { max-width: 320px; overflow: hidden; text-overflow: ellipsis; }
 th { position: sticky; top: 0; background: var(--panel); z-index: 1; }
 th button { border: 0; background: none; padding: 0; cursor: pointer; font-weight: 700; color: var(--gold); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; }
 th button[data-dir]::after { content: attr(data-dir); margin-left: 4px; }
@@ -335,12 +342,10 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
   .stage { position: relative; height: 60svh; min-height: 380px; }
   .panel { position: static; width: auto; border: 0; border-top: 1px solid var(--gold-soft); border-radius: 0; box-shadow: none; overflow: visible; }
   .phead, .pbody, .pfoot { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
-  .pbody { overflow: visible; }
-  .panel { display: flex; flex-direction: column; }
+  .pbody { overflow: visible; order: 2; }
   .pfoot { order: 1; border-top: 0; border-bottom: 1px solid var(--gold-soft); }
-  .pbody { order: 2; }
-  .legend { left: max(10px, env(safe-area-inset-left, 0px)); right: auto; bottom: 22px; width: 200px; padding: 8px 10px; }
-  .legend .row, .legend .skey { display: none; }
+  .legend { left: max(10px, env(safe-area-inset-left, 0px)); right: auto; bottom: 22px; width: 210px; padding: 8px 10px; }
+  .legend .row, .legend .mkey, .legend .mk-title { display: none; }
   .controls { top: 10px; right: max(10px, env(safe-area-inset-right, 0px)); }
   .cbtn { width: 38px; height: 38px; }
   .drawer { left: 0; right: 0; bottom: 0; height: 78%; border-radius: 16px 16px 0 0; }
@@ -360,30 +365,38 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
       <button class="cbtn" id="zHome" type="button" title="Show all of Romania" aria-label="Show all of Romania"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
     </div>
     <div class="cgroup">
-      <button class="cbtn" id="layerPlants" type="button" aria-pressed="true" title="Power plants" aria-label="Show power plants"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="8" r="2.6"/><circle cx="16.5" cy="7" r="1.8"/><circle cx="14" cy="16" r="4"/><circle cx="5.5" cy="17" r="1.4"/></svg></button>
+      <button class="cbtn" id="layerPlants" type="button" aria-pressed="true" title="Projects" aria-label="Show projects"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="8" r="2.6"/><circle cx="16.5" cy="7" r="1.8"/><circle cx="14" cy="16" r="4"/><circle cx="5.5" cy="17" r="1.4"/></svg></button>
       <button class="cbtn" id="layerFill" type="button" aria-pressed="true" title="Colour counties by capacity" aria-label="Colour counties by capacity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 12.5 9 5 9-5"/><path d="m3 17 9 5 9-5" opacity=".6"/></svg></button>
       <button class="cbtn" id="layerLabels" type="button" aria-pressed="true" title="County names" aria-label="Show county names"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5h16v2M12 5v14M9 19h6"/></svg></button>
     </div>
     <div class="cgroup">
-      <button class="cbtn" id="listBtn" type="button" aria-pressed="false" title="Plant list" aria-label="Open plant list"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></svg></button>
+      <button class="cbtn" id="listBtn" type="button" aria-pressed="false" title="Project list" aria-label="Open project list"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></svg></button>
       <button class="cbtn" id="themeBtn" type="button" title="Switch to cream theme" aria-label="Switch colour theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></button>
     </div>
   </div>
 
   <div class="legend" aria-hidden="true">
     <div>
-      <h3>Installed capacity by county</h3>
+      <h3>Capacity by county, MW</h3>
       <div class="ramp" id="ramp"></div>
       <div class="ramp-labels" id="rampLabels"></div>
     </div>
     <div class="row">
-      <div><h3>Plant size, MW</h3><svg id="sizeKey" width="120" height="50"></svg></div>
-      <div class="skey"><span><i class="solid"></i>Operating</span><span><i></i>Licence expired</span></div>
+      <div><h3>Project size, MW</h3><svg id="sizeKey" width="120" height="50"></svg></div>
+      <div>
+        <h3 class="mk-title">Stage</h3>
+        <div class="mkey">
+          <svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="var(--gold)" stroke-width="1"/></svg><span>Operating</span>
+          <svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="var(--gold)" fill-opacity=".4" stroke-width="2"/></svg><span>Construction</span>
+          <svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="none" stroke-width="1.6"/></svg><span>Planned</span>
+          <svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="none" stroke-width="1.4" stroke-dasharray="2 2" style="stroke:var(--muted)"/></svg><span>Closed</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<aside class="panel" aria-label="Romania power capacity">
+<aside class="panel" aria-label="Romania power projects">
   <div class="phead">
     <canvas id="wave" aria-hidden="true"></canvas>
     <div class="brand">
@@ -392,12 +405,12 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
       <span class="rule" aria-hidden="true"></span>
       <div>
         <h1>Romania <em>Power Map</em></h1>
-        <p>Licensed capacity · ANRE, Apr 2023</p>
+        <p>Operating plants &amp; project pipeline</p>
       </div>
     </div>
     <div class="searchwrap">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
-      <input id="q" class="search" type="search" placeholder="Search plant, company or locality" autocomplete="off" aria-label="Search">
+      <input id="q" class="search" type="search" placeholder="Search project, company or locality" autocomplete="off" aria-label="Search">
     </div>
   </div>
 
@@ -413,7 +426,8 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     <div class="sec">
       <h2>Filters</h2>
       <div class="filters">
-        <label>Status</label><div class="seg" id="statusSeg" role="group" aria-label="Licence status"></div>
+        <label for="srcSel">Source</label>
+        <select id="srcSel" class="select"></select>
         <label>Size</label><div class="seg" id="sizeSeg" role="group" aria-label="Minimum capacity"></div>
       </div>
     </div>
@@ -421,43 +435,43 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     <div class="sec" id="rankSec">
       <h2>Counties
         <span class="tabs" id="sortTabs" role="group" aria-label="Rank counties by">
-          <button type="button" data-k="mw" aria-pressed="true">MW</button><button type="button" data-k="n" aria-pressed="false">Plants</button><button type="button" data-k="ren" aria-pressed="false">Renewable %</button>
+          <button type="button" data-k="mw" aria-pressed="true">MW</button><button type="button" data-k="n" aria-pressed="false">Projects</button><button type="button" data-k="ren" aria-pressed="false">Renewable %</button>
         </span>
       </h2>
       <div class="rank" id="rank"></div>
     </div>
 
     <div class="sec" id="plantSec" hidden>
-      <h2>Largest plants</h2>
+      <h2>Largest projects</h2>
       <div class="plist" id="plist"></div>
-      <button class="wide" id="allInCounty" type="button">Show all plants in a list</button>
+      <button class="wide" id="allInCounty" type="button">Show all projects in a list</button>
     </div>
 
     <div class="about">
-      <p><b>Source:</b> ANRE (Romanian Energy Regulatory Authority), licensed power generation capacities, 24.04.2023. <b>Operating</b> means the generation licence is valid; <b>Licence expired</b> means it has lapsed. The register does not cover projects in planning or construction.</p>
-      <p><b>Locations</b> are placed at the plant's locality (GeoNames gazetteer), not the exact site. <span id="approxNote"></span></p>
-      <p><b>Renewable</b> counts solar, wind, hydro, biomass, biogas and geothermal capacity.</p>
-      <p>The source file's TOTAL row reads 18,923 MW, but its plant rows add up to 11,587 MW. This map uses the plant rows.</p>
+      <p><b>Sources</b> (Romania energy projects master database, 2026):</p>
+      <ul>
+        <li>ANRE licensed capacity register, 24.04.2023</li>
+        <li>Transelectrica Annex 9.1–9.3: connection permits (ATR), certificates and solution studies</li>
+        <li>Distribution operators: DEER (Electrica) 30.11.2025, Rețele Electrice (PPC) Q2 2026, Distribuție Energie Oltenia 02.10.2026</li>
+        <li>Global Energy Monitor power tracker (rows with no source in the file, identified by GEM unit IDs)</li>
+      </ul>
+      <p><b>Stages</b> follow the master file. An ATR or a solution study is a grid-connection step, not a commitment to build, so planned capacity far exceeds what will be built.</p>
+      <p><b>Cleaning:</b> subtotal and note rows removed; the ANRE register's duplicate copy removed; Global Energy Monitor units already listed as operating by ANRE or a grid operator removed; a few distribution-operator values recorded in kW converted to MW. Sources can still overlap, so totals are indicative.</p>
+      <p><b>Locations</b> come from the source file and often mark the locality or county rather than the exact site. <span id="noLocNote"></span></p>
       <p><button class="linkbtn" id="reset" type="button">Reset all filters</button></p>
     </div>
   </div>
 
   <div class="pfoot">
-    <div class="tl-head"><h2>Licence timeline</h2><span class="yr">Licensed up to <b id="yrLabel">2023</b></span></div>
-    <div class="tl-row">
-      <button class="play" id="play" type="button" aria-pressed="false" title="Play the timeline" aria-label="Play the timeline"><svg viewBox="0 0 24 24" fill="currentColor"><path id="playIcon" d="M7 4.5v15l12-7.5z"/></svg></button>
-      <div>
-        <svg id="hist" preserveAspectRatio="none" aria-hidden="true"></svg>
-        <input id="year" type="range" min="1999" max="2023" step="1" value="2023" aria-label="Show plants licensed up to this year">
-      </div>
-    </div>
-    <div class="tl-axis"><span id="yrMin">1999</span><span>MW licensed per year</span><span id="yrMax">2023</span></div>
+    <div class="pl-head"><h2>Project pipeline</h2><span><b id="plTotal">–</b> MW shown</span></div>
+    <div class="plbar" id="plbar"></div>
+    <div class="stages" id="stages" role="group" aria-label="Project stage"></div>
   </div>
 </aside>
 
 <div class="drawer" id="drawer" hidden>
   <header>
-    <h2 id="listTitle">Plants</h2>
+    <h2 id="listTitle">Projects</h2>
     <span class="sp"></span>
     <button class="chip" id="csvBtn" type="button">Download CSV</button>
     <button class="chip" id="closeList" type="button">Close</button>
@@ -465,14 +479,14 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
   <div class="tablewrap">
     <table>
       <thead><tr>
-        <th><button type="button" data-k="n">Plant</button></th>
+        <th><button type="button" data-k="n">Project</button></th>
         <th><button type="button" data-k="t">Technology</button></th>
         <th class="r"><button type="button" data-k="mw" data-dir="↓">MW</button></th>
-        <th><button type="button" data-k="co">Company</button></th>
+        <th><button type="button" data-k="so">Stage</button></th>
+        <th><button type="button" data-k="co">Owner</button></th>
         <th><button type="button" data-k="loc">Locality</button></th>
         <th><button type="button" data-k="cty">County</button></th>
-        <th><button type="button" data-k="st">Status</button></th>
-        <th><button type="button" data-k="iss">Licence issued</button></th>
+        <th><button type="button" data-k="ss">Source</button></th>
       </tr></thead>
       <tbody id="rows"></tbody>
     </table>
@@ -490,50 +504,67 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     { key: "gas", label: "Natural gas", members: ["Natural Gas"] },
     { key: "coal", label: "Coal", members: ["Coal"] },
     { key: "nuclear", label: "Nuclear", members: ["Nuclear"] },
-    { key: "bio", label: "Bioenergy", members: ["Biomass", "Biogas"] },
-    { key: "other", label: "Other", members: ["Waste", "Waste Heat", "Geothermal"] },
+    { key: "storage", label: "Battery storage", members: ["Storage"] },
+    { key: "other", label: "Other", members: ["Biomass", "Biogas", "Hybrid", "Thermal / Other", "Waste", "Waste Heat", "Other"] },
   ];
   const TECH_OF = {};
   TECH.forEach(t => t.members.forEach(m => (TECH_OF[m] = t)));
-  const RENEWABLE = new Set(["Solar", "Wind", "Hydro", "Biomass", "Biogas", "Geothermal"]);
+  const RENEWABLE = new Set(["Solar", "Wind", "Hydro", "Biomass", "Biogas"]);
+  // Stages in pipeline order. "kind" sets the marker style.
+  const STAGES = [
+    { v: "Operating", short: "Operating", kind: "op" },
+    { v: "Commissioned (PIF)", short: "Commissioned", kind: "op" },
+    { v: "Under construction / testing", short: "Construction", kind: "build" },
+    { v: "Connection certificate (CDC)", short: "Connection cert.", kind: "plan" },
+    { v: "Planning / ATR / pre-construction", short: "Planning / ATR", kind: "plan" },
+    { v: "Mothballed", short: "Mothballed", kind: "closed" },
+    { v: "Retired / cancelled", short: "Retired", kind: "closed" },
+  ];
+  const STAGE_IX = Object.fromEntries(STAGES.map((s, i) => [s.v, i]));
+  const SOURCES = [
+    { v: "", label: "All sources" },
+    { v: "anre", label: "ANRE register (2023)", test: s => s.startsWith("ANRE") },
+    { v: "tso", label: "Transelectrica (transmission)", test: s => s.startsWith("Transelectrica") },
+    { v: "dso", label: "Distribution operators", test: s => /^(DEER|Rețele|Distribuție)/.test(s) },
+    { v: "gem", label: "Global Energy Monitor", test: s => s.startsWith("Global Energy Monitor") },
+  ];
+  const SHORT_SRC = [["ANRE", "ANRE 2023"], ["Transelectrica", "Transelectrica"], ["DEER", "DEER (Electrica)"], ["Rețele", "Rețele Electrice (PPC)"], ["Distribuție", "DEO"], ["Global Energy Monitor", "Global Energy Monitor"]];
   const SIZES = [{ v: 0, label: "All" }, { v: 1, label: "≥ 1 MW" }, { v: 10, label: "≥ 10" }, { v: 50, label: "≥ 50" }, { v: 100, label: "≥ 100" }];
-  const STATUS = [{ v: "", label: "All" }, { v: "Operating", label: "Operating" }, { v: "Expired", label: "Expired" }];
   // Choropleth classes for county capacity, MW.
-  const BREAKS = [1, 25, 100, 250, 500, 1000];
+  const BREAKS = [10, 100, 300, 1000, 2500, 5000];
   const LIST_PAGE = 300;
 
   const allTechs = () => new Set(TECH.map(t => t.key));
+  const defaultStages = () => new Set(STAGES.filter(s => s.v !== "Retired / cancelled").map(s => s.v));
   const state = {
-    techs: allTechs(), status: "", minMW: 0, county: "", q: "", year: 2023, rankBy: "mw",
+    techs: allTechs(), stages: defaultStages(), src: "", minMW: 0, county: "", q: "", rankBy: "mw",
     sortK: "mw", sortDir: -1, listAll: false, showPlants: true, showFill: true,
   };
   let plants = [], colors = {}, map, pointLayer, glowLayer, countyLayer, tiles, renderer, romaniaBounds;
-  let current = [], countyAgg = new Map(), labels = {}, counties = {}, yrMin = 1999, yrMax = 2023;
+  let current = [], countyAgg = new Map(), labels = {}, counties = {};
 
   const $ = id => document.getElementById(id);
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const fmtMW = v => v >= 100 ? Math.round(v).toLocaleString("en-US") : v >= 10 ? v.toFixed(1) : v >= 1 ? v.toFixed(2) : v.toFixed(3);
   const fmtBig = v => Math.round(v).toLocaleString("en-US");
+  const fmtGW = v => v >= 10000 ? (v / 1000).toFixed(1) + "<small>GW</small>" : fmtBig(v) + "<small>MW</small>";
   const fmtDate = d => d ? new Date(d + "T00:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }) : "–";
   const pct = (a, b) => b > 0 ? Math.round(a / b * 100) : 0;
   const radius = mw => 3 + 1.2 * Math.sqrt(Math.max(mw, 0));
   const norm = s => String(s).normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase();
   const isLight = () => document.documentElement.dataset.theme === "light";
   const isPhone = () => window.matchMedia("(max-width: 860px)").matches;
-  const labelOf = c => (counties[c] && counties[c].label) || c;
+  const labelOf = c => (counties[c] && counties[c].label) || c || "–";
 
   function hexToRgb(h) { const n = parseInt(h.replace("#", ""), 16); return [n >> 16 & 255, n >> 8 & 255, n & 255]; }
-  function mix(a, b, t) {
-    const x = hexToRgb(a), y = hexToRgb(b);
-    return "#" + x.map((v, i) => Math.round(v + (y[i] - v) * t).toString(16).padStart(2, "0")).join("");
-  }
   const lum = h => { const [r, g, b] = hexToRgb(h).map(v => { v /= 255; return v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; }); return .2126 * r + .7152 * g + .0722 * b; };
 
   function readColors() {
     const cs = getComputedStyle(document.documentElement);
     const v = n => cs.getPropertyValue(n).trim();
     TECH.forEach(t => (colors[t.key] = v("--t-" + t.key)));
-    Object.assign(colors, { ring: v("--ring"), land: v("--land"), gold: v("--gold"), goldBright: v("--gold-bright"), ink: v("--ink"), panel: v("--panel") });
+    Object.assign(colors, { ring: v("--ring"), land: v("--land"), gold: v("--gold"), goldBright: v("--gold-bright"), ink: v("--ink"), panel: v("--panel"), muted: v("--muted") });
+    colors.stage = STAGES.map((_, i) => v("--s-" + (i + 1)));
     // Navy-to-gold through bronze; a straight navy/gold blend turns grey in the middle classes.
     colors.ramp = isLight()
       ? ["#f4e9cf", "#ecd9ac", "#e2c486", "#d4aa5d", "#c08f3c", "#a2732a"]
@@ -543,10 +574,10 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
   const fillOf = mw => { const i = classOf(mw); return i < 0 ? colors.land : colors.ramp[i]; };
   const textOn = bg => lum(bg) > 0.33 ? "#061429" : "#f3efe2";
 
-  // Plants sharing one locality point are fanned out in a small spiral so each stays clickable.
+  // Projects sharing one point are fanned out in a small spiral so each stays clickable.
   function spread(list) {
     const groups = new Map();
-    list.forEach(p => { const k = p.lat + "," + p.lon; (groups.get(k) || groups.set(k, []).get(k)).push(p); });
+    list.forEach(p => { if (p.lat == null) return; const k = p.lat + "," + p.lon; (groups.get(k) || groups.set(k, []).get(k)).push(p); });
     groups.forEach(g => {
       g.sort((a, b) => b.mw - a.mw);
       g.forEach((p, i) => {
@@ -560,48 +591,56 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
 
   function matchesExcept(p, skip) {
     if (skip !== "tech" && !state.techs.has(p.tk)) return false;
+    if (skip !== "stage" && !state.stages.has(p.st)) return false;
     if (p.mw < state.minMW) return false;
-    if (skip !== "status" && state.status && p.st !== state.status) return false;
+    if (state.src && p.sg !== state.src) return false;
     if (skip !== "county" && state.county && p.cty !== state.county) return false;
-    if (skip !== "year" && p.yr && p.yr > state.year) return false;
     if (state.q && !p.s.includes(state.q)) return false;
     return true;
   }
 
   function aggregate(list) {
-    const a = { mw: 0, n: 0, ren: 0, op: 0, by: {}, nb: {} };
+    const a = { mw: 0, n: 0, ren: 0, op: 0, build: 0, plan: 0 };
     list.forEach(p => {
       a.mw += p.mw; a.n++;
       if (RENEWABLE.has(p.t)) a.ren += p.mw;
-      if (p.st === "Operating") a.op += p.mw;
-      a.by[p.tk] = (a.by[p.tk] || 0) + p.mw; a.nb[p.tk] = (a.nb[p.tk] || 0) + 1;
+      const k = STAGES[p.so].kind;
+      if (k === "op") a.op += p.mw; else if (k === "build") a.build += p.mw; else if (k === "plan") a.plan += p.mw;
     });
     return a;
   }
 
-  const statusPill = p => p.st === "Expired" ? '<span class="pill exp">Licence expired</span>' : '<span class="pill">Operating</span>';
-  // Expired licences draw as rings so status reads without relying on colour.
-  const markerStyle = (p, hover) => p.st === "Expired"
-    ? { color: hover ? colors.ink : colors[p.tk], weight: hover ? 3 : 2, fillColor: colors[p.tk], fillOpacity: 0.15 }
-    : { color: hover ? colors.ink : colors.ring, weight: hover ? 2.5 : 1.2, fillColor: colors[p.tk], fillOpacity: 0.95 };
+  const stagePill = (p, full) => `<span class="pill" style="--c:${colors.stage[p.so]}"><i></i>${esc(full ? STAGES[p.so].v : STAGES[p.so].short)}</span>`;
+  const markerStyle = (p, hover) => {
+    const c = colors[p.tk], hc = colors.ink;
+    switch (STAGES[p.so].kind) {
+      case "op": return { color: hover ? hc : colors.ring, weight: hover ? 2.5 : 1.2, fillColor: c, fillOpacity: 0.95, dashArray: null };
+      case "build": return { color: hover ? hc : c, weight: hover ? 3 : 2, fillColor: c, fillOpacity: 0.4, dashArray: null };
+      case "plan": return { color: hover ? hc : c, weight: hover ? 2.6 : 1.5, fillColor: c, fillOpacity: 0.07, dashArray: null };
+      default: return { color: hover ? hc : colors.muted, weight: hover ? 2.4 : 1.4, fillColor: colors.muted, fillOpacity: 0.05, dashArray: "3 3" };
+    }
+  };
 
   function popupHtml(p) {
     const t = TECH_OF[p.t];
-    const sub = t.members.length > 1 ? " · " + esc(p.t) : "";
+    const sub = t.members.length > 1 || p.t !== t.label ? (p.t !== t.label ? " · " + esc(p.t) : "") : "";
+    const rows = [
+      ["Stage", stagePill(p, true)],
+      ["Owner", esc(p.co)],
+      ["Locality", esc(p.loc)],
+      ["County", esc(labelOf(p.cty))],
+      ["Source", esc(p.src)],
+      [p.lic ? "Licence no." : "ID", esc(p.lic || p.id)],
+    ].filter(([, v]) => v && v !== "–");
+    if (p.iss) rows.push(["Licence issued", fmtDate(p.iss)]);
+    if (p.exp) rows.push(["Licence expires", fmtDate(p.exp)]);
     return `<div class="pp">
       <span class="pp-tag" style="--c:${colors[t.key]}"><i></i>${esc(t.label)}${sub}</span>
       <div class="pp-name">${esc(p.n)}</div>
-      <div class="pp-mw">${fmtMW(p.mw)}<small>MW installed</small></div>
-      <dl>
-        <dt>Company</dt><dd>${esc(p.co)}</dd>
-        <dt>Locality</dt><dd>${esc(p.loc)}</dd>
-        <dt>County</dt><dd>${esc(labelOf(p.cty))}</dd>
-        <dt>Status</dt><dd>${statusPill(p)}</dd>
-        <dt>Licence no.</dt><dd>${esc(p.lic ?? "–")}</dd>
-        <dt>Issued</dt><dd>${fmtDate(p.iss)}</dd>
-        <dt>Expires</dt><dd>${fmtDate(p.exp)}</dd>
-      </dl>
-      <div class="note ${p.p ? "" : "warn"}">${p.p ? "Location: centre of the locality, not the exact site." : "Location approximate: locality not found, shown at the coordinates given in the source file."}
+      <div class="pp-mw">${fmtMW(p.mw)}<small>MW</small></div>
+      <dl>${rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>
+      ${p.d ? `<div class="desc">${esc(p.d)}</div>` : ""}
+      <div class="note">Coordinates as given in the source file.
         <a href="https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lon}" target="_blank" rel="noopener">Open in Google Maps</a></div>
     </div>`;
   }
@@ -609,11 +648,11 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
   function drawPoints(list) {
     pointLayer.clearLayers();
     if (!state.showPlants) return;
-    // Big plants first so small ones stay on top and clickable.
-    [...list].sort((a, b) => b.mw - a.mw).forEach(p => {
+    // Big projects first so small ones stay on top and clickable.
+    [...list].filter(p => p.lat != null).sort((a, b) => b.mw - a.mw).forEach(p => {
       const m = L.circleMarker([p.y, p.x], { renderer, radius: radius(p.mw), ...markerStyle(p, false) });
-      m.bindTooltip(`<b>${esc(p.n)}</b> · ${fmtMW(p.mw)} MW`, { direction: "top", offset: [0, -radius(p.mw)] });
-      m.bindPopup(() => popupHtml(p), { maxWidth: 330, autoPanPaddingTopLeft: [isPhone() ? 10 : 430, 20] });
+      m.bindTooltip(`<b>${esc(p.n)}</b> · ${fmtMW(p.mw)} MW · ${esc(STAGES[p.so].short)}`, { direction: "top", offset: [0, -radius(p.mw)] });
+      m.bindPopup(() => popupHtml(p), { maxWidth: 340, autoPanPaddingTopLeft: [isPhone() ? 10 : 430, 20] });
       m.on("mouseover", () => m.setStyle(markerStyle(p, true)));
       m.on("mouseout", () => m.setStyle(markerStyle(p, false)));
       p.marker = m;
@@ -636,35 +675,30 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     Object.entries(labels).forEach(([k, m]) => { const el = m.getElement(); if (el) el.classList.toggle("sel", state.county === k); });
   }
 
-  function ring(value, label) {
-    const r = 19, c = 2 * Math.PI * r, v = Math.max(0, Math.min(100, value));
-    return `<svg class="ring" viewBox="0 0 46 46"><circle class="trk" cx="23" cy="23" r="${r}"/>
-      <circle class="val" cx="23" cy="23" r="${r}" stroke-dasharray="${(c * v / 100).toFixed(1)} ${c.toFixed(1)}" transform="rotate(-90 23 23)"/>
-      <text x="23" y="27.5" text-anchor="middle">${label}</text></svg>`;
-  }
-
   function renderKpis(a) {
     const ico = {
       bolt: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M13 2.5 5 13.5h6l-1 8 8-11h-6l1-8Z"/></svg>',
+      crane: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V4l12 3H6M10 4v3M18 7v5M16.5 12h3M3 21h8"/></svg>',
+      doc: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>',
       pin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.8" r="2.3"/></svg>',
     };
     $("kpis").innerHTML = `
-      <div class="kpi"><span class="ico">${ico.bolt}</span><div><b>${fmtBig(a.mw)}</b><span>MW installed</span></div></div>
-      <div class="kpi"><span class="ico">${ico.pin}</span><div><b>${a.n.toLocaleString("en-US")}</b><span>power plants</span></div></div>
-      <div class="kpi">${ring(pct(a.ren, a.mw), pct(a.ren, a.mw) + "%")}<div><span>Renewable share of capacity</span></div></div>
-      <div class="kpi">${ring(pct(a.op, a.mw), pct(a.op, a.mw) + "%")}<div><span>Capacity with a valid licence</span></div></div>`;
+      <div class="kpi"><span class="ico">${ico.bolt}</span><div><b>${fmtGW(a.op)}</b><span>operating &amp; commissioned</span></div></div>
+      <div class="kpi"><span class="ico">${ico.crane}</span><div><b>${fmtGW(a.build)}</b><span>under construction</span></div></div>
+      <div class="kpi"><span class="ico">${ico.doc}</span><div><b>${fmtGW(a.plan)}</b><span>planned (ATR, studies, CDC)</span></div></div>
+      <div class="kpi"><span class="ico">${ico.pin}</span><div><b>${a.n.toLocaleString("en-US")}</b><span>projects · ${pct(a.ren, a.mw)}% renewable</span></div></div>`;
   }
 
   function renderZone(a) {
     if (!state.county) {
-      $("zone").innerHTML = `<h2>Romania</h2><p>${countyAgg.size} counties with licensed capacity · licensed up to ${state.year}</p>`;
+      $("zone").innerHTML = `<h2>Romania</h2><p>${countyAgg.size} counties · ${fmtBig(a.mw)} MW across the selected stages</p>`;
       return;
     }
     const ranked = [...countyAgg.entries()].sort((x, y) => y[1].mw - x[1].mw).map(e => e[0]);
     const rank = ranked.indexOf(state.county) + 1;
     $("zone").innerHTML = `<button class="back" id="backBtn" type="button"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Romania</button>
       <h2>${esc(labelOf(state.county))}</h2>
-      <p>${rank ? `#${rank} of ${ranked.length} counties by capacity` : "No capacity matches these filters"} · ${a.n} plants</p>`;
+      <p>${rank ? `#${rank} of ${ranked.length} counties by capacity` : "No capacity matches these filters"} · ${a.n} projects</p>`;
     $("backBtn").onclick = () => selectCounty("");
   }
 
@@ -675,18 +709,28 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     const max = Math.max(1, ...Object.values(agg).map(a => a.mw));
     $("techList").innerHTML = TECH.map(t => {
       const a = agg[t.key], on = state.techs.has(t.key);
-      return `<button type="button" class="tech" data-k="${t.key}" aria-pressed="${on}" style="--c:${colors[t.key]};--w:${(a.mw / max * 100).toFixed(1)}%" title="${t.label}: ${a.n} plants">
+      const tip = t.key === "other" ? "Biomass, biogas, hybrid, thermal, waste and unspecified" : t.label;
+      return `<button type="button" class="tech" data-k="${t.key}" aria-pressed="${on}" style="--c:${colors[t.key]};--w:${(a.mw / max * 100).toFixed(1)}%" title="${tip}: ${a.n} projects">
         <span class="sw"></span><span class="name">${t.label}</span><span class="pct">${pct(a.mw, total)}%</span><span class="val">${fmtBig(a.mw)} MW</span>
         <span class="bar"><i></i></span></button>`;
     }).join("");
   }
 
   function renderFilters() {
-    const base = plants.filter(p => matchesExcept(p, "status"));
-    const n = { "": base.length, Operating: 0, Expired: 0 };
-    base.forEach(p => n[p.st]++);
-    $("statusSeg").innerHTML = STATUS.map(s => `<button type="button" data-v="${s.v}" aria-pressed="${state.status === s.v}">${s.label}<span class="n">${n[s.v].toLocaleString("en-US")}</span></button>`).join("");
     $("sizeSeg").innerHTML = SIZES.map(s => `<button type="button" data-v="${s.v}" aria-pressed="${state.minMW === s.v}">${s.label}</button>`).join("");
+    $("srcSel").value = state.src;
+  }
+
+  function renderPipeline() {
+    const base = plants.filter(p => matchesExcept(p, "stage"));
+    const by = STAGES.map(() => ({ mw: 0, n: 0 }));
+    base.forEach(p => { by[p.so].mw += p.mw; by[p.so].n++; });
+    const shown = by.reduce((s, b, i) => s + (state.stages.has(STAGES[i].v) ? b.mw : 0), 0);
+    $("plTotal").textContent = fmtBig(shown);
+    $("plbar").innerHTML = STAGES.map((s, i) => by[i].mw > 0
+      ? `<i class="${state.stages.has(s.v) ? "" : "off"}" style="--c:${colors.stage[i]};flex-grow:${by[i].mw.toFixed(1)}" title="${esc(s.v)}: ${fmtBig(by[i].mw)} MW, ${by[i].n} projects"></i>` : "").join("");
+    $("stages").innerHTML = STAGES.map((s, i) => `<button type="button" class="stage-btn" data-v="${esc(s.v)}" aria-pressed="${state.stages.has(s.v)}" style="--c:${colors.stage[i]}" title="${esc(s.v)}: ${by[i].n} projects">
+      <i></i><span>${esc(s.short)}</span><b>${fmtBig(by[i].mw)}</b></button>`).join("");
   }
 
   function renderRank() {
@@ -695,8 +739,8 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     const rows = [...countyAgg.entries()].sort((x, y) => val(y[1]) - val(x[1]) || y[1].mw - x[1].mw);
     $("rank").innerHTML = rows.length ? rows.map(([c, a], i) => {
       const bg = state.showFill ? fillOf(a.mw) : colors.panel;
-      const shown = k === "mw" ? `${fmtBig(a.mw)} MW` : k === "n" ? `${a.n} plants` : `${pct(a.ren, a.mw)}%`;
-      const sub = k === "mw" ? `${a.n} plants · ${pct(a.ren, a.mw)}% renewable` : `${fmtBig(a.mw)} MW`;
+      const shown = k === "mw" ? `${fmtBig(a.mw)} MW` : k === "n" ? `${a.n} projects` : `${pct(a.ren, a.mw)}%`;
+      const sub = k === "mw" ? `${a.n} projects · ${fmtBig(a.op)} MW operating` : `${fmtBig(a.mw)} MW`;
       return `<button type="button" class="rrow" data-c="${esc(c)}"><span class="ix">${i + 1}</span>
         <span class="nm">${esc(labelOf(c))}<small>${sub}</small></span>
         <span class="badge" style="--c:${bg};--t:${textOn(bg)}">${shown}</span></button>`;
@@ -707,28 +751,11 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
   function renderPlantList(list) {
     const top = [...list].sort((a, b) => b.mw - a.mw).slice(0, 12);
     $("plist").innerHTML = top.length ? top.map(p => `<button type="button" class="prow" data-i="${p.i}" style="--c:${colors[p.tk]}">
-      <span class="d ${p.st === "Expired" ? "exp" : ""}"></span>
-      <span class="nm">${esc(p.n)}<small>${esc(p.t)} · ${esc(p.loc)}${p.st === "Expired" ? " · licence expired" : ""}</small></span>
-      <b>${fmtMW(p.mw)} MW</b></button>`).join("") : `<div class="empty">No plants match these filters.</div>`;
-    $("allInCounty").textContent = `Show all ${list.length} plants in a list`;
+      <span class="d ${STAGES[p.so].kind === "op" ? "" : "ring"}"></span>
+      <span class="nm">${esc(p.n)}<small>${esc(p.t)} · ${esc(STAGES[p.so].short)}${p.loc ? " · " + esc(p.loc) : ""}</small></span>
+      <b>${fmtMW(p.mw)} MW</b></button>`).join("") : `<div class="empty">No projects match these filters.</div>`;
+    $("allInCounty").textContent = `Show all ${list.length} projects in a list`;
     $("allInCounty").hidden = !list.length;
-  }
-
-  function renderHist() {
-    const base = plants.filter(p => matchesExcept(p, "year"));
-    const by = {};
-    base.forEach(p => { if (p.yr) by[p.yr] = (by[p.yr] || 0) + p.mw; });
-    const years = []; for (let y = yrMin; y <= yrMax; y++) years.push(y);
-    const max = Math.max(1, ...years.map(y => by[y] || 0));
-    const w = 100 / years.length, svg = $("hist");
-    svg.setAttribute("viewBox", "0 0 100 40");
-    svg.innerHTML = years.map((y, i) => {
-      const h = Math.max((by[y] || 0) / max * 38, by[y] ? 1.5 : 0);
-      return `<rect class="${y > state.year ? "after" : ""}" x="${(i * w + w * 0.14).toFixed(2)}" y="${(40 - h).toFixed(2)}" width="${(w * 0.72).toFixed(2)}" height="${h.toFixed(2)}" rx="0.6"><title>${y}: ${fmtBig(by[y] || 0)} MW licensed</title></rect>`
-        + `<rect class="hit" data-y="${y}" x="${(i * w).toFixed(2)}" y="0" width="${w.toFixed(2)}" height="40"><title>${y}: ${fmtBig(by[y] || 0)} MW licensed</title></rect>`;
-    }).join("");
-    $("yrLabel").textContent = state.year;
-    $("year").value = state.year;
   }
 
   function renderTable(list) {
@@ -739,11 +766,11 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
       return (typeof x === "number" ? x - y : String(x).localeCompare(String(y))) * d;
     });
     const shown = state.listAll ? rows : rows.slice(0, LIST_PAGE);
-    $("listTitle").textContent = `${list.length.toLocaleString("en-US")} plants${state.county ? " in " + labelOf(state.county) : ""}`;
+    $("listTitle").textContent = `${list.length.toLocaleString("en-US")} projects${state.county ? " in " + labelOf(state.county) : ""}`;
     $("rows").innerHTML = shown.map(p => `<tr data-i="${p.i}">
-      <td>${esc(p.n)}</td><td><span class="dot" style="--c:${colors[p.tk]}"></span>${esc(p.t)}</td>
-      <td class="r num">${fmtMW(p.mw)}</td><td>${esc(p.co)}</td><td>${esc(p.loc)}</td><td>${esc(labelOf(p.cty))}</td>
-      <td>${statusPill(p)}</td><td class="num">${p.iss ?? "–"}</td></tr>`).join("");
+      <td class="name" title="${esc(p.n)}">${esc(p.n)}</td><td><span class="dot" style="--c:${colors[p.tk]}"></span>${esc(p.t)}</td>
+      <td class="r num">${fmtMW(p.mw)}</td><td>${stagePill(p)}</td><td>${esc(p.co)}</td><td>${esc(p.loc)}</td><td>${esc(labelOf(p.cty))}</td>
+      <td>${esc(p.ss)}</td></tr>`).join("");
     $("moreWrap").hidden = state.listAll || rows.length <= LIST_PAGE;
     $("moreBtn").textContent = `Show all ${rows.length.toLocaleString("en-US")}`;
     document.querySelectorAll("th button").forEach(b => {
@@ -754,7 +781,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
   function renderLegend() {
     const steps = [colors.land, ...colors.ramp];
     $("ramp").innerHTML = steps.map(c => `<i style="--c:${c}"></i>`).join("");
-    $("rampLabels").innerHTML = ["0", ...BREAKS.map(b => b >= 1000 ? "1k+" : String(b))].map(s => `<span>${s}</span>`).join("");
+    $("rampLabels").innerHTML = ["0", ...BREAKS.map(b => b >= 1000 ? (b / 1000) + "k" : String(b))].map(s => `<span>${s}</span>`).join("");
     const vals = [10, 100, 500], svg = $("sizeKey");
     const rMax = radius(500), base = 2 + 2 * rMax;
     let x = 2, out = "";
@@ -771,7 +798,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     current = plants.filter(p => matchesExcept(p, null));
     countyAgg = new Map();
     const byCounty = new Map();
-    plants.filter(p => matchesExcept(p, "county")).forEach(p => (byCounty.get(p.cty) || byCounty.set(p.cty, []).get(p.cty)).push(p));
+    plants.filter(p => p.cty && matchesExcept(p, "county")).forEach(p => (byCounty.get(p.cty) || byCounty.set(p.cty, []).get(p.cty)).push(p));
     byCounty.forEach((list, c) => countyAgg.set(c, aggregate(list)));
     const a = aggregate(current);
 
@@ -781,17 +808,18 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     renderKpis(a);
     renderTech(plants.filter(p => matchesExcept(p, "tech")));
     renderFilters();
+    renderPipeline();
     $("rankSec").hidden = !!state.county;
     $("plantSec").hidden = !state.county;
     if (state.county) renderPlantList(current); else renderRank();
-    renderHist();
     renderTable(current);
   }
 
   function countyTooltip(k) {
     const a = countyAgg.get(k);
-    if (!a) return `<div class="tt"><b>${esc(labelOf(k))}</b><br><span class="m">No plants match these filters</span></div>`;
-    return `<div class="tt"><b>${esc(labelOf(k))}</b><br><span class="v">${fmtBig(a.mw)} MW</span> <span class="m">· ${a.n} plants · ${pct(a.ren, a.mw)}% renewable</span></div>`;
+    if (!a) return `<div class="tt"><b>${esc(labelOf(k))}</b><br><span class="m">No projects match these filters</span></div>`;
+    return `<div class="tt"><b>${esc(labelOf(k))}</b><br><span class="v">${fmtBig(a.mw)} MW</span> <span class="m">· ${a.n} projects</span><br>
+      <span class="m">Operating ${fmtBig(a.op)} · construction ${fmtBig(a.build)} · planned ${fmtBig(a.plan)} MW</span></div>`;
   }
 
   function fitRomania(animate) {
@@ -813,17 +841,18 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
   }
 
   function focusPlant(p) {
+    if (p.lat == null) return;
     map.flyTo([p.y, p.x], Math.max(map.getZoom(), 11), { duration: 0.6 });
     map.once("moveend", () => p.marker && p.marker.openPopup());
   }
 
   function exportCsv() {
-    const cols = [["n", "Plant"], ["t", "Technology"], ["mw", "Installed MW"], ["co", "Company"], ["loc", "Locality"], ["cty", "County"],
-      ["st", "Status"], ["lic", "Licence no."], ["iss", "Licence issued"], ["exp", "Licence expires"], ["lat", "Latitude"], ["lon", "Longitude"]];
+    const cols = [["n", "Project"], ["t", "Technology"], ["mw", "Capacity MW"], ["st", "Stage"], ["co", "Owner"], ["loc", "Locality"], ["cty", "County"],
+      ["src", "Source"], ["id", "Original ID / licence"], ["iss", "Licence issued"], ["exp", "Licence expires"], ["lat", "Latitude"], ["lon", "Longitude"], ["d", "Description"]];
     const q = v => { const s = String(v ?? ""); return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
     const csv = [cols.map(c => c[1]).join(","), ...current.map(p => cols.map(c => q(p[c[0]])).join(","))].join("\n");
     const url = URL.createObjectURL(new Blob(["﻿" + csv], { type: "text/csv" }));
-    const a = Object.assign(document.createElement("a"), { href: url, download: "romania-power-plants.csv" });
+    const a = Object.assign(document.createElement("a"), { href: url, download: "romania-power-projects.csv" });
     document.body.append(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
@@ -877,19 +906,6 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     if (open) renderTable(current);
   }
 
-  let timer = null;
-  function setPlaying(on) {
-    clearInterval(timer); timer = null;
-    $("play").setAttribute("aria-pressed", on);
-    $("playIcon").setAttribute("d", on ? "M6.5 4.5h4v15h-4zM13.5 4.5h4v15h-4z" : "M7 4.5v15l12-7.5z");
-    if (!on) return;
-    if (state.year >= yrMax) { state.year = yrMin; update(); }
-    timer = setInterval(() => {
-      if (state.year >= yrMax) return setPlaying(false);
-      state.year++; update();
-    }, 650);
-  }
-
   function bind() {
     $("techList").addEventListener("click", e => {
       const b = e.target.closest(".tech"); if (!b) return;
@@ -901,7 +917,15 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
       update();
     });
     $("techAll").onclick = () => { state.techs = allTechs(); update(); };
-    $("statusSeg").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { state.status = b.dataset.v; update(); } });
+    $("stages").addEventListener("click", e => {
+      const b = e.target.closest(".stage-btn"); if (!b) return;
+      const v = b.dataset.v;
+      if (state.stages.has(v)) { state.stages.delete(v); if (!state.stages.size) state.stages = defaultStages(); }
+      else state.stages.add(v);
+      update();
+    });
+    $("srcSel").innerHTML = SOURCES.map(s => `<option value="${s.v}">${s.label}</option>`).join("");
+    $("srcSel").addEventListener("change", e => { state.src = e.target.value; update(); });
     $("sizeSeg").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { state.minMW = +b.dataset.v; update(); } });
     $("sortTabs").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { state.rankBy = b.dataset.k; renderRank(); } });
     $("rank").addEventListener("click", e => { const b = e.target.closest(".rrow"); if (b) selectCounty(b.dataset.c); });
@@ -915,13 +939,9 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     let qt;
     $("q").addEventListener("input", e => { clearTimeout(qt); qt = setTimeout(() => { state.q = norm(e.target.value.trim()); update(); }, 150); });
     $("reset").onclick = () => {
-      setPlaying(false);
-      Object.assign(state, { techs: allTechs(), status: "", minMW: 0, county: "", q: "", year: yrMax });
+      Object.assign(state, { techs: allTechs(), stages: defaultStages(), src: "", minMW: 0, county: "", q: "" });
       $("q").value = ""; update(); fitRomania(true);
     };
-    $("year").addEventListener("input", e => { setPlaying(false); state.year = +e.target.value; update(); });
-    $("hist").addEventListener("click", e => { const r = e.target.closest("rect.hit"); if (r) { setPlaying(false); state.year = +r.dataset.y; update(); } });
-    $("play").onclick = () => setPlaying(!timer);
 
     $("zIn").onclick = () => map.zoomIn();
     $("zOut").onclick = () => map.zoomOut();
@@ -968,26 +988,26 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
       fetch("data/plants.json").then(r => r.json()),
       fetch("data/counties.json").then(r => r.json()),
     ]);
-    plants = pd.plants.map((p, i) => ({
-      ...p, i, tk: TECH_OF[p.t] ? TECH_OF[p.t].key : "other", yr: p.iss ? +p.iss.slice(0, 4) : null,
-      s: norm([p.n, p.co, p.loc, p.cty].join(" ")),
-    }));
-    plants.forEach(p => { if (!TECH_OF[p.t]) TECH_OF[p.t] = TECH[TECH.length - 1]; });
+    plants = pd.plants.map((p, i) => {
+      const src = SOURCES.find(s => s.test && s.test(p.src));
+      const short = SHORT_SRC.find(([k]) => p.src.startsWith(k));
+      return {
+        ...p, i, tk: (TECH_OF[p.t] || TECH[TECH.length - 1]).key, so: STAGE_IX[p.st] ?? STAGES.length - 1,
+        sg: src ? src.v : "", ss: short ? short[1] : p.src,
+        s: norm([p.n, p.co, p.loc, p.cty, p.id, p.d].join(" ")),
+      };
+    });
     spread(plants);
-    const yrs = plants.map(p => p.yr).filter(Boolean);
-    yrMin = Math.min(...yrs); yrMax = Math.max(...yrs); state.year = yrMax;
-    Object.assign($("year"), { min: yrMin, max: yrMax, value: yrMax });
-    $("yrMin").textContent = yrMin; $("yrMax").textContent = yrMax;
-    const approx = plants.filter(p => !p.p).length;
-    $("approxNote").textContent = `${approx} plants whose locality could not be matched are shown at the coordinates in the source file and marked as approximate.`;
+    const noLoc = plants.filter(p => p.lat == null).length;
+    $("noLocNote").textContent = noLoc ? `${noLoc} projects have no usable location; they count in the totals but are not drawn.` : "";
 
-    // Boundary file spells two counties differently from the ANRE register.
-    const countyNames = [...new Set(plants.map(p => p.cty))];
-    const alias = { "caras-severin": "Caras Severin", "bucharest": "Bucuresti" };
+    // Boundary file spells two counties differently from the master file.
+    const countyNames = [...new Set(plants.map(p => p.cty).filter(Boolean))];
+    const alias = { "caras-severin": "Caras-Severin", "bucharest": "Bucuresti" };
     const byNorm = Object.fromEntries(countyNames.map(c => [norm(c).replace(/[^a-z]/g, ""), c]));
     cd.features.forEach(f => {
       const n = norm(f.properties.name);
-      f.properties.key = alias[n] || byNorm[n.replace(/[^a-z]/g, "")] || f.properties.name;
+      f.properties.key = byNorm[n.replace(/[^a-z]/g, "")] || alias[n] || f.properties.name;
       counties[f.properties.key] = f.properties;
     });
 
