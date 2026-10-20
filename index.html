@@ -35,6 +35,7 @@
   --t-bio: #008300;
   --t-other: #e87ba4;
   --ring: #ffffff;
+  --ok: #1d7a46;
 
   --f-display: "Barlow Semi Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
   --f-body: "Public Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -45,7 +46,7 @@
     --accent: #5fb3d4; --accent-ink: #08151c; --land: #18242c; --land-hover: #213440; --border-county: #3d5260;
     --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.35);
     --t-solar: #c98500; --t-wind: #3987e5; --t-hydro: #199e70; --t-gas: #d95926; --t-coal: #a8a397;
-    --t-nuclear: #9085e9; --t-bio: #008300; --t-other: #d55181; --ring: #141e25;
+    --t-nuclear: #9085e9; --t-bio: #008300; --t-other: #d55181; --ring: #141e25; --ok: #5cc98a;
     color-scheme: dark;
   }
 }
@@ -54,7 +55,7 @@
   --accent: #5fb3d4; --accent-ink: #08151c; --land: #18242c; --land-hover: #213440; --border-county: #3d5260;
   --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.35);
   --t-solar: #c98500; --t-wind: #3987e5; --t-hydro: #199e70; --t-gas: #d95926; --t-coal: #a8a397;
-  --t-nuclear: #9085e9; --t-bio: #008300; --t-other: #d55181; --ring: #141e25;
+  --t-nuclear: #9085e9; --t-bio: #008300; --t-other: #d55181; --ring: #141e25; --ok: #5cc98a;
   color-scheme: dark;
 }
 
@@ -132,6 +133,14 @@ button, input, select { font: inherit; color: inherit; }
   border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: 4px 11px; cursor: pointer; font-size: 13px;
 }
 .seg button:hover { border-color: var(--accent); }
+.seg .n { opacity: .7; margin-left: 4px; font-variant-numeric: tabular-nums; }
+.statuskey { display: flex; gap: 14px; font-size: 12px; color: var(--muted); }
+.statuskey span { display: inline-flex; align-items: center; gap: 6px; }
+.statuskey i { width: 11px; height: 11px; border-radius: 50%; border: 2px solid var(--muted); }
+.statuskey i.solid { background: var(--muted); }
+.pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; border: 1px solid var(--line); }
+.pill.ok { color: var(--ok); border-color: var(--ok); }
+.pill.exp { color: var(--muted); border-style: dashed; }
 .seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
 
 select.search { appearance: auto; }
@@ -246,7 +255,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
   <header class="top">
     <div class="brand">
       <h1>Romania Power Plant Map</h1>
-      <p>Licensed electricity generation capacity · ANRE register, 24 April 2023</p>
+      <p>Electricity generation licences · ANRE register, 24 April 2023</p>
     </div>
     <div class="stats" aria-live="polite">
       <div class="stat"><b id="sPlants" class="num">–</b><span>Plants shown</span></div>
@@ -268,6 +277,12 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
       </div>
 
       <div class="section">
+        <h2>Status</h2>
+        <div class="seg" id="statusSeg" role="group" aria-label="Licence status"></div>
+        <div class="statuskey" aria-hidden="true"><span><i class="solid"></i>Operating</span><span><i class="ring"></i>Licence expired</span></div>
+      </div>
+
+      <div class="section">
         <h2>Plant size</h2>
         <div class="seg" id="sizeSeg" role="group" aria-label="Minimum capacity"></div>
       </div>
@@ -283,7 +298,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
       </div>
 
       <div class="about">
-        <p><b>Source:</b> ANRE (Romanian Energy Regulatory Authority), list of licensed power generation capacities, 24.04.2023. All plants listed hold a generation licence, so they are operating or licensed to operate.</p>
+        <p><b>Source:</b> ANRE (Romanian Energy Regulatory Authority), list of licensed power generation capacities, 24.04.2023. Status comes from the register: <b>Operating</b> means the generation licence is valid, <b>Licence expired</b> means it has lapsed. The register does not cover projects in planning or construction.</p>
         <p><b>Locations</b> are placed at the plant's locality (GeoNames gazetteer), not the exact site. <span id="approxNote"></span></p>
         <p>The source file's own TOTAL row reads 18,923 MW, but its plant rows add up to 11,587 MW. This map uses the plant rows.</p>
         <p><button class="linkbtn" id="reset" type="button">Reset all filters</button></p>
@@ -314,7 +329,8 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
               <th><button type="button" data-k="co">Company</button></th>
               <th><button type="button" data-k="loc">Locality</button></th>
               <th><button type="button" data-k="cty">County</button></th>
-              <th><button type="button" data-k="iss">Licence issued</button></th>
+              <th><button type="button" data-k="st">Status</button></th>
+              <th><button type="button" data-k="exp">Licence expires</button></th>
             </tr></thead>
             <tbody id="rows"></tbody>
           </table>
@@ -346,7 +362,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
   ];
   const LIST_PAGE = 300;
 
-  const state = { techs: new Set(TECH.map(t => t.key)), minMW: 0, county: "", q: "", sortK: "mw", sortDir: -1, listAll: false };
+  const state = { techs: new Set(TECH.map(t => t.key)), status: "", minMW: 0, county: "", q: "", sortK: "mw", sortDir: -1, listAll: false };
   let plants = [], counties = null, colors = {}, map, pointLayer, countyLayer, tiles, renderer;
 
   const $ = id => document.getElementById(id);
@@ -389,9 +405,24 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
   function matchesExcept(p, skip) {
     if (skip !== "tech" && !state.techs.has(p.tk)) return false;
     if (skip !== "size" && p.mw < state.minMW) return false;
+    if (skip !== "status" && state.status && p.st !== state.status) return false;
     if (skip !== "county" && state.county && p.cty !== state.county) return false;
     if (state.q && !p.s.includes(state.q)) return false;
     return true;
+  }
+
+  const STATUS = [{ v: "", label: "All" }, { v: "Operating", label: "Operating" }, { v: "Expired", label: "Licence expired" }];
+  const statusPill = p => p.st === "Expired" ? '<span class="pill exp">Licence expired</span>' : '<span class="pill ok">Operating</span>';
+  // Expired licences draw as rings so status reads without relying on colour.
+  const markerStyle = (p, hover) => p.st === "Expired"
+    ? { color: hover ? colors.accent : colors[p.tk], weight: hover ? 3 : 2, fillColor: colors[p.tk], fillOpacity: 0.12 }
+    : { color: hover ? colors.accent : colors.ring, weight: hover ? 2.5 : 1, fillColor: colors[p.tk], fillOpacity: 0.82 };
+
+  function renderStatus() {
+    const base = plants.filter(p => matchesExcept(p, "status"));
+    const n = { "": base.length, Operating: 0, Expired: 0 };
+    base.forEach(p => n[p.st]++);
+    $("statusSeg").innerHTML = STATUS.map(s => `<button type="button" data-v="${s.v}" aria-pressed="${state.status === s.v}">${s.label}<span class="n">${n[s.v].toLocaleString("en-US")}</span></button>`).join("");
   }
 
   function popupHtml(p) {
@@ -405,12 +436,12 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
         <dt>Company</dt><dd>${esc(p.co)}</dd>
         <dt>Locality</dt><dd>${esc(p.loc)}</dd>
         <dt>County</dt><dd>${esc(p.cty)}</dd>
-        <dt>Status</dt><dd>Licensed</dd>
+        <dt>Status</dt><dd>${statusPill(p)}</dd>
         <dt>Licence no.</dt><dd>${esc(p.lic ?? "–")}</dd>
         <dt>Issued</dt><dd>${fmtDate(p.iss)}</dd>
         <dt>Expires</dt><dd>${fmtDate(p.exp)}</dd>
       </dl>
-      <div class="note ${p.p ? "" : "warn"}">${p.p ? "Location: centre of the locality, not the exact site." : "Location approximate: locality not found, shown at the county centre."}
+      <div class="note ${p.p ? "" : "warn"}">${p.p ? "Location: centre of the locality, not the exact site." : "Location approximate: locality not found, shown at the coordinates given in the source file."}
         <a href="https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lon}" target="_blank" rel="noopener">Open in Google Maps</a></div>
     </div>`;
   }
@@ -419,14 +450,11 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     pointLayer.clearLayers();
     // Big plants first so small ones stay on top and clickable.
     [...list].sort((a, b) => b.mw - a.mw).forEach(p => {
-      const c = colors[p.tk];
-      const m = L.circleMarker([p.y, p.x], {
-        renderer, radius: radius(p.mw), color: colors.ring, weight: 1, fillColor: c, fillOpacity: 0.82,
-      });
+      const m = L.circleMarker([p.y, p.x], { renderer, radius: radius(p.mw), ...markerStyle(p, false) });
       m.bindTooltip(`<b>${esc(p.n)}</b> · ${fmtMW(p.mw)} MW`, { direction: "top", offset: [0, -radius(p.mw)] });
       m.bindPopup(() => popupHtml(p), { maxWidth: 320 });
-      m.on("mouseover", () => m.setStyle({ weight: 2.5, color: colors.accent }));
-      m.on("mouseout", () => m.setStyle({ weight: 1, color: colors.ring }));
+      m.on("mouseover", () => m.setStyle(markerStyle(p, true)));
+      m.on("mouseout", () => m.setStyle(markerStyle(p, false)));
       p.marker = m;
       pointLayer.addLayer(m);
     });
@@ -481,7 +509,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     $("listTitle").textContent = `${list.length.toLocaleString("en-US")} plants`;
     $("rows").innerHTML = shown.map(p => `<tr data-i="${p.i}">
       <td>${esc(p.n)}</td><td><span class="dot" style="--c:${colors[p.tk]}"></span>${esc(p.t)}</td>
-      <td class="r num">${fmtMW(p.mw)}</td><td>${esc(p.co)}</td><td>${esc(p.loc)}</td><td>${esc(p.cty)}</td><td class="num">${p.iss ?? "–"}</td></tr>`).join("");
+      <td class="r num">${fmtMW(p.mw)}</td><td>${esc(p.co)}</td><td>${esc(p.loc)}</td><td>${esc(p.cty)}</td><td>${statusPill(p)}</td><td class="num">${p.exp ?? "–"}</td></tr>`).join("");
     $("moreWrap").hidden = state.listAll || rows.length <= LIST_PAGE;
     $("moreBtn").textContent = `Show all ${rows.length.toLocaleString("en-US")}`;
     document.querySelectorAll("th button").forEach(b => {
@@ -505,6 +533,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     current = plants.filter(p => matchesExcept(p, null));
     drawPoints(current);
     renderTech();
+    renderStatus();
     renderCounties(current);
     renderStats(current);
     renderTable(current);
@@ -521,7 +550,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
 
   function exportCsv() {
     const cols = [["n", "Plant"], ["t", "Technology"], ["mw", "Installed MW"], ["co", "Company"], ["loc", "Locality"], ["cty", "County"],
-      ["lic", "Licence no."], ["iss", "Licence issued"], ["exp", "Licence expires"], ["lat", "Latitude"], ["lon", "Longitude"]];
+      ["lic", "Licence no."], ["st", "Status"], ["iss", "Licence issued"], ["exp", "Licence expires"], ["lat", "Latitude"], ["lon", "Longitude"]];
     const q = v => { const s = String(v ?? ""); return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
     const csv = [cols.map(c => c[1]).join(","), ...current.map(p => cols.map(c => q(p[c[0]])).join(","))].join("\n");
     const url = URL.createObjectURL(new Blob(["﻿" + csv], { type: "text/csv" }));
@@ -569,6 +598,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     });
     $("techAll").onclick = () => { state.techs = new Set(TECH.map(t => t.key)); update(); };
     $("sizeSeg").innerHTML = SIZES.map(s => `<button type="button" data-v="${s.v}" aria-pressed="false">${s.label}</button>`).join("");
+    $("statusSeg").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { state.status = b.dataset.v; update(); } });
     $("sizeSeg").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { state.minMW = +b.dataset.v; update(); } });
     let qt;
     $("q").addEventListener("input", e => { clearTimeout(qt); qt = setTimeout(() => { state.q = norm(e.target.value.trim()); update(); }, 150); });
@@ -576,7 +606,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     $("countyClear").onclick = () => selectCounty("");
     $("topCounties").addEventListener("click", e => { const b = e.target.closest(".crow"); if (b) selectCounty(state.county === b.dataset.c ? "" : b.dataset.c); });
     $("reset").onclick = () => {
-      Object.assign(state, { techs: new Set(TECH.map(t => t.key)), minMW: 0, county: "", q: "" });
+      Object.assign(state, { techs: new Set(TECH.map(t => t.key)), status: "", minMW: 0, county: "", q: "" });
       $("q").value = ""; update(); map.flyToBounds(romaniaBounds, { duration: 0.6 });
     };
     $("listBtn").onclick = () => toggleList();
@@ -633,7 +663,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     plants.forEach(p => { if (!TECH_OF[p.t]) TECH_OF[p.t] = TECH[TECH.length - 1]; });
     spread(plants);
     const approx = plants.filter(p => !p.p).length;
-    $("approxNote").textContent = `${approx} plants whose locality could not be matched are shown at their county centre and marked as approximate.`;
+    $("approxNote").textContent = `${approx} plants whose locality could not be matched are shown at the coordinates in the source file and marked as approximate.`;
 
     const countyNames = [...new Set(plants.map(p => p.cty))].sort((a, b) => a.localeCompare(b));
     $("county").innerHTML = `<option value="">All counties (${countyNames.length})</option>` +

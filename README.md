@@ -1,6 +1,6 @@
 # Romania Power Plant Map
 
-Interactive map of licensed electricity generation capacity in Romania, built from the ANRE register (24.04.2023).
+Interactive map of licensed electricity generation capacity in Romania, built from the ANRE register (24.04.2023), with licence status per plant.
 
 - `index.html` – the whole web app (Leaflet map, filters, list view, CSV export)
 - `data/plants.json`, `data/counties.json` – data the page loads

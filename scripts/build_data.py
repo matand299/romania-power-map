@@ -18,13 +18,19 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "data" / "source"
-EXCEL = SRC / "Puteri-capacitati_24.04.2023_EN.xlsx"
+EXCEL = SRC / "Puteri-capacitati_24.04.2023_Final_EN_With_Status.xlsx"
 GEONAMES = SRC / "geonames_RO.txt"
 ADMIN1 = SRC / "geonames_admin1_RO.txt"
 COUNTIES_IN = SRC / "ro_counties.geojson"
 
 TECH_NAMES = {
     "Natural Gas / Hydrocarbons": "Natural Gas",
+    "Hidrocarburi": "Natural Gas",
+    "Hidro": "Hydro",
+    "Eolian": "Wind",
+    "Biogaz": "Biogas",
+    "Biomasa": "Biomass",
+    "Carbune": "Coal",
     "Deseuri": "Waste",
     "Caldura reziduala": "Waste Heat",
     "Geotermal": "Geothermal",
@@ -146,36 +152,44 @@ def build_counties():
     print(f"counties.json: {out.stat().st_size // 1024} KB")
 
 
+def status_of(value):
+    """The register marks each licence as operating or expired (text may be bilingual)."""
+    return "Expired" if "expired" in str(value).lower() else "Operating"
+
+
 def main():
     ensure_geonames()
     gaz = load_gazetteer()
     df = pd.read_excel(EXCEL)
     df = df[df["Plant Name"].notna() & df["Primary Energy / Technology"].notna()]
+    col = {c: i for i, c in enumerate(df.columns)}
 
     plants, exact = [], 0
     for r in df.itertuples(index=False):
-        county = str(r[7]).strip()
-        hit = geocode(gaz, county, r[6], r[5])
+        county = str(r[col["County (Judet)"]]).strip()
+        # The gazetteer match is preferred: the spreadsheet's coordinates are mostly county centres.
+        hit = geocode(gaz, county, r[col["Locality / City"]], r[col["Plant Name"]])
         if hit:
             lat, lon, precise = hit[0], hit[1], True
             exact += 1
         else:
-            lat, lon, precise = float(r[10]), float(r[11]), False
-        tech = str(r[9]).strip()
+            lat, lon, precise = float(r[col["Latitude"]]), float(r[col["Longitude"]]), False
+        tech = str(r[col["Primary Energy / Technology"]]).strip()
 
         def d(v):
             return v.strftime("%Y-%m-%d") if pd.notna(v) else None
 
         plants.append({
-            "n": str(r[5]).strip(),
-            "co": str(r[1]).strip(),
-            "loc": str(r[6]).strip(),
+            "n": str(r[col["Plant Name"]]).strip(),
+            "co": str(r[col["Company / Economic Operator"]]).strip(),
+            "loc": str(r[col["Locality / City"]]).strip(),
             "cty": county,
-            "mw": round(float(r[8]), 4) if pd.notna(r[8]) else 0,
+            "mw": round(float(r[col["Installed Capacity (MW)"]]), 4) if pd.notna(r[col["Installed Capacity (MW)"]]) else 0,
             "t": TECH_NAMES.get(tech, tech),
-            "lic": int(r[2]) if pd.notna(r[2]) else None,
-            "iss": d(r[3]),
-            "exp": d(r[4]),
+            "st": status_of(r[col["Status / Stage"]]),
+            "lic": int(r[col["License Number"]]) if pd.notna(r[col["License Number"]]) else None,
+            "iss": d(r[col["Issue Date"]]),
+            "exp": d(r[col["Expiration Date"]]),
             "lat": round(lat, 4),
             "lon": round(lon, 4),
             "p": precise,
@@ -186,7 +200,9 @@ def main():
                                "plants": plants}, ensure_ascii=False, separators=(",", ":")),
                    encoding="utf-8")
     print(f"plants.json: {len(plants)} plants, {exact} geocoded to locality, "
-          f"{len(plants) - exact} left at county centre")
+          f"{len(plants) - exact} left at the spreadsheet's coordinates")
+    print("status:", pd.Series([p["st"] for p in plants]).value_counts().to_dict())
+    print("technologies:", pd.Series([p["t"] for p in plants]).value_counts().to_dict())
     build_counties()
 
 
