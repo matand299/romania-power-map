@@ -388,7 +388,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
         <div class="mkey">
           <svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="var(--gold)" stroke-width="1"/></svg><span>Operating</span>
           <svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="var(--gold)" fill-opacity=".4" stroke-width="2"/></svg><span>Construction</span>
-          <svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="none" stroke-width="1.6"/></svg><span>Planned</span>
+          <svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="none" stroke-width="1.6"/></svg><span>CDC</span>
           <svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="none" stroke-width="1.4" stroke-dasharray="2 2" style="stroke:var(--muted)"/></svg><span>Closed</span>
         </div>
       </div>
@@ -451,11 +451,11 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
       <p><b>Sources</b> (Romania energy projects master database, 2026):</p>
       <ul>
         <li>ANRE licensed capacity register, 24.04.2023</li>
-        <li>Transelectrica Annex 9.1–9.3: connection permits (ATR), certificates and solution studies</li>
-        <li>Distribution operators: DEER (Electrica) 30.11.2025, Rețele Electrice (PPC) Q2 2026, Distribuție Energie Oltenia 02.10.2026</li>
+        <li>Transelectrica Annex 9.2: connection certificates for plants on the transmission grid</li>
+        <li>Distribuție Energie Oltenia, 02.10.2026: commissioned plants (PIF) and connection certificates (CDC)</li>
         <li>Global Energy Monitor power tracker (rows with no source in the file, identified by GEM unit IDs)</li>
       </ul>
-      <p><b>Stages</b> follow the master file. An ATR or a solution study is a grid-connection step, not a commitment to build, so planned capacity far exceeds what will be built.</p>
+      <p><b>Stages</b> follow the master file. Projects at the planning / ATR / pre-construction stage (1,620 projects, 86.5 GW of connection permits and studies) are left out of this map.</p>
       <p><b>Cleaning:</b> subtotal and note rows removed; the ANRE register's duplicate copy removed; Global Energy Monitor units already listed as operating by ANRE or a grid operator removed; a few distribution-operator values recorded in kW converted to MW. Sources can still overlap, so totals are indicative.</p>
       <p><b>Locations</b> come from the source file and often mark the locality or county rather than the exact site. <span id="noLocNote"></span></p>
       <p><button class="linkbtn" id="reset" type="button">Reset all filters</button></p>
@@ -516,7 +516,6 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     { v: "Commissioned (PIF)", short: "Commissioned", kind: "op" },
     { v: "Under construction / testing", short: "Construction", kind: "build" },
     { v: "Connection certificate (CDC)", short: "Connection cert.", kind: "plan" },
-    { v: "Planning / ATR / pre-construction", short: "Planning / ATR", kind: "plan" },
     { v: "Mothballed", short: "Mothballed", kind: "closed" },
     { v: "Retired / cancelled", short: "Retired", kind: "closed" },
   ];
@@ -685,7 +684,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     $("kpis").innerHTML = `
       <div class="kpi"><span class="ico">${ico.bolt}</span><div><b>${fmtGW(a.op)}</b><span>operating &amp; commissioned</span></div></div>
       <div class="kpi"><span class="ico">${ico.crane}</span><div><b>${fmtGW(a.build)}</b><span>under construction</span></div></div>
-      <div class="kpi"><span class="ico">${ico.doc}</span><div><b>${fmtGW(a.plan)}</b><span>planned (ATR, studies, CDC)</span></div></div>
+      <div class="kpi"><span class="ico">${ico.doc}</span><div><b>${fmtGW(a.plan)}</b><span>with a connection certificate (CDC)</span></div></div>
       <div class="kpi"><span class="ico">${ico.pin}</span><div><b>${a.n.toLocaleString("en-US")}</b><span>projects · ${pct(a.ren, a.mw)}% renewable</span></div></div>`;
   }
 
@@ -819,7 +818,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     const a = countyAgg.get(k);
     if (!a) return `<div class="tt"><b>${esc(labelOf(k))}</b><br><span class="m">No projects match these filters</span></div>`;
     return `<div class="tt"><b>${esc(labelOf(k))}</b><br><span class="v">${fmtBig(a.mw)} MW</span> <span class="m">· ${a.n} projects</span><br>
-      <span class="m">Operating ${fmtBig(a.op)} · construction ${fmtBig(a.build)} · planned ${fmtBig(a.plan)} MW</span></div>`;
+      <span class="m">Operating ${fmtBig(a.op)} · construction ${fmtBig(a.build)} · CDC ${fmtBig(a.plan)} MW</span></div>`;
   }
 
   function fitRomania(animate) {

@@ -338,6 +338,9 @@ def licence_dates():
     return out
 
 
+# Stages left out of the map entirely: grid-connection permits and studies are not commitments to build.
+EXCLUDED_STAGES = {"Planning / ATR / pre-construction"}
+
 # Placeholder points the master file uses when a project has no location (roughly the centre of Romania).
 PLACEHOLDER_POINTS = [(45.9852, 24.6859), (45.9432, 24.9668)]
 
@@ -372,7 +375,7 @@ def main():
     dates = licence_dates()
     log = {"subtotal rows": 0, "notes / zero rows": 0, "kW fixed": 0, "ANRE duplicates": 0,
            "GEM operating already listed": 0, "county from coordinates": 0, "outside Romania": 0,
-           "placeholder location re-placed": 0, "no usable location": 0}
+           "placeholder location re-placed": 0, "no usable location": 0, "planning / ATR rows left out": 0}
 
     rows = []
     for r in df.to_dict("records"):
@@ -385,6 +388,9 @@ def main():
             continue
         if mw == 0 and not plant and not ident:
             log["notes / zero rows"] += 1
+            continue
+        if STAGE_MAP.get(status_raw, status_raw) in EXCLUDED_STAGES:
+            log["planning / ATR rows left out"] += 1
             continue
         source = source_of(r["Data Source"], status_raw, ident)
         mw, fixed = fix_units(mw, f"{plant} {project}", source)
