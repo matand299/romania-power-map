@@ -1,0 +1,4 @@
+# Large gazetteer, re-downloaded automatically by scripts/build_data.py
+data/source/geonames_RO.txt
+__pycache__/
+*.png

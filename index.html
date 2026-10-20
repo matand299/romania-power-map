@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Romania Power Plant Map</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Interactive map of licensed electricity generation capacity in Romania (ANRE data).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap">
+<style>/* Leaflet 1.9.4 */.leaflet-image-layer,.leaflet-layer,.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-pane,.leaflet-pane>canvas,.leaflet-pane>svg,.leaflet-tile,.leaflet-tile-container,.leaflet-zoom-box{position:absolute;left:0;top:0}.leaflet-container{overflow:hidden}.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-tile{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-user-drag:none}.leaflet-tile::selection{background:0 0}.leaflet-safari .leaflet-tile{image-rendering:-webkit-optimize-contrast}.leaflet-safari .leaflet-tile-container{width:1600px;height:1600px;-webkit-transform-origin:0 0}.leaflet-marker-icon,.leaflet-marker-shadow{display:block}.leaflet-container .leaflet-overlay-pane svg{max-width:none!important;max-height:none!important}.leaflet-container .leaflet-marker-pane img,.leaflet-container .leaflet-shadow-pane img,.leaflet-container .leaflet-tile,.leaflet-container .leaflet-tile-pane img,.leaflet-container img.leaflet-image-layer{max-width:none!important;max-height:none!important;width:auto;padding:0}.leaflet-container img.leaflet-tile{mix-blend-mode:plus-lighter}.leaflet-container.leaflet-touch-zoom{-ms-touch-action:pan-x pan-y;touch-action:pan-x pan-y}.leaflet-container.leaflet-touch-drag{-ms-touch-action:pinch-zoom;touch-action:none;touch-action:pinch-zoom}.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom{-ms-touch-action:none;touch-action:none}.leaflet-container{-webkit-tap-highlight-color:transparent}.leaflet-container a{-webkit-tap-highlight-color:rgba(51,181,229,.4)}.leaflet-tile{filter:inherit;visibility:hidden}.leaflet-tile-loaded{visibility:inherit}.leaflet-zoom-box{width:0;height:0;-moz-box-sizing:border-box;box-sizing:border-box;z-index:800}.leaflet-overlay-pane svg{-moz-user-select:none}.leaflet-pane{z-index:400}.leaflet-tile-pane{z-index:200}.leaflet-overlay-pane{z-index:400}.leaflet-shadow-pane{z-index:500}.leaflet-marker-pane{z-index:600}.leaflet-tooltip-pane{z-index:650}.leaflet-popup-pane{z-index:700}.leaflet-map-pane canvas{z-index:100}.leaflet-map-pane svg{z-index:200}.leaflet-vml-shape{width:1px;height:1px}.lvml{behavior:url(#default#VML);display:inline-block;position:absolute}.leaflet-control{position:relative;z-index:800;pointer-events:visiblePainted;pointer-events:auto}.leaflet-bottom,.leaflet-top{position:absolute;z-index:1000;pointer-events:none}.leaflet-top{top:0}.leaflet-right{right:0}.leaflet-bottom{bottom:0}.leaflet-left{left:0}.leaflet-control{float:left;clear:both}.leaflet-right .leaflet-control{float:right}.leaflet-top .leaflet-control{margin-top:10px}.leaflet-bottom .leaflet-control{margin-bottom:10px}.leaflet-left .leaflet-control{margin-left:10px}.leaflet-right .leaflet-control{margin-right:10px}.leaflet-fade-anim .leaflet-popup{opacity:0;-webkit-transition:opacity .2s linear;-moz-transition:opacity .2s linear;transition:opacity .2s linear}.leaflet-fade-anim .leaflet-map-pane .leaflet-popup{opacity:1}.leaflet-zoom-animated{-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0}svg.leaflet-zoom-animated{will-change:transform}.leaflet-zoom-anim .leaflet-zoom-animated{-webkit-transition:-webkit-transform .25s cubic-bezier(0,0,.25,1);-moz-transition:-moz-transform .25s cubic-bezier(0,0,.25,1);transition:transform .25s cubic-bezier(0,0,.25,1)}.leaflet-pan-anim .leaflet-tile,.leaflet-zoom-anim .leaflet-tile{-webkit-transition:none;-moz-transition:none;transition:none}.leaflet-zoom-anim .leaflet-zoom-hide{visibility:hidden}.leaflet-interactive{cursor:pointer}.leaflet-grab{cursor:-webkit-grab;cursor:-moz-grab;cursor:grab}.leaflet-crosshair,.leaflet-crosshair .leaflet-interactive{cursor:crosshair}.leaflet-control,.leaflet-popup-pane{cursor:auto}.leaflet-dragging .leaflet-grab,.leaflet-dragging .leaflet-grab .leaflet-interactive,.leaflet-dragging .leaflet-marker-draggable{cursor:move;cursor:-webkit-grabbing;cursor:-moz-grabbing;cursor:grabbing}.leaflet-image-layer,.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-pane>svg path,.leaflet-tile-container{pointer-events:none}.leaflet-image-layer.leaflet-interactive,.leaflet-marker-icon.leaflet-interactive,.leaflet-pane>svg path.leaflet-interactive,svg.leaflet-image-layer.leaflet-interactive path{pointer-events:visiblePainted;pointer-events:auto}.leaflet-container{background:#ddd;outline-offset:1px}.leaflet-container a{color:#0078a8}.leaflet-zoom-box{border:2px dotted #38f;background:rgba(255,255,255,.5)}.leaflet-container{font-family:"Helvetica Neue",Arial,Helvetica,sans-serif;font-size:12px;font-size:.75rem;line-height:1.5}.leaflet-bar{box-shadow:0 1px 5px rgba(0,0,0,.65);border-radius:4px}.leaflet-bar a{background-color:#fff;border-bottom:1px solid #ccc;width:26px;height:26px;line-height:26px;display:block;text-align:center;text-decoration:none;color:#000}.leaflet-bar a,.leaflet-control-layers-toggle{background-position:50% 50%;background-repeat:no-repeat;display:block}.leaflet-bar a:focus,.leaflet-bar a:hover{background-color:#f4f4f4}.leaflet-bar a:first-child{border-top-left-radius:4px;border-top-right-radius:4px}.leaflet-bar a:last-child{border-bottom-left-radius:4px;border-bottom-right-radius:4px;border-bottom:none}.leaflet-bar a.leaflet-disabled{cursor:default;background-color:#f4f4f4;color:#bbb}.leaflet-touch .leaflet-bar a{width:30px;height:30px;line-height:30px}.leaflet-touch .leaflet-bar a:first-child{border-top-left-radius:2px;border-top-right-radius:2px}.leaflet-touch .leaflet-bar a:last-child{border-bottom-left-radius:2px;border-bottom-right-radius:2px}.leaflet-control-zoom-in,.leaflet-control-zoom-out{font:bold 18px 'Lucida Console',Monaco,monospace;text-indent:1px}.leaflet-touch .leaflet-control-zoom-in,.leaflet-touch .leaflet-control-zoom-out{font-size:22px}.leaflet-control-layers{box-shadow:0 1px 5px rgba(0,0,0,.4);background:#fff;border-radius:5px}.leaflet-control-layers-toggle{background-image:url(images/layers.png);width:36px;height:36px}.leaflet-retina .leaflet-control-layers-toggle{background-image:url(images/layers-2x.png);background-size:26px 26px}.leaflet-touch .leaflet-control-layers-toggle{width:44px;height:44px}.leaflet-control-layers .leaflet-control-layers-list,.leaflet-control-layers-expanded .leaflet-control-layers-toggle{display:none}.leaflet-control-layers-expanded .leaflet-control-layers-list{display:block;position:relative}.leaflet-control-layers-expanded{padding:6px 10px 6px 6px;color:#333;background:#fff}.leaflet-control-layers-scrollbar{overflow-y:scroll;overflow-x:hidden;padding-right:5px}.leaflet-control-layers-selector{margin-top:2px;position:relative;top:1px}.leaflet-control-layers label{display:block;font-size:13px;font-size:1.08333em}.leaflet-control-layers-separator{height:0;border-top:1px solid #ddd;margin:5px -10px 5px -6px}.leaflet-default-icon-path{background-image:url(images/marker-icon.png)}.leaflet-container .leaflet-control-attribution{background:#fff;background:rgba(255,255,255,.8);margin:0}.leaflet-control-attribution,.leaflet-control-scale-line{padding:0 5px;color:#333;line-height:1.4}.leaflet-control-attribution a{text-decoration:none}.leaflet-control-attribution a:focus,.leaflet-control-attribution a:hover{text-decoration:underline}.leaflet-attribution-flag{display:inline!important;vertical-align:baseline!important;width:1em;height:.6669em}.leaflet-left .leaflet-control-scale{margin-left:5px}.leaflet-bottom .leaflet-control-scale{margin-bottom:5px}.leaflet-control-scale-line{border:2px solid #777;border-top:none;line-height:1.1;padding:2px 5px 1px;white-space:nowrap;-moz-box-sizing:border-box;box-sizing:border-box;background:rgba(255,255,255,.8);text-shadow:1px 1px #fff}.leaflet-control-scale-line:not(:first-child){border-top:2px solid #777;border-bottom:none;margin-top:-2px}.leaflet-control-scale-line:not(:first-child):not(:last-child){border-bottom:2px solid #777}.leaflet-touch .leaflet-bar,.leaflet-touch .leaflet-control-attribution,.leaflet-touch .leaflet-control-layers{box-shadow:none}.leaflet-touch .leaflet-bar,.leaflet-touch .leaflet-control-layers{border:2px solid rgba(0,0,0,.2);background-clip:padding-box}.leaflet-popup{position:absolute;text-align:center;margin-bottom:20px}.leaflet-popup-content-wrapper{padding:1px;text-align:left;border-radius:12px}.leaflet-popup-content{margin:13px 24px 13px 20px;line-height:1.3;font-size:13px;font-size:1.08333em;min-height:1px}.leaflet-popup-content p{margin:17px 0;margin:1.3em 0}.leaflet-popup-tip-container{width:40px;height:20px;position:absolute;left:50%;margin-top:-1px;margin-left:-20px;overflow:hidden;pointer-events:none}.leaflet-popup-tip{width:17px;height:17px;padding:1px;margin:-10px auto 0;pointer-events:auto;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#fff;color:#333;box-shadow:0 3px 14px rgba(0,0,0,.4)}.leaflet-container a.leaflet-popup-close-button{position:absolute;top:0;right:0;border:none;text-align:center;width:24px;height:24px;font:16px/24px Tahoma,Verdana,sans-serif;color:#757575;text-decoration:none;background:0 0}.leaflet-container a.leaflet-popup-close-button:focus,.leaflet-container a.leaflet-popup-close-button:hover{color:#585858}.leaflet-popup-scrolled{overflow:auto}.leaflet-oldie .leaflet-popup-content-wrapper{-ms-zoom:1}.leaflet-oldie .leaflet-popup-tip{width:24px;margin:0 auto}.leaflet-oldie .leaflet-control-layers,.leaflet-oldie .leaflet-control-zoom,.leaflet-oldie .leaflet-popup-content-wrapper,.leaflet-oldie .leaflet-popup-tip{border:1px solid #999}.leaflet-div-icon{background:#fff;border:1px solid #666}.leaflet-tooltip{position:absolute;padding:6px;background-color:#fff;border:1px solid #fff;border-radius:3px;color:#222;white-space:nowrap;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none;box-shadow:0 1px 3px rgba(0,0,0,.4)}.leaflet-tooltip.leaflet-interactive{cursor:pointer;pointer-events:auto}.leaflet-tooltip-bottom:before,.leaflet-tooltip-left:before,.leaflet-tooltip-right:before,.leaflet-tooltip-top:before{position:absolute;pointer-events:none;border:6px solid transparent;background:0 0;content:""}.leaflet-tooltip-bottom{margin-top:6px}.leaflet-tooltip-top{margin-top:-6px}.leaflet-tooltip-bottom:before,.leaflet-tooltip-top:before{left:50%;margin-left:-6px}.leaflet-tooltip-top:before{bottom:0;margin-bottom:-12px;border-top-color:#fff}.leaflet-tooltip-bottom:before{top:0;margin-top:-12px;margin-left:-6px;border-bottom-color:#fff}.leaflet-tooltip-left{margin-left:-6px}.leaflet-tooltip-right{margin-left:6px}.leaflet-tooltip-left:before,.leaflet-tooltip-right:before{top:50%;margin-top:-6px}.leaflet-tooltip-left:before{right:0;margin-right:-12px;border-left-color:#fff}.leaflet-tooltip-right:before{left:0;margin-left:-12px;border-right-color:#fff}@media print{.leaflet-control{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style>
+<style>
+/* Layout: full-height app. Header strip with live totals, filter/insight rail on the left, map fills the rest; list drawer slides over the map. Stacks on phones. */
+:root {
+  --bg: #eef2f4;
+  --panel: #ffffff;
+  --ink: #13202a;
+  --muted: #586774;
+  --line: #d6dee4;
+  --soft: #e4eaee;
+  --accent: #0d5e7c;
+  --accent-ink: #ffffff;
+  --land: #f7f9fa;
+  --land-hover: #e3edf2;
+  --border-county: #a9b8c3;
+  --shadow: 0 1px 2px rgba(19, 32, 42, .08), 0 4px 14px rgba(19, 32, 42, .08);
+
+  --t-solar: #eda100;
+  --t-wind: #2a78d6;
+  --t-hydro: #1baf7a;
+  --t-gas: #eb6834;
+  --t-coal: #4f4b45;
+  --t-nuclear: #6250d6;
+  --t-bio: #008300;
+  --t-other: #e87ba4;
+  --ring: #ffffff;
+
+  --f-display: "Barlow Semi Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --f-body: "Public Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1419; --panel: #141e25; --ink: #e5ecf1; --muted: #93a3af; --line: #26343e; --soft: #1c2831;
+    --accent: #5fb3d4; --accent-ink: #08151c; --land: #18242c; --land-hover: #213440; --border-county: #3d5260;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.35);
+    --t-solar: #c98500; --t-wind: #3987e5; --t-hydro: #199e70; --t-gas: #d95926; --t-coal: #a8a397;
+    --t-nuclear: #9085e9; --t-bio: #008300; --t-other: #d55181; --ring: #141e25;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1419; --panel: #141e25; --ink: #e5ecf1; --muted: #93a3af; --line: #26343e; --soft: #1c2831;
+  --accent: #5fb3d4; --accent-ink: #08151c; --land: #18242c; --land-hover: #213440; --border-county: #3d5260;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.35);
+  --t-solar: #c98500; --t-wind: #3987e5; --t-hydro: #199e70; --t-gas: #d95926; --t-coal: #a8a397;
+  --t-nuclear: #9085e9; --t-bio: #008300; --t-other: #d55181; --ring: #141e25;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { height: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 14px/1.45 var(--f-body);
+  -webkit-font-smoothing: antialiased;
+}
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.num { font-variant-numeric: tabular-nums; }
+
+.app { height: 100%; display: grid; grid-template-rows: auto 1fr; }
+
+/* Header */
+.top {
+  background: var(--panel); border-bottom: 1px solid var(--line);
+  padding-block: 10px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px;
+}
+.brand { display: flex; flex-direction: column; min-width: 0; }
+.brand h1 {
+  margin: 0; font: 700 22px/1.1 var(--f-display); letter-spacing: .01em; text-wrap: balance;
+}
+.brand p { margin: 2px 0 0; color: var(--muted); font-size: 12px; }
+.stats { display: flex; gap: 24px; flex-wrap: wrap; margin-left: auto; }
+.stat { display: flex; flex-direction: column; }
+.stat b { font: 600 22px/1.05 var(--f-display); font-variant-numeric: tabular-nums; }
+.stat span { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+
+/* Main */
+.main { min-height: 0; display: grid; grid-template-columns: 340px minmax(0, 1fr); }
+.rail {
+  min-height: 0; overflow-y: auto; background: var(--panel); border-right: 1px solid var(--line);
+  padding-block: 14px 24px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: 16px;
+  display: flex; flex-direction: column; gap: 22px;
+}
+.section { display: flex; flex-direction: column; gap: 8px; }
+.section h2 {
+  margin: 0; font: 600 12px/1.2 var(--f-body); text-transform: uppercase; letter-spacing: .08em; color: var(--muted);
+  display: flex; justify-content: space-between; align-items: baseline; gap: 8px;
+}
+.linkbtn { border: 0; background: none; padding: 0; color: var(--accent); cursor: pointer; font-size: 12px; text-transform: none; letter-spacing: 0; font-weight: 500; }
+.linkbtn:hover { text-decoration: underline; }
+
+.search {
+  width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg);
+}
+.search::placeholder { color: var(--muted); }
+
+/* Technology rows: legend + filter + bar chart in one */
+.techlist { display: flex; flex-direction: column; gap: 2px; }
+.tech {
+  display: grid; grid-template-columns: 14px minmax(0, 1fr) auto; gap: 2px 10px; align-items: center;
+  padding: 6px 8px; border-radius: 6px; border: 0; background: none; text-align: left; cursor: pointer; width: 100%;
+}
+.tech:hover { background: var(--soft); }
+.tech .sw { width: 12px; height: 12px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 2px var(--panel), 0 0 0 3px var(--c); margin-left: 1px; }
+.tech .name { font-weight: 600; }
+.tech .val { font-weight: 600; text-align: right; }
+.tech .bar { grid-column: 2 / 4; height: 6px; border-radius: 3px; background: var(--soft); overflow: hidden; }
+.tech .bar i { display: block; height: 100%; width: var(--w); background: var(--c); border-radius: 0 3px 3px 0; transition: width .25s; }
+.tech .sub { grid-column: 2 / 4; font-size: 12px; color: var(--muted); }
+.tech[aria-pressed="false"] .sw { background: transparent; }
+.tech[aria-pressed="false"] .name, .tech[aria-pressed="false"] .val { color: var(--muted); font-weight: 500; }
+.tech[aria-pressed="false"] .bar i { opacity: .25; }
+
+.seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.seg button {
+  border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: 4px 11px; cursor: pointer; font-size: 13px;
+}
+.seg button:hover { border-color: var(--accent); }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+
+select.search { appearance: auto; }
+
+.counties { display: flex; flex-direction: column; gap: 1px; }
+.crow {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3px 10px; padding: 5px 8px; border-radius: 6px;
+  border: 0; background: none; cursor: pointer; text-align: left; width: 100%;
+}
+.crow:hover { background: var(--soft); }
+.crow[aria-pressed="true"] { background: var(--soft); box-shadow: inset 2px 0 0 var(--accent); }
+.crow .stack { grid-column: 1 / 3; display: flex; gap: 2px; height: 5px; }
+.crow .stack i { display: block; height: 100%; background: var(--c); border-radius: 1px; }
+
+.about { font-size: 12px; color: var(--muted); display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--line); padding-top: 14px; }
+.about p { margin: 0; }
+.about a { color: var(--accent); }
+
+/* Map */
+.mapwrap { position: relative; min-height: 0; min-width: 0; }
+#map { position: absolute; inset: 0; background: var(--bg); }
+.leaflet-container { font: inherit; background: var(--bg); }
+.mapbar {
+  position: absolute; z-index: 500; top: 12px; right: max(12px, env(safe-area-inset-right, 0px));
+  display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end;
+}
+.chip {
+  background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 6px 11px;
+  box-shadow: var(--shadow); cursor: pointer; font-weight: 500; font-size: 13px;
+}
+.chip:hover { border-color: var(--accent); }
+.chip[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+
+.sizekey {
+  position: absolute; z-index: 500; left: max(12px, env(safe-area-inset-left, 0px)); bottom: 22px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 6px; box-shadow: var(--shadow);
+  padding: 8px 10px; font-size: 11px; color: var(--muted);
+}
+.sizekey svg { display: block; }
+.sizekey text { fill: var(--muted); font-size: 10px; font-family: var(--f-body); }
+.sizekey circle { fill: none; stroke: var(--muted); stroke-width: 1; }
+
+.leaflet-control-attribution { background: color-mix(in srgb, var(--panel) 85%, transparent) !important; color: var(--muted) !important; font-size: 10px; }
+.leaflet-control-attribution a { color: var(--accent) !important; }
+.leaflet-bar a { background: var(--panel) !important; color: var(--ink) !important; border-color: var(--line) !important; }
+.leaflet-bar { border: 1px solid var(--line) !important; box-shadow: var(--shadow) !important; }
+.leaflet-top.leaflet-left { top: 0; left: env(safe-area-inset-left, 0px); }
+
+/* Popup */
+.leaflet-popup-content-wrapper, .leaflet-popup-tip { background: var(--panel); color: var(--ink); box-shadow: var(--shadow); }
+.leaflet-popup-content-wrapper { border-radius: 8px; border: 1px solid var(--line); }
+.leaflet-popup-content { margin: 14px 16px; font-size: 13px; line-height: 1.4; min-width: 230px; }
+.leaflet-container a.leaflet-popup-close-button { color: var(--muted); }
+.pp-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; }
+.pp-tag i { width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
+.pp-name { font: 700 18px/1.15 var(--f-display); margin: 4px 0 2px; }
+.pp-mw { font: 600 26px/1 var(--f-display); margin: 6px 0 10px; font-variant-numeric: tabular-nums; }
+.pp-mw small { font-size: 14px; color: var(--muted); font-weight: 500; }
+.pp dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 3px 12px; margin: 0; }
+.pp dt { color: var(--muted); }
+.pp dd { margin: 0; overflow-wrap: anywhere; }
+.pp .note { margin-top: 10px; font-size: 12px; color: var(--muted); }
+.pp .note.warn::before { content: "⚠ "; }
+.pp a { color: var(--accent); }
+
+/* Tooltip */
+.leaflet-tooltip { background: var(--panel); color: var(--ink); border: 1px solid var(--line); box-shadow: var(--shadow); font-size: 12px; padding: 4px 8px; }
+.leaflet-tooltip-top:before { border-top-color: var(--panel); }
+
+/* List drawer */
+.drawer {
+  position: absolute; z-index: 600; left: 0; right: 0; bottom: 0; height: min(52%, 460px);
+  background: var(--panel); border-top: 1px solid var(--line); box-shadow: 0 -6px 18px rgba(0,0,0,.12);
+  display: flex; flex-direction: column;
+}
+.drawer header {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  padding-block: 10px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  border-bottom: 1px solid var(--line);
+}
+.drawer header h2 { margin: 0; font: 600 16px/1.2 var(--f-display); }
+.drawer header .sp { flex: 1; }
+.tablewrap { overflow: auto; flex: 1; min-height: 0; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { padding: 6px 12px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { position: sticky; top: 0; background: var(--panel); font-weight: 600; color: var(--muted); font-size: 12px; z-index: 1; }
+th button { border: 0; background: none; padding: 0; cursor: pointer; font-weight: 600; color: inherit; }
+th button[data-dir]::after { content: attr(data-dir); margin-left: 4px; }
+td.r, th.r { text-align: right; }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: var(--soft); }
+td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--c); margin-right: 7px; vertical-align: 0; }
+.more { padding: 10px 16px; }
+
+.empty { padding: 24px 16px; color: var(--muted); }
+
+@media (max-width: 860px) {
+  .sizekey { display: none; }
+  .app { height: auto; display: block; }
+  .main { display: flex; flex-direction: column-reverse; }
+  .mapwrap { height: 64svh; min-height: 360px; }
+  .rail { border-right: 0; overflow: visible; padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .stats { margin-left: 0; gap: 18px; }
+  .drawer { height: 75%; }
+  th, td { padding: 6px 8px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand">
+      <h1>Romania Power Plant Map</h1>
+      <p>Licensed electricity generation capacity · ANRE register, 24 April 2023</p>
+    </div>
+    <div class="stats" aria-live="polite">
+      <div class="stat"><b id="sPlants" class="num">–</b><span>Plants shown</span></div>
+      <div class="stat"><b id="sMW" class="num">–</b><span>Installed MW</span></div>
+      <div class="stat"><b id="sCos" class="num">–</b><span>Companies</span></div>
+    </div>
+  </header>
+
+  <div class="main">
+    <aside class="rail">
+      <div class="section">
+        <label for="q" class="sr" hidden>Search</label>
+        <input id="q" class="search" type="search" placeholder="Search plant, company or locality" autocomplete="off">
+      </div>
+
+      <div class="section">
+        <h2>Technology <button class="linkbtn" id="techAll" type="button">Select all</button></h2>
+        <div class="techlist" id="techList"></div>
+      </div>
+
+      <div class="section">
+        <h2>Plant size</h2>
+        <div class="seg" id="sizeSeg" role="group" aria-label="Minimum capacity"></div>
+      </div>
+
+      <div class="section">
+        <h2>County <button class="linkbtn" id="countyClear" type="button" hidden>Show all counties</button></h2>
+        <select id="county" class="search" aria-label="County"></select>
+      </div>
+
+      <div class="section">
+        <h2>Top counties by capacity</h2>
+        <div class="counties" id="topCounties"></div>
+      </div>
+
+      <div class="about">
+        <p><b>Source:</b> ANRE (Romanian Energy Regulatory Authority), list of licensed power generation capacities, 24.04.2023. All plants listed hold a generation licence, so they are operating or licensed to operate.</p>
+        <p><b>Locations</b> are placed at the plant's locality (GeoNames gazetteer), not the exact site. <span id="approxNote"></span></p>
+        <p>The source file's own TOTAL row reads 18,923 MW, but its plant rows add up to 11,587 MW. This map uses the plant rows.</p>
+        <p><button class="linkbtn" id="reset" type="button">Reset all filters</button></p>
+      </div>
+    </aside>
+
+    <section class="mapwrap" aria-label="Map">
+      <div id="map"></div>
+      <div class="mapbar">
+        <button class="chip" id="listBtn" type="button" aria-pressed="false">List view</button>
+        <button class="chip" id="csvBtn" type="button">Download CSV</button>
+      </div>
+      <div class="sizekey" aria-hidden="true">
+        <svg id="sizeKey" width="128" height="62"></svg>
+      </div>
+      <div class="drawer" id="drawer" hidden>
+        <header>
+          <h2 id="listTitle">Plants</h2>
+          <span class="sp"></span>
+          <button class="chip" id="closeList" type="button">Close</button>
+        </header>
+        <div class="tablewrap">
+          <table>
+            <thead><tr>
+              <th><button type="button" data-k="n">Plant</button></th>
+              <th><button type="button" data-k="t">Technology</button></th>
+              <th class="r"><button type="button" data-k="mw" data-dir="↓">MW</button></th>
+              <th><button type="button" data-k="co">Company</button></th>
+              <th><button type="button" data-k="loc">Locality</button></th>
+              <th><button type="button" data-k="cty">County</button></th>
+              <th><button type="button" data-k="iss">Licence issued</button></th>
+            </tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+          <div class="more" id="moreWrap" hidden><button class="chip" id="moreBtn" type="button">Show all</button></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(() => {
+  const TECH = [
+    { key: "solar", label: "Solar", members: ["Solar"] },
+    { key: "wind", label: "Wind", members: ["Wind"] },
+    { key: "hydro", label: "Hydro", members: ["Hydro"] },
+    { key: "gas", label: "Natural gas", members: ["Natural Gas"] },
+    { key: "coal", label: "Coal", members: ["Coal"] },
+    { key: "nuclear", label: "Nuclear", members: ["Nuclear"] },
+    { key: "bio", label: "Bioenergy", members: ["Biomass", "Biogas"], hint: "Biomass and biogas" },
+    { key: "other", label: "Other", members: ["Waste", "Waste Heat", "Geothermal"], hint: "Waste, waste heat, geothermal" },
+  ];
+  const TECH_OF = {};
+  TECH.forEach(t => t.members.forEach(m => (TECH_OF[m] = t)));
+  const SIZES = [
+    { v: 0, label: "All" }, { v: 1, label: "≥ 1 MW" }, { v: 10, label: "≥ 10 MW" },
+    { v: 50, label: "≥ 50 MW" }, { v: 100, label: "≥ 100 MW" },
+  ];
+  const LIST_PAGE = 300;
+
+  const state = { techs: new Set(TECH.map(t => t.key)), minMW: 0, county: "", q: "", sortK: "mw", sortDir: -1, listAll: false };
+  let plants = [], counties = null, colors = {}, map, pointLayer, countyLayer, tiles, renderer;
+
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const fmtMW = v => v >= 100 ? Math.round(v).toLocaleString("en-US") : v >= 10 ? v.toFixed(1) : v >= 1 ? v.toFixed(2) : v.toFixed(3);
+  const fmtBig = v => Math.round(v).toLocaleString("en-US");
+  const fmtDate = d => d ? new Date(d + "T00:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }) : "–";
+  const radius = mw => 3 + 1.2 * Math.sqrt(Math.max(mw, 0));
+  const norm = s => String(s).normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  const isDark = () => getComputedStyle(document.documentElement).colorScheme.includes("dark");
+
+  function readColors() {
+    const cs = getComputedStyle(document.documentElement);
+    TECH.forEach(t => (colors[t.key] = cs.getPropertyValue("--t-" + t.key).trim()));
+    colors.ring = cs.getPropertyValue("--ring").trim();
+    colors.land = cs.getPropertyValue("--land").trim();
+    colors.landHover = cs.getPropertyValue("--land-hover").trim();
+    colors.border = cs.getPropertyValue("--border-county").trim();
+    colors.accent = cs.getPropertyValue("--accent").trim();
+  }
+
+  // Plants sharing one locality point are fanned out in a small spiral so each stays clickable.
+  function spread(list) {
+    const groups = new Map();
+    list.forEach(p => {
+      const k = p.lat + "," + p.lon;
+      (groups.get(k) || groups.set(k, []).get(k)).push(p);
+    });
+    groups.forEach(g => {
+      g.sort((a, b) => b.mw - a.mw);
+      g.forEach((p, i) => {
+        if (i === 0) { p.y = p.lat; p.x = p.lon; return; }
+        const a = i * 2.39996, d = 0.0045 * Math.sqrt(i);
+        p.y = p.lat + d * Math.sin(a);
+        p.x = p.lon + d * Math.cos(a) / Math.cos(p.lat * Math.PI / 180);
+      });
+    });
+  }
+
+  function matchesExcept(p, skip) {
+    if (skip !== "tech" && !state.techs.has(p.tk)) return false;
+    if (skip !== "size" && p.mw < state.minMW) return false;
+    if (skip !== "county" && state.county && p.cty !== state.county) return false;
+    if (state.q && !p.s.includes(state.q)) return false;
+    return true;
+  }
+
+  function popupHtml(p) {
+    const t = TECH_OF[p.t];
+    const sub = t.members.length > 1 ? " · " + esc(p.t) : "";
+    return `<div class="pp">
+      <span class="pp-tag" style="--c:${colors[t.key]}"><i></i>${esc(t.label)}${sub}</span>
+      <div class="pp-name">${esc(p.n)}</div>
+      <div class="pp-mw">${fmtMW(p.mw)} <small>MW installed</small></div>
+      <dl>
+        <dt>Company</dt><dd>${esc(p.co)}</dd>
+        <dt>Locality</dt><dd>${esc(p.loc)}</dd>
+        <dt>County</dt><dd>${esc(p.cty)}</dd>
+        <dt>Status</dt><dd>Licensed</dd>
+        <dt>Licence no.</dt><dd>${esc(p.lic ?? "–")}</dd>
+        <dt>Issued</dt><dd>${fmtDate(p.iss)}</dd>
+        <dt>Expires</dt><dd>${fmtDate(p.exp)}</dd>
+      </dl>
+      <div class="note ${p.p ? "" : "warn"}">${p.p ? "Location: centre of the locality, not the exact site." : "Location approximate: locality not found, shown at the county centre."}
+        <a href="https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lon}" target="_blank" rel="noopener">Open in Google Maps</a></div>
+    </div>`;
+  }
+
+  function drawPoints(list) {
+    pointLayer.clearLayers();
+    // Big plants first so small ones stay on top and clickable.
+    [...list].sort((a, b) => b.mw - a.mw).forEach(p => {
+      const c = colors[p.tk];
+      const m = L.circleMarker([p.y, p.x], {
+        renderer, radius: radius(p.mw), color: colors.ring, weight: 1, fillColor: c, fillOpacity: 0.82,
+      });
+      m.bindTooltip(`<b>${esc(p.n)}</b> · ${fmtMW(p.mw)} MW`, { direction: "top", offset: [0, -radius(p.mw)] });
+      m.bindPopup(() => popupHtml(p), { maxWidth: 320 });
+      m.on("mouseover", () => m.setStyle({ weight: 2.5, color: colors.accent }));
+      m.on("mouseout", () => m.setStyle({ weight: 1, color: colors.ring }));
+      p.marker = m;
+      pointLayer.addLayer(m);
+    });
+  }
+
+  function renderTech() {
+    const base = plants.filter(p => matchesExcept(p, "tech"));
+    const agg = Object.fromEntries(TECH.map(t => [t.key, { mw: 0, n: 0 }]));
+    base.forEach(p => { agg[p.tk].mw += p.mw; agg[p.tk].n++; });
+    const max = Math.max(1, ...Object.values(agg).map(a => a.mw));
+    $("techList").innerHTML = TECH.map(t => {
+      const a = agg[t.key], on = state.techs.has(t.key);
+      return `<button type="button" class="tech" data-k="${t.key}" aria-pressed="${on}" style="--c:${colors[t.key]};--w:${(a.mw / max * 100).toFixed(1)}%" title="${esc(t.hint || t.label)}">
+        <span class="sw"></span><span class="name">${t.label}</span><span class="val num">${fmtBig(a.mw)} MW</span>
+        <span class="bar"><i></i></span>
+        <span class="sub num">${a.n.toLocaleString("en-US")} plant${a.n === 1 ? "" : "s"}${t.hint ? " · " + t.hint : ""}</span>
+      </button>`;
+    }).join("");
+  }
+
+  function renderCounties(list) {
+    const agg = new Map();
+    list.forEach(p => {
+      const a = agg.get(p.cty) || agg.set(p.cty, { mw: 0, n: 0, by: {} }).get(p.cty);
+      a.mw += p.mw; a.n++; a.by[p.tk] = (a.by[p.tk] || 0) + p.mw;
+    });
+    const top = [...agg.entries()].sort((a, b) => b[1].mw - a[1].mw).slice(0, 10);
+    const max = top.length ? top[0][1].mw : 1;
+    $("topCounties").innerHTML = top.length ? top.map(([c, a]) => {
+      const segs = TECH.filter(t => a.by[t.key] > 0)
+        .map(t => `<i style="--c:${colors[t.key]};width:${(a.by[t.key] / max * 100).toFixed(2)}%" title="${t.label}: ${fmtBig(a.by[t.key])} MW"></i>`).join("");
+      return `<button type="button" class="crow" data-c="${esc(c)}" aria-pressed="${state.county === c}">
+        <span>${esc(c)}</span><span class="num"><b>${fmtBig(a.mw)}</b> MW · ${a.n}</span>
+        <span class="stack">${segs}</span></button>`;
+    }).join("") : `<div class="empty">No plants match these filters.</div>`;
+  }
+
+  function renderStats(list) {
+    $("sPlants").textContent = list.length.toLocaleString("en-US");
+    $("sMW").textContent = fmtBig(list.reduce((s, p) => s + p.mw, 0));
+    $("sCos").textContent = new Set(list.map(p => p.co)).size.toLocaleString("en-US");
+  }
+
+  function renderTable(list) {
+    if ($("drawer").hidden) return;
+    const k = state.sortK, d = state.sortDir;
+    const rows = [...list].sort((a, b) => {
+      const x = a[k] ?? "", y = b[k] ?? "";
+      return (typeof x === "number" ? x - y : String(x).localeCompare(String(y))) * d;
+    });
+    const shown = state.listAll ? rows : rows.slice(0, LIST_PAGE);
+    $("listTitle").textContent = `${list.length.toLocaleString("en-US")} plants`;
+    $("rows").innerHTML = shown.map(p => `<tr data-i="${p.i}">
+      <td>${esc(p.n)}</td><td><span class="dot" style="--c:${colors[p.tk]}"></span>${esc(p.t)}</td>
+      <td class="r num">${fmtMW(p.mw)}</td><td>${esc(p.co)}</td><td>${esc(p.loc)}</td><td>${esc(p.cty)}</td><td class="num">${p.iss ?? "–"}</td></tr>`).join("");
+    $("moreWrap").hidden = state.listAll || rows.length <= LIST_PAGE;
+    $("moreBtn").textContent = `Show all ${rows.length.toLocaleString("en-US")}`;
+    document.querySelectorAll("th button").forEach(b => {
+      if (b.dataset.k === k) b.dataset.dir = d > 0 ? "↑" : "↓"; else delete b.dataset.dir;
+    });
+  }
+
+  function styleCounties() {
+    if (!countyLayer) return;
+    countyLayer.setStyle(f => {
+      const sel = state.county && f.properties.key === state.county;
+      return {
+        color: sel ? colors.accent : colors.border, weight: sel ? 2.2 : 0.8,
+        fillColor: colors.land, fillOpacity: tilesOk ? 0.0 : 1, opacity: 1,
+      };
+    });
+  }
+
+  let current = [];
+  function update() {
+    current = plants.filter(p => matchesExcept(p, null));
+    drawPoints(current);
+    renderTech();
+    renderCounties(current);
+    renderStats(current);
+    renderTable(current);
+    styleCounties();
+    $("countyClear").hidden = !state.county;
+    $("county").value = state.county;
+    document.querySelectorAll("#sizeSeg button").forEach(b => b.setAttribute("aria-pressed", +b.dataset.v === state.minMW));
+  }
+
+  function focusPlant(p) {
+    map.flyTo([p.y, p.x], Math.max(map.getZoom(), 11), { duration: 0.6 });
+    map.once("moveend", () => p.marker && p.marker.openPopup());
+  }
+
+  function exportCsv() {
+    const cols = [["n", "Plant"], ["t", "Technology"], ["mw", "Installed MW"], ["co", "Company"], ["loc", "Locality"], ["cty", "County"],
+      ["lic", "Licence no."], ["iss", "Licence issued"], ["exp", "Licence expires"], ["lat", "Latitude"], ["lon", "Longitude"]];
+    const q = v => { const s = String(v ?? ""); return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
+    const csv = [cols.map(c => c[1]).join(","), ...current.map(p => cols.map(c => q(p[c[0]])).join(","))].join("\n");
+    const url = URL.createObjectURL(new Blob(["﻿" + csv], { type: "text/csv" }));
+    const a = Object.assign(document.createElement("a"), { href: url, download: "romania-power-plants.csv" });
+    document.body.append(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  function drawSizeKey() {
+    const vals = [10, 100, 500], svg = $("sizeKey");
+    const rMax = radius(500), base = 4 + 2 * rMax;
+    let x = 4, out = "";
+    vals.forEach(v => {
+      const r = radius(v);
+      out += `<circle cx="${x + r}" cy="${base - r}" r="${r}"></circle><text x="${x + r}" y="${base + 13}" text-anchor="middle">${v}</text>`;
+      x += 2 * r + 10;
+    });
+    svg.setAttribute("width", x + 18);
+    svg.setAttribute("height", base + 16);
+    svg.innerHTML = out + `<text x="${x - 4}" y="${base + 13}">MW</text>`;
+  }
+
+  // Basemap tiles: used where the host allows them; county outlines carry the map otherwise.
+  let tilesOk = false;
+  function setTiles() {
+    if (tiles) map.removeLayer(tiles);
+    const style = isDark() ? "World_Dark_Gray_Base" : "World_Light_Gray_Base";
+    tiles = L.tileLayer(`https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/${style}/MapServer/tile/{z}/{y}/{x}`, {
+      maxZoom: 16,
+      attribution: 'Basemap &copy; <a href="https://www.esri.com/" target="_blank" rel="noopener">Esri</a>, HERE, Garmin, &copy; OpenStreetMap contributors',
+    });
+    tiles.once("tileload", () => { tilesOk = true; styleCounties(); });
+    tiles.addTo(map);
+  }
+
+  function bind() {
+    $("techList").addEventListener("click", e => {
+      const b = e.target.closest(".tech"); if (!b) return;
+      const k = b.dataset.k;
+      // First click isolates a technology; later clicks add or remove.
+      if (state.techs.size === TECH.length) state.techs = new Set([k]);
+      else if (state.techs.has(k)) { state.techs.delete(k); if (!state.techs.size) state.techs = new Set(TECH.map(t => t.key)); }
+      else state.techs.add(k);
+      update();
+    });
+    $("techAll").onclick = () => { state.techs = new Set(TECH.map(t => t.key)); update(); };
+    $("sizeSeg").innerHTML = SIZES.map(s => `<button type="button" data-v="${s.v}" aria-pressed="false">${s.label}</button>`).join("");
+    $("sizeSeg").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { state.minMW = +b.dataset.v; update(); } });
+    let qt;
+    $("q").addEventListener("input", e => { clearTimeout(qt); qt = setTimeout(() => { state.q = norm(e.target.value.trim()); update(); }, 150); });
+    $("county").addEventListener("change", e => selectCounty(e.target.value));
+    $("countyClear").onclick = () => selectCounty("");
+    $("topCounties").addEventListener("click", e => { const b = e.target.closest(".crow"); if (b) selectCounty(state.county === b.dataset.c ? "" : b.dataset.c); });
+    $("reset").onclick = () => {
+      Object.assign(state, { techs: new Set(TECH.map(t => t.key)), minMW: 0, county: "", q: "" });
+      $("q").value = ""; update(); map.flyToBounds(romaniaBounds, { duration: 0.6 });
+    };
+    $("listBtn").onclick = () => toggleList();
+    $("closeList").onclick = () => toggleList(false);
+    $("moreBtn").onclick = () => { state.listAll = true; renderTable(current); };
+    document.querySelector("thead").addEventListener("click", e => {
+      const b = e.target.closest("button"); if (!b) return;
+      if (state.sortK === b.dataset.k) state.sortDir *= -1;
+      else { state.sortK = b.dataset.k; state.sortDir = b.dataset.k === "mw" ? -1 : 1; }
+      renderTable(current);
+    });
+    $("rows").addEventListener("click", e => {
+      const tr = e.target.closest("tr"); if (!tr) return;
+      const p = plants[+tr.dataset.i];
+      if (window.matchMedia("(max-width: 860px)").matches) toggleList(false);
+      focusPlant(p);
+    });
+    $("csvBtn").onclick = exportCsv;
+    // Inside an embedded preview the browser blocks downloads, so hide the button there.
+    if (window.self !== window.top) $("csvBtn").hidden = true;
+
+    const onTheme = () => { readColors(); setTiles(); drawSizeKey(); update(); };
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", onTheme);
+    new MutationObserver(onTheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  }
+
+  function toggleList(force) {
+    const open = force ?? $("drawer").hidden;
+    $("drawer").hidden = !open;
+    $("listBtn").setAttribute("aria-pressed", open);
+    state.listAll = false;
+    if (open) renderTable(current);
+  }
+
+  let romaniaBounds;
+  function selectCounty(c) {
+    state.county = c;
+    update();
+    if (c && countyLayer) {
+      countyLayer.eachLayer(l => { if (l.feature.properties.key === c) map.flyToBounds(l.getBounds(), { padding: [30, 30], duration: 0.6 }); });
+    } else if (!c) map.flyToBounds(romaniaBounds, { duration: 0.6 });
+  }
+
+  async function init() {
+    readColors();
+    const [pd, cd] = await Promise.all([
+      fetch("data/plants.json").then(r => r.json()),
+      fetch("data/counties.json").then(r => r.json()),
+    ]);
+    plants = pd.plants.map((p, i) => ({
+      ...p, i, tk: TECH_OF[p.t] ? TECH_OF[p.t].key : "other",
+      s: norm([p.n, p.co, p.loc, p.cty].join(" ")),
+    }));
+    plants.forEach(p => { if (!TECH_OF[p.t]) TECH_OF[p.t] = TECH[TECH.length - 1]; });
+    spread(plants);
+    const approx = plants.filter(p => !p.p).length;
+    $("approxNote").textContent = `${approx} plants whose locality could not be matched are shown at their county centre and marked as approximate.`;
+
+    const countyNames = [...new Set(plants.map(p => p.cty))].sort((a, b) => a.localeCompare(b));
+    $("county").innerHTML = `<option value="">All counties (${countyNames.length})</option>` +
+      countyNames.map(c => `<option value="${esc(c)}">${esc(c)}</option>`).join("");
+    // Boundary file spells two counties differently from the ANRE register.
+    const alias = { "caras-severin": "Caras Severin", "bucharest": "Bucuresti" };
+    const byNorm = Object.fromEntries(countyNames.map(c => [norm(c).replace(/[^a-z]/g, ""), c]));
+    cd.features.forEach(f => {
+      const n = norm(f.properties.name);
+      f.properties.key = alias[n] || byNorm[n.replace(/[^a-z]/g, "")] || f.properties.name;
+    });
+
+    map = L.map("map", { zoomSnap: 1, minZoom: 6, preferCanvas: true, attributionControl: true });
+    renderer = L.canvas({ padding: 0.5, tolerance: 4 });
+    countyLayer = L.geoJSON(cd, {
+      style: { color: colors.border, weight: 0.8, fillColor: colors.land, fillOpacity: 1 },
+      onEachFeature: (f, l) => {
+        l.bindTooltip(f.properties.key, { sticky: true, direction: "top" });
+        l.on("click", () => selectCounty(state.county === f.properties.key ? "" : f.properties.key));
+        l.on("mouseover", () => l.setStyle({ fillColor: colors.landHover, fillOpacity: tilesOk ? 0.35 : 1 }));
+        l.on("mouseout", () => styleCounties());
+      },
+    }).addTo(map);
+    romaniaBounds = countyLayer.getBounds();
+    map.fitBounds(romaniaBounds, { padding: [10, 10] });
+    map.setMaxBounds(romaniaBounds.pad(0.6));
+    setTiles();
+    pointLayer = L.layerGroup().addTo(map);
+
+    bind();
+    drawSizeKey();
+    update();
+  }
+
+  init().catch(err => {
+    $("map").innerHTML = `<div class="empty">The map data could not be loaded (${esc(err.message)}). Reload the page to try again.</div>`;
+  });
+})();
+</script>
+</body>
+</html>
