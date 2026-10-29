@@ -1,9 +1,9 @@
 """Build the map's data files from the Romania energy projects master database.
 
 Reads the master Excel (operating plants and the development pipeline from ANRE,
-Transelectrica, the distribution operators and Global Energy Monitor), removes
-subtotal rows and cross-source duplicates, fixes kW/MW slips, normalises
-technologies, stages and counties, and writes:
+Transelectrica, the distribution operators and Global Energy Monitor), keeps the
+sources listed in INCLUDED_SOURCES, removes subtotal rows and cross-source
+duplicates, fixes kW/MW slips, normalises technologies, stages and counties, and writes:
   data/plants.json     - one record per project
   data/counties.json   - simplified county boundaries with label points
 
@@ -325,21 +325,30 @@ def county_at(lat, lon, polygons):
 
 
 def licence_dates():
-    """Licence number -> (issued, expires) from the earlier ANRE export."""
+    """Licence number -> (issued, expires, expired) from the earlier ANRE export.
+
+    "expired" is the export's own status column: the licence's expiry date has passed. The export
+    predates any renewal, so such a plant may well still hold a renewed licence.
+    """
     if not ANRE_LICENCES.exists():
         return {}
     df = pd.read_excel(ANRE_LICENCES)
     out = {}
     for r in df.itertuples(index=False):
-        lic, iss, exp = r[2], r[3], r[4]
+        lic, iss, exp, status = r[2], r[3], r[4], r[10]
         if pd.notna(lic):
             out[int(lic)] = (iss.strftime("%Y-%m-%d") if pd.notna(iss) else None,
-                             exp.strftime("%Y-%m-%d") if pd.notna(exp) else None)
+                             exp.strftime("%Y-%m-%d") if pd.notna(exp) else None,
+                             "Expired" in str(status))
     return out
 
 
 # Stages left out of the map entirely: grid-connection permits and studies are not commitments to build.
 EXCLUDED_STAGES = {"Planning / ATR / pre-construction"}
+
+# Sources shown on the map. Until ANRE publishes an updated register, the map is built on the
+# 2023 register alone; other sources are added back only once checked against it for duplicates.
+INCLUDED_SOURCES = {ANRE_SOURCE}
 
 # Placeholder points the master file uses when a project has no location (roughly the centre of Romania).
 PLACEHOLDER_POINTS = [(45.9852, 24.6859), (45.9432, 24.9668)]
@@ -375,7 +384,8 @@ def main():
     dates = licence_dates()
     log = {"subtotal rows": 0, "notes / zero rows": 0, "kW fixed": 0, "ANRE duplicates": 0,
            "GEM operating already listed": 0, "county from coordinates": 0, "outside Romania": 0,
-           "placeholder location re-placed": 0, "no usable location": 0, "planning / ATR rows left out": 0}
+           "placeholder location re-placed": 0, "no usable location": 0, "planning / ATR rows left out": 0,
+           "other sources left out": 0, "licence expired per 2023 export": 0}
 
     rows = []
     for r in df.to_dict("records"):
@@ -393,6 +403,9 @@ def main():
             log["planning / ATR rows left out"] += 1
             continue
         source = source_of(r["Data Source"], status_raw, ident)
+        if source not in INCLUDED_SOURCES:
+            log["other sources left out"] += 1
+            continue
         mw, fixed = fix_units(mw, f"{plant} {project}", source)
         log["kW fixed"] += fixed
 
@@ -427,14 +440,14 @@ def main():
 
         lic = re.search(r"(\d+)", ident) if source == ANRE_SOURCE else None
         lic = int(lic.group(1)) if lic else None
-        iss, exp = dates.get(lic, (None, None)) if lic else (None, None)
+        iss, exp, expired = dates.get(lic, (None, None, False)) if lic else (None, None, False)
         rows.append({
             "n": name or "Unnamed project",
             "co": clean(r["Owner / Operator"]) or (project if project != name and len(project) <= 60 else ""),
             "loc": locality, "cty": county or "", "mw": round(mw, 4),
             "t": TECH_MAP.get(clean(r["Technology"]), clean(r["Technology"]) or "Other"),
             "st": STAGE_MAP.get(status_raw, status_raw),
-            "src": source, "id": ident, "lic": lic, "iss": iss, "exp": exp,
+            "src": source, "id": ident, "lic": lic, "iss": iss, "exp": exp, "lx": expired,
             "lat": round(lat, 5) if located else None, "lon": round(lon, 5) if located else None, "d": desc[:400],
         })
 
@@ -447,6 +460,7 @@ def main():
             continue
         seen.add(key)
         deduped.append(p)
+    log["licence expired per 2023 export"] = sum(p["lx"] for p in deduped)
 
     # GEM "operating" units mostly repeat plants already listed as operating by ANRE or the grid operators.
     # Drop a GEM unit when such a plant of the same technology shares a distinctive name word, or lies
@@ -466,7 +480,7 @@ def main():
         plants.append(p)
 
     out = ROOT / "data" / "plants.json"
-    out.write_text(json.dumps({"source": "Romania energy projects master database 2026", "plants": plants},
+    out.write_text(json.dumps({"source": "ANRE licensed capacity register, 24.04.2023", "plants": plants},
                               ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(f"plants.json: {len(plants)} projects ({out.stat().st_size // 1024} KB)")
     for k, v in log.items():
