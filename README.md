@@ -10,15 +10,23 @@ Live at https://matand299.github.io/romania-power-map/
 
 ## Data
 
-`Romania_Energy_Projects_Master_Database_2026_EN.xlsx` combines the ANRE licensed capacity register (2023),
-Transelectrica's connection annexes, the distribution operators' annexes (DEER, Rețele Electrice, DEO) and
-Global Energy Monitor rows. The build script removes subtotal rows and cross-source duplicates, converts
-kW values recorded as MW, normalises technologies, stages and counties, and places rows that carry a
-placeholder location using the GeoNames gazetteer. The earlier ANRE export supplies licence dates.
+The map is an interim one, built from two official sources so that no plant appears twice:
+
+- `Puteri-capacitati_24.04.2023_Final_EN_With_Status.xlsx` – the ANRE licensed capacity register (24.04.2023),
+  read directly. Plants whose licence had passed its expiry date are kept and marked, since the licence may have
+  been renewed. Coordinates come from the master database's copy of the same plant when it has one.
+- `entsoe/` – ENTSO-E Transparency Platform, installed capacity per production unit (units of 100 MW and more),
+  one file per year. `entsoe_anre_match.csv` says which register plants each unit stands for: a matched unit
+  replaces those rows with its current capacity; units built after the register's date are added; capacity listed
+  only for later years is shown as under construction.
+
+`Romania_Energy_Projects_Master_Database_2026_EN.xlsx` also holds Transelectrica, distribution-operator and
+Global Energy Monitor rows. They are left out (`INCLUDED_SOURCES` in the build script) until each can be checked
+against the register.
 
 ## Updating the data
 
-Replace the master Excel in `data/source/`, then run `python3 scripts/build_data.py` and commit.
+Replace or add files in `data/source/`, then run `python3 scripts/build_data.py` and commit.
 
 ## Hosting
 
