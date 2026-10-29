@@ -516,9 +516,6 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
   const SOURCES = [
     { v: "", label: "All sources" },
     { v: "anre", label: "ANRE register (2023)", test: s => s.startsWith("ANRE") },
-    { v: "tso", label: "Transelectrica (transmission)", test: s => s.startsWith("Transelectrica") },
-    { v: "dso", label: "Distribution operators", test: s => /^(DEER|Rețele|Distribuție)/.test(s) },
-    { v: "gem", label: "Global Energy Monitor", test: s => s.startsWith("Global Energy Monitor") },
   ];
   const SHORT_SRC = [["ANRE", "ANRE 2023"], ["Transelectrica", "Transelectrica"], ["DEER", "DEER (Electrica)"], ["Rețele", "Rețele Electrice (PPC)"], ["Distribuție", "DEO"], ["Global Energy Monitor", "Global Energy Monitor"]];
   const SIZES = [{ v: 0, label: "All" }, { v: 1, label: "≥ 1 MW" }, { v: 10, label: "≥ 10" }, { v: 50, label: "≥ 50" }, { v: 100, label: "≥ 100" }];

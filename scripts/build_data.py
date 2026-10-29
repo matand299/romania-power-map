@@ -22,7 +22,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "data" / "source"
 EXCEL = SRC / "Romania_Energy_Projects_Master_Database_2026_EN.xlsx"
-# Earlier ANRE export, used only for licence issue and expiry dates.
+# ANRE licensed capacity register (24.04.2023): the map's ANRE plants, licence dates and status.
 ANRE_LICENCES = SRC / "Puteri-capacitati_24.04.2023_Final_EN_With_Status.xlsx"
 GEONAMES = SRC / "geonames_RO.txt"
 ADMIN1 = SRC / "geonames_admin1_RO.txt"
@@ -346,6 +346,38 @@ def licence_dates():
 # Stages left out of the map entirely: grid-connection permits and studies are not commitments to build.
 EXCLUDED_STAGES = {"Planning / ATR / pre-construction"}
 
+def anre_register_rows(master):
+    """The ANRE register's plants, as rows in the master file's layout.
+
+    The master file carries the register too, but relabels some of its plants under other sources
+    (for example Transelectrica connection certificates), so the register itself is read here.
+    Coordinates come from the master file's copy of the same plant when it has one: the register
+    often gives only the county seat.
+    """
+    coords = {}
+    for r in master.to_dict("records"):
+        lat, lon = r["Latitude"], r["Longitude"]
+        if pd.isna(lat) or pd.isna(lon) or any(abs(lat - a) < 0.002 and abs(lon - b) < 0.002
+                                               for a, b in PLACEHOLDER_POINTS):
+            continue
+        key = (norm(r["Plant / Station Name"]), round(float(r["Installed Capacity (MW)"] or 0), 2))
+        coords.setdefault(key, (lat, lon))
+    rows = []
+    for r in pd.read_excel(ANRE_LICENCES).to_dict("records"):
+        plant, mw = clean(r["Plant Name"]), float(0 if pd.isna(r["Installed Capacity (MW)"]) else r["Installed Capacity (MW)"])
+        lat, lon = coords.get((norm(plant), round(mw, 2)), (r["Latitude"], r["Longitude"]))
+        company = clean(r["Company / Economic Operator"])
+        tech = clean(r["Primary Energy / Technology"])
+        rows.append({
+            "Data Source": "ANRE", "Project / Investor Name": company, "Plant / Station Name": plant,
+            "Technology": TECH_NAMES.get(tech, tech), "Status / Stage": "Operating (Licensed)",
+            "Installed Capacity (MW)": mw, "County (Judet)": r["County (Judet)"], "Locality / City": r["Locality / City"],
+            "Latitude": lat, "Longitude": lon, "Owner / Operator": company,
+            "Original ID / License": "" if pd.isna(r["License Number"]) else str(int(r["License Number"])),
+        })
+    return rows
+
+
 # Sources shown on the map. Until ANRE publishes an updated register, the map is built on the
 # 2023 register alone; other sources are added back only once checked against it for duplicates.
 INCLUDED_SOURCES = {ANRE_SOURCE}
@@ -382,13 +414,17 @@ def main():
     polygons = load_county_polygons()
     county_names = {norm(n): ("Bucuresti" if n == "Bucharest" else n) for n, _ in polygons}
     dates = licence_dates()
-    log = {"subtotal rows": 0, "notes / zero rows": 0, "kW fixed": 0, "ANRE duplicates": 0,
+    log = {"subtotal rows": 0, "notes / zero rows": 0, "kW fixed": 0,
            "GEM operating already listed": 0, "county from coordinates": 0, "outside Romania": 0,
            "placeholder location re-placed": 0, "no usable location": 0, "planning / ATR rows left out": 0,
            "other sources left out": 0, "licence expired per 2023 export": 0}
 
+    # ANRE plants come from the register itself; the master file supplies every other source.
+    records = [r for r in df.to_dict("records")
+               if source_of(r["Data Source"], clean(r["Status / Stage"]), clean(r["Original ID / License"])) != ANRE_SOURCE]
+    records += anre_register_rows(df)
     rows = []
-    for r in df.to_dict("records"):
+    for r in records:
         plant, project = clean(r["Plant / Station Name"]), clean(r["Project / Investor Name"])
         ident, locality = clean(r["Original ID / License"]), clean(r["Locality / City"])
         status_raw = clean(r["Status / Stage"])
@@ -451,15 +487,9 @@ def main():
             "lat": round(lat, 5) if located else None, "lon": round(lon, 5) if located else None, "d": desc[:400],
         })
 
-    # The ANRE register appears twice in the master file (with and without a source label).
-    seen, deduped = set(), []
-    for p in rows:
-        key = (p["src"], norm(p["n"]), round(p["mw"], 2), p["lic"]) if p["src"] == ANRE_SOURCE else None
-        if key and key in seen:
-            log["ANRE duplicates"] += 1
-            continue
-        seen.add(key)
-        deduped.append(p)
+    # ANRE rows come from the register alone, so the master file's second copy of it never enters.
+    # Same-named rows in the register are separate units (e.g. two small turbines) and all stay.
+    deduped = rows
     log["licence expired per 2023 export"] = sum(p["lx"] for p in deduped)
 
     # GEM "operating" units mostly repeat plants already listed as operating by ANRE or the grid operators.
