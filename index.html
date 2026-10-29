@@ -387,9 +387,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
         <h3 class="mk-title">Stage</h3>
         <div class="mkey">
           <svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="var(--gold)" stroke-width="1"/></svg><span>Operating</span>
-          <svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="var(--gold)" fill-opacity=".4" stroke-width="2"/></svg><span>Construction</span>
-          <svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="none" stroke-width="1.6"/></svg><span>CDC</span>
-          <svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="none" stroke-width="1.4" stroke-dasharray="2 2" style="stroke:var(--muted)"/></svg><span>Closed</span>
+          <svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="var(--gold)" stroke-width="1.6" stroke-dasharray="2 1.5" style="stroke:var(--ink)"/></svg><span>Licence lapsed*</span>
         </div>
       </div>
     </div>
@@ -448,15 +446,10 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     </div>
 
     <div class="about">
-      <p><b>Sources</b> (Romania energy projects master database, 2026):</p>
-      <ul>
-        <li>ANRE licensed capacity register, 24.04.2023</li>
-        <li>Transelectrica Annex 9.2: connection certificates for plants on the transmission grid</li>
-        <li>Distribuție Energie Oltenia, 02.10.2026: commissioned plants (PIF) and connection certificates (CDC)</li>
-        <li>Global Energy Monitor power tracker (rows with no source in the file, identified by GEM unit IDs)</li>
-      </ul>
-      <p><b>Stages</b> follow the master file. Projects at the planning / ATR / pre-construction stage (1,620 projects, 86.5 GW of connection permits and studies) are left out of this map.</p>
-      <p><b>Cleaning:</b> subtotal and note rows removed; the ANRE register's duplicate copy removed; Global Energy Monitor units already listed as operating by ANRE or a grid operator removed; a few distribution-operator values recorded in kW converted to MW. Sources can still overlap, so totals are indicative.</p>
+      <p><b>Source:</b> ANRE licensed capacity register, 24.04.2023 (licensed operating plants). This is an interim map: plants commissioned after that date will be added only from verified sources, checked against the register so no plant appears twice.</p>
+      <p><b>*Licence lapsed:</b> by the expiry date in the 2023 register the licence has since lapsed. The register predates any renewal, so the plant may hold a renewed licence and still operate. These plants are shown with a dashed outline.</p>
+      <p><b>Known gap:</b> the register lists some large plants only in part (for example Cernavoda and Porțile de Fier I), so totals are lower than Romania's actual installed capacity.</p>
+      <p><b>Cleaning:</b> subtotal and note rows removed; the register's duplicate copy removed.</p>
       <p><b>Locations</b> come from the source file and often mark the locality or county rather than the exact site. <span id="noLocNote"></span></p>
       <p><button class="linkbtn" id="reset" type="button">Reset all filters</button></p>
     </div>
@@ -613,7 +606,9 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
   const markerStyle = (p, hover) => {
     const c = colors[p.tk], hc = colors.ink;
     switch (STAGES[p.so].kind) {
-      case "op": return { color: hover ? hc : colors.ring, weight: hover ? 2.5 : 1.2, fillColor: c, fillOpacity: 0.95, dashArray: null };
+      case "op": return p.lx
+        ? { color: hover ? hc : colors.ink, weight: hover ? 2.5 : 1.6, fillColor: c, fillOpacity: 0.95, dashArray: "2 2" }
+        : { color: hover ? hc : colors.ring, weight: hover ? 2.5 : 1.2, fillColor: c, fillOpacity: 0.95, dashArray: null };
       case "build": return { color: hover ? hc : c, weight: hover ? 3 : 2, fillColor: c, fillOpacity: 0.4, dashArray: null };
       case "plan": return { color: hover ? hc : c, weight: hover ? 2.6 : 1.5, fillColor: c, fillOpacity: 0.07, dashArray: null };
       default: return { color: hover ? hc : colors.muted, weight: hover ? 2.4 : 1.4, fillColor: colors.muted, fillOpacity: 0.05, dashArray: "3 3" };
@@ -632,7 +627,8 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
       [p.lic ? "Licence no." : "ID", esc(p.lic || p.id)],
     ].filter(([, v]) => v && v !== "–");
     if (p.iss) rows.push(["Licence issued", fmtDate(p.iss)]);
-    if (p.exp) rows.push(["Licence expires", fmtDate(p.exp)]);
+    if (p.exp) rows.push([p.lx ? "Licence expired" : "Licence expires", fmtDate(p.exp)]);
+    if (p.lx) rows.push(["Licence status", "Lapsed by the 2023 register's expiry date; may have been renewed"]);
     return `<div class="pp">
       <span class="pp-tag" style="--c:${colors[t.key]}"><i></i>${esc(t.label)}${sub}</span>
       <div class="pp-name">${esc(p.n)}</div>
@@ -847,9 +843,9 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
 
   function exportCsv() {
     const cols = [["n", "Project"], ["t", "Technology"], ["mw", "Capacity MW"], ["st", "Stage"], ["co", "Owner"], ["loc", "Locality"], ["cty", "County"],
-      ["src", "Source"], ["id", "Original ID / licence"], ["iss", "Licence issued"], ["exp", "Licence expires"], ["lat", "Latitude"], ["lon", "Longitude"], ["d", "Description"]];
+      ["src", "Source"], ["id", "Original ID / licence"], ["iss", "Licence issued"], ["exp", "Licence expires"], ["lx", "Licence lapsed (2023 register)"], ["lat", "Latitude"], ["lon", "Longitude"], ["d", "Description"]];
     const q = v => { const s = String(v ?? ""); return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
-    const csv = [cols.map(c => c[1]).join(","), ...current.map(p => cols.map(c => q(p[c[0]])).join(","))].join("\n");
+    const csv = [cols.map(c => c[1]).join(","), ...current.map(p => cols.map(c => q(typeof p[c[0]] === "boolean" ? (p[c[0]] ? "Yes" : "") : p[c[0]])).join(","))].join("\n");
     const url = URL.createObjectURL(new Blob(["﻿" + csv], { type: "text/csv" }));
     const a = Object.assign(document.createElement("a"), { href: url, download: "romania-power-projects.csv" });
     document.body.append(a); a.click(); a.remove();
