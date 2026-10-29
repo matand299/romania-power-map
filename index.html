@@ -226,20 +226,16 @@ button, input, select { font: inherit; color: inherit; }
 .tech[aria-pressed="false"] .name, .tech[aria-pressed="false"] .val { color: var(--muted); font-weight: 500; }
 .tech[aria-pressed="false"] .bar i { opacity: .25; }
 
-/* Map coverage against ANRE's official totals */
-.cov-note { margin: 0 0 6px; font-size: 11.5px; line-height: 1.4; color: var(--muted); }
-.cov-note a { color: var(--gold-ink); }
-.covlist { display: flex; flex-direction: column; gap: 1px; }
-.cov { display: grid; grid-template-columns: 12px minmax(0, 1fr) auto auto; gap: 3px 10px; align-items: center; padding: 5px 8px; }
-.cov .sw { width: 10px; height: 10px; border-radius: 50%; background: var(--c); margin-left: 1px; }
-.cov .name { font-weight: 600; font-size: 13px; }
-.cov .pct { font-size: 12px; color: var(--muted); text-align: right; min-width: 38px; font-variant-numeric: tabular-nums; }
-.cov .val { font-size: 12px; text-align: right; min-width: 104px; font-variant-numeric: tabular-nums; color: var(--muted); }
-.cov .val b { color: var(--ink); font-weight: 600; }
-.cov .bar { grid-column: 2 / 5; height: 5px; border-radius: 3px; background: var(--panel-2); box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
-.cov .bar i { display: block; height: 100%; width: var(--w); background: var(--c); }
-.cov.total { border-top: 1px solid var(--line); margin-top: 4px; padding-top: 8px; }
-.cov.total .name { font-weight: 700; }
+/* Under each technology: the same plants in 2023, and ANRE's official figure */
+.mix-note { margin: -4px 0 6px; font-size: 11.5px; line-height: 1.4; color: var(--muted); }
+.mix-note a { color: var(--gold-ink); }
+.tech .hist { grid-column: 2 / 5; font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; line-height: 1.3; }
+.tech .hist b { color: var(--ink); font-weight: 600; }
+.tech .up { color: var(--t-wind); } .tech .down { color: var(--t-gas); }
+.mix-total { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 10px; padding: 8px 8px 2px 30px; margin-top: 4px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.mix-total b { color: var(--ink); font-weight: 700; font-size: 13px; }
+.mix-total .hist { grid-column: 1 / 3; font-size: 11px; line-height: 1.3; }
+.mix-total .hist b { font-size: 11px; font-weight: 600; }
 
 .seg { display: flex; flex-wrap: wrap; gap: 5px; }
 .seg button { border: 1px solid var(--gold-soft); background: transparent; border-radius: 999px; padding: 4px 11px; cursor: pointer; font-size: 12.5px; }
@@ -434,13 +430,9 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
 
     <div class="sec">
       <h2>Capacity mix <button class="linkbtn" id="techAll" type="button">Select all</button></h2>
+      <p class="mix-note" id="mixNote"></p>
       <div class="techlist" id="techList"></div>
-    </div>
-
-    <div class="sec" id="covSec" hidden>
-      <h2>Map coverage</h2>
-      <p class="cov-note" id="covNote"></p>
-      <div class="covlist" id="covList"></div>
+      <div class="mix-total" id="mixTotal"></div>
     </div>
 
     <div class="sec">
@@ -722,51 +714,56 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     $("backBtn").onclick = () => selectCounty("");
   }
 
+  // ANRE's figures cover all of Romania, so they show only while no filter narrows the map to part of it.
+  const nationalView = () => !state.county && !state.src && !state.minMW && !state.q;
+
   function renderTech(base) {
-    const agg = Object.fromEntries(TECH.map(t => [t.key, { mw: 0, n: 0 }]));
-    base.forEach(p => { agg[p.tk].mw += p.mw; agg[p.tk].n++; });
-    const total = Object.values(agg).reduce((s, a) => s + a.mw, 0);
+    // mw: the selected stages, as the map shows them; op and m23: in operation today and on 24.04.2023.
+    const agg = Object.fromEntries(TECH.map(t => [t.key, { mw: 0, op: 0, m23: 0, n: 0 }]));
+    base.forEach(p => {
+      const a = agg[p.tk];
+      a.mw += p.mw; a.m23 += p.m23 || 0; a.n++;
+      if (STAGES[p.so].kind === "op") a.op += p.mw;
+    });
+    const sumOf = k => Object.values(agg).reduce((s, a) => s + a[k], 0);
+    const total = sumOf("mw");
     const max = Math.max(1, ...Object.values(agg).map(a => a.mw));
+    const official = nationalView() && anre ? anre.mw : null;
+    // ANRE does not count storage, so the overall share leaves it out.
+    const anreLine = (op, off) => `<br>ANRE: <b>${fmtBig(off)}</b> · the map shows ${Math.round(op / off * 100)}%`;
+    const change = (now, then) => {
+      const d = now - then;
+      const arrow = Math.abs(d) < 0.5 ? "" : ` <span class="${d > 0 ? "up" : "down"}">${d > 0 ? "▲ +" : "▼ −"}${fmtBig(Math.abs(d))}</span>`;
+      return `2023: <b>${fmtBig(then)}</b> → now <b>${fmtBig(now)}</b>${arrow}`;
+    };
     $("techList").innerHTML = TECH.map(t => {
       const a = agg[t.key], on = state.techs.has(t.key);
       const tip = t.key === "other" ? "Biomass, biogas, hybrid, thermal, waste and unspecified" : t.label;
+      const off = official && official[t.key];
       return `<button type="button" class="tech" data-k="${t.key}" aria-pressed="${on}" style="--c:${colors[t.key]};--w:${(a.mw / max * 100).toFixed(1)}%" title="${tip}: ${a.n} projects">
         <span class="sw"></span><span class="name">${t.label}</span><span class="pct">${pct(a.mw, total)}%</span><span class="val">${fmtBig(a.mw)} MW</span>
-        <span class="bar"><i></i></span></button>`;
+        <span class="bar"><i></i></span>
+        <span class="hist">${change(a.op, a.m23)}${off ? anreLine(a.op, off) : ""}</span></button>`;
     }).join("");
+    const offTotal = official ? Object.values(official).reduce((s, v) => s + v, 0) : 0;
+    $("mixTotal").innerHTML = `<span><b>All types</b></span><span><b>${fmtBig(total)} MW</b></span>
+      <span class="hist">${change(sumOf("op"), sumOf("m23"))}${offTotal ? anreLine(TECH.reduce((s, t) => s + (official[t.key] ? agg[t.key].op : 0), 0), offTotal) : ""}</span>`;
+    $("mixNote").innerHTML = `Under each type: MW in operation on the map on 24.04.2023 (date of the ANRE register) and now`
+      + (anre ? (official ? ` and ANRE's <a href="${esc(anre.url)}" target="_blank" rel="noopener">official installed capacity</a> for all of Romania (data of ${anre.asOf}).`
+        : `. ANRE's official figures are for all of Romania and show when no county, source, size or search filter is set.`) : ".");
   }
 
   // ANRE's primary energy types, as named in its installed capacity report, by map category.
   const ANRE_TECH = { Solar: "solar", Eolian: "wind", Hidro: "hydro", Hidrocarburi: "gas", Carbune: "coal", Nuclear: "nuclear" };
+  let anre = null; // { asOf: "16.10.2026", url, mw: { solar: …, … } } from data/anre_totals.json
 
-  // Operating capacity on the map against ANRE's official installed capacity, for all of Romania
-  // (filters do not apply). ANRE does not report storage, so it is left out.
-  function renderCoverage(anre) {
-    if (!anre || !anre.mw) return;
-    const official = {}, onMap = {};
-    Object.entries(anre.mw).forEach(([type, mw]) => {
-      const k = ANRE_TECH[type] || "other";
-      official[k] = (official[k] || 0) + mw;
-    });
-    plants.forEach(p => { if (STAGES[p.so].kind === "op") onMap[p.tk] = (onMap[p.tk] || 0) + p.mw; });
-    const keys = TECH.map(t => t.key).filter(k => official[k] > 0);
-    const sum = o => keys.reduce((s, k) => s + (o[k] || 0), 0);
-    const row = (label, c, m, o, extra = "") => {
-      const share = m / o * 100;
-      return `<div class="cov${extra}" style="--c:${c};--w:${Math.min(100, share).toFixed(1)}%"
-        title="${label}: ${fmtBig(m)} MW on the map, ${fmtBig(o)} MW installed according to ANRE">
-        <span class="sw"></span><span class="name">${label}</span>
-        <span class="val"><b>${fmtBig(m)}</b> / ${fmtBig(o)} MW</span><span class="pct">${Math.round(share)}%</span>
-        <span class="bar"><i></i></span></div>`;
-    };
-    // CSS variables rather than resolved colours, so the rows follow a theme switch.
-    $("covList").innerHTML = keys.map(k => row(TECH.find(t => t.key === k).label, `var(--t-${k})`, onMap[k] || 0, official[k])).join("")
-      + row("All types", "var(--gold)", sum(onMap), sum(official), " total");
-    const [y, m, d] = anre.as_of.split("-");
-    $("covNote").innerHTML = `Operating capacity on the map against the installed capacity
-      <a href="${esc(anre.url)}" target="_blank" rel="noopener">ANRE reports</a> for all of Romania (data of ${d}.${m}.${y}).
-      The gap is capacity not yet placed on the map; above 100% the map still lists capacity ANRE no longer counts.`;
-    $("covSec").hidden = false;
+  function loadAnre(data) {
+    if (!data || !data.mw) return;
+    const mw = {};
+    Object.entries(data.mw).forEach(([type, v]) => { const k = ANRE_TECH[type] || "other"; mw[k] = (mw[k] || 0) + v; });
+    const [y, m, d] = data.as_of.split("-");
+    anre = { asOf: `${d}.${m}.${y}`, url: data.url, mw };
+    if (pointLayer) update(); // otherwise the first render, at the end of init, picks it up
   }
 
   function renderFilters() {
@@ -1051,7 +1048,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
       };
     });
     spread(plants);
-    fetch("data/anre_totals.json").then(r => (r.ok ? r.json() : null)).catch(() => null).then(renderCoverage);
+    fetch("data/anre_totals.json").then(r => (r.ok ? r.json() : null)).catch(() => null).then(loadAnre);
     const noLoc = plants.filter(p => p.lat == null).length;
     $("noLocNote").textContent = noLoc ? `${noLoc} projects have no usable location; they count in the totals but are not drawn.` : "";
 

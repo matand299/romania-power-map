@@ -438,7 +438,9 @@ def apply_entsoe(plants, log):
             main = max(rows, key=lambda p: p["mw"])
             replaced = "; ".join(f'{p["n"]} {p["mw"]:g} MW' for p in rows)
             out = [p for p in out if p not in rows]
-            out.append({**main, "mw": u["cur"], "t": tech, "src": ENTSOE_SOURCE, "id": code, "lx": False,
+            # Capacity in 2023: ENTSO-E's figure at the start of 2023, else the register rows it replaces.
+            m23 = u["begin"].get(2023, sum(p["mw"] for p in rows))
+            out.append({**main, "mw": u["cur"], "m23": m23, "t": tech, "src": ENTSOE_SOURCE, "id": code, "lx": False,
                         "d": f"{u['name']}. Capacity from ENTSO-E; replaces the ANRE 2023 register's "
                              f"rows ({replaced}), whose licence {lic} it keeps."})
             log["register plants given ENTSO-E capacity"] += 1
@@ -453,7 +455,7 @@ def apply_entsoe(plants, log):
         lat = float(m["lat"]) if m.get("lat") else None
         lon = float(m["lon"]) if m.get("lon") else None
         base = {"co": "", "loc": m.get("locality", ""), "cty": m.get("county", ""), "t": tech, "src": ENTSOE_SOURCE,
-                "id": code, "lic": None, "iss": None, "exp": None, "lx": False, "lat": lat, "lon": lon}
+                "id": code, "lic": None, "iss": None, "exp": None, "lx": False, "lat": lat, "lon": lon, "m23": 0}
         if u["cur"]:
             out.append({**base, "n": u["name"], "mw": u["cur"], "st": "Operating",
                         "d": "Built after the ANRE 2023 register; capacity from ENTSO-E."})
@@ -576,6 +578,8 @@ def main():
             "t": TECH_MAP.get(clean(r["Technology"]), clean(r["Technology"]) or "Other"),
             "st": STAGE_MAP.get(status_raw, status_raw),
             "src": source, "id": ident, "lic": lic, "iss": iss, "exp": exp, "lx": expired,
+            # Capacity on the register's date (24.04.2023): ANRE plants were there by definition.
+            "m23": round(mw, 4) if source == ANRE_SOURCE else None,
             "lat": round(lat, 5) if located else None, "lon": round(lon, 5) if located else None, "d": desc[:400],
         })
 

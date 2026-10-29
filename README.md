@@ -27,8 +27,9 @@ against the register.
 ### Coverage against ANRE's totals
 
 `data/anre_totals.json` holds ANRE's official installed capacity by primary energy type, from its public
-"Puteri instalate" report (https://anre.ro/puteri-instalate). The map's "Map coverage" panel compares it with the
-operating capacity on the map. `scripts/fetch_anre_totals.py` refreshes the file, and the
+"Puteri instalate" report (https://anre.ro/puteri-instalate). Under each technology, the map's "Capacity mix" panel shows
+the capacity in operation on the map on 24.04.2023 (field `m23` in `plants.json`) and now, and, when no filter narrows
+the map to part of Romania, ANRE's figure and the share of it the map shows. `scripts/fetch_anre_totals.py` refreshes the file, and the
 `.github/workflows/anre-totals.yml` workflow runs it every Monday and commits any change.
 
 ## Updating the data
