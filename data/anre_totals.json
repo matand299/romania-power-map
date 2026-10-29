@@ -1,0 +1,18 @@
+{
+ "source": "ANRE, Puteri instalate (installed capacity by primary energy type)",
+ "url": "https://anre.ro/puteri-instalate",
+ "as_of": "2026-10-16",
+ "mw": {
+  "Hidro": 6689.804,
+  "Solar": 4623.079,
+  "Eolian": 3342.96,
+  "Hidrocarburi": 2891.811,
+  "Carbune": 1520.2,
+  "Nuclear": 1413.0,
+  "Biomasa": 112.266,
+  "Biogaz": 28.596,
+  "Deseuri": 6.03,
+  "Caldura reziduala": 4.1,
+  "Geotermal": 0.05
+ }
+}
