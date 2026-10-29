@@ -1,0 +1,35 @@
+eic,anre_licence,anre_plants,county,locality,lat,lon,note
+30W-CHE-PDF1---A,332,CHE PORTILE DE FIER I,,,,,
+30W-CHE-PDF2---5,332,CHE PORTILE DE FIER II,,,,,
+30W-CHE-TISM---J,332,CHE TISMANA,,,,,
+30W-CHE-SUGAG--7,332,SUGAG,,,,,
+30W-CHE-STEJ---C,332,CHE DIMITRIE LEONIDA -STEJARU,,,,,
+30W-CHE-RUIM---B,332,CHE RAUL MARE,,,,,
+30W-CHE-RUIE---E,332,CHE RUIENI,,,,,
+30W-CHE-LOTR---A,332,CHE LOTRU CIUNGET,,,,,
+30W-CHE-GALC---C,332,GALCEAG,,,,,
+30W-CHE-CORB---Q,332,CHE VIDRARU,,,,,
+30W-CHE-BRAD---V,332,CHE BRADISOR,,,,,
+30W-CHE-MARI---9,332,CHE Mariselu,,,,,
+30W-CERNAVODA--E,5,CNE Cernavoda|CNE Cernavoda PET,,,,,
+30W-CET-TURC---M,1085,CTE Turceni,,,,,
+30W-CET-ROVI---Q,1085,CTE Rovinari,,,,,
+30W-CET-CRAI---T,2389,CET Craiova 2,,,,,
+30W-CET-PROGR--Z,558,CET Progresul,,,,,
+30W-CET-PARO---N,1122,CET Paroseni,,,,,
+30W-CET-IERN---J,1180,CTE Iernut,,,,,
+30W-CET-BUCS---S,558,CET Bucuresti Sud,,,,,
+30W-CET-BUCV---D,558,CET Bucuresti Vest - CCC,,,,,
+30W-CET-PETROM-L,577,CET Brazi CCC OMV,,,,,
+30W-CET-BRAZ---Q,2378,CET Brazi|CET Brazi CCC Dalkia,,,,,
+30W-CEE-PANT---O,1294,CEE Pantelimon 4,,,,,
+30W-CRUCEA-----N,332,CEE Crucea Nord,,,,,
+30W-FACAENI----J,1751,CEE Facaieni-et. I,,,,,
+30W-CET-ORAD---W,,,,,,,"Not matched: the register lists several Oradea units (CET 1 Oradea, CET Oradea ITG + CR) and it is unclear which make up the ENTSO-E unit"
+30W-CEE-STUP---U,,,,,,,"Not matched: no Stupina wind farm under that name in the register; operating before 2023, so not added to avoid a duplicate"
+30WCE-STUDINA--M,,,Olt,Studina,43.96667,24.41667,New since the register; location from the Transelectrica connection list
+30WCE-CALUGR2--Y,,,Giurgiu,Calugareni,44.17167,25.99556,New since the register; location from the Transelectrica connection list
+30WCE-RATESTI--8,,,,,,,New since the register; location not known
+30WCE-FLORESTI-3,,,,,,,New since the register; location not known
+30W-CECC-MINTIAN,,,Hunedoara,Mintia,45.91279,22.82613,New since the register; location from Global Energy Monitor
+30W-CECC-IERN--A,,,Mures,Iernut,46.45,24.25,New since the register; location of the existing Iernut plant in the register

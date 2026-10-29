@@ -9,6 +9,8 @@ duplicates, fixes kW/MW slips, normalises technologies, stages and counties, and
 
 Run from the project root:  python3 scripts/build_data.py
 """
+import csv
+import datetime
 import json
 import math
 import re
@@ -24,6 +26,10 @@ SRC = ROOT / "data" / "source"
 EXCEL = SRC / "Romania_Energy_Projects_Master_Database_2026_EN.xlsx"
 # ANRE licensed capacity register (24.04.2023): the map's ANRE plants, licence dates and status.
 ANRE_LICENCES = SRC / "Puteri-capacitati_24.04.2023_Final_EN_With_Status.xlsx"
+# ENTSO-E Transparency Platform, "Installed Capacity per Production Unit" for Romania, one file per year.
+ENTSOE_DIR = SRC / "entsoe"
+# Which register plants each ENTSO-E unit stands for, and where new units are.
+ENTSOE_MATCH = SRC / "entsoe_anre_match.csv"
 GEONAMES = SRC / "geonames_RO.txt"
 ADMIN1 = SRC / "geonames_admin1_RO.txt"
 COUNTIES_IN = SRC / "ro_counties.geojson"
@@ -378,6 +384,88 @@ def anre_register_rows(master):
     return rows
 
 
+ENTSOE_SOURCE = "ENTSO-E Transparency Platform, installed capacity per production unit (units of 100 MW and more)"
+ENTSOE_TECH = {
+    "Solar": "Solar", "Wind Onshore": "Wind", "Nuclear": "Nuclear", "Energy storage": "Storage",
+    "Hydro Run-of-river and pondage": "Hydro", "Hydro Water Reservoir": "Hydro",
+    "Fossil Gas": "Natural Gas", "Fossil Brown coal/Lignite": "Coal", "Fossil Hard coal": "Coal",
+    "Fossil Coal-derived gas": "Coal",
+}
+
+
+def entsoe_units():
+    """EIC code -> name, type, current capacity and capacity at the start of each year."""
+    units = {}
+    for f in sorted(ENTSOE_DIR.glob("GUI_GENERATION_INSTALLED_PERUNIT_*.xlsx")):
+        year = int(re.search(r"_(\d{4})01010000-", f.name).group(1))
+        df = pd.read_excel(f, header=None, skiprows=5, usecols=range(5), dtype=str)
+        for t, code, name, begin, current in df.itertuples(index=False):
+            if pd.isna(code) or code == "NOT_FOUND":
+                continue
+            u = units.setdefault(code, {"name": clean(name), "type": clean(t), "cur": None, "begin": {}})
+            if pd.notna(begin) and begin.strip():
+                u["begin"][year] = float(begin)
+            if pd.notna(current) and current.strip():
+                u["cur"] = float(current)
+    return units
+
+
+def apply_entsoe(plants, log):
+    """Give the large units their ENTSO-E capacity, and add the ones built since the register.
+
+    A unit the register already lists replaces its register rows, so no plant appears twice. A unit
+    with no register rows is added only when ENTSO-E shows it was built after the register's date;
+    older unmatched units are left for review. Only units with a current capacity are used: ENTSO-E
+    leaves it blank both for units it no longer lists and for some that still run.
+    """
+    units = entsoe_units()
+    match = {r["eic"]: r for r in csv.DictReader(ENTSOE_MATCH.open(encoding="utf-8"))}
+    this_year = datetime.date.today().year
+    out = list(plants)
+    for code, u in units.items():
+        m = match.get(code, {})
+        names = {norm(n) for n in m.get("anre_plants", "").split("|") if n}
+        future = max((mw for y, mw in u["begin"].items() if y > this_year), default=0)
+        tech = ENTSOE_TECH.get(u["type"], "Other")
+        if names:
+            lic = int(m["anre_licence"])
+            rows = [p for p in out if p["src"] == ANRE_SOURCE and p["lic"] == lic and norm(p["n"]) in names]
+            if not rows or {norm(p["n"]) for p in rows} != names:
+                raise SystemExit(f"ENTSO-E unit {code}: register rows {sorted(names)} not all found")
+            if u["cur"] is None:
+                log["ENTSO-E units with no current capacity, register kept"] += 1
+                continue
+            main = max(rows, key=lambda p: p["mw"])
+            replaced = "; ".join(f'{p["n"]} {p["mw"]:g} MW' for p in rows)
+            out = [p for p in out if p not in rows]
+            out.append({**main, "mw": u["cur"], "t": tech, "src": ENTSOE_SOURCE, "id": code, "lx": False,
+                        "d": f"{u['name']}. Capacity from ENTSO-E; replaces the ANRE 2023 register's "
+                             f"rows ({replaced}), whose licence {lic} it keeps."})
+            log["register plants given ENTSO-E capacity"] += 1
+            continue
+        built_after_register = not any(u["begin"].get(y) for y in range(2015, 2024))
+        if not built_after_register:
+            key = ("older ENTSO-E units with no register match, for review" if u["cur"]
+                   else "ENTSO-E units no longer reported, register rows kept")
+            log[key] += 1
+            print(f"  {key}: {code} {u['name']}")
+            continue
+        lat = float(m["lat"]) if m.get("lat") else None
+        lon = float(m["lon"]) if m.get("lon") else None
+        base = {"co": "", "loc": m.get("locality", ""), "cty": m.get("county", ""), "t": tech, "src": ENTSOE_SOURCE,
+                "id": code, "lic": None, "iss": None, "exp": None, "lx": False, "lat": lat, "lon": lon}
+        if u["cur"]:
+            out.append({**base, "n": u["name"], "mw": u["cur"], "st": "Operating",
+                        "d": "Built after the ANRE 2023 register; capacity from ENTSO-E."})
+            log["new ENTSO-E units added"] += 1
+        if future > (u["cur"] or 0):
+            out.append({**base, "n": u["name"] + (" (remaining units)" if u["cur"] else ""),
+                        "mw": future - (u["cur"] or 0), "st": "Under construction / testing",
+                        "d": f"Not yet connected; ENTSO-E lists {future:g} MW from a later year."})
+            log["ENTSO-E capacity under construction added"] += 1
+    return out
+
+
 # Sources shown on the map. Until ANRE publishes an updated register, the map is built on the
 # 2023 register alone; other sources are added back only once checked against it for duplicates.
 INCLUDED_SOURCES = {ANRE_SOURCE}
@@ -417,7 +505,11 @@ def main():
     log = {"subtotal rows": 0, "notes / zero rows": 0, "kW fixed": 0,
            "GEM operating already listed": 0, "county from coordinates": 0, "outside Romania": 0,
            "placeholder location re-placed": 0, "no usable location": 0, "planning / ATR rows left out": 0,
-           "other sources left out": 0, "licence expired per 2023 export": 0}
+           "other sources left out": 0, "licence expired per 2023 export": 0,
+           "register plants given ENTSO-E capacity": 0, "ENTSO-E units with no current capacity, register kept": 0,
+           "new ENTSO-E units added": 0, "ENTSO-E capacity under construction added": 0,
+           "older ENTSO-E units with no register match, for review": 0,
+           "ENTSO-E units no longer reported, register rows kept": 0}
 
     # ANRE plants come from the register itself; the master file supplies every other source.
     records = [r for r in df.to_dict("records")
@@ -508,9 +600,10 @@ def main():
                 log["GEM operating already listed"] += 1
                 continue
         plants.append(p)
+    plants = apply_entsoe(plants, log)
 
     out = ROOT / "data" / "plants.json"
-    out.write_text(json.dumps({"source": "ANRE licensed capacity register, 24.04.2023", "plants": plants},
+    out.write_text(json.dumps({"source": "ANRE licensed capacity register, 24.04.2023; ENTSO-E units of 100 MW and more", "plants": plants},
                               ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(f"plants.json: {len(plants)} projects ({out.stat().st_size // 1024} KB)")
     for k, v in log.items():

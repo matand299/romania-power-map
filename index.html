@@ -388,6 +388,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
         <div class="mkey">
           <svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="var(--gold)" stroke-width="1"/></svg><span>Operating</span>
           <svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="var(--gold)" stroke-width="1.6" stroke-dasharray="2 1.5" style="stroke:var(--ink)"/></svg><span>Licence lapsed*</span>
+          <svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="var(--gold)" fill-opacity=".4" stroke-width="2"/></svg><span>Construction</span>
         </div>
       </div>
     </div>
@@ -446,10 +447,15 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     </div>
 
     <div class="about">
-      <p><b>Source:</b> ANRE licensed capacity register, 24.04.2023 (licensed operating plants). This is an interim map: plants commissioned after that date will be added only from verified sources, checked against the register so no plant appears twice.</p>
+      <p><b>Sources:</b></p>
+      <ul>
+        <li>ANRE licensed capacity register, 24.04.2023 (licensed plants)</li>
+        <li>ENTSO-E Transparency Platform, installed capacity per production unit (units of 100 MW and more, current capacity and later years)</li>
+      </ul>
+      <p>This is an interim map. Each large unit reported by ENTSO-E replaces the register's rows for the same plant, so no plant appears twice; units built after the register's date are added, and capacity ENTSO-E lists only for later years is shown as under construction. Other plants commissioned after 24.04.2023 will be added only from verified sources, checked against the register in the same way.</p>
       <p><b>*Licence lapsed:</b> by the expiry date in the 2023 register the licence has since lapsed. The register predates any renewal, so the plant may hold a renewed licence and still operate. These plants are shown with a dashed outline.</p>
-      <p><b>Known gap:</b> the register lists some large plants only in part (for example Cernavoda and Porțile de Fier I), so totals are lower than Romania's actual installed capacity.</p>
-      <p><b>Cleaning:</b> subtotal and note rows removed; the register's duplicate copy removed.</p>
+      <p><b>Known gap:</b> the register lists some plants only in part. ENTSO-E corrects this for units of 100 MW and more; smaller plants show the register's figures, and plants commissioned after 24.04.2023 below 100 MW are not yet on the map.</p>
+      <p><b>Cleaning:</b> the register's subtotal rows removed.</p>
       <p><b>Locations</b> come from the source file and often mark the locality or county rather than the exact site. <span id="noLocNote"></span></p>
       <p><button class="linkbtn" id="reset" type="button">Reset all filters</button></p>
     </div>
@@ -516,8 +522,9 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
   const SOURCES = [
     { v: "", label: "All sources" },
     { v: "anre", label: "ANRE register (2023)", test: s => s.startsWith("ANRE") },
+    { v: "entsoe", label: "ENTSO-E (units ≥ 100 MW)", test: s => s.startsWith("ENTSO-E") },
   ];
-  const SHORT_SRC = [["ANRE", "ANRE 2023"], ["Transelectrica", "Transelectrica"], ["DEER", "DEER (Electrica)"], ["Rețele", "Rețele Electrice (PPC)"], ["Distribuție", "DEO"], ["Global Energy Monitor", "Global Energy Monitor"]];
+  const SHORT_SRC = [["ANRE", "ANRE 2023"], ["ENTSO-E", "ENTSO-E"], ["Transelectrica", "Transelectrica"], ["DEER", "DEER (Electrica)"], ["Rețele", "Rețele Electrice (PPC)"], ["Distribuție", "DEO"], ["Global Energy Monitor", "Global Energy Monitor"]];
   const SIZES = [{ v: 0, label: "All" }, { v: 1, label: "≥ 1 MW" }, { v: 10, label: "≥ 10" }, { v: 50, label: "≥ 50" }, { v: 100, label: "≥ 100" }];
   // Choropleth classes for county capacity, MW.
   const BREAKS = [10, 100, 300, 1000, 2500, 5000];
