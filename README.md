@@ -24,6 +24,13 @@ The map is an interim one, built from two official sources so that no plant appe
 Global Energy Monitor rows. They are left out (`INCLUDED_SOURCES` in the build script) until each can be checked
 against the register.
 
+### Coverage against ANRE's totals
+
+`data/anre_totals.json` holds ANRE's official installed capacity by primary energy type, from its public
+"Puteri instalate" report (https://anre.ro/puteri-instalate). The map's "Map coverage" panel compares it with the
+operating capacity on the map. `scripts/fetch_anre_totals.py` refreshes the file, and the
+`.github/workflows/anre-totals.yml` workflow runs it every Monday and commits any change.
+
 ## Updating the data
 
 Replace or add files in `data/source/`, then run `python3 scripts/build_data.py` and commit.
