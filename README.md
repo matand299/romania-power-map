@@ -35,8 +35,14 @@ against the register.
 `data/anre_totals.json` holds ANRE's official installed capacity by primary energy type, from its public
 "Puteri instalate" report (https://anre.ro/puteri-instalate). Under each technology, the map's "Capacity mix" panel shows
 the capacity in operation on the map on 24.04.2023 (field `m23` in `plants.json`) and now, and, when no filter narrows
-the map to part of Romania, ANRE's figure and the share of it the map shows. `scripts/fetch_anre_totals.py` refreshes the file, and the
-`.github/workflows/anre-totals.yml` workflow runs it every Monday and commits any change.
+the map to part of Romania, ANRE's figure and the share of it the map shows. `scripts/fetch_anre_totals.py` refreshes the file.
+
+### Weekly update
+
+`.github/workflows/weekly-data.yml` runs every Monday (or by hand from the Actions tab): it fetches ANRE's totals
+(`scripts/fetch_anre_totals.py`) and Transelectrica's installed capacity files (`scripts/fetch_transelectrica.py`),
+rebuilds `data/*.json` with `scripts/build_data.py` and commits any change. A source that cannot be fetched keeps its
+last good copy.
 
 ## Updating the data
 
