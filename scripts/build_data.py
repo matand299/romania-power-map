@@ -9,6 +9,7 @@ duplicates, fixes kW/MW slips, normalises technologies, stages and counties, and
 
 Run from the project root:  python3 scripts/build_data.py
 """
+import collections
 import csv
 import datetime
 import json
@@ -30,6 +31,12 @@ ANRE_LICENCES = SRC / "Puteri-capacitati_24.04.2023_Final_EN_With_Status.xlsx"
 ENTSOE_DIR = SRC / "entsoe"
 # Which register plants each ENTSO-E unit stands for, and where new units are.
 ENTSOE_MATCH = SRC / "entsoe_anre_match.csv"
+# Transelectrica (DEN), "Situatia capacitatii instalate" files: storage installations (7productie23,
+# sheet "Stocare") and installed capacity per relevant plant (7productie12a, sheet "Fotovoltaice").
+TEL_STORAGE = SRC / "transelectrica" / "7productie23.xls"
+TEL_PLANTS = SRC / "transelectrica" / "7productie12a.xls"
+# Counties for Transelectrica names that the gazetteer and the other files cannot settle, with the source.
+TEL_LOCATIONS = SRC / "transelectrica_locations.csv"
 GEONAMES = SRC / "geonames_RO.txt"
 ADMIN1 = SRC / "geonames_admin1_RO.txt"
 COUNTIES_IN = SRC / "ro_counties.geojson"
@@ -468,6 +475,155 @@ def apply_entsoe(plants, log):
     return out
 
 
+TEL_SOURCE_STORAGE = "Transelectrica, installed capacity in storage installations"
+TEL_SOURCE_PLANTS = "Transelectrica, installed capacity per relevant plant"
+# Words in Transelectrica plant names that are not place names.
+TEL_NAME_STOP = {"cem", "is", "cef", "cee", "etapa", "etapele", "faza", "parc", "i", "ii", "iii", "iv", "fabrici"}
+
+
+def company(s):
+    s = re.sub(r"\b(srl|sa|sc|s r l|s a|societatea|company|romania)\b", " ", norm(s))
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def county_evidence(master):
+    """Counties named next to an owner, and next to each word of a plant or locality name, in the
+    ANRE register and the master file: used to pick between places that share a name."""
+    by_owner, by_word = {}, {}
+
+    def add(table, key, county):
+        if key and isinstance(county, str):
+            table.setdefault(key, set()).add(norm(county.split("/")[0]))
+
+    for r in pd.read_excel(ANRE_LICENCES).to_dict("records"):
+        add(by_owner, company(r["Company / Economic Operator"]) if isinstance(r["Company / Economic Operator"], str) else "",
+            r["County (Judet)"])
+        for w in norm(re.sub(r"\[.*?\]", "", f'{r["Plant Name"]} {r["Locality / City"]}')).split():
+            if len(w) >= 4:
+                add(by_word, w, r["County (Judet)"])
+    for r in master.to_dict("records"):
+        for o in (r["Project / Investor Name"], r["Owner / Operator"]):
+            if isinstance(o, str):
+                add(by_owner, company(o), r["County (Judet)"])
+        for w in norm(re.sub(r"\[.*?\]", "", f'{r["Plant / Station Name"]} {r["Locality / City"]}')).split():
+            if len(w) >= 4:
+                add(by_word, w, r["County (Judet)"])
+    return by_owner, by_word
+
+
+def place_of(name, owner, gaz, evidence, fixed):
+    """(lat, lon, county, how) for a Transelectrica plant name, or None.
+
+    The name is usually the locality. A place found in one county is taken; one shared by several
+    counties is settled by a county code in the name, by counties the owner appears in elsewhere, or
+    by counties the name's words appear next to; otherwise by TEL_LOCATIONS, else left unplaced.
+    """
+    by_owner, by_word = evidence
+    code = re.search(r"\[([A-Z]{1,2})\]", name)
+    words = [w for w in norm(re.sub(r"\(.*?\)|\[.*?\]", "", name)).split() if w not in TEL_NAME_STOP and not w.isdigit()]
+    for n in (3, 2, 1):
+        for i in range(len(words) - n + 1):
+            key = " ".join(words[i:i + n])
+            counties = sorted(c for c, bucket in gaz.items() if key in bucket)
+            if not counties:
+                continue
+            if fixed.get(norm(name)):
+                choice, how = [fixed[norm(name)]], "listed"
+            elif code and norm(COUNTY_CODES.get(code.group(1), "")) in counties:
+                choice, how = [norm(COUNTY_CODES[code.group(1)])], "county code"
+            elif len(counties) == 1:
+                choice, how = counties, "only place of that name"
+            else:
+                choice, how = [c for c in counties if c in by_owner.get(company(owner), ())], "owner's county"
+                if len(choice) != 1:
+                    near = set().union(*(by_word.get(w, set()) for w in key.split()))
+                    choice, how = [c for c in counties if c in near], "name's county"
+            if len(choice) == 1 and key in gaz.get(choice[0], {}):
+                lat, lon, _ = gaz[choice[0]][key]
+                return lat, lon, choice[0], how
+            return None
+    return None
+
+
+def tel_rows(path, sheet):
+    """Data rows of a Transelectrica sheet (those with a numeric index) and the sheet's date."""
+    df = pd.read_excel(path, sheet_name=sheet, header=None)
+    as_of = re.search(r"(\d{2}\.\d{2}\.\d{4})", " ".join(map(str, df.iloc[:6, 0]))).group(1)
+    return df[pd.to_numeric(df[0], errors="coerce").notna()], as_of
+
+
+def apply_transelectrica(plants, log, gaz, master, county_names):
+    """Add Transelectrica's storage installations, and its solar plants the map does not yet hold.
+
+    A solar plant counts as already on the map when a solar plant there shares a distinctive name word
+    or the owner, at a capacity within 25%; uncertain cases are left out rather than doubled. Storage
+    that ENTSO-E already reports (same name) replaces the ENTSO-E point, which has no location.
+    """
+    evidence = county_evidence(master)
+    fixed = {norm(r["name"]): norm(r["county"]) for r in csv.DictReader(TEL_LOCATIONS.open(encoding="utf-8"))}
+    generic = {"cef", "parc", "fotovoltaic", "solar", "etapa", "faza", "sud", "nord", "est", "vest", "energy", "power",
+               "green", "park", "plant", "project"}
+
+    def words(s):
+        return {w for w in norm(re.sub(r"\[.*?\]", "", str(s))).split() if len(w) >= 3 and w not in generic and not w.isdigit()}
+
+    out = list(plants)
+    pv, pv_date = tel_rows(TEL_PLANTS, "Fotovoltaice")
+    solar = [p for p in plants if p["t"] == "Solar"]
+    for r in pv.itertuples(index=False):
+        name, mw, owner = clean(r[1]), float(r[2]), clean(r[6])
+        on_map = [p for p in solar if abs(p["mw"] - mw) <= max(0.25 * mw, 0.5)
+                  and (words(name) & words(f'{p["n"]} {p.get("loc") or ""}') or company(owner) == company(p.get("co") or ""))]
+        if on_map:
+            log["Transelectrica solar plants already on the map"] += 1
+            continue
+        point = tel_point(name, owner, mw, "Solar", TEL_SOURCE_PLANTS, pv_date, gaz, evidence, fixed, log, county_names)
+        point.pop("how")
+        out.append(point)
+        log["Transelectrica solar plants added"] += 1
+
+    st, st_date = tel_rows(TEL_STORAGE, "Stocare")
+    for r in st.itertuples(index=False):
+        name, mw, mwh, owner = clean(r[1]), float(r[3]), float(r[6]), clean(r[7])
+        point = tel_point(name, owner, mw, "Storage", TEL_SOURCE_STORAGE, st_date, gaz, evidence, fixed, log, county_names)
+        point["mwh"] = mwh
+        # A storage unit at an existing plant ("CEM Crucea Nord", "Fantanele Vest") sits at that plant,
+        # unless its place is already certain (the only place of that name, a county code, or listed).
+        key = " ".join(w for w in norm(name).split() if w not in TEL_NAME_STOP)
+        sites = [p for p in out if p["lat"] is not None and p["t"] != "Storage"
+                 and " ".join(w for w in norm(p["n"]).split() if w not in TEL_NAME_STOP) == key]
+        # Only when one plant on the map has that name, so the unit cannot be put at a namesake.
+        site = sites[0] if len(sites) == 1 else None
+        how = point.pop("how")
+        if site and how not in ("listed", "county code", "only place of that name"):
+            point.update(lat=site["lat"], lon=site["lon"], cty=site["cty"], loc=site.get("loc") or point["loc"])
+            point["d"] = point["d"].split(" Placed at")[0].split(" Location not")[0] + f" Placed at {site['n']}, the plant it belongs to."
+        twin = next((p for p in out if p["src"] == ENTSOE_SOURCE and p["t"] == "Storage" and words(p["n"]) & words(name)), None)
+        if twin:
+            out.remove(twin)
+            point["d"] += f" Replaces ENTSO-E unit {twin['id']} ({twin['mw']:g} MW)."
+        out.append(point)
+        log["Transelectrica storage installations added"] += 1
+    return out
+
+
+def tel_point(name, owner, mw, tech, source, as_of, gaz, evidence, fixed, log, county_names):
+    place = place_of(name, owner, gaz, evidence, fixed)
+    if place:
+        log[f"Transelectrica placed by {place[3]}"] += 1
+    else:
+        log["Transelectrica not placed"] += 1
+    return {
+        "n": name.title(), "co": owner, "loc": name.title() if place else "", "cty": county_names.get(place[2], place[2].title()) if place else "",
+        "mw": round(mw, 4), "m23": 0, "t": tech, "st": "Operating", "src": source, "id": "", "lic": None,
+        "iss": None, "exp": None, "lx": False,
+        "lat": round(place[0], 5) if place else None, "lon": round(place[1], 5) if place else None,
+        "how": place[3] if place else None,
+        "d": f"Listed by Transelectrica as installed on {as_of}; not in the ANRE 2023 register."
+             + (f" Placed at the locality its name gives ({place[3]})." if place else " Location not known."),
+    }
+
+
 # Sources shown on the map. Until ANRE publishes an updated register, the map is built on the
 # 2023 register alone; other sources are added back only once checked against it for duplicates.
 INCLUDED_SOURCES = {ANRE_SOURCE}
@@ -500,7 +656,8 @@ def place_by_name(idx, *texts):
 def main():
     df = pd.read_excel(EXCEL, sheet_name="All Power Projects")
     ensure_geonames()
-    national = national_index(load_gazetteer())
+    gaz = load_gazetteer()
+    national = national_index(gaz)
     polygons = load_county_polygons()
     county_names = {norm(n): ("Bucuresti" if n == "Bucharest" else n) for n, _ in polygons}
     dates = licence_dates()
@@ -605,6 +762,8 @@ def main():
                 continue
         plants.append(p)
     plants = apply_entsoe(plants, log)
+    log = collections.Counter(log)
+    plants = apply_transelectrica(plants, log, gaz, df, county_names)
 
     out = ROOT / "data" / "plants.json"
     out.write_text(json.dumps({"source": "ANRE licensed capacity register, 24.04.2023; ENTSO-E units of 100 MW and more", "plants": plants},
