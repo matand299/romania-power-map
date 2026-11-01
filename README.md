@@ -20,6 +20,12 @@ The map is an interim one, built from two official sources so that no plant appe
   replaces those rows with its current capacity; units built after the register's date are added; capacity listed
   only for later years is shown as under construction.
 
+- `transelectrica/` – Transelectrica (DEN) installed capacity files: `7productie23.xls` (sheet "Stocare", every storage
+  installation in the grid) and `7productie12a.xls` (sheet "Fotovoltaice", installed capacity per relevant solar plant).
+  All storage installations are added; a solar plant is added only when no solar plant on the map shares a distinctive
+  name word or its owner at a capacity within 25%. Plants are placed at the locality their name gives;
+  `transelectrica_locations.csv` settles names the other files cannot, with the source.
+
 `Romania_Energy_Projects_Master_Database_2026_EN.xlsx` also holds Transelectrica, distribution-operator and
 Global Energy Monitor rows. They are left out (`INCLUDED_SOURCES` in the build script) until each can be checked
 against the register.

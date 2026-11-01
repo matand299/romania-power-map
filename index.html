@@ -464,7 +464,9 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
       <ul>
         <li>ANRE licensed capacity register, 24.04.2023 (licensed plants)</li>
         <li>ENTSO-E Transparency Platform, installed capacity per production unit (units of 100 MW and more, current capacity and later years)</li>
+        <li>Transelectrica (DEN), installed capacity: every storage installation in the grid, and the solar plants of its per-plant list that the other sources do not hold</li>
       </ul>
+      <p><b>Transelectrica plants</b> are placed at the locality their name gives. A name shared by several localities is settled by the owner's or the name's county in the other sources; where that fails the plant counts in the totals but is not drawn. A storage unit at a plant already on the map sits at that plant.</p>
       <p>This is an interim map. Each large unit reported by ENTSO-E replaces the register's rows for the same plant, so no plant appears twice; units built after the register's date are added, and capacity ENTSO-E lists only for later years is shown as under construction. Other plants commissioned after 24.04.2023 will be added only from verified sources, checked against the register in the same way.</p>
       <p><b>*Licence lapsed:</b> by the expiry date in the 2023 register the licence has since lapsed. The register predates any renewal, so the plant may hold a renewed licence and still operate. These plants are shown with a dashed outline.</p>
       <p><b>Known gap:</b> the register lists some plants only in part. ENTSO-E corrects this for units of 100 MW and more; smaller plants show the register's figures, and plants commissioned after 24.04.2023 below 100 MW are not yet on the map.</p>
@@ -536,8 +538,9 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     { v: "", label: "All sources" },
     { v: "anre", label: "ANRE register (2023)", test: s => s.startsWith("ANRE") },
     { v: "entsoe", label: "ENTSO-E (units ≥ 100 MW)", test: s => s.startsWith("ENTSO-E") },
+    { v: "tel", label: "Transelectrica (storage, solar)", test: s => s.startsWith("Transelectrica") },
   ];
-  const SHORT_SRC = [["ANRE", "ANRE 2023"], ["ENTSO-E", "ENTSO-E"], ["Transelectrica", "Transelectrica"], ["DEER", "DEER (Electrica)"], ["Rețele", "Rețele Electrice (PPC)"], ["Distribuție", "DEO"], ["Global Energy Monitor", "Global Energy Monitor"]];
+  const SHORT_SRC = [["ANRE", "ANRE 2023"], ["ENTSO-E", "ENTSO-E"], ["Transelectrica", "Transelectrica"], ["Transelectrica", "Transelectrica"], ["DEER", "DEER (Electrica)"], ["Rețele", "Rețele Electrice (PPC)"], ["Distribuție", "DEO"], ["Global Energy Monitor", "Global Energy Monitor"]];
   const SIZES = [{ v: 0, label: "All" }, { v: 1, label: "≥ 1 MW" }, { v: 10, label: "≥ 10" }, { v: 50, label: "≥ 50" }, { v: 100, label: "≥ 100" }];
   // Choropleth classes for county capacity, MW.
   const BREAKS = [10, 100, 300, 1000, 2500, 5000];
@@ -649,7 +652,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
     return `<div class="pp">
       <span class="pp-tag" style="--c:${colors[t.key]}"><i></i>${esc(t.label)}${sub}</span>
       <div class="pp-name">${esc(p.n)}</div>
-      <div class="pp-mw">${fmtMW(p.mw)}<small>MW</small></div>
+      <div class="pp-mw">${fmtMW(p.mw)}<small>MW</small>${p.mwh ? ` · ${fmtMW(p.mwh)}<small>MWh</small>` : ""}</div>
       <dl>${rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>
       ${p.d ? `<div class="desc">${esc(p.d)}</div>` : ""}
       <div class="note">Coordinates as given in the source file.
@@ -897,7 +900,7 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
   }
 
   function exportCsv() {
-    const cols = [["n", "Project"], ["t", "Technology"], ["mw", "Capacity MW"], ["st", "Stage"], ["co", "Owner"], ["loc", "Locality"], ["cty", "County"],
+    const cols = [["n", "Project"], ["t", "Technology"], ["mw", "Capacity MW"], ["mwh", "Storage MWh"], ["st", "Stage"], ["co", "Owner"], ["loc", "Locality"], ["cty", "County"],
       ["src", "Source"], ["id", "Original ID / licence"], ["iss", "Licence issued"], ["exp", "Licence expires"], ["lx", "Licence lapsed (2023 register)"], ["lat", "Latitude"], ["lon", "Longitude"], ["d", "Description"]];
     const q = v => { const s = String(v ?? ""); return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
     const csv = [cols.map(c => c[1]).join(","), ...current.map(p => cols.map(c => q(typeof p[c[0]] === "boolean" ? (p[c[0]] ? "Yes" : "") : p[c[0]])).join(","))].join("\n");
