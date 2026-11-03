@@ -5,12 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Power Map Models</title>
 <!-- A gallery of the 3D map's models (assets/models/*.glb), coloured as on the map. Drag to turn. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Barlow+Semi+Condensed:wght@500&display=swap">
 <style>
-html, body { margin: 0; height: 100%; background: #e8dfcf; color: #3a2f25; font: 600 14px/1.4 "Nunito", "Trebuchet MS", sans-serif; }
+/* Tidal HUD design system: dark stage with a teal-lit centre, glowing title, caption labels. */
+html, body { margin: 0; height: 100%; color: #9cc0c6; font: 500 14px/1.4 "Barlow Semi Condensed", sans-serif;
+  background: radial-gradient(ellipse 60% 55% at 50% 52%, rgba(47, 139, 150, .30), transparent 70%), linear-gradient(180deg, #051318, #02070a); }
 #view { position: fixed; inset: 0; }
-h1 { position: fixed; top: 14px; left: 18px; margin: 0; font: 600 22px "Fredoka", "Trebuchet MS", sans-serif; z-index: 1; }
-h1 a { font-size: 13px; color: #d8582f; margin-left: 12px; }
-.lbl { position: fixed; transform: translate(-50%, 0); font-size: 13px; pointer-events: none; z-index: 1; }
+h1 { position: fixed; top: 16px; left: 24px; margin: 0; z-index: 1; font: 700 22px Rajdhani, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: #eaf8fa;
+  text-shadow: 0 0 10px rgba(62, 232, 224, .45); }
+h1 a { font: 500 13px "Barlow Semi Condensed", sans-serif; letter-spacing: .06em; text-transform: none; color: #8de9f0; margin-left: 14px; text-shadow: none; }
+h1 a:hover { color: #3ee8e0; }
+.lbl { position: fixed; transform: translate(-50%, 0); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #9cc0c6; pointer-events: none; z-index: 1; }
 </style>
 </head>
 <body>

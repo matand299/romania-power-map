@@ -48,6 +48,12 @@ last good copy.
 
 Replace or add files in `data/source/`, then run `python3 scripts/build_data.py` and commit.
 
+## Design
+
+Both maps follow the Tidal HUD design system (https://claude.ai/artifact/XQajtxc2KJcTvVFvt9pgYi): dark glass panels
+that fade into the map, cyan light as the highlight, Rajdhani for numbers and Barlow Semi Condensed for text. The
+classic map's tokens are the CSS variables at the top of `index.html`; the 3D map's come from `assets/theme.json`.
+
 ## 3D map (prototype)
 
 `map3d.html` shows the same plants as 3D models on a relief map of Romania
