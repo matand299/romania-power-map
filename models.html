@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Power Map Models</title>
+<!-- A gallery of the 3D map's models (assets/models/*.glb), coloured as on the map. Drag to turn. -->
+<style>
+html, body { margin: 0; height: 100%; background: #e8dfcf; color: #3a2f25; font: 600 14px/1.4 "Nunito", "Trebuchet MS", sans-serif; }
+#view { position: fixed; inset: 0; }
+h1 { position: fixed; top: 14px; left: 18px; margin: 0; font: 600 22px "Fredoka", "Trebuchet MS", sans-serif; z-index: 1; }
+h1 a { font-size: 13px; color: #d8582f; margin-left: 12px; }
+.lbl { position: fixed; transform: translate(-50%, 0); font-size: 13px; pointer-events: none; z-index: 1; }
+</style>
+</head>
+<body>
+<h1>Map models <a href="map3d.html">Back to the 3D map</a></h1>
+<div id="view"></div>
+<script src="assets/vendor/deck.gl.min.js"></script>
+<script>
+(async () => {
+  const theme = await fetch("assets/theme.json").then(r => r.json());
+  // Same lighting as the map, from the theme.
+  const lightingFrom = (L) => { const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+    return new deck.LightingEffect({ ambient: new deck.AmbientLight({ color: [255, 255, 255], intensity: L.ambient }),
+      sun: new deck.DirectionalLight({ color: hex(L.sun_color), intensity: L.sun, direction: L.sun_direction }) }); };
+  const keys = Object.keys(theme.tech), cols = 4, gap = 16;
+  const items = keys.map((k, i) => ({ k, position: [(i % cols - (cols - 1) / 2) * gap, -(Math.floor(i / cols) - 0.5) * gap * 1.1, 0] }));
+  const d = new deck.Deck({
+    parent: document.getElementById("view"),
+    views: new deck.OrbitView({ orbitAxis: "Z", fov: 30 }),
+    initialViewState: { target: [0, 0, 3], rotationOrbit: -30, rotationX: 35, zoom: 3.2 },
+    controller: true, effects: [lightingFrom(theme.models.light)],
+    layers: items.map(it => new deck.ScenegraphLayer({
+      id: it.k, data: [it], scenegraph: theme.tech[it.k].model, getPosition: d => d.position,
+      getOrientation: [0, 0, 90], sizeScale: 1, _lighting: "pbr",
+    })),
+  });
+  window.gallery = d;
+  // Labels under each model, kept in place as the view turns.
+  const labels = items.map(it => { const el = document.createElement("div"); el.className = "lbl";
+    el.textContent = theme.tech[it.k].label; document.body.appendChild(el); return el; });
+  const place = () => { const vp = d.getViewports()[0]; if (!vp) return;
+    items.forEach((it, i) => { const [x, y] = vp.project([it.position[0], it.position[1] - 7, 0]);
+      labels[i].style.left = x + "px"; labels[i].style.top = y + "px"; }); };
+  d.setProps({ onViewStateChange: () => requestAnimationFrame(place), onAfterRender: place });
+})();
+</script>
+</body>
+</html>

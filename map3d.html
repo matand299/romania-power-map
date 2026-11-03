@@ -11,7 +11,6 @@
   same files as the 2D map: data/plants.json, data/counties.json, plus data/basemap.json and
   data/elevation.json built by the scripts in scripts/.
 -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Public+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="assets/vendor/maplibre-gl.css">
 <style>
 :root {
@@ -30,7 +29,7 @@ html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); 
   background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
   padding: 18px 18px 14px; z-index: 2;
 }
-.panel h1 { margin: 0; font: 500 24px/1.15 var(--f-display); }
+.panel h1 { margin: 0; font: 600 26px/1.1 var(--f-display); }
 .panel h1 span { color: var(--accent); }
 .panel .sub { margin: 4px 0 14px; color: var(--muted); font-size: 12.5px; }
 .total { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0 12px; border-top: 1px solid var(--line); }
@@ -56,9 +55,9 @@ html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); 
 .note { margin: 12px 0 0; color: var(--muted); font-size: 11.5px; }
 
 /* Labels are HTML, so the theme's fonts and colours apply to them directly. */
-.lbl { pointer-events: none; white-space: nowrap; font: 600 11px var(--f-body); color: var(--city-label, var(--ink));
+.lbl { pointer-events: none; white-space: nowrap; font: 800 11.5px var(--f-body); color: var(--city-label, var(--ink));
   text-shadow: 0 0 3px var(--city-halo, var(--bg)), 0 0 3px var(--city-halo, var(--bg)); }
-.lbl.big { font-size: 13px; }
+.lbl.big { font: 600 15px var(--f-display); }
 .lbl.cty { font: 700 10px var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--county-label, var(--accent)); opacity: .8; }
 
 .tip { background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow);
@@ -74,7 +73,7 @@ html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); 
 
 .fallback { position: fixed; inset: 0; display: grid; place-items: center; text-align: center; padding: 24px; }
 .maplibregl-ctrl-group { background: var(--panel); border: 1px solid var(--line); }
-.maplibregl-ctrl-group button { filter: invert(.85); }
+.maplibregl-ctrl-group { border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
 
 @media (max-width: 640px) {
   .panel { top: auto; bottom: 0; left: 0; width: 100%; max-height: 46%; border-radius: var(--radius) var(--radius) 0 0; }
@@ -85,7 +84,7 @@ html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); 
 <div id="map" aria-label="3D map of Romania's power plants"></div>
 <aside class="panel" aria-label="Romania power plants">
   <h1>Romania <span>Power Map</span> 3D</h1>
-  <p class="sub">Operating plants and storage, in 3D. Prototype.</p>
+  <p class="sub">Operating plants and storage, in 3D.</p>
   <div class="total"><b id="total">–</b><span>MW shown</span></div>
   <div class="techs" id="techs" role="group" aria-label="Technologies"></div>
   <div class="row">
@@ -93,7 +92,7 @@ html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); 
     <button class="btn" id="view2d" type="button" aria-pressed="false">Flat</button>
     <button class="btn" id="reset" type="button">Reset view</button>
   </div>
-  <div class="row"><a class="btn" href="./">Classic map</a></div>
+  <div class="row"><a class="btn" href="./">Classic map</a><a class="btn" href="models.html">Models</a></div>
   <p class="note" id="note"></p>
 </aside>
 
@@ -124,6 +123,7 @@ html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); 
     "--radius": theme.ui.radius, "--shadow": theme.ui.shadow, "--f-display": theme.ui.font_display,
     "--f-body": theme.ui.font_body, "--city-label": M.city_label, "--city-halo": M.city_halo, "--county-label": M.county_label };
   Object.entries(css).forEach(([k, v]) => v && document.documentElement.style.setProperty(k, v));
+  if (theme.ui.fonts_url) document.head.insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="${theme.ui.fonts_url}">`);
 
   // Plants: technology key, ground elevation, and a small spread for plants that share a point.
   const TECH_OF = { Solar: "solar", Wind: "wind", Hydro: "hydro", "Natural Gas": "gas", Coal: "coal",
@@ -164,12 +164,18 @@ html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); 
     },
     layers: [
       { id: "bg", type: "background", paint: { "background-color": M.background } },
-      { id: "sea", type: "fill", source: "sea", paint: { "fill-color": M.sea } },
-      { id: "neighbours", type: "fill", source: "country", filter: ["!", ["get", "ro"]], paint: { "fill-color": M.neighbours } },
-      { id: "romania", type: "fill", source: "counties", paint: { "fill-color": M.romania } },
+      // Land coloured by height (theme "land": metres -> colour), like painted clay.
+      { id: "land", type: "color-relief", source: "shade", paint: { "color-relief-color":
+        ["interpolate", ["linear"], ["elevation"], ...M.land.flat()] } },
       { id: "relief", type: "hillshade", source: "shade", paint: {
         "hillshade-shadow-color": M.hillshade_shadow, "hillshade-highlight-color": M.hillshade_highlight,
         "hillshade-accent-color": M.hillshade_accent, "hillshade-exaggeration": M.hillshade_strength } },
+      // Neighbouring countries are faded so Romania stands out.
+      { id: "neighbours", type: "fill", source: "country", filter: ["!", ["get", "ro"]],
+        paint: { "fill-color": M.neighbours_fade, "fill-opacity": M.neighbours_fade_opacity } },
+      { id: "sea", type: "fill", source: "sea", paint: { "fill-color": M.sea } },
+      { id: "sea-shore", type: "line", source: "sea", paint: { "line-color": M.sea_shore, "line-width": M.sea_shore_width,
+        "line-blur": M.sea_shore_width * 0.8, "line-offset": M.sea_shore_width / 2 } },
       { id: "lakes", type: "fill", source: "lake", paint: { "fill-color": M.lake } },
       { id: "rivers", type: "line", source: "river", paint: { "line-color": M.river,
         "line-width": ["interpolate", ["linear"], ["zoom"], 5, ["*", M.river_width, ["case", ["<=", ["get", "rank"], 4], 1.6, 0.6]], 10, M.river_width * 3] } },
@@ -177,6 +183,9 @@ html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); 
         paint: { "line-color": M.neighbour_border, "line-width": 1 } },
       { id: "county-borders", type: "line", source: "counties", paint: { "line-color": M.county_border,
         "line-width": M.county_border_width, "line-opacity": M.county_border_opacity } },
+      { id: "country-border-shadow", type: "line", source: "country", filter: ["get", "ro"],
+        paint: { "line-color": M.country_border_shadow, "line-width": M.country_border_width + 2, "line-blur": 3,
+          "line-opacity": 0.35, "line-translate": [1.5, 2.5] } },
       { id: "country-border", type: "line", source: "country", filter: ["get", "ro"],
         paint: { "line-color": M.country_border, "line-width": M.country_border_width } },
     ],
@@ -234,13 +243,19 @@ html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); 
     id: `models-${k}`, data: plants.filter(p => p.tk === k), scenegraph: t.model, pickable: true,
     getPosition: p => [p.x, p.y, p.elev * (map.getTerrain() ? M.terrain_exaggeration : 0)],
     getOrientation: [0, 0, 90], getScale: p => { const s = scale(p); return [s, s, s]; },
-    getColor: [...rgb(t.color), 255], _lighting: theme.models.lighting,
+    // The models carry their own colours (scripts/build_models.py); "tint_models" in the theme
+    // multiplies them by the technology colour instead.
+    getColor: theme.models.tint_models ? [...rgb(t.color), 255] : [255, 255, 255, 255], _lighting: theme.models.lighting,
     updateTriggers: { getPosition: [!!map.getTerrain()], getScale: [zoomKey] },
   }));
   const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const fmt = v => v >= 100 ? Math.round(v).toLocaleString("en-US") : v >= 10 ? v.toFixed(1) : v.toFixed(2);
+  // Light on the models, from the theme: a soft overall light plus a sun.
+  const lightingFrom = (L) => { const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+    return new deck.LightingEffect({ ambient: new deck.AmbientLight({ color: [255, 255, 255], intensity: L.ambient }),
+      sun: new deck.DirectionalLight({ color: hex(L.sun_color), intensity: L.sun, direction: L.sun_direction }) }); };
   const overlay = new deck.MapboxOverlay({
-    interleaved: true, layers: layers(),
+    interleaved: true, layers: layers(), effects: theme.models.light ? [lightingFrom(theme.models.light)] : [],
     getTooltip: ({ object: p }) => p && { className: "tip", html: `
       <span class="t" style="--c:${T[p.tk].color}"><i></i>${esc(T[p.tk].label)}</span>
       <div class="n">${esc(p.n)}</div>
