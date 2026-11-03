@@ -729,7 +729,6 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
       if (STAGES[p.so].kind === "op") a.op += p.mw;
     });
     const total = Object.values(agg).reduce((s, a) => s + a.mw, 0);
-    const max = Math.max(1, ...Object.values(agg).map(a => a.mw));
     const official = nationalView() && anre ? anre.mw : null;
     // One short line: the share of ANRE's figure on the map, and the MW between them.
     const vsAnre = (op, off) => {
@@ -737,11 +736,12 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
       return `${Math.round(op / off * 100)}% of ANRE · `
         + (Math.abs(gap) < 0.5 ? "no gap" : gap > 0 ? `${fmtBig(gap)} MW missing` : `${fmtBig(-gap)} MW more than ANRE`);
     };
+    // Each bar is the type's share of all capacity shown, like a slice of a pie: the bars add up to 100%.
     $("techList").innerHTML = TECH.map(t => {
       const a = agg[t.key], on = state.techs.has(t.key);
       const tip = t.key === "other" ? "Biomass, biogas, hybrid, thermal, waste and unspecified" : t.label;
       const off = official && official[t.key];
-      return `<button type="button" class="tech" data-k="${t.key}" aria-pressed="${on}" style="--c:${colors[t.key]};--w:${(a.mw / max * 100).toFixed(1)}%" title="${tip}: ${a.n} projects">
+      return `<button type="button" class="tech" data-k="${t.key}" aria-pressed="${on}" style="--c:${colors[t.key]};--w:${(total ? a.mw / total * 100 : 0).toFixed(1)}%" title="${tip}: ${a.n} projects">
         <span class="sw"></span><span class="name">${t.label}</span><span class="pct">${pct(a.mw, total)}%</span><span class="val">${fmtBig(a.mw)} MW</span>
         <span class="bar"><i></i></span>${off ? `<span class="hist">${vsAnre(a.op, off)}</span>` : ""}</button>`;
     }).join("");
