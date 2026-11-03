@@ -1,7 +1,7 @@
 """Download Transelectrica's current installed capacity files into data/source/transelectrica/.
 
 Transelectrica (DEN) publishes them monthly on https://www.transelectrica.ro/ro/web/tel/productie:
-  7productie23.xls   - sheets "Sheet1" (installed capacity by fuel) and "Stocare" (every storage installation)
+  7productie23.xls   - sheet "Stocare": every storage installation in the grid
   7productie12a.xls  - sheets "Fotovoltaice" and "Eolian": installed capacity per relevant solar and wind plant
 The links are read from that page, so a new upload is picked up. A file replaces the one in the
 repository only if it opens and still has the sheets the build reads, so a broken download cannot
@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DEST = ROOT / "data" / "source" / "transelectrica"
 SITE = "https://www.transelectrica.ro"
 PAGE = SITE + "/ro/web/tel/productie"
-FILES = {"7productie23.xls": ["Sheet1", "Stocare"], "7productie12a.xls": ["Fotovoltaice", "Eolian"]}
+FILES = {"7productie23.xls": ["Stocare"], "7productie12a.xls": ["Fotovoltaice", "Eolian"]}
 
 
 def get(url):
@@ -44,8 +44,7 @@ def main():
             for sheet in sheets:
                 df = pd.read_excel(tmp.name, sheet_name=sheet, header=None)
                 as_of = re.search(r"\d{2}\.\d{2}\.\d{4}", " ".join(map(str, df.iloc[:6, 0])))
-                # Sheet1 lists fuels with no index column; the plant sheets number their rows.
-                rows = df[1].notna().sum() if sheet == "Sheet1" else pd.to_numeric(df[0], errors="coerce").notna().sum()
+                rows = pd.to_numeric(df[0], errors="coerce").notna().sum()
                 if not as_of or rows == 0:
                     raise SystemExit(f"{name}: sheet {sheet} has no date or no rows; keeping the current file")
                 report.append(f"{sheet} {rows} rows, data of {as_of.group(0)}")

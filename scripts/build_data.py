@@ -35,9 +35,6 @@ ENTSOE_MATCH = SRC / "entsoe_anre_match.csv"
 # sheet "Stocare") and installed capacity per relevant plant (7productie12a, sheet "Fotovoltaice").
 TEL_STORAGE = SRC / "transelectrica" / "7productie23.xls"
 TEL_PLANTS = SRC / "transelectrica" / "7productie12a.xls"
-# Transelectrica's installed capacity table (sheet "Sheet1", "Pi licenta ANRE" by fuel) on 01.05.2023, from its
-# archive (7Productie23a.rar on the production page): unchanged since 01.03.2023, so it holds on 24.04.2023.
-TEL_TOTALS_2023 = SRC / "transelectrica" / "puteri-instalate-2023-05-01.xls"
 # Counties for Transelectrica names that the gazetteer and the other files cannot settle, with the source.
 TEL_LOCATIONS = SRC / "transelectrica_locations.csv"
 GEONAMES = SRC / "geonames_RO.txt"
@@ -557,36 +554,6 @@ def place_of(name, owner, gaz, evidence, fixed):
     return None
 
 
-# Transelectrica's fuel rows by map category.
-TEL_FUEL = {"Carbune": "coal", "Hidrocarburi": "gas", "Ape": "hydro", "Nucleara": "nuclear", "Eolian": "wind",
-            "Solara": "solar", "Biomasa/Biogaz/Altele": "other", "Geotermala": "other"}
-
-
-def official_totals(path):
-    """(date, {map category: MW}) from a Transelectrica installed capacity table: ANRE licensed capacity."""
-    df = pd.read_excel(path, sheet_name="Sheet1", header=None)
-    as_of = re.search(r"(\d{2}\.\d{2}\.\d{4})", " ".join(map(str, df.iloc[:6, 0]))).group(1)
-    mw = {}
-    for r in df.itertuples(index=False):
-        k = TEL_FUEL.get(clean(r[1]))
-        if k:
-            mw[k] = round(mw.get(k, 0) + float(r[4]), 3)
-    if len(set(TEL_FUEL.values()) - set(mw)) > 0:
-        raise SystemExit(f"{path.name}: fuel rows missing from Sheet1")
-    return as_of, mw
-
-
-def write_official_totals():
-    then, now = official_totals(TEL_TOTALS_2023), official_totals(TEL_STORAGE)
-    out = ROOT / "data" / "official_totals.json"
-    out.write_text(json.dumps({
-        "source": "Transelectrica, installed capacity in the SEN by fuel (ANRE licensed capacity)",
-        "url": "https://www.transelectrica.ro/ro/web/tel/productie",
-        "then": {"date": then[0], "mw": then[1]}, "now": {"date": now[0], "mw": now[1]},
-    }, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    print(f"official_totals.json: {sum(then[1].values()):,.0f} MW on {then[0]}, {sum(now[1].values()):,.0f} MW on {now[0]}")
-
-
 def tel_rows(path, sheet):
     """Data rows of a Transelectrica sheet (those with a numeric index) and the sheet's date."""
     df = pd.read_excel(path, sheet_name=sheet, header=None)
@@ -868,7 +835,6 @@ def main():
     print(frame.groupby("src")["mw"].agg(["size", "sum"]).round(0).to_string())
     print(frame["t"].value_counts().to_dict())
     print("no county:", (frame["cty"] == "").sum())
-    write_official_totals()
     build_counties()
 
 
