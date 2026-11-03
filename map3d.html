@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Romania Power Map 3D</title>
+<!--
+  3D prototype of the Romania Power Map. Everything it draws is styled from assets/theme.json:
+  the base map (colours, borders, rivers, relief, sky), the 3D models (one glTF per technology,
+  tinted and sized from the theme) and the interface (fonts, colours, radius). The data are the
+  same files as the 2D map: data/plants.json, data/counties.json, plus data/basemap.json and
+  data/elevation.json built by the scripts in scripts/.
+-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Public+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/vendor/maplibre-gl.css">
+<style>
+:root {
+  /* Defaults; assets/theme.json overrides each of these when the page loads. */
+  --bg: #020b1a; --panel: #061429; --line: #1d2f50; --ink: #f3efe2; --muted: #9ba7bc;
+  --accent: #c99a4a; --accent-ink: #061429; --radius: 14px;
+  --shadow: 0 2px 6px rgba(0,0,0,.35), 0 14px 36px rgba(0,0,0,.4);
+  --f-display: Georgia, serif; --f-body: Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font: 14px/1.4 var(--f-body); }
+#map { position: fixed; inset: 0; }
+
+.panel {
+  position: fixed; top: 16px; left: 16px; width: 320px; max-height: calc(100% - 32px); overflow: auto;
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: 18px 18px 14px; z-index: 2;
+}
+.panel h1 { margin: 0; font: 500 24px/1.15 var(--f-display); }
+.panel h1 span { color: var(--accent); }
+.panel .sub { margin: 4px 0 14px; color: var(--muted); font-size: 12.5px; }
+.total { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0 12px; border-top: 1px solid var(--line); }
+.total b { font: 500 26px/1 var(--f-display); color: var(--accent); }
+.total span { color: var(--muted); font-size: 12px; }
+.techs { display: flex; flex-direction: column; gap: 2px; }
+.tech {
+  display: grid; grid-template-columns: 14px 1fr auto; gap: 10px; align-items: center; width: 100%;
+  padding: 6px 8px; border: 1px solid transparent; border-radius: 8px; background: none; color: var(--ink);
+  font: 600 13px var(--f-body); text-align: left; cursor: pointer;
+}
+.tech:hover { border-color: var(--line); }
+.tech i { width: 12px; height: 12px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 2px var(--panel), 0 0 0 3px var(--c); }
+.tech b { font-weight: 500; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tech[aria-pressed="false"] { opacity: .45; }
+.tech[aria-pressed="false"] i { background: transparent; }
+.row { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+.btn {
+  flex: 1; padding: 7px 10px; border-radius: 999px; border: 1px solid var(--accent); background: transparent;
+  color: var(--ink); font: 600 12px var(--f-body); cursor: pointer; text-align: center; text-decoration: none;
+}
+.btn:hover, .btn[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.note { margin: 12px 0 0; color: var(--muted); font-size: 11.5px; }
+
+/* Labels are HTML, so the theme's fonts and colours apply to them directly. */
+.lbl { pointer-events: none; white-space: nowrap; font: 600 11px var(--f-body); color: var(--city-label, var(--ink));
+  text-shadow: 0 0 3px var(--city-halo, var(--bg)), 0 0 3px var(--city-halo, var(--bg)); }
+.lbl.big { font-size: 13px; }
+.lbl.cty { font: 700 10px var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--county-label, var(--accent)); opacity: .8; }
+
+.tip { background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow);
+  padding: 10px 12px; font: 13px/1.35 var(--f-body); max-width: 280px; }
+.tip .t { display: inline-flex; gap: 6px; align-items: center; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+.tip .t i { width: 9px; height: 9px; border-radius: 50%; background: var(--c); }
+.tip .n { font: 500 16px/1.2 var(--f-display); margin: 4px 0; }
+.tip .mw { font: 500 20px/1 var(--f-display); color: var(--accent); }
+.tip .mw small { font: 12px var(--f-body); color: var(--muted); }
+.tip dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; margin: 8px 0 0; font-size: 12px; }
+.tip dt { color: var(--muted); }
+.tip dd { margin: 0; }
+
+.fallback { position: fixed; inset: 0; display: grid; place-items: center; text-align: center; padding: 24px; }
+.maplibregl-ctrl-group { background: var(--panel); border: 1px solid var(--line); }
+.maplibregl-ctrl-group button { filter: invert(.85); }
+
+@media (max-width: 640px) {
+  .panel { top: auto; bottom: 0; left: 0; width: 100%; max-height: 46%; border-radius: var(--radius) var(--radius) 0 0; }
+}
+</style>
+</head>
+<body>
+<div id="map" aria-label="3D map of Romania's power plants"></div>
+<aside class="panel" aria-label="Romania power plants">
+  <h1>Romania <span>Power Map</span> 3D</h1>
+  <p class="sub">Operating plants and storage, in 3D. Prototype.</p>
+  <div class="total"><b id="total">–</b><span>MW shown</span></div>
+  <div class="techs" id="techs" role="group" aria-label="Technologies"></div>
+  <div class="row">
+    <button class="btn" id="view3d" type="button" aria-pressed="true">3D</button>
+    <button class="btn" id="view2d" type="button" aria-pressed="false">Flat</button>
+    <button class="btn" id="reset" type="button">Reset view</button>
+  </div>
+  <div class="row"><a class="btn" href="./">Classic map</a></div>
+  <p class="note" id="note"></p>
+</aside>
+
+<script src="assets/vendor/maplibre-gl.js"></script>
+<script src="assets/vendor/deck.gl.min.js"></script>
+<script>
+(async () => {
+  const $ = id => document.getElementById(id);
+  const json = url => fetch(url).then(r => { if (!r.ok) throw new Error(url); return r.json(); });
+
+  const supportsWebGL = (() => { try { return !!document.createElement("canvas").getContext("webgl2"); } catch { return false; } })();
+  if (!supportsWebGL) {
+    document.body.innerHTML = `<div class="fallback"><div><p>This device cannot draw 3D maps.</p><p><a href="./" style="color:inherit">Open the classic map</a></p></div></div>`;
+    return;
+  }
+
+  const [theme, plantsFile, counties, basemap, elevation] = await Promise.all([
+    json("assets/theme.json"), json("data/plants.json"), json("data/counties.json"),
+    json("data/basemap.json"), json("data/elevation.json").catch(() => ({})),
+  ]);
+  const M = theme.map, T = theme.tech;
+  // ?flat starts without terrain, ?nomodels without models: lighter checks on slow devices.
+  const params = new URLSearchParams(location.search);
+
+  // Interface: theme values become CSS variables.
+  const css = { "--bg": theme.ui.background, "--panel": theme.ui.panel, "--line": theme.ui.panel_border,
+    "--ink": theme.ui.ink, "--muted": theme.ui.muted, "--accent": theme.ui.accent, "--accent-ink": theme.ui.accent_ink,
+    "--radius": theme.ui.radius, "--shadow": theme.ui.shadow, "--f-display": theme.ui.font_display,
+    "--f-body": theme.ui.font_body, "--city-label": M.city_label, "--city-halo": M.city_halo, "--county-label": M.county_label };
+  Object.entries(css).forEach(([k, v]) => v && document.documentElement.style.setProperty(k, v));
+
+  // Plants: technology key, ground elevation, and a small spread for plants that share a point.
+  const TECH_OF = { Solar: "solar", Wind: "wind", Hydro: "hydro", "Natural Gas": "gas", Coal: "coal",
+    Nuclear: "nuclear", Storage: "storage" };
+  const operating = new Set(["Operating", "Commissioned (PIF)"]);
+  const plants = plantsFile.plants.filter(p => p.lat != null && operating.has(p.st)).map(p => ({
+    ...p, tk: TECH_OF[p.t] || "other", elev: elevation[`${p.lat},${p.lon}`] || 0,
+  }));
+  const groups = {};
+  plants.forEach(p => (groups[`${p.lat},${p.lon}`] ||= []).push(p));
+  Object.values(groups).forEach(g => {
+    if (g.length < 2) return;
+    const r = 0.004 * Math.sqrt(g.length);
+    g.sort((a, b) => b.mw - a.mw).forEach((p, i) => {
+      const a = i * 2.39996; // golden angle: an even spiral
+      const d = r * Math.sqrt((i + 0.5) / g.length);
+      p.x = p.lon + d * Math.cos(a) / Math.cos(p.lat * Math.PI / 180); p.y = p.lat + d * Math.sin(a);
+    });
+  });
+  plants.forEach(p => { p.x ??= p.lon; p.y ??= p.lat; });
+
+  // Base map: every colour from the theme.
+  const by = layer => ({ type: "FeatureCollection", features: basemap.features.filter(f => f.properties.layer === layer) });
+  const style = {
+    version: 8,
+    sources: {
+      sea: { type: "geojson", data: by("sea") },
+      country: { type: "geojson", data: by("country") },
+      lake: { type: "geojson", data: by("lake") },
+      river: { type: "geojson", data: by("river") },
+      counties: { type: "geojson", data: counties },
+      // The same elevation tiles twice: one source lifts the terrain, the other shades it.
+      dem: { type: "raster-dem", encoding: "terrarium", tileSize: 256, maxzoom: 12,
+        tiles: ["https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"],
+        attribution: "Terrain: Mapzen / AWS Open Data · Natural Earth" },
+      shade: { type: "raster-dem", encoding: "terrarium", tileSize: 256, maxzoom: 12,
+        tiles: ["https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"] },
+    },
+    layers: [
+      { id: "bg", type: "background", paint: { "background-color": M.background } },
+      { id: "sea", type: "fill", source: "sea", paint: { "fill-color": M.sea } },
+      { id: "neighbours", type: "fill", source: "country", filter: ["!", ["get", "ro"]], paint: { "fill-color": M.neighbours } },
+      { id: "romania", type: "fill", source: "counties", paint: { "fill-color": M.romania } },
+      { id: "relief", type: "hillshade", source: "shade", paint: {
+        "hillshade-shadow-color": M.hillshade_shadow, "hillshade-highlight-color": M.hillshade_highlight,
+        "hillshade-accent-color": M.hillshade_accent, "hillshade-exaggeration": M.hillshade_strength } },
+      { id: "lakes", type: "fill", source: "lake", paint: { "fill-color": M.lake } },
+      { id: "rivers", type: "line", source: "river", paint: { "line-color": M.river,
+        "line-width": ["interpolate", ["linear"], ["zoom"], 5, ["*", M.river_width, ["case", ["<=", ["get", "rank"], 4], 1.6, 0.6]], 10, M.river_width * 3] } },
+      { id: "neighbour-borders", type: "line", source: "country", filter: ["!", ["get", "ro"]],
+        paint: { "line-color": M.neighbour_border, "line-width": 1 } },
+      { id: "county-borders", type: "line", source: "counties", paint: { "line-color": M.county_border,
+        "line-width": M.county_border_width, "line-opacity": M.county_border_opacity } },
+      { id: "country-border", type: "line", source: "country", filter: ["get", "ro"],
+        paint: { "line-color": M.country_border, "line-width": M.country_border_width } },
+    ],
+    terrain: params.has("flat") ? undefined : { source: "dem", exaggeration: M.terrain_exaggeration },
+    sky: { "sky-color": M.sky, "horizon-color": M.horizon, "fog-color": M.fog, "sky-horizon-blend": 0.6,
+      "horizon-fog-blend": 0.6, "fog-ground-blend": 0.25 },
+  };
+
+  const map = new maplibregl.Map({ container: "map", style, ...M.start, maxPitch: 75, attributionControl: { compact: true },
+    canvasContextAttributes: { preserveDrawingBuffer: params.has("capture") } });
+  window.map3d = map; // for checks from the browser console
+  map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "top-right");
+
+  // Labels: HTML markers, styled by the theme through CSS.
+  const label = (lngLat, text, cls) => {
+    const el = document.createElement("div");
+    el.className = `lbl ${cls}`; el.textContent = text;
+    return new maplibregl.Marker({ element: el, anchor: "center" }).setLngLat(lngLat).addTo(map);
+  };
+  counties.features.forEach(f => f.properties.lp && label([f.properties.lp[1], f.properties.lp[0]], f.properties.label, "cty"));
+  by("city").features.forEach(f => label(f.geometry.coordinates, f.properties.name, f.properties.pop >= 250000 ? "big" : ""));
+
+  // 3D models: one layer per technology, tinted and sized from the theme.
+  const rgb = hex => [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16));
+  // ?only=wind,solar starts with just those technologies switched on.
+  const on = new Set(params.get("only") ? params.get("only").split(",") : Object.keys(T));
+  // deck's sizeMinPixels would scale every model by the same factor, so the pixel limits are applied
+  // here instead: a model's size in metres is kept between min_pixels and max_pixels on screen.
+  // The models are about 10 units tall; this works out metres per unit at the current zoom.
+  const MODEL_UNITS = 10;
+  let zoomKey = 0;
+  const metresPerPixel = () => 156543.03 * Math.cos(map.getCenter().lat * Math.PI / 180) / 2 ** map.getZoom();
+  const scale = p => {
+    const mpp = metresPerPixel(), s = Math.sqrt(Math.max(p.mw, 0.05)) * theme.models.scale_per_sqrt_mw;
+    return Math.min(Math.max(s, theme.models.min_pixels * mpp / MODEL_UNITS), theme.models.max_pixels * mpp / MODEL_UNITS);
+  };
+  const layers = () => params.has("nomodels") ? [] : Object.entries(T).filter(([k]) => on.has(k)).map(([k, t]) => new deck.ScenegraphLayer({
+    id: `models-${k}`, data: plants.filter(p => p.tk === k), scenegraph: t.model, pickable: true,
+    getPosition: p => [p.x, p.y, p.elev * (map.getTerrain() ? M.terrain_exaggeration : 0)],
+    getOrientation: [0, 0, 90], getScale: p => { const s = scale(p); return [s, s, s]; },
+    getColor: [...rgb(t.color), 255], _lighting: theme.models.lighting,
+    updateTriggers: { getPosition: [!!map.getTerrain()], getScale: [zoomKey] },
+  }));
+  const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const fmt = v => v >= 100 ? Math.round(v).toLocaleString("en-US") : v >= 10 ? v.toFixed(1) : v.toFixed(2);
+  const overlay = new deck.MapboxOverlay({
+    interleaved: true, layers: layers(),
+    getTooltip: ({ object: p }) => p && { className: "tip", html: `
+      <span class="t" style="--c:${T[p.tk].color}"><i></i>${esc(T[p.tk].label)}</span>
+      <div class="n">${esc(p.n)}</div>
+      <div class="mw">${fmt(p.mw)}<small> MW${p.mwh ? ` · ${fmt(p.mwh)} MWh` : ""}</small></div>
+      <dl>${[["Owner", p.co], ["Locality", p.loc], ["County", p.cty], ["Source", p.src]]
+        .filter(([, v]) => v).map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join("")}</dl>`,
+      style: { background: "none", border: "none", padding: 0 } },
+  });
+  map.addControl(overlay);
+  window.deckOverlay = overlay; // for checks from the browser console
+  const refresh = () => overlay.setProps({ layers: layers() });
+  // Re-size the models when the zoom has changed by a quarter step or more.
+  map.on("zoomend", () => { const z = Math.round(map.getZoom() * 4); if (z !== zoomKey) { zoomKey = z; refresh(); } });
+
+  // Panel: technologies as toggles, total of what is shown.
+  const renderPanel = () => {
+    const mw = k => plants.filter(p => p.tk === k).reduce((s, p) => s + p.mw, 0);
+    $("techs").innerHTML = Object.entries(T).map(([k, t]) => `<button type="button" class="tech" data-k="${k}"
+      aria-pressed="${on.has(k)}" style="--c:${t.color}"><i></i><span>${esc(t.label)}</span><b>${fmt(mw(k))} MW</b></button>`).join("");
+    $("total").textContent = fmt(plants.filter(p => on.has(p.tk)).reduce((s, p) => s + p.mw, 0));
+  };
+  $("techs").addEventListener("click", e => {
+    const b = e.target.closest(".tech"); if (!b) return;
+    on.has(b.dataset.k) ? on.delete(b.dataset.k) : on.add(b.dataset.k);
+    renderPanel(); refresh();
+  });
+  const view = flat => {
+    map.setTerrain(flat ? null : { source: "dem", exaggeration: M.terrain_exaggeration });
+    map.easeTo({ pitch: flat ? 0 : M.start.pitch, bearing: flat ? 0 : M.start.bearing, duration: 800 });
+    $("view3d").setAttribute("aria-pressed", !flat); $("view2d").setAttribute("aria-pressed", flat);
+    refresh();
+  };
+  $("view3d").onclick = () => view(false);
+  $("view2d").onclick = () => view(true);
+  $("reset").onclick = () => map.flyTo({ ...M.start, duration: 1200 });
+  const unplaced = plantsFile.plants.filter(p => p.lat == null && operating.has(p.st)).length;
+  $("note").textContent = `${plants.length} plants drawn; ${unplaced} with no known location are not drawn. Hover a model for details.`;
+  renderPanel();
+})().catch(err => {
+  document.body.insertAdjacentHTML("beforeend", `<div class="fallback"><p>The 3D map could not load (${err.message}). <a href="./" style="color:inherit">Open the classic map</a></p></div>`);
+});
+</script>
+</body>
+</html>

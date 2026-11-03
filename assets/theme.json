@@ -1,0 +1,64 @@
+{
+  "_about": "Every colour, size and font of the 3D map (map3d.html) comes from this file. Change a value and reload the page.",
+
+  "ui": {
+    "font_display": "\"Playfair Display\", Georgia, serif",
+    "font_body": "\"Public Sans\", Arial, Helvetica, sans-serif",
+    "background": "#020b1a",
+    "panel": "#061429",
+    "panel_border": "#1d2f50",
+    "ink": "#f3efe2",
+    "muted": "#9ba7bc",
+    "accent": "#c99a4a",
+    "accent_ink": "#061429",
+    "radius": "14px",
+    "shadow": "0 2px 6px rgba(0,0,0,.35), 0 14px 36px rgba(0,0,0,.4)"
+  },
+
+  "map": {
+    "background": "#020b1a",
+    "sea": "#06152e",
+    "neighbours": "#0a1a33",
+    "neighbour_border": "#1d2f50",
+    "romania": "#0c2042",
+    "county_border": "#c99a4a",
+    "county_border_width": 0.8,
+    "county_border_opacity": 0.55,
+    "country_border": "#e6bd6c",
+    "country_border_width": 2.2,
+    "lake": "#0d3460",
+    "river": "#2a5d9a",
+    "river_width": 1.4,
+    "city_label": "#f3efe2",
+    "city_halo": "#020b1a",
+    "county_label": "#c99a4a",
+    "hillshade_shadow": "#000000",
+    "hillshade_highlight": "#3a5a8a",
+    "hillshade_accent": "#000000",
+    "hillshade_strength": 0.55,
+    "terrain_exaggeration": 1.6,
+    "sky": "#0b1f3f",
+    "horizon": "#1d2f50",
+    "fog": "#020b1a",
+    "start": { "center": [24.9, 45.6], "zoom": 6.3, "pitch": 55, "bearing": -12 }
+  },
+
+  "models": {
+    "_about": "Model size grows with the square root of a plant's MW. scale_per_sqrt_mw is metres of model per unit of the 10-unit-tall model; min_pixels keeps small plants visible from afar.",
+    "scale_per_sqrt_mw": 55,
+    "min_pixels": 7,
+    "max_pixels": 140,
+    "lighting": "pbr"
+  },
+
+  "tech": {
+    "solar":   { "label": "Solar",           "color": "#e0a21a", "model": "assets/models/solar.glb" },
+    "wind":    { "label": "Wind",            "color": "#3987e5", "model": "assets/models/wind.glb" },
+    "hydro":   { "label": "Hydro",           "color": "#1fb27c", "model": "assets/models/hydro.glb" },
+    "gas":     { "label": "Natural gas",     "color": "#e5672f", "model": "assets/models/gas.glb" },
+    "coal":    { "label": "Coal",            "color": "#b9b3a5", "model": "assets/models/coal.glb" },
+    "nuclear": { "label": "Nuclear",         "color": "#9a8ff0", "model": "assets/models/nuclear.glb" },
+    "storage": { "label": "Battery storage", "color": "#e06b98", "model": "assets/models/storage.glb" },
+    "other":   { "label": "Other",           "color": "#6f8fa8", "model": "assets/models/other.glb" }
+  }
+}
