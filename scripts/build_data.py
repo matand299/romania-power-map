@@ -35,6 +35,9 @@ ENTSOE_MATCH = SRC / "entsoe_anre_match.csv"
 # sheet "Stocare") and installed capacity per relevant plant (7productie12a, sheet "Fotovoltaice").
 TEL_STORAGE = SRC / "transelectrica" / "7productie23.xls"
 TEL_PLANTS = SRC / "transelectrica" / "7productie12a.xls"
+# Transelectrica's installed capacity table (sheet "Sheet1", "Pi licenta ANRE" by fuel) on 01.05.2023, from its
+# archive (7Productie23a.rar on the production page): unchanged since 01.03.2023, so it holds on 24.04.2023.
+TEL_TOTALS_2023 = SRC / "transelectrica" / "puteri-instalate-2023-05-01.xls"
 # Counties for Transelectrica names that the gazetteer and the other files cannot settle, with the source.
 TEL_LOCATIONS = SRC / "transelectrica_locations.csv"
 GEONAMES = SRC / "geonames_RO.txt"
@@ -477,6 +480,8 @@ def apply_entsoe(plants, log):
 
 TEL_SOURCE_STORAGE = "Transelectrica, installed capacity in storage installations"
 TEL_SOURCE_PLANTS = "Transelectrica, installed capacity per relevant plant"
+# Sheets of the per-plant file read for plants the other sources miss, and their technology.
+TEL_PLANT_SHEETS = [("Fotovoltaice", "Solar"), ("Eolian", "Wind")]
 # Words in Transelectrica plant names that are not place names.
 TEL_NAME_STOP = {"cem", "is", "cef", "cee", "etapa", "etapele", "faza", "parc", "i", "ii", "iii", "iv", "fabrici"}
 
@@ -516,9 +521,18 @@ def place_of(name, owner, gaz, evidence, fixed):
 
     The name is usually the locality. A place found in one county is taken; one shared by several
     counties is settled by a county code in the name, by counties the owner appears in elsewhere, or
-    by counties the name's words appear next to; otherwise by TEL_LOCATIONS, else left unplaced.
+    by counties the name's words appear next to; otherwise left unplaced. TEL_LOCATIONS, which gives a
+    sourced county and locality (or none, for a plant no source places), comes first.
     """
     by_owner, by_word = evidence
+    if norm(name) in fixed:
+        county, locality = fixed[norm(name)]
+        if not locality:
+            return None  # listed as not placeable: no source confirms where it is
+        if locality not in gaz.get(county, {}):
+            raise SystemExit(f"{TEL_LOCATIONS.name}: {locality!r} not found in {county!r}")
+        lat, lon, _ = gaz[county][locality]
+        return lat, lon, county, "listed"
     code = re.search(r"\[([A-Z]{1,2})\]", name)
     words = [w for w in norm(re.sub(r"\(.*?\)|\[.*?\]", "", name)).split() if w not in TEL_NAME_STOP and not w.isdigit()]
     for n in (3, 2, 1):
@@ -527,9 +541,7 @@ def place_of(name, owner, gaz, evidence, fixed):
             counties = sorted(c for c, bucket in gaz.items() if key in bucket)
             if not counties:
                 continue
-            if fixed.get(norm(name)):
-                choice, how = [fixed[norm(name)]], "listed"
-            elif code and norm(COUNTY_CODES.get(code.group(1), "")) in counties:
+            if code and norm(COUNTY_CODES.get(code.group(1), "")) in counties:
                 choice, how = [norm(COUNTY_CODES[code.group(1)])], "county code"
             elif len(counties) == 1:
                 choice, how = counties, "only place of that name"
@@ -543,6 +555,36 @@ def place_of(name, owner, gaz, evidence, fixed):
                 return lat, lon, choice[0], how
             return None
     return None
+
+
+# Transelectrica's fuel rows by map category.
+TEL_FUEL = {"Carbune": "coal", "Hidrocarburi": "gas", "Ape": "hydro", "Nucleara": "nuclear", "Eolian": "wind",
+            "Solara": "solar", "Biomasa/Biogaz/Altele": "other", "Geotermala": "other"}
+
+
+def official_totals(path):
+    """(date, {map category: MW}) from a Transelectrica installed capacity table: ANRE licensed capacity."""
+    df = pd.read_excel(path, sheet_name="Sheet1", header=None)
+    as_of = re.search(r"(\d{2}\.\d{2}\.\d{4})", " ".join(map(str, df.iloc[:6, 0]))).group(1)
+    mw = {}
+    for r in df.itertuples(index=False):
+        k = TEL_FUEL.get(clean(r[1]))
+        if k:
+            mw[k] = round(mw.get(k, 0) + float(r[4]), 3)
+    if len(set(TEL_FUEL.values()) - set(mw)) > 0:
+        raise SystemExit(f"{path.name}: fuel rows missing from Sheet1")
+    return as_of, mw
+
+
+def write_official_totals():
+    then, now = official_totals(TEL_TOTALS_2023), official_totals(TEL_STORAGE)
+    out = ROOT / "data" / "official_totals.json"
+    out.write_text(json.dumps({
+        "source": "Transelectrica, installed capacity in the SEN by fuel (ANRE licensed capacity)",
+        "url": "https://www.transelectrica.ro/ro/web/tel/productie",
+        "then": {"date": then[0], "mw": then[1]}, "now": {"date": now[0], "mw": now[1]},
+    }, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    print(f"official_totals.json: {sum(then[1].values()):,.0f} MW on {then[0]}, {sum(now[1].values()):,.0f} MW on {now[0]}")
 
 
 def tel_rows(path, sheet):
@@ -560,41 +602,45 @@ def apply_transelectrica(plants, log, gaz, master, county_names):
     that ENTSO-E already reports (same name) replaces the ENTSO-E point, which has no location.
     """
     evidence = county_evidence(master)
-    fixed = {norm(r["name"]): norm(r["county"]) for r in csv.DictReader(TEL_LOCATIONS.open(encoding="utf-8"))}
-    generic = {"cef", "parc", "fotovoltaic", "solar", "etapa", "faza", "sud", "nord", "est", "vest", "energy", "power",
-               "green", "park", "plant", "project"}
+    fixed = {norm(r["name"]): (norm(r["county"]), norm(r["locality"]))
+             for r in csv.DictReader(TEL_LOCATIONS.open(encoding="utf-8"))}
+    generic = {"cef", "cee", "parc", "fotovoltaic", "solar", "eolian", "wind", "farm", "etapa", "faza", "sud", "nord",
+               "est", "vest", "energy", "power", "green", "park", "plant", "project"}
 
     def words(s):
         return {w for w in norm(re.sub(r"\[.*?\]", "", str(s))).split() if len(w) >= 3 and w not in generic and not w.isdigit()}
 
     out = list(plants)
-    pv, pv_date = tel_rows(TEL_PLANTS, "Fotovoltaice")
-    solar = [p for p in plants if p["t"] == "Solar"]
-    for r in pv.itertuples(index=False):
-        name, mw, owner = clean(r[1]), float(r[2]), clean(r[6])
-        on_map = [p for p in solar if abs(p["mw"] - mw) <= max(0.25 * mw, 0.5)
-                  and (words(name) & words(f'{p["n"]} {p.get("loc") or ""}') or company(owner) == company(p.get("co") or ""))]
-        if on_map:
-            log["Transelectrica solar plants already on the map"] += 1
-            continue
-        point = tel_point(name, owner, mw, "Solar", TEL_SOURCE_PLANTS, pv_date, gaz, evidence, fixed, log, county_names)
-        point.pop("how")
-        parts = register_parts(point, out, words)
-        if parts:
-            # The register lists this plant in stages, or before an extension: Transelectrica's
-            # figure replaces those rows, which were already there in 2023.
-            main = max(parts, key=lambda p: p["mw"])
-            replaced = "; ".join(f'{p["n"]} {p["mw"]:g} MW' for p in parts)
-            out = [p for p in out if not any(p is q for q in parts)]
-            point.update(lat=main["lat"], lon=main["lon"], cty=main["cty"], loc=main.get("loc") or point["loc"],
-                         lic=main["lic"], iss=main["iss"], exp=main["exp"], m23=round(sum(p["mw"] for p in parts), 4),
-                         d=f"Capacity from Transelectrica ({pv_date}); replaces the ANRE 2023 register's rows for the "
-                           f"same plant ({replaced}), whose licence {main['lic']} it keeps.")
-            log["Transelectrica solar plants replacing register rows"] += 1
-            print(f"  register rows replaced by Transelectrica {name} {mw:g} MW: {replaced}")
-        else:
-            log["Transelectrica solar plants added"] += 1
-        out.append(point)
+    for sheet, tech in TEL_PLANT_SHEETS:
+        rows, as_of = tel_rows(TEL_PLANTS, sheet)
+        kind = tech.lower()
+        same_tech = [p for p in plants if p["t"] == tech]
+        for r in rows.itertuples(index=False):
+            name, mw, owner = clean(r[1]), float(r[2]), clean(r[6])
+            on_map = [p for p in same_tech if abs(p["mw"] - mw) <= max(0.25 * mw, 0.5)
+                      and (words(name) & words(f'{p["n"]} {p.get("loc") or ""}') or company(owner) == company(p.get("co") or ""))]
+            if on_map:
+                log[f"Transelectrica {kind} plants already on the map"] += 1
+                continue
+            point = tel_point(name, owner, mw, tech, TEL_SOURCE_PLANTS, as_of, gaz, evidence, fixed, log, county_names)
+            point.pop("how")
+            parts = register_parts(point, out, words)
+            if parts:
+                # The register lists this plant in stages, or before an extension: Transelectrica's
+                # figure replaces those rows, which were already there in 2023.
+                main = max(parts, key=lambda p: p["mw"])
+                replaced = "; ".join(f'{p["n"]} {p["mw"]:g} MW' for p in parts)
+                out = [p for p in out if not any(p is q for q in parts)]
+                point.update(lat=main["lat"], lon=main["lon"], cty=main["cty"], loc=main.get("loc") or point["loc"],
+                             lic=main["lic"], iss=main["iss"], exp=main["exp"], m23=round(sum(p["mw"] for p in parts), 4),
+                             d=f"Capacity from Transelectrica ({as_of}); replaces the ANRE 2023 register's rows for the "
+                               f"same plant ({replaced}), whose licence {main['lic']} it keeps.")
+                log[f"Transelectrica {kind} plants replacing register rows"] += 1
+                print(f"  register rows replaced by Transelectrica {name} {mw:g} MW: {replaced}")
+            else:
+                log[f"Transelectrica {kind} plants added"] += 1
+                print(f"  {kind} added from Transelectrica: {name} {mw:g} MW ({owner})")
+            out.append(point)
 
     st, st_date = tel_rows(TEL_STORAGE, "Stocare")
     for r in st.itertuples(index=False):
@@ -626,13 +672,14 @@ def register_parts(point, plants, words):
 
     A row qualifies when it shares a distinctive name word with the plant and is tied to it: the same
     owner, within 3 km, or named as a stage ("etapa", "faza") in the same county (or the plant has no
-    county). Together the rows must make up 30-105% of the plant's capacity, so a large new park is
-    not merged with a small older namesake in the same village.
+    county). Together the rows must not exceed 105% of the plant's capacity and, unless they share its
+    owner, must make up at least 30% of it, so a large new park is not merged with a small older
+    namesake of another owner in the same village.
     """
     def km(a, b):
         return haversine_km((a["lat"], a["lon"]), (b["lat"], b["lon"]))
 
-    named = [p for p in plants if p["src"] == ANRE_SOURCE and p["t"] == "Solar"
+    named = [p for p in plants if p["src"] == ANRE_SOURCE and p["t"] == point["t"]
              and words(point["n"]) & words(f'{p["n"]} {p.get("loc") or ""}')]
     # The strongest tie that finds any rows decides: owner, then distance, then stage names.
     tiers = [
@@ -641,9 +688,15 @@ def register_parts(point, plants, words):
         [p for p in named if re.search(r"\b(etapa|faza|et)\b", norm(p["n"]))
          and (not point["cty"] or norm(point["cty"]) == norm(p["cty"]))],
     ]
-    parts = next((t for t in tiers if t), [])
+    tier = next((i for i, t in enumerate(tiers) if t), None)
+    if tier is None:
+        return []
+    parts = tiers[tier]
     total = sum(p["mw"] for p in parts)
-    return parts if parts and 0.3 * point["mw"] <= total <= 1.05 * point["mw"] else []
+    # Rows of the same owner under the same name are that plant however small (an extension); for
+    # the weaker ties, rows far smaller than the plant are a namesake, not part of it.
+    floor = 0 if tier == 0 else 0.3 * point["mw"]
+    return parts if floor <= total <= 1.05 * point["mw"] else []
 
 
 def tel_point(name, owner, mw, tech, source, as_of, gaz, evidence, fixed, log, county_names):
@@ -815,6 +868,7 @@ def main():
     print(frame.groupby("src")["mw"].agg(["size", "sum"]).round(0).to_string())
     print(frame["t"].value_counts().to_dict())
     print("no county:", (frame["cty"] == "").sum())
+    write_official_totals()
     build_counties()
 
 

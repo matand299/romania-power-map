@@ -21,28 +21,28 @@ The map is an interim one, built from two official sources so that no plant appe
   only for later years is shown as under construction.
 
 - `transelectrica/` – Transelectrica (DEN) installed capacity files: `7productie23.xls` (sheet "Stocare", every storage
-  installation in the grid) and `7productie12a.xls` (sheet "Fotovoltaice", installed capacity per relevant solar plant).
-  All storage installations are added; a solar plant is added only when no solar plant on the map shares a distinctive
-  name word or its owner at a capacity within 25%. Plants are placed at the locality their name gives;
+  installation in the grid) and `7productie12a.xls` (sheets "Fotovoltaice" and "Eolian", installed capacity per relevant solar and wind plant).
+  All storage installations are added. A solar or wind plant counts as already on the map when a plant of that type
+  there shares a distinctive name word or its owner at a capacity within 25%; register rows that are the same plant in
+  stages or before an extension are replaced by Transelectrica's figure; otherwise the plant is added. Plants are placed at the locality their name gives;
   `transelectrica_locations.csv` settles names the other files cannot, with the source.
 
 `Romania_Energy_Projects_Master_Database_2026_EN.xlsx` also holds Transelectrica, distribution-operator and
 Global Energy Monitor rows. They are left out (`INCLUDED_SOURCES` in the build script) until each can be checked
 against the register.
 
-### Coverage against ANRE's totals
+### Official totals
 
-`data/anre_totals.json` holds ANRE's official installed capacity by primary energy type, from its public
-"Puteri instalate" report (https://anre.ro/puteri-instalate). Under each technology, the map's "Capacity mix" panel shows
-the capacity in operation on the map on 24.04.2023 (field `m23` in `plants.json`) and now, and, when no filter narrows
-the map to part of Romania, ANRE's figure and the share of it the map shows. `scripts/fetch_anre_totals.py` refreshes the file.
+`data/official_totals.json` holds ANRE licensed capacity by fuel as Transelectrica tabulates it ("Pi licenta ANRE",
+sheet "Sheet1" of `7productie23.xls`) now, and on 01.05.2023 from Transelectrica's archive
+(`puteri-instalate-2023-05-01.xls`, unchanged since 01.03.2023, so it holds on the register's date). Under each
+technology the "Capacity mix" panel shows the map's capacity in operation on 24.04.2023 (field `m23` in
+`plants.json`) and now, and the official figures for both dates with the share the map shows.
 
 ### Weekly update
 
-`.github/workflows/weekly-data.yml` runs every Monday (or by hand from the Actions tab): it fetches ANRE's totals
-(`scripts/fetch_anre_totals.py`) and Transelectrica's installed capacity files (`scripts/fetch_transelectrica.py`),
-rebuilds `data/*.json` with `scripts/build_data.py` and commits any change. A source that cannot be fetched keeps its
-last good copy.
+`.github/workflows/weekly-data.yml` runs every Monday (or by hand from the Actions tab): it fetches Transelectrica's installed capacity files (`scripts/fetch_transelectrica.py`), rebuilds `data/*.json` with `scripts/build_data.py` and commits any change. If the files cannot be fetched, the last good
+copy stays.
 
 ## Updating the data
 

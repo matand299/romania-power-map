@@ -29,7 +29,7 @@ eic,anre_licence,anre_plants,county,locality,lat,lon,note
 30W-CEE-STUP---U,,,,,,,"Not matched: no Stupina wind farm under that name in the register; operating before 2023, so not added to avoid a duplicate"
 30WCE-STUDINA--M,,,Olt,Studina,43.96667,24.41667,New since the register; location from the Transelectrica connection list
 30WCE-CALUGR2--Y,,,Giurgiu,Calugareni,44.17167,25.99556,New since the register; location from the Transelectrica connection list
-30WCE-RATESTI--8,,,,,,,New since the register; location not known
+30WCE-RATESTI--8,,,Arges,Ratesti,44.73333,25.13333,"New since the register; Rătești, Argeș (energynomics.ro: ANRE authorisation for CEF Rătești, 131.25 MW)"
 30WCE-FLORESTI-3,,,,,,,New since the register; location not known
 30W-CECC-MINTIAN,,,Hunedoara,Mintia,45.91279,22.82613,New since the register; location from Global Energy Monitor
 30W-CECC-IERN--A,,,Mures,Iernut,46.45,24.25,New since the register; location of the existing Iernut plant in the register
