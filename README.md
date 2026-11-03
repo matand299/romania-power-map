@@ -36,8 +36,8 @@ against the register.
 `data/official_totals.json` holds ANRE licensed capacity by fuel as Transelectrica tabulates it ("Pi licenta ANRE",
 sheet "Sheet1" of `7productie23.xls`) now, and on 01.05.2023 from Transelectrica's archive
 (`puteri-instalate-2023-05-01.xls`, unchanged since 01.03.2023, so it holds on the register's date). Under each
-technology the "Capacity mix" panel shows the map's capacity in operation on 24.04.2023 (field `m23` in
-`plants.json`) and now, and the official figures for both dates with the share the map shows.
+technology the "Capacity mix" panel shows Romania's official capacity now, its change since 2023, and the share of it
+on the map. Each plant in `plants.json` also carries `m23`, its capacity on the map's 2023 base (24.04.2023).
 
 ### Weekly update
 

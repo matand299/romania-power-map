@@ -721,38 +721,41 @@ td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; ba
   const nationalView = () => !state.county && !state.src && !state.minMW && !state.q;
 
   function renderTech(base) {
-    // mw: the selected stages, as the map shows them; op and m23: in operation today and on 24.04.2023.
-    const agg = Object.fromEntries(TECH.map(t => [t.key, { mw: 0, op: 0, m23: 0, n: 0 }]));
+    // mw: the selected stages, as the map shows them; op: in operation, compared with the official figure.
+    const agg = Object.fromEntries(TECH.map(t => [t.key, { mw: 0, op: 0, n: 0 }]));
     base.forEach(p => {
       const a = agg[p.tk];
-      a.mw += p.mw; a.m23 += p.m23 || 0; a.n++;
+      a.mw += p.mw; a.n++;
       if (STAGES[p.so].kind === "op") a.op += p.mw;
     });
-    const sumOf = k => Object.values(agg).reduce((s, a) => s + a[k], 0);
-    const total = sumOf("mw");
+    const total = Object.values(agg).reduce((s, a) => s + a.mw, 0);
     const max = Math.max(1, ...Object.values(agg).map(a => a.mw));
+    // The official figures cover all of Romania, so they show only while no filter narrows the map.
     const official = nationalView() && totals ? totals : null;
     const arrow = d => Math.abs(d) < 0.5 ? "" : ` <span class="${d > 0 ? "up" : "down"}">${d > 0 ? "▲ +" : "▼ −"}${fmtBig(Math.abs(d))}</span>`;
-    const change = (now, then) => `On the map: 2023 <b>${fmtBig(then)}</b> → now <b>${fmtBig(now)}</b>${arrow(now - then)}`;
-    // Official figures do not count storage, so the overall share leaves it out.
-    const officialLine = (op, then, now) => `<br>Official: 2023 <b>${fmtBig(then)}</b> → now <b>${fmtBig(now)}</b>${arrow(now - then)}`
-      + ` · the map shows ${Math.round(op / now * 100)}%`;
+    // Two short lines: Romania's official capacity now and its change since 2023, then the map's share of it.
+    const romania = (op, then, now) => {
+      const share = Math.round(op / now * 100);
+      return `Romania: <b>${fmtBig(now)}</b> MW${Math.abs(now - then) < 0.5 ? ", unchanged" : arrow(now - then)} since 2023`
+        + `<br>On this map: ${share}%${share > 102 ? " (it still lists units closed since)" : ""}`;
+    };
     $("techList").innerHTML = TECH.map(t => {
       const a = agg[t.key], on = state.techs.has(t.key);
       const tip = t.key === "other" ? "Biomass, biogas, hybrid, thermal, waste and unspecified" : t.label;
       const off = official && official.now[t.key];
+      const hist = off ? romania(a.op, official.then[t.key] || 0, off) : official ? "Not counted in the official totals" : "";
       return `<button type="button" class="tech" data-k="${t.key}" aria-pressed="${on}" style="--c:${colors[t.key]};--w:${(a.mw / max * 100).toFixed(1)}%" title="${tip}: ${a.n} projects">
         <span class="sw"></span><span class="name">${t.label}</span><span class="pct">${pct(a.mw, total)}%</span><span class="val">${fmtBig(a.mw)} MW</span>
-        <span class="bar"><i></i></span>
-        <span class="hist">${change(a.op, a.m23)}${off ? officialLine(a.op, official.then[t.key] || 0, off) : ""}</span></button>`;
+        <span class="bar"><i></i></span>${hist ? `<span class="hist">${hist}</span>` : ""}</button>`;
     }).join("");
-    const sumOff = side => official ? Object.values(official[side]).reduce((s, v) => s + v, 0) : 0;
+    const sumOff = side => Object.values(official[side]).reduce((s, v) => s + v, 0);
+    // Storage is not in the official totals, so the overall share leaves it out.
     const opCounted = TECH.reduce((s, t) => s + (official && official.now[t.key] ? agg[t.key].op : 0), 0);
-    $("mixTotal").innerHTML = `<span><b>All types</b></span><span><b>${fmtBig(total)} MW</b></span>
-      <span class="hist">${change(sumOf("op"), sumOf("m23"))}${official ? officialLine(opCounted, sumOff("then"), sumOff("now")) : ""}</span>`;
-    $("mixNote").innerHTML = `Under each type, MW in operation: on the map on 24.04.2023 (the ANRE register's date) and now`
-      + (totals ? (official ? `; and officially, ANRE licensed capacity as <a href="${esc(totals.url)}" target="_blank" rel="noopener">Transelectrica</a> tabulates it, on ${totals.thenDate} and ${totals.nowDate}. The map's change counts plants it has added since 2023, so it is not Romania's growth; the official line is.`
-        : `. The official figures are for all of Romania and show when no county, source, size or search filter is set.`) : ".");
+    $("mixTotal").innerHTML = `<span><b>All types</b></span><span><b>${fmtBig(total)} MW</b></span>`
+      + (official ? `<span class="hist">${romania(opCounted, sumOff("then"), sumOff("now"))}</span>` : "");
+    $("mixNote").innerHTML = official
+      ? `MW on the map. Under each type, Romania's official installed capacity (ANRE licences, as tabulated by <a href="${esc(totals.url)}" target="_blank" rel="noopener">Transelectrica</a>) on ${totals.nowDate}, its change since ${totals.thenDate}, and the share of it on this map.`
+      : `MW on the map. Romania's official figures show when no county, source, size or search filter is set.`;
   }
 
   // Official installed capacity by map category, then (2023) and now, from data/official_totals.json.
