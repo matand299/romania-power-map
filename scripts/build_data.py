@@ -579,8 +579,22 @@ def apply_transelectrica(plants, log, gaz, master, county_names):
             continue
         point = tel_point(name, owner, mw, "Solar", TEL_SOURCE_PLANTS, pv_date, gaz, evidence, fixed, log, county_names)
         point.pop("how")
+        parts = register_parts(point, out, words)
+        if parts:
+            # The register lists this plant in stages, or before an extension: Transelectrica's
+            # figure replaces those rows, which were already there in 2023.
+            main = max(parts, key=lambda p: p["mw"])
+            replaced = "; ".join(f'{p["n"]} {p["mw"]:g} MW' for p in parts)
+            out = [p for p in out if not any(p is q for q in parts)]
+            point.update(lat=main["lat"], lon=main["lon"], cty=main["cty"], loc=main.get("loc") or point["loc"],
+                         lic=main["lic"], iss=main["iss"], exp=main["exp"], m23=round(sum(p["mw"] for p in parts), 4),
+                         d=f"Capacity from Transelectrica ({pv_date}); replaces the ANRE 2023 register's rows for the "
+                           f"same plant ({replaced}), whose licence {main['lic']} it keeps.")
+            log["Transelectrica solar plants replacing register rows"] += 1
+            print(f"  register rows replaced by Transelectrica {name} {mw:g} MW: {replaced}")
+        else:
+            log["Transelectrica solar plants added"] += 1
         out.append(point)
-        log["Transelectrica solar plants added"] += 1
 
     st, st_date = tel_rows(TEL_STORAGE, "Stocare")
     for r in st.itertuples(index=False):
@@ -605,6 +619,31 @@ def apply_transelectrica(plants, log, gaz, master, county_names):
         out.append(point)
         log["Transelectrica storage installations added"] += 1
     return out
+
+
+def register_parts(point, plants, words):
+    """The ANRE register's solar rows that are the same plant as a Transelectrica one, or [].
+
+    A row qualifies when it shares a distinctive name word with the plant and is tied to it: the same
+    owner, within 3 km, or named as a stage ("etapa", "faza") in the same county (or the plant has no
+    county). Together the rows must make up 30-105% of the plant's capacity, so a large new park is
+    not merged with a small older namesake in the same village.
+    """
+    def km(a, b):
+        return haversine_km((a["lat"], a["lon"]), (b["lat"], b["lon"]))
+
+    named = [p for p in plants if p["src"] == ANRE_SOURCE and p["t"] == "Solar"
+             and words(point["n"]) & words(f'{p["n"]} {p.get("loc") or ""}')]
+    # The strongest tie that finds any rows decides: owner, then distance, then stage names.
+    tiers = [
+        [p for p in named if company(point["co"]) and company(point["co"]) == company(p.get("co") or "")],
+        [p for p in named if point["lat"] is not None and p["lat"] is not None and km(point, p) <= 3],
+        [p for p in named if re.search(r"\b(etapa|faza|et)\b", norm(p["n"]))
+         and (not point["cty"] or norm(point["cty"]) == norm(p["cty"]))],
+    ]
+    parts = next((t for t in tiers if t), [])
+    total = sum(p["mw"] for p in parts)
+    return parts if parts and 0.3 * point["mw"] <= total <= 1.05 * point["mw"] else []
 
 
 def tel_point(name, owner, mw, tech, source, as_of, gaz, evidence, fixed, log, county_names):
