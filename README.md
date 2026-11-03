@@ -59,6 +59,9 @@ Replace or add files in `data/source/`, then run `python3 scripts/build_data.py`
   each base); after changing those, run the script again. `models.html` shows all models side by side.
   To use a designed model, replace the file with one of the same name (Y up, about 10 units across, origin at
   the centre of the base).
+- **Speed:** each technology has a light model (`<name>_low.glb`) shown from afar and a detailed one shown from
+  `models.detail_zoom` in; the screen resolution is capped at `map.max_pixel_ratio`; one elevation source feeds
+  the terrain, the land colours and the hillshade.
 - **Land:** coloured by height (`map.land`: metres → colour), with hillshade on top; neighbouring countries are faded.
 - **Base map:** `data/basemap.json` (Natural Earth, `scripts/build_basemap.py`). Relief: Terrarium elevation
   tiles from AWS Open Data. Plant ground heights: `data/elevation.json` (`scripts/build_elevation.py`).

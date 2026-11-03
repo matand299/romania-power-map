@@ -8,6 +8,9 @@ technology's colour in "tech". After changing those colours, run this script aga
 Any file in assets/models/ can be replaced with a designed model of the same name (Y up, about
 10 units across, origin at the centre of its base) and the map uses it as it is.
 
+Each technology gets two files: <name>.glb (detailed, used close up) and <name>_low.glb (light, used
+from afar so the map stays fast).
+
 Run from the project root:  python3 scripts/build_models.py
 """
 import json
@@ -24,6 +27,14 @@ OUT = ROOT / "assets" / "models"
 THEME = json.loads((ROOT / "assets" / "theme.json").read_text(encoding="utf-8"))
 PALETTE = THEME["models"]["palette"]
 PLATE_TOP = 0.45  # everything stands on the base plate, whose top is at this height
+# Each model is built twice: in detail (seen close up) and light (<name>_low.glb, seen from afar, with
+# no windows, rails or solar cells and few facets). main() switches LOW between the two builds.
+LOW = False
+
+
+def sec(n):
+    """Facets around a round part: fewer in the light version."""
+    return max(6, n // 3) if LOW else max(8, n * 2 // 3)
 
 
 # ---- primitives (y is up, as in glTF) -------------------------------------------------------
@@ -49,12 +60,12 @@ def block(w, h, d, x=0.0, y=PLATE_TOP, z=0.0):
 
 
 def column(r, h, x=0.0, y=PLATE_TOP, z=0.0, sections=24):
-    return at(up(cylinder(radius=r, height=h, sections=sections)), x, y + h / 2, z)
+    return at(up(cylinder(radius=r, height=h, sections=sec(sections))), x, y + h / 2, z)
 
 
 def frustum(r0, r1, h, x=0.0, y=PLATE_TOP, z=0.0, sections=28):
     """A cylinder whose top ring is scaled to r1."""
-    mesh = up(cylinder(radius=r0, height=h, sections=sections))
+    mesh = up(cylinder(radius=r0, height=h, sections=sec(sections)))
     top = mesh.vertices[:, 1] > 0
     mesh.vertices[top, 0] *= r1 / r0
     mesh.vertices[top, 2] *= r1 / r0
@@ -62,13 +73,13 @@ def frustum(r0, r1, h, x=0.0, y=PLATE_TOP, z=0.0, sections=28):
 
 
 def dome(r, x=0.0, y=PLATE_TOP, z=0.0):
-    mesh = icosphere(subdivisions=3, radius=r)
+    mesh = icosphere(subdivisions=1 if LOW else 2, radius=r)
     mesh.vertices[:, 1] = np.maximum(mesh.vertices[:, 1], 0)
     return at(mesh, x, y, z)
 
 
 def puff(r, x, y, z):
-    return at(icosphere(subdivisions=2, radius=r), x, y, z)
+    return at(icosphere(subdivisions=0 if LOW else 1, radius=r), x, y, z)
 
 
 # ---- recurring pieces: each returns a list of (mesh, palette key) ---------------------------
@@ -76,8 +87,10 @@ def puff(r, x, y, z):
 def plate(w, d, rim_color):
     """A rounded base plate on a thin rim in the technology's colour."""
     def rounded(w, d, h, y, r):
+        if LOW:  # square corners from afar
+            return [at(box([w, h, d]), 0, y + h / 2, 0)]
         return [at(box([w - 2 * r, h, d]), 0, y + h / 2, 0), at(box([w, h, d - 2 * r]), 0, y + h / 2, 0),
-                *[at(up(cylinder(radius=r, height=h, sections=16)), sx * (w / 2 - r), y + h / 2, sz * (d / 2 - r))
+                *[at(up(cylinder(radius=r, height=h, sections=sec(16))), sx * (w / 2 - r), y + h / 2, sz * (d / 2 - r))
                   for sx in (-1, 1) for sz in (-1, 1)]]
     return ([(m, rim_color) for m in rounded(w + 0.3, d + 0.3, 0.2, 0, 0.7)]
             + [(m, "base") for m in rounded(w, d, PLATE_TOP - 0.2, 0.2, 0.6)])
@@ -86,6 +99,8 @@ def plate(w, d, rim_color):
 def windows(w, h, d, x, y, z, rows, cols):
     """Rows of windows on the front (+z) and right (+x) faces of a block at (x, y, z)."""
     out = []
+    if LOW:
+        return out
     for i in range(rows):
         wy = y + h * (i + 0.6) / (rows + 0.2)
         for j in range(cols):
@@ -99,7 +114,10 @@ def windows(w, h, d, x, y, z, rows, cols):
 def building(w, h, d, x=0.0, z=0.0, rows=2, cols=3, trim="red"):
     """A concrete block with windows, a coloured roof trim and a few roof units."""
     out = [(block(w, h, d, x, PLATE_TOP, z), "concrete"),
-           (block(w + 0.12, 0.22, d + 0.12, x, PLATE_TOP + h, z), trim),
+           (block(w + 0.12, 0.22, d + 0.12, x, PLATE_TOP + h, z), trim)]
+    if LOW:
+        return out
+    out += [
            (block(w * 0.25, 0.3, d * 0.3, x - w * 0.2, PLATE_TOP + h + 0.22, z), "metal"),
            (block(w * 0.2, 0.3, d * 0.25, x + w * 0.22, PLATE_TOP + h + 0.22, z - d * 0.15), "metal")]
     return out + windows(w, h, d, x, PLATE_TOP, z, rows, cols)
@@ -110,12 +128,13 @@ def chimney(x, z, h, r=0.32, bands=6, smoke=True):
     out, step = [], h / bands
     for i in range(bands):
         r0, r1 = r * (1 - 0.18 * i / bands), r * (1 - 0.18 * (i + 1) / bands)
-        out.append((frustum(r0, r1, step, x, PLATE_TOP + i * step, z, sections=20), "red" if i % 2 else "white"))
+        out.append((frustum(r0, r1, step, x, PLATE_TOP + i * step, z, sections=sec(20)), "red" if i % 2 else "white"))
     top = PLATE_TOP + h
-    out.append((column(r * 0.95, 0.12, x, top, z, sections=20), "metal"))
+    out.append((column(r * 0.95, 0.12, x, top, z, sections=sec(20)), "metal"))
     if smoke:
-        out += [(puff(r * 1.3, x, top + r * 1.3, z), "steam"), (puff(r * 1.6, x + r * 1.2, top + r * 2.8, z - r * 0.3), "steam"),
-                (puff(r * 1.9, x + r * 2.8, top + r * 4.4, z - r * 0.6), "steam")]
+        out += [(puff(r * 1.6, x + r * 0.6, top + r * 2.0, z), "steam")] if LOW else [
+            (puff(r * 1.3, x, top + r * 1.3, z), "steam"), (puff(r * 1.6, x + r * 1.2, top + r * 2.8, z - r * 0.3), "steam"),
+            (puff(r * 1.9, x + r * 2.8, top + r * 4.4, z - r * 0.6), "steam")]
     return out
 
 
@@ -126,13 +145,13 @@ def cooling_tower(x, z, h, r, steam=True):
     radius = r * (waist + (1 - waist) * ((t - 0.72) / 0.72) ** 2)
     radius[-1] = radius[-2] * 1.02
     profile = np.column_stack([radius, t * h * 0.9])
-    shell = up(revolve(profile, sections=32))
+    shell = up(revolve(profile, sections=sec(32)))
     out = [(at(shell, x, PLATE_TOP + h * 0.1, z), "concrete")]
-    for k in range(12):
+    for k in range(0 if LOW else 12):
         a = 2 * math.pi * k / 12
         leg = block(0.14, h * 0.1, 0.14, x + r * 0.92 * math.cos(a), PLATE_TOP, z + r * 0.92 * math.sin(a))
         out.append((leg, "concrete_dark"))
-    out.append((column(r * 0.9, 0.08, x, PLATE_TOP + h * 0.1 - 0.04, z, sections=32), "concrete_dark"))
+    out.append((column(r * 0.9, 0.08, x, PLATE_TOP + h * 0.1 - 0.04, z, sections=sec(32)), "concrete_dark"))
     if steam:
         top = PLATE_TOP + h
         tr = radius[-1]
@@ -142,6 +161,8 @@ def cooling_tower(x, z, h, r, steam=True):
 
 
 def tank(x, z, r, h):
+    if LOW:
+        return [(column(r, h * 1.3, x, PLATE_TOP, z), "tank")]
     return [(column(r, h, x, PLATE_TOP, z), "tank"), (dome(r, x, PLATE_TOP + h, z), "tank"),
             (column(r * 1.01, 0.12, x, PLATE_TOP + h * 0.5, z), "metal")]
 
@@ -153,14 +174,14 @@ def solar(rim):
     for row in range(3):
         for col in range(2):
             px, pz = (col - 0.5) * 4.6, (row - 1) * 2.5
-            parts = [(box([4.2, 0.1, 1.9]), "panel_frame")]
-            for i in range(4):
+            parts = [(box([4.2, 0.14, 1.9]), "panel")] if LOW else [(box([4.2, 0.1, 1.9]), "panel_frame")]
+            for i in range(0 if LOW else 4):
                 for j in range(2):
                     parts.append((at(box([0.92, 0.06, 0.82]), -1.575 + i * 1.05, 0.07, -0.45 + j * 0.9), "panel"))
             for m, c in parts:
                 turn(m, 25, [1, 0, 0])
                 out.append((at(m, px, PLATE_TOP + 1.05, pz), c))
-            for sx in (-1.6, 1.6):
+            for sx in (() if LOW else (-1.6, 1.6)):
                 out.append((block(0.12, 0.9, 0.12, px + sx, PLATE_TOP, pz), "metal"))
     out.append((block(1.0, 0.9, 0.8, 4.2, PLATE_TOP, 3.4), "concrete"))  # inverter
     return out
@@ -168,10 +189,10 @@ def solar(rim):
 
 def wind(rim):
     out = plate(5, 5, rim)
-    out.append((frustum(0.38, 0.17, 7.2, sections=24), "white"))
+    out.append((frustum(0.38, 0.17, 7.2, sections=sec(24)), "white"))
     hub_y = PLATE_TOP + 7.35
     out.append((at(box([0.55, 0.55, 1.5]), 0, hub_y, -0.25), "white"))
-    out.append((at(up(cylinder(radius=0.22, height=0.4, sections=20)), 0, hub_y, 0.62), "white"))
+    out.append((at(up(cylinder(radius=0.22, height=0.4, sections=sec(20))), 0, hub_y, 0.62), "white"))
     for k in range(3):
         blade = box([0.42, 3.6, 0.07])
         top = blade.vertices[:, 1] > 0
@@ -193,8 +214,9 @@ def hydro(rim):
     for i in range(3):  # spillways down the sloped face, between piers
         chute = turn(box([2.0, 4.9, 0.12]), slope, [1, 0, 0])
         out.append((at(chute, -2.7 + i * 2.7, PLATE_TOP + 2.3, -0.42), "water"))
-        out.append((puff(0.55, -2.7 + i * 2.7 - 0.5, PLATE_TOP + 0.35, 0.9), "steam"))
-        out.append((puff(0.5, -2.7 + i * 2.7 + 0.5, PLATE_TOP + 0.3, 1.1), "steam"))
+        if not LOW:  # spray at the foot of each spillway
+            out.append((puff(0.55, -2.7 + i * 2.7 - 0.5, PLATE_TOP + 0.35, 0.9), "steam"))
+            out.append((puff(0.5, -2.7 + i * 2.7 + 0.5, PLATE_TOP + 0.3, 1.1), "steam"))
     for x in (-4.05, -1.35, 1.35, 4.05):
         pier = turn(box([0.6, 5.0, 0.6]), slope, [1, 0, 0])
         out.append((at(pier, x, PLATE_TOP + 2.45, -0.3), "concrete"))
@@ -202,13 +224,13 @@ def hydro(rim):
     out.append((block(9.6, 0.3, 2.2, 0, deck_y, -2.0), "concrete"))
     for z in (-3.05, -0.95):
         out.append((block(9.4, 0.06, 0.06, 0, deck_y + 0.75, z), "rail"))
-        for x in np.linspace(-4.6, 4.6, 10):
+        for x in ([] if LOW else np.linspace(-4.6, 4.6, 10)):
             out.append((block(0.06, 0.75, 0.06, x, deck_y + 0.3, z), "rail"))
     for x in (-2.0, 2.0):
         out.append((column(0.35, 0.6, x, deck_y + 0.3, -2.0), "rail"))
     for x in (-4.0, 4.0):  # gate hoists
         out.append((block(1.3, 1.0, 1.6, x, deck_y + 0.3, -2.0), "dam"))
-        hoist = at(turn(cylinder(radius=0.4, height=1.4, sections=20), 90, [0, 1, 0]), x, deck_y + 1.7, -2.0)
+        hoist = at(turn(cylinder(radius=0.4, height=1.4, sections=sec(20)), 90, [0, 1, 0]), x, deck_y + 1.7, -2.0)
         out.append((hoist, "dam"))
     return out
 
@@ -219,7 +241,7 @@ def gas(rim):
     out += building(2.6, 2.0, 2.4, x=2.4, z=1.6, rows=1, cols=2)
     out += chimney(2.2, -2.2, 7.5, r=0.42)
     out += tank(-3.4, 2.6, 0.6, 1.0) + tank(-2.0, 2.6, 0.6, 1.0) + tank(-0.6, 2.6, 0.6, 1.0)
-    out.append((at(turn(cylinder(radius=0.12, height=3.0, sections=12), 90, [0, 1, 0]), 0.9, PLATE_TOP + 1.3, -0.1), "pipe"))
+    out.append((at(turn(cylinder(radius=0.12, height=3.0, sections=sec(12)), 90, [0, 1, 0]), 0.9, PLATE_TOP + 1.3, -0.1), "pipe"))
     return out
 
 
@@ -253,11 +275,13 @@ def storage(rim):
             x, z = -2.6 + i * 2.5, -1.3 + j * 2.8
             out.append((block(2.0, 1.6, 2.2, x, PLATE_TOP, z), "battery"))
             out.append((block(2.04, 0.18, 2.24, x, PLATE_TOP + 1.0, z), "battery_accent"))
+            if LOW:
+                continue
             out.append((block(0.8, 0.25, 0.8, x, PLATE_TOP + 1.6, z), "metal"))
             for k in range(3):
                 out.append((block(0.06, 0.6, 0.3, x + 1.02, PLATE_TOP + 0.3, z - 0.6 + k * 0.6), "window"))
     out.append((block(1.2, 1.5, 1.4, 3.5, PLATE_TOP, 2.4), "metal"))  # transformer
-    for k in range(4):
+    for k in range(0 if LOW else 4):
         out.append((block(0.08, 1.2, 1.2, 2.95 - 0.08, PLATE_TOP + 0.1, 2.4 - 0.45 + k * 0.3), "concrete_dark"))
     return out
 
@@ -280,8 +304,15 @@ def material(hex_color):
 
 
 def main():
+    global LOW
     OUT.mkdir(parents=True, exist_ok=True)
-    for name, build in MODELS.items():
+    for LOW in (False, True):
+        for name, build in MODELS.items():
+            export(name, build)
+
+
+def export(name, build):
+    if True:
         rim = f"rim:{THEME['tech'][name]['color']}"
         by_color = {}
         for mesh, key in build(rim):
@@ -291,7 +322,7 @@ def main():
             mesh = trimesh.util.concatenate(meshes)
             mesh.visual = trimesh.visual.TextureVisuals(material=material(key[4:] if key.startswith("rim:") else PALETTE[key]))
             scene.add_geometry(mesh, node_name=key.replace(":", "_").replace("#", ""))
-        path = OUT / f"{name}.glb"
+        path = OUT / f"{name}{'_low' if LOW else ''}.glb"
         path.write_bytes(scene.export(file_type="glb"))
         lo, hi = scene.bounds
         faces = sum(len(g.faces) for g in scene.geometry.values())

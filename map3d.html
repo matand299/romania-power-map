@@ -179,19 +179,17 @@ html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); 
       lake: { type: "geojson", data: by("lake") },
       river: { type: "geojson", data: by("river") },
       counties: { type: "geojson", data: counties },
-      // The same elevation tiles twice: one source lifts the terrain, the other shades it.
+      // One elevation source lifts the terrain, colours the land and shades it (loaded once).
       dem: { type: "raster-dem", encoding: "terrarium", tileSize: 256, maxzoom: 12,
         tiles: ["https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"],
         attribution: "Terrain: Mapzen / AWS Open Data · Natural Earth" },
-      shade: { type: "raster-dem", encoding: "terrarium", tileSize: 256, maxzoom: 12,
-        tiles: ["https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"] },
     },
     layers: [
       { id: "bg", type: "background", paint: { "background-color": M.background } },
       // Land coloured by height (theme "land": metres -> colour), like painted clay.
-      { id: "land", type: "color-relief", source: "shade", paint: { "color-relief-color":
+      { id: "land", type: "color-relief", source: "dem", paint: { "color-relief-color":
         ["interpolate", ["linear"], ["elevation"], ...M.land.flat()] } },
-      { id: "relief", type: "hillshade", source: "shade", paint: {
+      { id: "relief", type: "hillshade", source: "dem", paint: {
         "hillshade-shadow-color": M.hillshade_shadow, "hillshade-highlight-color": M.hillshade_highlight,
         "hillshade-accent-color": M.hillshade_accent, "hillshade-exaggeration": M.hillshade_strength } },
       // Neighbouring countries are faded so Romania stands out.
@@ -219,6 +217,8 @@ html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); 
   };
 
   const map = new maplibregl.Map({ container: "map", style, ...M.start, maxPitch: 75, attributionControl: { compact: true },
+    // Sharp screens draw up to 4x the pixels; capping the ratio keeps the map smooth.
+    pixelRatio: Math.min(window.devicePixelRatio || 1, M.max_pixel_ratio || 1.5),
     canvasContextAttributes: { preserveDrawingBuffer: params.has("capture") } });
   window.map3d = map; // for checks from the browser console
 
@@ -263,15 +263,21 @@ html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); 
     const mpp = metresPerPixel(), s = Math.sqrt(Math.max(p.mw, 0.05)) * theme.models.scale_per_sqrt_mw;
     return Math.min(Math.max(s, theme.models.min_pixels * mpp / MODEL_UNITS), theme.models.max_pixels * mpp / MODEL_UNITS);
   };
-  const layers = () => params.has("nomodels") ? [] : Object.entries(T).filter(([k]) => on.has(k)).map(([k, t]) => new deck.ScenegraphLayer({
-    id: `models-${k}`, data: plants.filter(p => p.tk === k), scenegraph: t.model, pickable: true,
-    getPosition: p => [p.x, p.y, p.elev * (map.getTerrain() ? M.terrain_exaggeration : 0)],
-    getOrientation: [0, 0, 90], getScale: p => { const s = scale(p); return [s, s, s]; },
-    // The models carry their own colours (scripts/build_models.py); "tint_models" in the theme
-    // multiplies them by the technology colour instead.
-    getColor: theme.models.tint_models ? [...rgb(t.color), 255] : [255, 255, 255, 255], _lighting: theme.models.lighting,
-    updateTriggers: { getPosition: [!!map.getTerrain()], getScale: [zoomKey] },
-  }));
+  // Two layers per technology: light models from afar, detailed ones from models.detail_zoom in.
+  const layers = () => {
+    if (params.has("nomodels")) return [];
+    const close = map.getZoom() >= theme.models.detail_zoom;
+    return Object.entries(T).filter(([k]) => on.has(k)).flatMap(([k, t]) => [[t.model_low, !close, "low"], [t.model, close, "hi"]]
+      .filter(([url]) => url).map(([url, visible, lod]) => new deck.ScenegraphLayer({
+        id: `models-${k}-${lod}`, data: plants.filter(p => p.tk === k), scenegraph: url, pickable: true, visible,
+        getPosition: p => [p.x, p.y, p.elev * (map.getTerrain() ? M.terrain_exaggeration : 0)],
+        getOrientation: [0, 0, 90], getScale: p => { const s = scale(p); return [s, s, s]; },
+        // The models carry their own colours (scripts/build_models.py); "tint_models" in the theme
+        // multiplies them by the technology colour instead.
+        getColor: theme.models.tint_models ? [...rgb(t.color), 255] : [255, 255, 255, 255], _lighting: theme.models.lighting,
+        updateTriggers: { getPosition: [!!map.getTerrain()], getScale: [zoomKey] },
+      })));
+  };
   const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const fmt = v => v >= 100 ? Math.round(v).toLocaleString("en-US") : v >= 10 ? v.toFixed(1) : v.toFixed(2);
   // The project card: the same fields as the classic map's.

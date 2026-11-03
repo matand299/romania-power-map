@@ -43,6 +43,7 @@
     "hillshade_accent": "#6b4f33",
     "hillshade_strength": 0.6,
     "terrain_exaggeration": 2.2,
+    "max_pixel_ratio": 1.5,
     "sky": "#cfe0ea",
     "horizon": "#f1e9dc",
     "fog": "#e8dfcf",
@@ -50,12 +51,13 @@
   },
 
   "models": {
-    "_about": "Model size grows with the square root of a plant's MW. scale_per_sqrt_mw is metres of model per unit of the 10-unit-wide model; min_pixels and max_pixels keep each model's on-screen size between those limits. palette colours the model parts.",
+    "_about": "Model size grows with the square root of a plant's MW. scale_per_sqrt_mw is metres of model per unit of the 10-unit-wide model; detail_zoom is the zoom from which the detailed models replace the light ones; min_pixels and max_pixels keep each model's on-screen size between those limits. palette colours the model parts.",
     "scale_per_sqrt_mw": 55,
     "min_pixels": 9,
     "max_pixels": 150,
     "lighting": "pbr",
     "tint_models": false,
+    "detail_zoom": 8.5,
     "light": { "ambient": 1.6, "sun": 2.4, "sun_direction": [-1, -2, -3], "sun_color": "#fff4e2" },
     "palette": {
       "base": "#f1ece2",
@@ -80,13 +82,13 @@
   },
 
   "tech": {
-    "solar":   { "label": "Solar",           "color": "#f0b429", "model": "assets/models/solar.glb" },
-    "wind":    { "label": "Wind",            "color": "#3d8fe0", "model": "assets/models/wind.glb" },
-    "hydro":   { "label": "Hydro",           "color": "#1fa98a", "model": "assets/models/hydro.glb" },
-    "gas":     { "label": "Natural gas",     "color": "#e5672f", "model": "assets/models/gas.glb" },
-    "coal":    { "label": "Coal",            "color": "#6e6458", "model": "assets/models/coal.glb" },
-    "nuclear": { "label": "Nuclear",         "color": "#8b7ff0", "model": "assets/models/nuclear.glb" },
-    "storage": { "label": "Battery storage", "color": "#e0588f", "model": "assets/models/storage.glb" },
-    "other":   { "label": "Other",           "color": "#7f97a8", "model": "assets/models/other.glb" }
+    "solar":   { "label": "Solar",           "color": "#f0b429", "model": "assets/models/solar.glb", "model_low": "assets/models/solar_low.glb" },
+    "wind":    { "label": "Wind",            "color": "#3d8fe0", "model": "assets/models/wind.glb", "model_low": "assets/models/wind_low.glb" },
+    "hydro":   { "label": "Hydro",           "color": "#1fa98a", "model": "assets/models/hydro.glb", "model_low": "assets/models/hydro_low.glb" },
+    "gas":     { "label": "Natural gas",     "color": "#e5672f", "model": "assets/models/gas.glb", "model_low": "assets/models/gas_low.glb" },
+    "coal":    { "label": "Coal",            "color": "#6e6458", "model": "assets/models/coal.glb", "model_low": "assets/models/coal_low.glb" },
+    "nuclear": { "label": "Nuclear",         "color": "#8b7ff0", "model": "assets/models/nuclear.glb", "model_low": "assets/models/nuclear_low.glb" },
+    "storage": { "label": "Battery storage", "color": "#e0588f", "model": "assets/models/storage.glb", "model_low": "assets/models/storage_low.glb" },
+    "other":   { "label": "Other",           "color": "#7f97a8", "model": "assets/models/other.glb", "model_low": "assets/models/other_low.glb" }
   }
 }
