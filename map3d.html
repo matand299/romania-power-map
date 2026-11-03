@@ -71,6 +71,30 @@ html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); 
 .tip dt { color: var(--muted); }
 .tip dd { margin: 0; }
 
+/* A normal arrow over the map, a hand over a project, a closed hand while dragging. */
+.maplibregl-canvas-container.maplibregl-interactive { cursor: default; }
+.maplibregl-canvas-container.maplibregl-interactive:active { cursor: grabbing; }
+
+/* Project card, opened by clicking a model: the same fields as the classic map's card. */
+.maplibregl-popup-content { background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 16px;
+  box-shadow: var(--shadow); padding: 16px 18px; font: 13px/1.45 var(--f-body); min-width: 250px; }
+.maplibregl-popup-anchor-bottom .maplibregl-popup-tip { border-top-color: var(--panel); }
+.maplibregl-popup-anchor-top .maplibregl-popup-tip { border-bottom-color: var(--panel); }
+.maplibregl-popup-anchor-left .maplibregl-popup-tip { border-right-color: var(--panel); }
+.maplibregl-popup-anchor-right .maplibregl-popup-tip { border-left-color: var(--panel); }
+.maplibregl-popup-close-button { color: var(--muted); font-size: 20px; top: 6px; right: 8px; border-radius: 8px; }
+.pp-tag { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 700; }
+.pp-tag i { width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
+.pp-name { font: 600 19px/1.2 var(--f-display); margin: 6px 0 2px; overflow-wrap: anywhere; }
+.pp-mw { font: 600 28px/1 var(--f-display); color: var(--accent); margin: 8px 0 12px; font-variant-numeric: tabular-nums; }
+.pp-mw small { font: 600 13px var(--f-body); color: var(--muted); margin-left: 4px; }
+.pp dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 14px; margin: 0; padding-top: 10px; border-top: 1px solid var(--line); }
+.pp dt { color: var(--muted); }
+.pp dd { margin: 0; overflow-wrap: anywhere; }
+.pp .desc { margin-top: 10px; font-size: 12px; color: var(--muted); max-height: 7.5em; overflow: auto; }
+.pp .gm { margin-top: 10px; font-size: 12px; color: var(--muted); }
+.pp a { color: var(--accent); }
+
 .fallback { position: fixed; inset: 0; display: grid; place-items: center; text-align: center; padding: 24px; }
 .maplibregl-ctrl-group { background: var(--panel); border: 1px solid var(--line); }
 .maplibregl-ctrl-group { border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
@@ -250,22 +274,51 @@ html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); 
   }));
   const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const fmt = v => v >= 100 ? Math.round(v).toLocaleString("en-US") : v >= 10 ? v.toFixed(1) : v.toFixed(2);
+  // The project card: the same fields as the classic map's.
+  const normC = c => String(c || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z]/g, "");
+  const countyLabel = Object.fromEntries(counties.features.map(f => [normC(f.properties.name), f.properties.label]));
+  countyLabel.bucuresti ??= countyLabel.bucharest;
+  const labelOf = c => countyLabel[normC(c)] || c;
+  const fmtDate = d => d ? new Date(d + "T00:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }) : "";
+  const popup = new maplibregl.Popup({ maxWidth: "340px", offset: 14, focusAfterOpen: false });
+  const openCard = p => {
+    const t = T[p.tk];
+    const rows = [["Stage", esc(p.st)], ["Owner", esc(p.co)], ["Locality", esc(p.loc)], ["County", esc(labelOf(p.cty))],
+      ["Source", esc(p.src)], [p.lic ? "Licence no." : "ID", esc(p.lic || p.id)]].filter(([, v]) => v && v !== "–");
+    if (p.iss) rows.push(["Licence issued", fmtDate(p.iss)]);
+    if (p.exp) rows.push([p.lx ? "Licence expired" : "Licence expires", fmtDate(p.exp)]);
+    if (p.lx) rows.push(["Licence status", "Lapsed by the 2023 register's expiry date; may have been renewed"]);
+    popup.setLngLat([p.x, p.y]).setHTML(`<div class="pp">
+      <span class="pp-tag" style="--c:${t.color}"><i></i>${esc(t.label)}${p.t !== t.label && p.tk === "other" ? " · " + esc(p.t) : ""}</span>
+      <div class="pp-name">${esc(p.n)}</div>
+      <div class="pp-mw">${fmt(p.mw)}<small>MW</small>${p.mwh ? ` · ${fmt(p.mwh)}<small>MWh</small>` : ""}</div>
+      <dl>${rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>
+      ${p.d ? `<div class="desc">${esc(p.d)}</div>` : ""}
+      <div class="gm">Coordinates as given in the source file.
+        <a href="https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lon}" target="_blank" rel="noopener">Open in Google Maps</a></div>
+    </div>`).addTo(map);
+  };
+  window.openCard = openCard; // for checks from the browser console
+
   // Light on the models, from the theme: a soft overall light plus a sun.
   const lightingFrom = (L) => { const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
     return new deck.LightingEffect({ ambient: new deck.AmbientLight({ color: [255, 255, 255], intensity: L.ambient }),
       sun: new deck.DirectionalLight({ color: hex(L.sun_color), intensity: L.sun, direction: L.sun_direction }) }); };
   const overlay = new deck.MapboxOverlay({
     interleaved: true, layers: layers(), effects: theme.models.light ? [lightingFrom(theme.models.light)] : [],
-    getTooltip: ({ object: p }) => p && { className: "tip", html: `
-      <span class="t" style="--c:${T[p.tk].color}"><i></i>${esc(T[p.tk].label)}</span>
-      <div class="n">${esc(p.n)}</div>
-      <div class="mw">${fmt(p.mw)}<small> MW${p.mwh ? ` · ${fmt(p.mwh)} MWh` : ""}</small></div>
-      <dl>${[["Owner", p.co], ["Locality", p.loc], ["County", p.cty], ["Source", p.src]]
-        .filter(([, v]) => v).map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join("")}</dl>`,
+    // Hover: name and MW. Click: the full card.
+    getTooltip: ({ object: p }) => p && { className: "tip", html: `<div class="n">${esc(p.n)}</div>
+      <div class="mw">${fmt(p.mw)}<small> MW${p.mwh ? ` · ${fmt(p.mwh)} MWh` : ""} · click for details</small></div>`,
       style: { background: "none", border: "none", padding: 0 } },
+    getCursor: ({ isDragging, isHovering }) => isDragging ? "grabbing" : isHovering ? "pointer" : "default",
   });
   map.addControl(overlay);
   window.deckOverlay = overlay; // for checks from the browser console
+  // Click a model: open its card. (Picked through deck, since the map receives the click.)
+  map.on("click", e => {
+    const hit = overlay.pickObject({ x: e.point.x, y: e.point.y, radius: 4 });
+    if (hit && hit.object) openCard(hit.object);
+  });
   const refresh = () => overlay.setProps({ layers: layers() });
   // Re-size the models when the zoom has changed by a quarter step or more.
   map.on("zoomend", () => { const z = Math.round(map.getZoom() * 4); if (z !== zoomKey) { zoomKey = z; refresh(); } });
@@ -292,7 +345,7 @@ html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); 
   $("view2d").onclick = () => view(true);
   $("reset").onclick = () => map.flyTo({ ...M.start, duration: 1200 });
   const unplaced = plantsFile.plants.filter(p => p.lat == null && operating.has(p.st)).length;
-  $("note").textContent = `${plants.length} plants drawn; ${unplaced} with no known location are not drawn. Hover a model for details.`;
+  $("note").textContent = `${plants.length} plants drawn; ${unplaced} with no known location are not drawn. Click a model for details.`;
   renderPanel();
 })().catch(err => {
   document.body.insertAdjacentHTML("beforeend", `<div class="fallback"><p>The 3D map could not load (${err.message}). <a href="./" style="color:inherit">Open the classic map</a></p></div>`);

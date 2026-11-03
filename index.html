@@ -298,6 +298,11 @@ button, input, select { font: inherit; color: inherit; }
 .stage-btn[aria-pressed="false"] i { background: transparent; border: 1px solid var(--c); }
 .stage-btn[aria-pressed="false"] span { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--line); }
 
+/* A normal arrow over the map, a hand over a project, a closed hand while dragging. */
+.leaflet-grab { cursor: default; }
+.leaflet-dragging .leaflet-grab { cursor: grabbing; }
+.leaflet-container .leaflet-interactive { cursor: pointer; }
+
 /* Popup and tooltips */
 .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: var(--panel); color: var(--ink); box-shadow: var(--shadow); }
 .leaflet-popup-content-wrapper { border-radius: 12px; border: 1px solid var(--gold); }
