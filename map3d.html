@@ -188,6 +188,23 @@ html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); 
   const map = new maplibregl.Map({ container: "map", style, ...M.start, maxPitch: 75, attributionControl: { compact: true },
     canvasContextAttributes: { preserveDrawingBuffer: params.has("capture") } });
   window.map3d = map; // for checks from the browser console
+
+  // Middle mouse button (pressing the wheel) + drag: left/right turns the map, up/down tilts it.
+  const box = map.getCanvasContainer();
+  let drag = null;
+  box.addEventListener("mousedown", e => {
+    if (e.button !== 1) return;
+    e.preventDefault(); // stop the browser's own scroll mode
+    drag = { x: e.clientX, y: e.clientY, bearing: map.getBearing(), pitch: map.getPitch() };
+    box.style.cursor = "grabbing";
+  });
+  window.addEventListener("mousemove", e => {
+    if (!drag) return;
+    map.jumpTo({ bearing: drag.bearing - (e.clientX - drag.x) * 0.4,
+                 pitch: Math.max(0, Math.min(map.getMaxPitch(), drag.pitch - (e.clientY - drag.y) * 0.3)) });
+  });
+  window.addEventListener("mouseup", e => { if (e.button === 1 && drag) { drag = null; box.style.cursor = ""; } });
+  box.addEventListener("auxclick", e => { if (e.button === 1) e.preventDefault(); });
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "top-right");
 
   // Labels: HTML markers, styled by the theme through CSS.

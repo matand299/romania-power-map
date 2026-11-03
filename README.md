@@ -61,6 +61,7 @@ Replace or add files in `data/source/`, then run `python3 scripts/build_data.py`
   tiles from AWS Open Data. Plant ground heights: `data/elevation.json` (`scripts/build_elevation.py`).
 - **Libraries:** MapLibre GL 5.6.0 and deck.gl 9.1.14, stored in `assets/vendor/`, so the page needs no other CDN.
 - Model size grows with the square root of MW, kept between `min_pixels` and `max_pixels` on screen.
+- **Mouse:** drag to move; hold the wheel (middle button) and drag to turn and tilt. The classic map has a "3D" button that opens this page.
 
 ## Hosting
 
