@@ -1,8 +1,8 @@
 name: Weekly data update
 
-# Every Monday: fetch Transelectrica's installed capacity files (official totals by fuel, storage
-# installations, solar and wind plants), rebuild the map's data and commit any change. If the files
-# cannot be fetched, the last good copy stays.
+# Every Monday: fetch ANRE's installed capacity totals (https://anre.ro/puteri-instalate) and
+# Transelectrica's installed capacity files (storage installations, solar and wind plants), rebuild
+# the map's data and commit any change. A source that cannot be fetched keeps its last good copy.
 on:
   schedule:
     - cron: "17 5 * * 1"   # Mondays 05:17 UTC
@@ -26,6 +26,9 @@ jobs:
           python-version: "3.12"
       - name: Install
         run: pip install --disable-pip-version-check -q pandas openpyxl xlrd
+      - name: Fetch ANRE totals
+        continue-on-error: true
+        run: python3 scripts/fetch_anre_totals.py
       - name: Fetch Transelectrica files
         continue-on-error: true
         run: python3 scripts/fetch_transelectrica.py
@@ -33,7 +36,7 @@ jobs:
         run: python3 scripts/build_data.py
       - name: Commit if changed
         run: |
-          git add data/official_totals.json data/plants.json data/counties.json data/source/transelectrica
+          git add data/anre_totals.json data/plants.json data/counties.json data/source/transelectrica
           if git diff --cached --quiet; then
             echo "No change."
             exit 0

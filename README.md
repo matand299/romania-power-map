@@ -31,18 +31,18 @@ The map is an interim one, built from two official sources so that no plant appe
 Global Energy Monitor rows. They are left out (`INCLUDED_SOURCES` in the build script) until each can be checked
 against the register.
 
-### Official totals
+### Coverage against ANRE's totals
 
-`data/official_totals.json` holds ANRE licensed capacity by fuel as Transelectrica tabulates it ("Pi licenta ANRE",
-sheet "Sheet1" of `7productie23.xls`) now, and on 01.05.2023 from Transelectrica's archive
-(`puteri-instalate-2023-05-01.xls`, unchanged since 01.03.2023, so it holds on the register's date). Under each
-technology the "Capacity mix" panel shows Romania's official capacity now, its change since 2023, and the share of it
-on the map. Each plant in `plants.json` also carries `m23`, its capacity on the map's 2023 base (24.04.2023).
+`data/anre_totals.json` holds ANRE's installed capacity by primary energy type, from its public "Puteri instalate"
+report (https://anre.ro/puteri-instalate); `scripts/fetch_anre_totals.py` refreshes it. Under each technology the
+"Capacity mix" panel shows the share of ANRE's figure in operation on the map and the MW between them. Each plant in
+`plants.json` also carries `m23`, its capacity on the map's 2023 base (24.04.2023).
 
 ### Weekly update
 
-`.github/workflows/weekly-data.yml` runs every Monday (or by hand from the Actions tab): it fetches Transelectrica's installed capacity files (`scripts/fetch_transelectrica.py`), rebuilds `data/*.json` with `scripts/build_data.py` and commits any change. If the files cannot be fetched, the last good
-copy stays.
+`.github/workflows/weekly-data.yml` runs every Monday (or by hand from the Actions tab): it fetches ANRE's totals (`scripts/fetch_anre_totals.py`)
+and Transelectrica's installed capacity files (`scripts/fetch_transelectrica.py`), rebuilds `data/*.json` with `scripts/build_data.py` and commits any change. A source that cannot be fetched keeps its
+last good copy.
 
 ## Updating the data
 
