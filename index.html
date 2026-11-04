@@ -452,6 +452,41 @@ button, input, select { font: inherit; color: inherit; }
 .leaflet-dragging .leaflet-grab { cursor: grabbing; }
 .leaflet-container .leaflet-interactive { cursor: pointer; }
 
+/* Mode tabs: electricity generation / data centres */
+.modes { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--edge); border-radius: 2px; overflow: hidden; }
+.modes button { padding: 8px; background: none; border: 0; color: var(--ink-muted); font: 600 13px var(--f-display); letter-spacing: .1em; text-transform: uppercase; cursor: pointer; }
+.modes button + button { border-left: 1px solid var(--edge); }
+.modes button:hover { color: var(--ink); }
+.modes button[aria-selected="true"] { color: var(--ink); background: color-mix(in srgb, var(--glow) 14%, transparent); box-shadow: inset 0 -2px 0 var(--glow); }
+
+/* Data-centre markers: a square for a building, a diamond for a project, a dot for a company inside another building,
+   a ring for a listing whose building is unknown. A dashed halo means the location is approximate (street or town). */
+.dcm { --c: var(--glow); }
+.dcm i { display: block; width: 100%; height: 100%; box-sizing: border-box; background: var(--c); border: 1.5px solid var(--ring); border-radius: 3px;
+  box-shadow: 0 0 8px color-mix(in srgb, var(--c) 70%, transparent); }
+.dcm.k-project i { transform: rotate(45deg) scale(.86); background: color-mix(in srgb, var(--c) 30%, transparent); border: 2px solid var(--c); }
+.dcm.k-tenant i { border-radius: 50%; }
+.dcm.k-listing i { border-radius: 50%; background: transparent; border: 2px solid var(--c); box-shadow: none; }
+.dcm.approx i { outline: 1px dashed var(--c); outline-offset: 2px; }
+.dcm:hover i { box-shadow: 0 0 0 2px var(--ink), 0 0 12px var(--c); }
+.dc-key { display: grid; grid-template-columns: 14px 1fr; gap: 5px 8px; align-items: center; font-size: 12px; color: var(--ink-muted); }
+.dc-key .dcm { width: 11px; height: 11px; }
+@media (max-width: 860px) {
+  #legendDc .dc-key { grid-template-columns: 10px auto 10px auto; gap: 3px 6px; font-size: 10.5px; white-space: nowrap; }
+  #legendDc .dc-key .dcm { width: 9px; height: 9px; }
+  #legendDc h3 { margin-bottom: 3px; }
+}
+.grade { display: inline-grid; place-items: center; min-width: 20px; height: 18px; padding: 0 5px; border-radius: 2px; font: 700 12px var(--f-display); color: var(--on-glow); background: var(--c); }
+.dc-pop .leaflet-popup-content { min-width: 280px; }
+.pp .sub { font-size: 12px; color: var(--ink-caption); margin-top: 2px; overflow-wrap: anywhere; }
+.pp .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 14px; margin: 10px 0 12px; }
+.pp .facts b { display: block; font: 700 20px/1 var(--f-display); color: var(--ink); font-variant-numeric: lining-nums tabular-nums; }
+.pp .facts span { font-size: 11px; color: var(--ink-caption); }
+.pp h4 { margin: 12px 0 4px; font: 600 11px var(--f-body); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-caption); }
+.pp .nets { font-size: 12px; color: var(--ink-muted); }
+.pp ul.src { margin: 0; padding-left: 16px; font-size: 12px; }
+.pp .warn { margin-top: 8px; font-size: 12px; color: var(--ink-muted); border-left: 2px solid var(--gold); padding-left: 8px; }
+
 /* Popup and tooltips: glass cards with a lit top edge */
 .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: color-mix(in srgb, var(--panel-solid) 95%, transparent); color: var(--ink-muted); box-shadow: var(--shadow); }
 .leaflet-popup-content-wrapper { position: relative; border-radius: 0; border: 1px solid var(--edge); border-top-color: var(--edge-bright);
@@ -560,6 +595,19 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
   </div>
 
   <div class="legend" aria-hidden="true">
+    <div id="legendDc" hidden>
+      <h3>Data centres</h3>
+      <div class="dc-key">
+        <span class="dcm k-facility"><i></i></span><span>Building</span>
+        <span class="dcm k-project"><i></i></span><span>Project</span>
+        <span class="dcm k-tenant"><i></i></span><span>In another building</span>
+        <span class="dcm k-listing"><i></i></span><span>Building unknown</span>
+        <span class="dcm k-facility approx"><i></i></span><span>Approximate place</span>
+      </div>
+      <h3 class="mk-title" style="margin-top:8px">Colour = status</h3>
+      <div class="dc-key" id="dcStatusKey"></div>
+    </div>
+    <div id="legendGen">
     <div>
       <h3>Capacity by county, MW</h3>
       <div class="ramp" id="ramp"></div>
@@ -576,6 +624,7 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
         </div>
       </div>
     </div>
+    </div>
   </div>
 </div>
 
@@ -587,8 +636,12 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
       <span class="rule" aria-hidden="true"></span>
       <div>
         <h1>Romania <em>Power Map</em></h1>
-        <p>Operating plants &amp; project pipeline</p>
+        <p id="subtitle">Operating plants &amp; project pipeline</p>
       </div>
+    </div>
+    <div class="modes" role="tablist" aria-label="What the map shows">
+      <button type="button" role="tab" id="modeGen" aria-selected="true">Generation</button>
+      <button type="button" role="tab" id="modeDc" aria-selected="false">Data centres</button>
     </div>
     <div class="searchwrap">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
@@ -645,6 +698,37 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
       <p><b>Cleaning:</b> the register's subtotal rows removed.</p>
       <p><b>Locations</b> come from the source file and often mark the locality or county rather than the exact site. <span id="noLocNote"></span></p>
       <p><button class="linkbtn" id="reset" type="button">Reset all filters</button></p>
+    </div>
+  </div>
+
+  <div class="pbody" id="dcbody" hidden>
+    <div class="zone" id="dcZone"></div>
+    <div class="kpis" id="dcKpis"></div>
+    <div class="sec">
+      <h2>Type</h2>
+      <div class="seg" id="dcKind" role="group" aria-label="Type of record"></div>
+    </div>
+    <div class="sec">
+      <h2>Status</h2>
+      <div class="seg" id="dcStatus" role="group" aria-label="Status"></div>
+    </div>
+    <div class="sec">
+      <h2>Reliability</h2>
+      <div class="seg" id="dcGrade" role="group" aria-label="Reliability grade"></div>
+      <p class="mix-note">A: the operator itself plus an independent source · B: the operator alone, or two independent sources · C: one source.</p>
+    </div>
+    <div class="sec">
+      <h2>Sites <span class="sp"></span></h2>
+      <div class="plist" id="dcList"></div>
+      <button class="wide" id="dcCsv" type="button">Download the list (CSV)</button>
+    </div>
+    <div class="about">
+      <p><b>What is here:</b> Romania's data centres, one record per site: buildings in operation, projects (under construction, permitted, announced or proposed), companies with space inside another operator's building, and companies listed with a data centre whose building is unknown.</p>
+      <p><b>Sources:</b> PeeringDB (sites entered by their operators, with exact locations, networks and internet exchanges), operators' own websites, datacenters.com, Inflect, Datacenter Atlas, DC Hub, Baxtel and press reports. Every row of every directory was matched to one site, so nothing appears twice.</p>
+      <p><b>Reliability:</b> only independent confirmations count. The Atlas, DC Hub and Inflect copy much of PeeringDB, so they confirm nothing PeeringDB does not already say.</p>
+      <p><b>Locations:</b> exact for sites in PeeringDB; otherwise from the address (street or town level, shown with a dashed halo). Several sites known only by town are spread around the town centre.</p>
+      <p><b>Power:</b> entered only where a source states it. Where sources disagree the figure is left out and the conflict is described in the site's notes.</p>
+      <p><span id="dcBuilt"></span> <button class="linkbtn" id="dcReset" type="button">Reset filters</button></p>
     </div>
   </div>
 
@@ -723,7 +807,26 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
   const state = {
     techs: allTechs(), stages: defaultStages(), src: "", minMW: 0, county: "", q: "", rankBy: "mw",
     sortK: "mw", sortDir: -1, listAll: false, showPlants: true, showFill: true,
+    mode: "gen", dcKinds: null, dcStatus: null, dcGrades: null,
   };
+  // Data centres (data/datacenters.json, built by scripts/build_datacenters.py).
+  const DC_KINDS = [
+    { v: "facility", label: "Buildings" }, { v: "project", label: "Projects" },
+    { v: "tenant", label: "Inside another building" }, { v: "listing", label: "Building unknown" },
+  ];
+  const DC_KIND_LONG = { facility: "Data-centre building", project: "Project", tenant: "Company inside another building", listing: "Listed, building unknown" };
+  const DC_STATUS = [
+    { v: "Operating", c: "--glow" }, { v: "Under construction", c: "--gold" }, { v: "Permitted", c: "--azure" },
+    { v: "Announced", c: "--t-nuclear" }, { v: "Proposal", c: "--ink-caption" }, { v: "Unverified", c: "--coral" },
+  ];
+  const DC_GRADES = [{ v: "A", c: "--mint" }, { v: "B", c: "--gold" }, { v: "C", c: "--coral" }];
+  const GRADE_TEXT = { A: "the operator itself plus an independent source", B: "the operator alone, or two independent sources", C: "a single source" };
+  const PRECISION_TEXT = {
+    building: "Exact: coordinates entered by the operator (PeeringDB)", address: "From the street address",
+    street: "Street only: the exact building is not known", district: "Neighbourhood only: the exact site is not known",
+    town: "Town only: the exact site is not known", "host building": "The building that hosts it", given: "Entered by hand",
+  };
+  let dcs = null, dcLayer, dcCurrent = [], countyKeyOf = () => "";
   let plants = [], colors = {}, map, pointLayer, glowLayer, countyLayer, tiles, renderer, romaniaBounds;
   let current = [], countyAgg = new Map(), labels = {}, counties = {};
 
@@ -1019,6 +1122,7 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
   }
 
   function update() {
+    if (state.mode === "dc") return updateDc();
     current = plants.filter(p => matchesExcept(p, null));
     countyAgg = new Map();
     const byCounty = new Map();
@@ -1039,7 +1143,169 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
     renderTable(current);
   }
 
+  // ----- Data centres -----
+  const cssVar = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const dcColor = d => cssVar((DC_STATUS.find(s => s.v === d.status) || DC_STATUS[0]).c);
+  const fmtNum = v => v == null ? "" : v >= 100 ? Math.round(v).toLocaleString("en-US") : String(+v.toFixed(2));
+  const approx = d => !/^(building|address|host)/.test(d.precision);
+  const dcMatches = (d, skip) =>
+    (skip === "kind" || state.dcKinds.has(d.kind)) && (skip === "status" || state.dcStatus.has(d.status)) &&
+    (skip === "grade" || state.dcGrades.has(d.grade)) && (skip === "county" || !state.county || d.ck === state.county) && (!state.q || d.s.includes(state.q));
+
+  async function loadDcs() {
+    if (dcs) return;
+    const data = await fetch("data/datacenters.json").then(r => r.json());
+    dcs = data.sites.map((d, i) => ({ ...d, i, mw: d.it_mw || d.total_mw || d.planned_mw || d.grid_mw || 0, ck: countyKeyOf(d.county),
+      s: norm([d.name, d.operator, d.aka, d.address, d.city, d.county, d.notes].join(" ")) }));
+    spread(dcs);
+    state.dcKinds = new Set(DC_KINDS.map(k => k.v));
+    state.dcStatus = new Set(DC_STATUS.map(k => k.v));
+    state.dcGrades = new Set(DC_GRADES.map(k => k.v));
+    $("dcBuilt").textContent = `Database built ${fmtDate(data.generated)}.`;
+  }
+
+  function dcPopup(d) {
+    const c = dcColor(d);
+    const facts = [["it_mw", "MW IT"], ["total_mw", "MW total"], ["grid_mw", "MW grid connection"], ["planned_mw", "MW planned"],
+      ["whitespace_m2", "m² IT space"], ["building_m2", "m² built"], ["plot_m2", "m² plot"], ["racks", "racks"]]
+      .filter(([k]) => d[k] != null).map(([k, l]) => `<div><b>${fmtNum(d[k])}</b><span>${l}</span></div>`);
+    if (d.tier) facts.push(`<div><b>${esc(d.tier)}</b><span>Tier</span></div>`);
+    if (d.opened) facts.push(`<div><b>${esc(d.opened.replace(" (planned)", ""))}</b><span>${/planned/.test(d.opened) ? "opening (planned)" : "opened"}</span></div>`);
+    const host = d.hosted_in && dcs.find(x => x.id === d.hosted_in);
+    const rows = [
+      ["Status", `<span class="pill" style="--c:${c}"><i></i>${esc(d.status)}</span>`],
+      ["Address", esc(d.address)], ["Town", esc(d.city)], ["County", esc(d.county)],
+      ["Location", esc(PRECISION_TEXT[d.precision.split(" (")[0]] || d.precision)],
+      host ? ["Inside", esc(host.name)] : null,
+      d.atlas_type ? ["Atlas classes it as", esc(d.atlas_type)] : null,
+      d.website ? ["Website", `<a href="${esc(d.website)}" target="_blank" rel="noopener">${esc(d.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</a>`] : null,
+    ].filter(r => r && r[1]);
+    const net = d.networks && d.networks.length
+      ? `<h4>Connectivity</h4><div class="nets"><b>${d.networks.length}</b> networks present${d.exchanges.length ? ` · internet exchanges: ${d.exchanges.map(esc).join(", ")}` : ""}${d.carriers.length ? ` · carriers: ${d.carriers.map(esc).join(", ")}` : ""}<br>
+        ${d.networks.slice(0, 12).map(n => esc(n.name)).join(" · ")}${d.networks.length > 12 ? ` · and ${d.networks.length - 12} more` : ""}</div>`
+      : (d.exchanges && d.exchanges.length ? `<h4>Connectivity</h4><div class="nets">Internet exchanges: ${d.exchanges.map(esc).join(", ")}</div>` : "");
+    const src = d.sources.map(x => `<li>${x.url ? `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name)}</a>` : esc(x.name)} <span class="sub">(${esc(x.kind)})</span></li>`).join("");
+    const more = d.links.filter(u => !d.sources.some(x => x.url === u))
+      .map(u => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\/(www\.)?/, "").split("/")[0])}</a></li>`).join("");
+    return `<div class="pp">
+      <span class="pp-tag" style="--c:${c}"><i></i>${esc(DC_KIND_LONG[d.kind])}</span>
+      <div class="pp-name">${esc(d.name)}</div>
+      <div class="sub">${d.operator ? "Operator: " + esc(d.operator) : ""}${d.aka ? `<br>Also listed as: ${esc(d.aka)}` : ""}</div>
+      ${facts.length ? `<div class="facts">${facts.join("")}</div>` : `<div class="note">No capacity figures are published for this site.</div>`}
+      <dl>${rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>
+      ${net}
+      <h4>Reliability</h4><div class="nets"><span class="grade" style="--c:${cssVar((DC_GRADES.find(g => g.v === d.grade) || DC_GRADES[2]).c)}">${d.grade}</span> ${esc(GRADE_TEXT[d.grade])}</div>
+      ${d.notes ? `<div class="warn">${esc(d.notes)}</div>` : ""}
+      <h4>Sources</h4><ul class="src">${src}${more}</ul>
+      <div class="note">${d.lat != null ? `<a href="https://www.google.com/maps/search/?api=1&query=${d.lat},${d.lon}" target="_blank" rel="noopener">Open in Google Maps</a>` : ""}</div>
+    </div>`;
+  }
+
+  function drawDc(list) {
+    dcLayer.clearLayers();
+    if (!state.showPlants) return;
+    const size = { facility: 13, project: 15, tenant: 8, listing: 10 };
+    // Draw listings first and buildings last, so buildings stay on top.
+    const order = { listing: 0, tenant: 1, project: 2, facility: 3 };
+    [...list].sort((a, b) => order[a.kind] - order[b.kind]).forEach(d => {
+      const z = size[d.kind];
+      const m = L.marker([d.y, d.x], {
+        icon: L.divIcon({ className: `dcm k-${d.kind}${approx(d) ? " approx" : ""}`, html: `<i style="--c:${dcColor(d)}"></i>`, iconSize: [z, z] }),
+        riseOnHover: true, keyboard: true, title: d.name,
+      });
+      m.bindTooltip(`<b>${esc(d.name)}</b>${d.operator ? " · " + esc(d.operator) : ""}<br><span class="m">${esc(DC_KIND_LONG[d.kind])} · ${esc(d.status)}${d.mw ? " · " + fmtNum(d.mw) + " MW" : ""}</span>`, { direction: "top", offset: [0, -z / 2] });
+      m.bindPopup(() => dcPopup(d), { maxWidth: 360, maxHeight: 440, className: "dc-pop", autoPanPaddingTopLeft: [isPhone() ? 10 : 430, 20] });
+      d.marker = m;
+      dcLayer.addLayer(m);
+    });
+  }
+
+  function renderDcPanel(list) {
+    const all = dcs.filter(d => !state.county || d.ck === state.county);
+    const n = (k, st) => list.filter(d => d.kind === k && (!st || d.status === st)).length;
+    $("dcZone").innerHTML = state.county
+      ? `<button class="back" id="dcBack" type="button"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Romania</button>
+         <h2>${esc(labelOf(state.county))}</h2><p>${list.length} of ${all.length} data-centre records in this county</p>`
+      : `<h2>Data centres</h2><p>${list.length} of ${dcs.length} records shown · click a site for its details</p>`;
+    if ($("dcBack")) $("dcBack").onclick = () => selectCounty("");
+    const ico = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="4" y="3.5" width="16" height="6" rx="1"/><rect x="4" y="14.5" width="16" height="6" rx="1"/><path d="M8 6.5h.01M8 17.5h.01M12 6.5h5M12 17.5h5"/></svg>';
+    const known = list.filter(d => d.kind === "facility" && d.status === "Operating" && d.total_mw).reduce((s, d) => s + d.total_mw, 0);
+    $("dcKpis").innerHTML = `
+      <div class="kpi"><span class="ico">${ico}</span><div><b>${n("facility", "Operating")}</b><span>buildings in operation</span></div></div>
+      <div class="kpi"><span class="ico">${ico}</span><div><b>${n("project")}</b><span>projects (building to proposed)</span></div></div>
+      <div class="kpi"><span class="ico">${ico}</span><div><b>${n("tenant") + n("listing")}</b><span>companies inside other buildings or with the building unknown</span></div></div>
+      <div class="kpi"><span class="ico">${ico}</span><div><b>${new Set(list.map(d => d.operator).filter(Boolean)).size}</b><span>operators</span></div></div>`;
+    const seg = (id, items, set, skip, label) => {
+      $(id).innerHTML = items.map(it => {
+        const cnt = dcs.filter(d => d[skip === "kind" ? "kind" : skip === "status" ? "status" : "grade"] === it.v && dcMatches(d, skip)).length;
+        return `<button type="button" data-v="${esc(it.v)}" aria-pressed="${set.has(it.v)}">${esc(label(it))} · ${cnt}</button>`;
+      }).join("");
+    };
+    seg("dcKind", DC_KINDS, state.dcKinds, "kind", it => it.label);
+    seg("dcStatus", DC_STATUS, state.dcStatus, "status", it => it.v);
+    seg("dcGrade", DC_GRADES, state.dcGrades, "grade", it => it.v);
+    const order = { facility: 0, project: 1, tenant: 2, listing: 3 };
+    const rows = [...list].sort((a, b) => order[a.kind] - order[b.kind] || b.mw - a.mw || a.name.localeCompare(b.name));
+    $("dcList").innerHTML = rows.length ? rows.map(d => `<button type="button" class="prow" data-i="${d.i}" style="--c:${dcColor(d)}">
+      <span class="d ${d.kind === "facility" || d.kind === "tenant" ? "" : "ring"}"></span>
+      <span class="nm">${esc(d.name)}<small>${esc(d.operator || "–")} · ${esc(d.city)} · ${esc(d.status)} · ${d.grade}</small></span>
+      <b>${d.mw ? fmtNum(d.mw) + " MW" : ""}</b></button>`).join("") : `<div class="empty">No data-centre records match these filters.</div>`;
+  }
+
+  function updateDc() {
+    dcCurrent = dcs.filter(d => dcMatches(d));
+    countyAgg = new Map(); // counties are not shaded in this view
+    pointLayer.clearLayers();
+    drawDc(dcCurrent);
+    styleCounties();
+    renderDcPanel(dcCurrent);
+  }
+
+  function focusDc(d) {
+    map.flyTo([d.y, d.x], Math.max(map.getZoom(), 12), { duration: 0.6 });
+    map.once("moveend", () => d.marker && d.marker.openPopup());
+  }
+
+  function exportDcCsv() {
+    const cols = [["name", "Name"], ["kind", "Type"], ["status", "Status"], ["operator", "Operator"], ["aka", "Also listed as"], ["address", "Address"],
+      ["city", "Town"], ["county", "County"], ["lat", "Latitude"], ["lon", "Longitude"], ["precision", "Location precision"], ["it_mw", "IT MW"],
+      ["total_mw", "Total MW"], ["grid_mw", "Grid connection MW"], ["planned_mw", "Planned MW"], ["whitespace_m2", "IT space m2"], ["building_m2", "Built area m2"],
+      ["plot_m2", "Plot m2"], ["racks", "Racks"], ["tier", "Tier"], ["opened", "Opened"], ["website", "Website"], ["grade", "Reliability"], ["notes", "Notes"]];
+    const q = v => { const s = String(v ?? ""); return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
+    const rows = dcCurrent.map(d => [...cols.map(c => q(d[c[0]])), q(d.sources.map(x => x.name).join("; "))].join(","));
+    const csv = [[...cols.map(c => c[1]), "Sources"].join(","), ...rows].join("\n");
+    const url = URL.createObjectURL(new Blob(["\ufeff" + csv], { type: "text/csv" }));
+    const a = Object.assign(document.createElement("a"), { href: url, download: "romania-data-centres.csv" });
+    document.body.append(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  async function setMode(mode) {
+    if (mode === "dc") {
+      try { await loadDcs(); } catch (e) { alert("The data-centre list could not be loaded. Reload the page to try again."); return; }
+    }
+    state.mode = mode;
+    const dc = mode === "dc";
+    $("modeGen").setAttribute("aria-selected", !dc); $("modeDc").setAttribute("aria-selected", dc);
+    $("pbody").hidden = dc; $("dcbody").hidden = !dc;
+    document.querySelector(".pfoot").hidden = dc;
+    $("legendGen").hidden = dc; $("legendDc").hidden = !dc;
+    $("listBtn").hidden = dc;
+    if (dc) toggleList(false);
+    $("q").placeholder = dc ? "Search data centre, operator or town" : "Search project, company or locality";
+    $("subtitle").textContent = dc ? "Data centres & projects" : "Operating plants & project pipeline";
+    if (dc) $("dcStatusKey").innerHTML = DC_STATUS.map(st => `<span class="dcm k-facility"><i style="--c:var(${st.c})"></i></span><span>${st.v}</span>`).join("");
+    map.closePopup();
+    dcLayer.clearLayers();
+    try { history.replaceState(null, "", dc ? "#datacenters" : location.pathname + location.search); } catch (e) {}
+    update();
+  }
+
   function countyTooltip(k) {
+    if (state.mode === "dc") {
+      const list = dcs.filter(d => d.ck === k && dcMatches(d, "county"));
+      return `<div class="tt"><b>${esc(labelOf(k))}</b><br><span class="m">${list.length ? `${list.length} data-centre records (${list.filter(d => d.kind === "facility").length} buildings, ${list.filter(d => d.kind === "project").length} projects)` : "No data-centre records match these filters"}</span></div>`;
+    }
     const a = countyAgg.get(k);
     if (!a) return `<div class="tt"><b>${esc(labelOf(k))}</b><br><span class="m">No projects match these filters</span></div>`;
     return `<div class="tt"><b>${esc(labelOf(k))}</b><br><span class="v">${fmtBig(a.mw)} MW</span> <span class="m">· ${a.n} projects</span><br>
@@ -1147,7 +1413,10 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
     $("zIn").onclick = () => map.zoomIn();
     $("zOut").onclick = () => map.zoomOut();
     $("zHome").onclick = () => selectCounty("");
-    $("layerPlants").onclick = () => { state.showPlants = !state.showPlants; $("layerPlants").setAttribute("aria-pressed", state.showPlants); drawPoints(current); };
+    $("layerPlants").onclick = () => {
+      state.showPlants = !state.showPlants; $("layerPlants").setAttribute("aria-pressed", state.showPlants);
+      if (state.mode === "dc") drawDc(dcCurrent); else drawPoints(current);
+    };
     $("layerFill").onclick = () => { state.showFill = !state.showFill; $("layerFill").setAttribute("aria-pressed", state.showFill); styleCounties(); renderRank(); };
     $("layerLabels").onclick = () => {
       const on = $("layerLabels").getAttribute("aria-pressed") !== "true";
@@ -1169,6 +1438,25 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
       focusPlant(plants[+tr.dataset.i]);
     });
     $("csvBtn").onclick = exportCsv;
+    $("modeGen").onclick = () => setMode("gen");
+    $("modeDc").onclick = () => setMode("dc");
+    const segToggle = (id, key) => $(id).addEventListener("click", e => {
+      const b = e.target.closest("button"); if (!b) return;
+      const set = state[key], all = { dcKinds: DC_KINDS, dcStatus: DC_STATUS, dcGrades: DC_GRADES }[key];
+      // First click isolates a value; later clicks add or remove; an empty choice means all.
+      if (set.size === all.length) state[key] = new Set([b.dataset.v]);
+      else if (set.has(b.dataset.v)) { set.delete(b.dataset.v); if (!set.size) state[key] = new Set(all.map(x => x.v)); }
+      else set.add(b.dataset.v);
+      update();
+    });
+    segToggle("dcKind", "dcKinds"); segToggle("dcStatus", "dcStatus"); segToggle("dcGrade", "dcGrades");
+    $("dcList").addEventListener("click", e => { const b = e.target.closest(".prow"); if (b) focusDc(dcs[+b.dataset.i]); });
+    $("dcCsv").onclick = exportDcCsv;
+    $("dcReset").onclick = () => {
+      Object.assign(state, { dcKinds: new Set(DC_KINDS.map(k => k.v)), dcStatus: new Set(DC_STATUS.map(k => k.v)), dcGrades: new Set(DC_GRADES.map(k => k.v)), county: "", q: "" });
+      $("q").value = ""; update(); fitRomania(true);
+    };
+    if (window.self !== window.top) $("dcCsv").hidden = true;
     // Inside an embedded preview the browser blocks downloads, so hide the button there.
     if (window.self !== window.top) $("csvBtn").hidden = true;
 
@@ -1209,6 +1497,7 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
       f.properties.key = byNorm[n.replace(/[^a-z]/g, "")] || alias[n] || f.properties.name;
       counties[f.properties.key] = f.properties;
     });
+    countyKeyOf = name => { const n = norm(name || ""); return byNorm[n.replace(/[^a-z]/g, "")] || alias[n] || ""; };
 
     map = L.map("map", { zoomSnap: 1, minZoom: 6, preferCanvas: true, zoomControl: false });
     renderer = L.canvas({ padding: 0.5, tolerance: 4 });
@@ -1236,9 +1525,11 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
     map.setMaxBounds(romaniaBounds.pad(0.8));
     setTiles();
     pointLayer = L.layerGroup().addTo(map);
+    dcLayer = L.layerGroup().addTo(map);
 
     bind();
     applyTheme();
+    if (location.hash === "#datacenters") setMode("dc");
   }
 
   init().catch(err => {

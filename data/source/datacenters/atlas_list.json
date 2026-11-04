@@ -1,0 +1,339 @@
+[
+ {
+  "name": "NXDATA-1 Bucharest (BUH1)",
+  "operator": "NXDATA",
+  "city": "Bucharest",
+  "atlas_id": "dc_4ac10883c6f04d51",
+  "type": "datacenter"
+ },
+ {
+  "name": "NXDATA-2 Bucharest (BUH2)",
+  "operator": "NXDATA",
+  "city": "Bucharest",
+  "atlas_id": "dc_0355a768e2fa464e",
+  "type": "datacenter"
+ },
+ {
+  "name": "Voxility IR1 Bucharest",
+  "operator": "Voxility",
+  "city": "Bucharest",
+  "atlas_id": "dc_6f25d1a913d84fec",
+  "type": "datacenter"
+ },
+ {
+  "name": "iNES Datacenter Bucharest",
+  "operator": "iNES Group",
+  "city": "Bucharest",
+  "atlas_id": "dc_a9fac444978c4c5e",
+  "type": "datacenter"
+ },
+ {
+  "name": "M247 Europe Bucharest",
+  "operator": "M247 Ltd",
+  "city": "Bucharest",
+  "atlas_id": "dc_3b5c10c197df48df",
+  "type": "datacenter"
+ },
+ {
+  "name": "Gemenii Network TD Datacenter",
+  "operator": "Phoenix Telecom & Media Services SRL",
+  "city": "Bucharest",
+  "atlas_id": "dc_9bc191ccc5f54417",
+  "type": "datacenter"
+ },
+ {
+  "name": "Gemenii Network GT Datacenter",
+  "operator": "Phoenix Telecom & Media Services SRL",
+  "city": "Bucharest",
+  "atlas_id": "dc_be5b0e28aa4e43eb",
+  "type": "datacenter"
+ },
+ {
+  "name": "Teletrans Datacenter",
+  "operator": "Teletrans",
+  "city": "Bucharest",
+  "atlas_id": "dc_e48509cb0f664c78",
+  "type": "datacenter"
+ },
+ {
+  "name": "CobraNET Arad",
+  "operator": "CobraNET SRL",
+  "city": "Arad",
+  "atlas_id": "dc_3f96886962be47f1",
+  "type": "datacenter"
+ },
+ {
+  "name": "Timisoara 1",
+  "operator": "NETPROTECT SRL",
+  "city": "Timisoara",
+  "atlas_id": "dc_6c0c1c884be04410",
+  "type": "datacenter"
+ },
+ {
+  "name": "efectRO DC1",
+  "operator": "efectRO SRL",
+  "city": "Cluj Napoca",
+  "atlas_id": "dc_9272969d1b224983",
+  "type": "datacenter"
+ },
+ {
+  "name": "M247 Europe Brasov",
+  "operator": "M247 Ltd",
+  "city": "Brasov",
+  "atlas_id": "dc_f5723478a552460a",
+  "type": "datacenter"
+ },
+ {
+  "name": "Radiocom",
+  "operator": "Societatea Naţională de Radiocomunicaţii S.A.",
+  "city": "Bucharest",
+  "atlas_id": "dc_6a3abfea118742fe",
+  "type": "datacenter"
+ },
+ {
+  "name": "GTS Telecom DC Bucharest",
+  "operator": "GTS Telecom",
+  "city": "Bucharest",
+  "atlas_id": "dc_ad607a9f72804d31",
+  "type": "datacenter"
+ },
+ {
+  "name": "Hosting Data Center Brasov",
+  "operator": "Orange Romania S.A. (AS9050)",
+  "city": "Brasov",
+  "atlas_id": "dc_38f566ed507a4057",
+  "type": "unknown"
+ },
+ {
+  "name": "Compania de Informatica Aplicata",
+  "operator": "Compania de Informatica Aplicata",
+  "city": "Cluj Napoca",
+  "atlas_id": "dc_6e32a52786774e4a",
+  "type": "unknown"
+ },
+ {
+  "name": "Hosting Data Center Bucharest",
+  "operator": "Orange Romania S.A. (AS9050)",
+  "city": "Bucharest",
+  "atlas_id": "dc_e0473b94fbb34324",
+  "type": "unknown"
+ },
+ {
+  "name": "Universitatea Politehnica Timisoara",
+  "operator": "Universitatea Politehnica Timisoara",
+  "city": "Timisoara",
+  "atlas_id": "dc_319a24e8dedc44c1",
+  "type": "network_pop"
+ },
+ {
+  "name": "DataWave#1",
+  "operator": "wecode",
+  "city": "Cluj Napoca",
+  "atlas_id": "dc_3ff7cae882274dc6",
+  "type": "network_pop"
+ },
+ {
+  "name": "BizTelecom - Chiajna",
+  "operator": "BiLoud SRL",
+  "city": "Chiajna",
+  "atlas_id": "dc_442d68cbfd114f6a",
+  "type": "network_pop"
+ },
+ {
+  "name": "efectRO DC2",
+  "operator": "efectRO SRL",
+  "city": "Cluj Napoca",
+  "atlas_id": "dc_484914afc3b34cc6",
+  "type": "network_pop"
+ },
+ {
+  "name": "LayerBridge WhiteGate",
+  "operator": "ENGINYRING Europe SRL",
+  "city": "Bucharest",
+  "atlas_id": "dc_7ea21aff5c5749e9",
+  "type": "network_pop"
+ },
+ {
+  "name": "CobraNET Main Datacenter",
+  "operator": "CobraNET SRL",
+  "city": "Arad",
+  "atlas_id": "dc_91ea20e1cc4342d7",
+  "type": "datacenter"
+ },
+ {
+  "name": "OPTICNET Ploiesti",
+  "operator": "OPTICNET - SERV S.R.L.",
+  "city": "Ploiesti",
+  "atlas_id": "dc_b07dbfab72eb46f7",
+  "type": "network_pop"
+ },
+ {
+  "name": "WhiteHat",
+  "operator": "Anonymous SRL",
+  "city": "Rotunda",
+  "atlas_id": "dc_baab732a60bc40ff",
+  "type": "datacenter"
+ },
+ {
+  "name": "EVB-CLJ-DC1",
+  "operator": "Evobits Information Technology SRL",
+  "city": "Juc-Herghelie",
+  "atlas_id": "dc_be34e73381b945e4",
+  "type": "network_pop"
+ },
+ {
+  "name": "Starnet Media Cluj-Napoca",
+  "operator": "Comunicatii Starnet Media SRL",
+  "city": "Cluj Napoca",
+  "atlas_id": "dc_bf15be72666b47b2",
+  "type": "datacenter"
+ },
+ {
+  "name": "DROBETA DATACENTER",
+  "operator": "DATA ZYX SRL",
+  "city": "Drobeta Turnu Severin",
+  "atlas_id": "dc_d15a8df73bc24337",
+  "type": "datacenter"
+ },
+ {
+  "name": "LayerBridge Pipera",
+  "operator": "ENGINYRING Europe SRL",
+  "city": "Voluntari",
+  "atlas_id": "dc_d36de1bf1d0340c2",
+  "type": "network_pop"
+ },
+ {
+  "name": "AdNet Datacenter",
+  "operator": "AdNet Telecom",
+  "city": "Bucharest",
+  "atlas_id": "dc_74ac8fa142d442b5",
+  "type": "network_pop"
+ },
+ {
+  "name": "GTS Telecom DC Cluj-Napoca",
+  "operator": "GTS Telecom",
+  "city": "Cluj Napoca",
+  "atlas_id": "dc_82ec118ae5a645be",
+  "type": "network_pop"
+ },
+ {
+  "name": "Tennet Datacenter",
+  "operator": "TENNET TELECOM",
+  "city": "Bucharest",
+  "atlas_id": "dc_b658be06986a4eb0",
+  "type": "network_pop"
+ },
+ {
+  "name": "Comway Sibiu",
+  "operator": "Comway Telecommunication SRL",
+  "city": "Sibiu",
+  "atlas_id": "dc_2eb29b19740f411a",
+  "type": "network_pop"
+ },
+ {
+  "name": "Tier Datacenter",
+  "operator": "S.C. TIER S.R.L",
+  "city": "Craiova",
+  "atlas_id": "dc_54c04d273bdb42f0",
+  "type": "network_pop"
+ },
+ {
+  "name": "WhiteHat 3",
+  "operator": "Anonymous SRL",
+  "city": "Rotunda",
+  "atlas_id": "dc_6f2b0f11cdbf49c7",
+  "type": "datacenter"
+ },
+ {
+  "name": "Data Node",
+  "operator": "Data Node",
+  "city": "Timisoara",
+  "atlas_id": "dc_7e00dd9e95d94efa",
+  "type": "network_pop"
+ },
+ {
+  "name": "NAV Communications - Data Center",
+  "operator": "NAV COMMUNICATIONS SRL",
+  "city": "Bucharest",
+  "atlas_id": "dc_cd1be95bd1594c0b",
+  "type": "datacenter"
+ },
+ {
+  "name": "Media Sat Data Center",
+  "operator": "MEDIA SAT SRL",
+  "city": "Bucharest",
+  "atlas_id": "dc_ddc3369247874abd",
+  "type": "network_pop"
+ },
+ {
+  "name": "WhiteHat 2",
+  "operator": "Anonymous SRL",
+  "city": "Brăila",
+  "atlas_id": "dc_f24a73576bde4f40",
+  "type": "datacenter"
+ },
+ {
+  "name": "BUCH-Facility Bucharest",
+  "operator": "IPSERV",
+  "city": "Bucharest",
+  "atlas_id": "dc_0e94774d99e94f17",
+  "type": "network_pop"
+ },
+ {
+  "name": "Ecohost",
+  "operator": "Online Media Developmnet SRL",
+  "city": "Bucharest",
+  "atlas_id": "dc_16074e0530ac40e9",
+  "type": "network_pop"
+ },
+ {
+  "name": "Top Telecom",
+  "operator": "Top Telecom",
+  "city": "Iași",
+  "atlas_id": "dc_3e17475e277a486f",
+  "type": "network_pop"
+ },
+ {
+  "name": "InterConnect Datacenter",
+  "operator": "Interconnect Services BV",
+  "city": "Bucharest",
+  "atlas_id": "dc_a2632808d3a8442f",
+  "type": "network_pop"
+ },
+ {
+  "name": "Hosting Data Center Cluj",
+  "operator": "Orange Romania S.A. (AS9050)",
+  "city": "Cluj Napoca",
+  "atlas_id": "dc_be4c728ead954c87",
+  "type": "network_pop"
+ },
+ {
+  "name": "PROFISOL Bucharest",
+  "operator": "PROFISOL",
+  "city": "Bucharest",
+  "atlas_id": "dc_e1e8f519f457464e",
+  "type": "network_pop"
+ },
+ {
+  "name": "Digi (RCS & RDS) Craiova",
+  "operator": "Digi România SA",
+  "city": "Craiova"
+ },
+ {
+  "name": "Orange HDC Astra",
+  "operator": "Orange România",
+  "city": "Brașov",
+  "atlas_id": "dc_ab3024a7534c48a1",
+  "type": "datacenter"
+ },
+ {
+  "name": "RCAST Hosting",
+  "operator": "–",
+  "city": "Galați"
+ },
+ {
+  "name": "PANOURI SOLARE REDEA DATACENTER",
+  "operator": "–",
+  "city": "–"
+ }
+]
