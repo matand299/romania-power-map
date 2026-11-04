@@ -169,7 +169,7 @@ DC Hub,Nxdata Nxdata 2,https://dchub.cloud/facilities/in/ro,match,nxdata-2,Unver
 DC Hub,Orange Business Services Bucharest,https://dchub.cloud/facilities/in/ro,ambiguous,,Orange has three Bucharest sites; the listing gives no address
 DC Hub,PROFISOL Bucharest,https://dchub.cloud/facilities/in/ro,match,profisol,Unverified in DC Hub
 DC Hub,Radiocom,https://dchub.cloud/facilities/in/ro,match,radiocom,Unverified in DC Hub
-DC Hub,Telekom Romania Hosting Data Center Bucharest Hdc,https://dchub.cloud/facilities/in/ro,possible,orange-dacia,Bd. Dacia 99 was Telekom Romania's head office; not confirmed
+DC Hub,Telekom Romania Hosting Data Center Bucharest Hdc,https://dchub.cloud/facilities/in/ro,match,orange-bucharest-taberei,Former name of Orange's Drumul Taberei site (Inflect page for that address)
 DC Hub,Tennet Datacenter,https://dchub.cloud/facilities/in/ro,match,tennet,Unverified in DC Hub
 DC Hub,Voxility Voxility Ird,https://dchub.cloud/facilities/in/ro,match,voxility-ir1,Unverified in DC Hub
 DC Hub,Vps House Bucharest,https://dchub.cloud/facilities/in/ro,match,vps-house-bucharest,Unverified in DC Hub
@@ -190,9 +190,9 @@ DC Hub,Top Telecom,https://dchub.cloud/facilities/in/ro,match,top-telecom-iasi,U
 DC Hub,ORANGE STORE,https://dchub.cloud/facilities/in/ro,excluded,,"A shop in Pleven, Bulgaria"
 DC Hub,OPTICNET Ploiesti,https://dchub.cloud/facilities/in/ro,match,opticnet-ploiesti,Unverified in DC Hub
 DC Hub,Eusdc Romania Brasov,https://dchub.cloud/facilities/in/ro,match,m247-brasov,Unverified in DC Hub
-DC Hub,T Systems Bacau,https://dchub.cloud/facilities/in/ro,match,t-systems-bacau,Unverified in DC Hub
-DC Hub,T Systems Constanta,https://dchub.cloud/facilities/in/ro,match,t-systems-constanta,Unverified in DC Hub
-DC Hub,T Systems Oradea,https://dchub.cloud/facilities/in/ro,match,t-systems-oradea,Unverified in DC Hub
+DC Hub,T Systems Bacau,https://dchub.cloud/facilities/in/ro,excluded,,No evidence of a T-Systems data centre in Romania (T-Systems runs a software centre there); unverified DC Hub record
+DC Hub,T Systems Constanta,https://dchub.cloud/facilities/in/ro,excluded,,No evidence of a T-Systems data centre in Romania (T-Systems runs a software centre there); unverified DC Hub record
+DC Hub,T Systems Oradea,https://dchub.cloud/facilities/in/ro,excluded,,No evidence of a T-Systems data centre in Romania (T-Systems runs a software centre there); unverified DC Hub record
 DC Hub,WhiteHat,https://dchub.cloud/facilities/in/ro,match,whitehat-rosu,Unverified in DC Hub
 DC Hub,WhiteHat 3,https://dchub.cloud/facilities/in/ro,match,whitehat-3,Unverified in DC Hub
 DC Hub,Comway Sibiu,https://dchub.cloud/facilities/in/ro,match,comway-sibiu,Unverified in DC Hub
@@ -206,7 +206,7 @@ DC Hub,Gts Telecom Cluj Napoca DC,https://dchub.cloud/facilities/in/ro,match,gts
 DC Hub,Infinite Chain Toplita Technology Park Icp Dc1,https://dchub.cloud/facilities/in/ro,match,infinite-chain-toplita,Unverified in DC Hub
 DC Hub,OSM DC 11232265750,https://dchub.cloud/facilities/in/ro,excluded,,Unnamed record with no operator or place
 DC Hub,Orange Business Services Timisoara,https://dchub.cloud/facilities/in/ro,ambiguous,,Orange has several Timișoara sites; the listing gives no address
-DC Hub,T Systems Cluj Napoca,https://dchub.cloud/facilities/in/ro,match,t-systems-cluj-napoca,Unverified in DC Hub
-DC Hub,T Systems Galati,https://dchub.cloud/facilities/in/ro,match,t-systems-galati,Unverified in DC Hub
-DC Hub,T Systems Iasi,https://dchub.cloud/facilities/in/ro,match,t-systems-iasi,Unverified in DC Hub
-DC Hub,T Systems Timisoara,https://dchub.cloud/facilities/in/ro,match,t-systems-timisoara,Unverified in DC Hub
+DC Hub,T Systems Cluj Napoca,https://dchub.cloud/facilities/in/ro,excluded,,No evidence of a T-Systems data centre in Romania (T-Systems runs a software centre there); unverified DC Hub record
+DC Hub,T Systems Galati,https://dchub.cloud/facilities/in/ro,excluded,,No evidence of a T-Systems data centre in Romania (T-Systems runs a software centre there); unverified DC Hub record
+DC Hub,T Systems Iasi,https://dchub.cloud/facilities/in/ro,excluded,,No evidence of a T-Systems data centre in Romania (T-Systems runs a software centre there); unverified DC Hub record
+DC Hub,T Systems Timisoara,https://dchub.cloud/facilities/in/ro,excluded,,No evidence of a T-Systems data centre in Romania (T-Systems runs a software centre there); unverified DC Hub record
