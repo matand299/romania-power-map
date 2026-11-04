@@ -4371,6 +4371,43 @@
 "type": "educational_institution"
 }
 ],
+"https://nominatim.openstreetmap.org/search?q=Strada+Tiberiu+Popoviciu+2-4%2C+Cluj-Napoca%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-CJ",
+"city": "Cluj-Napoca",
+"commercial": "TEAM Technology Center",
+"country": "România",
+"country_code": "ro",
+"county": "Cluj",
+"house_number": "2-4",
+"municipality": "Zona Metropolitană Cluj",
+"office": "Centrul Regional de Excelență pentru Industrii Creative",
+"postcode": "400647",
+"road": "Strada Tiberiu Popoviciu",
+"suburb": "Valea Chintăului"
+},
+"addresstype": "office",
+"boundingbox": [
+"46.8204185",
+"46.8210399",
+"23.5796825",
+"23.5810707"
+],
+"category": "office",
+"display_name": "Centrul Regional de Excelență pentru Industrii Creative, 2-4, Strada Tiberiu Popoviciu, TEAM Technology Center, Valea Chintăului, Cluj-Napoca, Zona Metropolitană Cluj, Cluj, 400647, România",
+"importance": 7.781872281982173e-05,
+"lat": "46.8207826",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.5803764",
+"name": "Centrul Regional de Excelență pentru Industrii Creative",
+"osm_id": 952658837,
+"osm_type": "way",
+"place_id": 63464684,
+"place_rank": 30,
+"type": "educational_institution"
+}
+],
 "https://nominatim.openstreetmap.org/search?q=Strada+Viitorului%2C+Mischii%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [],
 "https://nominatim.openstreetmap.org/search?q=Strada+Viitorului+2%2C+Mischii%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [],
 "https://nominatim.openstreetmap.org/search?q=Timi%C8%99oara%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [

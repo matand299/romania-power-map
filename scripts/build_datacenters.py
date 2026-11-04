@@ -125,6 +125,11 @@ def expand(address):
     return address
 
 
+# PeeringDB spells towns in English or without diacritics; the map uses the Romanian names throughout.
+TOWN = {"Bucharest": "București", "Cluj Napoca": "Cluj-Napoca", "Brasov": "Brașov", "Timisoara": "Timișoara", "Ploiesti": "Ploiești",
+        "Drobeta Turnu Severin": "Drobeta-Turnu Severin", "Constanta": "Constanța", "Galati": "Galați", "Iasi": "Iași"}
+
+
 def num(v):
     return float(v) if v not in ("", None) else None
 
@@ -182,7 +187,7 @@ def main():
         if s["pdb_id"]:
             f = fac[int(s["pdb_id"])]
             rec["address"] = rec["address"] or ", ".join(x for x in (f["address1"], f["address2"]) if x)
-            rec["city"] = rec["city"] or f["city"]
+            rec["city"] = rec["city"] or TOWN.get(f["city"], f["city"])
             rec["website"] = rec["website"] or f["website"]
             if f["latitude"] is not None and lat is None:
                 lat, lon, precision = f["latitude"], f["longitude"], "building (PeeringDB)"

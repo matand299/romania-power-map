@@ -79,6 +79,13 @@ and remembered by the browser.
 
 ## Data centres (database)
 
+The classic map has a **Data centres** tab (open it directly with `index.html#datacenters`). It shows every record of
+`data/datacenters.json`: a square for a data-centre building, a diamond for a project, a dot for a company inside another
+operator's building, a ring for a listing whose building is unknown; the colour is the status, and a dashed halo marks an
+approximate location. Clicking a site opens its card: capacity figures, address, location precision, networks and internet
+exchanges (from PeeringDB), reliability grade, notes and sources. The panel filters by type, status and reliability, lists the
+sites and downloads them as CSV.
+
 `data/datacenters.json` lists Romania's data centres, one record per site: operating buildings, companies present inside
 another operator's building, and projects (under construction, permitted, announced, proposed). It is built by
 `scripts/build_datacenters.py` from the files in `data/source/datacenters/`:
