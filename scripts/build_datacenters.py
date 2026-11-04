@@ -14,7 +14,8 @@ Inputs (data/source/datacenters/):
   peeringdb/*.json     PeeringDB snapshot (facilities, networks, exchanges, carriers), refreshed by --refresh-peeringdb.
   geocode_cache.json   OpenStreetMap Nominatim results for sites without PeeringDB coordinates.
 
-Reliability grade, counting only independent confirmations. The Datacenter Atlas copies most records from PeeringDB
+Reliability grade, counting only independent confirmations. Inflect repeats PeeringDB records (down to their typos), so it
+counts only for a site PeeringDB does not list. The Datacenter Atlas copies most records from PeeringDB
 (and the rest from OpenStreetMap), so it counts only for a site PeeringDB does not list. DC Hub copies PeeringDB and other
 directories (its unverified rows repeat datacenters.com names), so it never counts as a confirmation.
   A  the operator itself (PeeringDB entry or its own website) plus at least one independent source
@@ -43,7 +44,7 @@ SOURCE_INFO = {
     "operator": ("Operator", "The operator's own website or announcement", "primary"),
     "gts": ("GTS Telecom", "The operator's own website", "primary"),
     "dccom": ("datacenters.com", "Directory", "independent"),
-    "inflect": ("Inflect", "Directory", "independent"),
+    "inflect": ("Inflect", "Directory, partly built from PeeringDB", "independent"),
     "baxtel": ("Baxtel", "Directory", "independent"),
     "news": ("News", "Press reports", "independent"),
     "atlas": ("Datacenter Atlas", "Directory, mostly built from PeeringDB and OpenStreetMap", "derived"),
@@ -132,6 +133,8 @@ def grade(keys):
     primary = any(SOURCE_INFO[k][2] == "primary" for k in keys)
     independent = sum(1 for k in keys if SOURCE_INFO[k][2] == "independent")
     independent += 1 if ("atlas" in keys and "pdb" not in keys) else 0  # then the Atlas record comes from OpenStreetMap
+    if "inflect" in keys and "pdb" in keys:
+        independent -= 1  # Inflect copies PeeringDB (it repeats PeeringDB's own typos), so it confirms nothing PeeringDB says
     if primary and independent >= 1:
         return "A"
     if primary or independent >= 2:

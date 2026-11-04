@@ -20,7 +20,7 @@
   },
   "inflect": {
    "name": "Inflect",
-   "kind": "Directory"
+   "kind": "Directory, partly built from PeeringDB"
   },
   "baxtel": {
    "name": "Baxtel",
@@ -654,7 +654,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -813,7 +813,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -891,7 +891,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -911,7 +911,7 @@
     "Datacenter Atlas: PROFISOL Bucharest",
     "Inflect: PROFISOL București"
    ],
-   "grade": "A"
+   "grade": "B"
   },
   {
    "id": "adnet",
@@ -967,7 +967,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -987,7 +987,7 @@
     "Datacenter Atlas: AdNet Datacenter",
     "Inflect: INVITE Systems București"
    ],
-   "grade": "A"
+   "grade": "B"
   },
   {
    "id": "ecohost",
@@ -1038,7 +1038,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -1058,7 +1058,7 @@
     "Datacenter Atlas: Ecohost",
     "Inflect: Online Media Developmnet SRL București"
    ],
-   "grade": "A"
+   "grade": "B"
   },
   {
    "id": "nxdata-2",
@@ -1469,7 +1469,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -1659,7 +1659,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -1735,7 +1735,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -1755,7 +1755,7 @@
     "Datacenter Atlas: InterConnect Datacenter",
     "Inflect: InterConnect București"
    ],
-   "grade": "A"
+   "grade": "B"
   },
   {
    "id": "tennet",
@@ -1817,7 +1817,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -1852,7 +1852,7 @@
    "tier": "",
    "opened": "",
    "website": "http://www.m247.ro",
-   "notes": "Two data halls at one address, about 250 racks in total (M247). Expansion from 2 MW to 7 MW announced (Telecompaper).",
+   "notes": "Two data halls at one address, about 250 racks in total (M247). Expansion from 2 MW to 7 MW announced (Telecompaper). (Figures from search-engine summaries of the operator's page, which is not accessible from here.)",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "data centre",
@@ -1936,7 +1936,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -2026,7 +2026,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -2046,7 +2046,7 @@
     "Datacenter Atlas: Teletrans Datacenter",
     "Inflect: Teletrans București"
    ],
-   "grade": "A"
+   "grade": "B"
   },
   {
    "id": "gemenii-td",
@@ -2099,7 +2099,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -2120,7 +2120,7 @@
     "Datacenter Atlas: Gemenii Network TD Datacenter",
     "Inflect: Phoenix Telecom & Media Services SRL București 1"
    ],
-   "grade": "A"
+   "grade": "B"
   },
   {
    "id": "gemenii-gt",
@@ -2173,7 +2173,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -2194,7 +2194,7 @@
     "Datacenter Atlas: Gemenii Network GT Datacenter",
     "Inflect: Phoenix Telecom & Media Services SRL București 2"
    ],
-   "grade": "A"
+   "grade": "B"
   },
   {
    "id": "orange-bucharest-taberei",
@@ -2251,7 +2251,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -2329,7 +2329,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -2430,14 +2430,14 @@
    "kind": "facility",
    "name": "GTS Telecom Bucharest",
    "operator": "GTS Telecom",
-   "aka": "",
+   "aka": "Electromagnetica Business Park (building, owner Electromagnetica S.A.); NTT (Inflect, same address)",
    "address": "Calea Rahovei\t no 266-268, sector 5",
    "city": "Bucharest",
    "county": "București",
    "tier": "",
    "opened": "",
    "website": "http://www.gts.ro/servicii/data-center",
-   "notes": "Three independent data halls, up to 2 MW installed (GTS). Inflect also lists NTT at this address. CHML lists a site here.",
+   "notes": "In the Electromagnetica Business Park. Three independent data halls (built 2007), N+1, up to 2 MW installed, 240 racks (GTS). CHML lists a site here.",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "data centre",
@@ -2448,7 +2448,7 @@
    "whitespace_m2": null,
    "building_m2": null,
    "plot_m2": null,
-   "racks": null,
+   "racks": 240.0,
    "peeringdb": {
     "id": 3843,
     "url": "https://www.peeringdb.com/fac/3843",
@@ -2484,7 +2484,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -2576,7 +2576,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -2665,7 +2665,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -2738,7 +2738,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -2758,7 +2758,7 @@
     "Datacenter Atlas: CobraNET Arad",
     "Inflect: CobraNET SRL Arad"
    ],
-   "grade": "A"
+   "grade": "B"
   },
   {
    "id": "cobranet-main",
@@ -2811,7 +2811,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -2831,7 +2831,7 @@
     "Datacenter Atlas: CobraNET Main Datacenter",
     "Inflect: CobraNET SRL Main"
    ],
-   "grade": "A"
+   "grade": "B"
   },
   {
    "id": "tier-craiova",
@@ -2946,7 +2946,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -2966,7 +2966,7 @@
     "Datacenter Atlas: Compania de Informatica Aplicata",
     "Inflect: Compania de Informatica Aplicata Cluj-Napoca"
    ],
-   "grade": "A"
+   "grade": "B"
   },
   {
    "id": "upt",
@@ -3017,7 +3017,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -3037,7 +3037,7 @@
     "Datacenter Atlas: Universitatea Politehnica Timisoara",
     "Inflect: Universitatea Politehnica Timisoara Timisoara"
    ],
-   "grade": "A"
+   "grade": "B"
   },
   {
    "id": "top-telecom-iasi",
@@ -3154,7 +3154,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -3174,7 +3174,7 @@
     "Datacenter Atlas: Starnet Media Cluj-Napoca",
     "Inflect: Starnet Media Cluj-Napoca"
    ],
-   "grade": "A"
+   "grade": "B"
   },
   {
    "id": "efect-dc1",
@@ -3233,7 +3233,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -3305,7 +3305,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -3325,7 +3325,7 @@
     "Datacenter Atlas: LayerBridge Pipera",
     "Inflect: LayerBridge SRL Pipera"
    ],
-   "grade": "A"
+   "grade": "B"
   },
   {
    "id": "radiocom",
@@ -3380,7 +3380,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -3400,7 +3400,7 @@
     "Datacenter Atlas: Radiocom",
     "Inflect: Societatea Naţională de Radiocomunicaţii Bucharest"
    ],
-   "grade": "A"
+   "grade": "B"
   },
   {
    "id": "whitehat-rosu",
@@ -3461,7 +3461,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -3533,7 +3533,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -3553,7 +3553,7 @@
     "Datacenter Atlas: BizTelecom - Chiajna",
     "Inflect: BiLoud SRL Chiajna"
    ],
-   "grade": "A"
+   "grade": "B"
   },
   {
    "id": "layerbridge-whitegate",
@@ -3742,7 +3742,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -3884,7 +3884,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -4360,7 +4360,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -4380,7 +4380,7 @@
     "Datacenter Atlas: Timisoara 1",
     "Inflect: Orange Business Services TSR01"
    ],
-   "grade": "A"
+   "grade": "B"
   },
   {
    "id": "m247-brasov",
@@ -4394,7 +4394,7 @@
    "tier": "",
    "opened": "",
    "website": "https://www.m247global.com/romania-brasov-data-center",
-   "notes": "Former Euro Data Center, acquired by M247 in April 2026. 40 racks, mainly disaster recovery (M247).",
+   "notes": "Former Euro Data Center, acquired by M247 in April 2026. 40 racks, mainly disaster recovery (M247). (Figures from search-engine summaries of the operator's page, which is not accessible from here.)",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "data centre",
@@ -4704,7 +4704,7 @@
    "sources": [
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     }
    ],
@@ -4804,7 +4804,7 @@
    "sources": [
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     }
    ],
@@ -4903,7 +4903,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     }
    ],
@@ -4963,13 +4963,13 @@
    "name": "ClusterPower MSC1",
    "operator": "ClusterPower",
    "aka": "Craiova Data Center (datacenters.com); ClusterPower Technology Campus",
-   "address": "",
+   "address": "Strada Viitorului 2",
    "city": "Mischii",
    "county": "Dolj",
    "tier": "",
    "opened": "2022",
    "website": "",
-   "notes": "Near Craiova. Baxtel: 10 MW operating. Operator: campus designed for up to 4,500 racks and 200 MW (design capacity, not built). Own gas-fired trigeneration plant (Global Energy Monitor lists 200 MW). With AIC, expansion in three phases to more than 500 MW announced (2026). Opened 2022 on 25,427 m² of company-owned land in Mischii (press).",
+   "notes": "Near Craiova; address from Baxtel. Baxtel: 'Operational with future phases planned'. Baxtel: 10 MW operating. Operator: campus designed for up to 4,500 racks and 200 MW (design capacity, not built). Own gas-fired trigeneration plant (Global Energy Monitor lists 200 MW). With AIC, expansion in three phases to more than 500 MW announced (2026). Opened 2022 on 25,427 m² of company-owned land in Mischii (press).",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "",
@@ -5249,7 +5249,7 @@
    "sources": [
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     }
    ],
@@ -6217,7 +6217,7 @@
    "tier": "III (design)",
    "opened": "Q4 2026 – 2027 (planned)",
    "website": "https://nxdata3.com/",
-   "notes": "Under construction. 2,000 m² white space in four data halls, Tier III design target. Power figures conflict: 3 MW (operator's site header, up to 1 MW per hall), 5 MW (Ocolo, LinkedIn), 8 MW total / 4 MW IT (operator's site, other reading); no value entered until confirmed. datacenters.com gives the NXDATA-1 address; Tunari 077180 per Inflect and Baxtel.",
+   "notes": "Under construction. Baxtel: 5,500 m² building, 2,000 m² floor area, up to 1 MW IT per data hall; four data halls, Tier III design target. Power figures conflict: 3 MW (operator's site header, up to 1 MW per hall), 5 MW (Ocolo, LinkedIn), 8 MW total / 4 MW IT (operator's site, other reading); no value entered until confirmed. datacenters.com gives the NXDATA-1 address; Tunari 077180 per Inflect and Baxtel.",
    "hosted_in": "",
    "status": "Under construction",
    "atlas_type": "",
@@ -6226,7 +6226,7 @@
    "grid_mw": null,
    "planned_mw": null,
    "whitespace_m2": 2000.0,
-   "building_m2": null,
+   "building_m2": 5500.0,
    "plot_m2": null,
    "racks": null,
    "lat": 44.5459277,
@@ -6251,7 +6251,7 @@
     },
     {
      "name": "Inflect",
-     "kind": "Directory",
+     "kind": "Directory, partly built from PeeringDB",
      "url": "https://inflect.com/datacenters/romania"
     },
     {
@@ -6273,7 +6273,7 @@
   },
   {
    "id": "infinite-chain-toplita",
-   "kind": "project",
+   "kind": "facility",
    "name": "Toplița Technology Park Data Center",
    "operator": "Infinite Chain",
    "aka": "",
@@ -6283,9 +6283,9 @@
    "tier": "",
    "opened": "",
    "website": "https://infinitechain.net/data-center/",
-   "notes": "Phase 1: 2 MW; full build: 50 MW (operator). 'Under construction' per directories only; no source confirms it is operating.",
+   "notes": "Baxtel's site page: 'Operational with future phases planned'; phase 1 of 2 MW, 50 MW IT planned over 5,400 m². DataCenterMap (via search) lists it as under construction: status conflict, Baxtel used as it was checked directly.",
    "hosted_in": "",
-   "status": "Under construction",
+   "status": "Operating",
    "atlas_type": "",
    "it_mw": 2.0,
    "total_mw": null,
@@ -6392,7 +6392,7 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "Building permit 2023; plot of 27,734 m² in Vitan bought from Transelectrica's Icemenerg-Service. Operator: 30 MW IT; Baxtel: 20 MW. Baxtel lists both Portland Trust sites as under construction; the operator says they are in permitting.",
+   "notes": "Building permit 2023; plot of 27,734 m² in Vitan bought from Transelectrica's Icemenerg-Service. Operator: 30 MW IT; Baxtel: 20 MW. Baxtel lists both Portland Trust sites as under construction; the operator says they are in permitting. (Figures from search-engine summaries of the operator's page, which is not accessible from here.)",
    "hosted_in": "",
    "status": "Permitted",
    "atlas_type": "",
@@ -6448,7 +6448,7 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "Building permit 2024; 4-hectare plot in the Preciziei area. Baxtel: launch Q1 2027. Baxtel lists both Portland Trust sites as under construction; the operator says they are in permitting.",
+   "notes": "Building permit 2024; 4-hectare plot in the Preciziei area. Baxtel: launch Q1 2027. Baxtel lists both Portland Trust sites as under construction; the operator says they are in permitting. (Figures from search-engine summaries of the operator's page, which is not accessible from here.)",
    "hosted_in": "",
    "status": "Permitted",
    "atlas_type": "",
@@ -6504,7 +6504,7 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "Operator: 30 MW + 12 MW. Location in Bucharest not published.",
+   "notes": "Operator: 30 MW + 12 MW. Location in Bucharest not published. (Figures from search-engine summaries of the operator's page, which is not accessible from here.)",
    "hosted_in": "",
    "status": "Announced",
    "atlas_type": "",
@@ -6547,11 +6547,11 @@
    "tier": "III",
    "opened": "2027–2028 (planned)",
    "website": "",
-   "notes": "Building permit and grid connection approval obtained. 12 MW installed, 3,400 m² white space, near Pipera metro.",
+   "notes": "Building permit and grid connection approval obtained. 12 MW installed, 6.7 MW IT, 3,400 m² white space, Tier III design, next to Pipera metro (W.Media). Street number 6C from a directory (via search), not checked.",
    "hosted_in": "",
    "status": "Permitted",
    "atlas_type": "",
-   "it_mw": null,
+   "it_mw": 6.7,
    "total_mw": 12.0,
    "grid_mw": null,
    "planned_mw": null,
@@ -6597,7 +6597,7 @@
    "tier": "",
    "opened": "by 2030 (planned)",
    "website": "",
-   "notes": "Two data centres in WDP's industrial park; grid connection of 380 MW combined already approved; a 220 kV substation planned. WDP: 'too early to speak of a concrete project'.",
+   "notes": "Two data centres in WDP's industrial park; grid connection of 380 MW combined already approved; a 220 kV substation planned. WDP: 'too early to speak of a concrete project'. (Press articles not accessible from here; details from search-engine summaries, except where Baxtel is cited.)",
    "hosted_in": "",
    "status": "Announced",
    "atlas_type": "",
@@ -6641,7 +6641,7 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "Up to 70 MW, with solar parks in Uivar and battery storage; part of a EUR 1 bn project. Exact site not published.",
+   "notes": "Up to 70 MW, with solar parks in Uivar and battery storage; part of a EUR 1 bn project. Exact site not published. (Press articles not accessible from here; details from search-engine summaries, except where Baxtel is cited.)",
    "hosted_in": "",
    "status": "Announced",
    "atlas_type": "",
@@ -6685,7 +6685,7 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "Four phases of 20 MW in a Leviatan Group industrial park; 20-hectare site (area = plot). Aims at 100% renewable power by phase 4.",
+   "notes": "Four phases of 20 MW in a Leviatan Group industrial park (W.Media). 20-hectare site per Romania Insider (not accessible from here). Aims at 100% renewable power by phase 4.",
    "hosted_in": "",
    "status": "Announced",
    "atlas_type": "",
@@ -6735,7 +6735,7 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "Bid for an EU AI gigafactory: phase I in Cernavodă, phase II in Doicești; about 1.5 GW and over 100,000 AI accelerators. No developer selected.",
+   "notes": "Bid for an EU AI gigafactory: phase I in Cernavodă, phase II in Doicești; over 100,000 AI accelerators (Datacenter Forum). About 1.5 GW per press (DCD, Balkan Green Energy News; not accessible from here). No developer selected.",
    "hosted_in": "",
    "status": "Proposal",
    "atlas_type": "",
@@ -6779,7 +6779,7 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "One of four regional data centres of the state cloud (Bucharest, Brașov, Sibiu, Timiș), operational since March 2026; run by the Special Telecommunications Service (STS) for ADR. Sites are not published: placed at the town.",
+   "notes": "One of four regional data centres of the state cloud (Bucharest, Brașov, Sibiu, Timiș), operational since March 2026 (ADR announcement reported by Agerpres); run by the Special Telecommunications Service (STS) for ADR. Sites are not published: placed at the town.",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "",
@@ -6795,9 +6795,15 @@
    "lon": 26.1009263,
    "precision": "town",
    "source_keys": [
+    "operator",
     "news"
    ],
    "sources": [
+    {
+     "name": "Operator",
+     "kind": "The operator's own website or announcement",
+     "url": ""
+    },
     {
      "name": "News",
      "kind": "Press reports",
@@ -6809,7 +6815,7 @@
     "https://agerpres.ro/economic/2026/03/04/cloud-ul-privat-guvernamental-al-romaniei-a-intrat-in-etapa-operationala-la-nivel-national--1533872"
    ],
    "listed_as": [],
-   "grade": "C"
+   "grade": "A"
   },
   {
    "id": "gov-cloud-brasov",
@@ -6823,7 +6829,7 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "One of four regional data centres of the state cloud (Bucharest, Brașov, Sibiu, Timiș), operational since March 2026; run by the Special Telecommunications Service (STS) for ADR. Sites are not published: placed at the town.",
+   "notes": "One of four regional data centres of the state cloud (Bucharest, Brașov, Sibiu, Timiș), operational since March 2026 (ADR announcement reported by Agerpres); run by the Special Telecommunications Service (STS) for ADR. Sites are not published: placed at the town.",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "",
@@ -6839,9 +6845,15 @@
    "lon": 25.6105654,
    "precision": "town",
    "source_keys": [
+    "operator",
     "news"
    ],
    "sources": [
+    {
+     "name": "Operator",
+     "kind": "The operator's own website or announcement",
+     "url": ""
+    },
     {
      "name": "News",
      "kind": "Press reports",
@@ -6853,7 +6865,7 @@
     "https://agerpres.ro/economic/2026/03/04/cloud-ul-privat-guvernamental-al-romaniei-a-intrat-in-etapa-operationala-la-nivel-national--1533872"
    ],
    "listed_as": [],
-   "grade": "C"
+   "grade": "A"
   },
   {
    "id": "gov-cloud-sibiu",
@@ -6867,7 +6879,7 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "One of four regional data centres of the state cloud (Bucharest, Brașov, Sibiu, Timiș), operational since March 2026; run by the Special Telecommunications Service (STS) for ADR. Sites are not published: placed at the town.",
+   "notes": "One of four regional data centres of the state cloud (Bucharest, Brașov, Sibiu, Timiș), operational since March 2026 (ADR announcement reported by Agerpres); run by the Special Telecommunications Service (STS) for ADR. Sites are not published: placed at the town.",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "",
@@ -6883,9 +6895,15 @@
    "lon": 24.1519202,
    "precision": "town",
    "source_keys": [
+    "operator",
     "news"
    ],
    "sources": [
+    {
+     "name": "Operator",
+     "kind": "The operator's own website or announcement",
+     "url": ""
+    },
     {
      "name": "News",
      "kind": "Press reports",
@@ -6897,7 +6915,7 @@
     "https://agerpres.ro/economic/2026/03/04/cloud-ul-privat-guvernamental-al-romaniei-a-intrat-in-etapa-operationala-la-nivel-national--1533872"
    ],
    "listed_as": [],
-   "grade": "C"
+   "grade": "A"
   },
   {
    "id": "gov-cloud-timis",
@@ -6911,7 +6929,7 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "One of four regional data centres of the state cloud (Bucharest, Brașov, Sibiu, Timiș), operational since March 2026; run by the Special Telecommunications Service (STS) for ADR. Sites are not published: placed at the town. Some reports say Timișoara, others Timiș county.",
+   "notes": "One of four regional data centres of the state cloud (Bucharest, Brașov, Sibiu, Timiș), operational since March 2026 (ADR announcement reported by Agerpres); run by the Special Telecommunications Service (STS) for ADR. Sites are not published: placed at the town. Some reports say Timișoara, others Timiș county.",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "",
@@ -6927,9 +6945,15 @@
    "lon": 21.2257474,
    "precision": "town",
    "source_keys": [
+    "operator",
     "news"
    ],
    "sources": [
+    {
+     "name": "Operator",
+     "kind": "The operator's own website or announcement",
+     "url": ""
+    },
     {
      "name": "News",
      "kind": "Press reports",
@@ -6941,7 +6965,7 @@
     "https://agerpres.ro/economic/2026/03/04/cloud-ul-privat-guvernamental-al-romaniei-a-intrat-in-etapa-operationala-la-nivel-national--1533872"
    ],
    "listed_as": [],
-   "grade": "C"
+   "grade": "A"
   },
   {
    "id": "resita",
@@ -6955,7 +6979,7 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "Partnership with the municipality signed March 2026; land allocation started April 2026; grid connection request under study; investors sought. The developer's claims (650 MVA, 49-year concession) are not independently confirmed.",
+   "notes": "Partnership with the municipality signed March 2026; land allocation started April 2026; grid connection request under study; investors sought. The developer's claims (650 MVA, 49-year concession) are not independently confirmed. (Press articles not accessible from here; details from search-engine summaries, except where Baxtel is cited.)",
    "hosted_in": "",
    "status": "Announced",
    "atlas_type": "",
@@ -6982,6 +7006,49 @@
    ],
    "links": [
     "https://www.datacenterdynamics.com/en/news/plans-announced-for-municipal-data-center-in-re%C8%99i%C8%9Ba-romania/"
+   ],
+   "listed_as": [],
+   "grade": "C"
+  },
+  {
+   "id": "nw-regional-cluj",
+   "kind": "project",
+   "name": "North-West Regional Data Center",
+   "operator": "Cluj-Napoca municipality",
+   "aka": "",
+   "address": "",
+   "city": "Cluj-Napoca",
+   "county": "Cluj",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Municipal data centre for north-west Romania announced by Cluj-Napoca; no size or date published. (Article not accessible from here; from a search-engine summary.)",
+   "hosted_in": "",
+   "status": "Announced",
+   "atlas_type": "",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
+   "racks": null,
+   "lat": 46.769379,
+   "lon": 23.5899542,
+   "precision": "town",
+   "source_keys": [
+    "news"
+   ],
+   "sources": [
+    {
+     "name": "News",
+     "kind": "Press reports",
+     "url": ""
+    }
+   ],
+   "links": [
+    "https://www.datacenterdynamics.com/en/news/municipal-data-center-to-be-built-for-northwest-romania/"
    ],
    "listed_as": [],
    "grade": "C"

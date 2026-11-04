@@ -2821,6 +2821,37 @@
 "type": "administrative"
 }
 ],
+"https://nominatim.openstreetmap.org/search?q=Cluj-Napoca%2C+Cluj%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-CJ",
+"city": "Cluj-Napoca",
+"country": "România",
+"country_code": "ro",
+"county": "Cluj",
+"municipality": "Zona Metropolitană Cluj"
+},
+"addresstype": "city",
+"boundingbox": [
+"46.6899711",
+"46.8618320",
+"23.4992430",
+"23.7183267"
+],
+"category": "boundary",
+"display_name": "Cluj-Napoca, Zona Metropolitană Cluj, Cluj, România",
+"importance": 0.6855720334805757,
+"lat": "46.7693790",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.5899542",
+"name": "Cluj-Napoca",
+"osm_id": 3277038,
+"osm_type": "relation",
+"place_id": 63311940,
+"place_rank": 16,
+"type": "administrative"
+}
+],
 "https://nominatim.openstreetmap.org/search?q=Cluj-Napoca%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
 {
 "address": {
@@ -4338,6 +4369,8 @@
 "type": "educational_institution"
 }
 ],
+"https://nominatim.openstreetmap.org/search?q=Strada+Viitorului%2C+Mischii%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [],
+"https://nominatim.openstreetmap.org/search?q=Strada+Viitorului+2%2C+Mischii%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [],
 "https://nominatim.openstreetmap.org/search?q=Timi%C8%99oara%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
 {
 "address": {
