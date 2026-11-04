@@ -67,6 +67,7 @@ and remembered by the browser.
   each base); after changing those, run the script again. `models.html` shows all models side by side.
   To use a designed model, replace the file with one of the same name (Y up, about 10 units across, origin at
   the centre of the base).
+- **Data centres:** the buildings and projects of `data/datacenters.json`, drawn with `assets/models/datacenter.glb` at a fixed size (`datacenters` in the theme; projects see-through), with a panel toggle and a click card.
 - **Speed:** each technology has a light model (`<name>_low.glb`) shown from afar and a detailed one shown from
   `models.detail_zoom` in; the screen resolution is capped at `map.max_pixel_ratio`; one elevation source feeds
   the terrain, the land colours and the hillshade.

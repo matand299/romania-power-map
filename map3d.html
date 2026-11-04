@@ -170,6 +170,7 @@ body::after {
   <p class="sub">Operating plants and storage, in 3D.</p>
   <div class="total"><b id="total">–</b><span>MW shown</span></div>
   <div class="techs" id="techs" role="group" aria-label="Technologies"></div>
+  <div class="techs" id="dcToggle" role="group" aria-label="Data centres" style="margin-top:8px"></div>
   <div class="row">
     <button class="btn" id="view3d" type="button" aria-pressed="true">3D</button>
     <button class="btn" id="view2d" type="button" aria-pressed="false">Flat</button>
@@ -192,9 +193,10 @@ body::after {
     return;
   }
 
-  const [theme, plantsFile, counties, basemap, elevation] = await Promise.all([
+  const [theme, plantsFile, counties, basemap, elevation, dcFile] = await Promise.all([
     json("assets/theme.json"), json("data/plants.json"), json("data/counties.json"),
     json("data/basemap.json"), json("data/elevation.json").catch(() => ({})),
+    json("data/datacenters.json").catch(() => ({ sites: [] })),
   ]);
   const M = theme.map, T = theme.tech;
   // ?flat starts without terrain, ?nomodels without models: lighter checks on slow devices.
@@ -229,6 +231,19 @@ body::after {
     });
   });
   plants.forEach(p => { p.x ??= p.lon; p.y ??= p.lat; });
+
+  // Data centres: buildings and projects (companies inside another building, or with the building unknown, are left to
+  // the classic map). Sites that share a point, such as several known only by their town, are spread on a spiral.
+  const D = theme.datacenters || null;
+  const dcs = D ? dcFile.sites.filter(d => (d.kind === "facility" || d.kind === "project") && d.lat != null)
+    .map(d => ({ ...d, elev: elevation[`${d.lat},${d.lon}`] || 0 })) : [];
+  const dgroups = {};
+  dcs.forEach(d => (dgroups[`${d.lat},${d.lon}`] ||= []).push(d));
+  Object.values(dgroups).forEach(g => g.forEach((d, i) => {
+    const a = i * 2.39996, r = i ? 0.007 * Math.sqrt(i) : 0;
+    d.x = d.lon + r * Math.cos(a) / Math.cos(d.lat * Math.PI / 180); d.y = d.lat + r * Math.sin(a);
+  }));
+  let dcOn = D && !params.has("nodc");
 
   // Base map: every colour from the theme.
   const by = layer => ({ type: "FeatureCollection", features: basemap.features.filter(f => f.properties.layer === layer) });
@@ -340,6 +355,22 @@ body::after {
         updateTriggers: { getPosition: [!!map.getTerrain()], getScale: [zoomKey] },
       })));
   };
+  // Data centres: one model at a fixed size (theme.datacenters.size_m); projects are drawn see-through.
+  const scaleM = metres => { const mpp = metresPerPixel(), u = metres / MODEL_UNITS;
+    return Math.min(Math.max(u, theme.models.min_pixels * mpp / MODEL_UNITS), theme.models.max_pixels * mpp / MODEL_UNITS); };
+  const dcLayers = () => {
+    if (!dcOn || params.has("nomodels")) return [];
+    const close = map.getZoom() >= theme.models.detail_zoom;
+    return [["facility", 255], ["project", Math.round(255 * D.project_opacity)]].flatMap(([kind, alpha]) =>
+      [[D.model_low, !close, "low"], [D.model, close, "hi"]].map(([url, visible, lod]) => new deck.ScenegraphLayer({
+        id: `dc-${kind}-${lod}`, data: dcs.filter(d => d.kind === kind), scenegraph: url, pickable: true, visible,
+        getPosition: d => [d.x, d.y, d.elev * (map.getTerrain() ? M.terrain_exaggeration : 0)],
+        getOrientation: [0, 0, 90], getScale: () => { const s = scaleM(D.size_m); return [s, s, s]; },
+        getColor: [255, 255, 255, alpha], _lighting: theme.models.lighting,
+        parameters: alpha < 255 ? { depthMask: false } : {},
+        updateTriggers: { getPosition: [!!map.getTerrain()], getScale: [zoomKey] },
+      })));
+  };
   const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const fmt = v => v >= 100 ? Math.round(v).toLocaleString("en-US") : v >= 10 ? v.toFixed(1) : v.toFixed(2);
   // The project card: the same fields as the classic map's.
@@ -367,15 +398,35 @@ body::after {
     </div>`).addTo(map);
   };
   window.openCard = openCard; // for checks from the browser console
+  const GRADE = { A: "the operator itself plus an independent source", B: "the operator alone, or two independent sources", C: "a single source" };
+  const PREC = { building: "exact (entered by the operator)", address: "from the street address", street: "street only", district: "neighbourhood only", town: "town only" };
+  const openDcCard = d => {
+    const part = list => list.filter(([k]) => d[k] != null).map(([k, l]) => `${fmt(d[k]).replace(/\.00$/, "")} ${l}`).join(" · ");
+    const power = part([["it_mw", "MW IT"], ["total_mw", "MW total"], ["grid_mw", "MW grid connection"], ["planned_mw", "MW planned"]]);
+    const area = part([["whitespace_m2", "m² IT space"], ["building_m2", "m² built"], ["plot_m2", "m² plot"]]);
+    const rows = [["Status", esc(d.status)], ["Power", power], ["Area", area], ["Racks", d.racks != null ? fmt(d.racks).replace(/\.00$/, "") : ""], ["Operator", esc(d.operator)], ["Address", esc(d.address)], ["Town", esc(d.city)],
+      ["County", esc(d.county)], ["Location", esc(PREC[d.precision.split(" (")[0]] || d.precision)], ["Tier", esc(d.tier)], ["Opened", esc(d.opened)],
+      ["Networks", d.networks && d.networks.length ? `${d.networks.length} networks${d.exchanges.length ? ", " + d.exchanges.length + " internet exchanges" : ""}` : ""],
+      ["Reliability", `${d.grade}: ${esc(GRADE[d.grade])}`]].filter(([, v]) => v);
+    popup.setLngLat([d.x, d.y]).setHTML(`<div class="pp">
+      <span class="pp-tag" style="--c:${D.color}"><i></i>${d.kind === "project" ? "Data-centre project" : "Data centre"}</span>
+      <div class="pp-name">${esc(d.name)}</div>
+      <dl>${rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>
+      ${d.notes ? `<div class="desc">${esc(d.notes)}</div>` : ""}
+      <div class="gm">Sources: ${d.sources.map(x => x.url ? `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name)}</a>` : esc(x.name)).join(", ")}.
+        <a href="./#datacenters">All data centres on the classic map</a></div>
+    </div>`).addTo(map);
+  };
 
   // Light on the models, from the theme: a soft overall light plus a sun.
   const lightingFrom = (L) => { const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
     return new deck.LightingEffect({ ambient: new deck.AmbientLight({ color: [255, 255, 255], intensity: L.ambient }),
       sun: new deck.DirectionalLight({ color: hex(L.sun_color), intensity: L.sun, direction: L.sun_direction }) }); };
   const overlay = new deck.MapboxOverlay({
-    interleaved: true, layers: layers(), effects: theme.models.light ? [lightingFrom(theme.models.light)] : [],
+    interleaved: true, layers: [...layers(), ...dcLayers()], effects: theme.models.light ? [lightingFrom(theme.models.light)] : [],
     // Hover: name and MW. Click: the full card.
-    getTooltip: ({ object: p }) => p && { className: "tip", html: `<div class="n">${esc(p.n)}</div>
+    getTooltip: ({ object: p }) => p && { className: "tip", html: p.kind ? `<div class="n">${esc(p.name)}</div>
+      <div class="mw"><small>${esc(p.operator || "")}${p.operator ? " · " : ""}${esc(p.status)} · click for details</small></div>` : `<div class="n">${esc(p.n)}</div>
       <div class="mw">${fmt(p.mw)}<small> MW${p.mwh ? ` · ${fmt(p.mwh)} MWh` : ""} · click for details</small></div>`,
       style: { background: "none", border: "none", padding: 0 } },
     getCursor: ({ isDragging, isHovering }) => isDragging ? "grabbing" : isHovering ? "pointer" : "default",
@@ -385,9 +436,9 @@ body::after {
   // Click a model: open its card. (Picked through deck, since the map receives the click.)
   map.on("click", e => {
     const hit = overlay.pickObject({ x: e.point.x, y: e.point.y, radius: 4 });
-    if (hit && hit.object) openCard(hit.object);
+    if (hit && hit.object) (hit.object.kind ? openDcCard : openCard)(hit.object);
   });
-  const refresh = () => overlay.setProps({ layers: layers() });
+  const refresh = () => overlay.setProps({ layers: [...layers(), ...dcLayers()] });
   // Re-size the models when the zoom has changed by a quarter step or more.
   map.on("zoomend", () => { const z = Math.round(map.getZoom() * 4); if (z !== zoomKey) { zoomKey = z; refresh(); } });
 
@@ -397,7 +448,10 @@ body::after {
     $("techs").innerHTML = Object.entries(T).map(([k, t]) => `<button type="button" class="tech" data-k="${k}"
       aria-pressed="${on.has(k)}" style="--c:${t.color}"><i></i><span>${esc(t.label)}</span><b>${fmt(mw(k))} MW</b></button>`).join("");
     $("total").textContent = fmt(plants.filter(p => on.has(p.tk)).reduce((s, p) => s + p.mw, 0));
+    if (D) $("dcToggle").innerHTML = `<button type="button" class="tech" id="dcBtn" aria-pressed="${dcOn}" style="--c:${D.color}"><i></i><span>${esc(D.label)}</span>
+      <b>${dcs.filter(d => d.kind === "facility").length} + ${dcs.filter(d => d.kind === "project").length} projects</b></button>`;
   };
+  $("dcToggle").addEventListener("click", e => { if (!e.target.closest("#dcBtn")) return; dcOn = !dcOn; renderPanel(); refresh(); });
   $("techs").addEventListener("click", e => {
     const b = e.target.closest(".tech"); if (!b) return;
     on.has(b.dataset.k) ? on.delete(b.dataset.k) : on.add(b.dataset.k);
@@ -413,7 +467,7 @@ body::after {
   $("view2d").onclick = () => view(true);
   $("reset").onclick = () => map.flyTo({ ...M.start, duration: 1200 });
   const unplaced = plantsFile.plants.filter(p => p.lat == null && operating.has(p.st)).length;
-  $("note").textContent = `${plants.length} plants drawn; ${unplaced} with no known location are not drawn. Click a model for details.`;
+  $("note").textContent = `${plants.length} plants drawn; ${unplaced} with no known location are not drawn. Data centres: ${dcs.filter(d => d.kind === "facility").length} buildings and ${dcs.filter(d => d.kind === "project").length} projects (projects are see-through). Click a model for details.`;
   renderPanel();
 })().catch(err => {
   document.body.insertAdjacentHTML("beforeend", `<div class="fallback"><p>The 3D map could not load (${err.message}). <a href="./" style="color:inherit">Open the classic map</a></p></div>`);

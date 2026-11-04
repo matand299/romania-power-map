@@ -294,13 +294,45 @@ def other(rim):
     return out
 
 
+def datacenter(rim):
+    """Data centre: four blue server towers of slightly different heights on a blue base. Each tower has a darker
+    panel on top, glowing light-blue rack lights on its front face and ventilation slots on its right-hand face."""
+    out = [(at(box([10.6, 0.22, 10.6]), 0, 0.11, 0), rim),                       # rim in the data-centre colour
+           (at(box([10.2, 0.32, 10.2]), 0, 0.22 + 0.16, 0), "server_base"),
+           (at(box([9.4, 0.06, 9.4]), 0, 0.54 + 0.03, 0), "server_edge")]         # a lighter inset on the base
+    top_of_base = 0.57
+    towers = [(-2.05, -2.1, 5.4), (2.1, -1.9, 4.9), (-2.15, 2.05, 4.6), (2.0, 2.15, 5.1)]  # x, z, height
+    w = 3.3
+    for x, z, h in towers:
+        out.append((block(w, h, w, x, top_of_base, z), "server_body"))
+        out.append((block(w * 0.82, 0.08, w * 0.82, x, top_of_base + h, z), "server_top"))
+        # Rack lights on the front (+z) face: wide glowing bars.
+        n = 3 if LOW else 5
+        out.append((at(box([w * 0.86, h * 0.84, 0.05]), x, top_of_base + h * 0.52, z + w / 2 + 0.02), "server_top"))  # dark frame
+        for i in range(n):
+            y = top_of_base + h * (0.14 + 0.76 * (i + 0.5) / n)
+            out.append((at(box([w * 0.74, h * 0.76 / n * 0.62, 0.08]), x, y, z + w / 2 + 0.05), "server_glow"))
+        if not LOW:
+            # Ventilation slots on the right-hand (+x) face: two columns of short dark slits.
+            for i in range(9):
+                y = top_of_base + h * (0.2 + 0.65 * i / 8)
+                for dz in (-0.55, 0.25):
+                    out.append((at(box([0.05, 0.1, 0.55]), x + w / 2 + 0.02, y, z + dz), "server_vent"))
+    return out
+
+
 MODELS = {"solar": solar, "wind": wind, "hydro": hydro, "gas": gas, "coal": coal,
-          "nuclear": nuclear, "storage": storage, "other": other}
+          "nuclear": nuclear, "storage": storage, "other": other, "datacenter": datacenter}
 
 
-def material(hex_color):
+GLOWING = {"server_glow"}  # parts that give off their own light
+
+
+def material(hex_color, glow=False):
     rgb = [int(hex_color[i:i + 2], 16) for i in (1, 3, 5)]
-    return trimesh.visual.material.PBRMaterial(baseColorFactor=[*rgb, 255], metallicFactor=0.0, roughnessFactor=0.85)
+    return trimesh.visual.material.PBRMaterial(baseColorFactor=[*rgb, 255], metallicFactor=0.0 if not glow else 0.0,
+                                               roughnessFactor=0.85 if not glow else 0.4,
+                                               emissiveFactor=[c / 255 for c in rgb] if glow else None)
 
 
 def main():
@@ -313,14 +345,14 @@ def main():
 
 def export(name, build):
     if True:
-        rim = f"rim:{THEME['tech'][name]['color']}"
+        rim = f"rim:{(THEME['tech'].get(name) or THEME['datacenters'])['color']}"
         by_color = {}
         for mesh, key in build(rim):
             by_color.setdefault(key, []).append(mesh)
         scene = trimesh.Scene()
         for key, meshes in by_color.items():
             mesh = trimesh.util.concatenate(meshes)
-            mesh.visual = trimesh.visual.TextureVisuals(material=material(key[4:] if key.startswith("rim:") else PALETTE[key]))
+            mesh.visual = trimesh.visual.TextureVisuals(material=material(key[4:] if key.startswith("rim:") else PALETTE[key], key in GLOWING))
             scene.add_geometry(mesh, node_name=key.replace(":", "_").replace("#", ""))
         path = OUT / f"{name}{'_low' if LOW else ''}.glb"
         path.write_bytes(scene.export(file_type="glb"))

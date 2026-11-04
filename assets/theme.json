@@ -84,8 +84,20 @@
       "rail": "#cfa24a",
       "steam": "#ffffff",
       "battery": "#f3f3f1",
-      "battery_accent": "#3fae78"
+      "battery_accent": "#3fae78",
+      "server_body": "#1a3c9c",
+      "server_top": "#0e2366",
+      "server_glow": "#62e6ff",
+      "server_vent": "#08143a",
+      "server_base": "#183a96",
+      "server_edge": "#2f5fc4"
     }
+  },
+
+  "datacenters": {
+    "_about": "Data centres (data/datacenters.json): buildings and projects drawn with one model. size_m is the model's size in metres (it is kept between the models' min_pixels and max_pixels on screen); project_opacity draws projects as see-through.",
+    "label": "Data centres", "color": "#22c7e8", "model": "assets/models/datacenter.glb", "model_low": "assets/models/datacenter_low.glb",
+    "size_m": 250, "project_opacity": 0.45
   },
 
   "tech": {
