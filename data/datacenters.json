@@ -36,7 +36,7 @@
   },
   "dchub": {
    "name": "DC Hub",
-   "kind": "Directory, mostly built from PeeringDB"
+   "kind": "Directory, built from PeeringDB and other directories"
   }
  },
  "sites": [
@@ -55,16 +55,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "network point of presence",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 269,
     "url": "https://www.peeringdb.com/fac/269",
-    "updated": "2025-09-26"
+    "created": "2010-07-29"
    },
    "networks": [],
    "exchanges": [],
@@ -90,7 +93,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -116,16 +119,19 @@
    "notes": "First carrier-neutral colocation centre in Romania (Baxtel). Summit and Prime Telecom list sites at this address.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 439,
     "url": "https://www.peeringdb.com/fac/439",
-    "updated": "2025-09-26"
+    "created": "2010-07-29"
    },
    "networks": [
     {
@@ -663,7 +669,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -692,16 +698,19 @@
    "notes": "In iNES's own office building. 1.2 MW total power per one directory (not confirmed by the operator).",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 772,
     "url": "https://www.peeringdb.com/fac/772",
-    "updated": "2025-09-26"
+    "created": "2010-07-29"
    },
    "networks": [
     {
@@ -819,7 +828,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -848,16 +857,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "network point of presence",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 793,
     "url": "https://www.peeringdb.com/fac/793",
-    "updated": "2025-09-26"
+    "created": "2010-07-29"
    },
    "networks": [],
    "exchanges": [],
@@ -889,7 +901,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -916,16 +928,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "network point of presence",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 936,
     "url": "https://www.peeringdb.com/fac/936",
-    "updated": "2025-09-26"
+    "created": "2010-12-05"
    },
    "networks": [
     {
@@ -962,7 +977,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -989,16 +1004,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "network point of presence",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 972,
     "url": "https://www.peeringdb.com/fac/972",
-    "updated": "2025-09-26"
+    "created": "2011-01-23"
    },
    "networks": [],
    "exchanges": [],
@@ -1030,7 +1048,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -1057,16 +1075,19 @@
    "notes": "Commissioned January 2009 (Baxtel). DataPacket lists a site at this address.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 978,
     "url": "https://www.peeringdb.com/fac/978",
-    "updated": "2025-09-26"
+    "created": "2011-02-01"
    },
    "networks": [
     {
@@ -1463,7 +1484,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -1482,26 +1503,29 @@
    "kind": "facility",
    "name": "Voxility IR1 Bucharest",
    "operator": "Voxility",
-   "aka": "",
-   "address": "Dimitrie Pompei 9-9A, Building 24",
+   "aka": "Voxility IRD Bucharest (datacenters.com, DC Hub, Voxility); Voxility IR2 (DataCenterMap)",
+   "address": "Bd. Dimitrie Pompeiu 9-9A, building 24",
    "city": "Bucharest",
    "county": "București",
    "tier": "",
    "opened": "",
    "website": "https://www.voxility.com",
-   "notes": "3.0 MW reported by one directory (not confirmed by the operator).",
+   "notes": "IR1, IRD and IR2 are names for the same address (Voxility's own price pages, Inflect, DataCenterMap). 3.0 MW reported by one directory (not confirmed by the operator).",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 1635,
     "url": "https://www.peeringdb.com/fac/1635",
-    "updated": "2025-10-24"
+    "created": "2013-09-18"
    },
    "networks": [
     {
@@ -1611,6 +1635,8 @@
    "precision": "building (PeeringDB)",
    "source_keys": [
     "pdb",
+    "operator",
+    "dccom",
     "inflect",
     "atlas",
     "dchub"
@@ -1620,6 +1646,16 @@
      "name": "PeeringDB",
      "kind": "Entered by the operator",
      "url": "https://www.peeringdb.com/fac/1635"
+    },
+    {
+     "name": "Operator",
+     "kind": "The operator's own website or announcement",
+     "url": ""
+    },
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/voxility-voxility-ird-bucharest"
     },
     {
      "name": "Inflect",
@@ -1633,15 +1669,20 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
-   "links": [],
+   "links": [
+    "https://www.voxility.com/colocation/prices/Full+Rack+Colocation+in+Voxility+IR1+Bucharest",
+    "https://voxility.com/colocation/prices/Full+Rack+Colocation+in+Voxility+IRD+Bucharest"
+   ],
    "listed_as": [
     "DC Hub: Voxility IR1 Bucharest",
+    "DC Hub: Voxility Voxility Ird",
     "Datacenter Atlas: Voxility IR1 Bucharest",
-    "Inflect: Voxility București"
+    "Inflect: Voxility București",
+    "datacenters.com: Voxility IRD Bucharest Data Center — Voxility"
    ],
    "grade": "A"
   },
@@ -1660,16 +1701,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "network point of presence",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 1693,
     "url": "https://www.peeringdb.com/fac/1693",
-    "updated": "2025-09-26"
+    "created": "2013-12-06"
    },
    "networks": [],
    "exchanges": [],
@@ -1701,7 +1745,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -1728,16 +1772,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "network point of presence",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 1796,
     "url": "https://www.peeringdb.com/fac/1796",
-    "updated": "2025-09-26"
+    "created": "2014-04-25"
    },
    "networks": [
     {
@@ -1780,7 +1827,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -1808,16 +1855,19 @@
    "notes": "Two data halls at one address, about 250 racks in total (M247). Expansion from 2 MW to 7 MW announced (Telecompaper).",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": 250.0,
    "peeringdb": {
     "id": 2188,
     "url": "https://www.peeringdb.com/fac/2188",
-    "updated": "2025-09-26"
+    "created": "2015-04-08"
    },
    "networks": [
     {
@@ -1896,7 +1946,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     },
     {
@@ -1939,16 +1989,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 2199,
     "url": "https://www.peeringdb.com/fac/2199",
-    "updated": "2025-09-26"
+    "created": "2015-05-20"
    },
    "networks": [],
    "exchanges": [
@@ -1983,7 +2036,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -2010,16 +2063,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 3133,
     "url": "https://www.peeringdb.com/fac/3133",
-    "updated": "2025-09-26"
+    "created": "2016-08-09"
    },
    "networks": [],
    "exchanges": [],
@@ -2053,7 +2109,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -2081,16 +2137,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 3134,
     "url": "https://www.peeringdb.com/fac/3134",
-    "updated": "2025-09-26"
+    "created": "2016-08-09"
    },
    "networks": [],
    "exchanges": [],
@@ -2124,7 +2183,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -2141,7 +2200,7 @@
    "id": "orange-bucharest-taberei",
    "kind": "facility",
    "name": "Orange Hosting Data Center Bucharest",
-   "operator": "Orange Romania",
+   "operator": "Orange Romania (Orange Business)",
    "aka": "Bucharest 2 Data Center (datacenters.com)",
    "address": "Drumul Taberei, 41",
    "city": "Bucharest",
@@ -2152,16 +2211,19 @@
    "notes": "2.0 MW total power per one directory (not confirmed by the operator).",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "unclassified",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 3246,
     "url": "https://www.peeringdb.com/fac/3246",
-    "updated": "2025-09-26"
+    "created": "2016-09-23"
    },
    "networks": [],
    "exchanges": [],
@@ -2199,7 +2261,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -2216,7 +2278,7 @@
    "id": "orange-brasov-sadoveanu",
    "kind": "facility",
    "name": "Orange Hosting Data Center Brasov",
-   "operator": "Orange Romania",
+   "operator": "Orange Romania (Orange Business)",
    "aka": "Brasov 1 Data Center (datacenters.com)",
    "address": "Mihail Sadoveanu, 9",
    "city": "Brasov",
@@ -2227,16 +2289,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "unclassified",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 3247,
     "url": "https://www.peeringdb.com/fac/3247",
-    "updated": "2025-09-26"
+    "created": "2016-09-23"
    },
    "networks": [],
    "exchanges": [],
@@ -2274,7 +2339,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -2299,19 +2364,22 @@
    "tier": "",
    "opened": "",
    "website": "https://www.nav.co",
-   "notes": "",
+   "notes": "NAV lists two sites, TAM01 (Str. Ricinului) and TAM02 (Str. Tămâioarei), about 400 m apart; possibly one campus.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 3840,
     "url": "https://www.peeringdb.com/fac/3840",
-    "updated": "2025-09-26"
+    "created": "2017-03-23"
    },
    "networks": [],
    "exchanges": [
@@ -2345,7 +2413,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -2372,16 +2440,19 @@
    "notes": "Three independent data halls, up to 2 MW installed (GTS). Inflect also lists NTT at this address. CHML lists a site here.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": 2.0,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 3843,
     "url": "https://www.peeringdb.com/fac/3843",
-    "updated": "2025-09-26"
+    "created": "2017-03-24"
    },
    "networks": [],
    "exchanges": [
@@ -2433,7 +2504,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -2464,16 +2535,19 @@
    "notes": "Liberty Technology Park. 500 kW, 60 racks (GTS). Inflect also lists NTT at this address.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "network point of presence",
    "it_mw": null,
    "total_mw": 0.5,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": 60.0,
    "peeringdb": {
     "id": 3844,
     "url": "https://www.peeringdb.com/fac/3844",
-    "updated": "2025-09-26"
+    "created": "2017-03-24"
    },
    "networks": [],
    "exchanges": [],
@@ -2517,7 +2591,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -2549,16 +2623,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 4921,
     "url": "https://www.peeringdb.com/fac/4921",
-    "updated": "2025-09-26"
+    "created": "2018-02-09"
    },
    "networks": [],
    "exchanges": [
@@ -2598,7 +2675,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -2627,16 +2704,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 5979,
     "url": "https://www.peeringdb.com/fac/5979",
-    "updated": "2025-09-26"
+    "created": "2018-11-07"
    },
    "networks": [],
    "exchanges": [],
@@ -2668,7 +2748,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -2695,16 +2775,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 5980,
     "url": "https://www.peeringdb.com/fac/5980",
-    "updated": "2025-09-26"
+    "created": "2018-11-07"
    },
    "networks": [],
    "exchanges": [
@@ -2738,7 +2821,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -2765,16 +2848,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "network point of presence",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 5982,
     "url": "https://www.peeringdb.com/fac/5982",
-    "updated": "2025-09-26"
+    "created": "2018-11-07"
    },
    "networks": [],
    "exchanges": [],
@@ -2800,7 +2886,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -2826,16 +2912,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "unclassified",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 5983,
     "url": "https://www.peeringdb.com/fac/5983",
-    "updated": "2025-09-26"
+    "created": "2018-11-07"
    },
    "networks": [],
    "exchanges": [],
@@ -2867,7 +2956,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -2894,16 +2983,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "network point of presence",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 5986,
     "url": "https://www.peeringdb.com/fac/5986",
-    "updated": "2025-09-26"
+    "created": "2018-11-07"
    },
    "networks": [],
    "exchanges": [],
@@ -2935,7 +3027,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -2962,16 +3054,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "network point of presence",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 5990,
     "url": "https://www.peeringdb.com/fac/5990",
-    "updated": "2025-09-26"
+    "created": "2018-11-08"
    },
    "networks": [],
    "exchanges": [],
@@ -2997,7 +3092,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -3023,16 +3118,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 6393,
     "url": "https://www.peeringdb.com/fac/6393",
-    "updated": "2025-09-26"
+    "created": "2019-02-27"
    },
    "networks": [],
    "exchanges": [
@@ -3066,7 +3164,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -3093,16 +3191,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 7570,
     "url": "https://www.peeringdb.com/fac/7570",
-    "updated": "2025-09-26"
+    "created": "2019-11-06"
    },
    "networks": [],
    "exchanges": [
@@ -3142,7 +3243,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -3170,16 +3271,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "network point of presence",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 8358,
     "url": "https://www.peeringdb.com/fac/8358",
-    "updated": "2025-09-26"
+    "created": "2020-03-31"
    },
    "networks": [],
    "exchanges": [],
@@ -3211,7 +3315,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -3238,16 +3342,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 8488,
     "url": "https://www.peeringdb.com/fac/8488",
-    "updated": "2025-09-26"
+    "created": "2020-04-23"
    },
    "networks": [],
    "exchanges": [
@@ -3283,7 +3390,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -3307,19 +3414,22 @@
    "tier": "",
    "opened": "",
    "website": "https://whitehat.ro",
-   "notes": "PeeringDB names the town Rotunda, but its coordinates and the address in datacenters.com and Inflect are in Roșu (Chiajna, Ilfov).",
+   "notes": "PeeringDB names the town Rotunda, but its coordinates are in Chiajna (Ilfov), the commune Roșu belongs to, matching the Roșu address in datacenters.com and Inflect.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 9223,
     "url": "https://www.peeringdb.com/fac/9223",
-    "updated": "2025-09-26"
+    "created": "2020-09-12"
    },
    "networks": [],
    "exchanges": [
@@ -3361,7 +3471,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -3389,16 +3499,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "network point of presence",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 10487,
     "url": "https://www.peeringdb.com/fac/10487",
-    "updated": "2025-09-26"
+    "created": "2021-04-11"
    },
    "networks": [],
    "exchanges": [],
@@ -3430,7 +3543,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -3457,16 +3570,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "network point of presence",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 11021,
     "url": "https://www.peeringdb.com/fac/11021",
-    "updated": "2025-09-26"
+    "created": "2021-08-07"
    },
    "networks": [],
    "exchanges": [],
@@ -3492,7 +3608,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -3518,16 +3634,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "network point of presence",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 11026,
     "url": "https://www.peeringdb.com/fac/11026",
-    "updated": "2025-09-26"
+    "created": "2021-08-09"
    },
    "networks": [],
    "exchanges": [],
@@ -3553,7 +3672,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -3579,16 +3698,19 @@
    "notes": "datacenters.com gives Str. Ștefan cel Mare 14, Cârna; PeeringDB and Inflect give Strada Mare (14), Brăila. Brăila used.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 11038,
     "url": "https://www.peeringdb.com/fac/11038",
-    "updated": "2025-09-26"
+    "created": "2021-08-11"
    },
    "networks": [],
    "exchanges": [
@@ -3630,7 +3752,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -3658,16 +3780,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "network point of presence",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 11520,
     "url": "https://www.peeringdb.com/fac/11520",
-    "updated": "2025-09-26"
+    "created": "2021-12-13"
    },
    "networks": [],
    "exchanges": [],
@@ -3693,7 +3818,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -3719,16 +3844,19 @@
    "notes": "PeeringDB: Str. Tiberiu Popoviciu 2-4; Inflect: Str. Tiberiu Brediceanu 2. PeeringDB (entered by the operator) used. PeeringDB has no coordinates: located from the address.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "network point of presence",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 11547,
     "url": "https://www.peeringdb.com/fac/11547",
-    "updated": "2025-09-26"
+    "created": "2021-12-16"
    },
    "networks": [],
    "exchanges": [],
@@ -3766,7 +3894,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -3794,16 +3922,19 @@
    "notes": "No street address anywhere. Location from PeeringDB coordinates.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 11764,
     "url": "https://www.peeringdb.com/fac/11764",
-    "updated": "2025-09-26"
+    "created": "2022-02-07"
    },
    "networks": [],
    "exchanges": [
@@ -3839,7 +3970,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -3866,16 +3997,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "network point of presence",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 13710,
     "url": "https://www.peeringdb.com/fac/13710",
-    "updated": "2025-09-26"
+    "created": "2023-05-29"
    },
    "networks": [],
    "exchanges": [],
@@ -3901,7 +4035,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -3927,16 +4061,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "network point of presence",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 15017,
     "url": "https://www.peeringdb.com/fac/15017",
-    "updated": "2025-09-26"
+    "created": "2024-06-20"
    },
    "networks": [],
    "exchanges": [],
@@ -3962,7 +4099,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -3977,7 +4114,7 @@
    "id": "orange-cluj",
    "kind": "facility",
    "name": "Orange Hosting Data Center Cluj",
-   "operator": "Orange Romania",
+   "operator": "Orange Romania (Orange Business)",
    "aka": "Orange Romania - Cluj-Napoca (datacenters.com)",
    "address": "Aleea Padin nr 15",
    "city": "Cluj Napoca",
@@ -3988,16 +4125,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "network point of presence",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 15299,
     "url": "https://www.peeringdb.com/fac/15299",
-    "updated": "2025-09-26"
+    "created": "2024-09-02"
    },
    "networks": [],
    "exchanges": [],
@@ -4029,7 +4169,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -4056,16 +4196,19 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "network point of presence",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 15517,
     "url": "https://www.peeringdb.com/fac/15517",
-    "updated": "2025-09-26"
+    "created": "2024-10-30"
    },
    "networks": [],
    "exchanges": [],
@@ -4091,7 +4234,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -4117,16 +4260,19 @@
    "notes": "Tetarom III industrial park.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "network point of presence",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 15648,
     "url": "https://www.peeringdb.com/fac/15648",
-    "updated": "2025-09-26"
+    "created": "2024-12-09"
    },
    "networks": [],
    "exchanges": [],
@@ -4152,7 +4298,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -4178,16 +4324,19 @@
    "notes": "Inflect lists an Orange site (TSR01) at the same address; treated as the same building.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "peeringdb": {
     "id": 15864,
     "url": "https://www.peeringdb.com/fac/15864",
-    "updated": "2025-09-26"
+    "created": "2025-02-25"
    },
    "networks": [],
    "exchanges": [
@@ -4221,7 +4370,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -4248,16 +4397,19 @@
    "notes": "Former Euro Data Center, acquired by M247 in April 2026. 40 racks, mainly disaster recovery (M247).",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": 40.0,
    "peeringdb": {
     "id": 17116,
     "url": "https://www.peeringdb.com/fac/17116",
-    "updated": "2026-05-17"
+    "created": "2026-04-23"
    },
    "networks": [],
    "exchanges": [],
@@ -4289,7 +4441,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -4307,7 +4459,7 @@
    "id": "orange-bucharest-sibiel",
    "kind": "facility",
    "name": "Orange Bucharest 1",
-   "operator": "Orange Business",
+   "operator": "Orange Romania (Orange Business)",
    "aka": "",
    "address": "Str. Sibiel 6",
    "city": "București",
@@ -4318,11 +4470,14 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.4131994,
    "lon": 26.1131668,
@@ -4347,7 +4502,7 @@
    "id": "orange-dacia",
    "kind": "facility",
    "name": "Orange Romania – Dacia",
-   "operator": "Orange Romania",
+   "operator": "Orange Romania (Orange Business)",
    "aka": "",
    "address": "Bd. Dacia 99",
    "city": "București",
@@ -4358,11 +4513,14 @@
    "notes": "Possibly 'Telekom Romania Hosting Data Center Bucharest HDC' in DC Hub (Bd. Dacia 99 was Telekom Romania's head office); not confirmed.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.4463139,
    "lon": 26.1079846,
@@ -4388,7 +4546,7 @@
    "id": "orange-galati",
    "kind": "facility",
    "name": "Orange Galați",
-   "operator": "Orange Business",
+   "operator": "Orange Romania (Orange Business)",
    "aka": "",
    "address": "Str. Brăilei 41",
    "city": "Galați",
@@ -4399,11 +4557,14 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 45.4282744,
    "lon": 28.0381165,
@@ -4428,7 +4589,7 @@
    "id": "orange-iasi",
    "kind": "facility",
    "name": "Orange Iași",
-   "operator": "Orange Business",
+   "operator": "Orange Romania (Orange Business)",
    "aka": "",
    "address": "Str. Alexandru Lăpușneanu 21",
    "city": "Iași",
@@ -4439,11 +4600,14 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 47.1688396,
    "lon": 27.5773304,
@@ -4468,7 +4632,7 @@
    "id": "orange-timisoara-martirilor",
    "kind": "facility",
    "name": "Orange Timișoara (Calea Martirilor)",
-   "operator": "Orange Business",
+   "operator": "Orange Romania (Orange Business)",
    "aka": "",
    "address": "Calea Martirilor",
    "city": "Timișoara",
@@ -4479,15 +4643,18 @@
    "notes": "Street only, no number.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
-   "lat": 45.7538355,
-   "lon": 21.2257474,
-   "precision": "town",
+   "lat": 45.7318471,
+   "lon": 21.231879,
+   "precision": "district",
    "source_keys": [
     "dccom"
    ],
@@ -4508,7 +4675,7 @@
    "id": "orange-timisoara-alexandrescu",
    "kind": "facility",
    "name": "Orange Timișoara (Grigore Alexandrescu)",
-   "operator": "Orange Business",
+   "operator": "Orange Romania (Orange Business)",
    "aka": "",
    "address": "Str. Grigore Alexandrescu 123",
    "city": "Timișoara",
@@ -4516,14 +4683,17 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "",
+   "notes": "Possibly the same complex as Timisoara 1 (Calea Torontalului 94, about 350 m away, where Inflect also lists an Orange site); not confirmed.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 45.778958,
    "lon": 21.2169819,
@@ -4548,7 +4718,7 @@
    "id": "orange-brasov-astra",
    "kind": "facility",
    "name": "Orange Brașov 2",
-   "operator": "Orange Business",
+   "operator": "Orange Romania (Orange Business)",
    "aka": "Orange HDC Astra (Atlas, DC Hub) – probably the same site",
    "address": "Calea București 36",
    "city": "Brașov",
@@ -4559,11 +4729,14 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "data centre",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 45.6454016,
    "lon": 25.6209743,
@@ -4586,7 +4759,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -4602,7 +4775,7 @@
    "id": "orange-constanta",
    "kind": "facility",
    "name": "Orange Constanța",
-   "operator": "Orange Business",
+   "operator": "Orange Romania (Orange Business)",
    "aka": "",
    "address": "Str. Ioan Nenițescu 22",
    "city": "Constanța",
@@ -4613,11 +4786,14 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.1767161,
    "lon": 28.6507598,
@@ -4653,11 +4829,14 @@
    "notes": "Listed in DC Hub as unverified.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.4471419,
    "lon": 26.061801,
@@ -4674,7 +4853,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -4683,54 +4862,7 @@
     "DC Hub: Kyndryl Bucharest",
     "datacenters.com: Romania Data Center — Kyndryl"
    ],
-   "grade": "B"
-  },
-  {
-   "id": "voxility-ird",
-   "kind": "facility",
-   "name": "Voxility IRD Bucharest",
-   "operator": "Voxility",
-   "aka": "",
-   "address": "",
-   "city": "București",
-   "county": "București",
-   "tier": "",
-   "opened": "",
-   "website": "",
-   "notes": "Separate from Voxility IR1 in DC Hub; no address in any source. One directory describes it as announced, not operating.",
-   "hosted_in": "",
-   "status": "Unverified",
-   "it_mw": null,
-   "total_mw": null,
-   "grid_mw": null,
-   "planned_mw": null,
-   "area_m2": null,
-   "racks": null,
-   "lat": 44.4361414,
-   "lon": 26.102684,
-   "precision": "town",
-   "source_keys": [
-    "dccom",
-    "dchub"
-   ],
-   "sources": [
-    {
-     "name": "datacenters.com",
-     "kind": "Directory",
-     "url": "https://www.datacenters.com/voxility-voxility-ird-bucharest"
-    },
-    {
-     "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
-     "url": "https://dchub.cloud/facilities/in/ro"
-    }
-   ],
-   "links": [],
-   "listed_as": [
-    "DC Hub: Voxility Voxility Ird",
-    "datacenters.com: Voxility IRD Bucharest Data Center — Voxility"
-   ],
-   "grade": "B"
+   "grade": "C"
   },
   {
    "id": "nav-tam01",
@@ -4744,14 +4876,17 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "",
+   "notes": "NAV lists two sites, TAM01 (Str. Ricinului) and TAM02 (Str. Tămâioarei), about 400 m apart; possibly one campus.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.467842,
    "lon": 26.131167,
@@ -4794,11 +4929,14 @@
    "notes": "No address in any source.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 45.6525105,
    "lon": 25.6105654,
@@ -4831,15 +4969,18 @@
    "tier": "",
    "opened": "2022",
    "website": "",
-   "notes": "Near Craiova. Baxtel: 10 MW operating. Operator: campus designed for up to 4,500 racks and 200 MW. Own gas-fired trigeneration plant (Global Energy Monitor lists 200 MW). With AIC, expansion in three phases to more than 500 MW announced (2026). Opened 2022 on 25,427 m² of company-owned land in Mischii (press).",
+   "notes": "Near Craiova. Baxtel: 10 MW operating. Operator: campus designed for up to 4,500 racks and 200 MW (design capacity, not built). Own gas-fired trigeneration plant (Global Energy Monitor lists 200 MW). With AIC, expansion in three phases to more than 500 MW announced (2026). Opened 2022 on 25,427 m² of company-owned land in Mischii (press).",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": 500.0,
-   "area_m2": null,
-   "racks": 4500.0,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": 25427.0,
+   "racks": null,
    "lat": 44.4202106,
    "lon": 23.8577591,
    "precision": "town",
@@ -4897,11 +5038,14 @@
    "notes": "Street only, no number.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.3190159,
    "lon": 23.7965614,
@@ -4937,11 +5081,14 @@
    "notes": "No address in any source.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.3190159,
    "lon": 23.7965614,
@@ -4958,7 +5105,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -4984,11 +5131,14 @@
    "notes": "Low-quality record in the Atlas (grade C); no operator or address.",
    "hosted_in": "",
    "status": "Unverified",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 45.4338215,
    "lon": 28.0549395,
@@ -5005,7 +5155,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -5031,11 +5181,14 @@
    "notes": "Low-quality record in the Atlas (grade C); DC Hub places it in Craiova. The name ('solar panels Redea') suggests a mislabelled solar site.",
    "hosted_in": "",
    "status": "Unverified",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.3190159,
    "lon": 23.7965614,
@@ -5052,7 +5205,7 @@
     },
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -5078,11 +5231,14 @@
    "notes": "",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.9191708,
    "lon": 25.4530521,
@@ -5105,7 +5261,7 @@
   },
   {
    "id": "summit",
-   "kind": "presence",
+   "kind": "tenant",
    "name": "Summit Romania Data Center",
    "operator": "Summit",
    "aka": "",
@@ -5118,11 +5274,14 @@
    "notes": "",
    "hosted_in": "nxdata-1",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.481916,
    "lon": 26.120789,
@@ -5145,7 +5304,7 @@
   },
   {
    "id": "prime-telecom",
-   "kind": "presence",
+   "kind": "tenant",
    "name": "Prime Telecom Bucharest",
    "operator": "Prime Telecom",
    "aka": "",
@@ -5158,11 +5317,14 @@
    "notes": "",
    "hosted_in": "nxdata-1",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.481916,
    "lon": 26.120789,
@@ -5185,7 +5347,7 @@
   },
   {
    "id": "datapacket",
-   "kind": "presence",
+   "kind": "tenant",
    "name": "DataPacket Bucharest",
    "operator": "DataPacket",
    "aka": "",
@@ -5198,11 +5360,14 @@
    "notes": "",
    "hosted_in": "nxdata-2",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.479796,
    "lon": 26.11423,
@@ -5225,7 +5390,7 @@
   },
   {
    "id": "chml",
-   "kind": "presence",
+   "kind": "tenant",
    "name": "DC CHML – Bucharest",
    "operator": "CHML Web Services",
    "aka": "",
@@ -5238,11 +5403,14 @@
    "notes": "",
    "hosted_in": "gts-bucharest",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.415543,
    "lon": 26.075437,
@@ -5265,7 +5433,7 @@
   },
   {
    "id": "zenlayer-bbu1",
-   "kind": "presence",
+   "kind": "listing",
    "name": "Zenlayer BBU1",
    "operator": "Zenlayer",
    "aka": "",
@@ -5278,11 +5446,14 @@
    "notes": "Street only: probably inside one of the NXDATA buildings.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.4793929,
    "lon": 26.1112917,
@@ -5305,7 +5476,7 @@
   },
   {
    "id": "runpod-eu-ro-1",
-   "kind": "presence",
+   "kind": "listing",
    "name": "RunPod EU-RO-1",
    "operator": "RunPod",
    "aka": "",
@@ -5318,11 +5489,14 @@
    "notes": "GPU cloud region; the building is not named.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.4361414,
    "lon": 26.102684,
@@ -5345,7 +5519,7 @@
   },
   {
    "id": "hostoweb-bucharest",
-   "kind": "presence",
+   "kind": "listing",
    "name": "Hostoweb Bucharest",
    "operator": "Hostoweb",
    "aka": "",
@@ -5358,11 +5532,14 @@
    "notes": "No address: the building is not known.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.4361414,
    "lon": 26.102684,
@@ -5385,7 +5562,7 @@
   },
   {
    "id": "netrouting-bucharest",
-   "kind": "presence",
+   "kind": "listing",
    "name": "Netrouting Bucharest",
    "operator": "Netrouting",
    "aka": "",
@@ -5398,11 +5575,14 @@
    "notes": "No address: the building is not known.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.4361414,
    "lon": 26.102684,
@@ -5425,7 +5605,7 @@
   },
   {
    "id": "alexhost-bucharest",
-   "kind": "presence",
+   "kind": "listing",
    "name": "AlexHost Bucharest",
    "operator": "AlexHost",
    "aka": "",
@@ -5438,11 +5618,14 @@
    "notes": "No address: the building is not known.",
    "hosted_in": "",
    "status": "Operating",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.4361414,
    "lon": 26.102684,
@@ -5465,7 +5648,7 @@
   },
   {
    "id": "binbox-bucharest",
-   "kind": "presence",
+   "kind": "listing",
    "name": "Binbox Bucharest",
    "operator": "Binbox Global Services",
    "aka": "",
@@ -5477,12 +5660,15 @@
    "website": "",
    "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
    "hosted_in": "",
-   "status": "Operating",
+   "status": "Unverified",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.4361414,
    "lon": 26.102684,
@@ -5493,7 +5679,7 @@
    "sources": [
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -5505,7 +5691,7 @@
   },
   {
    "id": "binbox-bucharest-2",
-   "kind": "presence",
+   "kind": "listing",
    "name": "Binbox Bucharest 2",
    "operator": "Binbox Global Services",
    "aka": "",
@@ -5517,12 +5703,15 @@
    "website": "",
    "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
    "hosted_in": "",
-   "status": "Operating",
+   "status": "Unverified",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.4361414,
    "lon": 26.102684,
@@ -5533,7 +5722,7 @@
    "sources": [
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -5545,7 +5734,7 @@
   },
   {
    "id": "binbox-ploiesti",
-   "kind": "presence",
+   "kind": "listing",
    "name": "Binbox Ploiești",
    "operator": "Binbox Global Services",
    "aka": "",
@@ -5557,12 +5746,15 @@
    "website": "",
    "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
    "hosted_in": "",
-   "status": "Operating",
+   "status": "Unverified",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.9417468,
    "lon": 26.0236504,
@@ -5573,7 +5765,7 @@
    "sources": [
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -5585,7 +5777,7 @@
   },
   {
    "id": "vps-house-bucharest",
-   "kind": "presence",
+   "kind": "listing",
    "name": "VPS House Bucharest",
    "operator": "VPS House",
    "aka": "",
@@ -5597,12 +5789,15 @@
    "website": "",
    "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
    "hosted_in": "",
-   "status": "Operating",
+   "status": "Unverified",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.4361414,
    "lon": 26.102684,
@@ -5613,7 +5808,7 @@
    "sources": [
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -5625,7 +5820,7 @@
   },
   {
    "id": "wehaveservers-carcea",
-   "kind": "presence",
+   "kind": "listing",
    "name": "WeHaveServers Carcea",
    "operator": "WeHaveServers",
    "aka": "",
@@ -5637,12 +5832,15 @@
    "website": "",
    "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
    "hosted_in": "",
-   "status": "Operating",
+   "status": "Unverified",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.4361414,
    "lon": 26.102684,
@@ -5653,7 +5851,7 @@
    "sources": [
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -5665,7 +5863,7 @@
   },
   {
    "id": "bss-one-iasi",
-   "kind": "presence",
+   "kind": "listing",
    "name": "BSS One Iași",
    "operator": "BSS One",
    "aka": "",
@@ -5677,12 +5875,15 @@
    "website": "",
    "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
    "hosted_in": "",
-   "status": "Operating",
+   "status": "Unverified",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 47.1615598,
    "lon": 27.5837814,
@@ -5693,7 +5894,7 @@
    "sources": [
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -5705,7 +5906,7 @@
   },
   {
    "id": "t-systems-bacau",
-   "kind": "presence",
+   "kind": "listing",
    "name": "T-Systems Bacău",
    "operator": "T-Systems",
    "aka": "",
@@ -5717,12 +5918,15 @@
    "website": "",
    "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
    "hosted_in": "",
-   "status": "Operating",
+   "status": "Unverified",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 46.5560493,
    "lon": 26.9153557,
@@ -5733,7 +5937,7 @@
    "sources": [
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -5745,7 +5949,7 @@
   },
   {
    "id": "t-systems-cluj-napoca",
-   "kind": "presence",
+   "kind": "listing",
    "name": "T-Systems Cluj-Napoca",
    "operator": "T-Systems",
    "aka": "",
@@ -5757,12 +5961,15 @@
    "website": "",
    "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
    "hosted_in": "",
-   "status": "Operating",
+   "status": "Unverified",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 46.769379,
    "lon": 23.5899542,
@@ -5773,7 +5980,7 @@
    "sources": [
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -5785,7 +5992,7 @@
   },
   {
    "id": "t-systems-constanta",
-   "kind": "presence",
+   "kind": "listing",
    "name": "T-Systems Constanța",
    "operator": "T-Systems",
    "aka": "",
@@ -5797,12 +6004,15 @@
    "website": "",
    "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
    "hosted_in": "",
-   "status": "Operating",
+   "status": "Unverified",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.1767161,
    "lon": 28.6507598,
@@ -5813,7 +6023,7 @@
    "sources": [
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -5825,7 +6035,7 @@
   },
   {
    "id": "t-systems-galati",
-   "kind": "presence",
+   "kind": "listing",
    "name": "T-Systems Galați",
    "operator": "T-Systems",
    "aka": "",
@@ -5837,12 +6047,15 @@
    "website": "",
    "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
    "hosted_in": "",
-   "status": "Operating",
+   "status": "Unverified",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 45.4338215,
    "lon": 28.0549395,
@@ -5853,7 +6066,7 @@
    "sources": [
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -5865,7 +6078,7 @@
   },
   {
    "id": "t-systems-iasi",
-   "kind": "presence",
+   "kind": "listing",
    "name": "T-Systems Iași",
    "operator": "T-Systems",
    "aka": "",
@@ -5877,12 +6090,15 @@
    "website": "",
    "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
    "hosted_in": "",
-   "status": "Operating",
+   "status": "Unverified",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 47.1615598,
    "lon": 27.5837814,
@@ -5893,7 +6109,7 @@
    "sources": [
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -5905,7 +6121,7 @@
   },
   {
    "id": "t-systems-oradea",
-   "kind": "presence",
+   "kind": "listing",
    "name": "T-Systems Oradea",
    "operator": "T-Systems",
    "aka": "",
@@ -5917,12 +6133,15 @@
    "website": "",
    "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
    "hosted_in": "",
-   "status": "Operating",
+   "status": "Unverified",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 47.0549163,
    "lon": 21.9285231,
@@ -5933,7 +6152,7 @@
    "sources": [
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -5945,7 +6164,7 @@
   },
   {
    "id": "t-systems-timisoara",
-   "kind": "presence",
+   "kind": "listing",
    "name": "T-Systems Timișoara",
    "operator": "T-Systems",
    "aka": "",
@@ -5957,12 +6176,15 @@
    "website": "",
    "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
    "hosted_in": "",
-   "status": "Operating",
+   "status": "Unverified",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 45.7538355,
    "lon": 21.2257474,
@@ -5973,7 +6195,7 @@
    "sources": [
     {
      "name": "DC Hub",
-     "kind": "Directory, mostly built from PeeringDB",
+     "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
@@ -5998,11 +6220,14 @@
    "notes": "Under construction. 2,000 m² white space in four data halls, Tier III design target. Power figures conflict: 3 MW (operator's site header, up to 1 MW per hall), 5 MW (Ocolo, LinkedIn), 8 MW total / 4 MW IT (operator's site, other reading); no value entered until confirmed. datacenters.com gives the NXDATA-1 address; Tunari 077180 per Inflect and Baxtel.",
    "hosted_in": "",
    "status": "Under construction",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": 2000.0,
+   "whitespace_m2": 2000.0,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.5459277,
    "lon": 26.1376976,
@@ -6058,14 +6283,17 @@
    "tier": "",
    "opened": "",
    "website": "https://infinitechain.net/data-center/",
-   "notes": "Phase 1: 2 MW; full build: 50 MW (operator). No source confirms it is operating.",
+   "notes": "Phase 1: 2 MW; full build: 50 MW (operator). 'Under construction' per directories only; no source confirms it is operating.",
    "hosted_in": "",
    "status": "Under construction",
+   "atlas_type": "",
    "it_mw": 2.0,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": 50.0,
-   "area_m2": 5400.0,
+   "whitespace_m2": null,
+   "building_m2": 5400.0,
+   "plot_m2": null,
    "racks": null,
    "lat": 46.9310662,
    "lon": 25.3361121,
@@ -6117,11 +6345,14 @@
    "notes": "Second ClusterPower/AIC campus, announced 5 Jan 2026, about 300 MW, capacity from 2029. Baxtel places it in Făurești, Vâlcea (precise parcel not disclosed); located at the village, not confirmed by a second source.",
    "hosted_in": "",
    "status": "Announced",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": 300.0,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.7406745,
    "lon": 23.8761663,
@@ -6155,24 +6386,27 @@
    "name": "Portland Trust DC1 (Vitan)",
    "operator": "Portland Trust",
    "aka": "",
-   "address": "",
+   "address": "Vitan (district)",
    "city": "București",
    "county": "București",
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "Building permit 2023; plot of 27,734 m² in Vitan bought from Transelectrica's Icemenerg-Service. Operator: 30 MW IT; Baxtel: 20 MW.",
+   "notes": "Building permit 2023; plot of 27,734 m² in Vitan bought from Transelectrica's Icemenerg-Service. Operator: 30 MW IT; Baxtel: 20 MW. Baxtel lists both Portland Trust sites as under construction; the operator says they are in permitting.",
    "hosted_in": "",
    "status": "Permitted",
+   "atlas_type": "",
    "it_mw": 30.0,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": 26437.0,
+   "whitespace_m2": null,
+   "building_m2": 26437.0,
+   "plot_m2": 27734.0,
    "racks": null,
-   "lat": 44.4361414,
-   "lon": 26.102684,
-   "precision": "town",
+   "lat": 44.4141205,
+   "lon": 26.1270761,
+   "precision": "district",
    "source_keys": [
     "operator",
     "baxtel",
@@ -6208,24 +6442,27 @@
    "name": "Portland Trust DC2 (Preciziei)",
    "operator": "Portland Trust",
    "aka": "",
-   "address": "",
+   "address": "Str. Preciziei (area)",
    "city": "București",
    "county": "București",
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "Building permit 2024; 4-hectare plot in the Preciziei area. Baxtel: launch Q1 2027.",
+   "notes": "Building permit 2024; 4-hectare plot in the Preciziei area. Baxtel: launch Q1 2027. Baxtel lists both Portland Trust sites as under construction; the operator says they are in permitting.",
    "hosted_in": "",
    "status": "Permitted",
+   "atlas_type": "",
    "it_mw": 30.0,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": 23707.0,
+   "whitespace_m2": null,
+   "building_m2": 23707.0,
+   "plot_m2": 40000.0,
    "racks": null,
-   "lat": 44.4361414,
-   "lon": 26.102684,
-   "precision": "town",
+   "lat": 44.4318022,
+   "lon": 26.0032835,
+   "precision": "street",
    "source_keys": [
     "operator",
     "baxtel",
@@ -6270,11 +6507,14 @@
    "notes": "Operator: 30 MW + 12 MW. Location in Bucharest not published.",
    "hosted_in": "",
    "status": "Announced",
+   "atlas_type": "",
    "it_mw": 42.0,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": 33626.0,
+   "whitespace_m2": null,
+   "building_m2": 33626.0,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.4361414,
    "lon": 26.102684,
@@ -6310,11 +6550,14 @@
    "notes": "Building permit and grid connection approval obtained. 12 MW installed, 3,400 m² white space, near Pipera metro.",
    "hosted_in": "",
    "status": "Permitted",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": 12.0,
    "grid_mw": null,
    "planned_mw": null,
-   "area_m2": 3400.0,
+   "whitespace_m2": 3400.0,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.4822752,
    "lon": 26.1203237,
@@ -6357,11 +6600,14 @@
    "notes": "Two data centres in WDP's industrial park; grid connection of 380 MW combined already approved; a 220 kV substation planned. WDP: 'too early to speak of a concrete project'.",
    "hosted_in": "",
    "status": "Announced",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": 380.0,
    "planned_mw": null,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.5331416,
    "lon": 26.2029838,
@@ -6398,11 +6644,14 @@
    "notes": "Up to 70 MW, with solar parks in Uivar and battery storage; part of a EUR 1 bn project. Exact site not published.",
    "hosted_in": "",
    "status": "Announced",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": 70.0,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 45.7538355,
    "lon": 21.2257474,
@@ -6439,11 +6688,14 @@
    "notes": "Four phases of 20 MW in a Leviatan Group industrial park; 20-hectare site (area = plot). Aims at 100% renewable power by phase 4.",
    "hosted_in": "",
    "status": "Announced",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": 80.0,
-   "area_m2": 200000.0,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": 200000.0,
    "racks": null,
    "lat": 46.5067725,
    "lon": 23.9190105,
@@ -6486,11 +6738,14 @@
    "notes": "Bid for an EU AI gigafactory: phase I in Cernavodă, phase II in Doicești; about 1.5 GW and over 100,000 AI accelerators. No developer selected.",
    "hosted_in": "",
    "status": "Proposal",
+   "atlas_type": "",
    "it_mw": null,
    "total_mw": null,
    "grid_mw": null,
    "planned_mw": 1500.0,
-   "area_m2": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
    "racks": null,
    "lat": 44.3416349,
    "lon": 28.0316248,
@@ -6508,6 +6763,225 @@
    "links": [
     "https://datacenter-forum.ro/en/the-black-sea-ai-gigafactory-and-romanias-contribution-to-europes-ai-agenda/",
     "https://balkangreenenergynews.com/romania-preparing-to-build-giant-ai-hub-data-centers/"
+   ],
+   "listed_as": [],
+   "grade": "C"
+  },
+  {
+   "id": "gov-cloud-bucuresti",
+   "kind": "facility",
+   "name": "Government Private Cloud – București",
+   "operator": "STS / ADR (Romanian state)",
+   "aka": "",
+   "address": "",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "One of four regional data centres of the state cloud (Bucharest, Brașov, Sibiu, Timiș), operational since March 2026; run by the Special Telecommunications Service (STS) for ADR. Sites are not published: placed at the town.",
+   "hosted_in": "",
+   "status": "Operating",
+   "atlas_type": "",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
+   "racks": null,
+   "lat": 44.4356445,
+   "lon": 26.1009263,
+   "precision": "town",
+   "source_keys": [
+    "news"
+   ],
+   "sources": [
+    {
+     "name": "News",
+     "kind": "Press reports",
+     "url": ""
+    }
+   ],
+   "links": [
+    "https://www.romania-insider.com/romania-government-private-cloud-enters-operational-stage-2026",
+    "https://agerpres.ro/economic/2026/03/04/cloud-ul-privat-guvernamental-al-romaniei-a-intrat-in-etapa-operationala-la-nivel-national--1533872"
+   ],
+   "listed_as": [],
+   "grade": "C"
+  },
+  {
+   "id": "gov-cloud-brasov",
+   "kind": "facility",
+   "name": "Government Private Cloud – Brașov",
+   "operator": "STS / ADR (Romanian state)",
+   "aka": "",
+   "address": "",
+   "city": "Brașov",
+   "county": "Brașov",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "One of four regional data centres of the state cloud (Bucharest, Brașov, Sibiu, Timiș), operational since March 2026; run by the Special Telecommunications Service (STS) for ADR. Sites are not published: placed at the town.",
+   "hosted_in": "",
+   "status": "Operating",
+   "atlas_type": "",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
+   "racks": null,
+   "lat": 45.6525105,
+   "lon": 25.6105654,
+   "precision": "town",
+   "source_keys": [
+    "news"
+   ],
+   "sources": [
+    {
+     "name": "News",
+     "kind": "Press reports",
+     "url": ""
+    }
+   ],
+   "links": [
+    "https://www.romania-insider.com/romania-government-private-cloud-enters-operational-stage-2026",
+    "https://agerpres.ro/economic/2026/03/04/cloud-ul-privat-guvernamental-al-romaniei-a-intrat-in-etapa-operationala-la-nivel-national--1533872"
+   ],
+   "listed_as": [],
+   "grade": "C"
+  },
+  {
+   "id": "gov-cloud-sibiu",
+   "kind": "facility",
+   "name": "Government Private Cloud – Sibiu",
+   "operator": "STS / ADR (Romanian state)",
+   "aka": "",
+   "address": "",
+   "city": "Sibiu",
+   "county": "Sibiu",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "One of four regional data centres of the state cloud (Bucharest, Brașov, Sibiu, Timiș), operational since March 2026; run by the Special Telecommunications Service (STS) for ADR. Sites are not published: placed at the town.",
+   "hosted_in": "",
+   "status": "Operating",
+   "atlas_type": "",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
+   "racks": null,
+   "lat": 45.7973912,
+   "lon": 24.1519202,
+   "precision": "town",
+   "source_keys": [
+    "news"
+   ],
+   "sources": [
+    {
+     "name": "News",
+     "kind": "Press reports",
+     "url": ""
+    }
+   ],
+   "links": [
+    "https://www.romania-insider.com/romania-government-private-cloud-enters-operational-stage-2026",
+    "https://agerpres.ro/economic/2026/03/04/cloud-ul-privat-guvernamental-al-romaniei-a-intrat-in-etapa-operationala-la-nivel-national--1533872"
+   ],
+   "listed_as": [],
+   "grade": "C"
+  },
+  {
+   "id": "gov-cloud-timis",
+   "kind": "facility",
+   "name": "Government Private Cloud – Timișoara",
+   "operator": "STS / ADR (Romanian state)",
+   "aka": "",
+   "address": "",
+   "city": "Timișoara",
+   "county": "Timiș",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "One of four regional data centres of the state cloud (Bucharest, Brașov, Sibiu, Timiș), operational since March 2026; run by the Special Telecommunications Service (STS) for ADR. Sites are not published: placed at the town. Some reports say Timișoara, others Timiș county.",
+   "hosted_in": "",
+   "status": "Operating",
+   "atlas_type": "",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
+   "racks": null,
+   "lat": 45.7538355,
+   "lon": 21.2257474,
+   "precision": "town",
+   "source_keys": [
+    "news"
+   ],
+   "sources": [
+    {
+     "name": "News",
+     "kind": "Press reports",
+     "url": ""
+    }
+   ],
+   "links": [
+    "https://www.romania-insider.com/romania-government-private-cloud-enters-operational-stage-2026",
+    "https://agerpres.ro/economic/2026/03/04/cloud-ul-privat-guvernamental-al-romaniei-a-intrat-in-etapa-operationala-la-nivel-national--1533872"
+   ],
+   "listed_as": [],
+   "grade": "C"
+  },
+  {
+   "id": "resita",
+   "kind": "project",
+   "name": "Reșița data center",
+   "operator": "Reșița Data Infrastructure (with the municipality)",
+   "aka": "",
+   "address": "",
+   "city": "Reșița",
+   "county": "Caraș-Severin",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Partnership with the municipality signed March 2026; land allocation started April 2026; grid connection request under study; investors sought. The developer's claims (650 MVA, 49-year concession) are not independently confirmed.",
+   "hosted_in": "",
+   "status": "Announced",
+   "atlas_type": "",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": 30000.0,
+   "racks": null,
+   "lat": 45.289027,
+   "lon": 21.887861,
+   "precision": "town",
+   "source_keys": [
+    "news"
+   ],
+   "sources": [
+    {
+     "name": "News",
+     "kind": "Press reports",
+     "url": ""
+    }
+   ],
+   "links": [
+    "https://www.datacenterdynamics.com/en/news/plans-announced-for-municipal-data-center-in-re%C8%99i%C8%9Ba-romania/"
    ],
    "listed_as": [],
    "grade": "C"

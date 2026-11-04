@@ -2,7 +2,7 @@ source,source_name,source_url,match,site_id,note
 datacenters.com,NXDATA-1 Bucharest (BUH1) — NXDATA,https://www.datacenters.com/nxdata-nxdata-1-bucharest-buh1,match,nxdata-1,
 datacenters.com,NXDATA-2 Bucharest (BUH2) — NXDATA,https://www.datacenters.com/nxdata-nxdata-2-bucharest-buh2,match,nxdata-2,
 datacenters.com,Toplita Technology Park Data Center — Infinite Chain,https://www.datacenters.com/infinite-chain-toplita-technology-park,match,infinite-chain-toplita,
-datacenters.com,Voxility IRD Bucharest Data Center — Voxility,https://www.datacenters.com/voxility-voxility-ird-bucharest,match,voxility-ird,
+datacenters.com,Voxility IRD Bucharest Data Center — Voxility,https://www.datacenters.com/voxility-voxility-ird-bucharest,match,voxility-ir1,
 datacenters.com,Romania Data Center — Kyndryl,https://www.datacenters.com/kyndryl-romania,match,kyndryl-bucharest,
 datacenters.com,NXDATA-3 Bucharest (BUH3) — NXDATA,https://www.datacenters.com/nxdata-nxdata-3-bucharest-buh3,match,nxdata-3,
 datacenters.com,Bucharest 1 Data Center — Orange Business,https://www.datacenters.com/orange-business-bucharest-1,match,orange-bucharest-sibiel,
@@ -171,7 +171,7 @@ DC Hub,PROFISOL Bucharest,https://dchub.cloud/facilities/in/ro,match,profisol,Un
 DC Hub,Radiocom,https://dchub.cloud/facilities/in/ro,match,radiocom,Unverified in DC Hub
 DC Hub,Telekom Romania Hosting Data Center Bucharest Hdc,https://dchub.cloud/facilities/in/ro,possible,orange-dacia,Bd. Dacia 99 was Telekom Romania's head office; not confirmed
 DC Hub,Tennet Datacenter,https://dchub.cloud/facilities/in/ro,match,tennet,Unverified in DC Hub
-DC Hub,Voxility Voxility Ird,https://dchub.cloud/facilities/in/ro,match,voxility-ird,Unverified in DC Hub
+DC Hub,Voxility Voxility Ird,https://dchub.cloud/facilities/in/ro,match,voxility-ir1,Unverified in DC Hub
 DC Hub,Vps House Bucharest,https://dchub.cloud/facilities/in/ro,match,vps-house-bucharest,Unverified in DC Hub
 DC Hub,Wehaveservers Com Carcea,https://dchub.cloud/facilities/in/ro,match,wehaveservers-carcea,Unverified in DC Hub
 DC Hub,BizTelecom - Chiajna,https://dchub.cloud/facilities/in/ro,match,biztelecom-chiajna,Unverified in DC Hub

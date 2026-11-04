@@ -198,6 +198,33 @@
 "place_rank": 8,
 "type": "administrative"
 },
+"https://nominatim.openstreetmap.org/reverse?lat=44.41412&lon=26.12708&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 60818681,
+"place_rank": 8,
+"type": "administrative"
+},
 "https://nominatim.openstreetmap.org/reverse?lat=44.41512&lon=26.12269&format=jsonv2&zoom=10&addressdetails=1": {
 "address": {
 "ISO3166-2-lvl4": "RO-B",
@@ -280,6 +307,33 @@
 "type": "administrative"
 },
 "https://nominatim.openstreetmap.org/reverse?lat=44.42250&lon=26.03713&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 60818681,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.43180&lon=26.00328&format=jsonv2&zoom=10&addressdetails=1": {
 "address": {
 "ISO3166-2-lvl4": "RO-B",
 "city": "București",
@@ -2438,6 +2492,37 @@
 "type": "tertiary"
 }
 ],
+"https://nominatim.openstreetmap.org/search?q=Bra%C8%99ov%2C+Bra%C8%99ov%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-BV",
+"city": "Brașov",
+"country": "România",
+"country_code": "ro",
+"county": "Brașov",
+"municipality": "Zona Metropolitană Brașov"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.4996470",
+"45.7523280",
+"25.5035642",
+"25.6889236"
+],
+"category": "boundary",
+"display_name": "Brașov, Zona Metropolitană Brașov, Brașov, România",
+"importance": 0.6513230783481843,
+"lat": "45.6525105",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "25.6105654",
+"name": "Brașov",
+"osm_id": 10367676,
+"osm_type": "relation",
+"place_id": 60525527,
+"place_rank": 16,
+"type": "administrative"
+}
+],
 "https://nominatim.openstreetmap.org/search?q=Bra%C8%99ov%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
 {
 "address": {
@@ -2471,6 +2556,42 @@
 ],
 "https://nominatim.openstreetmap.org/search?q=Bucharest+Ring+Road%2C+Ilfov+%28Bucharest+ring+road%29%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [],
 "https://nominatim.openstreetmap.org/search?q=Bucharest+Ring+Road+38%2C+Ilfov+%28Bucharest+ring+road%29%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [],
+"https://nominatim.openstreetmap.org/search?q=Bucure%C8%99ti%2C+Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"amenity": "Universitatea din București",
+"city": "București",
+"city_district": "Sector 3",
+"country": "România",
+"country_code": "ro",
+"house_number": "4-12",
+"neighbourhood": "Colțea",
+"postcode": "030018",
+"road": "Bulevardul Regina Elisabeta",
+"suburb": "Centrul Istoric"
+},
+"addresstype": "amenity",
+"boundingbox": [
+"44.4351420",
+"44.4361002",
+"26.0995676",
+"26.1019708"
+],
+"category": "amenity",
+"display_name": "Universitatea din București, 4-12, Bulevardul Regina Elisabeta, Colțea, Centrul Istoric, Sector 3, București, 030018, România",
+"importance": 0.5877525290862384,
+"lat": "44.4356445",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1009263",
+"name": "Universitatea din București",
+"osm_id": 1001039869,
+"osm_type": "way",
+"place_id": 60900181,
+"place_rank": 30,
+"type": "university"
+}
+],
 "https://nominatim.openstreetmap.org/search?q=Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
 {
 "address": {
@@ -2602,6 +2723,7 @@
 "type": "tertiary"
 }
 ],
+"https://nominatim.openstreetmap.org/search?q=Bulevardul+Preciziei%2C+Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [],
 "https://nominatim.openstreetmap.org/search?q=Calea+Bucure%C8%99ti+36%2C+Bra%C8%99ov%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
 {
 "address": {
@@ -3132,6 +3254,101 @@
 "osm_id": 10694407,
 "osm_type": "relation",
 "place_id": 60795734,
+"place_rank": 16,
+"type": "administrative"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Preciziei%2C+Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro",
+"district": "Sector 6",
+"postcode": "062203",
+"quarter": "Cartierul Roșu",
+"railway": "Preciziei",
+"road": "Strada Preciziei",
+"suburb": "Militari"
+},
+"addresstype": "railway",
+"boundingbox": [
+"44.4255811",
+"44.4355811",
+"25.9859684",
+"25.9959684"
+],
+"category": "railway",
+"display_name": "Preciziei, Strada Preciziei, Cartierul Roșu, Militari, Sector 6, București, 062203, România",
+"importance": 0.32547572759041243,
+"lat": "44.4305811",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "25.9909684",
+"name": "Preciziei",
+"osm_id": 301687829,
+"osm_type": "node",
+"place_id": 60624513,
+"place_rank": 30,
+"type": "station"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Re%C8%99i%C8%9Ba%2C+Cara%C8%99-Severin%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-CS",
+"city": "Reșița",
+"country": "România",
+"country_code": "ro",
+"county": "Caraș-Severin"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.2098773",
+"45.3878673",
+"21.7996721",
+"22.1126782"
+],
+"category": "boundary",
+"display_name": "Reșița, Caraș-Severin, România",
+"importance": 0.557044651236839,
+"lat": "45.2890270",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "21.8878610",
+"name": "Reșița",
+"osm_id": 10643277,
+"osm_type": "relation",
+"place_id": 64944779,
+"place_rank": 16,
+"type": "administrative"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Sibiu%2C+Sibiu%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-SB",
+"city": "Sibiu",
+"country": "România",
+"country_code": "ro",
+"county": "Sibiu"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.6338743",
+"45.8570932",
+"23.9219067",
+"24.2445941"
+],
+"category": "boundary",
+"display_name": "Sibiu, România",
+"importance": 0.6306805752473275,
+"lat": "45.7973912",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "24.1519202",
+"name": "Sibiu",
+"osm_id": 9846497,
+"osm_type": "relation",
+"place_id": 60660687,
 "place_rank": 16,
 "type": "administrative"
 }
@@ -3914,6 +4131,40 @@
 ],
 "https://nominatim.openstreetmap.org/search?q=Strada+Ioan+Neni%C8%9Bescu%2C+Constan%C8%9Ba%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [],
 "https://nominatim.openstreetmap.org/search?q=Strada+Ioan+Neni%C8%9Bescu+22%2C+Constan%C8%9Ba%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [],
+"https://nominatim.openstreetmap.org/search?q=Strada+Preciziei%2C+Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro",
+"district": "Sector 6",
+"postcode": "061514",
+"quarter": "Cartierul Roșu",
+"road": "Strada Preciziei",
+"suburb": "Militari"
+},
+"addresstype": "tertiary",
+"boundingbox": [
+"44.4317260",
+"44.4318772",
+"26.0023823",
+"26.0041850"
+],
+"category": "highway",
+"display_name": "Strada Preciziei, Cartierul Roșu, Militari, Sector 6, București, 061514, România",
+"importance": 0.05341348668650336,
+"lat": "44.4318022",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.0032835",
+"name": "Strada Preciziei",
+"osm_id": 359583410,
+"osm_type": "way",
+"place_id": 61154317,
+"place_rank": 26,
+"type": "tertiary"
+}
+],
 "https://nominatim.openstreetmap.org/search?q=Strada+Ricinului%2C+Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
 {
 "address": {
@@ -4175,6 +4426,37 @@
 "place_id": 60572498,
 "place_rank": 16,
 "type": "administrative"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Vitan%2C+Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"city_district": "Sector 3",
+"country": "România",
+"country_code": "ro",
+"suburb": "Vitan"
+},
+"addresstype": "suburb",
+"boundingbox": [
+"44.3972925",
+"44.4239616",
+"26.1191789",
+"26.1490154"
+],
+"category": "place",
+"display_name": "Vitan, Sector 3, București, România",
+"importance": 0.3544115905399448,
+"lat": "44.4141205",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1270761",
+"name": "Vitan",
+"osm_id": 230446520,
+"osm_type": "way",
+"place_id": 60912918,
+"place_rank": 19,
+"type": "suburb"
 }
 ]
 }

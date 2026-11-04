@@ -1,16 +1,22 @@
 """Build data/datacenters.json: Romania's data centres, one record per site, with sources.
 
 Inputs (data/source/datacenters/):
-  sites.csv            the curated list, one row per site (edited by hand). kind: facility (a data centre building),
-                       presence (a company's space inside another building, or with no known building),
-                       project (under construction, permitted, announced or proposed).
+  sites.csv            the curated list, one row per site (edited by hand). kind:
+                         facility  a data centre building (its street address may still be unknown)
+                         tenant    a company's space inside another listed building (hosted_in names it) or at a
+                                   shared address
+                         listing   a company listed in a directory as having a data centre, building unknown
+                         project   under construction, permitted, announced or proposed; its MW and areas are planned
+                       Areas: whitespace_m2 (space for IT racks), building_m2 (built area), plot_m2 (land).
+                       atlas_type: how the Datacenter Atlas classifies the site (data centre / network point of presence).
   source_matches.csv   every row of every directory, and the site it was matched to: the audit trail that shows
                        nothing was dropped or counted twice.
   peeringdb/*.json     PeeringDB snapshot (facilities, networks, exchanges, carriers), refreshed by --refresh-peeringdb.
   geocode_cache.json   OpenStreetMap Nominatim results for sites without PeeringDB coordinates.
 
-Reliability grade, counting only independent confirmations (the Datacenter Atlas and DC Hub copy most of their
-records from PeeringDB, so they confirm nothing PeeringDB does not already say):
+Reliability grade, counting only independent confirmations. The Datacenter Atlas copies most records from PeeringDB
+(and the rest from OpenStreetMap), so it counts only for a site PeeringDB does not list. DC Hub copies PeeringDB and other
+directories (its unverified rows repeat datacenters.com names), so it never counts as a confirmation.
   A  the operator itself (PeeringDB entry or its own website) plus at least one independent source
   B  the operator alone, or two independent sources
   C  a single source
@@ -41,7 +47,7 @@ SOURCE_INFO = {
     "baxtel": ("Baxtel", "Directory", "independent"),
     "news": ("News", "Press reports", "independent"),
     "atlas": ("Datacenter Atlas", "Directory, mostly built from PeeringDB and OpenStreetMap", "derived"),
-    "dchub": ("DC Hub", "Directory, mostly built from PeeringDB", "derived"),
+    "dchub": ("DC Hub", "Directory, built from PeeringDB and other directories", "derived"),
 }
 SOURCE_URL = {"atlas": "https://www.datacenter-atlas.com/country/romania", "dchub": "https://dchub.cloud/facilities/in/ro",
               "inflect": "https://inflect.com/datacenters/romania", "baxtel": "https://baxtel.com/data-center/romania",
@@ -107,6 +113,7 @@ class Geocoder:
 
 
 ROADS = ("road", "street", "primary", "secondary", "tertiary", "trunk", "residential", "highway", "unclassified", "living_street")
+AREAS = ("suburb", "neighbourhood", "quarter", "city_district", "borough")
 ABBREV = {"Str. ": "Strada ", "Bd. ": "Bulevardul ", "Șos. ": "Șoseaua ", "Intr. ": "Intrarea "}
 
 
@@ -124,8 +131,7 @@ def num(v):
 def grade(keys):
     primary = any(SOURCE_INFO[k][2] == "primary" for k in keys)
     independent = sum(1 for k in keys if SOURCE_INFO[k][2] == "independent")
-    derived_only = not primary and any(SOURCE_INFO[k][2] == "derived" for k in keys)
-    independent += 1 if derived_only else 0  # the Atlas/DC Hub count once when there is no PeeringDB entry behind them
+    independent += 1 if ("atlas" in keys and "pdb" not in keys) else 0  # then the Atlas record comes from OpenStreetMap
     if primary and independent >= 1:
         return "A"
     if primary or independent >= 2:
@@ -166,7 +172,8 @@ def main():
         keys = s["sources"].split()
         rec = {k: s[k] for k in ("id", "kind", "name", "operator", "aka", "address", "city", "county", "tier", "opened", "website", "notes", "hosted_in")}
         rec["status"] = STATUS[s["status"]]
-        for k in ("it_mw", "total_mw", "grid_mw", "planned_mw", "area_m2", "racks"):
+        rec["atlas_type"] = s["atlas_type"]
+        for k in ("it_mw", "total_mw", "grid_mw", "planned_mw", "whitespace_m2", "building_m2", "plot_m2", "racks"):
             rec[k] = num(s[k])
         lat, lon, precision = num(s["lat"]), num(s["lon"]), "given" if s["lat"] else ""
         if s["pdb_id"]:
@@ -176,7 +183,8 @@ def main():
             rec["website"] = rec["website"] or f["website"]
             if f["latitude"] is not None and lat is None:
                 lat, lon, precision = f["latitude"], f["longitude"], "building (PeeringDB)"
-            rec["peeringdb"] = {"id": f["id"], "url": f"https://www.peeringdb.com/fac/{f['id']}", "updated": f["updated"][:10]}
+            # (PeeringDB's "updated" date is not shown: a bulk update stamped nearly every record on the same day.)
+            rec["peeringdb"] = {"id": f["id"], "url": f"https://www.peeringdb.com/fac/{f['id']}", "created": f["created"][:10]}
             rec["networks"] = fac_nets[f["id"]]
             rec["exchanges"] = fac_ix[f["id"]]
             rec["carriers"] = fac_carriers[f["id"]]
@@ -195,9 +203,12 @@ def main():
             if hit is None and rec["address"]:
                 street = expand(rec["address"]).split(" (")[0].rstrip("0123456789-– ").rstrip(",")
                 hit = geo.search(f"{street}, {rec['city']}, Romania")
-                if hit and hit.get("addresstype") not in ROADS:
+                if hit and hit.get("addresstype") in AREAS:
+                    precision = "district"
+                elif hit and hit.get("addresstype") in ROADS:
+                    precision = "street"
+                else:
                     hit = None  # a building somewhere on the street would look more precise than it is
-                precision = "street" if hit else ""
             if hit is None:
                 town = rec["city"].split(" (")[0]
                 hit = geo.search(f"{town}, {s['county'] + ', ' if s['county'] else ''}Romania")
