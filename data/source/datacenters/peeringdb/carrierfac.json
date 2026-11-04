@@ -1,0 +1,311 @@
+{
+ "data": [
+  {
+   "id": 320,
+   "name": "NXDATA-1 Bucharest (BUH1)",
+   "carrier_id": 34,
+   "fac_id": 439,
+   "created": "2023-01-31T19:36:48Z",
+   "updated": "2023-01-31T19:36:48Z",
+   "status": "ok"
+  },
+  {
+   "id": 621,
+   "name": "NXDATA-1 Bucharest (BUH1)",
+   "carrier_id": 69,
+   "fac_id": 439,
+   "created": "2023-02-18T10:59:15Z",
+   "updated": "2023-07-10T11:59:31Z",
+   "status": "ok"
+  },
+  {
+   "id": 754,
+   "name": "NXDATA-1 Bucharest (BUH1)",
+   "carrier_id": 128,
+   "fac_id": 439,
+   "created": "2023-04-13T21:14:50Z",
+   "updated": "2023-04-13T21:14:50Z",
+   "status": "ok"
+  },
+  {
+   "id": 874,
+   "name": "NXDATA-1 Bucharest (BUH1)",
+   "carrier_id": 35,
+   "fac_id": 439,
+   "created": "2023-06-08T08:16:39Z",
+   "updated": "2023-07-10T12:00:54Z",
+   "status": "ok"
+  },
+  {
+   "id": 1379,
+   "name": "NXDATA-1 Bucharest (BUH1)",
+   "carrier_id": 329,
+   "fac_id": 439,
+   "created": "2023-10-27T12:17:24Z",
+   "updated": "2023-10-27T12:17:24Z",
+   "status": "ok"
+  },
+  {
+   "id": 2718,
+   "name": "NXDATA-1 Bucharest (BUH1)",
+   "carrier_id": 227,
+   "fac_id": 439,
+   "created": "2024-04-25T18:41:45Z",
+   "updated": "2024-04-25T18:41:45Z",
+   "status": "ok"
+  },
+  {
+   "id": 3027,
+   "name": "NXDATA-1 Bucharest (BUH1)",
+   "carrier_id": 480,
+   "fac_id": 439,
+   "created": "2024-06-15T23:04:42Z",
+   "updated": "2024-06-15T23:04:42Z",
+   "status": "ok"
+  },
+  {
+   "id": 3484,
+   "name": "NXDATA-1 Bucharest (BUH1)",
+   "carrier_id": 635,
+   "fac_id": 439,
+   "created": "2024-12-11T00:51:19Z",
+   "updated": "2024-12-11T00:51:21Z",
+   "status": "ok"
+  },
+  {
+   "id": 4073,
+   "name": "NXDATA-1 Bucharest (BUH1)",
+   "carrier_id": 185,
+   "fac_id": 439,
+   "created": "2025-04-03T09:46:31Z",
+   "updated": "2025-04-03T09:46:32Z",
+   "status": "ok"
+  },
+  {
+   "id": 4148,
+   "name": "NXDATA-1 Bucharest (BUH1)",
+   "carrier_id": 332,
+   "fac_id": 439,
+   "created": "2025-05-01T20:27:28Z",
+   "updated": "2025-05-01T20:27:28Z",
+   "status": "ok"
+  },
+  {
+   "id": 4468,
+   "name": "NXDATA-1 Bucharest (BUH1)",
+   "carrier_id": 850,
+   "fac_id": 439,
+   "created": "2025-10-07T20:15:08Z",
+   "updated": "2025-10-07T20:15:09Z",
+   "status": "ok"
+  },
+  {
+   "id": 4861,
+   "name": "NXDATA-1 Bucharest (BUH1)",
+   "carrier_id": 419,
+   "fac_id": 439,
+   "created": "2026-03-13T08:12:36Z",
+   "updated": "2026-03-13T08:12:36Z",
+   "status": "ok"
+  },
+  {
+   "id": 4974,
+   "name": "NXDATA-1 Bucharest (BUH1)",
+   "carrier_id": 1009,
+   "fac_id": 439,
+   "created": "2026-06-01T00:53:55Z",
+   "updated": "2026-06-01T00:53:55Z",
+   "status": "ok"
+  },
+  {
+   "id": 757,
+   "name": "iNES Datacenter Bucharest",
+   "carrier_id": 128,
+   "fac_id": 772,
+   "created": "2023-04-14T03:56:39Z",
+   "updated": "2023-04-14T03:56:39Z",
+   "status": "ok"
+  },
+  {
+   "id": 117,
+   "name": "NXDATA-2 Bucharest (BUH2)",
+   "carrier_id": 10,
+   "fac_id": 978,
+   "created": "2023-01-27T13:26:31Z",
+   "updated": "2023-01-27T13:26:31Z",
+   "status": "ok"
+  },
+  {
+   "id": 321,
+   "name": "NXDATA-2 Bucharest (BUH2)",
+   "carrier_id": 34,
+   "fac_id": 978,
+   "created": "2023-01-31T19:37:01Z",
+   "updated": "2023-01-31T19:37:01Z",
+   "status": "ok"
+  },
+  {
+   "id": 755,
+   "name": "NXDATA-2 Bucharest (BUH2)",
+   "carrier_id": 128,
+   "fac_id": 978,
+   "created": "2023-04-13T21:14:59Z",
+   "updated": "2023-04-13T21:14:59Z",
+   "status": "ok"
+  },
+  {
+   "id": 875,
+   "name": "NXDATA-2 Bucharest (BUH2)",
+   "carrier_id": 35,
+   "fac_id": 978,
+   "created": "2023-06-08T08:16:49Z",
+   "updated": "2023-07-10T12:01:40Z",
+   "status": "ok"
+  },
+  {
+   "id": 2760,
+   "name": "NXDATA-2 Bucharest (BUH2)",
+   "carrier_id": 227,
+   "fac_id": 978,
+   "created": "2024-04-25T18:43:25Z",
+   "updated": "2024-04-25T18:43:25Z",
+   "status": "ok"
+  },
+  {
+   "id": 3028,
+   "name": "NXDATA-2 Bucharest (BUH2)",
+   "carrier_id": 480,
+   "fac_id": 978,
+   "created": "2024-06-15T23:04:49Z",
+   "updated": "2024-06-15T23:04:49Z",
+   "status": "ok"
+  },
+  {
+   "id": 3485,
+   "name": "NXDATA-2 Bucharest (BUH2)",
+   "carrier_id": 635,
+   "fac_id": 978,
+   "created": "2024-12-11T00:51:27Z",
+   "updated": "2024-12-11T00:51:27Z",
+   "status": "ok"
+  },
+  {
+   "id": 4149,
+   "name": "NXDATA-2 Bucharest (BUH2)",
+   "carrier_id": 332,
+   "fac_id": 978,
+   "created": "2025-05-01T20:27:34Z",
+   "updated": "2025-05-01T20:27:34Z",
+   "status": "ok"
+  },
+  {
+   "id": 4975,
+   "name": "NXDATA-2 Bucharest (BUH2)",
+   "carrier_id": 1009,
+   "fac_id": 978,
+   "created": "2026-06-01T00:54:03Z",
+   "updated": "2026-06-01T00:54:03Z",
+   "status": "ok"
+  },
+  {
+   "id": 756,
+   "name": "Voxility IR1 Bucharest",
+   "carrier_id": 128,
+   "fac_id": 1635,
+   "created": "2023-04-14T03:53:54Z",
+   "updated": "2023-04-14T03:53:54Z",
+   "status": "ok"
+  },
+  {
+   "id": 3020,
+   "name": "Voxility IR1 Bucharest",
+   "carrier_id": 480,
+   "fac_id": 1635,
+   "created": "2024-06-05T22:20:57Z",
+   "updated": "2024-06-05T22:20:57Z",
+   "status": "ok"
+  },
+  {
+   "id": 3486,
+   "name": "Voxility IR1 Bucharest",
+   "carrier_id": 635,
+   "fac_id": 1635,
+   "created": "2024-12-11T00:51:32Z",
+   "updated": "2024-12-11T00:51:32Z",
+   "status": "ok"
+  },
+  {
+   "id": 4977,
+   "name": "Voxility IR1 Bucharest",
+   "carrier_id": 1009,
+   "fac_id": 1635,
+   "created": "2026-06-01T00:54:20Z",
+   "updated": "2026-06-01T00:54:20Z",
+   "status": "ok"
+  },
+  {
+   "id": 5137,
+   "name": "M247 Europe Bucharest",
+   "carrier_id": 128,
+   "fac_id": 2188,
+   "created": "2026-09-27T19:05:33Z",
+   "updated": "2026-09-27T19:05:33Z",
+   "status": "ok"
+  },
+  {
+   "id": 752,
+   "name": "Gemenii Network TD Datacenter",
+   "carrier_id": 128,
+   "fac_id": 3133,
+   "created": "2023-04-13T21:12:21Z",
+   "updated": "2023-04-13T21:13:52Z",
+   "status": "ok"
+  },
+  {
+   "id": 753,
+   "name": "Gemenii Network GT Datacenter",
+   "carrier_id": 128,
+   "fac_id": 3134,
+   "created": "2023-04-13T21:12:29Z",
+   "updated": "2023-04-13T21:13:13Z",
+   "status": "ok"
+  },
+  {
+   "id": 5138,
+   "name": "Radiocom",
+   "carrier_id": 128,
+   "fac_id": 8488,
+   "created": "2026-09-27T19:05:51Z",
+   "updated": "2026-09-27T19:05:51Z",
+   "status": "ok"
+  },
+  {
+   "id": 114,
+   "name": "WhiteHat",
+   "carrier_id": 10,
+   "fac_id": 9223,
+   "created": "2023-01-27T13:26:09Z",
+   "updated": "2023-01-27T13:26:51Z",
+   "status": "ok"
+  },
+  {
+   "id": 115,
+   "name": "WhiteHat 2",
+   "carrier_id": 10,
+   "fac_id": 11038,
+   "created": "2023-01-27T13:26:15Z",
+   "updated": "2023-01-27T13:26:58Z",
+   "status": "ok"
+  },
+  {
+   "id": 116,
+   "name": "WhiteHat 3",
+   "carrier_id": 10,
+   "fac_id": 11764,
+   "created": "2023-01-27T13:26:19Z",
+   "updated": "2023-01-27T13:27:06Z",
+   "status": "ok"
+  }
+ ],
+ "meta": {}
+}

@@ -1,0 +1,212 @@
+source,source_name,source_url,match,site_id,note
+datacenters.com,NXDATA-1 Bucharest (BUH1) — NXDATA,https://www.datacenters.com/nxdata-nxdata-1-bucharest-buh1,match,nxdata-1,
+datacenters.com,NXDATA-2 Bucharest (BUH2) — NXDATA,https://www.datacenters.com/nxdata-nxdata-2-bucharest-buh2,match,nxdata-2,
+datacenters.com,Toplita Technology Park Data Center — Infinite Chain,https://www.datacenters.com/infinite-chain-toplita-technology-park,match,infinite-chain-toplita,
+datacenters.com,Voxility IRD Bucharest Data Center — Voxility,https://www.datacenters.com/voxility-voxility-ird-bucharest,match,voxility-ird,
+datacenters.com,Romania Data Center — Kyndryl,https://www.datacenters.com/kyndryl-romania,match,kyndryl-bucharest,
+datacenters.com,NXDATA-3 Bucharest (BUH3) — NXDATA,https://www.datacenters.com/nxdata-nxdata-3-bucharest-buh3,match,nxdata-3,
+datacenters.com,Bucharest 1 Data Center — Orange Business,https://www.datacenters.com/orange-business-bucharest-1,match,orange-bucharest-sibiel,
+datacenters.com,Galati Data Center — Orange Business,https://www.datacenters.com/orange-business-galati,match,orange-galati,
+datacenters.com,Iasi Data Center — Orange Business,https://www.datacenters.com/orange-business-iasi,match,orange-iasi,
+datacenters.com,Timisoara Data Center — Orange Business,https://www.datacenters.com/orange-business-timisoara,match,orange-timisoara-martirilor,
+datacenters.com,Brasov 1 Data Center — Orange Business,https://www.datacenters.com/orange-business-brasov-1,match,orange-brasov-sadoveanu,
+datacenters.com,Brasov 2 Data Center — Orange Business,https://www.datacenters.com/orange-business-brasov-2,match,orange-brasov-astra,
+datacenters.com,Bucharest 2 Data Center — Orange Business,https://www.datacenters.com/orange-business-bucharest-2,match,orange-bucharest-taberei,
+datacenters.com,Orange Romania - Dacia — Orange Business,https://www.datacenters.com/orange-business-orange-romania-dacia,match,orange-dacia,
+datacenters.com,Orange Romania - Cluj-Napoca — Orange Business,https://www.datacenters.com/orange-business-orange-romania-cluj-napoca,match,orange-cluj,
+datacenters.com,Romania Data Center — Summit,https://www.datacenters.com/summit-romania,match,summit,
+datacenters.com,Bucarest Data Center — WhiteHat,https://www.datacenters.com/whitehat-bucarest,match,whitehat-rosu,
+datacenters.com,Strada Stefan Data Center — WhiteHat,https://www.datacenters.com/whitehat-strada-stefan,match,whitehat-braila,
+datacenters.com,Rotunda Data Center — WhiteHat,https://www.datacenters.com/whitehat-rotunda,match,whitehat-3,
+datacenters.com,Bucharest  DC1 Data Center — M247 Global,https://www.datacenters.com/m247-global-bucharest-dc1,match,m247-bucharest,
+datacenters.com,Bucharest DC2 Data Center — M247 Global,https://www.datacenters.com/m247-global-bucharest-dc2,match,m247-bucharest,
+datacenters.com,Bucharest Data Center — Hostoweb,https://www.datacenters.com/hostoweb-bucharest,match,hostoweb-bucharest,
+datacenters.com,CLUJ-NAPOCA Data Center — GTS Telecom,https://www.datacenters.com/gts-telecom-cluj-napoca,match,gts-cluj,
+datacenters.com,Bucharest Data Center — GTS Telecom,https://www.datacenters.com/gts-telecom-bucharest,match,gts-bucharest,
+datacenters.com,BBU1 Bucharest Data Center — Zenlayer,https://www.datacenters.com/zenlayer-bbu1-bucharest,match,zenlayer-bbu1,
+datacenters.com,Tennet Datacenter. — Tennet Telecom,https://www.datacenters.com/tennet-telecom-tennet,match,tennet,
+datacenters.com,Bucharest Data Center — DataPacket,https://www.datacenters.com/datapacket-bucharest,match,datapacket,
+datacenters.com,Craivoca Data Center — ClusterPower,https://www.datacenters.com/clusterpower-craivoca,match,clusterpower-msc1,
+datacenters.com,Bucharest Data Center — Netrouting,https://www.datacenters.com/netrouting-bucharest,match,netrouting-bucharest,
+datacenters.com,Brasov Data Center — ROMARG SRL,https://www.datacenters.com/romarg-srl-brasov,match,romarg-brasov,
+datacenters.com,DC NAV TAM01 — NAV Communications S.R.L.,https://www.datacenters.com/nav-communications-s-r-l-dc-nav-tam01,match,nav-tam01,
+datacenters.com,DC NAV TAM02 — NAV Communications S.R.L.,https://www.datacenters.com/nav-communications-s-r-l-dc-nav-tam02,match,nav-tam02,
+datacenters.com,Bucharest Data Center — AlexHost SRL,https://www.datacenters.com/alexhost-srl-bucharest,match,alexhost-bucharest,
+datacenters.com,Bucharest Data Center — Prime Telecom SRL,https://www.datacenters.com/prime-telecom-srl-bucharest,match,prime-telecom,
+datacenters.com,DC CHML – Bucharest — CHML Web Services SRL,https://www.datacenters.com/chml-web-services-srl-dc-chml-bucharest,match,chml,
+datacenters.com,Bucharest Data Center — iNES GROUP SRL,https://www.datacenters.com/ines-group-srl-bucharest,match,ines-bucharest,
+datacenters.com,WEB.RO Data Center — WEB.RO,https://www.datacenters.com/web-ro-web-ro,match,web-ro-craiova,
+datacenters.com,efect.RO DC1 — EFECTRO SRL,https://www.datacenters.com/efectro-srl-efect-ro-dc1,match,efect-dc1,
+datacenters.com,efect.RO DC2 — EFECTRO SRL,https://www.datacenters.com/efectro-srl-efect-ro-dc2,match,efect-dc2,
+datacenters.com,DROBETA DATACENTER — DATA ZYX SRL,https://www.datacenters.com/data-zyx-srl-drobeta,match,drobeta,
+datacenters.com,EU-RO-1 — RunPod,https://www.datacenters.com/runpod-eu-ro-1,match,runpod-eu-ro-1,
+Inflect,LNK Systems Muntenia SRL PAVCOM,https://inflect.com/datacenters/romania,match,lnk-targoviste,
+Inflect,Orange Business Services Brașov,https://inflect.com/datacenters/romania,match,orange-brasov-sadoveanu,
+Inflect,BiLoud SRL Chiajna,https://inflect.com/datacenters/romania,match,biztelecom-chiajna,
+Inflect,WhiteHat Roșu,https://inflect.com/datacenters/romania,match,whitehat-rosu,
+Inflect,TENNET TELECOM București,https://inflect.com/datacenters/romania,match,tennet,
+Inflect,NXDATA Bucharest 3,https://inflect.com/datacenters/romania,match,nxdata-3,
+Inflect,iNES Group București,https://inflect.com/datacenters/romania,match,ines-bucharest,
+Inflect,LayerBridge SRL Pipera,https://inflect.com/datacenters/romania,match,layerbridge-pipera,
+Inflect,Orange Business Services București,https://inflect.com/datacenters/romania,match,orange-bucharest-taberei,
+Inflect,NXDATA București 2,https://inflect.com/datacenters/romania,match,nxdata-2,
+Inflect,Voxility București,https://inflect.com/datacenters/romania,match,voxility-ir1,
+Inflect,NXDATA București 1,https://inflect.com/datacenters/romania,match,nxdata-1,
+Inflect,M247 București,https://inflect.com/datacenters/romania,match,m247-bucharest,
+Inflect,NAV COMMUNICATIONS SRL București,https://inflect.com/datacenters/romania,match,nav-tam01,
+Inflect,Phoenix Telecom & Media Services SRL București 2,https://inflect.com/datacenters/romania,match,gemenii-gt,
+Inflect,GTS Telecom Bucharest,https://inflect.com/datacenters/romania,match,gts-bucharest,
+Inflect,NTT București,https://inflect.com/datacenters/romania,match,gts-bucharest,
+Inflect,Phoenix Telecom & Media Services SRL București 1,https://inflect.com/datacenters/romania,match,gemenii-td,
+Inflect,Teletrans București,https://inflect.com/datacenters/romania,match,teletrans,
+Inflect,PROFISOL București,https://inflect.com/datacenters/romania,match,profisol,
+Inflect,InterConnect București,https://inflect.com/datacenters/romania,match,interconnect,
+Inflect,INVITE Systems București,https://inflect.com/datacenters/romania,match,adnet,
+Inflect,Online Media Developmnet SRL București,https://inflect.com/datacenters/romania,match,ecohost,
+Inflect,Societatea Naţională de Radiocomunicaţii Bucharest,https://inflect.com/datacenters/romania,match,radiocom,
+Inflect,Data ZYX Data ZYX,https://inflect.com/datacenters/romania,match,drobeta,
+Inflect,Compania de Informatica Aplicata Cluj-Napoca,https://inflect.com/datacenters/romania,match,cia-cluj,
+Inflect,Starnet Media Cluj-Napoca,https://inflect.com/datacenters/romania,match,starnet-cluj,
+Inflect,GTS Telecom Cluj-Napoca,https://inflect.com/datacenters/romania,match,gts-cluj,
+Inflect,NTT Cluj-Napoca,https://inflect.com/datacenters/romania,match,gts-cluj,
+Inflect,efectRO SRL Cluj-Napoca,https://inflect.com/datacenters/romania,match,efect-dc1,
+Inflect,efectRO SRL DC2,https://inflect.com/datacenters/romania,match,efect-dc2,
+Inflect,WhiteHat DC2,https://inflect.com/datacenters/romania,match,whitehat-braila,
+Inflect,Orange Business Services Constanta,https://inflect.com/datacenters/romania,match,orange-constanta,
+Inflect,Universitatea Politehnica Timisoara Timisoara,https://inflect.com/datacenters/romania,match,upt,
+Inflect,Orange Business Services TSR01,https://inflect.com/datacenters/romania,match,netprotect-timisoara,
+Inflect,Orange Business Services Timisoara,https://inflect.com/datacenters/romania,match,orange-timisoara-alexandrescu,
+Inflect,CobraNET SRL Main,https://inflect.com/datacenters/romania,match,cobranet-main,
+Inflect,CobraNET SRL Arad,https://inflect.com/datacenters/romania,match,cobranet-arad,
+Datacenter Atlas,NXDATA-1 Bucharest (BUH1),https://www.datacenter-atlas.com/country/romania,match,nxdata-1,
+Datacenter Atlas,NXDATA-2 Bucharest (BUH2),https://www.datacenter-atlas.com/country/romania,match,nxdata-2,
+Datacenter Atlas,Voxility IR1 Bucharest,https://www.datacenter-atlas.com/country/romania,match,voxility-ir1,
+Datacenter Atlas,iNES Datacenter Bucharest,https://www.datacenter-atlas.com/country/romania,match,ines-bucharest,
+Datacenter Atlas,M247 Europe Bucharest,https://www.datacenter-atlas.com/country/romania,match,m247-bucharest,
+Datacenter Atlas,Gemenii Network TD Datacenter,https://www.datacenter-atlas.com/country/romania,match,gemenii-td,
+Datacenter Atlas,Gemenii Network GT Datacenter,https://www.datacenter-atlas.com/country/romania,match,gemenii-gt,
+Datacenter Atlas,Teletrans Datacenter,https://www.datacenter-atlas.com/country/romania,match,teletrans,
+Datacenter Atlas,CobraNET Arad,https://www.datacenter-atlas.com/country/romania,match,cobranet-arad,
+Datacenter Atlas,Timisoara 1,https://www.datacenter-atlas.com/country/romania,match,netprotect-timisoara,
+Datacenter Atlas,efectRO DC1,https://www.datacenter-atlas.com/country/romania,match,efect-dc1,
+Datacenter Atlas,M247 Europe Brasov,https://www.datacenter-atlas.com/country/romania,match,m247-brasov,
+Datacenter Atlas,Radiocom,https://www.datacenter-atlas.com/country/romania,match,radiocom,
+Datacenter Atlas,GTS Telecom DC Bucharest,https://www.datacenter-atlas.com/country/romania,match,gts-bucharest,
+Datacenter Atlas,Hosting Data Center Brasov,https://www.datacenter-atlas.com/country/romania,match,orange-brasov-sadoveanu,
+Datacenter Atlas,Compania de Informatica Aplicata,https://www.datacenter-atlas.com/country/romania,match,cia-cluj,
+Datacenter Atlas,Hosting Data Center Bucharest,https://www.datacenter-atlas.com/country/romania,match,orange-bucharest-taberei,
+Datacenter Atlas,Universitatea Politehnica Timisoara,https://www.datacenter-atlas.com/country/romania,match,upt,
+Datacenter Atlas,DataWave#1,https://www.datacenter-atlas.com/country/romania,match,datawave-cluj,
+Datacenter Atlas,BizTelecom - Chiajna,https://www.datacenter-atlas.com/country/romania,match,biztelecom-chiajna,
+Datacenter Atlas,efectRO DC2,https://www.datacenter-atlas.com/country/romania,match,efect-dc2,
+Datacenter Atlas,LayerBridge WhiteGate,https://www.datacenter-atlas.com/country/romania,match,layerbridge-whitegate,
+Datacenter Atlas,CobraNET Main Datacenter,https://www.datacenter-atlas.com/country/romania,match,cobranet-main,
+Datacenter Atlas,OPTICNET Ploiesti,https://www.datacenter-atlas.com/country/romania,match,opticnet-ploiesti,
+Datacenter Atlas,WhiteHat,https://www.datacenter-atlas.com/country/romania,match,whitehat-rosu,
+Datacenter Atlas,EVB-CLJ-DC1,https://www.datacenter-atlas.com/country/romania,match,evobits-juc,
+Datacenter Atlas,Starnet Media Cluj-Napoca,https://www.datacenter-atlas.com/country/romania,match,starnet-cluj,
+Datacenter Atlas,DROBETA DATACENTER,https://www.datacenter-atlas.com/country/romania,match,drobeta,
+Datacenter Atlas,LayerBridge Pipera,https://www.datacenter-atlas.com/country/romania,match,layerbridge-pipera,
+Datacenter Atlas,AdNet Datacenter,https://www.datacenter-atlas.com/country/romania,match,adnet,
+Datacenter Atlas,GTS Telecom DC Cluj-Napoca,https://www.datacenter-atlas.com/country/romania,match,gts-cluj,
+Datacenter Atlas,Tennet Datacenter,https://www.datacenter-atlas.com/country/romania,match,tennet,
+Datacenter Atlas,Comway Sibiu,https://www.datacenter-atlas.com/country/romania,match,comway-sibiu,
+Datacenter Atlas,Tier Datacenter,https://www.datacenter-atlas.com/country/romania,match,tier-craiova,
+Datacenter Atlas,WhiteHat 3,https://www.datacenter-atlas.com/country/romania,match,whitehat-3,
+Datacenter Atlas,Data Node,https://www.datacenter-atlas.com/country/romania,match,datanode-timisoara,
+Datacenter Atlas,NAV Communications - Data Center,https://www.datacenter-atlas.com/country/romania,match,nav-tam02,
+Datacenter Atlas,Media Sat Data Center,https://www.datacenter-atlas.com/country/romania,match,mediasat,
+Datacenter Atlas,WhiteHat 2,https://www.datacenter-atlas.com/country/romania,match,whitehat-braila,
+Datacenter Atlas,BUCH-Facility Bucharest,https://www.datacenter-atlas.com/country/romania,match,ipserv-buch,
+Datacenter Atlas,Ecohost,https://www.datacenter-atlas.com/country/romania,match,ecohost,
+Datacenter Atlas,Top Telecom,https://www.datacenter-atlas.com/country/romania,match,top-telecom-iasi,
+Datacenter Atlas,InterConnect Datacenter,https://www.datacenter-atlas.com/country/romania,match,interconnect,
+Datacenter Atlas,Hosting Data Center Cluj,https://www.datacenter-atlas.com/country/romania,match,orange-cluj,
+Datacenter Atlas,PROFISOL Bucharest,https://www.datacenter-atlas.com/country/romania,match,profisol,
+Datacenter Atlas,Digi (RCS & RDS) Craiova,https://www.datacenter-atlas.com/country/romania,match,digi-craiova,
+Datacenter Atlas,Orange HDC Astra,https://www.datacenter-atlas.com/country/romania,match,orange-brasov-astra,
+Datacenter Atlas,RCAST Hosting,https://www.datacenter-atlas.com/country/romania,match,rcast-galati,
+Datacenter Atlas,PANOURI SOLARE REDEA DATACENTER,https://www.datacenter-atlas.com/country/romania,match,redea,
+DC Hub,CobraNET Arad,https://dchub.cloud/facilities/in/ro,match,cobranet-arad,
+DC Hub,M247 Europe Brasov,https://dchub.cloud/facilities/in/ro,match,m247-brasov,
+DC Hub,AdNet Datacenter,https://dchub.cloud/facilities/in/ro,match,adnet,
+DC Hub,Hosting Data Center Bucharest,https://dchub.cloud/facilities/in/ro,match,orange-bucharest-taberei,
+DC Hub,NAV Communications - Data Center,https://dchub.cloud/facilities/in/ro,match,nav-tam02,
+DC Hub,Teletrans Datacenter,https://dchub.cloud/facilities/in/ro,match,teletrans,
+DC Hub,Voxility IR1 Bucharest,https://dchub.cloud/facilities/in/ro,match,voxility-ir1,
+DC Hub,iNES Datacenter Bucharest,https://dchub.cloud/facilities/in/ro,match,ines-bucharest,
+DC Hub,Hosting Data Center Cluj,https://dchub.cloud/facilities/in/ro,match,orange-cluj,
+DC Hub,PANOURI SOLARE REDEA DATACENTER,https://dchub.cloud/facilities/in/ro,match,redea,
+DC Hub,DROBETA DATACENTER,https://dchub.cloud/facilities/in/ro,match,drobeta,
+DC Hub,EVB-CLJ-DC1,https://dchub.cloud/facilities/in/ro,match,evobits-juc,
+DC Hub,Data Node,https://dchub.cloud/facilities/in/ro,match,datanode-timisoara,
+DC Hub,Timisoara 1,https://dchub.cloud/facilities/in/ro,match,netprotect-timisoara,
+DC Hub,LayerBridge Pipera,https://dchub.cloud/facilities/in/ro,match,layerbridge-pipera,
+DC Hub,CobraNET Main Datacenter,https://dchub.cloud/facilities/in/ro,match,cobranet-main,Unverified in DC Hub
+DC Hub,Hosting Data Center Brasov,https://dchub.cloud/facilities/in/ro,match,orange-brasov-sadoveanu,Unverified in DC Hub
+DC Hub,Orange HDC Astra,https://dchub.cloud/facilities/in/ro,match,orange-brasov-astra,Unverified in DC Hub
+DC Hub,WhiteHat 2,https://dchub.cloud/facilities/in/ro,match,whitehat-braila,Unverified in DC Hub
+DC Hub,BUCH-Facility Bucharest,https://dchub.cloud/facilities/in/ro,match,ipserv-buch,Unverified in DC Hub
+DC Hub,Binbox Bucharest,https://dchub.cloud/facilities/in/ro,match,binbox-bucharest,Unverified in DC Hub
+DC Hub,Binbox Global Services Bucharest 2,https://dchub.cloud/facilities/in/ro,match,binbox-bucharest-2,Unverified in DC Hub
+DC Hub,Ecohost,https://dchub.cloud/facilities/in/ro,match,ecohost,Unverified in DC Hub
+DC Hub,GTS Telecom DC Bucharest,https://dchub.cloud/facilities/in/ro,match,gts-bucharest,Unverified in DC Hub
+DC Hub,Gemenii Network GT Datacenter,https://dchub.cloud/facilities/in/ro,match,gemenii-gt,Unverified in DC Hub
+DC Hub,Gemenii Network Gemenii Network Gt,https://dchub.cloud/facilities/in/ro,match,gemenii-gt,Unverified in DC Hub
+DC Hub,Gemenii Network Gemenii Network Td,https://dchub.cloud/facilities/in/ro,match,gemenii-td,Unverified in DC Hub
+DC Hub,Gemenii Network TD Datacenter,https://dchub.cloud/facilities/in/ro,match,gemenii-td,Unverified in DC Hub
+DC Hub,Ines Group Bucharest,https://dchub.cloud/facilities/in/ro,match,ines-bucharest,Unverified in DC Hub
+DC Hub,InterConnect Datacenter,https://dchub.cloud/facilities/in/ro,match,interconnect,Unverified in DC Hub
+DC Hub,Kyndryl Bucharest,https://dchub.cloud/facilities/in/ro,match,kyndryl-bucharest,Unverified in DC Hub
+DC Hub,LayerBridge WhiteGate,https://dchub.cloud/facilities/in/ro,match,layerbridge-whitegate,Unverified in DC Hub
+DC Hub,M247 Europe Bucharest,https://dchub.cloud/facilities/in/ro,match,m247-bucharest,Unverified in DC Hub
+DC Hub,M247 M247 Bucharest Dc1,https://dchub.cloud/facilities/in/ro,match,m247-bucharest,Unverified in DC Hub
+DC Hub,Media Sat Data Center,https://dchub.cloud/facilities/in/ro,match,mediasat,Unverified in DC Hub
+DC Hub,NXDATA-1 Bucharest (BUH1),https://dchub.cloud/facilities/in/ro,match,nxdata-1,Unverified in DC Hub
+DC Hub,NXDATA-2 Bucharest (BUH2),https://dchub.cloud/facilities/in/ro,match,nxdata-2,Unverified in DC Hub
+DC Hub,Nxdata Nxdata 1,https://dchub.cloud/facilities/in/ro,match,nxdata-1,Unverified in DC Hub
+DC Hub,Nxdata Nxdata 2,https://dchub.cloud/facilities/in/ro,match,nxdata-2,Unverified in DC Hub
+DC Hub,Orange Business Services Bucharest,https://dchub.cloud/facilities/in/ro,ambiguous,,Orange has three Bucharest sites; the listing gives no address
+DC Hub,PROFISOL Bucharest,https://dchub.cloud/facilities/in/ro,match,profisol,Unverified in DC Hub
+DC Hub,Radiocom,https://dchub.cloud/facilities/in/ro,match,radiocom,Unverified in DC Hub
+DC Hub,Telekom Romania Hosting Data Center Bucharest Hdc,https://dchub.cloud/facilities/in/ro,possible,orange-dacia,Bd. Dacia 99 was Telekom Romania's head office; not confirmed
+DC Hub,Tennet Datacenter,https://dchub.cloud/facilities/in/ro,match,tennet,Unverified in DC Hub
+DC Hub,Voxility Voxility Ird,https://dchub.cloud/facilities/in/ro,match,voxility-ird,Unverified in DC Hub
+DC Hub,Vps House Bucharest,https://dchub.cloud/facilities/in/ro,match,vps-house-bucharest,Unverified in DC Hub
+DC Hub,Wehaveservers Com Carcea,https://dchub.cloud/facilities/in/ro,match,wehaveservers-carcea,Unverified in DC Hub
+DC Hub,BizTelecom - Chiajna,https://dchub.cloud/facilities/in/ro,match,biztelecom-chiajna,Unverified in DC Hub
+DC Hub,Compania de Informatica Aplicata,https://dchub.cloud/facilities/in/ro,match,cia-cluj,Unverified in DC Hub
+DC Hub,DataWave#1,https://dchub.cloud/facilities/in/ro,match,datawave-cluj,Unverified in DC Hub
+DC Hub,GTS Telecom DC Cluj-Napoca,https://dchub.cloud/facilities/in/ro,match,gts-cluj,Unverified in DC Hub
+DC Hub,Starnet Media Cluj-Napoca,https://dchub.cloud/facilities/in/ro,match,starnet-cluj,Unverified in DC Hub
+DC Hub,efectRO DC1,https://dchub.cloud/facilities/in/ro,match,efect-dc1,Unverified in DC Hub
+DC Hub,efectRO DC2,https://dchub.cloud/facilities/in/ro,match,efect-dc2,Unverified in DC Hub
+DC Hub,efectRO DC2,https://dchub.cloud/facilities/in/ro,duplicate,efect-dc2,Listed twice in DC Hub
+DC Hub,Digi (RCS & RDS) Craiova,https://dchub.cloud/facilities/in/ro,match,digi-craiova,Unverified in DC Hub
+DC Hub,Digi (RCS & RDS) Craiova,https://dchub.cloud/facilities/in/ro,duplicate,digi-craiova,Listed twice in DC Hub
+DC Hub,Tier Datacenter,https://dchub.cloud/facilities/in/ro,match,tier-craiova,Unverified in DC Hub
+DC Hub,RCAST Hosting,https://dchub.cloud/facilities/in/ro,match,rcast-galati,Unverified in DC Hub
+DC Hub,Top Telecom,https://dchub.cloud/facilities/in/ro,match,top-telecom-iasi,Unverified in DC Hub
+DC Hub,ORANGE STORE,https://dchub.cloud/facilities/in/ro,excluded,,"A shop in Pleven, Bulgaria"
+DC Hub,OPTICNET Ploiesti,https://dchub.cloud/facilities/in/ro,match,opticnet-ploiesti,Unverified in DC Hub
+DC Hub,Eusdc Romania Brasov,https://dchub.cloud/facilities/in/ro,match,m247-brasov,Unverified in DC Hub
+DC Hub,T Systems Bacau,https://dchub.cloud/facilities/in/ro,match,t-systems-bacau,Unverified in DC Hub
+DC Hub,T Systems Constanta,https://dchub.cloud/facilities/in/ro,match,t-systems-constanta,Unverified in DC Hub
+DC Hub,T Systems Oradea,https://dchub.cloud/facilities/in/ro,match,t-systems-oradea,Unverified in DC Hub
+DC Hub,WhiteHat,https://dchub.cloud/facilities/in/ro,match,whitehat-rosu,Unverified in DC Hub
+DC Hub,WhiteHat 3,https://dchub.cloud/facilities/in/ro,match,whitehat-3,Unverified in DC Hub
+DC Hub,Comway Sibiu,https://dchub.cloud/facilities/in/ro,match,comway-sibiu,Unverified in DC Hub
+DC Hub,Universitatea Politehnica Timisoara,https://dchub.cloud/facilities/in/ro,match,upt,Unverified in DC Hub
+DC Hub,Binbox Global Services Ploiesti,https://dchub.cloud/facilities/in/ro,match,binbox-ploiesti,Unverified in DC Hub
+DC Hub,Bss One Iasi,https://dchub.cloud/facilities/in/ro,match,bss-one-iasi,Unverified in DC Hub
+DC Hub,Data Center 11232265750,https://dchub.cloud/facilities/in/ro,excluded,,Unnamed record with no operator or place
+DC Hub,Data Zyx Drobeta,https://dchub.cloud/facilities/in/ro,match,drobeta,Unverified in DC Hub
+DC Hub,Efectro Efectro Datacenter,https://dchub.cloud/facilities/in/ro,ambiguous,,"efectRO has two Cluj-Napoca sites (DC1, DC2); the listing gives no address"
+DC Hub,Gts Telecom Cluj Napoca DC,https://dchub.cloud/facilities/in/ro,match,gts-cluj,Unverified in DC Hub
+DC Hub,Infinite Chain Toplita Technology Park Icp Dc1,https://dchub.cloud/facilities/in/ro,match,infinite-chain-toplita,Unverified in DC Hub
+DC Hub,OSM DC 11232265750,https://dchub.cloud/facilities/in/ro,excluded,,Unnamed record with no operator or place
+DC Hub,Orange Business Services Timisoara,https://dchub.cloud/facilities/in/ro,ambiguous,,Orange has several Timișoara sites; the listing gives no address
+DC Hub,T Systems Cluj Napoca,https://dchub.cloud/facilities/in/ro,match,t-systems-cluj-napoca,Unverified in DC Hub
+DC Hub,T Systems Galati,https://dchub.cloud/facilities/in/ro,match,t-systems-galati,Unverified in DC Hub
+DC Hub,T Systems Iasi,https://dchub.cloud/facilities/in/ro,match,t-systems-iasi,Unverified in DC Hub
+DC Hub,T Systems Timisoara,https://dchub.cloud/facilities/in/ro,match,t-systems-timisoara,Unverified in DC Hub

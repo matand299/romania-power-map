@@ -1,0 +1,980 @@
+[
+ {
+  "id": "7508",
+  "name": "NXDATA-1 Bucharest (BUH1)",
+  "url": "/nxdata-nxdata-1-bucharest-buh1",
+  "fullAddress": "Bulevardul Dimitrie Pompeiu 8, Bucharest, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": []
+   }
+  },
+  "provider": {
+   "name": "NXDATA",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1742417740/h7trnoxbqe8ksikdkdnu.png",
+   "agreementVisible": false,
+   "slug": "nxdata"
+  }
+ },
+ {
+  "id": "8357",
+  "name": "NXDATA-2 Bucharest (BUH2)",
+  "url": "/nxdata-nxdata-2-bucharest-buh2",
+  "fullAddress": "Bulevardul Dimitrie Pompeiu 6, Bucharest, România",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/locations/nx-data-nxdata-2/images/z6ecxrmp47x1ahwpxyrz?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "NXDATA",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1742417740/h7trnoxbqe8ksikdkdnu.png",
+   "agreementVisible": false,
+   "slug": "nxdata"
+  }
+ },
+ {
+  "id": "8916",
+  "name": "Toplita Technology Park Data Center",
+  "url": "/infinite-chain-toplita-technology-park",
+  "fullAddress": "Strada Aluniş 19, 535700 Zencani, România",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/locations/infinite-chain-topli-a-technology-park/images/jrxtwra1iqzs230ivgik?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "Infinite Chain",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/dxqn3h8k3epvvhvwur2m",
+   "agreementVisible": false,
+   "slug": "infinite-chain"
+  }
+ },
+ {
+  "id": "10876",
+  "name": "Voxility IRD Bucharest Data Center",
+  "url": "/voxility-voxility-ird-bucharest",
+  "fullAddress": "Bucharest, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/tn8zemxgkjmmzwhpedyu?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "Voxility",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1769028566/providers/logos/file_pgmrjc.png",
+   "agreementVisible": false,
+   "slug": "voxility"
+  }
+ },
+ {
+  "id": "15103",
+  "name": "Romania Data Center",
+  "url": "/kyndryl-romania",
+  "fullAddress": "Șoseaua Orhideelor, 060071 București, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/locations/kyndryl-romania/images/amrrlhdkpbgvntmhzjan?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "Kyndryl",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1741209343/unjxjh7ufbwes7fribzs.png",
+   "agreementVisible": false,
+   "slug": "kyndryl"
+  }
+ },
+ {
+  "id": "16546",
+  "name": "NXDATA-3 Bucharest (BUH3)",
+  "url": "/nxdata-nxdata-3-bucharest-buh3",
+  "fullAddress": "Bulevardul Dimitrie Pompeiu 8, Bucharest, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/locations/nxdata-nxdata-3-bucharest-buh3/images/p1i3a7qrxapmzzltvvja?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "NXDATA",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1742417740/h7trnoxbqe8ksikdkdnu.png",
+   "agreementVisible": false,
+   "slug": "nxdata"
+  }
+ },
+ {
+  "id": "16618",
+  "name": "Bucharest 1 Data Center",
+  "url": "/orange-business-bucharest-1",
+  "fullAddress": "Strada Sibiel 6, Bucharest, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/ezif1vs7hgk7s1rfnrwh?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "Orange Business",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/eur825pivjqinz9hipep",
+   "agreementVisible": false,
+   "slug": "orange-business"
+  }
+ },
+ {
+  "id": "16619",
+  "name": "Galati Data Center",
+  "url": "/orange-business-galati",
+  "fullAddress": "Strada Brăilei 41, Galați, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/locations/orange-business-galati/images/o4d6tgyea8gslha8ob1g?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "Orange Business",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/eur825pivjqinz9hipep",
+   "agreementVisible": false,
+   "slug": "orange-business"
+  }
+ },
+ {
+  "id": "16620",
+  "name": "Iasi Data Center",
+  "url": "/orange-business-iasi",
+  "fullAddress": "Strada Alexandru Lăpușneanu 21, floor 2 room 204 zone a, Iași, Iași, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/locations/orange-business-iasi/images/rathgntn1rmik0ir9aiu?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "Orange Business",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/eur825pivjqinz9hipep",
+   "agreementVisible": false,
+   "slug": "orange-business"
+  }
+ },
+ {
+  "id": "16621",
+  "name": "Timisoara Data Center",
+  "url": "/orange-business-timisoara",
+  "fullAddress": "Calea Martirilor, Timișoara, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/locations/orange-business-timisoara/images/qmfplquxufgwgtvnu3ab?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "Orange Business",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/eur825pivjqinz9hipep",
+   "agreementVisible": false,
+   "slug": "orange-business"
+  }
+ },
+ {
+  "id": "16622",
+  "name": "Brasov 1 Data Center",
+  "url": "/orange-business-brasov-1",
+  "fullAddress": "Strada Mihail Sadoveanu 9, Brașov, România",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/locations/orange-business-brasov-1/images/e5br4t0g0xf8ee6rp5nv?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "Orange Business",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/eur825pivjqinz9hipep",
+   "agreementVisible": false,
+   "slug": "orange-business"
+  }
+ },
+ {
+  "id": "16623",
+  "name": "Brasov 2 Data Center",
+  "url": "/orange-business-brasov-2",
+  "fullAddress": "Calea București 36, Brașov, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/qf0fmuclkvyohnlphsjk?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "Orange Business",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/eur825pivjqinz9hipep",
+   "agreementVisible": false,
+   "slug": "orange-business"
+  }
+ },
+ {
+  "id": "16624",
+  "name": "Bucharest 2 Data Center",
+  "url": "/orange-business-bucharest-2",
+  "fullAddress": "Drumul Taberei 41, Bucharest, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/locations/orange-business-bucharest-2/images/ryrd3cshw4mjsxvdjmft?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "Orange Business",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/eur825pivjqinz9hipep",
+   "agreementVisible": false,
+   "slug": "orange-business"
+  }
+ },
+ {
+  "id": "17090",
+  "name": "Orange Romania - Dacia",
+  "url": "/orange-business-orange-romania-dacia",
+  "fullAddress": "Bulevardul Dacia 99, Bucarest, Rumanía",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/locations/orange-business-orange-romania-dacia/images/lercmt0ykjosp7w7yk3i?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "Orange Business",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/eur825pivjqinz9hipep",
+   "agreementVisible": false,
+   "slug": "orange-business"
+  }
+ },
+ {
+  "id": "17091",
+  "name": "Orange Romania - Cluj-Napoca",
+  "url": "/orange-business-orange-romania-cluj-napoca",
+  "fullAddress": "Aleea Padin 15, 400535 Cluj-Napoca, România",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/locations/orange-business-orange-romania-cluj-napoca/images/uk3thuf65okxryrrzdmv?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "Orange Business",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/eur825pivjqinz9hipep",
+   "agreementVisible": false,
+   "slug": "orange-business"
+  }
+ },
+ {
+  "id": "17404",
+  "name": "Romania Data Center",
+  "url": "/summit-romania",
+  "fullAddress": "Feper S.A., Bulevardul Dimitrie Pompeiu 8, București, România",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/locations/summit-romania/images/w75zphrmbc9evavhnrqu?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "Summit",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1759420900/rrgfqpu65jaip3fzfqhs.png",
+   "agreementVisible": false,
+   "slug": "summit"
+  }
+ },
+ {
+  "id": "18426",
+  "name": "Bucarest Data Center",
+  "url": "/whitehat-bucarest",
+  "fullAddress": "Strada Rezervelor 72, Roșu, Rumanía",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/locations/whitehat-bucarest/images/n4ccwa5jr82utwsqcnf3?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "WhiteHat",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1763398015/ys3okzycdzvz40bgwg1v.jpg",
+   "agreementVisible": false,
+   "slug": "whitehat"
+  }
+ },
+ {
+  "id": "18427",
+  "name": "Strada Stefan Data Center",
+  "url": "/whitehat-strada-stefan",
+  "fullAddress": "Strada Ștefan Cel Mare 14, Cârna, Rumanía",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/locations/whitehat-strada-stefan/images/nprdtkhc0dcqq5psc9su?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "WhiteHat",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1763398015/ys3okzycdzvz40bgwg1v.jpg",
+   "agreementVisible": false,
+   "slug": "whitehat"
+  }
+ },
+ {
+  "id": "18428",
+  "name": "Rotunda Data Center",
+  "url": "/whitehat-rotunda",
+  "fullAddress": "Rotunda, Rumanía",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/locations/whitehat-rotunda/images/anf6ctoft7xfamn05ftw?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "WhiteHat",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1763398015/ys3okzycdzvz40bgwg1v.jpg",
+   "agreementVisible": false,
+   "slug": "whitehat"
+  }
+ },
+ {
+  "id": "18685",
+  "name": "Bucharest  DC1 Data Center",
+  "url": "/m247-global-bucharest-dc1",
+  "fullAddress": "Șoseaua Fabrica de Glucoză 11b, Sector 2, Bucharest, România",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/location-assets/file_svzoxg?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "M247 Global",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1765465893/providers/logos/file_zxxtdl.png",
+   "agreementVisible": false,
+   "slug": "m247-global"
+  }
+ },
+ {
+  "id": "18686",
+  "name": "Bucharest DC2 Data Center",
+  "url": "/m247-global-bucharest-dc2",
+  "fullAddress": "Șoseaua Fabrica de Glucoză 11b, Sector 2, Bucharest, România",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/location-assets/file_s6werz?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "M247 Global",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1765465893/providers/logos/file_zxxtdl.png",
+   "agreementVisible": false,
+   "slug": "m247-global"
+  }
+ },
+ {
+  "id": "18760",
+  "name": "Bucharest Data Center",
+  "url": "/hostoweb-bucharest",
+  "fullAddress": "Bucharest, Rumanía",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/location-assets/file_scibpz?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "Hostoweb",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1766074573/providers/logos/file_oph4ra.jpg",
+   "agreementVisible": false,
+   "slug": "hostoweb"
+  }
+ },
+ {
+  "id": "18782",
+  "name": "CLUJ-NAPOCA Data Center",
+  "url": "/gts-telecom-cluj-napoca",
+  "fullAddress": "Cluj-Napoca, Rumanía",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/location-assets/file_afv98v?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "GTS Telecom ",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1766155913/providers/logos/file_ndvqvx.png",
+   "agreementVisible": false,
+   "slug": "gts-telecom"
+  }
+ },
+ {
+  "id": "18783",
+  "name": "Bucharest Data Center",
+  "url": "/gts-telecom-bucharest",
+  "fullAddress": "Bucharest, Rumanía",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/location-assets/file_hsttqy?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "GTS Telecom ",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1766155913/providers/logos/file_ndvqvx.png",
+   "agreementVisible": false,
+   "slug": "gts-telecom"
+  }
+ },
+ {
+  "id": "18930",
+  "name": "BBU1 Bucharest Data Center",
+  "url": "/zenlayer-bbu1-bucharest",
+  "fullAddress": "Bulevardul Dimitrie Pompeiu, Bucharest, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/locations/zenlayer-bbu1-bucharest/images/wwxzuaordi0dev3skbib?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "Zenlayer",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/nnttpeosv1k1x5x9ukts",
+   "agreementVisible": false,
+   "slug": "zenlayer"
+  }
+ },
+ {
+  "id": "19577",
+  "name": "Tennet Datacenter.",
+  "url": "/tennet-telecom-tennet",
+  "fullAddress": "Strada Dej 71, Bucharest, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/location-assets/file_ivawkd?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "Tennet Telecom",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1769808054/providers/logos/file_gmkr0i.webp",
+   "agreementVisible": false,
+   "slug": "tennet-telecom"
+  }
+ },
+ {
+  "id": "22634",
+  "name": "Bucharest Data Center",
+  "url": "/datapacket-bucharest",
+  "fullAddress": "Bulevardul Dimitrie Pompeiu 6, Bucharest 20337, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/location-assets/file_zhfefp?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "DataPacket",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1782141546/providers/logos/file_ka2zhz.png",
+   "agreementVisible": false,
+   "slug": "datapacket"
+  }
+ },
+ {
+  "id": "22788",
+  "name": "Craivoca Data Center",
+  "url": "/clusterpower-craivoca",
+  "fullAddress": "Craiova, Dolj, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/location-assets/file_z28h90?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "ClusterPower",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1783017418/providers/logos/file_o8uwmq.png",
+   "agreementVisible": false,
+   "slug": "clusterpower"
+  }
+ },
+ {
+  "id": "22908",
+  "name": "Bucharest Data Center",
+  "url": "/netrouting-bucharest",
+  "fullAddress": "Bucharest, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/location-assets/file_ttesjx?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "Netrouting",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1783606629/providers/logos/file_ogsevf.png",
+   "agreementVisible": false,
+   "slug": "netrouting"
+  }
+ },
+ {
+  "id": "23389",
+  "name": "Brasov Data Center",
+  "url": "/romarg-srl-brasov",
+  "fullAddress": "Brașov, Brașov, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/location-assets/file_ffmebe?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "ROMARG SRL",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1786375354/providers/logos/file_ffww4o.png",
+   "agreementVisible": false,
+   "slug": "romarg-srl"
+  }
+ },
+ {
+  "id": "23514",
+  "name": "DC NAV TAM01",
+  "url": "/nav-communications-s-r-l-dc-nav-tam01",
+  "fullAddress": "Strada Ricinului, Bucharest 23646, Wallachia, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/location-assets/file_rsgk99?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "NAV Communications S.R.L.",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1786590696/providers/logos/file_xycmbj.png",
+   "agreementVisible": false,
+   "slug": "nav-communications-s-r-l"
+  }
+ },
+ {
+  "id": "23515",
+  "name": "DC NAV TAM02",
+  "url": "/nav-communications-s-r-l-dc-nav-tam02",
+  "fullAddress": "Strada Tămâioarei 116, Bucharest 23644, Wallachia, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/location-assets/file_c3vnbs?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "NAV Communications S.R.L.",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1786590696/providers/logos/file_xycmbj.png",
+   "agreementVisible": false,
+   "slug": "nav-communications-s-r-l"
+  }
+ },
+ {
+  "id": "23533",
+  "name": "Bucharest Data Center",
+  "url": "/alexhost-srl-bucharest",
+  "fullAddress": "Bucharest, Wallachia, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/location-assets/file_yqka4m?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "AlexHost SRL",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1786829264/providers/logos/file_xgd6ax.png",
+   "agreementVisible": false,
+   "slug": "alexhost-srl"
+  }
+ },
+ {
+  "id": "23626",
+  "name": "Bucharest Data Center",
+  "url": "/prime-telecom-srl-bucharest",
+  "fullAddress": "Bulevardul Dimitrie Pompeiu 8, Bucharest 020300, Wallachia, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/location-assets/file_ql02n9?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "Prime Telecom SRL",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1787262486/providers/logos/file_dpyju9.png",
+   "agreementVisible": false,
+   "slug": "prime-telecom-srl"
+  }
+ },
+ {
+  "id": "23675",
+  "name": "DC CHML – Bucharest",
+  "url": "/chml-web-services-srl-dc-chml-bucharest",
+  "fullAddress": "Calea Rahovei 266, Bucharest 50912, Wallachia, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/location-assets/file_hnjjyp?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "CHML Web Services SRL",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1787337946/providers/logos/file_efhojv.png",
+   "agreementVisible": false,
+   "slug": "chml-web-services-srl"
+  }
+ },
+ {
+  "id": "23676",
+  "name": "Bucharest Data Center",
+  "url": "/ines-group-srl-bucharest",
+  "fullAddress": "Bucharest, Wallachia, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/location-assets/file_x3crj3?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "iNES GROUP SRL",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1787338264/providers/logos/file_lturjm.png",
+   "agreementVisible": false,
+   "slug": "ines-group-srl"
+  }
+ },
+ {
+  "id": "23682",
+  "name": "WEB.RO Data Center",
+  "url": "/web-ro-web-ro",
+  "fullAddress": "Strada România Muncitoare, Craiova 200700, Dolj, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/location-assets/file_xtmog9?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "WEB.RO",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1787399160/providers/logos/file_gg2p8w.png",
+   "agreementVisible": false,
+   "slug": "web-ro"
+  }
+ },
+ {
+  "id": "23882",
+  "name": "efect.RO DC1",
+  "url": "/efectro-srl-efect-ro-dc1",
+  "fullAddress": "Strada Jan Hus 29, Cluj-Napoca 400268, Cluj, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/location-assets/file_majjdk?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "EFECTRO SRL",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1787575236/providers/logos/file_m5tx4f.png",
+   "agreementVisible": false,
+   "slug": "efectro-srl"
+  }
+ },
+ {
+  "id": "23883",
+  "name": "efect.RO DC2",
+  "url": "/efectro-srl-efect-ro-dc2",
+  "fullAddress": "Cluj-Napoca, Cluj, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/location-assets/file_gtveua?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "EFECTRO SRL",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1787575236/providers/logos/file_m5tx4f.png",
+   "agreementVisible": false,
+   "slug": "efectro-srl"
+  }
+ },
+ {
+  "id": "23903",
+  "name": "DROBETA DATACENTER",
+  "url": "/data-zyx-srl-drobeta",
+  "fullAddress": "Drobeta-Turnu Severin, Mehedinți, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/location-assets/file_tfhfew?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "DATA ZYX SRL",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1787596522/providers/logos/file_m0mqe3.jpg",
+   "agreementVisible": false,
+   "slug": "data-zyx-srl"
+  }
+ },
+ {
+  "id": "23952",
+  "name": "EU-RO-1",
+  "url": "/runpod-eu-ro-1",
+  "fullAddress": "Piața Romană, Bucharest 10371, Romania",
+  "sponsoredCity": false,
+  "location": {
+   "publishedImages": {
+    "edges": [
+     {
+      "node": {
+       "url": "https://res.cloudinary.com/hjlz68xhm/image/upload/f_auto,q_auto/v1/location-assets/file_ypgl0v?_a=BACMTiGT"
+      }
+     }
+    ]
+   }
+  },
+  "provider": {
+   "name": "RunPod",
+   "logo": "https://res.cloudinary.com/hjlz68xhm/image/upload/v1787864461/providers/logos/file_qn8prh.png",
+   "agreementVisible": false,
+   "slug": "runpod"
+  }
+ }
+]

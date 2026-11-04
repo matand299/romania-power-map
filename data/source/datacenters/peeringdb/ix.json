@@ -1,0 +1,96 @@
+{
+ "data": [
+  {
+   "id": 270,
+   "name": "InterLAN-IX",
+   "name_long": "InterLAN Internet Exchange Romania",
+   "city": "Bucharest",
+   "website": "https://www.interlan.ro"
+  },
+  {
+   "id": 301,
+   "name": "RoNIX",
+   "name_long": "Romanian Internet Exchange",
+   "city": "Bucharest",
+   "website": "https://www.ronix.ro/en/home-en/"
+  },
+  {
+   "id": 326,
+   "name": "B-IX",
+   "name_long": "Balkan Internet Exchange",
+   "city": "Sofia",
+   "website": ""
+  },
+  {
+   "id": 358,
+   "name": "GNM-IX",
+   "name_long": "GNM Internet Exchange",
+   "city": "Amsterdam",
+   "website": "https://gnm.net"
+  },
+  {
+   "id": 372,
+   "name": "Balcan-IX",
+   "name_long": "BALCAN-IX",
+   "city": "Bucharest",
+   "website": "http://www.orange.ro"
+  },
+  {
+   "id": 699,
+   "name": "NetIX",
+   "name_long": "NetIX Communications Ltd.",
+   "city": "Sofia",
+   "website": ""
+  },
+  {
+   "id": 1088,
+   "name": "Global-IX",
+   "name_long": "GlobalNet",
+   "city": "Amsterdam",
+   "website": "https://gnm.net"
+  },
+  {
+   "id": 2732,
+   "name": "RO-IX",
+   "name_long": "Internet eXchange RO-IX",
+   "city": "Bucharest",
+   "website": "http://www.ix.ro/"
+  },
+  {
+   "id": 2804,
+   "name": "RO-CIX",
+   "name_long": "",
+   "city": "Braila",
+   "website": "https://whitehat.ro"
+  },
+  {
+   "id": 3476,
+   "name": "Global Peer Exchange",
+   "name_long": "Global Peer Exchange",
+   "city": "Washington",
+   "website": "http://www.cogentco.com"
+  },
+  {
+   "id": 3477,
+   "name": "DSIX",
+   "name_long": "DreamServer InternetExchange",
+   "city": "Bucharest",
+   "website": "https://dreamserver.ro"
+  },
+  {
+   "id": 4781,
+   "name": "EURASIA-IX.NET",
+   "name_long": "",
+   "city": "Istanbul",
+   "website": "https://www.fink-telecom.com"
+  },
+  {
+   "id": 4965,
+   "name": "European Edge IX",
+   "name_long": "European Edge Internet Exchange (EE-IX)",
+   "city": "London",
+   "website": "https://www.airbytes.net"
+  }
+ ],
+ "meta": {}
+}

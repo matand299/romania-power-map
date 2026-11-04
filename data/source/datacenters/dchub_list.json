@@ -1,0 +1,417 @@
+[
+ {
+  "name": "CobraNET Arad",
+  "where": "Arad, Arad",
+  "verified": true
+ },
+ {
+  "name": "M247 Europe Brasov",
+  "where": "Brasov, Romania",
+  "verified": true
+ },
+ {
+  "name": "AdNet Datacenter",
+  "where": "Bucharest",
+  "verified": true
+ },
+ {
+  "name": "Hosting Data Center Bucharest",
+  "where": "Bucharest, District 6",
+  "verified": true
+ },
+ {
+  "name": "NAV Communications - Data Center",
+  "where": "Bucharest, District 2",
+  "verified": true
+ },
+ {
+  "name": "Teletrans Datacenter",
+  "where": "Bucharest",
+  "verified": true
+ },
+ {
+  "name": "Voxility IR1 Bucharest",
+  "where": "Bucharest",
+  "verified": true
+ },
+ {
+  "name": "iNES Datacenter Bucharest",
+  "where": "Bucharest",
+  "verified": true
+ },
+ {
+  "name": "Hosting Data Center Cluj",
+  "where": "Cluj Napoca",
+  "verified": true
+ },
+ {
+  "name": "PANOURI SOLARE REDEA DATACENTER",
+  "where": "Craiova, jud. Dolj",
+  "verified": true
+ },
+ {
+  "name": "DROBETA DATACENTER",
+  "where": "Drobeta Turnu Severin, Mehedinti",
+  "verified": true
+ },
+ {
+  "name": "EVB-CLJ-DC1",
+  "where": "Juc-Herghelie, Cluj",
+  "verified": true
+ },
+ {
+  "name": "Data Node",
+  "where": "Timisoara, Timis",
+  "verified": true
+ },
+ {
+  "name": "Timisoara 1",
+  "where": "Timisoara, Timis",
+  "verified": true
+ },
+ {
+  "name": "LayerBridge Pipera",
+  "where": "Voluntari, Ilfov",
+  "verified": true
+ },
+ {
+  "name": "CobraNET Main Datacenter",
+  "where": "Arad, Arad",
+  "verified": false
+ },
+ {
+  "name": "Hosting Data Center Brasov",
+  "where": "Brasov, Brasov",
+  "verified": false
+ },
+ {
+  "name": "Orange HDC Astra",
+  "where": "Brașov",
+  "verified": false
+ },
+ {
+  "name": "WhiteHat 2",
+  "where": "Brăila, Brăila",
+  "verified": false
+ },
+ {
+  "name": "BUCH-Facility Bucharest",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "Binbox Bucharest",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "Binbox Global Services Bucharest 2",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "Ecohost",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "GTS Telecom DC Bucharest",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "Gemenii Network GT Datacenter",
+  "where": "Bucharest, București",
+  "verified": false
+ },
+ {
+  "name": "Gemenii Network Gemenii Network Gt",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "Gemenii Network Gemenii Network Td",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "Gemenii Network TD Datacenter",
+  "where": "Bucharest, București",
+  "verified": false
+ },
+ {
+  "name": "Ines Group Bucharest",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "InterConnect Datacenter",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "Kyndryl Bucharest",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "LayerBridge WhiteGate",
+  "where": "Bucharest, Bucharest",
+  "verified": false
+ },
+ {
+  "name": "M247 Europe Bucharest",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "M247 M247 Bucharest Dc1",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "Media Sat Data Center",
+  "where": "Bucharest, Bucharest",
+  "verified": false
+ },
+ {
+  "name": "NXDATA-1 Bucharest (BUH1)",
+  "where": "Bucharest, Romania",
+  "verified": false
+ },
+ {
+  "name": "NXDATA-2 Bucharest (BUH2)",
+  "where": "Bucharest, Romania",
+  "verified": false
+ },
+ {
+  "name": "Nxdata Nxdata 1",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "Nxdata Nxdata 2",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "Orange Business Services Bucharest",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "PROFISOL Bucharest",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "Radiocom",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "Telekom Romania Hosting Data Center Bucharest Hdc",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "Tennet Datacenter",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "Voxility Voxility Ird",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "Vps House Bucharest",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "Wehaveservers Com Carcea",
+  "where": "Bucharest",
+  "verified": false
+ },
+ {
+  "name": "BizTelecom - Chiajna",
+  "where": "Chiajna, Ilfov County",
+  "verified": false
+ },
+ {
+  "name": "Compania de Informatica Aplicata",
+  "where": "Cluj Napoca, jud. Cluj",
+  "verified": false
+ },
+ {
+  "name": "DataWave#1",
+  "where": "Cluj Napoca, Cluj",
+  "verified": false
+ },
+ {
+  "name": "GTS Telecom DC Cluj-Napoca",
+  "where": "Cluj Napoca",
+  "verified": false
+ },
+ {
+  "name": "Starnet Media Cluj-Napoca",
+  "where": "Cluj Napoca, Cluj",
+  "verified": false
+ },
+ {
+  "name": "efectRO DC1",
+  "where": "Cluj Napoca, Cluj",
+  "verified": false
+ },
+ {
+  "name": "efectRO DC2",
+  "where": "Cluj Napoca, Cluj",
+  "verified": false
+ },
+ {
+  "name": "efectRO DC2",
+  "where": "Cluj Napoca, Cluj",
+  "verified": false
+ },
+ {
+  "name": "Digi (RCS & RDS) Craiova",
+  "where": "Craiova",
+  "verified": false
+ },
+ {
+  "name": "Digi (RCS & RDS) Craiova",
+  "where": "Craiova",
+  "verified": false
+ },
+ {
+  "name": "Tier Datacenter",
+  "where": "Craiova, jud. Dolj",
+  "verified": false
+ },
+ {
+  "name": "RCAST Hosting",
+  "where": "Galați",
+  "verified": false
+ },
+ {
+  "name": "Top Telecom",
+  "where": "Iași",
+  "verified": false
+ },
+ {
+  "name": "ORANGE STORE",
+  "where": "Pleven, Pleven",
+  "verified": false
+ },
+ {
+  "name": "OPTICNET Ploiesti",
+  "where": "Ploiesti, Prahova",
+  "verified": false
+ },
+ {
+  "name": "Eusdc Romania Brasov",
+  "where": "Romania Regional",
+  "verified": false
+ },
+ {
+  "name": "T Systems Bacau",
+  "where": "Romania Regional",
+  "verified": false
+ },
+ {
+  "name": "T Systems Constanta",
+  "where": "Romania Regional",
+  "verified": false
+ },
+ {
+  "name": "T Systems Oradea",
+  "where": "Romania Regional",
+  "verified": false
+ },
+ {
+  "name": "WhiteHat",
+  "where": "Rotunda, Bacau",
+  "verified": false
+ },
+ {
+  "name": "WhiteHat 3",
+  "where": "Rotunda, Bacău",
+  "verified": false
+ },
+ {
+  "name": "Comway Sibiu",
+  "where": "Sibiu, Sibiu",
+  "verified": false
+ },
+ {
+  "name": "Universitatea Politehnica Timisoara",
+  "where": "Timisoara, jud. Timis",
+  "verified": false
+ },
+ {
+  "name": "Binbox Global Services Ploiesti",
+  "where": "",
+  "verified": false
+ },
+ {
+  "name": "Bss One Iasi",
+  "where": "",
+  "verified": false
+ },
+ {
+  "name": "Data Center 11232265750",
+  "where": "",
+  "verified": false
+ },
+ {
+  "name": "Data Zyx Drobeta",
+  "where": "",
+  "verified": false
+ },
+ {
+  "name": "Efectro Efectro Datacenter",
+  "where": "",
+  "verified": false
+ },
+ {
+  "name": "Gts Telecom Cluj Napoca DC",
+  "where": "",
+  "verified": false
+ },
+ {
+  "name": "Infinite Chain Toplita Technology Park Icp Dc1",
+  "where": "",
+  "verified": false
+ },
+ {
+  "name": "OSM DC 11232265750",
+  "where": "",
+  "verified": false
+ },
+ {
+  "name": "Orange Business Services Timisoara",
+  "where": "",
+  "verified": false
+ },
+ {
+  "name": "T Systems Cluj Napoca",
+  "where": "",
+  "verified": false
+ },
+ {
+  "name": "T Systems Galati",
+  "where": "",
+  "verified": false
+ },
+ {
+  "name": "T Systems Iasi",
+  "where": "",
+  "verified": false
+ },
+ {
+  "name": "T Systems Timisoara",
+  "where": "",
+  "verified": false
+ }
+]

@@ -77,6 +77,22 @@ and remembered by the browser.
 - Model size grows with the square root of MW, kept between `min_pixels` and `max_pixels` on screen.
 - **Mouse:** drag to move; hold the wheel (middle button) and drag to turn and tilt. The classic map has a "3D" button that opens this page.
 
+## Data centres (database)
+
+`data/datacenters.json` lists Romania's data centres, one record per site: operating buildings, companies present inside
+another operator's building, and projects (under construction, permitted, announced, proposed). It is built by
+`scripts/build_datacenters.py` from the files in `data/source/datacenters/`:
+
+- `sites.csv` – the curated list, edited by hand (status, power, area, notes, sources);
+- `source_matches.csv` – every row of datacenters.com, Inflect, Datacenter Atlas and DC Hub, and the site it was matched to;
+- `peeringdb/` – a PeeringDB snapshot (operator-entered locations, networks, exchanges, carriers);
+  refresh with `python3 scripts/build_datacenters.py --refresh-peeringdb`;
+- `geocode_cache.json` – OpenStreetMap Nominatim results for sites without PeeringDB coordinates.
+
+Each record has a reliability grade (A: the operator plus an independent source; B: the operator alone or two
+independent sources; C: one source) and a location precision (building, address, street, town). Power figures are
+entered only when a source states them clearly; conflicting figures are described in the notes instead.
+
 ## Hosting
 
 Served as a static site with GitHub Pages (Settings → Pages → Deploy from branch → `main` / root).

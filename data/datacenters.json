@@ -1,0 +1,6516 @@
+{
+ "generated": "2026-11-04",
+ "about": "Romania's data centres, one record per site. See scripts/build_datacenters.py for the method and grades.",
+ "sources": {
+  "pdb": {
+   "name": "PeeringDB",
+   "kind": "Entered by the operator"
+  },
+  "operator": {
+   "name": "Operator",
+   "kind": "The operator's own website or announcement"
+  },
+  "gts": {
+   "name": "GTS Telecom",
+   "kind": "The operator's own website"
+  },
+  "dccom": {
+   "name": "datacenters.com",
+   "kind": "Directory"
+  },
+  "inflect": {
+   "name": "Inflect",
+   "kind": "Directory"
+  },
+  "baxtel": {
+   "name": "Baxtel",
+   "kind": "Directory"
+  },
+  "news": {
+   "name": "News",
+   "kind": "Press reports"
+  },
+  "atlas": {
+   "name": "Datacenter Atlas",
+   "kind": "Directory, mostly built from PeeringDB and OpenStreetMap"
+  },
+  "dchub": {
+   "name": "DC Hub",
+   "kind": "Directory, mostly built from PeeringDB"
+  }
+ },
+ "sites": [
+  {
+   "id": "ipserv-buch",
+   "kind": "facility",
+   "name": "BUCH-Facility Bucharest",
+   "operator": "IPSERV",
+   "aka": "",
+   "address": "23-25 Nerva Traian",
+   "city": "Bucharest",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "http://www.ipserv.ro",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 269,
+    "url": "https://www.peeringdb.com/fac/269",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 44.419772,
+   "lon": 26.115913,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/269"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: BUCH-Facility Bucharest",
+    "Datacenter Atlas: BUCH-Facility Bucharest"
+   ],
+   "grade": "B"
+  },
+  {
+   "id": "nxdata-1",
+   "kind": "facility",
+   "name": "NXDATA-1 Bucharest (BUH1)",
+   "operator": "NXDATA",
+   "aka": "",
+   "address": "8 Bulevardul Dimitrie Pompeiu, Feper Building",
+   "city": "Bucharest",
+   "county": "București",
+   "tier": "",
+   "opened": "2002",
+   "website": "https://www.nxdata.ro",
+   "notes": "First carrier-neutral colocation centre in Romania (Baxtel). Summit and Prime Telecom list sites at this address.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 439,
+    "url": "https://www.peeringdb.com/fac/439",
+    "updated": "2025-09-26"
+   },
+   "networks": [
+    {
+     "name": "3C1B Telekom",
+     "asn": 6823
+    },
+    {
+     "name": "A.G.E. NETWORKS",
+     "asn": 58022
+    },
+    {
+     "name": "ACE CDN",
+     "asn": 139341
+    },
+    {
+     "name": "Ad Net Market Media SA",
+     "asn": 5541
+    },
+    {
+     "name": "Airbytes",
+     "asn": 62172
+    },
+    {
+     "name": "Akamai Technologies",
+     "asn": 20940
+    },
+    {
+     "name": "AllNet Telecom",
+     "asn": 20722
+    },
+    {
+     "name": "ALTER NET",
+     "asn": 39531
+    },
+    {
+     "name": "Amazon.com",
+     "asn": 16509
+    },
+    {
+     "name": "Arelion (Twelve99)",
+     "asn": 1299
+    },
+    {
+     "name": "AS8882",
+     "asn": 8882
+    },
+    {
+     "name": "Asociația Interlan",
+     "asn": 41494
+    },
+    {
+     "name": "BALCAN-IX Route Servers",
+     "asn": 24745
+    },
+    {
+     "name": "Balkan Internet Exchange",
+     "asn": 59900
+    },
+    {
+     "name": "Bitway Telecom",
+     "asn": 42423
+    },
+    {
+     "name": "BizTelecom",
+     "asn": 49410
+    },
+    {
+     "name": "BT",
+     "asn": 5400
+    },
+    {
+     "name": "CacheFly",
+     "asn": 30081
+    },
+    {
+     "name": "Cato Networks",
+     "asn": 13150
+    },
+    {
+     "name": "CFH CABLE INC",
+     "asn": 394109
+    },
+    {
+     "name": "Cisco Umbrella",
+     "asn": 36692
+    },
+    {
+     "name": "Cloudflare",
+     "asn": 13335
+    },
+    {
+     "name": "CNETWORK",
+     "asn": 48453
+    },
+    {
+     "name": "Cogent Communications, Inc.",
+     "asn": 174
+    },
+    {
+     "name": "Comunicatii Starnet Media",
+     "asn": 39861
+    },
+    {
+     "name": "DIGI BORDER",
+     "asn": 6910
+    },
+    {
+     "name": "DIGI RO",
+     "asn": 8708
+    },
+    {
+     "name": "DIGITAL CONSTRUCTION NETWORK SRL",
+     "asn": 34916
+    },
+    {
+     "name": "DirectONE",
+     "asn": 49909
+    },
+    {
+     "name": "DOTRO Telecom",
+     "asn": 43376
+    },
+    {
+     "name": "EstNOC",
+     "asn": 206804
+    },
+    {
+     "name": "EvobitsIT",
+     "asn": 202779
+    },
+    {
+     "name": "EVOLINK EAD",
+     "asn": 8262
+    },
+    {
+     "name": "Evolva Telecom SRL",
+     "asn": 30890
+    },
+    {
+     "name": "Fiber 23 SRL",
+     "asn": 57142
+    },
+    {
+     "name": "FiberX Romania",
+     "asn": 215230
+    },
+    {
+     "name": "Fidelir Security Network",
+     "asn": 219488
+    },
+    {
+     "name": "Fink Telecom Services GmbH",
+     "asn": 6775
+    },
+    {
+     "name": "Gcore",
+     "asn": 199524
+    },
+    {
+     "name": "Gemenii Network",
+     "asn": 33823
+    },
+    {
+     "name": "GNM",
+     "asn": 31500
+    },
+    {
+     "name": "GNM-IX Route Servers",
+     "asn": 50952
+    },
+    {
+     "name": "GTS Telecom",
+     "asn": 5606
+    },
+    {
+     "name": "GTT Communications (AS3257)",
+     "asn": 3257
+    },
+    {
+     "name": "Huawei Cloud Global",
+     "asn": 136907
+    },
+    {
+     "name": "Hurricane Electric",
+     "asn": 6939
+    },
+    {
+     "name": "i3D.net",
+     "asn": 49544
+    },
+    {
+     "name": "iNES Group",
+     "asn": 12310
+    },
+    {
+     "name": "Infinity Telecom SRL",
+     "asn": 56654
+    },
+    {
+     "name": "Inter.link",
+     "asn": 5405
+    },
+    {
+     "name": "InterLAN-IX Route Servers",
+     "asn": 39107
+    },
+    {
+     "name": "LANSOFT",
+     "asn": 31554
+    },
+    {
+     "name": "M247 Global",
+     "asn": 9009
+    },
+    {
+     "name": "MAGIT'ST srl",
+     "asn": 49468
+    },
+    {
+     "name": "Massive Telecom",
+     "asn": 35267
+    },
+    {
+     "name": "MDNET",
+     "asn": 40138
+    },
+    {
+     "name": "MEDIA SAT SRL",
+     "asn": 8751
+    },
+    {
+     "name": "Meta",
+     "asn": 32934
+    },
+    {
+     "name": "Microsoft",
+     "asn": 8075
+    },
+    {
+     "name": "Millennium IT",
+     "asn": 35584
+    },
+    {
+     "name": "Moldtelecom",
+     "asn": 8926
+    },
+    {
+     "name": "Mondo-Byte",
+     "asn": 39277
+    },
+    {
+     "name": "NAV Communications",
+     "asn": 6718
+    },
+    {
+     "name": "NeoHost",
+     "asn": 211281
+    },
+    {
+     "name": "NetcoRR",
+     "asn": 8423
+    },
+    {
+     "name": "Neterra",
+     "asn": 34224
+    },
+    {
+     "name": "Netflix",
+     "asn": 2906
+    },
+    {
+     "name": "NetIX Communications",
+     "asn": 57463
+    },
+    {
+     "name": "Netrouting",
+     "asn": 6206
+    },
+    {
+     "name": "NetServ Consult SRL",
+     "asn": 43890
+    },
+    {
+     "name": "NetworxBG",
+     "asn": 34569
+    },
+    {
+     "name": "NEXONHOST",
+     "asn": 62390
+    },
+    {
+     "name": "NextGen Communications SRL",
+     "asn": 48161
+    },
+    {
+     "name": "NTT Global IP Network",
+     "asn": 2914
+    },
+    {
+     "name": "OPTICNET",
+     "asn": 34714
+    },
+    {
+     "name": "Orange",
+     "asn": 5511
+    },
+    {
+     "name": "Orange Romania S.A (AS8953)",
+     "asn": 8953
+    },
+    {
+     "name": "OVHcloud",
+     "asn": 16276
+    },
+    {
+     "name": "PAN NET",
+     "asn": 42405
+    },
+    {
+     "name": "PGL Esports",
+     "asn": 209252
+    },
+    {
+     "name": "Prime Telecom",
+     "asn": 39737
+    },
+    {
+     "name": "ProNET Solutii IT SRL",
+     "asn": 35505
+    },
+    {
+     "name": "RETN",
+     "asn": 9002
+    },
+    {
+     "name": "RNT",
+     "asn": 34723
+    },
+    {
+     "name": "RoNIX Route Servers",
+     "asn": 20530
+    },
+    {
+     "name": "S3 Company",
+     "asn": 4849
+    },
+    {
+     "name": "Sanos Consulting International SRL",
+     "asn": 39391
+    },
+    {
+     "name": "SC NETFIL",
+     "asn": 50886
+    },
+    {
+     "name": "Softnet Europe",
+     "asn": 9119
+    },
+    {
+     "name": "StarNet Moldova",
+     "asn": 31252
+    },
+    {
+     "name": "Subspace",
+     "asn": 32261
+    },
+    {
+     "name": "TATA Communications Ltd",
+     "asn": 6453
+    },
+    {
+     "name": "TCV Net Consulting",
+     "asn": 35161
+    },
+    {
+     "name": "TeenTelecom",
+     "asn": 34304
+    },
+    {
+     "name": "Telecom IT Solutions",
+     "asn": 47734
+    },
+    {
+     "name": "Telecom Italia Sparkle",
+     "asn": 6762
+    },
+    {
+     "name": "Telehouse",
+     "asn": 57344
+    },
+    {
+     "name": "TELEPLUS",
+     "asn": 41953
+    },
+    {
+     "name": "Teletrans SA",
+     "asn": 34279
+    },
+    {
+     "name": "TENNET TELECOM",
+     "asn": 39543
+    },
+    {
+     "name": "TFIBER",
+     "asn": 44682
+    },
+    {
+     "name": "Turk Telekom",
+     "asn": 9121
+    },
+    {
+     "name": "TV SAT 2002",
+     "asn": 41496
+    },
+    {
+     "name": "Türk Telekom International",
+     "asn": 6663
+    },
+    {
+     "name": "UTG",
+     "asn": 50581
+    },
+    {
+     "name": "VINCI BROADBAND",
+     "asn": 43904
+    },
+    {
+     "name": "VINCI COMMUNICATIONS",
+     "asn": 58126
+    },
+    {
+     "name": "VINCI COMMUNICATIONS - BROADBAND",
+     "asn": 59563
+    },
+    {
+     "name": "Vodafone Global Network",
+     "asn": 1273
+    },
+    {
+     "name": "Vodafone Romania",
+     "asn": 12302
+    },
+    {
+     "name": "VOXILITY",
+     "asn": 3223
+    },
+    {
+     "name": "Yahoo",
+     "asn": 10310
+    },
+    {
+     "name": "Zero Sapte Services Srl",
+     "asn": 39347
+    },
+    {
+     "name": "ZEROMS",
+     "asn": 215362
+    },
+    {
+     "name": "ZET.NET",
+     "asn": 6204
+    },
+    {
+     "name": "ZetServers",
+     "asn": 25198
+    },
+    {
+     "name": "ZMC MAR GRAPHIC DESIGN SRL-D",
+     "asn": 213323
+    }
+   ],
+   "exchanges": [
+    "B-IX",
+    "Balcan-IX",
+    "EURASIA-IX.NET",
+    "European Edge IX",
+    "GNM-IX",
+    "Global-IX",
+    "InterLAN-IX",
+    "NetIX",
+    "RO-IX",
+    "RoNIX"
+   ],
+   "carriers": [
+    "Arelion",
+    "Bitway Telecom",
+    "CFH CABLE INC",
+    "Fiber 23",
+    "FiberX Romania",
+    "Inter.link",
+    "NetIX",
+    "Netrouting",
+    "Orange Wholesale International - EVPL",
+    "RETN",
+    "Telehouse AD",
+    "ZET.NET Backbone",
+    "i3D.net"
+   ],
+   "lat": 44.481916,
+   "lon": 26.120789,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "dccom",
+    "inflect",
+    "baxtel",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/439"
+    },
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/nxdata-nxdata-1-bucharest-buh1"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Baxtel",
+     "kind": "Directory",
+     "url": "https://baxtel.com/data-center/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: NXDATA-1 Bucharest (BUH1)",
+    "DC Hub: Nxdata Nxdata 1",
+    "Datacenter Atlas: NXDATA-1 Bucharest (BUH1)",
+    "Inflect: NXDATA București 1",
+    "datacenters.com: NXDATA-1 Bucharest (BUH1) — NXDATA"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "ines-bucharest",
+   "kind": "facility",
+   "name": "iNES Datacenter Bucharest",
+   "operator": "iNES Group",
+   "aka": "",
+   "address": "Virgil Madgearu 2-6, Sector 1",
+   "city": "Bucharest",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "http://www.ines.ro",
+   "notes": "In iNES's own office building. 1.2 MW total power per one directory (not confirmed by the operator).",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 772,
+    "url": "https://www.peeringdb.com/fac/772",
+    "updated": "2025-09-26"
+   },
+   "networks": [
+    {
+     "name": "Ad Net Market Media SA",
+     "asn": 5541
+    },
+    {
+     "name": "AllNet Telecom",
+     "asn": 20722
+    },
+    {
+     "name": "Bitway Telecom",
+     "asn": 42423
+    },
+    {
+     "name": "Chroot",
+     "asn": 56430
+    },
+    {
+     "name": "ClouDNS",
+     "asn": 203391
+    },
+    {
+     "name": "DirectONE",
+     "asn": 49909
+    },
+    {
+     "name": "iNES Group",
+     "asn": 12310
+    },
+    {
+     "name": "InterLAN-IX Route Servers",
+     "asn": 39107
+    },
+    {
+     "name": "NetcoRR",
+     "asn": 8423
+    },
+    {
+     "name": "NextGen Communications SRL",
+     "asn": 48161
+    },
+    {
+     "name": "Orange Romania S.A. (AS9050)",
+     "asn": 9050
+    },
+    {
+     "name": "ProNET Solutii IT SRL",
+     "asn": 35505
+    },
+    {
+     "name": "RNT",
+     "asn": 34723
+    },
+    {
+     "name": "RoNIX Route Servers",
+     "asn": 20530
+    },
+    {
+     "name": "TFIBER",
+     "asn": 44682
+    },
+    {
+     "name": "Türk Telekom International",
+     "asn": 6663
+    },
+    {
+     "name": "VSHosting CDN",
+     "asn": 9053
+    }
+   ],
+   "exchanges": [
+    "InterLAN-IX",
+    "RoNIX"
+   ],
+   "carriers": [
+    "Bitway Telecom"
+   ],
+   "lat": 44.484589,
+   "lon": 26.089852,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "dccom",
+    "inflect",
+    "baxtel",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/772"
+    },
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/ines-group-srl-bucharest"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Baxtel",
+     "kind": "Directory",
+     "url": "https://baxtel.com/data-center/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Ines Group Bucharest",
+    "DC Hub: iNES Datacenter Bucharest",
+    "Datacenter Atlas: iNES Datacenter Bucharest",
+    "Inflect: iNES Group București",
+    "datacenters.com: Bucharest Data Center — iNES GROUP SRL"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "profisol",
+   "kind": "facility",
+   "name": "PROFISOL Bucharest",
+   "operator": "PROFISOL",
+   "aka": "",
+   "address": "5A, Maior Atanase Ionescu Street",
+   "city": "Bucharest",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "http://www.profisol.ro",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 793,
+    "url": "https://www.peeringdb.com/fac/793",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 44.441308,
+   "lon": 26.139318,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/793"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: PROFISOL Bucharest",
+    "Datacenter Atlas: PROFISOL Bucharest",
+    "Inflect: PROFISOL București"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "adnet",
+   "kind": "facility",
+   "name": "AdNet Datacenter",
+   "operator": "AdNet Telecom",
+   "aka": "INVITE Systems București (Inflect, same address)",
+   "address": "Bd. Basarabiei nr. 96B",
+   "city": "Bucharest",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "http://www.adnettelecom.ro",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 936,
+    "url": "https://www.peeringdb.com/fac/936",
+    "updated": "2025-09-26"
+   },
+   "networks": [
+    {
+     "name": "Ad Net Market Media SA",
+     "asn": 5541
+    }
+   ],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 44.432984,
+   "lon": 26.153028,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/936"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: AdNet Datacenter",
+    "Datacenter Atlas: AdNet Datacenter",
+    "Inflect: INVITE Systems București"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "ecohost",
+   "kind": "facility",
+   "name": "Ecohost",
+   "operator": "Online Media Development SRL",
+   "aka": "",
+   "address": "Sos. Morarilor 1, Sector 2",
+   "city": "Bucharest",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "http://www.ecohost.ro",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 972,
+    "url": "https://www.peeringdb.com/fac/972",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 44.441738,
+   "lon": 26.166248,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/972"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Ecohost",
+    "Datacenter Atlas: Ecohost",
+    "Inflect: Online Media Developmnet SRL București"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "nxdata-2",
+   "kind": "facility",
+   "name": "NXDATA-2 Bucharest (BUH2)",
+   "operator": "NXDATA",
+   "aka": "",
+   "address": "6-A Bulevardul Dimitrie Pompeiu, UpGround Complex, BOB Building",
+   "city": "Bucharest",
+   "county": "București",
+   "tier": "",
+   "opened": "2009",
+   "website": "https://www.nxdata.ro",
+   "notes": "Commissioned January 2009 (Baxtel). DataPacket lists a site at this address.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 978,
+    "url": "https://www.peeringdb.com/fac/978",
+    "updated": "2025-09-26"
+   },
+   "networks": [
+    {
+     "name": "Ad Net Market Media SA",
+     "asn": 5541
+    },
+    {
+     "name": "ADA NET-TV",
+     "asn": 62445
+    },
+    {
+     "name": "Airbytes",
+     "asn": 62172
+    },
+    {
+     "name": "AlexHost",
+     "asn": 200019
+    },
+    {
+     "name": "AllNet Telecom",
+     "asn": 20722
+    },
+    {
+     "name": "Anexia",
+     "asn": 42473
+    },
+    {
+     "name": "Arelion (Twelve99)",
+     "asn": 1299
+    },
+    {
+     "name": "Asociația Interlan",
+     "asn": 41494
+    },
+    {
+     "name": "BALCAN-IX Route Servers",
+     "asn": 24745
+    },
+    {
+     "name": "Balkan Internet Exchange",
+     "asn": 59900
+    },
+    {
+     "name": "Bestnet Service",
+     "asn": 28684
+    },
+    {
+     "name": "Bitway Telecom",
+     "asn": 42423
+    },
+    {
+     "name": "BizTelecom",
+     "asn": 49410
+    },
+    {
+     "name": "BT",
+     "asn": 5400
+    },
+    {
+     "name": "ByteDance",
+     "asn": 396986
+    },
+    {
+     "name": "CacheFly",
+     "asn": 30081
+    },
+    {
+     "name": "CDN77",
+     "asn": 60068
+    },
+    {
+     "name": "CFH CABLE INC",
+     "asn": 394109
+    },
+    {
+     "name": "CNETWORK",
+     "asn": 48453
+    },
+    {
+     "name": "CobraNET",
+     "asn": 41028
+    },
+    {
+     "name": "Cogent Communications, Inc.",
+     "asn": 174
+    },
+    {
+     "name": "DIGI BORDER",
+     "asn": 6910
+    },
+    {
+     "name": "DIGI RO",
+     "asn": 8708
+    },
+    {
+     "name": "DIGITAL CONSTRUCTION NETWORK SRL",
+     "asn": 34916
+    },
+    {
+     "name": "DirectONE",
+     "asn": 49909
+    },
+    {
+     "name": "DOTRO Telecom",
+     "asn": 43376
+    },
+    {
+     "name": "DreamServer.ro",
+     "asn": 57050
+    },
+    {
+     "name": "Evolva Telecom SRL",
+     "asn": 30890
+    },
+    {
+     "name": "Fidelir Security Network",
+     "asn": 219488
+    },
+    {
+     "name": "Gcore",
+     "asn": 199524
+    },
+    {
+     "name": "iNES Group",
+     "asn": 12310
+    },
+    {
+     "name": "Infinity Telecom SRL",
+     "asn": 56654
+    },
+    {
+     "name": "InterLAN-IX Route Servers",
+     "asn": 39107
+    },
+    {
+     "name": "IPHOST",
+     "asn": 60602
+    },
+    {
+     "name": "Iristel",
+     "asn": 33164
+    },
+    {
+     "name": "KIVIX Route Servers",
+     "asn": 29616
+    },
+    {
+     "name": "M247 Global",
+     "asn": 9009
+    },
+    {
+     "name": "MEDIA SAT SRL",
+     "asn": 8751
+    },
+    {
+     "name": "Medianova",
+     "asn": 21245
+    },
+    {
+     "name": "Millennium IT",
+     "asn": 35584
+    },
+    {
+     "name": "Moldtelecom",
+     "asn": 8926
+    },
+    {
+     "name": "NAV Communications",
+     "asn": 6718
+    },
+    {
+     "name": "NetActuate",
+     "asn": 36236
+    },
+    {
+     "name": "NetcoRR",
+     "asn": 8423
+    },
+    {
+     "name": "Netrouting",
+     "asn": 6206
+    },
+    {
+     "name": "NEXONHOST",
+     "asn": 62390
+    },
+    {
+     "name": "NEXT LEVEL BUSINESS",
+     "asn": 203929
+    },
+    {
+     "name": "NextGen Communications SRL",
+     "asn": 48161
+    },
+    {
+     "name": "NextGenNetwork SRL",
+     "asn": 60514
+    },
+    {
+     "name": "Orange",
+     "asn": 5511
+    },
+    {
+     "name": "Orange Romania S.A (AS8953)",
+     "asn": 8953
+    },
+    {
+     "name": "Prime Telecom",
+     "asn": 39737
+    },
+    {
+     "name": "ProNET Solutii IT SRL",
+     "asn": 35505
+    },
+    {
+     "name": "RENAM",
+     "asn": 9199
+    },
+    {
+     "name": "RNT",
+     "asn": 34723
+    },
+    {
+     "name": "RoNIX Route Servers",
+     "asn": 20530
+    },
+    {
+     "name": "S3 Company",
+     "asn": 4849
+    },
+    {
+     "name": "Sanos Consulting International SRL",
+     "asn": 39391
+    },
+    {
+     "name": "SC NETFIL",
+     "asn": 50886
+    },
+    {
+     "name": "Shock Hosting",
+     "asn": 395092
+    },
+    {
+     "name": "SIMULTANEOUS NETWORK PROTOCOL",
+     "asn": 56746
+    },
+    {
+     "name": "StarNet Moldova",
+     "asn": 31252
+    },
+    {
+     "name": "TeenTelecom",
+     "asn": 34304
+    },
+    {
+     "name": "Telecom IT Solutions",
+     "asn": 47734
+    },
+    {
+     "name": "Telecom Italia Sparkle",
+     "asn": 6762
+    },
+    {
+     "name": "Telehouse",
+     "asn": 57344
+    },
+    {
+     "name": "TELEPLUS",
+     "asn": 41953
+    },
+    {
+     "name": "TENNET TELECOM",
+     "asn": 39543
+    },
+    {
+     "name": "TFIBER",
+     "asn": 44682
+    },
+    {
+     "name": "Trabia",
+     "asn": 43289
+    },
+    {
+     "name": "TV SAT 2002",
+     "asn": 41496
+    },
+    {
+     "name": "Türk Telekom International",
+     "asn": 6663
+    },
+    {
+     "name": "UGNI",
+     "asn": 21215
+    },
+    {
+     "name": "UTG",
+     "asn": 50581
+    },
+    {
+     "name": "VINCI BROADBAND",
+     "asn": 43904
+    },
+    {
+     "name": "VINCI COMMUNICATIONS",
+     "asn": 58126
+    },
+    {
+     "name": "VINCI COMMUNICATIONS - BROADBAND",
+     "asn": 59563
+    },
+    {
+     "name": "VOXBEE-SERVICES",
+     "asn": 201190
+    },
+    {
+     "name": "VOXILITY",
+     "asn": 3223
+    },
+    {
+     "name": "ZEROMS",
+     "asn": 215362
+    },
+    {
+     "name": "ZET.NET",
+     "asn": 6204
+    },
+    {
+     "name": "ZetServers",
+     "asn": 25198
+    },
+    {
+     "name": "ZMC MAR GRAPHIC DESIGN SRL-D",
+     "asn": 213323
+    }
+   ],
+   "exchanges": [
+    "B-IX",
+    "Balcan-IX",
+    "DSIX",
+    "European Edge IX",
+    "Global Peer Exchange",
+    "InterLAN-IX",
+    "RO-CIX",
+    "RO-IX",
+    "RoNIX"
+   ],
+   "carriers": [
+    "Arelion",
+    "Bitway Telecom",
+    "CFH CABLE INC",
+    "Inter.link",
+    "Netrouting",
+    "Orange Wholesale International - EVPL",
+    "Telehouse AD",
+    "WhiteHat",
+    "ZET.NET Backbone"
+   ],
+   "lat": 44.479796,
+   "lon": 26.11423,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "dccom",
+    "inflect",
+    "baxtel",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/978"
+    },
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/nxdata-nxdata-2-bucharest-buh2"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Baxtel",
+     "kind": "Directory",
+     "url": "https://baxtel.com/data-center/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: NXDATA-2 Bucharest (BUH2)",
+    "DC Hub: Nxdata Nxdata 2",
+    "Datacenter Atlas: NXDATA-2 Bucharest (BUH2)",
+    "Inflect: NXDATA București 2",
+    "datacenters.com: NXDATA-2 Bucharest (BUH2) — NXDATA"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "voxility-ir1",
+   "kind": "facility",
+   "name": "Voxility IR1 Bucharest",
+   "operator": "Voxility",
+   "aka": "",
+   "address": "Dimitrie Pompei 9-9A, Building 24",
+   "city": "Bucharest",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "https://www.voxility.com",
+   "notes": "3.0 MW reported by one directory (not confirmed by the operator).",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 1635,
+    "url": "https://www.peeringdb.com/fac/1635",
+    "updated": "2025-10-24"
+   },
+   "networks": [
+    {
+     "name": "3C1B Telekom",
+     "asn": 6823
+    },
+    {
+     "name": "Asociația Interlan",
+     "asn": 41494
+    },
+    {
+     "name": "Astimp It Solution",
+     "asn": 3164
+    },
+    {
+     "name": "Birbir",
+     "asn": 199608
+    },
+    {
+     "name": "Bitway Telecom",
+     "asn": 42423
+    },
+    {
+     "name": "CFH CABLE INC",
+     "asn": 394109
+    },
+    {
+     "name": "CNETWORK",
+     "asn": 48453
+    },
+    {
+     "name": "Gemenii Network",
+     "asn": 33823
+    },
+    {
+     "name": "HOSTERION",
+     "asn": 43927
+    },
+    {
+     "name": "InterLAN-IX Route Servers",
+     "asn": 39107
+    },
+    {
+     "name": "IXIR",
+     "asn": 206991
+    },
+    {
+     "name": "JWE S.a r.l.",
+     "asn": 34655
+    },
+    {
+     "name": "LINKEAR",
+     "asn": 263801
+    },
+    {
+     "name": "NetActuate",
+     "asn": 36236
+    },
+    {
+     "name": "Netrouting",
+     "asn": 6206
+    },
+    {
+     "name": "NEXONHOST",
+     "asn": 62390
+    },
+    {
+     "name": "ProNET Solutii IT SRL",
+     "asn": 35505
+    },
+    {
+     "name": "SAGLAYICI Teknoloji Bilisim Yayincilik Hiz. Ticaret",
+     "asn": 199484
+    },
+    {
+     "name": "UNIMATRIX-AS",
+     "asn": 50144
+    },
+    {
+     "name": "VOXILITY",
+     "asn": 3223
+    },
+    {
+     "name": "ZEROMS",
+     "asn": 215362
+    },
+    {
+     "name": "ZET.NET",
+     "asn": 6204
+    },
+    {
+     "name": "ZetServers",
+     "asn": 25198
+    }
+   ],
+   "exchanges": [
+    "InterLAN-IX"
+   ],
+   "carriers": [
+    "Bitway Telecom",
+    "CFH CABLE INC",
+    "Netrouting",
+    "ZET.NET Backbone"
+   ],
+   "lat": 44.484488,
+   "lon": 26.117868,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/1635"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Voxility IR1 Bucharest",
+    "Datacenter Atlas: Voxility IR1 Bucharest",
+    "Inflect: Voxility București"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "interconnect",
+   "kind": "facility",
+   "name": "InterConnect Datacenter",
+   "operator": "InterConnect Services",
+   "aka": "",
+   "address": "114A Foisorului street, 1st floor",
+   "city": "Bucharest",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "http://www.interconnect.ro",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 1693,
+    "url": "https://www.peeringdb.com/fac/1693",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 44.415116,
+   "lon": 26.122688,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/1693"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: InterConnect Datacenter",
+    "Datacenter Atlas: InterConnect Datacenter",
+    "Inflect: InterConnect București"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "tennet",
+   "kind": "facility",
+   "name": "Tennet Datacenter",
+   "operator": "Tennet Telecom",
+   "aka": "",
+   "address": "Str. Dej nr. 71, Sector 1",
+   "city": "Bucharest",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "http://www.tennet.ro",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 1796,
+    "url": "https://www.peeringdb.com/fac/1796",
+    "updated": "2025-09-26"
+   },
+   "networks": [
+    {
+     "name": "TENNET TELECOM",
+     "asn": 39543
+    }
+   ],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 44.468324,
+   "lon": 26.044811,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "dccom",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/1796"
+    },
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/tennet-telecom-tennet"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Tennet Datacenter",
+    "Datacenter Atlas: Tennet Datacenter",
+    "Inflect: TENNET TELECOM București",
+    "datacenters.com: Tennet Datacenter. — Tennet Telecom"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "m247-bucharest",
+   "kind": "facility",
+   "name": "M247 Bucharest",
+   "operator": "M247",
+   "aka": "Bucharest DC1, Bucharest DC2 (datacenters.com); DC3 and DC4 (M247)",
+   "address": "Sos. Fabrica de Glucoza, Nr 11B, etaj 1, Sector 2",
+   "city": "Bucharest",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "http://www.m247.ro",
+   "notes": "Two data halls at one address, about 250 racks in total (M247). Expansion from 2 MW to 7 MW announced (Telecompaper).",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": 250.0,
+   "peeringdb": {
+    "id": 2188,
+    "url": "https://www.peeringdb.com/fac/2188",
+    "updated": "2025-09-26"
+   },
+   "networks": [
+    {
+     "name": "Bitway Telecom",
+     "asn": 42423
+    },
+    {
+     "name": "Cogent Communications, Inc.",
+     "asn": 174
+    },
+    {
+     "name": "Gemenii Network",
+     "asn": 33823
+    },
+    {
+     "name": "iNES Group",
+     "asn": 12310
+    },
+    {
+     "name": "InterLAN-IX Route Servers",
+     "asn": 39107
+    },
+    {
+     "name": "M247 Global",
+     "asn": 9009
+    },
+    {
+     "name": "StarNet Moldova",
+     "asn": 31252
+    },
+    {
+     "name": "Telehouse",
+     "asn": 57344
+    }
+   ],
+   "exchanges": [
+    "Balcan-IX",
+    "InterLAN-IX",
+    "RoNIX"
+   ],
+   "carriers": [
+    "Bitway Telecom"
+   ],
+   "lat": 44.478323,
+   "lon": 26.118016,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "dccom",
+    "inflect",
+    "atlas",
+    "dchub",
+    "operator",
+    "news"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/2188"
+    },
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/m247-global-bucharest-dc1"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    },
+    {
+     "name": "Operator",
+     "kind": "The operator's own website or announcement",
+     "url": ""
+    },
+    {
+     "name": "News",
+     "kind": "Press reports",
+     "url": ""
+    }
+   ],
+   "links": [
+    "https://www.m247global.com/blog/m247-global-at-the-world-telecommunication-and-information-society-day-2026",
+    "https://www.telecompaper.com/news/m247-to-triple-data-centre-capacity-in-bucharest--1572759"
+   ],
+   "listed_as": [
+    "DC Hub: M247 Europe Bucharest",
+    "DC Hub: M247 M247 Bucharest Dc1",
+    "Datacenter Atlas: M247 Europe Bucharest",
+    "Inflect: M247 București",
+    "datacenters.com: Bucharest  DC1 Data Center — M247 Global",
+    "datacenters.com: Bucharest DC2 Data Center — M247 Global"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "teletrans",
+   "kind": "facility",
+   "name": "Teletrans Datacenter",
+   "operator": "Teletrans",
+   "aka": "",
+   "address": "Hristo-Botev 16-18, Sector 3",
+   "city": "Bucharest",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "http://www.teletrans.ro",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 2199,
+    "url": "https://www.peeringdb.com/fac/2199",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [
+    "InterLAN-IX",
+    "RoNIX"
+   ],
+   "carriers": [],
+   "lat": 44.434331,
+   "lon": 26.10737,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/2199"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Teletrans Datacenter",
+    "Datacenter Atlas: Teletrans Datacenter",
+    "Inflect: Teletrans București"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "gemenii-td",
+   "kind": "facility",
+   "name": "Gemenii Network TD Datacenter",
+   "operator": "Phoenix Telecom & Media Services",
+   "aka": "",
+   "address": "Strada Teiul Doamnei 1, sectorul 2",
+   "city": "Bucharest",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "https://www.gemenii.ro/business/",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 3133,
+    "url": "https://www.peeringdb.com/fac/3133",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [
+    "Bitway Telecom"
+   ],
+   "lat": 44.457067,
+   "lon": 26.129063,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/3133"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Gemenii Network Gemenii Network Td",
+    "DC Hub: Gemenii Network TD Datacenter",
+    "Datacenter Atlas: Gemenii Network TD Datacenter",
+    "Inflect: Phoenix Telecom & Media Services SRL București 1"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "gemenii-gt",
+   "kind": "facility",
+   "name": "Gemenii Network GT Datacenter",
+   "operator": "Phoenix Telecom & Media Services",
+   "aka": "",
+   "address": "Bulevardul Ghica Tei 137, sectorul 2",
+   "city": "Bucharest",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "https://www.gemenii.ro/business/",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 3134,
+    "url": "https://www.peeringdb.com/fac/3134",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [
+    "Bitway Telecom"
+   ],
+   "lat": 44.462013,
+   "lon": 26.124875,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/3134"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Gemenii Network GT Datacenter",
+    "DC Hub: Gemenii Network Gemenii Network Gt",
+    "Datacenter Atlas: Gemenii Network GT Datacenter",
+    "Inflect: Phoenix Telecom & Media Services SRL București 2"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "orange-bucharest-taberei",
+   "kind": "facility",
+   "name": "Orange Hosting Data Center Bucharest",
+   "operator": "Orange Romania",
+   "aka": "Bucharest 2 Data Center (datacenters.com)",
+   "address": "Drumul Taberei, 41",
+   "city": "Bucharest",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "http://www.telekom-wholesale.ro",
+   "notes": "2.0 MW total power per one directory (not confirmed by the operator).",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 3246,
+    "url": "https://www.peeringdb.com/fac/3246",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 44.4225,
+   "lon": 26.037128,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "dccom",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/3246"
+    },
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/orange-business-bucharest-2"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Hosting Data Center Bucharest",
+    "Datacenter Atlas: Hosting Data Center Bucharest",
+    "Inflect: Orange Business Services București",
+    "datacenters.com: Bucharest 2 Data Center — Orange Business"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "orange-brasov-sadoveanu",
+   "kind": "facility",
+   "name": "Orange Hosting Data Center Brasov",
+   "operator": "Orange Romania",
+   "aka": "Brasov 1 Data Center (datacenters.com)",
+   "address": "Mihail Sadoveanu, 9",
+   "city": "Brasov",
+   "county": "Brașov",
+   "tier": "",
+   "opened": "",
+   "website": "http://www.telekom-wholesale.ro",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 3247,
+    "url": "https://www.peeringdb.com/fac/3247",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 45.644609,
+   "lon": 25.592344,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "dccom",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/3247"
+    },
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/orange-business-brasov-1"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Hosting Data Center Brasov",
+    "Datacenter Atlas: Hosting Data Center Brasov",
+    "Inflect: Orange Business Services Brașov",
+    "datacenters.com: Brasov 1 Data Center — Orange Business"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "nav-tam02",
+   "kind": "facility",
+   "name": "NAV Communications TAM02",
+   "operator": "NAV Communications",
+   "aka": "DC NAV TAM02 (datacenters.com)",
+   "address": "Tamaioarei Street, No. 116",
+   "city": "Bucharest",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "https://www.nav.co",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 3840,
+    "url": "https://www.peeringdb.com/fac/3840",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [
+    "RO-IX"
+   ],
+   "carriers": [],
+   "lat": 44.470942,
+   "lon": 26.133118,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "dccom",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/3840"
+    },
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/nav-communications-s-r-l-dc-nav-tam02"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: NAV Communications - Data Center",
+    "Datacenter Atlas: NAV Communications - Data Center",
+    "datacenters.com: DC NAV TAM02 — NAV Communications S.R.L."
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "gts-bucharest",
+   "kind": "facility",
+   "name": "GTS Telecom Bucharest",
+   "operator": "GTS Telecom",
+   "aka": "",
+   "address": "Calea Rahovei\t no 266-268, sector 5",
+   "city": "Bucharest",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "http://www.gts.ro/servicii/data-center",
+   "notes": "Three independent data halls, up to 2 MW installed (GTS). Inflect also lists NTT at this address. CHML lists a site here.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": 2.0,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 3843,
+    "url": "https://www.peeringdb.com/fac/3843",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [
+    "RoNIX"
+   ],
+   "carriers": [],
+   "lat": 44.415543,
+   "lon": 26.075437,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "dccom",
+    "inflect",
+    "baxtel",
+    "gts",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/3843"
+    },
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/gts-telecom-bucharest"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Baxtel",
+     "kind": "Directory",
+     "url": "https://baxtel.com/data-center/romania"
+    },
+    {
+     "name": "GTS Telecom",
+     "kind": "The operator's own website",
+     "url": "https://www.gts.ro/en/data-center-romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [
+    "https://www.gts.ro/en/data-center-romania"
+   ],
+   "listed_as": [
+    "DC Hub: GTS Telecom DC Bucharest",
+    "Datacenter Atlas: GTS Telecom DC Bucharest",
+    "Inflect: GTS Telecom Bucharest",
+    "Inflect: NTT București",
+    "datacenters.com: Bucharest Data Center — GTS Telecom"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "gts-cluj",
+   "kind": "facility",
+   "name": "GTS Telecom Cluj-Napoca",
+   "operator": "GTS Telecom",
+   "aka": "",
+   "address": "Garii 21",
+   "city": "Cluj Napoca",
+   "county": "Cluj",
+   "tier": "",
+   "opened": "",
+   "website": "http://www.gts.ro/servicii/data-center",
+   "notes": "Liberty Technology Park. 500 kW, 60 racks (GTS). Inflect also lists NTT at this address.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": 0.5,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": 60.0,
+   "peeringdb": {
+    "id": 3844,
+    "url": "https://www.peeringdb.com/fac/3844",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 46.787806,
+   "lon": 23.592801,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "dccom",
+    "inflect",
+    "gts",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/3844"
+    },
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/gts-telecom-cluj-napoca"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "GTS Telecom",
+     "kind": "The operator's own website",
+     "url": "https://www.gts.ro/en/data-center-romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [
+    "https://www.gts.ro/en/data-center-romania"
+   ],
+   "listed_as": [
+    "DC Hub: GTS Telecom DC Cluj-Napoca",
+    "DC Hub: Gts Telecom Cluj Napoca DC",
+    "Datacenter Atlas: GTS Telecom DC Cluj-Napoca",
+    "Inflect: GTS Telecom Cluj-Napoca",
+    "Inflect: NTT Cluj-Napoca",
+    "datacenters.com: CLUJ-NAPOCA Data Center — GTS Telecom"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "drobeta",
+   "kind": "facility",
+   "name": "Drobeta Datacenter",
+   "operator": "Data ZYX",
+   "aka": "",
+   "address": "Calea Tg. Jiului 35",
+   "city": "Drobeta Turnu Severin",
+   "county": "Mehedinți",
+   "tier": "",
+   "opened": "",
+   "website": "http://www.datazyx.ro",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 4921,
+    "url": "https://www.peeringdb.com/fac/4921",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [
+    "RoNIX"
+   ],
+   "carriers": [],
+   "lat": 44.643943,
+   "lon": 22.670286,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "dccom",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/4921"
+    },
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/data-zyx-srl-drobeta"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: DROBETA DATACENTER",
+    "DC Hub: Data Zyx Drobeta",
+    "Datacenter Atlas: DROBETA DATACENTER",
+    "Inflect: Data ZYX Data ZYX",
+    "datacenters.com: DROBETA DATACENTER — DATA ZYX SRL"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "cobranet-arad",
+   "kind": "facility",
+   "name": "CobraNET Arad",
+   "operator": "CobraNET",
+   "aka": "",
+   "address": "Arad,Str 6.Vanatori nr 51",
+   "city": "Arad",
+   "county": "Arad",
+   "tier": "",
+   "opened": "",
+   "website": "http://www.cobranet.ro",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 5979,
+    "url": "https://www.peeringdb.com/fac/5979",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 46.199254,
+   "lon": 21.319733,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/5979"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: CobraNET Arad",
+    "Datacenter Atlas: CobraNET Arad",
+    "Inflect: CobraNET SRL Arad"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "cobranet-main",
+   "kind": "facility",
+   "name": "CobraNET Main Datacenter",
+   "operator": "CobraNET",
+   "aka": "",
+   "address": "Arad,str Decebal nr 2-4",
+   "city": "Arad",
+   "county": "Arad",
+   "tier": "",
+   "opened": "",
+   "website": "http://www.cobranet.ro",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 5980,
+    "url": "https://www.peeringdb.com/fac/5980",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [
+    "Global Peer Exchange"
+   ],
+   "carriers": [],
+   "lat": 46.174168,
+   "lon": 21.319003,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/5980"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: CobraNET Main Datacenter",
+    "Datacenter Atlas: CobraNET Main Datacenter",
+    "Inflect: CobraNET SRL Main"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "tier-craiova",
+   "kind": "facility",
+   "name": "Tier Datacenter",
+   "operator": "S.C. TIER",
+   "aka": "",
+   "address": "Bd. Decebal nr. 85",
+   "city": "Craiova",
+   "county": "Dolj",
+   "tier": "",
+   "opened": "",
+   "website": "https://www.nixservers.ro/data-center/",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 5982,
+    "url": "https://www.peeringdb.com/fac/5982",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 44.316567,
+   "lon": 23.835249,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/5982"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Tier Datacenter",
+    "Datacenter Atlas: Tier Datacenter"
+   ],
+   "grade": "B"
+  },
+  {
+   "id": "cia-cluj",
+   "kind": "facility",
+   "name": "Compania de Informatica Aplicata",
+   "operator": "Compania de Informatica Aplicata",
+   "aka": "",
+   "address": "Str. Republicii nr. 107",
+   "city": "Cluj Napoca",
+   "county": "Cluj",
+   "tier": "",
+   "opened": "",
+   "website": "https://www.cianet.ro/",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 5983,
+    "url": "https://www.peeringdb.com/fac/5983",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 46.757258,
+   "lon": 23.594142,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/5983"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Compania de Informatica Aplicata",
+    "Datacenter Atlas: Compania de Informatica Aplicata",
+    "Inflect: Compania de Informatica Aplicata Cluj-Napoca"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "upt",
+   "kind": "facility",
+   "name": "Universitatea Politehnica Timisoara",
+   "operator": "Universitatea Politehnica Timișoara",
+   "aka": "",
+   "address": "Bd. Vasile Parvan 2",
+   "city": "Timisoara",
+   "county": "Timiș",
+   "tier": "",
+   "opened": "",
+   "website": "https://cs.upt.ro/",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 5986,
+    "url": "https://www.peeringdb.com/fac/5986",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 45.747175,
+   "lon": 21.22892,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/5986"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Universitatea Politehnica Timisoara",
+    "Datacenter Atlas: Universitatea Politehnica Timisoara",
+    "Inflect: Universitatea Politehnica Timisoara Timisoara"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "top-telecom-iasi",
+   "kind": "facility",
+   "name": "Top Telecom",
+   "operator": "Top Telecom",
+   "aka": "",
+   "address": "Strada Atelierului 3",
+   "city": "Iași",
+   "county": "Iași",
+   "tier": "",
+   "opened": "",
+   "website": "http://www.toptel.ro/NEOTTL/",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 5990,
+    "url": "https://www.peeringdb.com/fac/5990",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 47.144244,
+   "lon": 27.603334,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/5990"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Top Telecom",
+    "Datacenter Atlas: Top Telecom"
+   ],
+   "grade": "B"
+  },
+  {
+   "id": "starnet-cluj",
+   "kind": "facility",
+   "name": "Starnet Media Cluj-Napoca",
+   "operator": "Starnet Media",
+   "aka": "",
+   "address": "Iuliu Maniu 23",
+   "city": "Cluj Napoca",
+   "county": "Cluj",
+   "tier": "",
+   "opened": "",
+   "website": "http://www.starnetmedia.ro/",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 6393,
+    "url": "https://www.peeringdb.com/fac/6393",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [
+    "RoNIX"
+   ],
+   "carriers": [],
+   "lat": 46.771099,
+   "lon": 23.593616,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/6393"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Starnet Media Cluj-Napoca",
+    "Datacenter Atlas: Starnet Media Cluj-Napoca",
+    "Inflect: Starnet Media Cluj-Napoca"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "efect-dc1",
+   "kind": "facility",
+   "name": "efectRO DC1",
+   "operator": "efectRO",
+   "aka": "",
+   "address": "Str. Jan Huss nr. 29",
+   "city": "Cluj Napoca",
+   "county": "Cluj",
+   "tier": "",
+   "opened": "",
+   "website": "https://www.efect.ro",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 7570,
+    "url": "https://www.peeringdb.com/fac/7570",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [
+    "InterLAN-IX"
+   ],
+   "carriers": [],
+   "lat": 46.794435,
+   "lon": 23.601719,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "dccom",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/7570"
+    },
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/efectro-srl-efect-ro-dc1"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: efectRO DC1",
+    "Datacenter Atlas: efectRO DC1",
+    "Inflect: efectRO SRL Cluj-Napoca",
+    "datacenters.com: efect.RO DC1 — EFECTRO SRL"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "layerbridge-pipera",
+   "kind": "facility",
+   "name": "LayerBridge Pipera",
+   "operator": "ENGINYRING Europe",
+   "aka": "",
+   "address": "Pipera Blvd., No. 1i",
+   "city": "Voluntari",
+   "county": "Ilfov",
+   "tier": "",
+   "opened": "",
+   "website": "https://www.layerbridge.com",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 8358,
+    "url": "https://www.peeringdb.com/fac/8358",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 44.490023,
+   "lon": 26.118948,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/8358"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: LayerBridge Pipera",
+    "Datacenter Atlas: LayerBridge Pipera",
+    "Inflect: LayerBridge SRL Pipera"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "radiocom",
+   "kind": "facility",
+   "name": "Radiocom Data Center",
+   "operator": "Radiocom (SNR)",
+   "aka": "",
+   "address": "Șos. Olteniței nr. 103",
+   "city": "Bucharest",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "http://www.radiocom.ro/business/servicii/Alte-Servicii/Data_Center/Descriere_Data_Center/",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 8488,
+    "url": "https://www.peeringdb.com/fac/8488",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [
+    "InterLAN-IX"
+   ],
+   "carriers": [
+    "Bitway Telecom"
+   ],
+   "lat": 44.392699,
+   "lon": 26.12429,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/8488"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Radiocom",
+    "Datacenter Atlas: Radiocom",
+    "Inflect: Societatea Naţională de Radiocomunicaţii Bucharest"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "whitehat-rosu",
+   "kind": "facility",
+   "name": "WhiteHat Roșu",
+   "operator": "WhiteHat",
+   "aka": "WhiteHat (PeeringDB); Bucarest Data Center (datacenters.com)",
+   "address": "Str. Rezervelor 72",
+   "city": "Roșu",
+   "county": "Ilfov",
+   "tier": "",
+   "opened": "",
+   "website": "https://whitehat.ro",
+   "notes": "PeeringDB names the town Rotunda, but its coordinates and the address in datacenters.com and Inflect are in Roșu (Chiajna, Ilfov).",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 9223,
+    "url": "https://www.peeringdb.com/fac/9223",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [
+    "RO-CIX"
+   ],
+   "carriers": [
+    "WhiteHat"
+   ],
+   "lat": 44.442196,
+   "lon": 25.986021,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "dccom",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/9223"
+    },
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/whitehat-bucarest"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: WhiteHat",
+    "Datacenter Atlas: WhiteHat",
+    "Inflect: WhiteHat Roșu",
+    "datacenters.com: Bucarest Data Center — WhiteHat"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "biztelecom-chiajna",
+   "kind": "facility",
+   "name": "BizTelecom Chiajna",
+   "operator": "BiLoud",
+   "aka": "",
+   "address": "Intrarea Nicolae Iorga 39",
+   "city": "Chiajna",
+   "county": "Ilfov",
+   "tier": "",
+   "opened": "",
+   "website": "https://www.biztelecom.ro",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 10487,
+    "url": "https://www.peeringdb.com/fac/10487",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 44.454234,
+   "lon": 25.975813,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/10487"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: BizTelecom - Chiajna",
+    "Datacenter Atlas: BizTelecom - Chiajna",
+    "Inflect: BiLoud SRL Chiajna"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "layerbridge-whitegate",
+   "kind": "facility",
+   "name": "LayerBridge WhiteGate",
+   "operator": "ENGINYRING Europe",
+   "aka": "",
+   "address": "Poligrafiei Blvd., No. 75, WhiteGate Building, 1st District",
+   "city": "Bucharest",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "https://www.layerbridge.com",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 11021,
+    "url": "https://www.peeringdb.com/fac/11021",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 44.484116,
+   "lon": 26.058284,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/11021"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: LayerBridge WhiteGate",
+    "Datacenter Atlas: LayerBridge WhiteGate"
+   ],
+   "grade": "B"
+  },
+  {
+   "id": "comway-sibiu",
+   "kind": "facility",
+   "name": "Comway Sibiu",
+   "operator": "Comway Telecommunication",
+   "aka": "",
+   "address": "Reconstructiei 39",
+   "city": "Sibiu",
+   "county": "Sibiu",
+   "tier": "",
+   "opened": "",
+   "website": "https://www.comway.ro",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 11026,
+    "url": "https://www.peeringdb.com/fac/11026",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 45.799593,
+   "lon": 24.138179,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/11026"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Comway Sibiu",
+    "Datacenter Atlas: Comway Sibiu"
+   ],
+   "grade": "B"
+  },
+  {
+   "id": "whitehat-braila",
+   "kind": "facility",
+   "name": "WhiteHat 2 Brăila",
+   "operator": "WhiteHat",
+   "aka": "WhiteHat DC2 (Inflect); Strada Stefan Data Center (datacenters.com)",
+   "address": "Strada Mare",
+   "city": "Brăila",
+   "county": "Brăila",
+   "tier": "",
+   "opened": "",
+   "website": "https://whitehat.ro/colocation",
+   "notes": "datacenters.com gives Str. Ștefan cel Mare 14, Cârna; PeeringDB and Inflect give Strada Mare (14), Brăila. Brăila used.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 11038,
+    "url": "https://www.peeringdb.com/fac/11038",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [
+    "RO-CIX"
+   ],
+   "carriers": [
+    "WhiteHat"
+   ],
+   "lat": 45.276552,
+   "lon": 27.981643,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "dccom",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/11038"
+    },
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/whitehat-strada-stefan"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: WhiteHat 2",
+    "Datacenter Atlas: WhiteHat 2",
+    "Inflect: WhiteHat DC2",
+    "datacenters.com: Strada Stefan Data Center — WhiteHat"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "opticnet-ploiesti",
+   "kind": "facility",
+   "name": "OPTICNET Ploiești",
+   "operator": "OPTICNET-SERV",
+   "aka": "",
+   "address": "Maramures 12, P39",
+   "city": "Ploiesti",
+   "county": "Prahova",
+   "tier": "",
+   "opened": "",
+   "website": "https://www.opticnet.ro",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 11520,
+    "url": "https://www.peeringdb.com/fac/11520",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 44.936519,
+   "lon": 26.023637,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/11520"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: OPTICNET Ploiesti",
+    "Datacenter Atlas: OPTICNET Ploiesti"
+   ],
+   "grade": "B"
+  },
+  {
+   "id": "efect-dc2",
+   "kind": "facility",
+   "name": "efectRO DC2",
+   "operator": "efectRO",
+   "aka": "",
+   "address": "Str. Tiberiu Popoviciu 2-4",
+   "city": "Cluj Napoca",
+   "county": "Cluj",
+   "tier": "",
+   "opened": "",
+   "website": "https://www.efect.ro/servicii-it/colocare-servere/",
+   "notes": "PeeringDB: Str. Tiberiu Popoviciu 2-4; Inflect: Str. Tiberiu Brediceanu 2. PeeringDB (entered by the operator) used. PeeringDB has no coordinates: located from the address.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 11547,
+    "url": "https://www.peeringdb.com/fac/11547",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 46.8207826,
+   "lon": 23.5803764,
+   "precision": "address",
+   "source_keys": [
+    "pdb",
+    "dccom",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/11547"
+    },
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/efectro-srl-efect-ro-dc2"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: efectRO DC2",
+    "Datacenter Atlas: efectRO DC2",
+    "Inflect: efectRO SRL DC2",
+    "datacenters.com: efect.RO DC2 — EFECTRO SRL"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "whitehat-3",
+   "kind": "facility",
+   "name": "WhiteHat 3",
+   "operator": "WhiteHat",
+   "aka": "Rotunda Data Center (datacenters.com)",
+   "address": ",",
+   "city": "Rotunda",
+   "county": "Bacău",
+   "tier": "",
+   "opened": "",
+   "website": "https://whitehat.ro",
+   "notes": "No street address anywhere. Location from PeeringDB coordinates.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 11764,
+    "url": "https://www.peeringdb.com/fac/11764",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [
+    "RO-CIX"
+   ],
+   "carriers": [
+    "WhiteHat"
+   ],
+   "lat": 46.291668,
+   "lon": 26.799279,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "dccom",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/11764"
+    },
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/whitehat-rotunda"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: WhiteHat 3",
+    "Datacenter Atlas: WhiteHat 3",
+    "datacenters.com: Rotunda Data Center — WhiteHat"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "datawave-cluj",
+   "kind": "facility",
+   "name": "DataWave#1",
+   "operator": "wecode",
+   "aka": "",
+   "address": "Strada București 15, 400148",
+   "city": "Cluj Napoca",
+   "county": "Cluj",
+   "tier": "",
+   "opened": "",
+   "website": "https://wecode.ro/colocation",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 13710,
+    "url": "https://www.peeringdb.com/fac/13710",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 46.780405,
+   "lon": 23.598353,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/13710"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: DataWave#1",
+    "Datacenter Atlas: DataWave#1"
+   ],
+   "grade": "B"
+  },
+  {
+   "id": "mediasat",
+   "kind": "facility",
+   "name": "Media Sat Data Center",
+   "operator": "Media Sat",
+   "aka": "",
+   "address": "Ferdinand I Blvd. No. 99, Sector 2",
+   "city": "Bucharest",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "http://www.mediasat.ro",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 15017,
+    "url": "https://www.peeringdb.com/fac/15017",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 44.444577,
+   "lon": 26.130018,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/15017"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Media Sat Data Center",
+    "Datacenter Atlas: Media Sat Data Center"
+   ],
+   "grade": "B"
+  },
+  {
+   "id": "orange-cluj",
+   "kind": "facility",
+   "name": "Orange Hosting Data Center Cluj",
+   "operator": "Orange Romania",
+   "aka": "Orange Romania - Cluj-Napoca (datacenters.com)",
+   "address": "Aleea Padin nr 15",
+   "city": "Cluj Napoca",
+   "county": "Cluj",
+   "tier": "",
+   "opened": "",
+   "website": "https://www.orange.ro/wholesale/en/hosting/",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 15299,
+    "url": "https://www.peeringdb.com/fac/15299",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 46.757677,
+   "lon": 23.551859,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "dccom",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/15299"
+    },
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/orange-business-orange-romania-cluj-napoca"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Hosting Data Center Cluj",
+    "Datacenter Atlas: Hosting Data Center Cluj",
+    "datacenters.com: Orange Romania - Cluj-Napoca — Orange Business"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "datanode-timisoara",
+   "kind": "facility",
+   "name": "Data Node",
+   "operator": "Data Node",
+   "aka": "",
+   "address": "Calea Torontalului, nr. 69",
+   "city": "Timisoara",
+   "county": "Timiș",
+   "tier": "",
+   "opened": "",
+   "website": "https://www.datanode.eu",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 15517,
+    "url": "https://www.peeringdb.com/fac/15517",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 45.774162,
+   "lon": 21.211925,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/15517"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Data Node",
+    "Datacenter Atlas: Data Node"
+   ],
+   "grade": "B"
+  },
+  {
+   "id": "evobits-juc",
+   "kind": "facility",
+   "name": "EVB-CLJ-DC1",
+   "operator": "Evobits Information Technology",
+   "aka": "",
+   "address": "Parcul Industrial Tetarom III, TRC-Park, Hala C1",
+   "city": "Juc-Herghelie",
+   "county": "Cluj",
+   "tier": "",
+   "opened": "",
+   "website": "https://evobitsit.com",
+   "notes": "Tetarom III industrial park.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 15648,
+    "url": "https://www.peeringdb.com/fac/15648",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 46.881152,
+   "lon": 23.790246,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/15648"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: EVB-CLJ-DC1",
+    "Datacenter Atlas: EVB-CLJ-DC1"
+   ],
+   "grade": "B"
+  },
+  {
+   "id": "netprotect-timisoara",
+   "kind": "facility",
+   "name": "Timisoara 1",
+   "operator": "NETPROTECT",
+   "aka": "Orange Business Services TSR01 (Inflect, same address)",
+   "address": "Calea Torontalului 94",
+   "city": "Timisoara",
+   "county": "Timiș",
+   "tier": "",
+   "opened": "",
+   "website": "https://www.msp.ro",
+   "notes": "Inflect lists an Orange site (TSR01) at the same address; treated as the same building.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "peeringdb": {
+    "id": 15864,
+    "url": "https://www.peeringdb.com/fac/15864",
+    "updated": "2025-09-26"
+   },
+   "networks": [],
+   "exchanges": [
+    "InterLAN-IX"
+   ],
+   "carriers": [],
+   "lat": 45.775777,
+   "lon": 21.21368,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "inflect",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/15864"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Timisoara 1",
+    "Datacenter Atlas: Timisoara 1",
+    "Inflect: Orange Business Services TSR01"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "m247-brasov",
+   "kind": "facility",
+   "name": "M247 Brașov",
+   "operator": "M247",
+   "aka": "Euro Data Center Brașov (EUDC); Eusdc Romania Brasov (DC Hub)",
+   "address": "Strada Traian Grozăvescu 9, 500091 Brașov, Romania",
+   "city": "Brasov",
+   "county": "Brașov",
+   "tier": "",
+   "opened": "",
+   "website": "https://www.m247global.com/romania-brasov-data-center",
+   "notes": "Former Euro Data Center, acquired by M247 in April 2026. 40 racks, mainly disaster recovery (M247).",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": 40.0,
+   "peeringdb": {
+    "id": 17116,
+    "url": "https://www.peeringdb.com/fac/17116",
+    "updated": "2026-05-17"
+   },
+   "networks": [],
+   "exchanges": [],
+   "carriers": [],
+   "lat": 45.651805,
+   "lon": 25.601611,
+   "precision": "building (PeeringDB)",
+   "source_keys": [
+    "pdb",
+    "operator",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "PeeringDB",
+     "kind": "Entered by the operator",
+     "url": "https://www.peeringdb.com/fac/17116"
+    },
+    {
+     "name": "Operator",
+     "kind": "The operator's own website or announcement",
+     "url": ""
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [
+    "https://www.m247global.com/news/m247-global-expands-to-bra%C8%99ov-with-new-data-center-capacity-strengthening-cloud-and-disaster-recovery-capabilities"
+   ],
+   "listed_as": [
+    "DC Hub: Eusdc Romania Brasov",
+    "DC Hub: M247 Europe Brasov",
+    "Datacenter Atlas: M247 Europe Brasov"
+   ],
+   "grade": "B"
+  },
+  {
+   "id": "orange-bucharest-sibiel",
+   "kind": "facility",
+   "name": "Orange Bucharest 1",
+   "operator": "Orange Business",
+   "aka": "",
+   "address": "Str. Sibiel 6",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.4131994,
+   "lon": 26.1131668,
+   "precision": "address",
+   "source_keys": [
+    "dccom"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/orange-business-bucharest-1"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "datacenters.com: Bucharest 1 Data Center — Orange Business"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "orange-dacia",
+   "kind": "facility",
+   "name": "Orange Romania – Dacia",
+   "operator": "Orange Romania",
+   "aka": "",
+   "address": "Bd. Dacia 99",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Possibly 'Telekom Romania Hosting Data Center Bucharest HDC' in DC Hub (Bd. Dacia 99 was Telekom Romania's head office); not confirmed.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.4463139,
+   "lon": 26.1079846,
+   "precision": "address",
+   "source_keys": [
+    "dccom"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/orange-business-orange-romania-dacia"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Telekom Romania Hosting Data Center Bucharest Hdc",
+    "datacenters.com: Orange Romania - Dacia — Orange Business"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "orange-galati",
+   "kind": "facility",
+   "name": "Orange Galați",
+   "operator": "Orange Business",
+   "aka": "",
+   "address": "Str. Brăilei 41",
+   "city": "Galați",
+   "county": "Galați",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 45.4282744,
+   "lon": 28.0381165,
+   "precision": "address",
+   "source_keys": [
+    "dccom"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/orange-business-galati"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "datacenters.com: Galati Data Center — Orange Business"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "orange-iasi",
+   "kind": "facility",
+   "name": "Orange Iași",
+   "operator": "Orange Business",
+   "aka": "",
+   "address": "Str. Alexandru Lăpușneanu 21",
+   "city": "Iași",
+   "county": "Iași",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 47.1688396,
+   "lon": 27.5773304,
+   "precision": "address",
+   "source_keys": [
+    "dccom"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/orange-business-iasi"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "datacenters.com: Iasi Data Center — Orange Business"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "orange-timisoara-martirilor",
+   "kind": "facility",
+   "name": "Orange Timișoara (Calea Martirilor)",
+   "operator": "Orange Business",
+   "aka": "",
+   "address": "Calea Martirilor",
+   "city": "Timișoara",
+   "county": "Timiș",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Street only, no number.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 45.7538355,
+   "lon": 21.2257474,
+   "precision": "town",
+   "source_keys": [
+    "dccom"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/orange-business-timisoara"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "datacenters.com: Timisoara Data Center — Orange Business"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "orange-timisoara-alexandrescu",
+   "kind": "facility",
+   "name": "Orange Timișoara (Grigore Alexandrescu)",
+   "operator": "Orange Business",
+   "aka": "",
+   "address": "Str. Grigore Alexandrescu 123",
+   "city": "Timișoara",
+   "county": "Timiș",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 45.778958,
+   "lon": 21.2169819,
+   "precision": "street",
+   "source_keys": [
+    "inflect"
+   ],
+   "sources": [
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "Inflect: Orange Business Services Timisoara"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "orange-brasov-astra",
+   "kind": "facility",
+   "name": "Orange Brașov 2",
+   "operator": "Orange Business",
+   "aka": "Orange HDC Astra (Atlas, DC Hub) – probably the same site",
+   "address": "Calea București 36",
+   "city": "Brașov",
+   "county": "Brașov",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 45.6454016,
+   "lon": 25.6209743,
+   "precision": "address",
+   "source_keys": [
+    "dccom",
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/orange-business-brasov-2"
+    },
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Orange HDC Astra",
+    "Datacenter Atlas: Orange HDC Astra",
+    "datacenters.com: Brasov 2 Data Center — Orange Business"
+   ],
+   "grade": "B"
+  },
+  {
+   "id": "orange-constanta",
+   "kind": "facility",
+   "name": "Orange Constanța",
+   "operator": "Orange Business",
+   "aka": "",
+   "address": "Str. Ioan Nenițescu 22",
+   "city": "Constanța",
+   "county": "Constanța",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.1767161,
+   "lon": 28.6507598,
+   "precision": "town",
+   "source_keys": [
+    "inflect"
+   ],
+   "sources": [
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "Inflect: Orange Business Services Constanta"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "kyndryl-bucharest",
+   "kind": "facility",
+   "name": "Kyndryl Romania Data Center",
+   "operator": "Kyndryl",
+   "aka": "",
+   "address": "Șos. Orhideelor",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Listed in DC Hub as unverified.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.4471419,
+   "lon": 26.061801,
+   "precision": "street",
+   "source_keys": [
+    "dccom",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/kyndryl-romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Kyndryl Bucharest",
+    "datacenters.com: Romania Data Center — Kyndryl"
+   ],
+   "grade": "B"
+  },
+  {
+   "id": "voxility-ird",
+   "kind": "facility",
+   "name": "Voxility IRD Bucharest",
+   "operator": "Voxility",
+   "aka": "",
+   "address": "",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Separate from Voxility IR1 in DC Hub; no address in any source. One directory describes it as announced, not operating.",
+   "hosted_in": "",
+   "status": "Unverified",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.4361414,
+   "lon": 26.102684,
+   "precision": "town",
+   "source_keys": [
+    "dccom",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/voxility-voxility-ird-bucharest"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Voxility Voxility Ird",
+    "datacenters.com: Voxility IRD Bucharest Data Center — Voxility"
+   ],
+   "grade": "B"
+  },
+  {
+   "id": "nav-tam01",
+   "kind": "facility",
+   "name": "NAV Communications TAM01",
+   "operator": "NAV Communications",
+   "aka": "",
+   "address": "Str. Ricinului 120",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.467842,
+   "lon": 26.131167,
+   "precision": "street",
+   "source_keys": [
+    "dccom",
+    "inflect"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/nav-communications-s-r-l-dc-nav-tam01"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "Inflect: NAV COMMUNICATIONS SRL București",
+    "datacenters.com: DC NAV TAM01 — NAV Communications S.R.L."
+   ],
+   "grade": "B"
+  },
+  {
+   "id": "romarg-brasov",
+   "kind": "facility",
+   "name": "ROMARG Brașov",
+   "operator": "ROMARG",
+   "aka": "",
+   "address": "",
+   "city": "Brașov",
+   "county": "Brașov",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "No address in any source.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 45.6525105,
+   "lon": 25.6105654,
+   "precision": "town",
+   "source_keys": [
+    "dccom"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/romarg-srl-brasov"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "datacenters.com: Brasov Data Center — ROMARG SRL"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "clusterpower-msc1",
+   "kind": "facility",
+   "name": "ClusterPower MSC1",
+   "operator": "ClusterPower",
+   "aka": "Craiova Data Center (datacenters.com); ClusterPower Technology Campus",
+   "address": "",
+   "city": "Mischii",
+   "county": "Dolj",
+   "tier": "",
+   "opened": "2022",
+   "website": "",
+   "notes": "Near Craiova. Baxtel: 10 MW operating. Operator: campus designed for up to 4,500 racks and 200 MW. Own gas-fired trigeneration plant (Global Energy Monitor lists 200 MW). With AIC, expansion in three phases to more than 500 MW announced (2026). Opened 2022 on 25,427 m² of company-owned land in Mischii (press).",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": 500.0,
+   "area_m2": null,
+   "racks": 4500.0,
+   "lat": 44.4202106,
+   "lon": 23.8577591,
+   "precision": "town",
+   "source_keys": [
+    "dccom",
+    "baxtel",
+    "operator",
+    "news"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/clusterpower-craivoca"
+    },
+    {
+     "name": "Baxtel",
+     "kind": "Directory",
+     "url": "https://baxtel.com/data-center/romania"
+    },
+    {
+     "name": "Operator",
+     "kind": "The operator's own website or announcement",
+     "url": ""
+    },
+    {
+     "name": "News",
+     "kind": "Press reports",
+     "url": ""
+    }
+   ],
+   "links": [
+    "https://baxtel.com/data-center/clusterpower-craiova",
+    "https://www.gem.wiki/ClusterPower_Craiova_power_station",
+    "https://developingtelecoms.com/telecom-technology/data-centres-networks/12683-clusterpower-builds-largest-data-centre-in-romania.html",
+    "https://www.romania-insider.com/index%2ephp/clusterpower-data-center-romania-2022"
+   ],
+   "listed_as": [
+    "datacenters.com: Craivoca Data Center — ClusterPower"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "web-ro-craiova",
+   "kind": "facility",
+   "name": "WEB.RO Data Center",
+   "operator": "WEB.RO",
+   "aka": "",
+   "address": "Str. România Muncitoare",
+   "city": "Craiova",
+   "county": "Dolj",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Street only, no number.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.3190159,
+   "lon": 23.7965614,
+   "precision": "town",
+   "source_keys": [
+    "dccom"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/web-ro-web-ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "datacenters.com: WEB.RO Data Center — WEB.RO"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "digi-craiova",
+   "kind": "facility",
+   "name": "Digi (RCS & RDS) Craiova",
+   "operator": "Digi România",
+   "aka": "",
+   "address": "",
+   "city": "Craiova",
+   "county": "Dolj",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "No address in any source.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.3190159,
+   "lon": 23.7965614,
+   "precision": "town",
+   "source_keys": [
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Digi (RCS & RDS) Craiova",
+    "Datacenter Atlas: Digi (RCS & RDS) Craiova"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "rcast-galati",
+   "kind": "facility",
+   "name": "RCAST Hosting",
+   "operator": "",
+   "aka": "",
+   "address": "",
+   "city": "Galați",
+   "county": "Galați",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Low-quality record in the Atlas (grade C); no operator or address.",
+   "hosted_in": "",
+   "status": "Unverified",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 45.4338215,
+   "lon": 28.0549395,
+   "precision": "town",
+   "source_keys": [
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: RCAST Hosting",
+    "Datacenter Atlas: RCAST Hosting"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "redea",
+   "kind": "facility",
+   "name": "Panouri Solare Redea Datacenter",
+   "operator": "",
+   "aka": "",
+   "address": "",
+   "city": "Craiova",
+   "county": "Dolj",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Low-quality record in the Atlas (grade C); DC Hub places it in Craiova. The name ('solar panels Redea') suggests a mislabelled solar site.",
+   "hosted_in": "",
+   "status": "Unverified",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.3190159,
+   "lon": 23.7965614,
+   "precision": "town",
+   "source_keys": [
+    "atlas",
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "Datacenter Atlas",
+     "kind": "Directory, mostly built from PeeringDB and OpenStreetMap",
+     "url": "https://www.datacenter-atlas.com/country/romania"
+    },
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: PANOURI SOLARE REDEA DATACENTER",
+    "Datacenter Atlas: PANOURI SOLARE REDEA DATACENTER"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "lnk-targoviste",
+   "kind": "facility",
+   "name": "LNK Systems PAVCOM",
+   "operator": "LNK Systems Muntenia",
+   "aka": "",
+   "address": "Str. Gării 6",
+   "city": "Târgoviște",
+   "county": "Dâmbovița",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.9191708,
+   "lon": 25.4530521,
+   "precision": "street",
+   "source_keys": [
+    "inflect"
+   ],
+   "sources": [
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "Inflect: LNK Systems Muntenia SRL PAVCOM"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "summit",
+   "kind": "presence",
+   "name": "Summit Romania Data Center",
+   "operator": "Summit",
+   "aka": "",
+   "address": "Bd. Dimitrie Pompeiu 8 (Feper)",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "",
+   "hosted_in": "nxdata-1",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.481916,
+   "lon": 26.120789,
+   "precision": "host building (NXDATA-1 Bucharest (BUH1))",
+   "source_keys": [
+    "dccom"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/summit-romania"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "datacenters.com: Romania Data Center — Summit"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "prime-telecom",
+   "kind": "presence",
+   "name": "Prime Telecom Bucharest",
+   "operator": "Prime Telecom",
+   "aka": "",
+   "address": "Bd. Dimitrie Pompeiu 8",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "",
+   "hosted_in": "nxdata-1",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.481916,
+   "lon": 26.120789,
+   "precision": "host building (NXDATA-1 Bucharest (BUH1))",
+   "source_keys": [
+    "dccom"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/prime-telecom-srl-bucharest"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "datacenters.com: Bucharest Data Center — Prime Telecom SRL"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "datapacket",
+   "kind": "presence",
+   "name": "DataPacket Bucharest",
+   "operator": "DataPacket",
+   "aka": "",
+   "address": "Bd. Dimitrie Pompeiu 6",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "",
+   "hosted_in": "nxdata-2",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.479796,
+   "lon": 26.11423,
+   "precision": "host building (NXDATA-2 Bucharest (BUH2))",
+   "source_keys": [
+    "dccom"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/datapacket-bucharest"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "datacenters.com: Bucharest Data Center — DataPacket"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "chml",
+   "kind": "presence",
+   "name": "DC CHML – Bucharest",
+   "operator": "CHML Web Services",
+   "aka": "",
+   "address": "Calea Rahovei 266",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "",
+   "hosted_in": "gts-bucharest",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.415543,
+   "lon": 26.075437,
+   "precision": "host building (GTS Telecom Bucharest)",
+   "source_keys": [
+    "dccom"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/chml-web-services-srl-dc-chml-bucharest"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "datacenters.com: DC CHML – Bucharest — CHML Web Services SRL"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "zenlayer-bbu1",
+   "kind": "presence",
+   "name": "Zenlayer BBU1",
+   "operator": "Zenlayer",
+   "aka": "",
+   "address": "Bd. Dimitrie Pompeiu",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Street only: probably inside one of the NXDATA buildings.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.4793929,
+   "lon": 26.1112917,
+   "precision": "street",
+   "source_keys": [
+    "dccom"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/zenlayer-bbu1-bucharest"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "datacenters.com: BBU1 Bucharest Data Center — Zenlayer"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "runpod-eu-ro-1",
+   "kind": "presence",
+   "name": "RunPod EU-RO-1",
+   "operator": "RunPod",
+   "aka": "",
+   "address": "Piața Romană",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "GPU cloud region; the building is not named.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.4361414,
+   "lon": 26.102684,
+   "precision": "town",
+   "source_keys": [
+    "dccom"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/runpod-eu-ro-1"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "datacenters.com: EU-RO-1 — RunPod"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "hostoweb-bucharest",
+   "kind": "presence",
+   "name": "Hostoweb Bucharest",
+   "operator": "Hostoweb",
+   "aka": "",
+   "address": "",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "No address: the building is not known.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.4361414,
+   "lon": 26.102684,
+   "precision": "town",
+   "source_keys": [
+    "dccom"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/hostoweb-bucharest"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "datacenters.com: Bucharest Data Center — Hostoweb"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "netrouting-bucharest",
+   "kind": "presence",
+   "name": "Netrouting Bucharest",
+   "operator": "Netrouting",
+   "aka": "",
+   "address": "",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "No address: the building is not known.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.4361414,
+   "lon": 26.102684,
+   "precision": "town",
+   "source_keys": [
+    "dccom"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/netrouting-bucharest"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "datacenters.com: Bucharest Data Center — Netrouting"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "alexhost-bucharest",
+   "kind": "presence",
+   "name": "AlexHost Bucharest",
+   "operator": "AlexHost",
+   "aka": "",
+   "address": "",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "No address: the building is not known.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.4361414,
+   "lon": 26.102684,
+   "precision": "town",
+   "source_keys": [
+    "dccom"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/alexhost-srl-bucharest"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "datacenters.com: Bucharest Data Center — AlexHost SRL"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "binbox-bucharest",
+   "kind": "presence",
+   "name": "Binbox Bucharest",
+   "operator": "Binbox Global Services",
+   "aka": "",
+   "address": "",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.4361414,
+   "lon": 26.102684,
+   "precision": "town",
+   "source_keys": [
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Binbox Bucharest"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "binbox-bucharest-2",
+   "kind": "presence",
+   "name": "Binbox Bucharest 2",
+   "operator": "Binbox Global Services",
+   "aka": "",
+   "address": "",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.4361414,
+   "lon": 26.102684,
+   "precision": "town",
+   "source_keys": [
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Binbox Global Services Bucharest 2"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "binbox-ploiesti",
+   "kind": "presence",
+   "name": "Binbox Ploiești",
+   "operator": "Binbox Global Services",
+   "aka": "",
+   "address": "",
+   "city": "Ploiești",
+   "county": "Prahova",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.9417468,
+   "lon": 26.0236504,
+   "precision": "town",
+   "source_keys": [
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Binbox Global Services Ploiesti"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "vps-house-bucharest",
+   "kind": "presence",
+   "name": "VPS House Bucharest",
+   "operator": "VPS House",
+   "aka": "",
+   "address": "",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.4361414,
+   "lon": 26.102684,
+   "precision": "town",
+   "source_keys": [
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Vps House Bucharest"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "wehaveservers-carcea",
+   "kind": "presence",
+   "name": "WeHaveServers Carcea",
+   "operator": "WeHaveServers",
+   "aka": "",
+   "address": "",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.4361414,
+   "lon": 26.102684,
+   "precision": "town",
+   "source_keys": [
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Wehaveservers Com Carcea"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "bss-one-iasi",
+   "kind": "presence",
+   "name": "BSS One Iași",
+   "operator": "BSS One",
+   "aka": "",
+   "address": "",
+   "city": "Iași",
+   "county": "Iași",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 47.1615598,
+   "lon": 27.5837814,
+   "precision": "town",
+   "source_keys": [
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: Bss One Iasi"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "t-systems-bacau",
+   "kind": "presence",
+   "name": "T-Systems Bacău",
+   "operator": "T-Systems",
+   "aka": "",
+   "address": "",
+   "city": "Bacău",
+   "county": "Bacău",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 46.5560493,
+   "lon": 26.9153557,
+   "precision": "town",
+   "source_keys": [
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: T Systems Bacau"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "t-systems-cluj-napoca",
+   "kind": "presence",
+   "name": "T-Systems Cluj-Napoca",
+   "operator": "T-Systems",
+   "aka": "",
+   "address": "",
+   "city": "Cluj-Napoca",
+   "county": "Cluj",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 46.769379,
+   "lon": 23.5899542,
+   "precision": "town",
+   "source_keys": [
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: T Systems Cluj Napoca"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "t-systems-constanta",
+   "kind": "presence",
+   "name": "T-Systems Constanța",
+   "operator": "T-Systems",
+   "aka": "",
+   "address": "",
+   "city": "Constanța",
+   "county": "Constanța",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.1767161,
+   "lon": 28.6507598,
+   "precision": "town",
+   "source_keys": [
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: T Systems Constanta"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "t-systems-galati",
+   "kind": "presence",
+   "name": "T-Systems Galați",
+   "operator": "T-Systems",
+   "aka": "",
+   "address": "",
+   "city": "Galați",
+   "county": "Galați",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 45.4338215,
+   "lon": 28.0549395,
+   "precision": "town",
+   "source_keys": [
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: T Systems Galati"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "t-systems-iasi",
+   "kind": "presence",
+   "name": "T-Systems Iași",
+   "operator": "T-Systems",
+   "aka": "",
+   "address": "",
+   "city": "Iași",
+   "county": "Iași",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 47.1615598,
+   "lon": 27.5837814,
+   "precision": "town",
+   "source_keys": [
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: T Systems Iasi"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "t-systems-oradea",
+   "kind": "presence",
+   "name": "T-Systems Oradea",
+   "operator": "T-Systems",
+   "aka": "",
+   "address": "",
+   "city": "Oradea",
+   "county": "Bihor",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 47.0549163,
+   "lon": 21.9285231,
+   "precision": "town",
+   "source_keys": [
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: T Systems Oradea"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "t-systems-timisoara",
+   "kind": "presence",
+   "name": "T-Systems Timișoara",
+   "operator": "T-Systems",
+   "aka": "",
+   "address": "",
+   "city": "Timișoara",
+   "county": "Timiș",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Listed in DC Hub as unverified. No address: the building is not known.",
+   "hosted_in": "",
+   "status": "Operating",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 45.7538355,
+   "lon": 21.2257474,
+   "precision": "town",
+   "source_keys": [
+    "dchub"
+   ],
+   "sources": [
+    {
+     "name": "DC Hub",
+     "kind": "Directory, mostly built from PeeringDB",
+     "url": "https://dchub.cloud/facilities/in/ro"
+    }
+   ],
+   "links": [],
+   "listed_as": [
+    "DC Hub: T Systems Timisoara"
+   ],
+   "grade": "C"
+  },
+  {
+   "id": "nxdata-3",
+   "kind": "project",
+   "name": "NXDATA-3 Bucharest (BUH3)",
+   "operator": "NXDATA",
+   "aka": "",
+   "address": "Șoseaua de Centură 38 (Bucharest Ring Road)",
+   "city": "Tunari",
+   "county": "Ilfov",
+   "tier": "III (design)",
+   "opened": "Q4 2026 – 2027 (planned)",
+   "website": "https://nxdata3.com/",
+   "notes": "Under construction. 2,000 m² white space in four data halls, Tier III design target. Power figures conflict: 3 MW (operator's site header, up to 1 MW per hall), 5 MW (Ocolo, LinkedIn), 8 MW total / 4 MW IT (operator's site, other reading); no value entered until confirmed. datacenters.com gives the NXDATA-1 address; Tunari 077180 per Inflect and Baxtel.",
+   "hosted_in": "",
+   "status": "Under construction",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": 2000.0,
+   "racks": null,
+   "lat": 44.5459277,
+   "lon": 26.1376976,
+   "precision": "town",
+   "source_keys": [
+    "operator",
+    "dccom",
+    "inflect",
+    "baxtel"
+   ],
+   "sources": [
+    {
+     "name": "Operator",
+     "kind": "The operator's own website or announcement",
+     "url": ""
+    },
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/nxdata-nxdata-3-bucharest-buh3"
+    },
+    {
+     "name": "Inflect",
+     "kind": "Directory",
+     "url": "https://inflect.com/datacenters/romania"
+    },
+    {
+     "name": "Baxtel",
+     "kind": "Directory",
+     "url": "https://baxtel.com/data-center/romania"
+    }
+   ],
+   "links": [
+    "https://nxdata3.com/",
+    "https://baxtel.com/data-center/nxdata-3",
+    "https://www.ocolo.io/colocation/nxdata/nxdata-3-bucharest-buh3"
+   ],
+   "listed_as": [
+    "Inflect: NXDATA Bucharest 3",
+    "datacenters.com: NXDATA-3 Bucharest (BUH3) — NXDATA"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "infinite-chain-toplita",
+   "kind": "project",
+   "name": "Toplița Technology Park Data Center",
+   "operator": "Infinite Chain",
+   "aka": "",
+   "address": "Str. Aluniș 19",
+   "city": "Zencani (Toplița)",
+   "county": "Harghita",
+   "tier": "",
+   "opened": "",
+   "website": "https://infinitechain.net/data-center/",
+   "notes": "Phase 1: 2 MW; full build: 50 MW (operator). No source confirms it is operating.",
+   "hosted_in": "",
+   "status": "Under construction",
+   "it_mw": 2.0,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": 50.0,
+   "area_m2": 5400.0,
+   "racks": null,
+   "lat": 46.9310662,
+   "lon": 25.3361121,
+   "precision": "street",
+   "source_keys": [
+    "dccom",
+    "baxtel",
+    "operator"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/infinite-chain-toplita-technology-park"
+    },
+    {
+     "name": "Baxtel",
+     "kind": "Directory",
+     "url": "https://baxtel.com/data-center/romania"
+    },
+    {
+     "name": "Operator",
+     "kind": "The operator's own website or announcement",
+     "url": ""
+    }
+   ],
+   "links": [
+    "https://infinitechain.net/data-center/",
+    "https://baxtel.com/data-center/infinite-chain-toplita-tech-park"
+   ],
+   "listed_as": [
+    "DC Hub: Infinite Chain Toplita Technology Park Icp Dc1",
+    "datacenters.com: Toplita Technology Park Data Center — Infinite Chain"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "clusterpower-frs1",
+   "kind": "project",
+   "name": "ClusterPower FRS1",
+   "operator": "ClusterPower + AIC",
+   "aka": "",
+   "address": "",
+   "city": "Făurești",
+   "county": "Vâlcea",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Second ClusterPower/AIC campus, announced 5 Jan 2026, about 300 MW, capacity from 2029. Baxtel places it in Făurești, Vâlcea (precise parcel not disclosed); located at the village, not confirmed by a second source.",
+   "hosted_in": "",
+   "status": "Announced",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": 300.0,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.7406745,
+   "lon": 23.8761663,
+   "precision": "town",
+   "source_keys": [
+    "news",
+    "baxtel"
+   ],
+   "sources": [
+    {
+     "name": "News",
+     "kind": "Press reports",
+     "url": ""
+    },
+    {
+     "name": "Baxtel",
+     "kind": "Directory",
+     "url": "https://baxtel.com/data-center/romania"
+    }
+   ],
+   "links": [
+    "https://www.datacenterdynamics.com/en/news/accelerated-infrastructure-capital-partners-with-romanias-clusterpower-on-800mw-data-center-build-out/",
+    "https://baxtel.com/data-center/clusterpower-fauresti-frs1"
+   ],
+   "listed_as": [],
+   "grade": "B"
+  },
+  {
+   "id": "portland-trust-dc1",
+   "kind": "project",
+   "name": "Portland Trust DC1 (Vitan)",
+   "operator": "Portland Trust",
+   "aka": "",
+   "address": "",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Building permit 2023; plot of 27,734 m² in Vitan bought from Transelectrica's Icemenerg-Service. Operator: 30 MW IT; Baxtel: 20 MW.",
+   "hosted_in": "",
+   "status": "Permitted",
+   "it_mw": 30.0,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": 26437.0,
+   "racks": null,
+   "lat": 44.4361414,
+   "lon": 26.102684,
+   "precision": "town",
+   "source_keys": [
+    "operator",
+    "baxtel",
+    "news"
+   ],
+   "sources": [
+    {
+     "name": "Operator",
+     "kind": "The operator's own website or announcement",
+     "url": ""
+    },
+    {
+     "name": "Baxtel",
+     "kind": "Directory",
+     "url": "https://baxtel.com/data-center/romania"
+    },
+    {
+     "name": "News",
+     "kind": "Press reports",
+     "url": ""
+    }
+   ],
+   "links": [
+    "https://www.portlandtrust.cz/en/industrial/data-centers",
+    "https://baxtel.com/data-center/portland-trust-bucharest"
+   ],
+   "listed_as": [],
+   "grade": "A"
+  },
+  {
+   "id": "portland-trust-dc2",
+   "kind": "project",
+   "name": "Portland Trust DC2 (Preciziei)",
+   "operator": "Portland Trust",
+   "aka": "",
+   "address": "",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Building permit 2024; 4-hectare plot in the Preciziei area. Baxtel: launch Q1 2027.",
+   "hosted_in": "",
+   "status": "Permitted",
+   "it_mw": 30.0,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": 23707.0,
+   "racks": null,
+   "lat": 44.4361414,
+   "lon": 26.102684,
+   "precision": "town",
+   "source_keys": [
+    "operator",
+    "baxtel",
+    "news"
+   ],
+   "sources": [
+    {
+     "name": "Operator",
+     "kind": "The operator's own website or announcement",
+     "url": ""
+    },
+    {
+     "name": "Baxtel",
+     "kind": "Directory",
+     "url": "https://baxtel.com/data-center/romania"
+    },
+    {
+     "name": "News",
+     "kind": "Press reports",
+     "url": ""
+    }
+   ],
+   "links": [
+    "https://www.portlandtrust.cz/en/industrial/data-centers",
+    "https://baxtel.com/data-center/portland-trust-bucharest-2"
+   ],
+   "listed_as": [],
+   "grade": "A"
+  },
+  {
+   "id": "portland-trust-dc3",
+   "kind": "project",
+   "name": "Portland Trust DC3",
+   "operator": "Portland Trust",
+   "aka": "",
+   "address": "",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Operator: 30 MW + 12 MW. Location in Bucharest not published.",
+   "hosted_in": "",
+   "status": "Announced",
+   "it_mw": 42.0,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": 33626.0,
+   "racks": null,
+   "lat": 44.4361414,
+   "lon": 26.102684,
+   "precision": "town",
+   "source_keys": [
+    "operator"
+   ],
+   "sources": [
+    {
+     "name": "Operator",
+     "kind": "The operator's own website or announcement",
+     "url": ""
+    }
+   ],
+   "links": [
+    "https://www.portlandtrust.cz/en/industrial/data-centers"
+   ],
+   "listed_as": [],
+   "grade": "B"
+  },
+  {
+   "id": "sb-nimb",
+   "kind": "project",
+   "name": "NIMB Data Center",
+   "operator": "S+B Gruppe",
+   "aka": "",
+   "address": "Bd. Dimitrie Pompeiu 6C",
+   "city": "București",
+   "county": "București",
+   "tier": "III",
+   "opened": "2027–2028 (planned)",
+   "website": "",
+   "notes": "Building permit and grid connection approval obtained. 12 MW installed, 3,400 m² white space, near Pipera metro.",
+   "hosted_in": "",
+   "status": "Permitted",
+   "it_mw": null,
+   "total_mw": 12.0,
+   "grid_mw": null,
+   "planned_mw": null,
+   "area_m2": 3400.0,
+   "racks": null,
+   "lat": 44.4822752,
+   "lon": 26.1203237,
+   "precision": "street",
+   "source_keys": [
+    "news",
+    "baxtel"
+   ],
+   "sources": [
+    {
+     "name": "News",
+     "kind": "Press reports",
+     "url": ""
+    },
+    {
+     "name": "Baxtel",
+     "kind": "Directory",
+     "url": "https://baxtel.com/data-center/romania"
+    }
+   ],
+   "links": [
+    "https://w.media/sb-gruppe-building-12-mw-nimb-data-center-in-bucharest-metro/",
+    "https://baxtel.com/data-center/romania"
+   ],
+   "listed_as": [],
+   "grade": "B"
+  },
+  {
+   "id": "wdp-stefanestii",
+   "kind": "project",
+   "name": "WDP data centers (two sites)",
+   "operator": "Warehouses De Pauw + Lamas Invest",
+   "aka": "",
+   "address": "",
+   "city": "Ștefăneștii de Jos",
+   "county": "Ilfov",
+   "tier": "",
+   "opened": "by 2030 (planned)",
+   "website": "",
+   "notes": "Two data centres in WDP's industrial park; grid connection of 380 MW combined already approved; a 220 kV substation planned. WDP: 'too early to speak of a concrete project'.",
+   "hosted_in": "",
+   "status": "Announced",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": 380.0,
+   "planned_mw": null,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.5331416,
+   "lon": 26.2029838,
+   "precision": "town",
+   "source_keys": [
+    "news"
+   ],
+   "sources": [
+    {
+     "name": "News",
+     "kind": "Press reports",
+     "url": ""
+    }
+   ],
+   "links": [
+    "https://www.datacenterdynamics.com/en/news/warehouses-de-pauw-announces-two-data-center-projects-in-ilfov-county-romania/",
+    "https://bebeez.eu/2026/08/28/warehouses-de-pauw-announces-two-data-center-projects-in-ilfov-county-romania/"
+   ],
+   "listed_as": [],
+   "grade": "C"
+  },
+  {
+   "id": "sany-timisoara",
+   "kind": "project",
+   "name": "Sany data center",
+   "operator": "Sany International",
+   "aka": "",
+   "address": "",
+   "city": "Timișoara",
+   "county": "Timiș",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Up to 70 MW, with solar parks in Uivar and battery storage; part of a EUR 1 bn project. Exact site not published.",
+   "hosted_in": "",
+   "status": "Announced",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": 70.0,
+   "area_m2": null,
+   "racks": null,
+   "lat": 45.7538355,
+   "lon": 21.2257474,
+   "precision": "town",
+   "source_keys": [
+    "news"
+   ],
+   "sources": [
+    {
+     "name": "News",
+     "kind": "Press reports",
+     "url": ""
+    }
+   ],
+   "links": [
+    "https://www.datacenterdynamics.com/en/news/sany-international-announces-plans-for-data-center-in-timi%C8%99oara-romania/",
+    "https://www.romania-insider.com/sany-green-energy-romania-march-2026"
+   ],
+   "listed_as": [],
+   "grade": "C"
+  },
+  {
+   "id": "driverai-luna",
+   "kind": "project",
+   "name": "DriverAI Quantum AI Data Center",
+   "operator": "DriverAI",
+   "aka": "",
+   "address": "",
+   "city": "Luna",
+   "county": "Cluj",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Four phases of 20 MW in a Leviatan Group industrial park; 20-hectare site (area = plot). Aims at 100% renewable power by phase 4.",
+   "hosted_in": "",
+   "status": "Announced",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": 80.0,
+   "area_m2": 200000.0,
+   "racks": null,
+   "lat": 46.5067725,
+   "lon": 23.9190105,
+   "precision": "town",
+   "source_keys": [
+    "news",
+    "baxtel"
+   ],
+   "sources": [
+    {
+     "name": "News",
+     "kind": "Press reports",
+     "url": ""
+    },
+    {
+     "name": "Baxtel",
+     "kind": "Directory",
+     "url": "https://baxtel.com/data-center/romania"
+    }
+   ],
+   "links": [
+    "https://w.media/romania-to-build-quantum-ai-data-center/",
+    "https://www.romania-insider.com/romania-quantum-ai-data-center-may-2026"
+   ],
+   "listed_as": [],
+   "grade": "B"
+  },
+  {
+   "id": "black-sea-ai-gigafactory",
+   "kind": "project",
+   "name": "Black Sea AI Gigafactory",
+   "operator": "Government of Romania (EuroHPC bid)",
+   "aka": "",
+   "address": "",
+   "city": "Cernavodă",
+   "county": "Constanța",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Bid for an EU AI gigafactory: phase I in Cernavodă, phase II in Doicești; about 1.5 GW and over 100,000 AI accelerators. No developer selected.",
+   "hosted_in": "",
+   "status": "Proposal",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": 1500.0,
+   "area_m2": null,
+   "racks": null,
+   "lat": 44.3416349,
+   "lon": 28.0316248,
+   "precision": "town",
+   "source_keys": [
+    "news"
+   ],
+   "sources": [
+    {
+     "name": "News",
+     "kind": "Press reports",
+     "url": ""
+    }
+   ],
+   "links": [
+    "https://datacenter-forum.ro/en/the-black-sea-ai-gigafactory-and-romanias-contribution-to-europes-ai-agenda/",
+    "https://balkangreenenergynews.com/romania-preparing-to-build-giant-ai-hub-data-centers/"
+   ],
+   "listed_as": [],
+   "grade": "C"
+  }
+ ]
+}

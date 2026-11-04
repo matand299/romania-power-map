@@ -1,0 +1,4180 @@
+{
+"https://nominatim.openstreetmap.org/reverse?lat=44.17672&lon=28.65076&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-CT",
+"city": "Constanța",
+"country": "România",
+"country_code": "ro",
+"county": "Constanța",
+"municipality": "Zona Metropolitană Constanța"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.0842094",
+"44.2727925",
+"28.5091120",
+"28.7136041"
+],
+"category": "boundary",
+"display_name": "Constanța, Zona Metropolitană Constanța, Constanța, România",
+"importance": 0.6242787851555099,
+"lat": "44.1767161",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "28.6507598",
+"name": "Constanța",
+"osm_id": 10487782,
+"osm_type": "relation",
+"place_id": 61343401,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.31657&lon=23.83525&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-DJ",
+"city": "Craiova",
+"country": "România",
+"country_code": "ro",
+"county": "Dolj",
+"municipality": "Zona Metropolitană Craiova"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.2680756",
+"44.3786461",
+"23.7079153",
+"23.9058168"
+],
+"category": "boundary",
+"display_name": "Craiova, Zona Metropolitană Craiova, Dolj, România",
+"importance": 0.6307365041023532,
+"lat": "44.3190159",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.7965614",
+"name": "Craiova",
+"osm_id": 9624263,
+"osm_type": "relation",
+"place_id": 66922630,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.31725&lon=23.80247&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-DJ",
+"city": "Craiova",
+"country": "România",
+"country_code": "ro",
+"county": "Dolj",
+"municipality": "Zona Metropolitană Craiova"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.2680756",
+"44.3786461",
+"23.7079153",
+"23.9058168"
+],
+"category": "boundary",
+"display_name": "Craiova, Zona Metropolitană Craiova, Dolj, România",
+"importance": 0.6307365041023532,
+"lat": "44.3190159",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.7965614",
+"name": "Craiova",
+"osm_id": 9624263,
+"osm_type": "relation",
+"place_id": 63527327,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.31738&lon=23.80012&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-DJ",
+"city": "Craiova",
+"country": "România",
+"country_code": "ro",
+"county": "Dolj",
+"municipality": "Zona Metropolitană Craiova"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.2680756",
+"44.3786461",
+"23.7079153",
+"23.9058168"
+],
+"category": "boundary",
+"display_name": "Craiova, Zona Metropolitană Craiova, Dolj, România",
+"importance": 0.6307365041023532,
+"lat": "44.3190159",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.7965614",
+"name": "Craiova",
+"osm_id": 9624263,
+"osm_type": "relation",
+"place_id": 66922630,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.31902&lon=23.79656&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-DJ",
+"city": "Craiova",
+"country": "România",
+"country_code": "ro",
+"county": "Dolj",
+"municipality": "Zona Metropolitană Craiova"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.2680756",
+"44.3786461",
+"23.7079153",
+"23.9058168"
+],
+"category": "boundary",
+"display_name": "Craiova, Zona Metropolitană Craiova, Dolj, România",
+"importance": 0.6307365041023532,
+"lat": "44.3190159",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.7965614",
+"name": "Craiova",
+"osm_id": 9624263,
+"osm_type": "relation",
+"place_id": 63419825,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.39270&lon=26.12429&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61089609,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.41320&lon=26.11317&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 60818681,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.41512&lon=26.12269&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61089609,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.41554&lon=26.07544&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61089609,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.41977&lon=26.11591&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 60818681,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.42250&lon=26.03713&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 60818681,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.43298&lon=26.15303&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61022975,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.43433&lon=26.10737&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61022975,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.43614&lon=26.10268&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 60818681,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.44131&lon=26.13932&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 60818681,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.44174&lon=26.16625&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61089609,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.44220&lon=25.98602&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-IF",
+"country": "România",
+"country_code": "ro",
+"county": "Ilfov",
+"village": "Chiajna"
+},
+"addresstype": "village",
+"boundingbox": [
+"44.4274625",
+"44.4731642",
+"25.9126255",
+"26.0198033"
+],
+"category": "boundary",
+"display_name": "Chiajna, Ilfov, România",
+"importance": 0.3463314325418498,
+"lat": "44.4588774",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "25.9778979",
+"name": "Chiajna",
+"osm_id": 9849584,
+"osm_type": "relation",
+"place_id": 60234685,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.44364&lon=26.06108&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61022975,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.44458&lon=26.13002&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61427700,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.44536&lon=26.09770&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61427700,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.44631&lon=26.10798&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61427700,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.44714&lon=26.06180&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 60818681,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.45423&lon=25.97581&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-IF",
+"country": "România",
+"country_code": "ro",
+"county": "Ilfov",
+"village": "Chiajna"
+},
+"addresstype": "village",
+"boundingbox": [
+"44.4274625",
+"44.4731642",
+"25.9126255",
+"26.0198033"
+],
+"category": "boundary",
+"display_name": "Chiajna, Ilfov, România",
+"importance": 0.3463314325418498,
+"lat": "44.4588774",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "25.9778979",
+"name": "Chiajna",
+"osm_id": 9849584,
+"osm_type": "relation",
+"place_id": 60234685,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.45707&lon=26.12906&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61427700,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.46201&lon=26.12487&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61022975,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.46784&lon=26.13117&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61022975,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.46832&lon=26.04481&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61089609,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.47094&lon=26.13312&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61022975,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.47832&lon=26.11802&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61427700,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.47840&lon=26.10667&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 60818681,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.47939&lon=26.11129&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61089609,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.47980&lon=26.11423&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61110229,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.48192&lon=26.12079&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 60818681,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.48228&lon=26.12032&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61022975,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.48412&lon=26.05828&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61089609,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.48449&lon=26.11787&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61427700,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.48459&lon=26.08985&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61089609,
+"place_rank": 8,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.49002&lon=26.11895&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-IF",
+"country": "România",
+"country_code": "ro",
+"county": "Ilfov",
+"town": "Voluntari"
+},
+"addresstype": "town",
+"boundingbox": [
+"44.4791121",
+"44.5395441",
+"26.1028494",
+"26.2116299"
+],
+"category": "boundary",
+"display_name": "Voluntari, Ilfov, România",
+"importance": 0.4711183267183768,
+"lat": "44.4902779",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1772794",
+"name": "Voluntari",
+"osm_id": 9849522,
+"osm_type": "relation",
+"place_id": 61185501,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.64394&lon=22.67029&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-MH",
+"city": "Drobeta-Turnu Severin",
+"country": "România",
+"country_code": "ro",
+"county": "Mehedinți"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.6137161",
+"44.7327796",
+"22.4693620",
+"22.7019027"
+],
+"category": "boundary",
+"display_name": "Drobeta-Turnu Severin, Mehedinți, România",
+"importance": 0.5586931216689524,
+"lat": "44.6257835",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "22.6531975",
+"name": "Drobeta-Turnu Severin",
+"osm_id": 9711987,
+"osm_type": "relation",
+"place_id": 63578249,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.74067&lon=23.87617&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-VL",
+"country": "România",
+"country_code": "ro",
+"county": "Vâlcea",
+"municipality": "Zătreni"
+},
+"addresstype": "municipality",
+"boundingbox": [
+"44.7245851",
+"44.8238869",
+"23.7704763",
+"23.9031597"
+],
+"category": "boundary",
+"display_name": "Zătreni, Vâlcea, România",
+"importance": 0.42703896060132607,
+"lat": "44.7620015",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.8569760",
+"name": "Zătreni",
+"osm_id": 9833330,
+"osm_type": "relation",
+"place_id": 63375816,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.91712&lon=25.45341&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-DB",
+"city": "Târgoviște",
+"country": "România",
+"country_code": "ro",
+"county": "Dâmbovița"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.8869488",
+"44.9509495",
+"25.3599021",
+"25.5329000"
+],
+"category": "boundary",
+"display_name": "Târgoviște, Dâmbovița, România",
+"importance": 0.562079472906072,
+"lat": "44.9267709",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "25.4628160",
+"name": "Târgoviște",
+"osm_id": 10694366,
+"osm_type": "relation",
+"place_id": 60323300,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.91917&lon=25.45305&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-DB",
+"city": "Târgoviște",
+"country": "România",
+"country_code": "ro",
+"county": "Dâmbovița"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.8869488",
+"44.9509495",
+"25.3599021",
+"25.5329000"
+],
+"category": "boundary",
+"display_name": "Târgoviște, Dâmbovița, România",
+"importance": 0.562079472906072,
+"lat": "44.9267709",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "25.4628160",
+"name": "Târgoviște",
+"osm_id": 10694366,
+"osm_type": "relation",
+"place_id": 60323300,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.93652&lon=26.02364&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-PH",
+"city": "Ploiești",
+"country": "România",
+"country_code": "ro",
+"county": "Prahova"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.8961443",
+"44.9684177",
+"25.9178971",
+"26.1019693"
+],
+"category": "boundary",
+"display_name": "Ploiești, Prahova, România",
+"importance": 0.6041458141340481,
+"lat": "44.9417468",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.0236504",
+"name": "Ploiești",
+"osm_id": 10694407,
+"osm_type": "relation",
+"place_id": 61244679,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=44.94175&lon=26.02365&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-PH",
+"city": "Ploiești",
+"country": "România",
+"country_code": "ro",
+"county": "Prahova"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.8961443",
+"44.9684177",
+"25.9178971",
+"26.1019693"
+],
+"category": "boundary",
+"display_name": "Ploiești, Prahova, România",
+"importance": 0.6041458141340481,
+"lat": "44.9417468",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.0236504",
+"name": "Ploiești",
+"osm_id": 10694407,
+"osm_type": "relation",
+"place_id": 60795734,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=45.27655&lon=27.98164&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-BR",
+"city": "Brăila",
+"country": "România",
+"country_code": "ro",
+"county": "Brăila"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.2310041",
+"45.3134918",
+"27.9085310",
+"28.0228690"
+],
+"category": "boundary",
+"display_name": "Brăila, România",
+"importance": 0.5852515546390119,
+"lat": "45.2716092",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "27.9742932",
+"name": "Brăila",
+"osm_id": 7509955,
+"osm_type": "relation",
+"place_id": 60754896,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=45.40755&lon=27.97398&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-GL",
+"city": "Galați",
+"country": "România",
+"country_code": "ro",
+"county": "Galați"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.3905188",
+"45.6103724",
+"27.9433558",
+"28.2086890"
+],
+"category": "boundary",
+"display_name": "Galați, România",
+"importance": 0.6216199629021306,
+"lat": "45.4338215",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "28.0549395",
+"name": "Galați",
+"osm_id": 10487103,
+"osm_type": "relation",
+"place_id": 61286661,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=45.42827&lon=28.03812&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-GL",
+"city": "Galați",
+"country": "România",
+"country_code": "ro",
+"county": "Galați"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.3905188",
+"45.6103724",
+"27.9433558",
+"28.2086890"
+],
+"category": "boundary",
+"display_name": "Galați, România",
+"importance": 0.6216199629021306,
+"lat": "45.4338215",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "28.0549395",
+"name": "Galați",
+"osm_id": 10487103,
+"osm_type": "relation",
+"place_id": 61277697,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=45.43147&lon=28.04772&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-GL",
+"city": "Galați",
+"country": "România",
+"country_code": "ro",
+"county": "Galați"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.3905188",
+"45.6103724",
+"27.9433558",
+"28.2086890"
+],
+"category": "boundary",
+"display_name": "Galați, România",
+"importance": 0.6216199629021306,
+"lat": "45.4338215",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "28.0549395",
+"name": "Galați",
+"osm_id": 10487103,
+"osm_type": "relation",
+"place_id": 61225983,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=45.43382&lon=28.05494&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-GL",
+"city": "Galați",
+"country": "România",
+"country_code": "ro",
+"county": "Galați"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.3905188",
+"45.6103724",
+"27.9433558",
+"28.2086890"
+],
+"category": "boundary",
+"display_name": "Galați, România",
+"importance": 0.6216199629021306,
+"lat": "45.4338215",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "28.0549395",
+"name": "Galați",
+"osm_id": 10487103,
+"osm_type": "relation",
+"place_id": 61277697,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=45.64461&lon=25.59234&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-BV",
+"city": "Brașov",
+"country": "România",
+"country_code": "ro",
+"county": "Brașov",
+"municipality": "Zona Metropolitană Brașov"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.4996470",
+"45.7523280",
+"25.5035642",
+"25.6889236"
+],
+"category": "boundary",
+"display_name": "Brașov, Zona Metropolitană Brașov, Brașov, România",
+"importance": 0.6513230783481843,
+"lat": "45.6525105",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "25.6105654",
+"name": "Brașov",
+"osm_id": 10367676,
+"osm_type": "relation",
+"place_id": 60430650,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=45.64540&lon=25.62097&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-BV",
+"city": "Brașov",
+"country": "România",
+"country_code": "ro",
+"county": "Brașov",
+"municipality": "Zona Metropolitană Brașov"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.4996470",
+"45.7523280",
+"25.5035642",
+"25.6889236"
+],
+"category": "boundary",
+"display_name": "Brașov, Zona Metropolitană Brașov, Brașov, România",
+"importance": 0.6513230783481843,
+"lat": "45.6525105",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "25.6105654",
+"name": "Brașov",
+"osm_id": 10367676,
+"osm_type": "relation",
+"place_id": 60562902,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=45.65181&lon=25.60161&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-BV",
+"city": "Brașov",
+"country": "România",
+"country_code": "ro",
+"county": "Brașov",
+"municipality": "Zona Metropolitană Brașov"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.4996470",
+"45.7523280",
+"25.5035642",
+"25.6889236"
+],
+"category": "boundary",
+"display_name": "Brașov, Zona Metropolitană Brașov, Brașov, România",
+"importance": 0.6513230783481843,
+"lat": "45.6525105",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "25.6105654",
+"name": "Brașov",
+"osm_id": 10367676,
+"osm_type": "relation",
+"place_id": 61056964,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=45.65251&lon=25.61057&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-BV",
+"city": "Brașov",
+"country": "România",
+"country_code": "ro",
+"county": "Brașov",
+"municipality": "Zona Metropolitană Brașov"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.4996470",
+"45.7523280",
+"25.5035642",
+"25.6889236"
+],
+"category": "boundary",
+"display_name": "Brașov, Zona Metropolitană Brașov, Brașov, România",
+"importance": 0.6513230783481843,
+"lat": "45.6525105",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "25.6105654",
+"name": "Brașov",
+"osm_id": 10367676,
+"osm_type": "relation",
+"place_id": 60525527,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=45.73185&lon=21.23188&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-TM",
+"city": "Timișoara",
+"country": "România",
+"country_code": "ro",
+"county": "Timiș"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.6838246",
+"45.8341735",
+"21.1116821",
+"21.3272446"
+],
+"category": "boundary",
+"display_name": "Timișoara, Timiș, România",
+"importance": 0.6597260997916001,
+"lat": "45.7538355",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "21.2257474",
+"name": "Timișoara",
+"osm_id": 6927733,
+"osm_type": "relation",
+"place_id": 65182963,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=45.74717&lon=21.22892&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-TM",
+"city": "Timișoara",
+"country": "România",
+"country_code": "ro",
+"county": "Timiș"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.6838246",
+"45.8341735",
+"21.1116821",
+"21.3272446"
+],
+"category": "boundary",
+"display_name": "Timișoara, Timiș, România",
+"importance": 0.6597260997916001,
+"lat": "45.7538355",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "21.2257474",
+"name": "Timișoara",
+"osm_id": 6927733,
+"osm_type": "relation",
+"place_id": 65182963,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=45.75384&lon=21.22575&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-TM",
+"city": "Timișoara",
+"country": "România",
+"country_code": "ro",
+"county": "Timiș"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.6838246",
+"45.8341735",
+"21.1116821",
+"21.3272446"
+],
+"category": "boundary",
+"display_name": "Timișoara, Timiș, România",
+"importance": 0.6597260997916001,
+"lat": "45.7538355",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "21.2257474",
+"name": "Timișoara",
+"osm_id": 6927733,
+"osm_type": "relation",
+"place_id": 64704185,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=45.77416&lon=21.21193&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-TM",
+"city": "Timișoara",
+"country": "România",
+"country_code": "ro",
+"county": "Timiș"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.6838246",
+"45.8341735",
+"21.1116821",
+"21.3272446"
+],
+"category": "boundary",
+"display_name": "Timișoara, Timiș, România",
+"importance": 0.6597260997916001,
+"lat": "45.7538355",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "21.2257474",
+"name": "Timișoara",
+"osm_id": 6927733,
+"osm_type": "relation",
+"place_id": 64890295,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=45.77578&lon=21.21368&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-TM",
+"city": "Timișoara",
+"country": "România",
+"country_code": "ro",
+"county": "Timiș"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.6838246",
+"45.8341735",
+"21.1116821",
+"21.3272446"
+],
+"category": "boundary",
+"display_name": "Timișoara, Timiș, România",
+"importance": 0.6597260997916001,
+"lat": "45.7538355",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "21.2257474",
+"name": "Timișoara",
+"osm_id": 6927733,
+"osm_type": "relation",
+"place_id": 65182963,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=45.77809&lon=21.20988&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-TM",
+"city": "Timișoara",
+"country": "România",
+"country_code": "ro",
+"county": "Timiș"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.6838246",
+"45.8341735",
+"21.1116821",
+"21.3272446"
+],
+"category": "boundary",
+"display_name": "Timișoara, Timiș, România",
+"importance": 0.6597260997916001,
+"lat": "45.7538355",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "21.2257474",
+"name": "Timișoara",
+"osm_id": 6927733,
+"osm_type": "relation",
+"place_id": 64890295,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=45.77896&lon=21.21698&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-TM",
+"city": "Timișoara",
+"country": "România",
+"country_code": "ro",
+"county": "Timiș"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.6838246",
+"45.8341735",
+"21.1116821",
+"21.3272446"
+],
+"category": "boundary",
+"display_name": "Timișoara, Timiș, România",
+"importance": 0.6597260997916001,
+"lat": "45.7538355",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "21.2257474",
+"name": "Timișoara",
+"osm_id": 6927733,
+"osm_type": "relation",
+"place_id": 65182963,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=45.79959&lon=24.13818&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-SB",
+"city": "Sibiu",
+"country": "România",
+"country_code": "ro",
+"county": "Sibiu"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.6338743",
+"45.8570932",
+"23.9219067",
+"24.2445941"
+],
+"category": "boundary",
+"display_name": "Sibiu, România",
+"importance": 0.6306805752473275,
+"lat": "45.7973912",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "24.1519202",
+"name": "Sibiu",
+"osm_id": 9846497,
+"osm_type": "relation",
+"place_id": 60360430,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=46.17417&lon=21.31900&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-AR",
+"city": "Arad",
+"country": "România",
+"country_code": "ro",
+"county": "Arad"
+},
+"addresstype": "city",
+"boundingbox": [
+"46.0447539",
+"46.2618206",
+"21.1513602",
+"21.4146784"
+],
+"category": "boundary",
+"display_name": "Arad, România",
+"importance": 0.6213872438650649,
+"lat": "46.1753793",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "21.3196342",
+"name": "Arad",
+"osm_id": 10488682,
+"osm_type": "relation",
+"place_id": 63347349,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=46.19925&lon=21.31973&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-AR",
+"city": "Arad",
+"country": "România",
+"country_code": "ro",
+"county": "Arad"
+},
+"addresstype": "city",
+"boundingbox": [
+"46.0447539",
+"46.2618206",
+"21.1513602",
+"21.4146784"
+],
+"category": "boundary",
+"display_name": "Arad, România",
+"importance": 0.6213872438650649,
+"lat": "46.1753793",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "21.3196342",
+"name": "Arad",
+"osm_id": 10488682,
+"osm_type": "relation",
+"place_id": 63347349,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=46.29167&lon=26.79928&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-BC",
+"country": "România",
+"country_code": "ro",
+"county": "Bacău",
+"village": "Gura Văii"
+},
+"addresstype": "village",
+"boundingbox": [
+"46.2393432",
+"46.3512229",
+"26.7878548",
+"26.9232909"
+],
+"category": "boundary",
+"display_name": "Gura Văii, Bacău, România",
+"importance": 0.4291272415115571,
+"lat": "46.2691984",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.8302866",
+"name": "Gura Văii",
+"osm_id": 14739056,
+"osm_type": "relation",
+"place_id": 62351810,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=46.55605&lon=26.91536&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-BC",
+"city": "Bacău",
+"country": "România",
+"country_code": "ro",
+"county": "Bacău"
+},
+"addresstype": "city",
+"boundingbox": [
+"46.5057551",
+"46.6215354",
+"26.8629898",
+"26.9546634"
+],
+"category": "boundary",
+"display_name": "Bacău, România",
+"importance": 0.5847066979273076,
+"lat": "46.5560493",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.9153557",
+"name": "Bacău",
+"osm_id": 10715726,
+"osm_type": "relation",
+"place_id": 62428773,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=46.75726&lon=23.59414&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-CJ",
+"city": "Cluj-Napoca",
+"country": "România",
+"country_code": "ro",
+"county": "Cluj",
+"municipality": "Zona Metropolitană Cluj"
+},
+"addresstype": "city",
+"boundingbox": [
+"46.6899711",
+"46.8618320",
+"23.4992430",
+"23.7183267"
+],
+"category": "boundary",
+"display_name": "Cluj-Napoca, Zona Metropolitană Cluj, Cluj, România",
+"importance": 0.6855720334805757,
+"lat": "46.7693790",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.5899542",
+"name": "Cluj-Napoca",
+"osm_id": 3277038,
+"osm_type": "relation",
+"place_id": 63651724,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=46.75768&lon=23.55186&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-CJ",
+"city": "Cluj-Napoca",
+"country": "România",
+"country_code": "ro",
+"county": "Cluj",
+"municipality": "Zona Metropolitană Cluj"
+},
+"addresstype": "city",
+"boundingbox": [
+"46.6899711",
+"46.8618320",
+"23.4992430",
+"23.7183267"
+],
+"category": "boundary",
+"display_name": "Cluj-Napoca, Zona Metropolitană Cluj, Cluj, România",
+"importance": 0.6855720334805757,
+"lat": "46.7693790",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.5899542",
+"name": "Cluj-Napoca",
+"osm_id": 3277038,
+"osm_type": "relation",
+"place_id": 63314254,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=46.76938&lon=23.58995&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-CJ",
+"city": "Cluj-Napoca",
+"country": "România",
+"country_code": "ro",
+"county": "Cluj",
+"municipality": "Zona Metropolitană Cluj"
+},
+"addresstype": "city",
+"boundingbox": [
+"46.6899711",
+"46.8618320",
+"23.4992430",
+"23.7183267"
+],
+"category": "boundary",
+"display_name": "Cluj-Napoca, Zona Metropolitană Cluj, Cluj, România",
+"importance": 0.6855720334805757,
+"lat": "46.7693790",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.5899542",
+"name": "Cluj-Napoca",
+"osm_id": 3277038,
+"osm_type": "relation",
+"place_id": 63311940,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=46.77110&lon=23.59362&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-CJ",
+"city": "Cluj-Napoca",
+"country": "România",
+"country_code": "ro",
+"county": "Cluj",
+"municipality": "Zona Metropolitană Cluj"
+},
+"addresstype": "city",
+"boundingbox": [
+"46.6899711",
+"46.8618320",
+"23.4992430",
+"23.7183267"
+],
+"category": "boundary",
+"display_name": "Cluj-Napoca, Zona Metropolitană Cluj, Cluj, România",
+"importance": 0.6855720334805757,
+"lat": "46.7693790",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.5899542",
+"name": "Cluj-Napoca",
+"osm_id": 3277038,
+"osm_type": "relation",
+"place_id": 63311940,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=46.78041&lon=23.59835&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-CJ",
+"city": "Cluj-Napoca",
+"country": "România",
+"country_code": "ro",
+"county": "Cluj",
+"municipality": "Zona Metropolitană Cluj"
+},
+"addresstype": "city",
+"boundingbox": [
+"46.6899711",
+"46.8618320",
+"23.4992430",
+"23.7183267"
+],
+"category": "boundary",
+"display_name": "Cluj-Napoca, Zona Metropolitană Cluj, Cluj, România",
+"importance": 0.6855720334805757,
+"lat": "46.7693790",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.5899542",
+"name": "Cluj-Napoca",
+"osm_id": 3277038,
+"osm_type": "relation",
+"place_id": 63314254,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=46.78781&lon=23.59280&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-CJ",
+"city": "Cluj-Napoca",
+"country": "România",
+"country_code": "ro",
+"county": "Cluj",
+"municipality": "Zona Metropolitană Cluj"
+},
+"addresstype": "city",
+"boundingbox": [
+"46.6899711",
+"46.8618320",
+"23.4992430",
+"23.7183267"
+],
+"category": "boundary",
+"display_name": "Cluj-Napoca, Zona Metropolitană Cluj, Cluj, România",
+"importance": 0.6855720334805757,
+"lat": "46.7693790",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.5899542",
+"name": "Cluj-Napoca",
+"osm_id": 3277038,
+"osm_type": "relation",
+"place_id": 63629045,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=46.79444&lon=23.60172&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-CJ",
+"city": "Cluj-Napoca",
+"country": "România",
+"country_code": "ro",
+"county": "Cluj",
+"municipality": "Zona Metropolitană Cluj"
+},
+"addresstype": "city",
+"boundingbox": [
+"46.6899711",
+"46.8618320",
+"23.4992430",
+"23.7183267"
+],
+"category": "boundary",
+"display_name": "Cluj-Napoca, Zona Metropolitană Cluj, Cluj, România",
+"importance": 0.6855720334805757,
+"lat": "46.7693790",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.5899542",
+"name": "Cluj-Napoca",
+"osm_id": 3277038,
+"osm_type": "relation",
+"place_id": 63378503,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=46.82078&lon=23.58038&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-CJ",
+"city": "Cluj-Napoca",
+"country": "România",
+"country_code": "ro",
+"county": "Cluj",
+"municipality": "Zona Metropolitană Cluj"
+},
+"addresstype": "city",
+"boundingbox": [
+"46.6899711",
+"46.8618320",
+"23.4992430",
+"23.7183267"
+],
+"category": "boundary",
+"display_name": "Cluj-Napoca, Zona Metropolitană Cluj, Cluj, România",
+"importance": 0.6855720334805757,
+"lat": "46.7693790",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.5899542",
+"name": "Cluj-Napoca",
+"osm_id": 3277038,
+"osm_type": "relation",
+"place_id": 63651724,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=46.88115&lon=23.79025&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-CJ",
+"country": "România",
+"country_code": "ro",
+"county": "Cluj",
+"municipality": "Jucu"
+},
+"addresstype": "municipality",
+"boundingbox": [
+"46.8107387",
+"46.8867563",
+"23.7004901",
+"23.9015421"
+],
+"category": "boundary",
+"display_name": "Jucu, Zona Metropolitană Cluj, Cluj, România",
+"importance": 0.4937349088199073,
+"lat": "46.8485108",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.8074238",
+"name": "Jucu",
+"osm_id": 11318524,
+"osm_type": "relation",
+"place_id": 63391352,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=47.05492&lon=21.92852&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-BH",
+"city": "Oradea",
+"country": "România",
+"country_code": "ro",
+"county": "Bihor",
+"municipality": "Zona Metropolitană Oradea"
+},
+"addresstype": "city",
+"boundingbox": [
+"47.0070293",
+"47.1421315",
+"21.8428285",
+"22.0322626"
+],
+"category": "boundary",
+"display_name": "Oradea, Zona Metropolitană Oradea, Bihor, România",
+"importance": 0.18673516823071637,
+"lat": "47.0748349",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "21.9224478",
+"name": "Oradea",
+"osm_id": 10718900,
+"osm_type": "relation",
+"place_id": 63453415,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=47.14424&lon=27.60333&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-IS",
+"city": "Iași",
+"country": "România",
+"country_code": "ro",
+"county": "Iași",
+"municipality": "Zona Metropolitană Iași"
+},
+"addresstype": "city",
+"boundingbox": [
+"47.0848238",
+"47.2279047",
+"27.4765545",
+"27.6921270"
+],
+"category": "boundary",
+"display_name": "Iași, Zona Metropolitană Iași, Iași, România",
+"importance": 0.6524594196921784,
+"lat": "47.1615598",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "27.5837814",
+"name": "Iași",
+"osm_id": 1207838,
+"osm_type": "relation",
+"place_id": 62545955,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=47.16156&lon=27.58378&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-IS",
+"city": "Iași",
+"country": "România",
+"country_code": "ro",
+"county": "Iași",
+"municipality": "Zona Metropolitană Iași"
+},
+"addresstype": "city",
+"boundingbox": [
+"47.0848238",
+"47.2279047",
+"27.4765545",
+"27.6921270"
+],
+"category": "boundary",
+"display_name": "Iași, Zona Metropolitană Iași, Iași, România",
+"importance": 0.6524594196921784,
+"lat": "47.1615598",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "27.5837814",
+"name": "Iași",
+"osm_id": 1207838,
+"osm_type": "relation",
+"place_id": 62545955,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/reverse?lat=47.16884&lon=27.57733&format=jsonv2&zoom=10&addressdetails=1": {
+"address": {
+"ISO3166-2-lvl4": "RO-IS",
+"city": "Iași",
+"country": "România",
+"country_code": "ro",
+"county": "Iași",
+"municipality": "Zona Metropolitană Iași"
+},
+"addresstype": "city",
+"boundingbox": [
+"47.0848238",
+"47.2279047",
+"27.4765545",
+"27.6921270"
+],
+"category": "boundary",
+"display_name": "Iași, Zona Metropolitană Iași, Iași, România",
+"importance": 0.6524594196921784,
+"lat": "47.1615598",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "27.5837814",
+"name": "Iași",
+"osm_id": 1207838,
+"osm_type": "relation",
+"place_id": 62734076,
+"place_rank": 16,
+"type": "administrative"
+},
+"https://nominatim.openstreetmap.org/search?q=%C8%98os.+Orhideelor%2C+Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro",
+"district": "Sector 6",
+"highway": "Șos. Orhideelor",
+"postcode": "060751",
+"road": "Șoseaua Orhideelor",
+"suburb": "Grozăvești"
+},
+"addresstype": "highway",
+"boundingbox": [
+"44.4435879",
+"44.4436879",
+"26.0610345",
+"26.0611345"
+],
+"category": "highway",
+"display_name": "Șos. Orhideelor, Șoseaua Orhideelor, Grozăvești, Sector 6, București, 060751, România",
+"importance": 8.015335317001629e-05,
+"lat": "44.4436379",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.0610845",
+"name": "Șos. Orhideelor",
+"osm_id": 1625385453,
+"osm_type": "node",
+"place_id": 60889419,
+"place_rank": 30,
+"type": "bus_stop"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=%C8%98oseaua+Orhideelor%2C+Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro",
+"district": "Sector 6",
+"postcode": "060073",
+"road": "Șoseaua Orhideelor",
+"suburb": "Grozăvești"
+},
+"addresstype": "secondary",
+"boundingbox": [
+"44.4468185",
+"44.4476207",
+"26.0603758",
+"26.0631748"
+],
+"category": "highway",
+"display_name": "Șoseaua Orhideelor, Grozăvești, Sector 6, București, 060073, România",
+"importance": 0.05341348668650336,
+"lat": "44.4471419",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.0618010",
+"name": "Șoseaua Orhideelor",
+"osm_id": 360811525,
+"osm_type": "way",
+"place_id": 60898924,
+"place_rank": 26,
+"type": "secondary"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=%C8%98oseaua+de+Centur%C4%83%2C+Tunari%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-IF",
+"building": "AERZEN ROMANIA",
+"country": "România",
+"country_code": "ro",
+"county": "Ilfov",
+"house_number": "25A",
+"postcode": "077190",
+"road": "Șoseaua de Centură",
+"village": "Tunari"
+},
+"addresstype": "building",
+"boundingbox": [
+"44.5302178",
+"44.5305990",
+"26.1563213",
+"26.1566553"
+],
+"category": "building",
+"display_name": "AERZEN ROMANIA, 25A, Șoseaua de Centură, Tunari, Ilfov, 077190, România",
+"importance": 4.5001144426596745e-05,
+"lat": "44.5303959",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1564885",
+"name": "AERZEN ROMANIA",
+"osm_id": 1175537731,
+"osm_type": "way",
+"place_id": 61009193,
+"place_rank": 30,
+"type": "yes"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=%C8%98oseaua+de+Centur%C4%83+38+%28Bucharest+Ring+Road%29%2C+Tunari%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [],
+"https://nominatim.openstreetmap.org/search?q=%C8%98tef%C4%83ne%C8%99tii+de+Jos%2C+Ilfov%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-IF",
+"country": "România",
+"country_code": "ro",
+"county": "Ilfov",
+"municipality": "Ștefăneștii de Jos"
+},
+"addresstype": "municipality",
+"boundingbox": [
+"44.5063108",
+"44.5865809",
+"26.1579098",
+"26.2298815"
+],
+"category": "boundary",
+"display_name": "Ștefăneștii de Jos, Ilfov, România",
+"importance": 0.3501849283177136,
+"lat": "44.5331416",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.2029838",
+"name": "Ștefăneștii de Jos",
+"osm_id": 9877782,
+"osm_type": "relation",
+"place_id": 61160027,
+"place_rank": 16,
+"type": "administrative"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Bac%C4%83u%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-BC",
+"city": "Bacău",
+"country": "România",
+"country_code": "ro",
+"county": "Bacău"
+},
+"addresstype": "city",
+"boundingbox": [
+"46.5057551",
+"46.6215354",
+"26.8629898",
+"26.9546634"
+],
+"category": "boundary",
+"display_name": "Bacău, România",
+"importance": 0.5847066979273076,
+"lat": "46.5560493",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.9153557",
+"name": "Bacău",
+"osm_id": 10715726,
+"osm_type": "relation",
+"place_id": 62551942,
+"place_rank": 16,
+"type": "administrative"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Bd.+Dacia+99%2C+Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"city_district": "Sector 2",
+"country": "România",
+"country_code": "ro",
+"house_number": "99",
+"neighbourhood": "Piața Spaniei",
+"postcode": "020053",
+"quarter": "Ștefan cel Mare",
+"road": "Bulevardul Dacia",
+"suburb": "Cartierul Armenesc"
+},
+"addresstype": "building",
+"boundingbox": [
+"44.4461991",
+"44.4464351",
+"26.1077530",
+"26.1082249"
+],
+"category": "building",
+"display_name": "99, Bulevardul Dacia, Piața Spaniei, Ștefan cel Mare, Cartierul Armenesc, Sector 2, București, 020053, România",
+"importance": 8.015335317001629e-05,
+"lat": "44.4463139",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1079846",
+"name": "",
+"osm_id": 837538951,
+"osm_type": "way",
+"place_id": 60940661,
+"place_rank": 30,
+"type": "office"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Bd.+Dimitrie+Pompeiu%2C+Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"city_district": "Sector 2",
+"country": "România",
+"country_code": "ro",
+"postcode": "020331",
+"road": "Bulevardul Dimitrie Pompeiu",
+"suburb": "Pipera"
+},
+"addresstype": "tertiary",
+"boundingbox": [
+"44.4789051",
+"44.4800566",
+"26.1091670",
+"26.1133715"
+],
+"category": "highway",
+"display_name": "Bulevardul Dimitrie Pompeiu, Pipera, Sector 2, București, 020331, România",
+"importance": 0.05341348668650336,
+"lat": "44.4793929",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1112917",
+"name": "Bulevardul Dimitrie Pompeiu",
+"osm_id": 23583806,
+"osm_type": "way",
+"place_id": 61228582,
+"place_rank": 26,
+"type": "tertiary"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Bd.+Dimitrie+Pompeiu+6C%2C+Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"city_district": "Sector 2",
+"country": "România",
+"country_code": "ro",
+"postcode": "020334",
+"road": "Bulevardul Dimitrie Pompeiu",
+"suburb": "Pipera"
+},
+"addresstype": "tertiary",
+"boundingbox": [
+"44.4782846",
+"44.4785174",
+"26.1060970",
+"26.1072485"
+],
+"category": "highway",
+"display_name": "Bulevardul Dimitrie Pompeiu, Pipera, Sector 2, București, 020334, România",
+"importance": 0.05341348668650336,
+"lat": "44.4784001",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1066729",
+"name": "Bulevardul Dimitrie Pompeiu",
+"osm_id": 1443394971,
+"osm_type": "way",
+"place_id": 60871668,
+"place_rank": 26,
+"type": "tertiary"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Bra%C8%99ov%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-BV",
+"city": "Brașov",
+"country": "România",
+"country_code": "ro",
+"county": "Brașov",
+"municipality": "Zona Metropolitană Brașov"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.4996470",
+"45.7523280",
+"25.5035642",
+"25.6889236"
+],
+"category": "boundary",
+"display_name": "Brașov, Zona Metropolitană Brașov, Brașov, România",
+"importance": 0.6513230783481843,
+"lat": "45.6525105",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "25.6105654",
+"name": "Brașov",
+"osm_id": 10367676,
+"osm_type": "relation",
+"place_id": 61056964,
+"place_rank": 16,
+"type": "administrative"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Bucharest+Ring+Road%2C+Ilfov+%28Bucharest+ring+road%29%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [],
+"https://nominatim.openstreetmap.org/search?q=Bucharest+Ring+Road+38%2C+Ilfov+%28Bucharest+ring+road%29%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [],
+"https://nominatim.openstreetmap.org/search?q=Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"country": "România",
+"country_code": "ro"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3342466",
+"44.5413964",
+"25.9666745",
+"26.2255768"
+],
+"category": "boundary",
+"display_name": "București, România",
+"importance": 0.761229833694605,
+"lat": "44.4361414",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1026840",
+"name": "București",
+"osm_id": 377733,
+"osm_type": "relation",
+"place_id": 61089609,
+"place_rank": 8,
+"type": "administrative"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Bulevardul+Dacia+99%2C+Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"city_district": "Sector 2",
+"country": "România",
+"country_code": "ro",
+"house_number": "99",
+"neighbourhood": "Piața Spaniei",
+"postcode": "020053",
+"quarter": "Ștefan cel Mare",
+"road": "Bulevardul Dacia",
+"suburb": "Cartierul Armenesc"
+},
+"addresstype": "building",
+"boundingbox": [
+"44.4461991",
+"44.4464351",
+"26.1077530",
+"26.1082249"
+],
+"category": "building",
+"display_name": "99, Bulevardul Dacia, Piața Spaniei, Ștefan cel Mare, Cartierul Armenesc, Sector 2, București, 020053, România",
+"importance": 8.015335317001629e-05,
+"lat": "44.4463139",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1079846",
+"name": "",
+"osm_id": 837538951,
+"osm_type": "way",
+"place_id": 61410701,
+"place_rank": 30,
+"type": "office"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Bulevardul+Dimitrie+Pompeiu%2C+Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"city_district": "Sector 2",
+"country": "România",
+"country_code": "ro",
+"postcode": "020331",
+"road": "Bulevardul Dimitrie Pompeiu",
+"suburb": "Pipera"
+},
+"addresstype": "tertiary",
+"boundingbox": [
+"44.4789051",
+"44.4800566",
+"26.1091670",
+"26.1133715"
+],
+"category": "highway",
+"display_name": "Bulevardul Dimitrie Pompeiu, Pipera, Sector 2, București, 020331, România",
+"importance": 0.05341348668650336,
+"lat": "44.4793929",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1112917",
+"name": "Bulevardul Dimitrie Pompeiu",
+"osm_id": 23583806,
+"osm_type": "way",
+"place_id": 61228582,
+"place_rank": 26,
+"type": "tertiary"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Bulevardul+Dimitrie+Pompeiu+6C%2C+Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"city_district": "Sector 2",
+"country": "România",
+"country_code": "ro",
+"postcode": "020337",
+"road": "Bulevardul Dimitrie Pompeiu",
+"suburb": "Pipera"
+},
+"addresstype": "tertiary",
+"boundingbox": [
+"44.4807432",
+"44.4824482",
+"26.1155105",
+"26.1253510"
+],
+"category": "highway",
+"display_name": "Bulevardul Dimitrie Pompeiu, Pipera, Sector 2, București, 020337, România",
+"importance": 0.05341348668650336,
+"lat": "44.4822752",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1203237",
+"name": "Bulevardul Dimitrie Pompeiu",
+"osm_id": 1040373748,
+"osm_type": "way",
+"place_id": 60866768,
+"place_rank": 26,
+"type": "tertiary"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Calea+Bucure%C8%99ti+36%2C+Bra%C8%99ov%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-BV",
+"city": "Brașov",
+"country": "România",
+"country_code": "ro",
+"county": "Brașov",
+"house_number": "36",
+"municipality": "Zona Metropolitană Brașov",
+"postcode": "500365",
+"road": "Calea București",
+"suburb": "Astra"
+},
+"addresstype": "building",
+"boundingbox": [
+"45.6453094",
+"45.6454939",
+"25.6208432",
+"25.6211062"
+],
+"category": "building",
+"display_name": "36, Calea București, Astra, Brașov, Zona Metropolitană Brașov, Brașov, 500365, România",
+"importance": 7.02258335240256e-05,
+"lat": "45.6454016",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "25.6209743",
+"name": "",
+"osm_id": 1460511427,
+"osm_type": "way",
+"place_id": 60566389,
+"place_rank": 30,
+"type": "apartments"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Calea+Martirilor%2C+Timi%C8%99oara%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-TM",
+"city": "Timișoara",
+"country": "România",
+"country_code": "ro",
+"county": "Timiș",
+"suburb": "Girocului"
+},
+"addresstype": "suburb",
+"boundingbox": [
+"45.7288122",
+"45.7387198",
+"21.2267628",
+"21.2382658"
+],
+"category": "place",
+"display_name": "Girocului, Timișoara, Timiș, România",
+"importance": 0.2772938966131108,
+"lat": "45.7318471",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "21.2318790",
+"name": "Girocului",
+"osm_id": 434872533,
+"osm_type": "way",
+"place_id": 65146420,
+"place_rank": 19,
+"type": "suburb"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Cernavod%C4%83%2C+Constan%C8%9Ba%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-CT",
+"country": "România",
+"country_code": "ro",
+"county": "Constanța",
+"postcode": "905200",
+"town": "Cernavodă"
+},
+"addresstype": "town",
+"boundingbox": [
+"44.2617702",
+"44.3678838",
+"28.0019397",
+"28.1594608"
+],
+"category": "boundary",
+"display_name": "Cernavodă, Constanța, 905200, România",
+"importance": 0.5165620913474094,
+"lat": "44.3416349",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "28.0316248",
+"name": "Cernavodă",
+"osm_id": 10697851,
+"osm_type": "relation",
+"place_id": 61095098,
+"place_rank": 16,
+"type": "administrative"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Cluj-Napoca%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-CJ",
+"city": "Cluj-Napoca",
+"country": "România",
+"country_code": "ro",
+"county": "Cluj",
+"municipality": "Zona Metropolitană Cluj"
+},
+"addresstype": "city",
+"boundingbox": [
+"46.6899711",
+"46.8618320",
+"23.4992430",
+"23.7183267"
+],
+"category": "boundary",
+"display_name": "Cluj-Napoca, Zona Metropolitană Cluj, Cluj, România",
+"importance": 0.6855720334805757,
+"lat": "46.7693790",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.5899542",
+"name": "Cluj-Napoca",
+"osm_id": 3277038,
+"osm_type": "relation",
+"place_id": 63378503,
+"place_rank": 16,
+"type": "administrative"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Constan%C8%9Ba%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-CT",
+"city": "Constanța",
+"country": "România",
+"country_code": "ro",
+"county": "Constanța",
+"municipality": "Zona Metropolitană Constanța"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.0842094",
+"44.2727925",
+"28.5091120",
+"28.7136041"
+],
+"category": "boundary",
+"display_name": "Constanța, Zona Metropolitană Constanța, Constanța, România",
+"importance": 0.6242787851555099,
+"lat": "44.1767161",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "28.6507598",
+"name": "Constanța",
+"osm_id": 10487782,
+"osm_type": "relation",
+"place_id": 61091230,
+"place_rank": 16,
+"type": "administrative"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Craiova%2C+Dolj%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-DJ",
+"city": "Craiova",
+"country": "România",
+"country_code": "ro",
+"county": "Dolj",
+"municipality": "Zona Metropolitană Craiova"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.2680756",
+"44.3786461",
+"23.7079153",
+"23.9058168"
+],
+"category": "boundary",
+"display_name": "Craiova, Zona Metropolitană Craiova, Dolj, România",
+"importance": 0.6307365041023532,
+"lat": "44.3190159",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.7965614",
+"name": "Craiova",
+"osm_id": 9624263,
+"osm_type": "relation",
+"place_id": 63597634,
+"place_rank": 16,
+"type": "administrative"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Craiova%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-DJ",
+"city": "Craiova",
+"country": "România",
+"country_code": "ro",
+"county": "Dolj",
+"municipality": "Zona Metropolitană Craiova"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.2680756",
+"44.3786461",
+"23.7079153",
+"23.9058168"
+],
+"category": "boundary",
+"display_name": "Craiova, Zona Metropolitană Craiova, Dolj, România",
+"importance": 0.6307365041023532,
+"lat": "44.3190159",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.7965614",
+"name": "Craiova",
+"osm_id": 9624263,
+"osm_type": "relation",
+"place_id": 63597634,
+"place_rank": 16,
+"type": "administrative"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=F%C4%83ure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-VL",
+"country": "România",
+"country_code": "ro",
+"county": "Vâlcea",
+"postcode": "247762",
+"village": "Făurești"
+},
+"addresstype": "village",
+"boundingbox": [
+"44.7360430",
+"44.7411890",
+"23.8683990",
+"23.8808010"
+],
+"category": "place",
+"display_name": "Făurești, Zătreni, Vâlcea, 247762, România",
+"importance": 0.4261650932142823,
+"lat": "44.7406745",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.8761663",
+"name": "Făurești",
+"osm_id": 74711805,
+"osm_type": "way",
+"place_id": 63521619,
+"place_rank": 19,
+"type": "village"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=F%C4%83ure%C8%99ti%2C+V%C3%A2lcea%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-VL",
+"country": "România",
+"country_code": "ro",
+"county": "Vâlcea",
+"postcode": "247762",
+"village": "Făurești"
+},
+"addresstype": "village",
+"boundingbox": [
+"44.7360430",
+"44.7411890",
+"23.8683990",
+"23.8808010"
+],
+"category": "place",
+"display_name": "Făurești, Zătreni, Vâlcea, 247762, România",
+"importance": 0.4261650932142823,
+"lat": "44.7406745",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.8761663",
+"name": "Făurești",
+"osm_id": 74711805,
+"osm_type": "way",
+"place_id": 63816983,
+"place_rank": 19,
+"type": "village"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Gala%C8%9Bi%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-GL",
+"city": "Galați",
+"country": "România",
+"country_code": "ro",
+"county": "Galați"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.3905188",
+"45.6103724",
+"27.9433558",
+"28.2086890"
+],
+"category": "boundary",
+"display_name": "Galați, România",
+"importance": 0.6216199629021306,
+"lat": "45.4338215",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "28.0549395",
+"name": "Galați",
+"osm_id": 10487103,
+"osm_type": "relation",
+"place_id": 61277697,
+"place_rank": 16,
+"type": "administrative"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Ia%C8%99i%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-IS",
+"city": "Iași",
+"country": "România",
+"country_code": "ro",
+"county": "Iași",
+"municipality": "Zona Metropolitană Iași"
+},
+"addresstype": "city",
+"boundingbox": [
+"47.0848238",
+"47.2279047",
+"27.4765545",
+"27.6921270"
+],
+"category": "boundary",
+"display_name": "Iași, Zona Metropolitană Iași, Iași, România",
+"importance": 0.6524594196921784,
+"lat": "47.1615598",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "27.5837814",
+"name": "Iași",
+"osm_id": 1207838,
+"osm_type": "relation",
+"place_id": 62627633,
+"place_rank": 16,
+"type": "administrative"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Ilfov%2C+Ilfov%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-IF",
+"country": "România",
+"country_code": "ro",
+"county": "Ilfov",
+"municipality": "Dărăști-Ilfov",
+"postcode": "077080"
+},
+"addresstype": "municipality",
+"boundingbox": [
+"44.2683721",
+"44.3405431",
+"25.9745088",
+"26.0554111"
+],
+"category": "boundary",
+"display_name": "Dărăști-Ilfov, Ilfov, 077080, România",
+"importance": 0.41523351747267634,
+"lat": "44.3097082",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.0181091",
+"name": "Dărăști-Ilfov",
+"osm_id": 9882385,
+"osm_type": "relation",
+"place_id": 61090486,
+"place_rank": 16,
+"type": "administrative"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Luna%2C+Cluj%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-CJ",
+"country": "România",
+"country_code": "ro",
+"county": "Cluj",
+"municipality": "Luna"
+},
+"addresstype": "municipality",
+"boundingbox": [
+"46.4296427",
+"46.5340666",
+"23.8678585",
+"24.0048608"
+],
+"category": "boundary",
+"display_name": "Luna, Cluj, România",
+"importance": 0.4022453104308014,
+"lat": "46.5067725",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.9190105",
+"name": "Luna",
+"osm_id": 14654024,
+"osm_type": "relation",
+"place_id": 63433025,
+"place_rank": 16,
+"type": "administrative"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Mischii%2C+Dolj%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-DJ",
+"city": "Mischii",
+"country": "România",
+"country_code": "ro",
+"county": "Dolj",
+"municipality": "Zona Metropolitană Craiova"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.3604027",
+"44.4816002",
+"23.8263955",
+"23.9089268"
+],
+"category": "boundary",
+"display_name": "Mischii, Zona Metropolitană Craiova, Dolj, România",
+"importance": 0.47881559724676087,
+"lat": "44.4202106",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.8577591",
+"name": "Mischii",
+"osm_id": 9642715,
+"osm_type": "relation",
+"place_id": 63499154,
+"place_rank": 16,
+"type": "administrative"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Oradea%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-BH",
+"city": "Oradea",
+"country": "România",
+"country_code": "ro",
+"county": "Bihor",
+"municipality": "Zona Metropolitană Oradea",
+"postcode": "410100"
+},
+"addresstype": "city",
+"boundingbox": [
+"46.8949163",
+"47.2149163",
+"21.7685231",
+"22.0885231"
+],
+"category": "place",
+"display_name": "Oradea, Zona Metropolitană Oradea, Bihor, 410100, România",
+"importance": 0.633691971435197,
+"lat": "47.0549163",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "21.9285231",
+"name": "Oradea",
+"osm_id": 2691094601,
+"osm_type": "node",
+"place_id": 63188657,
+"place_rank": 16,
+"type": "city"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Pia%C8%9Ba+Roman%C4%83%2C+Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"city_district": "Sector 1",
+"country": "România",
+"country_code": "ro",
+"neighbourhood": "A. Lahovary",
+"postcode": "010337",
+"quarter": "Piața Romană",
+"railway": "Piața Romană",
+"road": "Bulevardul General Gheorghe Magheru",
+"suburb": "Amzei"
+},
+"addresstype": "railway",
+"boundingbox": [
+"44.4403569",
+"44.4503569",
+"26.0926999",
+"26.1026999"
+],
+"category": "railway",
+"display_name": "Piața Romană, Bulevardul General Gheorghe Magheru, A. Lahovary, Piața Romană, Amzei, Sector 1, București, 010337, România",
+"importance": 0.31673068536229987,
+"lat": "44.4453569",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.0976999",
+"name": "Piața Romană",
+"osm_id": 582555685,
+"osm_type": "node",
+"place_id": 61142348,
+"place_rank": 30,
+"type": "station"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Ploie%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-PH",
+"city": "Ploiești",
+"country": "România",
+"country_code": "ro",
+"county": "Prahova"
+},
+"addresstype": "city",
+"boundingbox": [
+"44.8961443",
+"44.9684177",
+"25.9178971",
+"26.1019693"
+],
+"category": "boundary",
+"display_name": "Ploiești, Prahova, România",
+"importance": 0.6041458141340481,
+"lat": "44.9417468",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.0236504",
+"name": "Ploiești",
+"osm_id": 10694407,
+"osm_type": "relation",
+"place_id": 60795734,
+"place_rank": 16,
+"type": "administrative"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Str.+Alexandru+L%C4%83pu%C8%99neanu+21%2C+Ia%C8%99i%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-IS",
+"amenity": "ING",
+"city": "Iași",
+"country": "România",
+"country_code": "ro",
+"county": "Iași",
+"house_number": "21",
+"municipality": "Zona Metropolitană Iași",
+"postcode": "507184",
+"road": "Strada Alexandru Lăpușneanu",
+"suburb": "Centru"
+},
+"addresstype": "amenity",
+"boundingbox": [
+"47.1687896",
+"47.1688896",
+"27.5772804",
+"27.5773804"
+],
+"category": "amenity",
+"display_name": "ING, 21, Strada Alexandru Lăpușneanu, Centru, Iași, Zona Metropolitană Iași, Iași, 507184, România",
+"importance": 6.948882276641516e-05,
+"lat": "47.1688396",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "27.5773304",
+"name": "ING",
+"osm_id": 2074404728,
+"osm_type": "node",
+"place_id": 62884116,
+"place_rank": 30,
+"type": "bank"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Str.+Aluni%C8%99%2C+Zencani+%28Topli%C8%9Ba%29%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-HR",
+"city": "Toplița",
+"country": "România",
+"country_code": "ro",
+"county": "Harghita",
+"postcode": "535708",
+"road": "Strada Aluniș",
+"village": "Zencani"
+},
+"addresstype": "residential",
+"boundingbox": [
+"46.9308732",
+"46.9312592",
+"25.3360006",
+"25.3362237"
+],
+"category": "highway",
+"display_name": "Strada Aluniș, Zencani, Toplița, Harghita, 535708, România",
+"importance": 0.05338940337224381,
+"lat": "46.9310662",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "25.3361121",
+"name": "Strada Aluniș",
+"osm_id": 684273713,
+"osm_type": "way",
+"place_id": 62784681,
+"place_rank": 26,
+"type": "residential"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Str.+Aluni%C8%99+19%2C+Zencani+%28Topli%C8%9Ba%29%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-HR",
+"city": "Toplița",
+"country": "România",
+"country_code": "ro",
+"county": "Harghita",
+"postcode": "535708",
+"road": "Strada Aluniș",
+"village": "Zencani"
+},
+"addresstype": "residential",
+"boundingbox": [
+"46.9308732",
+"46.9312592",
+"25.3360006",
+"25.3362237"
+],
+"category": "highway",
+"display_name": "Strada Aluniș, Zencani, Toplița, Harghita, 535708, România",
+"importance": 0.05338940337224381,
+"lat": "46.9310662",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "25.3361121",
+"name": "Strada Aluniș",
+"osm_id": 684273713,
+"osm_type": "way",
+"place_id": 62602809,
+"place_rank": 26,
+"type": "residential"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Str.+Br%C4%83ilei%2C+Gala%C8%9Bi%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-GL",
+"city": "Galați",
+"country": "România",
+"country_code": "ro",
+"county": "Galați",
+"postcode": "800021",
+"road": "Strada Brăilei",
+"suburb": "Mazepa 1"
+},
+"addresstype": "primary",
+"boundingbox": [
+"45.4304530",
+"45.4325422",
+"28.0457860",
+"28.0496332"
+],
+"category": "highway",
+"display_name": "Strada Brăilei, Mazepa 1, Galați, 800021, România",
+"importance": 0.053400634012359775,
+"lat": "45.4314711",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "28.0477236",
+"name": "Strada Brăilei",
+"osm_id": 292353169,
+"osm_type": "way",
+"place_id": 61273739,
+"place_rank": 26,
+"type": "primary"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Str.+Br%C4%83ilei+41%2C+Gala%C8%9Bi%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-GL",
+"city": "Galați",
+"country": "România",
+"country_code": "ro",
+"county": "Galați",
+"house_number": "41",
+"postcode": "800306",
+"road": "Strada Brăilei",
+"suburb": "Mazepa 2"
+},
+"addresstype": "place",
+"boundingbox": [
+"45.4281062",
+"45.4282062",
+"28.0383535",
+"28.0384535"
+],
+"category": "place",
+"display_name": "41, Strada Brăilei, Mazepa 2, Galați, 800306, România",
+"importance": 6.73006790264289e-05,
+"lat": "45.4281562",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "28.0384035",
+"name": "",
+"osm_id": 5122011245,
+"osm_type": "node",
+"place_id": 61045746,
+"place_rank": 30,
+"type": "house"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Str.+G%C4%83rii%2C+T%C3%A2rgovi%C8%99te%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-DB",
+"city": "Târgoviște",
+"country": "România",
+"country_code": "ro",
+"county": "Dâmbovița",
+"neighbourhood": "Zona Gării",
+"postcode": "130087",
+"road": "Strada Gării"
+},
+"addresstype": "secondary",
+"boundingbox": [
+"44.9166378",
+"44.9175974",
+"25.4523848",
+"25.4544395"
+],
+"category": "highway",
+"display_name": "Strada Gării, Zona Gării, Târgoviște, Dâmbovița, 130087, România",
+"importance": 0.05339469672693977,
+"lat": "44.9171189",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "25.4534128",
+"name": "Strada Gării",
+"osm_id": 41673699,
+"osm_type": "way",
+"place_id": 60846670,
+"place_rank": 26,
+"type": "secondary"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Str.+G%C4%83rii+6%2C+T%C3%A2rgovi%C8%99te%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-DB",
+"city": "Târgoviște",
+"country": "România",
+"country_code": "ro",
+"county": "Dâmbovița",
+"neighbourhood": "Zona Gării",
+"postcode": "130087",
+"road": "Strada Gării"
+},
+"addresstype": "secondary",
+"boundingbox": [
+"44.9166378",
+"44.9175974",
+"25.4523848",
+"25.4544395"
+],
+"category": "highway",
+"display_name": "Strada Gării, Zona Gării, Târgoviște, Dâmbovița, 130087, România",
+"importance": 0.05339469672693977,
+"lat": "44.9171189",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "25.4534128",
+"name": "Strada Gării",
+"osm_id": 41673699,
+"osm_type": "way",
+"place_id": 60846670,
+"place_rank": 26,
+"type": "secondary"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Str.+Grigore+Alexandrescu%2C+Timi%C8%99oara%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-TM",
+"city": "Timișoara",
+"country": "România",
+"country_code": "ro",
+"county": "Timiș",
+"postcode": "300633",
+"road": "Strada Grigore Alexandrescu",
+"suburb": "Torontalului"
+},
+"addresstype": "tertiary",
+"boundingbox": [
+"45.7779731",
+"45.7781918",
+"21.2096526",
+"21.2101028"
+],
+"category": "highway",
+"display_name": "Strada Grigore Alexandrescu, Torontalului, Timișoara, Timiș, 300633, România",
+"importance": 0.05340352254520482,
+"lat": "45.7780855",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "21.2098763",
+"name": "Strada Grigore Alexandrescu",
+"osm_id": 988585055,
+"osm_type": "way",
+"place_id": 65053496,
+"place_rank": 26,
+"type": "tertiary"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Str.+Grigore+Alexandrescu+123%2C+Timi%C8%99oara%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-TM",
+"city": "Timișoara",
+"country": "România",
+"country_code": "ro",
+"county": "Timiș",
+"postcode": "300254",
+"road": "Strada Grigore Alexandrescu",
+"suburb": "Aradului"
+},
+"addresstype": "secondary",
+"boundingbox": [
+"45.7788044",
+"45.7791113",
+"21.2167154",
+"21.2172486"
+],
+"category": "highway",
+"display_name": "Strada Grigore Alexandrescu, Aradului, Timișoara, Timiș, 300254, România",
+"importance": 0.05340352254520482,
+"lat": "45.7789580",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "21.2169819",
+"name": "Strada Grigore Alexandrescu",
+"osm_id": 1018499578,
+"osm_type": "way",
+"place_id": 64702275,
+"place_rank": 26,
+"type": "secondary"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Str.+Ioan+Neni%C8%9Bescu%2C+Constan%C8%9Ba%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [],
+"https://nominatim.openstreetmap.org/search?q=Str.+Ioan+Neni%C8%9Bescu+22%2C+Constan%C8%9Ba%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [],
+"https://nominatim.openstreetmap.org/search?q=Str.+Ricinului%2C+Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"city_district": "Sector 2",
+"country": "România",
+"country_code": "ro",
+"postcode": "023651",
+"road": "Strada Ricinului",
+"suburb": "Plumbuita"
+},
+"addresstype": "residential",
+"boundingbox": [
+"44.4655184",
+"44.4711937",
+"26.1310101",
+"26.1337483"
+],
+"category": "highway",
+"display_name": "Strada Ricinului, Plumbuita, Colentina, Sector 2, București, 023651, România",
+"importance": 0.05341348668650336,
+"lat": "44.4678420",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1311670",
+"name": "Strada Ricinului",
+"osm_id": 664135627,
+"osm_type": "way",
+"place_id": 60884403,
+"place_rank": 26,
+"type": "residential"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Str.+Ricinului+120%2C+Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"city_district": "Sector 2",
+"country": "România",
+"country_code": "ro",
+"postcode": "023651",
+"road": "Strada Ricinului",
+"suburb": "Plumbuita"
+},
+"addresstype": "residential",
+"boundingbox": [
+"44.4655184",
+"44.4711937",
+"26.1310101",
+"26.1337483"
+],
+"category": "highway",
+"display_name": "Strada Ricinului, Plumbuita, Colentina, Sector 2, București, 023651, România",
+"importance": 0.05341348668650336,
+"lat": "44.4678420",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1311670",
+"name": "Strada Ricinului",
+"osm_id": 664135627,
+"osm_type": "way",
+"place_id": 60884403,
+"place_rank": 26,
+"type": "residential"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Str.+Rom%C3%A2nia+Muncitoare%2C+Craiova%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-DJ",
+"city": "Craiova",
+"country": "România",
+"country_code": "ro",
+"county": "Dolj",
+"municipality": "Zona Metropolitană Craiova",
+"postcode": "200396",
+"road": "Strada România Muncitoare",
+"suburb": "Centru"
+},
+"addresstype": "residential",
+"boundingbox": [
+"44.3172271",
+"44.3173868",
+"23.8018208",
+"23.8030548"
+],
+"category": "highway",
+"display_name": "Strada România Muncitoare, Centru, Craiova, Zona Metropolitană Craiova, Dolj, 200396, România",
+"importance": 0.053401580071717365,
+"lat": "44.3172541",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.8024725",
+"name": "Strada România Muncitoare",
+"osm_id": 345114708,
+"osm_type": "way",
+"place_id": 63903837,
+"place_rank": 26,
+"type": "residential"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Str.+Sibiel+6%2C+Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"amenity": "AfterSchool PRO Academy",
+"city": "București",
+"city_district": "Sector 4",
+"country": "România",
+"country_code": "ro",
+"house_number": "4-6",
+"neighbourhood": "Tineretului",
+"postcode": "040437",
+"road": "Strada Sibiel",
+"suburb": "Tineretului"
+},
+"addresstype": "amenity",
+"boundingbox": [
+"44.4130092",
+"44.4133586",
+"26.1129256",
+"26.1134056"
+],
+"category": "amenity",
+"display_name": "AfterSchool PRO Academy, 4-6, Strada Sibiel, Tineretului, Sector 4, București, 040437, România",
+"importance": 8.015335317001629e-05,
+"lat": "44.4131994",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1131668",
+"name": "AfterSchool PRO Academy",
+"osm_id": 1572469778,
+"osm_type": "way",
+"place_id": 431003096,
+"place_rank": 30,
+"type": "kindergarten"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Str.+Tiberiu+Popoviciu+2-4%2C+Cluj+Napoca%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-CJ",
+"city": "Cluj-Napoca",
+"commercial": "TEAM Technology Center",
+"country": "România",
+"country_code": "ro",
+"county": "Cluj",
+"house_number": "2-4",
+"municipality": "Zona Metropolitană Cluj",
+"office": "Centrul Regional de Excelență pentru Industrii Creative",
+"postcode": "400647",
+"road": "Strada Tiberiu Popoviciu",
+"suburb": "Valea Chintăului"
+},
+"addresstype": "office",
+"boundingbox": [
+"46.8204185",
+"46.8210399",
+"23.5796825",
+"23.5810707"
+],
+"category": "office",
+"display_name": "Centrul Regional de Excelență pentru Industrii Creative, 2-4, Strada Tiberiu Popoviciu, TEAM Technology Center, Valea Chintăului, Cluj-Napoca, Zona Metropolitană Cluj, Cluj, 400647, România",
+"importance": 7.781872281982173e-05,
+"lat": "46.8207826",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.5803764",
+"name": "Centrul Regional de Excelență pentru Industrii Creative",
+"osm_id": 952658837,
+"osm_type": "way",
+"place_id": 63532897,
+"place_rank": 30,
+"type": "educational_institution"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Strada+Alexandru+L%C4%83pu%C8%99neanu+21%2C+Ia%C8%99i%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-IS",
+"amenity": "ING",
+"city": "Iași",
+"country": "România",
+"country_code": "ro",
+"county": "Iași",
+"house_number": "21",
+"municipality": "Zona Metropolitană Iași",
+"postcode": "507184",
+"road": "Strada Alexandru Lăpușneanu",
+"suburb": "Centru"
+},
+"addresstype": "amenity",
+"boundingbox": [
+"47.1687896",
+"47.1688896",
+"27.5772804",
+"27.5773804"
+],
+"category": "amenity",
+"display_name": "ING, 21, Strada Alexandru Lăpușneanu, Centru, Iași, Zona Metropolitană Iași, Iași, 507184, România",
+"importance": 6.948882276641516e-05,
+"lat": "47.1688396",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "27.5773304",
+"name": "ING",
+"osm_id": 2074404728,
+"osm_type": "node",
+"place_id": 62308587,
+"place_rank": 30,
+"type": "bank"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Strada+Aluni%C8%99%2C+Zencani+%28Topli%C8%9Ba%29%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-HR",
+"city": "Toplița",
+"country": "România",
+"country_code": "ro",
+"county": "Harghita",
+"postcode": "535708",
+"road": "Strada Aluniș",
+"village": "Zencani"
+},
+"addresstype": "residential",
+"boundingbox": [
+"46.9308732",
+"46.9312592",
+"25.3360006",
+"25.3362237"
+],
+"category": "highway",
+"display_name": "Strada Aluniș, Zencani, Toplița, Harghita, 535708, România",
+"importance": 0.05338940337224381,
+"lat": "46.9310662",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "25.3361121",
+"name": "Strada Aluniș",
+"osm_id": 684273713,
+"osm_type": "way",
+"place_id": 62602809,
+"place_rank": 26,
+"type": "residential"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Strada+Aluni%C8%99+19%2C+Zencani+%28Topli%C8%9Ba%29%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-HR",
+"city": "Toplița",
+"country": "România",
+"country_code": "ro",
+"county": "Harghita",
+"postcode": "535708",
+"road": "Strada Aluniș",
+"village": "Zencani"
+},
+"addresstype": "residential",
+"boundingbox": [
+"46.9308732",
+"46.9312592",
+"25.3360006",
+"25.3362237"
+],
+"category": "highway",
+"display_name": "Strada Aluniș, Zencani, Toplița, Harghita, 535708, România",
+"importance": 0.05338940337224381,
+"lat": "46.9310662",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "25.3361121",
+"name": "Strada Aluniș",
+"osm_id": 684273713,
+"osm_type": "way",
+"place_id": 62612842,
+"place_rank": 26,
+"type": "residential"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Strada+Br%C4%83ilei%2C+Gala%C8%9Bi%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-GL",
+"city": "Galați",
+"country": "România",
+"country_code": "ro",
+"county": "Galați",
+"postcode": "800628",
+"road": "Strada Brăilei"
+},
+"addresstype": "trunk",
+"boundingbox": [
+"45.4072018",
+"45.4079514",
+"27.9713054",
+"27.9766472"
+],
+"category": "highway",
+"display_name": "Strada Brăilei, Galați, 800628, România",
+"importance": 0.053400634012359775,
+"lat": "45.4075470",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "27.9739782",
+"name": "Strada Brăilei",
+"osm_id": 1420965868,
+"osm_type": "way",
+"place_id": 61046675,
+"place_rank": 26,
+"type": "trunk"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Strada+Br%C4%83ilei+41%2C+Gala%C8%9Bi%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-GL",
+"city": "Galați",
+"country": "România",
+"country_code": "ro",
+"county": "Galați",
+"house_number": "41",
+"postcode": "800306",
+"road": "Strada Brăilei",
+"suburb": "Mazepa 2"
+},
+"addresstype": "place",
+"boundingbox": [
+"45.4282244",
+"45.4283244",
+"28.0380665",
+"28.0381665"
+],
+"category": "place",
+"display_name": "41, Strada Brăilei, Mazepa 2, Galați, 800306, România",
+"importance": 6.73006790264289e-05,
+"lat": "45.4282744",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "28.0381165",
+"name": "",
+"osm_id": 602132160,
+"osm_type": "node",
+"place_id": 61498060,
+"place_rank": 30,
+"type": "house"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Strada+G%C4%83rii%2C+T%C3%A2rgovi%C8%99te%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-DB",
+"city": "Târgoviște",
+"country": "România",
+"country_code": "ro",
+"county": "Dâmbovița",
+"neighbourhood": "Zona Gării",
+"postcode": "130083",
+"road": "Strada Gării"
+},
+"addresstype": "residential",
+"boundingbox": [
+"44.9175974",
+"44.9200027",
+"25.4523848",
+"25.4544174"
+],
+"category": "highway",
+"display_name": "Strada Gării, Zona Gării, Târgoviște, Dâmbovița, 130083, România",
+"importance": 0.05339469672693977,
+"lat": "44.9191708",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "25.4530521",
+"name": "Strada Gării",
+"osm_id": 41807975,
+"osm_type": "way",
+"place_id": 60367767,
+"place_rank": 26,
+"type": "residential"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Strada+G%C4%83rii+6%2C+T%C3%A2rgovi%C8%99te%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-DB",
+"city": "Târgoviște",
+"country": "România",
+"country_code": "ro",
+"county": "Dâmbovița",
+"neighbourhood": "Zona Gării",
+"postcode": "130083",
+"road": "Strada Gării"
+},
+"addresstype": "residential",
+"boundingbox": [
+"44.9175974",
+"44.9200027",
+"25.4523848",
+"25.4544174"
+],
+"category": "highway",
+"display_name": "Strada Gării, Zona Gării, Târgoviște, Dâmbovița, 130083, România",
+"importance": 0.05339469672693977,
+"lat": "44.9191708",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "25.4530521",
+"name": "Strada Gării",
+"osm_id": 41807975,
+"osm_type": "way",
+"place_id": 60367767,
+"place_rank": 26,
+"type": "residential"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Strada+Grigore+Alexandrescu%2C+Timi%C8%99oara%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-TM",
+"city": "Timișoara",
+"country": "România",
+"country_code": "ro",
+"county": "Timiș",
+"postcode": "300633",
+"road": "Strada Grigore Alexandrescu",
+"suburb": "Torontalului"
+},
+"addresstype": "tertiary",
+"boundingbox": [
+"45.7779731",
+"45.7781918",
+"21.2096526",
+"21.2101028"
+],
+"category": "highway",
+"display_name": "Strada Grigore Alexandrescu, Torontalului, Timișoara, Timiș, 300633, România",
+"importance": 0.05340352254520482,
+"lat": "45.7780855",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "21.2098763",
+"name": "Strada Grigore Alexandrescu",
+"osm_id": 988585055,
+"osm_type": "way",
+"place_id": 64862568,
+"place_rank": 26,
+"type": "tertiary"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Strada+Grigore+Alexandrescu+123%2C+Timi%C8%99oara%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-TM",
+"city": "Timișoara",
+"country": "România",
+"country_code": "ro",
+"county": "Timiș",
+"postcode": "300254",
+"road": "Strada Grigore Alexandrescu",
+"suburb": "Aradului"
+},
+"addresstype": "secondary",
+"boundingbox": [
+"45.7788044",
+"45.7791113",
+"21.2167154",
+"21.2172486"
+],
+"category": "highway",
+"display_name": "Strada Grigore Alexandrescu, Aradului, Timișoara, Timiș, 300254, România",
+"importance": 0.05340352254520482,
+"lat": "45.7789580",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "21.2169819",
+"name": "Strada Grigore Alexandrescu",
+"osm_id": 1018499578,
+"osm_type": "way",
+"place_id": 64702275,
+"place_rank": 26,
+"type": "secondary"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Strada+Ioan+Neni%C8%9Bescu%2C+Constan%C8%9Ba%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [],
+"https://nominatim.openstreetmap.org/search?q=Strada+Ioan+Neni%C8%9Bescu+22%2C+Constan%C8%9Ba%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [],
+"https://nominatim.openstreetmap.org/search?q=Strada+Ricinului%2C+Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"city_district": "Sector 2",
+"country": "România",
+"country_code": "ro",
+"postcode": "023651",
+"road": "Strada Ricinului",
+"suburb": "Plumbuita"
+},
+"addresstype": "residential",
+"boundingbox": [
+"44.4655184",
+"44.4711937",
+"26.1310101",
+"26.1337483"
+],
+"category": "highway",
+"display_name": "Strada Ricinului, Plumbuita, Colentina, Sector 2, București, 023651, România",
+"importance": 0.05341348668650336,
+"lat": "44.4678420",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1311670",
+"name": "Strada Ricinului",
+"osm_id": 664135627,
+"osm_type": "way",
+"place_id": 60884403,
+"place_rank": 26,
+"type": "residential"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Strada+Ricinului+120%2C+Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"city": "București",
+"city_district": "Sector 2",
+"country": "România",
+"country_code": "ro",
+"postcode": "023651",
+"road": "Strada Ricinului",
+"suburb": "Plumbuita"
+},
+"addresstype": "residential",
+"boundingbox": [
+"44.4655184",
+"44.4711937",
+"26.1310101",
+"26.1337483"
+],
+"category": "highway",
+"display_name": "Strada Ricinului, Plumbuita, Colentina, Sector 2, București, 023651, România",
+"importance": 0.05341348668650336,
+"lat": "44.4678420",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1311670",
+"name": "Strada Ricinului",
+"osm_id": 664135627,
+"osm_type": "way",
+"place_id": 60884403,
+"place_rank": 26,
+"type": "residential"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Strada+Rom%C3%A2nia+Muncitoare%2C+Craiova%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-DJ",
+"city": "Craiova",
+"country": "România",
+"country_code": "ro",
+"county": "Dolj",
+"municipality": "Zona Metropolitană Craiova",
+"postcode": "200730",
+"road": "Strada România Muncitoare",
+"suburb": "Centrul Istoric"
+},
+"addresstype": "pedestrian",
+"boundingbox": [
+"44.3170539",
+"44.3173888",
+"23.7990349",
+"23.8012655"
+],
+"category": "highway",
+"display_name": "Strada România Muncitoare, Centrul Istoric, Craiova, Zona Metropolitană Craiova, Dolj, 200730, România",
+"importance": 0.053401580071717365,
+"lat": "44.3173808",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.8001218",
+"name": "Strada România Muncitoare",
+"osm_id": 197528851,
+"osm_type": "way",
+"place_id": 63629301,
+"place_rank": 26,
+"type": "pedestrian"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Strada+Sibiel+6%2C+Bucure%C8%99ti%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-B",
+"amenity": "AfterSchool PRO Academy",
+"city": "București",
+"city_district": "Sector 4",
+"country": "România",
+"country_code": "ro",
+"house_number": "4-6",
+"neighbourhood": "Tineretului",
+"postcode": "040437",
+"road": "Strada Sibiel",
+"suburb": "Tineretului"
+},
+"addresstype": "amenity",
+"boundingbox": [
+"44.4130092",
+"44.4133586",
+"26.1129256",
+"26.1134056"
+],
+"category": "amenity",
+"display_name": "AfterSchool PRO Academy, 4-6, Strada Sibiel, Tineretului, Sector 4, București, 040437, România",
+"importance": 8.015335317001629e-05,
+"lat": "44.4131994",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1131668",
+"name": "AfterSchool PRO Academy",
+"osm_id": 1572469778,
+"osm_type": "way",
+"place_id": 431003096,
+"place_rank": 30,
+"type": "kindergarten"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Strada+Tiberiu+Popoviciu+2-4%2C+Cluj+Napoca%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-CJ",
+"city": "Cluj-Napoca",
+"commercial": "TEAM Technology Center",
+"country": "România",
+"country_code": "ro",
+"county": "Cluj",
+"house_number": "2-4",
+"municipality": "Zona Metropolitană Cluj",
+"office": "Centrul Regional de Excelență pentru Industrii Creative",
+"postcode": "400647",
+"road": "Strada Tiberiu Popoviciu",
+"suburb": "Valea Chintăului"
+},
+"addresstype": "office",
+"boundingbox": [
+"46.8204185",
+"46.8210399",
+"23.5796825",
+"23.5810707"
+],
+"category": "office",
+"display_name": "Centrul Regional de Excelență pentru Industrii Creative, 2-4, Strada Tiberiu Popoviciu, TEAM Technology Center, Valea Chintăului, Cluj-Napoca, Zona Metropolitană Cluj, Cluj, 400647, România",
+"importance": 7.781872281982173e-05,
+"lat": "46.8207826",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "23.5803764",
+"name": "Centrul Regional de Excelență pentru Industrii Creative",
+"osm_id": 952658837,
+"osm_type": "way",
+"place_id": 63464684,
+"place_rank": 30,
+"type": "educational_institution"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Timi%C8%99oara%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-TM",
+"city": "Timișoara",
+"country": "România",
+"country_code": "ro",
+"county": "Timiș"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.6838246",
+"45.8341735",
+"21.1116821",
+"21.3272446"
+],
+"category": "boundary",
+"display_name": "Timișoara, Timiș, România",
+"importance": 0.6597260997916001,
+"lat": "45.7538355",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "21.2257474",
+"name": "Timișoara",
+"osm_id": 6927733,
+"osm_type": "relation",
+"place_id": 65241234,
+"place_rank": 16,
+"type": "administrative"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Timi%C8%99oara%2C+Timi%C8%99%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-TM",
+"city": "Timișoara",
+"country": "România",
+"country_code": "ro",
+"county": "Timiș"
+},
+"addresstype": "city",
+"boundingbox": [
+"45.6838246",
+"45.8341735",
+"21.1116821",
+"21.3272446"
+],
+"category": "boundary",
+"display_name": "Timișoara, Timiș, România",
+"importance": 0.6597260997916001,
+"lat": "45.7538355",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "21.2257474",
+"name": "Timișoara",
+"osm_id": 6927733,
+"osm_type": "relation",
+"place_id": 65241234,
+"place_rank": 16,
+"type": "administrative"
+}
+],
+"https://nominatim.openstreetmap.org/search?q=Tunari%2C+Ilfov%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
+{
+"address": {
+"ISO3166-2-lvl4": "RO-IF",
+"country": "România",
+"country_code": "ro",
+"county": "Ilfov",
+"municipality": "Tunari"
+},
+"addresstype": "municipality",
+"boundingbox": [
+"44.5294460",
+"44.6051304",
+"26.1044818",
+"26.1785692"
+],
+"category": "boundary",
+"display_name": "Tunari, Ilfov, România",
+"importance": 0.3514206354333152,
+"lat": "44.5459277",
+"licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+"lon": "26.1376976",
+"name": "Tunari",
+"osm_id": 9851022,
+"osm_type": "relation",
+"place_id": 60572498,
+"place_rank": 16,
+"type": "administrative"
+}
+]
+}
