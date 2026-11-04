@@ -925,7 +925,7 @@
    "tier": "",
    "opened": "",
    "website": "http://www.adnettelecom.ro",
-   "notes": "Possibly the same building as Binbox's Bucharest data centre (DataCenterMap links Binbox to AdNet Telecom); not confirmed.",
+   "notes": "May host Binbox's Bucharest services (DataCenterMap links Binbox to AdNet Telecom); not confirmed.",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "network point of presence",
@@ -2208,7 +2208,7 @@
    "tier": "",
    "opened": "",
    "website": "http://www.telekom-wholesale.ro",
-   "notes": "Former Telekom Romania hosting data centre (Inflect's page for this address is named after it). 2.0 MW total power per one directory (not confirmed by the operator). Orange's own hosting page (via search) names data centres in Bucharest, Brașov and Cluj, built to TIA-942 Tier 3.",
+   "notes": "Former Telekom Romania hosting data centre (Inflect's page for this address is named after it). 2.0 MW total power per one directory (not confirmed by the operator). Orange's hosting page: own data centres in Bucharest, Brașov and Cluj, TIA-942 Tier 3, over 2,000 m² of colocation rooms in total (no addresses given).",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "unclassified",
@@ -2265,7 +2265,9 @@
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
-   "links": [],
+   "links": [
+    "https://www.orange.ro/wholesale/en/hosting/"
+   ],
    "listed_as": [
     "DC Hub: Hosting Data Center Bucharest",
     "DC Hub: Telekom Romania Hosting Data Center Bucharest Hdc",
@@ -2287,7 +2289,7 @@
    "tier": "",
    "opened": "",
    "website": "http://www.telekom-wholesale.ro",
-   "notes": "Orange's own hosting page (via search) names data centres in Bucharest, Brașov and Cluj, built to TIA-942 Tier 3.",
+   "notes": "Orange's hosting page: own data centres in Bucharest, Brașov and Cluj, TIA-942 Tier 3, over 2,000 m² of colocation rooms in total (no addresses given).",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "unclassified",
@@ -2344,7 +2346,9 @@
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
-   "links": [],
+   "links": [
+    "https://www.orange.ro/wholesale/en/hosting/"
+   ],
    "listed_as": [
     "DC Hub: Hosting Data Center Brasov",
     "Datacenter Atlas: Hosting Data Center Brasov",
@@ -4123,7 +4127,7 @@
    "tier": "",
    "opened": "",
    "website": "https://www.orange.ro/wholesale/en/hosting/",
-   "notes": "Orange's own hosting page (via search) names data centres in Bucharest, Brașov and Cluj, built to TIA-942 Tier 3.",
+   "notes": "Orange's hosting page: own data centres in Bucharest, Brașov and Cluj, TIA-942 Tier 3, over 2,000 m² of colocation rooms in total (no addresses given).",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "network point of presence",
@@ -4174,7 +4178,9 @@
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
-   "links": [],
+   "links": [
+    "https://www.orange.ro/wholesale/en/hosting/"
+   ],
    "listed_as": [
     "DC Hub: Hosting Data Center Cluj",
     "Datacenter Atlas: Hosting Data Center Cluj",
@@ -4468,7 +4474,7 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "Orange's own hosting page (via search) names data centres in Bucharest, Brașov and Cluj, built to TIA-942 Tier 3.",
+   "notes": "Orange's hosting page: own data centres in Bucharest, Brașov and Cluj, TIA-942 Tier 3, over 2,000 m² of colocation rooms in total (no addresses given).",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "",
@@ -4493,7 +4499,9 @@
      "url": "https://www.datacenters.com/orange-business-bucharest-1"
     }
    ],
-   "links": [],
+   "links": [
+    "https://www.orange.ro/wholesale/en/hosting/"
+   ],
    "listed_as": [
     "datacenters.com: Bucharest 1 Data Center — Orange Business"
    ],
@@ -4511,7 +4519,7 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "Only datacenters.com lists it. Orange's own hosting page (via search) names Bucharest data centres without addresses.",
+   "notes": "Only datacenters.com lists this address. Orange's hosting page confirms data centres in Bucharest but gives no addresses.",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "",
@@ -4536,7 +4544,9 @@
      "url": "https://www.datacenters.com/orange-business-orange-romania-dacia"
     }
    ],
-   "links": [],
+   "links": [
+    "https://www.orange.ro/wholesale/en/hosting/"
+   ],
    "listed_as": [
     "datacenters.com: Orange Romania - Dacia — Orange Business"
    ],
@@ -4554,7 +4564,7 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "Orange's own hosting page (via search) names only Bucharest, Brașov and Cluj: this regional site is not confirmed by Orange.",
+   "notes": "Orange's hosting page names data centres only in Bucharest, Brașov and Cluj: this regional site is not confirmed by Orange.",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "",
@@ -4579,7 +4589,9 @@
      "url": "https://www.datacenters.com/orange-business-galati"
     }
    ],
-   "links": [],
+   "links": [
+    "https://www.orange.ro/wholesale/en/hosting/"
+   ],
    "listed_as": [
     "datacenters.com: Galati Data Center — Orange Business"
    ],
@@ -4597,7 +4609,7 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "Orange's own hosting page (via search) names only Bucharest, Brașov and Cluj: this regional site is not confirmed by Orange.",
+   "notes": "Orange's hosting page names data centres only in Bucharest, Brașov and Cluj: this regional site is not confirmed by Orange.",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "",
@@ -4622,7 +4634,9 @@
      "url": "https://www.datacenters.com/orange-business-iasi"
     }
    ],
-   "links": [],
+   "links": [
+    "https://www.orange.ro/wholesale/en/hosting/"
+   ],
    "listed_as": [
     "datacenters.com: Iasi Data Center — Orange Business"
    ],
@@ -4640,7 +4654,7 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "Street only, no number. Orange's own hosting page (via search) names only Bucharest, Brașov and Cluj: this regional site is not confirmed by Orange.",
+   "notes": "Street only, no number. Orange's hosting page names data centres only in Bucharest, Brașov and Cluj: this regional site is not confirmed by Orange.",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "",
@@ -4665,7 +4679,9 @@
      "url": "https://www.datacenters.com/orange-business-timisoara"
     }
    ],
-   "links": [],
+   "links": [
+    "https://www.orange.ro/wholesale/en/hosting/"
+   ],
    "listed_as": [
     "datacenters.com: Timisoara Data Center — Orange Business"
    ],
@@ -4683,7 +4699,7 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "Possibly the same complex as Timisoara 1 (Calea Torontalului 94, about 350 m away, where Inflect also lists an Orange site); not confirmed. Orange's own hosting page (via search) names only Bucharest, Brașov and Cluj: this regional site is not confirmed by Orange.",
+   "notes": "Possibly the same complex as Timisoara 1 (Calea Torontalului 94, about 350 m away, where Inflect also lists an Orange site); not confirmed. Orange's hosting page names data centres only in Bucharest, Brașov and Cluj: this regional site is not confirmed by Orange.",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "",
@@ -4708,7 +4724,9 @@
      "url": "https://inflect.com/datacenters/romania"
     }
    ],
-   "links": [],
+   "links": [
+    "https://www.orange.ro/wholesale/en/hosting/"
+   ],
    "listed_as": [
     "Inflect: Orange Business Services Timisoara"
    ],
@@ -4726,7 +4744,7 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "Orange's own hosting page (via search) names data centres in Bucharest, Brașov and Cluj, built to TIA-942 Tier 3.",
+   "notes": "Orange's hosting page: own data centres in Bucharest, Brașov and Cluj, TIA-942 Tier 3, over 2,000 m² of colocation rooms in total (no addresses given).",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "data centre",
@@ -4763,7 +4781,9 @@
      "url": "https://dchub.cloud/facilities/in/ro"
     }
    ],
-   "links": [],
+   "links": [
+    "https://www.orange.ro/wholesale/en/hosting/"
+   ],
    "listed_as": [
     "DC Hub: Orange HDC Astra",
     "Datacenter Atlas: Orange HDC Astra",
@@ -4783,7 +4803,7 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "Orange's own hosting page (via search) names only Bucharest, Brașov and Cluj: this regional site is not confirmed by Orange.",
+   "notes": "Orange's hosting page names data centres only in Bucharest, Brașov and Cluj: this regional site is not confirmed by Orange.",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "",
@@ -4808,7 +4828,9 @@
      "url": "https://inflect.com/datacenters/romania"
     }
    ],
-   "links": [],
+   "links": [
+    "https://www.orange.ro/wholesale/en/hosting/"
+   ],
    "listed_as": [
     "Inflect: Orange Business Services Constanta"
    ],
@@ -4923,10 +4945,10 @@
    "address": "",
    "city": "Brașov",
    "county": "Brașov",
-   "tier": "",
+   "tier": "3",
    "opened": "",
    "website": "",
-   "notes": "ROMARG's own website (via search; not accessible from here) says it runs its own data centre in Brașov with more than 1,500 servers. No address published.",
+   "notes": "ROMARG's website: its own Tier 3 data centre in Brașov, more than 1,500 physical and virtual servers. The address it publishes (Str. Ionescu Crum 1, Brașov Business Park) is its office; the data centre's address is not published.",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "",
@@ -4942,20 +4964,28 @@
    "lon": 25.6105654,
    "precision": "town",
    "source_keys": [
-    "dccom"
+    "dccom",
+    "operator"
    ],
    "sources": [
     {
      "name": "datacenters.com",
      "kind": "Directory",
      "url": "https://www.datacenters.com/romarg-srl-brasov"
+    },
+    {
+     "name": "Operator",
+     "kind": "The operator's own website or announcement",
+     "url": ""
     }
    ],
-   "links": [],
+   "links": [
+    "https://www.romarg.com/romania/servere-dedicate.html"
+   ],
    "listed_as": [
     "datacenters.com: Brasov Data Center — ROMARG SRL"
    ],
-   "grade": "C"
+   "grade": "A"
   },
   {
    "id": "clusterpower-msc1",
@@ -5615,50 +5645,7 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "AlexHost announced a Romanian location (its own post, via search; city not stated); its PeeringDB network record lists Bucharest. Its main data centre is in Chișinău, Moldova. Building unknown.",
-   "hosted_in": "",
-   "status": "Unverified",
-   "atlas_type": "",
-   "it_mw": null,
-   "total_mw": null,
-   "grid_mw": null,
-   "planned_mw": null,
-   "whitespace_m2": null,
-   "building_m2": null,
-   "plot_m2": null,
-   "racks": null,
-   "lat": 44.4361414,
-   "lon": 26.102684,
-   "precision": "town",
-   "source_keys": [
-    "dccom"
-   ],
-   "sources": [
-    {
-     "name": "datacenters.com",
-     "kind": "Directory",
-     "url": "https://www.datacenters.com/alexhost-srl-bucharest"
-    }
-   ],
-   "links": [],
-   "listed_as": [
-    "datacenters.com: Bucharest Data Center — AlexHost SRL"
-   ],
-   "grade": "C"
-  },
-  {
-   "id": "binbox-bucharest",
-   "kind": "facility",
-   "name": "Binbox Bucharest",
-   "operator": "Binbox Global Services",
-   "aka": "",
-   "address": "",
-   "city": "București",
-   "county": "București",
-   "tier": "",
-   "opened": "",
-   "website": "",
-   "notes": "Binbox (headquartered in Voluntari) says it owns and operates two data centres, one in Bucharest and one in Ploiești (its own site, via search; not accessible from here). Possibly the same building as AdNet Datacenter (Bd. Basarabiei 96B): DataCenterMap's Binbox profile uses an 'AdNet Telecom' address; not confirmed. Address not published.",
+   "notes": "AlexHost's announcement confirms 'our Romanian data center' (NVMe VPS) but not the city; its PeeringDB network record lists Bucharest. Possibly space in another operator's building. Main data centre in Chișinău, Moldova.",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "",
@@ -5674,20 +5661,79 @@
    "lon": 26.102684,
    "precision": "town",
    "source_keys": [
-    "dchub"
+    "dccom",
+    "operator"
+   ],
+   "sources": [
+    {
+     "name": "datacenters.com",
+     "kind": "Directory",
+     "url": "https://www.datacenters.com/alexhost-srl-bucharest"
+    },
+    {
+     "name": "Operator",
+     "kind": "The operator's own website or announcement",
+     "url": ""
+    }
+   ],
+   "links": [
+    "https://alexhost.com/product-updates/new-location-new-opportunities-welcome-to-romania-with-alexhost-com"
+   ],
+   "listed_as": [
+    "datacenters.com: Bucharest Data Center — AlexHost SRL"
+   ],
+   "grade": "A"
+  },
+  {
+   "id": "binbox-bucharest",
+   "kind": "listing",
+   "name": "Binbox Bucharest",
+   "operator": "Binbox Global Services",
+   "aka": "",
+   "address": "",
+   "city": "București",
+   "county": "București",
+   "tier": "",
+   "opened": "",
+   "website": "",
+   "notes": "Binbox's website says it offers data centre services in Bucharest and Ploiești (alongside London, Amsterdam and other cities): not necessarily a building of its own. Address not published. DataCenterMap links Binbox to AdNet Telecom, so this may be AdNet Datacenter (Bd. Basarabiei 96B); not confirmed.",
+   "hosted_in": "",
+   "status": "Operating",
+   "atlas_type": "",
+   "it_mw": null,
+   "total_mw": null,
+   "grid_mw": null,
+   "planned_mw": null,
+   "whitespace_m2": null,
+   "building_m2": null,
+   "plot_m2": null,
+   "racks": null,
+   "lat": 44.4361414,
+   "lon": 26.102684,
+   "precision": "town",
+   "source_keys": [
+    "dchub",
+    "operator"
    ],
    "sources": [
     {
      "name": "DC Hub",
      "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
+    },
+    {
+     "name": "Operator",
+     "kind": "The operator's own website or announcement",
+     "url": ""
     }
    ],
-   "links": [],
+   "links": [
+    "https://binbox.com/about-us"
+   ],
    "listed_as": [
     "DC Hub: Binbox Bucharest"
    ],
-   "grade": "C"
+   "grade": "B"
   },
   {
    "id": "binbox-bucharest-2",
@@ -5734,7 +5780,7 @@
   },
   {
    "id": "binbox-ploiesti",
-   "kind": "facility",
+   "kind": "listing",
    "name": "Binbox Ploiești",
    "operator": "Binbox Global Services",
    "aka": "",
@@ -5744,7 +5790,7 @@
    "tier": "",
    "opened": "",
    "website": "",
-   "notes": "Binbox says it owns and operates a data centre in Ploiești (its own site, via search; not accessible from here). Address not published.",
+   "notes": "Binbox's website says it offers data centre services in Bucharest and Ploiești (alongside London, Amsterdam and other cities): not necessarily a building of its own. Address not published.",
    "hosted_in": "",
    "status": "Operating",
    "atlas_type": "",
@@ -5760,20 +5806,28 @@
    "lon": 26.0236504,
    "precision": "town",
    "source_keys": [
-    "dchub"
+    "dchub",
+    "operator"
    ],
    "sources": [
     {
      "name": "DC Hub",
      "kind": "Directory, built from PeeringDB and other directories",
      "url": "https://dchub.cloud/facilities/in/ro"
+    },
+    {
+     "name": "Operator",
+     "kind": "The operator's own website or announcement",
+     "url": ""
     }
    ],
-   "links": [],
+   "links": [
+    "https://binbox.com/about-us"
+   ],
    "listed_as": [
     "DC Hub: Binbox Global Services Ploiesti"
    ],
-   "grade": "C"
+   "grade": "B"
   },
   {
    "id": "vps-house-bucharest",
