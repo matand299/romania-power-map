@@ -2360,6 +2360,8 @@
 "type": "administrative"
 }
 ],
+"https://nominatim.openstreetmap.org/search?q=38+Bucharest+Ring+Road%2C+Tunari%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [],
+"https://nominatim.openstreetmap.org/search?q=38+Bucharest+Ring+Road+%28%C8%98oseaua+de+Centur%C4%83%29%2C+Tunari%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [],
 "https://nominatim.openstreetmap.org/search?q=Bac%C4%83u%2C+Romania&countrycodes=ro&format=jsonv2&addressdetails=1&limit=1": [
 {
 "address": {
