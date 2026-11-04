@@ -68,6 +68,13 @@ body::after {
 .total b { font: 700 30px/1 var(--f-display); color: var(--ink); text-shadow: 0 0 10px rgba(62, 232, 224, .5); font-variant-numeric: tabular-nums; }
 .total span { color: var(--caption); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
 .techs { display: flex; flex-direction: column; gap: 1px; }
+.techs[hidden] { display: none; }
+/* Tabs: electricity generation / data centres, as on the classic map */
+.modes { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); margin: 0 0 14px; }
+.modes button { padding: 8px; background: none; border: 0; color: var(--muted); font: 600 12px var(--f-display); letter-spacing: .1em; text-transform: uppercase; cursor: pointer; }
+.modes button + button { border-left: 1px solid var(--line); }
+.modes button:hover { color: var(--ink); }
+.modes button[aria-selected="true"] { color: var(--ink); background: rgba(62, 232, 224, .14); box-shadow: inset 0 -2px 0 var(--accent); }
 .tech {
   display: grid; grid-template-columns: 10px 1fr auto; gap: 10px; align-items: center; width: 100%;
   padding: 6px 8px; border: 1px solid transparent; border-radius: var(--radius); background: none; color: var(--ink);
@@ -167,16 +174,20 @@ body::after {
 <span class="corner l" aria-hidden="true"></span><span class="corner r" aria-hidden="true"></span>
 <aside class="panel" aria-label="Romania power plants">
   <h1>Romania <span>Power Map</span> 3D</h1>
-  <p class="sub">Operating plants and storage, in 3D.</p>
-  <div class="total"><b id="total">–</b><span>MW shown</span></div>
+  <p class="sub" id="sub">Operating plants and storage, in 3D.</p>
+  <div class="modes" role="tablist" aria-label="What the map shows">
+    <button type="button" role="tab" id="modeGen" aria-selected="true">Generation</button>
+    <button type="button" role="tab" id="modeDc" aria-selected="false">Data centres</button>
+  </div>
+  <div class="total"><b id="total">–</b><span id="totalLabel">MW shown</span></div>
   <div class="techs" id="techs" role="group" aria-label="Technologies"></div>
-  <div class="techs" id="dcToggle" role="group" aria-label="Data centres" style="margin-top:8px"></div>
+  <div class="techs" id="dcKinds" role="group" aria-label="Data centres" hidden></div>
   <div class="row">
     <button class="btn" id="view3d" type="button" aria-pressed="true">3D</button>
     <button class="btn" id="view2d" type="button" aria-pressed="false">Flat</button>
     <button class="btn" id="reset" type="button">Reset view</button>
   </div>
-  <div class="row"><a class="btn" href="./">Classic map</a><a class="btn" href="models.html">Models</a></div>
+  <div class="row"><a class="btn" id="classicLink" href="./">Classic map</a><a class="btn" href="models.html">Models</a></div>
   <p class="note" id="note"></p>
 </aside>
 
@@ -243,7 +254,9 @@ body::after {
     const a = i * 2.39996, r = i ? 0.007 * Math.sqrt(i) : 0;
     d.x = d.lon + r * Math.cos(a) / Math.cos(d.lat * Math.PI / 180); d.y = d.lat + r * Math.sin(a);
   }));
-  let dcOn = D && !params.has("nodc");
+  // Tabs: the map shows either electricity generation or data centres (#datacenters opens the second).
+  let mode = location.hash === "#datacenters" && D ? "dc" : "gen";
+  const dcKinds = new Set(["facility", "project"]);
 
   // Base map: every colour from the theme.
   const by = layer => ({ type: "FeatureCollection", features: basemap.features.filter(f => f.properties.layer === layer) });
@@ -342,7 +355,7 @@ body::after {
   };
   // Two layers per technology: light models from afar, detailed ones from models.detail_zoom in.
   const layers = () => {
-    if (params.has("nomodels")) return [];
+    if (params.has("nomodels") || mode !== "gen") return [];
     const close = map.getZoom() >= theme.models.detail_zoom;
     return Object.entries(T).filter(([k]) => on.has(k)).flatMap(([k, t]) => [[t.model_low, !close, "low"], [t.model, close, "hi"]]
       .filter(([url]) => url).map(([url, visible, lod]) => new deck.ScenegraphLayer({
@@ -359,9 +372,9 @@ body::after {
   const scaleM = metres => { const mpp = metresPerPixel(), u = metres / MODEL_UNITS;
     return Math.min(Math.max(u, theme.models.min_pixels * mpp / MODEL_UNITS), theme.models.max_pixels * mpp / MODEL_UNITS); };
   const dcLayers = () => {
-    if (!dcOn || params.has("nomodels")) return [];
+    if (mode !== "dc" || params.has("nomodels")) return [];
     const close = map.getZoom() >= theme.models.detail_zoom;
-    return [["facility", 255], ["project", Math.round(255 * D.project_opacity)]].flatMap(([kind, alpha]) =>
+    return [["facility", 255], ["project", Math.round(255 * D.project_opacity)]].filter(([kind]) => dcKinds.has(kind)).flatMap(([kind, alpha]) =>
       [[D.model_low, !close, "low"], [D.model, close, "hi"]].map(([url, visible, lod]) => new deck.ScenegraphLayer({
         id: `dc-${kind}-${lod}`, data: dcs.filter(d => d.kind === kind), scenegraph: url, pickable: true, visible,
         getPosition: d => [d.x, d.y, d.elev * (map.getTerrain() ? M.terrain_exaggeration : 0)],
@@ -448,10 +461,31 @@ body::after {
     $("techs").innerHTML = Object.entries(T).map(([k, t]) => `<button type="button" class="tech" data-k="${k}"
       aria-pressed="${on.has(k)}" style="--c:${t.color}"><i></i><span>${esc(t.label)}</span><b>${fmt(mw(k))} MW</b></button>`).join("");
     $("total").textContent = fmt(plants.filter(p => on.has(p.tk)).reduce((s, p) => s + p.mw, 0));
-    if (D) $("dcToggle").innerHTML = `<button type="button" class="tech" id="dcBtn" aria-pressed="${dcOn}" style="--c:${D.color}"><i></i><span>${esc(D.label)}</span>
-      <b>${dcs.filter(d => d.kind === "facility").length} + ${dcs.filter(d => d.kind === "project").length} projects</b></button>`;
+    if (D) {
+      const n = k => dcs.filter(d => d.kind === k).length;
+      $("dcKinds").innerHTML = [["facility", "Data-centre buildings", "operating"], ["project", "Projects not yet operating", "see-through"]]
+        .map(([k, label, hint]) => `<button type="button" class="tech" data-k="${k}" aria-pressed="${dcKinds.has(k)}" style="--c:${D.color}"><i></i><span>${label}</span><b>${n(k)}</b></button>`).join("");
+    }
+    const dc = mode === "dc";
+    $("modeGen").setAttribute("aria-selected", !dc); $("modeDc").setAttribute("aria-selected", dc);
+    $("techs").hidden = dc; $("dcKinds").hidden = !dc;
+    $("sub").textContent = dc ? "Data centres and projects, in 3D." : "Operating plants and storage, in 3D.";
+    $("totalLabel").textContent = dc ? "data centres shown" : "MW shown";
+    if (dc) $("total").textContent = dcs.filter(d => dcKinds.has(d.kind)).length;
+    $("classicLink").href = dc ? "./#datacenters" : "./";
   };
-  $("dcToggle").addEventListener("click", e => { if (!e.target.closest("#dcBtn")) return; dcOn = !dcOn; renderPanel(); refresh(); });
+  $("dcKinds").addEventListener("click", e => {
+    const b = e.target.closest(".tech"); if (!b) return;
+    dcKinds.has(b.dataset.k) ? dcKinds.delete(b.dataset.k) : dcKinds.add(b.dataset.k);
+    renderPanel(); refresh();
+  });
+  const setMode = m => {
+    mode = m; popup.remove(); renderPanel(); refresh(); setNote();
+    try { history.replaceState(null, "", m === "dc" ? "#datacenters" : location.pathname + location.search); } catch (e) {}
+  };
+  $("modeGen").onclick = () => setMode("gen");
+  $("modeDc").onclick = () => setMode("dc");
+  if (!D) $("modeDc").hidden = true;
   $("techs").addEventListener("click", e => {
     const b = e.target.closest(".tech"); if (!b) return;
     on.has(b.dataset.k) ? on.delete(b.dataset.k) : on.add(b.dataset.k);
@@ -467,7 +501,10 @@ body::after {
   $("view2d").onclick = () => view(true);
   $("reset").onclick = () => map.flyTo({ ...M.start, duration: 1200 });
   const unplaced = plantsFile.plants.filter(p => p.lat == null && operating.has(p.st)).length;
-  $("note").textContent = `${plants.length} plants drawn; ${unplaced} with no known location are not drawn. Data centres: ${dcs.filter(d => d.kind === "facility").length} buildings and ${dcs.filter(d => d.kind === "project").length} projects (projects are see-through). Click a model for details.`;
+  const noteGen = `${plants.length} plants drawn; ${unplaced} with no known location are not drawn. Click a model for details.`;
+  const noteDc = `${dcs.filter(d => d.kind === "facility").length} data-centre buildings and ${dcs.filter(d => d.kind === "project").length} projects; projects are drawn see-through. Companies inside other buildings are listed on the classic map. Click a model for details.`;
+  const setNote = () => ($("note").textContent = mode === "dc" ? noteDc : noteGen);
+  setNote();
   renderPanel();
 })().catch(err => {
   document.body.insertAdjacentHTML("beforeend", `<div class="fallback"><p>The 3D map could not load (${err.message}). <a href="./" style="color:inherit">Open the classic map</a></p></div>`);

@@ -591,7 +591,7 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
     </div>
     <div class="cgroup">
       <button class="cbtn" id="dcBtn" type="button" aria-pressed="false" title="Show data centres" aria-label="Show data centres"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="4" y="3.5" width="16" height="6" rx="1"/><rect x="4" y="14.5" width="16" height="6" rx="1"/><path d="M8 6.5h.01M8 17.5h.01M12 6.5h5M12 17.5h5"/></svg></button>
-      <a class="cbtn cbtn-3d" href="map3d.html" title="Open the 3D map" aria-label="Open the 3D map">3D</a>
+      <a class="cbtn cbtn-3d" id="link3d" href="map3d.html" title="Open the 3D map" aria-label="Open the 3D map">3D</a>
     </div>
   </div>
 
@@ -1289,6 +1289,7 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
     const dc = mode === "dc";
     $("modeGen").setAttribute("aria-selected", !dc); $("modeDc").setAttribute("aria-selected", dc);
     $("dcBtn").setAttribute("aria-pressed", dc);
+    $("link3d").href = dc ? "map3d.html#datacenters" : "map3d.html";
     $("dcBtn").title = dc ? "Back to electricity generation" : "Show data centres";
     $("pbody").hidden = dc; $("dcbody").hidden = !dc;
     document.querySelector(".pfoot").hidden = dc;
