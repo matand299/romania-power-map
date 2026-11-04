@@ -1233,7 +1233,7 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
     const known = list.filter(d => d.kind === "facility" && d.status === "Operating" && d.total_mw).reduce((s, d) => s + d.total_mw, 0);
     $("dcKpis").innerHTML = `
       <div class="kpi"><span class="ico">${ico}</span><div><b>${n("facility", "Operating")}</b><span>buildings in operation</span></div></div>
-      <div class="kpi"><span class="ico">${ico}</span><div><b>${n("project")}</b><span>projects (building to proposed)</span></div></div>
+      <div class="kpi"><span class="ico">${ico}</span><div><b>${n("project")}</b><span>projects not yet operating</span></div></div>
       <div class="kpi"><span class="ico">${ico}</span><div><b>${n("tenant") + n("listing")}</b><span>companies inside other buildings or with the building unknown</span></div></div>
       <div class="kpi"><span class="ico">${ico}</span><div><b>${new Set(list.map(d => d.operator).filter(Boolean)).size}</b><span>operators</span></div></div>`;
     const seg = (id, items, set, skip, label) => {
