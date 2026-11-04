@@ -295,32 +295,29 @@ def other(rim):
 
 
 def datacenter(rim):
-    """A data-centre hall: a long white block with a blue band and doors, a row of cooling fans on the roof,
-    backup generators in containers along one side and a small fuel tank."""
-    out = plate(11, 8, rim)
-    hall_w, hall_h, hall_d = 7.6, 3.0, 4.6
-    out.append((block(hall_w, hall_h, hall_d, -0.6, PLATE_TOP, -0.6), "white"))
-    out.append((block(hall_w + 0.1, 0.35, hall_d + 0.1, -0.6, PLATE_TOP + 1.2, -0.6), "window"))  # blue band
-    out.append((block(hall_w + 0.16, 0.18, hall_d + 0.16, -0.6, PLATE_TOP + hall_h, -0.6), "metal"))  # roof edge
-    if not LOW:
-        for x in (-3.4, -2.6):  # doors on the front
-            out.append((block(0.6, 1.1, 0.06, x, PLATE_TOP, -0.6 + hall_d / 2 + 0.02), "metal"))
-    # Cooling units on the roof: boxes with a round fan on top.
-    for i in range(4 if LOW else 6):
-        n = 4 if LOW else 6
-        x = -0.6 - hall_w / 2 + 0.9 + i * (hall_w - 1.8) / (n - 1)
-        for z in (-1.6, 0.4):
-            y = PLATE_TOP + hall_h + 0.18
-            out.append((block(1.0, 0.45, 1.0, x, y, z), "concrete"))
-            out.append((column(0.36, 0.08, x, y + 0.45, z, sections=20), "pipe"))
-    # Backup generators: containers along the right-hand side, each with a short exhaust stack.
-    for j in range(3):
-        z = -2.4 + j * 1.9
-        out.append((block(1.4, 1.2, 1.5, 4.1, PLATE_TOP, z), "battery"))
-        out.append((block(1.42, 0.16, 1.52, 4.1, PLATE_TOP + 0.75, z), "battery_accent"))
+    """Data centre: four blue server towers of slightly different heights on a blue base. Each tower has a darker
+    panel on top, glowing light-blue rack lights on its front face and ventilation slots on its right-hand face."""
+    out = [(at(box([10.6, 0.22, 10.6]), 0, 0.11, 0), rim),                       # rim in the data-centre colour
+           (at(box([10.2, 0.32, 10.2]), 0, 0.22 + 0.16, 0), "server_base"),
+           (at(box([9.4, 0.06, 9.4]), 0, 0.54 + 0.03, 0), "server_edge")]         # a lighter inset on the base
+    top_of_base = 0.57
+    towers = [(-2.05, -2.1, 5.4), (2.1, -1.9, 4.9), (-2.15, 2.05, 4.6), (2.0, 2.15, 5.1)]  # x, z, height
+    w = 3.3
+    for x, z, h in towers:
+        out.append((block(w, h, w, x, top_of_base, z), "server_body"))
+        out.append((block(w * 0.82, 0.08, w * 0.82, x, top_of_base + h, z), "server_top"))
+        # Rack lights on the front (+z) face: wide glowing bars.
+        n = 3 if LOW else 5
+        out.append((at(box([w * 0.86, h * 0.84, 0.05]), x, top_of_base + h * 0.52, z + w / 2 + 0.02), "server_top"))  # dark frame
+        for i in range(n):
+            y = top_of_base + h * (0.14 + 0.76 * (i + 0.5) / n)
+            out.append((at(box([w * 0.74, h * 0.76 / n * 0.62, 0.08]), x, y, z + w / 2 + 0.05), "server_glow"))
         if not LOW:
-            out.append((column(0.1, 0.6, 4.4, PLATE_TOP + 1.2, z - 0.4, sections=10), "metal"))
-    out += tank(4.0, 3.2, 0.45, 0.9)
+            # Ventilation slots on the right-hand (+x) face: two columns of short dark slits.
+            for i in range(9):
+                y = top_of_base + h * (0.2 + 0.65 * i / 8)
+                for dz in (-0.55, 0.25):
+                    out.append((at(box([0.05, 0.1, 0.55]), x + w / 2 + 0.02, y, z + dz), "server_vent"))
     return out
 
 
@@ -328,9 +325,14 @@ MODELS = {"solar": solar, "wind": wind, "hydro": hydro, "gas": gas, "coal": coal
           "nuclear": nuclear, "storage": storage, "other": other, "datacenter": datacenter}
 
 
-def material(hex_color):
+GLOWING = {"server_glow"}  # parts that give off their own light
+
+
+def material(hex_color, glow=False):
     rgb = [int(hex_color[i:i + 2], 16) for i in (1, 3, 5)]
-    return trimesh.visual.material.PBRMaterial(baseColorFactor=[*rgb, 255], metallicFactor=0.0, roughnessFactor=0.85)
+    return trimesh.visual.material.PBRMaterial(baseColorFactor=[*rgb, 255], metallicFactor=0.0 if not glow else 0.0,
+                                               roughnessFactor=0.85 if not glow else 0.4,
+                                               emissiveFactor=[c / 255 for c in rgb] if glow else None)
 
 
 def main():
@@ -350,7 +352,7 @@ def export(name, build):
         scene = trimesh.Scene()
         for key, meshes in by_color.items():
             mesh = trimesh.util.concatenate(meshes)
-            mesh.visual = trimesh.visual.TextureVisuals(material=material(key[4:] if key.startswith("rim:") else PALETTE[key]))
+            mesh.visual = trimesh.visual.TextureVisuals(material=material(key[4:] if key.startswith("rim:") else PALETTE[key], key in GLOWING))
             scene.add_geometry(mesh, node_name=key.replace(":", "_").replace("#", ""))
         path = OUT / f"{name}{'_low' if LOW else ''}.glb"
         path.write_bytes(scene.export(file_type="glb"))
