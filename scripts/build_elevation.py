@@ -29,6 +29,10 @@ def tile_pixel(lat, lon, z):
 def main():
     plants = json.loads((ROOT / "data" / "plants.json").read_text(encoding="utf-8"))["plants"]
     points = {f'{p["lat"]},{p["lon"]}' for p in plants if p["lat"] is not None}
+    dc_path = ROOT / "data" / "datacenters.json"  # data centres stand on the terrain too
+    if dc_path.exists():
+        sites = json.loads(dc_path.read_text(encoding="utf-8"))["sites"]
+        points |= {f'{d["lat"]},{d["lon"]}' for d in sites if d["lat"] is not None}
     tiles, out = {}, {}
     for key in sorted(points):
         lat, lon = map(float, key.split(","))

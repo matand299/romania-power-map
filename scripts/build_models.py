@@ -294,8 +294,38 @@ def other(rim):
     return out
 
 
+def datacenter(rim):
+    """A data-centre hall: a long white block with a blue band and doors, a row of cooling fans on the roof,
+    backup generators in containers along one side and a small fuel tank."""
+    out = plate(11, 8, rim)
+    hall_w, hall_h, hall_d = 7.6, 3.0, 4.6
+    out.append((block(hall_w, hall_h, hall_d, -0.6, PLATE_TOP, -0.6), "white"))
+    out.append((block(hall_w + 0.1, 0.35, hall_d + 0.1, -0.6, PLATE_TOP + 1.2, -0.6), "window"))  # blue band
+    out.append((block(hall_w + 0.16, 0.18, hall_d + 0.16, -0.6, PLATE_TOP + hall_h, -0.6), "metal"))  # roof edge
+    if not LOW:
+        for x in (-3.4, -2.6):  # doors on the front
+            out.append((block(0.6, 1.1, 0.06, x, PLATE_TOP, -0.6 + hall_d / 2 + 0.02), "metal"))
+    # Cooling units on the roof: boxes with a round fan on top.
+    for i in range(4 if LOW else 6):
+        n = 4 if LOW else 6
+        x = -0.6 - hall_w / 2 + 0.9 + i * (hall_w - 1.8) / (n - 1)
+        for z in (-1.6, 0.4):
+            y = PLATE_TOP + hall_h + 0.18
+            out.append((block(1.0, 0.45, 1.0, x, y, z), "concrete"))
+            out.append((column(0.36, 0.08, x, y + 0.45, z, sections=20), "pipe"))
+    # Backup generators: containers along the right-hand side, each with a short exhaust stack.
+    for j in range(3):
+        z = -2.4 + j * 1.9
+        out.append((block(1.4, 1.2, 1.5, 4.1, PLATE_TOP, z), "battery"))
+        out.append((block(1.42, 0.16, 1.52, 4.1, PLATE_TOP + 0.75, z), "battery_accent"))
+        if not LOW:
+            out.append((column(0.1, 0.6, 4.4, PLATE_TOP + 1.2, z - 0.4, sections=10), "metal"))
+    out += tank(4.0, 3.2, 0.45, 0.9)
+    return out
+
+
 MODELS = {"solar": solar, "wind": wind, "hydro": hydro, "gas": gas, "coal": coal,
-          "nuclear": nuclear, "storage": storage, "other": other}
+          "nuclear": nuclear, "storage": storage, "other": other, "datacenter": datacenter}
 
 
 def material(hex_color):
@@ -313,7 +343,7 @@ def main():
 
 def export(name, build):
     if True:
-        rim = f"rim:{THEME['tech'][name]['color']}"
+        rim = f"rim:{(THEME['tech'].get(name) or THEME['datacenters'])['color']}"
         by_color = {}
         for mesh, key in build(rim):
             by_color.setdefault(key, []).append(mesh)
