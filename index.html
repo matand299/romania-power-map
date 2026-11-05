@@ -499,6 +499,10 @@ button, input, select { font: inherit; color: inherit; }
 .rf-pop .leaflet-popup-content { min-width: 290px; }
 .pp .stations { margin: 0; padding-left: 16px; font-size: 12px; }
 .pp .stations span { color: var(--ink-caption); }
+.pp .stations li + li { margin-top: 5px; }
+.pp .rf-meta { font-size: 11.5px; color: var(--ink-muted); }
+.pp .rf-meta b { font-weight: 600; color: var(--ink-caption); }
+.pp .rf-meta b + b { margin-left: 6px; }
 .prow .d.sq { border-radius: 1px; }
 .prow .d.dash { height: 3px; border-radius: 0; box-shadow: none; background: repeating-linear-gradient(90deg, var(--c) 0 3px, transparent 3px 5px); }
 .grade { display: inline-grid; place-items: center; min-width: 20px; height: 18px; padding: 0 5px; border-radius: 2px; font: 700 12px var(--f-display); color: var(--on-glow); background: var(--c); }
@@ -1381,6 +1385,20 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
     (skip === "kv" || state.rfKv.has(w.kvg)) && (skip === "owner" || state.rfOwner.has(w.owner)) &&
     (skip === "county" || !state.county || w.cks.includes(state.county)) && (!state.q || w.s.includes(state.q));
   const legKey = l => [l.from, l.to].sort().join("|");
+  // The gap between the year the grid operator gave and Transelectrica's plans (PAI 2026 where it has a year, else
+  // PD RET 2026–2035), or why there is no number to give.
+  function rfGap(w) {
+    const p = w.plan;
+    if (!p) return w.owner === "DSO" ? "not compared: a distribution operator's work" : "not compared";
+    const plan = p.pai || p.pd_ret, yrs = n => `${n} year${n === 1 ? "" : "s"}`;
+    if (p.gap != null) return p.gap === 0 ? `none: same year in Transelectrica's plan (${plan})`
+      : `Transelectrica plans it ${yrs(Math.abs(p.gap))} ${p.gap > 0 ? "later" : "earlier"} (${plan}, against ${w.year})`;
+    if (p.match === "Not found") return "not in Transelectrica's plans";
+    if (p.match === "Completed") return "already completed, according to Transelectrica";
+    if (p.match === "Related, not the same work") return `only a related work is in the plan${plan ? ` (${plan})` : ""}`;
+    if (plan && !w.year) return `no date in the sources; Transelectrica plans ${plan}`;
+    return p.finding || "–";
+  }
 
   async function loadRf() {
     if (rfs) return;
@@ -1418,6 +1436,7 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
       ["Grid operator", esc(RF_OWNER_LONG[w.owner] || w.owner)],
       ["Criterion", esc(w.criterion)],
       ["Type", esc(w.type)],
+      ["Gap", esc(rfGap(w))],
       w.wording ? ["In the sources", esc(w.wording)] : null,
       w.counties.length ? ["County", esc(w.counties.map(k => labelOf(countyKeyOf(k) || k)).join(", "))] : null,
     ].filter(r => r && r[1]);
@@ -1464,7 +1483,8 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
       <div class="pp-name">${esc(name)}</div>
       <div class="sub">${esc(RF_PRECISION[s.precision] || s.precision)}${s.place && s.precision !== "osm" ? ": " + esc(s.place) : ""}${s.kv ? ` · ${esc(s.kv)} kV` : ""}${s.county ? ` · ${esc(labelOf(countyKeyOf(s.county) || s.county))}` : ""}</div>
       <h4>${works.length} work${works.length > 1 ? "s" : ""} shown here</h4>
-      <ul class="stations">${works.map(w => `<li>${rfOpen(w)} ${esc(w.title)} <span>· ${esc(w.status)}${w.year ? " · " + w.year : ""}</span></li>`).join("")}</ul>
+      <ul class="stations">${works.map(w => `<li>${rfOpen(w)} ${esc(w.title)} <span>· ${esc(w.status)}${w.year ? " · " + w.year : ""}</span>
+        <div class="rf-meta"><b>Type:</b> ${esc(w.type)} <b>Gap:</b> ${esc(rfGap(w))}</div></li>`).join("")}</ul>
       ${s.note ? `<div class="note">${esc(s.note)}</div>` : ""}
     </div>`;
   }

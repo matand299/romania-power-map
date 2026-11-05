@@ -473,13 +473,26 @@ body::after {
 
   // Grid works: a work's card, and a substation's list of works.
   const RF_PREC = { osm: "OpenStreetMap substation", "line end": "line end nearest the town", town: "town only" };
+  // The gap between the grid operator's year and Transelectrica's plans, or why there is no number (as on the classic map).
+  const rfGap = w => {
+    const p = w.plan;
+    if (!p) return w.owner === "DSO" ? "not compared: a distribution operator's work" : "not compared";
+    const plan = p.pai || p.pd_ret, yrs = n => `${n} year${n === 1 ? "" : "s"}`;
+    if (p.gap != null) return p.gap === 0 ? `none: same year in Transelectrica's plan (${plan})`
+      : `Transelectrica plans it ${yrs(Math.abs(p.gap))} ${p.gap > 0 ? "later" : "earlier"} (${plan}, against ${w.year})`;
+    if (p.match === "Not found") return "not in Transelectrica's plans";
+    if (p.match === "Completed") return "already completed, according to Transelectrica";
+    if (p.match === "Related, not the same work") return `only a related work is in the plan${plan ? ` (${plan})` : ""}`;
+    if (plan && !w.year) return `no date in the sources; Transelectrica plans ${plan}`;
+    return p.finding || "–";
+  };
   const openRfCard = (w, at) => {
     const ok = w.lines.filter(l => l.routed).length;
     const route = w.kind === "N" ? "New line: drawn straight, its route is not known yet."
       : w.kind === "P" ? "" : ok === w.lines.length ? "Drawn along the line's OpenStreetMap route."
       : `${ok} of ${w.lines.length} sections follow the OpenStreetMap route; the others are drawn straight (dotted).`;
     const p = w.plan;
-    const rows = [["Status", esc(w.status)], ["Year", w.year || "no date given"], ["Voltage", w.kv ? esc(w.kv) + " kV" : ""],
+    const rows = [["Status", esc(w.status)], ["Type", esc(w.type)], ["Gap", esc(rfGap(w))], ["Year", w.year || "no date given"], ["Voltage", w.kv ? esc(w.kv) + " kV" : ""],
       ["Grid operator", w.owner === "TSO" ? "Transelectrica (TSO)" : "Distribution operator (DSO)"], ["Criterion", esc(w.criterion)],
       ["Length", w.km ? `${fmt(w.km)} km drawn${w.stated_km ? ` · ${fmt(w.stated_km)} km in the source` : ""}` : ""],
       ["Substations", esc(w.points.join(" – "))],
@@ -499,7 +512,8 @@ body::after {
       <span class="pp-tag" style="--c:var(--accent)"><i></i>Substation</span>
       <div class="pp-name">${esc(name)}</div>
       <div class="gm">${esc(RF_PREC[s.precision] || s.precision)}${s.kv ? " · " + esc(s.kv) + " kV" : ""}</div>
-      <dl>${list.map(w => `<dt>${esc(w.id)}</dt><dd>${esc(w.title)} <span style="color:${R.status[w.status]}">· ${esc(w.status)}${w.year ? " · " + w.year : ""}</span></dd>`).join("")}</dl>
+      <dl>${list.map(w => `<dt>${esc(w.id)}</dt><dd>${esc(w.title)} <span style="color:${R.status[w.status]}">· ${esc(w.status)}${w.year ? " · " + w.year : ""}</span>
+        <div style="font-size:11.5px;color:var(--muted)">Type: ${esc(w.type)} · Gap: ${esc(rfGap(w))}</div></dd>`).join("")}</dl>
       <div class="gm"><a href="./#reinforcements">All grid works on the classic map</a></div>
     </div>`).addTo(map);
   };
