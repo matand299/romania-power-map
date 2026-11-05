@@ -1,10 +1,10 @@
 he,en
-החלפת מוליכים בקו,Reconductoring
+החלפת מוליכים בקו,Conductor replacement
 שנאי,Transformer
 תחנה / תאים,Substation / bays
 הגדלת כושר העברה של קו,Line capacity increase
 קו / ציר,Line / axis
-הגדלת כושר העברה של קו/החלפת מוליכים בקו,Line capacity increase / reconductoring
+הגדלת כושר העברה של קו/החלפת מוליכים בקו,Line capacity increase / conductor replacement
 קו חדש,New line
 קו / ציר/קו חדש,Line / axis / new line
 קו / ציר/תחנה / תאים,Line / axis / substation
@@ -46,19 +46,19 @@ N (בעומס רגיל) / N-1 (בתקלה של רכיב ברשת),N (normal load
 מעגל של קו Etapa II,A circuit of the stage II line
 מעגל של קו Etapa III,A circuit of the stage III line
 "החלפה באותו הספק (250 MVA), לא הגדלה ל-400 MVA","Replacement at the same rating (250 MVA), not an uprating to 400 MVA"
-"התוכנית בונה קו חדש; החלפת מוליכים בקו הקיים לא מופיעה",The plan builds a new line; reconductoring the existing line does not appear
+"התוכנית בונה קו חדש; החלפת מוליכים בקו הקיים לא מופיעה",The plan builds a new line; replacing the existing line's conductors does not appear
 התוכנית לא מציינת אם ההחלפה מגדילה ל-400 MVA,The plan does not say whether the replacement raises the rating to 400 MVA
 התוכנית לא מציינת שנאי 400/110 kV חדש,The plan does not mention a new 400/110 kV transformer
 "אותו מסדרון; המקורות מונים את שתיהן כעבודות נפרדות",Same corridor; the sources list the two as separate works
-"אותו קו; החלפת מוליכים לא מופיעה בתוכנית",Same line; reconductoring does not appear in the plan
+"אותו קו; החלפת מוליכים לא מופיעה בתוכנית",Same line; conductor replacement does not appear in the plan
 "תחנה חדשה על הקו; לא בתוכנית",A new substation on the line; not in the plan
 מופיע ברשימת ההשקעות שהושלמו (מסמך התוכנית 2026–2035),Listed among the completed investments (2026–2035 plan document)
 LEA 400 kV d.c. Reșița – Timișoara – Săcălaz (Etapa II) – קו חדש,LEA 400 kV d.c. Reșița – Timișoara – Săcălaz (Etapa II) – new line
 LEA 400 kV d.c. Timișoara – Arad (Etapa III) – קו חדש,LEA 400 kV d.c. Timișoara – Arad (Etapa III) – new line
 "אורך קו שונה בין המסמכים: 12.2 / 23.3 ק""מ",The line length differs between the documents: 12.2 / 23.3 km
-"התיאור שונה: הגדלת כושר העברה של קו / החלפת מוליכים בקו",Described differently: line capacity increase / reconductoring
+"התיאור שונה: הגדלת כושר העברה של קו / החלפת מוליכים בקו",Described differently: line capacity increase / conductor replacement
 "התיאור שונה: קו / ציר / תחנה / תאים",Described differently: line / axis / substation / bays
-"במסמך אחד בתוכנית ובאחר מחוץ לכל תוכנית; התיאור שונה: הגדלת כושר העברה של קו / החלפת מוליכים בקו",In a plan in one document and outside any plan in another; described differently: line capacity increase / reconductoring
+"במסמך אחד בתוכנית ובאחר מחוץ לכל תוכנית; התיאור שונה: הגדלת כושר העברה של קו / החלפת מוליכים בקו",In a plan in one document and outside any plan in another; described differently: line capacity increase / conductor replacement
 "במסמך אחד בתוכנית ובאחר מחוץ לכל תוכנית; בחלק מהמסמכים בלי מועד; התיאור שונה: קו / ציר / קו חדש",In a plan in one document and outside any plan in another; no date in some documents; described differently: line / axis / new line
 "מתוך כ-30 קווים, רק 4 מופיעים בשמם (LEU-DIF-A לא זוהה); שאר הקווים לא מסומנים.","Of about 30 lines, only 4 are named (LEU-DIF-A could not be identified); the other lines are not drawn."
 "תחנה חדשה על הקו; המיקום המדויק על הקו לא ידוע, לכן מסומן הקו כולו.","A new substation on the line; its exact place on the line is not known, so the whole line is marked."

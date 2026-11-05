@@ -1,17 +1,17 @@
 id,title
-R001,Reconductoring LEA 110 kV Alba Iulia – Teiuș
-R002,Reconductoring LEA 110 kV Teiuș – Aiud
-R003,Reconductoring LEA 220 kV Alba Iulia – Mintia
+R001,Conductor replacement on LEA 110 kV Alba Iulia – Teiuș
+R002,Conductor replacement on LEA 110 kV Teiuș – Aiud
+R003,Conductor replacement on LEA 220 kV Alba Iulia – Mintia
 R004,"Pilot project: refurbishing the 220/110/20 kV Alba Iulia substation as a digital substation"
 R005,LEA 400 kV d.c. (1 c.e.) Gutinaș – Smârdan
 R006,New LEA 400 kV Tulcea – Isaccea
 R007,"400 kV Stâlpu substation (new) + refurbishing the 110 kV and medium-voltage bays"
-R008,Reconductoring LEA 110 kV Aiud – Câmpia Turzii
-R009,Reconductoring LEA 110 kV Alba Iulia – Bărăbanț circuit 2
-R010,Reconductoring LEA 110 kV Alba Iulia – Aiud
-R011,Reconductoring LEA 220 kV CEM Aiud – Cluj Florești
-R012,Reconductoring LEA 220 kV Slatina – Grădiște (23.3 km)
-R013,Reconductoring LEA 220 kV Urechești – Târgu Jiu Nord – Paroșeni
+R008,Conductor replacement on LEA 110 kV Aiud – Câmpia Turzii
+R009,Conductor replacement on LEA 110 kV Alba Iulia – Bărăbanț circuit 2
+R010,Conductor replacement on LEA 110 kV Alba Iulia – Aiud
+R011,Conductor replacement on LEA 220 kV CEM Aiud – Cluj Florești
+R012,Conductor replacement on LEA 220 kV Slatina – Grădiște (23.3 km)
+R013,Conductor replacement on LEA 220 kV Urechești – Târgu Jiu Nord – Paroșeni
 R014,Capacity increase LEA 220 kV Dumbrava – Stejaru
 R015,"Upgrade to 400 kV of LEA Brazi Vest – Teleajen – Stâlpu, including a 400 MVA autotransformer at Brazi Vest"
 R016,"400 kV axis Porțile de Fier – Reșița – Timișoara – Săcălaz – Arad, stage II: LEA 400 kV d.c. Reșița – Timișoara/Săcălaz + 400 and 110 kV substations at Timișoara"
@@ -34,28 +34,28 @@ R032,"LEA 400 kV d.c. Timișoara – Arad, circuit Calea Aradului – Arad (esti
 R033,"LEA 400 kV d.c. Timișoara/Săcălaz – Arad, circuit Timișoara – Arad"
 R034,LEA 400 kV s.c. Gădălin – Suceava (new line)
 R035,"New underground cable (LES) Medgidia Nord – Medgidia Sud (8 km, min. 850 A, with new 110 kV bays at both ends)"
-R036,Reconductoring LEA 110 kV CFR Caransebeș – Iaz
-R037,Reconductoring LEA 110 kV CFR Caransebeș – Reșița
-R038,Reconductoring LEA 110 kV Reșița – Iaz
-R039,Reconductoring LEA 110 kV Caracal Sud – Drăgănești Olt (16 km)
-R040,Reconductoring LEA 220 kV Craiova Nord – Sărdănești (60 km)
-R041,Reconductoring LEA 220 kV d.c. Porțile de Fier – Reșița
-R042,Reconductoring LEA 220 kV Reșița – Iaz circuit 1 (31 km)
-R043,Reconductoring LEA 220 kV Reșița – Iaz circuit 2 (31 km)
-R044,Reconductoring LEA 220 kV Slatina – Craiova Nord (49 km)
-R045,Reconductoring LEA 220 kV Sărdănești – Urechești (65.9 km)
-R046,Reconductoring LEA 400 kV Arad – Calea Aradului (47.7 km)
-R047,Reconductoring LEA 400 kV Arad – Timișoara
-R048,Reconductoring LEA 400 kV Porțile de Fier – Slatina (158 km)
-R049,Reconductoring LEA 400 kV Reșița – Jamu Mare – Săcălaz (98 km)
-R050,Reconductoring LEA 400 kV Reșița – Măureni – Timișoara (73 km)
-R051,Reconductoring LEA 400 kV Săcălaz – Calea Aradului (7.8 km)
-R052,Reconductoring LEA 400 kV Urechești – Porțile de Fier (85 km)
+R036,Conductor replacement on LEA 110 kV CFR Caransebeș – Iaz
+R037,Conductor replacement on LEA 110 kV CFR Caransebeș – Reșița
+R038,Conductor replacement on LEA 110 kV Reșița – Iaz
+R039,Conductor replacement on LEA 110 kV Caracal Sud – Drăgănești Olt (16 km)
+R040,Conductor replacement on LEA 220 kV Craiova Nord – Sărdănești (60 km)
+R041,Conductor replacement on LEA 220 kV d.c. Porțile de Fier – Reșița
+R042,Conductor replacement on LEA 220 kV Reșița – Iaz circuit 1 (31 km)
+R043,Conductor replacement on LEA 220 kV Reșița – Iaz circuit 2 (31 km)
+R044,Conductor replacement on LEA 220 kV Slatina – Craiova Nord (49 km)
+R045,Conductor replacement on LEA 220 kV Sărdănești – Urechești (65.9 km)
+R046,Conductor replacement on LEA 400 kV Arad – Calea Aradului (47.7 km)
+R047,Conductor replacement on LEA 400 kV Arad – Timișoara
+R048,Conductor replacement on LEA 400 kV Porțile de Fier – Slatina (158 km)
+R049,Conductor replacement on LEA 400 kV Reșița – Jamu Mare – Săcălaz (98 km)
+R050,Conductor replacement on LEA 400 kV Reșița – Măureni – Timișoara (73 km)
+R051,Conductor replacement on LEA 400 kV Săcălaz – Calea Aradului (7.8 km)
+R052,Conductor replacement on LEA 400 kV Urechești – Porțile de Fier (85 km)
 R053,"Upgrade to 400 kV of the Porțile de Fier – Reșița – Timișoara – Săcălaz – Arad axis, stage III: LEA 400 kV d.c. Timișoara – Săcălaz – Arad + 400/110 kV Săcălaz substation + extension of the 400 kV Arad substation"
-R054,In the 2033 stage: reconductoring LEA 110 kV Ciriței – Roman Laminor
-R055,In the 2033 stage: reconductoring LEA 110 kV Sărata – Ciriței
-R056,In the 2033 stage: reconductoring LEA 110 kV Sărata – Stejaru
-R057,In the 2033 stage: reconductoring LEA 110 kV Vatra – Târgu Frumos
+R054,In the 2033 stage: conductor replacement on LEA 110 kV Ciriței – Roman Laminor
+R055,In the 2033 stage: conductor replacement on LEA 110 kV Sărata – Ciriței
+R056,In the 2033 stage: conductor replacement on LEA 110 kV Sărata – Stejaru
+R057,In the 2033 stage: conductor replacement on LEA 110 kV Vatra – Târgu Frumos
 R058,Uprating the 220 kV transformer at Ișalnița
 R059,Uprating transformer 1 400/110 kV at Constanța Nord from 250 to 400 MVA
 R060,Uprating transformer 1 400/110 kV at Medgidia Sud from 250 to 400 MVA
@@ -71,47 +71,47 @@ R069,Capacity increase LEA 400 kV Urechești – Bălești
 R070,Capacity increase LEA 400 kV București Sud – Gura Ialomiței
 R071,Capacity increase LEA 400 kV Gutinaș – Brașov
 R072,Capacity increase LEA 400 kV Pelicanu – București Sud
-R073,"Reconductoring LEA 110 kV Alba Iulia – Bărăbanț circuit 1 (4.48 km, min. 850 A)"
-R074,"Reconductoring LEA 110 kV Alba Iulia – Bărăbanț circuit 2 (4.48 km, min. 850 A)"
-R075,"Reconductoring LEA 110 kV Basarabi – CET Palas (21.415 km, min. 850 A, with current transformers)"
-R076,"Reconductoring LEA 110 kV Basarabi – Palas Sud (21.012 km, min. 850 A, with current transformers)"
-R077,Reconductoring LEA 110 kV Delphi – FAI
-R078,Reconductoring LEA 110 kV Delphi – Războieni
-R079,Reconductoring LEA 110 kV Dumbrava – Roman Laminor
-R080,Reconductoring LEA 110 kV Jilț – Roșiuța
-R081,"Reconductoring LEA 110 kV Medgidia Nord – Constanța Nord (31.683 km, min. 850 A, with current transformers)"
-R082,"Reconductoring LEA 110 kV Mircea Vodă – Faclia – Medgidia Sud (14.942 km, min. 850 A, with current transformers)"
-R083,Reconductoring LEA 110 kV Motru – Roșiuța
-R084,Reconductoring LEA 110 kV Pașcani – Vatra
-R085,Reconductoring LEA 110 kV Rogojelu – Godinești above 122 MVA
-R086,Reconductoring LEA 110 kV Roman Nord – Roman Laminor
-R087,Reconductoring LEA 110 kV Sinești – Războieni
-R088,Reconductoring LEA 110 kV Târgu Neamț – Stejaru
-R089,"Reconductoring LEA 110 kV: Slobozia Sud – Dragoș Vodă, Dragoș Vodă – Vlad Țepeș, Vlad Țepeș – Lehliu Gară, Lehliu Gară – Lehliu, Clejani – Videle, Domnești – Mihăilești, Răcari – Mavrodin, Răcari – Târgoviște"
-R090,Reconductoring LEA 110 kV Smârdan – Filești
-R091,Reconductoring LEA 110 kV Smârdan – Galați Nord
-R092,"Reconductoring LEA 220 kV Bradu – Rătești, Rătești – Târgoviște, Bradu – Târgoviște (not in the RET 2024–2033 development plan)"
-R093,"Reconductoring LEA 220 kV Grădiște – Ișalnița (12.2 km, 450 mm²)"
-R094,Reconductoring LEA 220 kV Lacu Sărat – Filești – Barboși – Focșani Vest – Gutinaș
-R095,Reconductoring LEA 400 kV Constanța Nord – Cernavodă (73 km)
-R096,Reconductoring LEA 400 kV Medgidia Sud – Constanța Nord (35 km)
-R097,Reconductoring LEA 400 kV Medgidia Sud – Stupina (50.8 km)
-R098,Reconductoring LEA 400 kV Tulcea – Tariverde (74.8 km)
-R099,Reconductoring LEA 400 kV București Sud – CEE Ialomița – Gura Ialomiței (high-capacity conductor)
-R100,Reconductoring LEA 400 kV CEE Tătaranu – CEE Poiana – Gutinaș
-R101,Reconductoring LEA 400 kV Cernavodă – Medgidia Sud
-R102,Reconductoring LEA 400 kV Gura Ialomiței – Stâlpu
-R103,Reconductoring LEA 400 kV Lacu Sărat – Smârdan
-R104,"Reconductoring LEA 400 kV Medgidia Sud – Deleni, circuits 1 and 2"
-R105,Reconductoring LEA 400 kV Pelicanu – CEE Alexandru Odobescu (high-capacity conductor)
-R106,Reconductoring LEA 400 kV Rahman – Isaccea
-R107,Reconductoring LEA 400 kV Teleajen – Stâlpu
-R108,"Reconductoring 110 kV lines (about 575 km, about 30 lines, among them LEU-DIF-A, Banovița – Vânju Mare, Băilești – Ișalnița B, Filiași – Craiova Nord B, Strehaia 5 – Motru 5)"
+R073,"Conductor replacement on LEA 110 kV Alba Iulia – Bărăbanț circuit 1 (4.48 km, min. 850 A)"
+R074,"Conductor replacement on LEA 110 kV Alba Iulia – Bărăbanț circuit 2 (4.48 km, min. 850 A)"
+R075,"Conductor replacement on LEA 110 kV Basarabi – CET Palas (21.415 km, min. 850 A, with current transformers)"
+R076,"Conductor replacement on LEA 110 kV Basarabi – Palas Sud (21.012 km, min. 850 A, with current transformers)"
+R077,Conductor replacement on LEA 110 kV Delphi – FAI
+R078,Conductor replacement on LEA 110 kV Delphi – Războieni
+R079,Conductor replacement on LEA 110 kV Dumbrava – Roman Laminor
+R080,Conductor replacement on LEA 110 kV Jilț – Roșiuța
+R081,"Conductor replacement on LEA 110 kV Medgidia Nord – Constanța Nord (31.683 km, min. 850 A, with current transformers)"
+R082,"Conductor replacement on LEA 110 kV Mircea Vodă – Faclia – Medgidia Sud (14.942 km, min. 850 A, with current transformers)"
+R083,Conductor replacement on LEA 110 kV Motru – Roșiuța
+R084,Conductor replacement on LEA 110 kV Pașcani – Vatra
+R085,Conductor replacement on LEA 110 kV Rogojelu – Godinești above 122 MVA
+R086,Conductor replacement on LEA 110 kV Roman Nord – Roman Laminor
+R087,Conductor replacement on LEA 110 kV Sinești – Războieni
+R088,Conductor replacement on LEA 110 kV Târgu Neamț – Stejaru
+R089,"Conductor replacement on LEA 110 kV: Slobozia Sud – Dragoș Vodă, Dragoș Vodă – Vlad Țepeș, Vlad Țepeș – Lehliu Gară, Lehliu Gară – Lehliu, Clejani – Videle, Domnești – Mihăilești, Răcari – Mavrodin, Răcari – Târgoviște"
+R090,Conductor replacement on LEA 110 kV Smârdan – Filești
+R091,Conductor replacement on LEA 110 kV Smârdan – Galați Nord
+R092,"Conductor replacement on LEA 220 kV Bradu – Rătești, Rătești – Târgoviște, Bradu – Târgoviște (not in the RET 2024–2033 development plan)"
+R093,"Conductor replacement on LEA 220 kV Grădiște – Ișalnița (12.2 km, 450 mm²)"
+R094,Conductor replacement on LEA 220 kV Lacu Sărat – Filești – Barboși – Focșani Vest – Gutinaș
+R095,Conductor replacement on LEA 400 kV Constanța Nord – Cernavodă (73 km)
+R096,Conductor replacement on LEA 400 kV Medgidia Sud – Constanța Nord (35 km)
+R097,Conductor replacement on LEA 400 kV Medgidia Sud – Stupina (50.8 km)
+R098,Conductor replacement on LEA 400 kV Tulcea – Tariverde (74.8 km)
+R099,Conductor replacement on LEA 400 kV București Sud – CEE Ialomița – Gura Ialomiței (high-capacity conductor)
+R100,Conductor replacement on LEA 400 kV CEE Tătaranu – CEE Poiana – Gutinaș
+R101,Conductor replacement on LEA 400 kV Cernavodă – Medgidia Sud
+R102,Conductor replacement on LEA 400 kV Gura Ialomiței – Stâlpu
+R103,Conductor replacement on LEA 400 kV Lacu Sărat – Smârdan
+R104,"Conductor replacement on LEA 400 kV Medgidia Sud – Deleni, circuits 1 and 2"
+R105,Conductor replacement on LEA 400 kV Pelicanu – CEE Alexandru Odobescu (high-capacity conductor)
+R106,Conductor replacement on LEA 400 kV Rahman – Isaccea
+R107,Conductor replacement on LEA 400 kV Teleajen – Stâlpu
+R108,"Conductor replacement on 110 kV lines (about 575 km, about 30 lines, among them LEU-DIF-A, Banovița – Vânju Mare, Băilești – Ișalnița B, Filiași – Craiova Nord B, Strehaia 5 – Motru 5)"
 R109,Replacing current transformers at the end substations of the 110 kV lines (Distribuție Energie Electrică România)
-R110,Replacing current transformers at the end substations of the 220 kV lines being reconductored
+R110,Replacing current transformers at the end substations of the 220 kV lines whose conductors are being replaced
 R111,Extension of the 400 kV Arad substation and refurbishing of the 110 kV Arad substation
-R112,"Load case: reconductoring LEA 400 kV Isaccea – Rahman (55.44 km)"
-R113,"Load case: reconductoring LEA 400 kV Medgidia – Cernavodă (21 km)"
+R112,"Load case: conductor replacement on LEA 400 kV Isaccea – Rahman (55.44 km)"
+R113,"Load case: conductor replacement on LEA 400 kV Medgidia – Cernavodă (21 km)"
 R114,"220 kV in-out connection substation on LEA 220 kV Brazi Vest – Fundeni circuit 1 (double busbar, 2 line bays, coupler, 2 metering bays), remote protection at Fundeni and Brazi Vest"
 R115,"Adding the DRRI function at the 110/20/6 kV Cujmir substation and at a new adjacent 110/20 kV connection substation, with the new protection terminals integrated in SCADA"
 R116,New 200 MVA 220/110 kV autotransformer at Alba Iulia substation

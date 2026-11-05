@@ -787,7 +787,7 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
     <div class="sec">
       <h2>Planning status</h2>
       <div class="seg" id="rfStatus" role="group" aria-label="Planning status"></div>
-      <p class="mix-note">As the grid operator stated it. "Sources disagree": in a plan in one document and outside any plan in another.</p>
+      <div class="mix-note" id="rfStatusNote"></div>
     </div>
     <div class="sec">
       <h2>Voltage</h2>
@@ -803,8 +803,9 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
       <button class="wide" id="rfCsv" type="button">Download the list (CSV)</button>
     </div>
     <div class="about">
-      <p><b>What is here:</b> reinforcement works in Romania's grid (line reconductoring and capacity increases, new lines, transformers and substations) that the grid operators named as needed: Transelectrica (TSO, 110–400 kV transmission) and the distribution operators (DSO, 110 kV). Each work appears once; a work described in several documents is one record.</p>
+      <p><b>What is here:</b> reinforcement works in Romania's grid (conductor replacement and capacity increases on existing lines, new lines, transformers and substations) that the grid operators named as needed: Transelectrica (TSO, 110–400 kV transmission) and the distribution operators (DSO, 110 kV). Each work appears once; a work described in several documents is one record.</p>
       <p><b>Year and status</b> are as the grid operator stated them; where documents disagree, the record says so and nothing is settled. Each work was also checked against Transelectrica's network development plan 2026–2035 (PD RET) and its 2026 investment plan (PAI 2026); the result is in the work's card.</p>
+      <p><b>Conductor replacement</b> (in Romanian <i>reconductorare</i>): the wires of an existing line are replaced with new ones that carry more current, on the same towers and route. It raises the line's capacity without building a new line.</p>
       <p><b>Criterion:</b> N = needed under normal load; N-1 = needed for the grid to withstand the outage of one element.</p>
       <p><b>Geometry:</b> substations and line routes from OpenStreetMap. An existing line follows the OSM lines between its two substations; where OSM has no continuous route it is drawn straight and dotted. New lines are straight and dashed. A station OSM does not name is placed at the line end nearest its town (or the town itself, with a dashed halo). <span id="rfGeoStats"></span></p>
       <p><span id="rfBuilt"></span> <button class="linkbtn" id="rfReset" type="button">Reset filters</button></p>
@@ -912,7 +913,11 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
     { v: "line", label: "Existing lines" }, { v: "new", label: "New lines" },
     { v: "trafo", label: "Transformers" }, { v: "station", label: "Substations" },
   ];
-  const RF_STATUS = [{ v: "In a plan", c: "--glow" }, { v: "Outside any plan", c: "--gold" }, { v: "Sources disagree", c: "--coral" }];
+  const RF_STATUS = [
+    { v: "In a plan", c: "--glow", about: "the grid operator has put the work in one of its development or investment plans, mostly with a target year." },
+    { v: "Outside any plan", c: "--gold", about: "the grid operator names the work as needed, but it is not in any of its plans yet, and mostly has no date." },
+    { v: "Sources disagree", c: "--coral", about: "one of the operator's documents has the work in a plan and another has it outside any plan; the map does not decide between them." },
+  ];
   const RF_KV = [{ v: "400", label: "400 kV" }, { v: "220", label: "220 kV" }, { v: "110", label: "110 kV" }, { v: "", label: "Not stated" }];
   const RF_OWNER = [{ v: "TSO", label: "Transelectrica (TSO)" }, { v: "DSO", label: "Distribution (DSO)" }];
   const RF_OWNER_LONG = { TSO: "Transelectrica (transmission system operator)", DSO: "Distribution operator" };
@@ -1564,6 +1569,9 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
     };
     seg("rfKind", RF_KINDS, state.rfKinds, "kind", "rk");
     seg("rfStatus", RF_STATUS, state.rfStatus, "status", "status");
+    // What each selected status means (all three while none is singled out).
+    $("rfStatusNote").innerHTML = `As the grid operator stated it.` + RF_STATUS.filter(s => state.rfStatus.has(s.v))
+      .map(s => `<br><b style="color:var(${s.c})">${esc(s.v)}:</b> ${esc(s.about)}`).join("");
     seg("rfKv", RF_KV, state.rfKv, "kv", "kvg");
     seg("rfOwner", RF_OWNER, state.rfOwner, "owner", "owner");
     const rows = [...list].sort((a, b) => (a.year || 9999) - (b.year || 9999) || (+b.kvg || 0) - (+a.kvg || 0) || a.id.localeCompare(b.id));

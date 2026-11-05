@@ -105,7 +105,7 @@ entered only when a source states them clearly; conflicting figures are describe
 ## Grid reinforcement works
 
 The classic map has a **Grid works** tab (`index.html#reinforcements`), and the 3D map one too (`map3d.html#reinforcements`).
-It shows the 122 reinforcement works of `data/reinforcements.json`: work on existing lines (reconductoring, capacity
+It shows the 122 reinforcement works of `data/reinforcements.json`: work on existing lines (conductor replacement, capacity
 increases), new lines, transformers and substations, named as needed by Transelectrica (TSO) and the distribution
 operators (DSO). Colour = planning status as the grid operator stated it (in a plan, outside any plan, sources disagree).
 An existing line is drawn along its OpenStreetMap route (solid), or straight and dotted where OSM has no continuous route;
