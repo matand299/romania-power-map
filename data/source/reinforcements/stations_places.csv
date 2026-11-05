@@ -1,0 +1,51 @@
+station,place,lat,lon,note
+Aiud,Aiud,46.31095,23.71871,
+Teiuș,Teiuș,46.20604,23.67543,
+Bărăbanț,Bărăbanț (Alba Iulia),46.09942,23.58532,
+Basarabi,Murfatlar,44.17428,28.4108,Basarabi is the former name of Murfatlar (Constanța)
+Băilești,Băilești,44.02309,23.34501,
+Bălești,Bălești (Gorj),45.01909,23.20973,
+CEE Alexandru Odobescu,Alexandru Odobescu (Călărași),44.26747,27.09017,wind farm
+CEE Tătaranu,Tătaranu (Vrancea),45.51401,27.32289,wind farm
+Caracal Sud,Caracal,44.11233,24.34631,
+Caransebeș,Caransebeș,45.41061,22.21822,CFR (railway) substation
+Ciriței,Ciritei (Piatra Neamț),46.9319,26.40884,
+Clejani,Clejani,44.31813,25.70157,
+Corabia,Corabia,43.77476,24.50154,
+Cujmir,Cujmir,44.20892,22.92869,
+Deleni,Deleni (Constanța),44.09126,28.00858,
+Delphi,Iași,47.16156,27.58378,"Delphi plant; assumed to be in Iași, the town of the other end (FAI)"
+Dragoș Vodă,Dragoș Vodă (Călărași),44.43849,27.16486,
+Faclia,Faclia (Constanța),44.27944,28.10279,
+Filiași,Filiași,44.55383,23.52056,
+Galați Nord,Galați,45.43382,28.05494,
+Godinești,Godinești (Gorj),45.00722,22.96594,
+Icloda,Icloda (Timiș),45.64217,21.38616,
+Jamu Mare,Jamu Mare,45.25527,21.41548,
+Jilț,Mătăsari (Jilț mines),44.84776,23.08873,
+Lehliu,Lehliu,44.47477,26.81296,
+Lehliu Gară,Lehliu-Gară,44.43984,26.85153,
+Mavrodin,Mavrodin (Dâmbovița),44.64902,25.71716,
+Medgidia Nord,Medgidia,44.2443,28.26963,
+Mihăilești,Mihăilești (Giurgiu),44.32462,25.90689,
+Mircea Vodă,Mircea Vodă (Constanța),44.28419,28.17888,
+Motru,Motru,44.8011,22.96788,
+Măureni,Măureni,45.40819,21.50155,
+Roman Laminor,Roman,46.92528,26.92842,steel works
+Roșiuța,Roșiuța (Motru),44.85791,22.98036,
+Răcari,Răcari (Dâmbovița),44.62495,25.74287,
+Rătești,Rătești (Argeș),44.74301,25.13227,
+Războieni,Războieni (Iași),47.21708,27.04657,
+Sinești,Sinești (Iași),47.11441,27.1934,
+Slobozia Sud,Slobozia,44.5636,27.36185,
+Strehaia,Strehaia,44.62311,23.1961,
+Sărata,Sărata (Bacău),46.5669,26.5524,
+Târgu Neamț,Târgu Neamț,47.20643,26.36044,
+Videle,Videle,44.2746,25.52773,
+Vlad Țepeș,Vlad Țepeș (Călărași),44.34008,27.09479,
+Vânju Mare,Vânju Mare,44.42503,22.87127,
+Șagu,Șagu (Arad),46.06336,21.28142,
+Banovița,,,,not found
+CEE Ialomița,,,,not found
+CEE Poiana,,,,"not found (OSM's only Poiana substation is in Cluj, far from this line)"
+Rogojelu,,,,not found

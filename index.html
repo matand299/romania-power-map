@@ -453,8 +453,8 @@ button, input, select { font: inherit; color: inherit; }
 .leaflet-container .leaflet-interactive { cursor: pointer; }
 
 /* Mode tabs: electricity generation / data centres */
-.modes { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--edge); border-radius: 2px; overflow: hidden; }
-.modes button { padding: 8px; background: none; border: 0; color: var(--ink-muted); font: 600 13px var(--f-display); letter-spacing: .1em; text-transform: uppercase; cursor: pointer; }
+.modes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--edge); border-radius: 2px; overflow: hidden; }
+.modes button { padding: 8px 4px; background: none; border: 0; color: var(--ink-muted); font: 600 13px var(--f-display); letter-spacing: .06em; text-transform: uppercase; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .modes button + button { border-left: 1px solid var(--edge); }
 .modes button:hover { color: var(--ink); }
 .modes button[aria-selected="true"] { color: var(--ink); background: color-mix(in srgb, var(--glow) 14%, transparent); box-shadow: inset 0 -2px 0 var(--glow); }
@@ -476,6 +476,31 @@ button, input, select { font: inherit; color: inherit; }
   #legendDc .dc-key .dcm { width: 9px; height: 9px; }
   #legendDc h3 { margin-bottom: 3px; }
 }
+/* Grid reinforcement works: a square for a transformer, a diamond for a substation, a small ring for a line's end station.
+   Lines: solid along the OpenStreetMap route, long dashes for a new line, dots where the route was not found. */
+.rfm { --c: var(--glow); }
+.rfm i { display: block; width: 100%; height: 100%; box-sizing: border-box; background: var(--c); border: 1.5px solid var(--ring); border-radius: 2px;
+  box-shadow: 0 0 8px color-mix(in srgb, var(--c) 70%, transparent); }
+.rfm.k-station i { transform: rotate(45deg) scale(.82); }
+.rfm.k-end i { border-radius: 50%; background: var(--deep); border: 2px solid var(--c); box-shadow: none; }
+.rfm.approx i { outline: 1px dashed var(--c); outline-offset: 2px; }
+.rfm:hover i { box-shadow: 0 0 0 2px var(--ink), 0 0 12px var(--c); }
+.rf-key { display: grid; grid-template-columns: 26px 1fr; gap: 5px 8px; align-items: center; font-size: 12px; color: var(--ink-muted); }
+.rf-key .rfm { width: 11px; height: 11px; justify-self: center; }
+.rf-key svg { display: block; }
+@media (max-width: 860px) {
+  #legendRf .rf-key { grid-template-columns: 22px auto 22px auto; gap: 3px 6px; font-size: 10.5px; }
+  #legendRf .rf-key svg { width: 22px; }
+  #legendRf .rf-key .rfm { width: 9px; height: 9px; }
+  #legendRf .dc-key { grid-template-columns: 10px auto 10px auto 10px auto; gap: 3px 6px; font-size: 10.5px; white-space: nowrap; }
+  #legendRf .dc-key .dcm { width: 9px; height: 9px; }
+  #legendRf h3 { margin-bottom: 3px; }
+}
+.rf-pop .leaflet-popup-content { min-width: 290px; }
+.pp .stations { margin: 0; padding-left: 16px; font-size: 12px; }
+.pp .stations span { color: var(--ink-caption); }
+.prow .d.sq { border-radius: 1px; }
+.prow .d.dash { height: 3px; border-radius: 0; box-shadow: none; background: repeating-linear-gradient(90deg, var(--c) 0 3px, transparent 3px 5px); }
 .grade { display: inline-grid; place-items: center; min-width: 20px; height: 18px; padding: 0 5px; border-radius: 2px; font: 700 12px var(--f-display); color: var(--on-glow); background: var(--c); }
 .dc-pop .leaflet-popup-content { min-width: 280px; }
 .pp .sub { font-size: 12px; color: var(--ink-caption); margin-top: 2px; overflow-wrap: anywhere; }
@@ -591,6 +616,7 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
     </div>
     <div class="cgroup">
       <button class="cbtn" id="dcBtn" type="button" aria-pressed="false" title="Show data centres" aria-label="Show data centres"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="4" y="3.5" width="16" height="6" rx="1"/><rect x="4" y="14.5" width="16" height="6" rx="1"/><path d="M8 6.5h.01M8 17.5h.01M12 6.5h5M12 17.5h5"/></svg></button>
+      <button class="cbtn" id="rfBtn" type="button" aria-pressed="false" title="Show grid reinforcement works" aria-label="Show grid reinforcement works"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 8 21.5M12 2.5l4 19M6.5 7.5h11M5 12h14M9.6 12l4.6 5.5M14.4 12l-4.6 5.5"/></svg></button>
       <a class="cbtn cbtn-3d" id="link3d" href="map3d.html" title="Open the 3D map" aria-label="Open the 3D map">3D</a>
     </div>
   </div>
@@ -607,6 +633,19 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
       </div>
       <h3 class="mk-title" style="margin-top:8px">Colour = status</h3>
       <div class="dc-key" id="dcStatusKey"></div>
+    </div>
+    <div id="legendRf" hidden>
+      <h3>Grid reinforcement works</h3>
+      <div class="rf-key">
+        <svg width="26" height="8" viewBox="0 0 26 8"><path d="M1 4h24" stroke="var(--ink-muted)" stroke-width="3"/></svg><span>Existing line, OSM route</span>
+        <svg width="26" height="8" viewBox="0 0 26 8"><path d="M1 4h24" stroke="var(--ink-muted)" stroke-width="3" stroke-dasharray="7 4"/></svg><span>New line</span>
+        <svg width="26" height="8" viewBox="0 0 26 8"><path d="M1 4h24" stroke="var(--ink-muted)" stroke-width="2" stroke-dasharray="1 4" stroke-linecap="round"/></svg><span>Route not found</span>
+        <span class="rfm k-trafo"><i style="--c:var(--ink-muted)"></i></span><span>Transformer</span>
+        <span class="rfm k-station"><i style="--c:var(--ink-muted)"></i></span><span>Substation</span>
+        <span class="rfm k-end"><i style="--c:var(--ink-muted)"></i></span><span>Line end</span>
+      </div>
+      <h3 class="mk-title" style="margin-top:8px">Colour = planning status</h3>
+      <div class="dc-key" id="rfStatusKey"></div>
     </div>
     <div id="legendGen">
     <div>
@@ -643,6 +682,7 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
     <div class="modes" role="tablist" aria-label="What the map shows">
       <button type="button" role="tab" id="modeGen" aria-selected="true">Generation</button>
       <button type="button" role="tab" id="modeDc" aria-selected="false">Data centres</button>
+      <button type="button" role="tab" id="modeRf" aria-selected="false" title="Grid reinforcement works">Grid works</button>
     </div>
     <div class="searchwrap">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
@@ -733,6 +773,40 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
     </div>
   </div>
 
+  <div class="pbody" id="rfbody" hidden>
+    <div class="zone" id="rfZone"></div>
+    <div class="kpis" id="rfKpis"></div>
+    <div class="sec">
+      <h2>Type of work</h2>
+      <div class="seg" id="rfKind" role="group" aria-label="Type of work"></div>
+    </div>
+    <div class="sec">
+      <h2>Planning status</h2>
+      <div class="seg" id="rfStatus" role="group" aria-label="Planning status"></div>
+      <p class="mix-note">As the grid operator stated it. "Sources disagree": in a plan in one document and outside any plan in another.</p>
+    </div>
+    <div class="sec">
+      <h2>Voltage</h2>
+      <div class="seg" id="rfKv" role="group" aria-label="Voltage"></div>
+    </div>
+    <div class="sec">
+      <h2>Grid operator</h2>
+      <div class="seg" id="rfOwner" role="group" aria-label="Grid operator"></div>
+    </div>
+    <div class="sec">
+      <h2>Works <span class="sp"></span></h2>
+      <div class="plist" id="rfList"></div>
+      <button class="wide" id="rfCsv" type="button">Download the list (CSV)</button>
+    </div>
+    <div class="about">
+      <p><b>What is here:</b> reinforcement works in Romania's grid (line reconductoring and capacity increases, new lines, transformers and substations) that the grid operators named as needed: Transelectrica (TSO, 110–400 kV transmission) and the distribution operators (DSO, 110 kV). Each work appears once; a work described in several documents is one record.</p>
+      <p><b>Year and status</b> are as the grid operator stated them; where documents disagree, the record says so and nothing is settled. Each work was also checked against Transelectrica's network development plan 2026–2035 (PD RET) and its 2026 investment plan (PAI 2026); the result is in the work's card.</p>
+      <p><b>Criterion:</b> N = needed under normal load; N-1 = needed for the grid to withstand the outage of one element.</p>
+      <p><b>Geometry:</b> substations and line routes from OpenStreetMap. An existing line follows the OSM lines between its two substations; where OSM has no continuous route it is drawn straight and dotted. New lines are straight and dashed. A station OSM does not name is placed at the line end nearest its town (or the town itself, with a dashed halo). <span id="rfGeoStats"></span></p>
+      <p><span id="rfBuilt"></span> <button class="linkbtn" id="rfReset" type="button">Reset filters</button></p>
+    </div>
+  </div>
+
   <div class="pfoot">
     <div class="pl-head"><h2>Project pipeline</h2><span><b id="plTotal">–</b> MW shown</span></div>
     <div class="plbar" id="plbar"></div>
@@ -809,6 +883,7 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
     techs: allTechs(), stages: defaultStages(), src: "", minMW: 0, county: "", q: "", rankBy: "mw",
     sortK: "mw", sortDir: -1, listAll: false, showPlants: true, showFill: true,
     mode: "gen", dcKinds: null, dcStatus: null, dcGrades: null,
+    rfKinds: null, rfStatus: null, rfKv: null, rfOwner: null,
   };
   // Data centres (data/datacenters.json, built by scripts/build_datacenters.py).
   const DC_KINDS = [
@@ -828,6 +903,20 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
     town: "Town only: the exact site is not known", "host building": "The building that hosts it", given: "Entered by hand",
   };
   let dcs = null, dcLayer, dcCurrent = [], countyKeyOf = () => "";
+  // Grid reinforcement works (data/reinforcements.json, built by scripts/build_reinforcements.py).
+  const RF_KINDS = [
+    { v: "line", label: "Existing lines" }, { v: "new", label: "New lines" },
+    { v: "trafo", label: "Transformers" }, { v: "station", label: "Substations" },
+  ];
+  const RF_STATUS = [{ v: "In a plan", c: "--glow" }, { v: "Outside any plan", c: "--gold" }, { v: "Sources disagree", c: "--coral" }];
+  const RF_KV = [{ v: "400", label: "400 kV" }, { v: "220", label: "220 kV" }, { v: "110", label: "110 kV" }, { v: "", label: "Not stated" }];
+  const RF_OWNER = [{ v: "TSO", label: "Transelectrica (TSO)" }, { v: "DSO", label: "Distribution (DSO)" }];
+  const RF_OWNER_LONG = { TSO: "Transelectrica (transmission system operator)", DSO: "Distribution operator" };
+  const RF_PRECISION = {
+    osm: "OpenStreetMap substation", "line end": "Line end nearest the town (not named in OpenStreetMap)",
+    town: "Town only: the substation is not in OpenStreetMap",
+  };
+  let rfs = null, rfStations = {}, rfData = null, rfLayer, rfCurrent = [];
   let plants = [], colors = {}, map, pointLayer, glowLayer, countyLayer, tiles, renderer, romaniaBounds;
   let current = [], countyAgg = new Map(), labels = {}, counties = {};
 
@@ -1124,6 +1213,7 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
 
   function update() {
     if (state.mode === "dc") return updateDc();
+    if (state.mode === "rf") return updateRf();
     current = plants.filter(p => matchesExcept(p, null));
     countyAgg = new Map();
     const byCounty = new Map();
@@ -1281,31 +1371,260 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
 
-  async function setMode(mode) {
-    if (mode === "dc") {
-      try { await loadDcs(); } catch (e) { alert("The data-centre list could not be loaded. Reload the page to try again."); return; }
+  // ----- Grid reinforcement works -----
+  const rfColor = w => cssVar((RF_STATUS.find(s => s.v === w.status) || RF_STATUS[1]).c);
+  const rfKvGroup = kv => { const n = String(kv || "").split("/").map(Number).filter(Boolean); return n.length ? String(Math.max(...n)) : ""; };
+  const rfKindOf = w => w.kind === "N" ? "new" : w.kind === "L" ? "line" : /^Transformer/.test(w.type) ? "trafo" : "station";
+  const RF_KIND_LONG = { line: "Work on an existing line", new: "New line", trafo: "Transformer", station: "Substation" };
+  const rfMatches = (w, skip) =>
+    (skip === "kind" || state.rfKinds.has(w.rk)) && (skip === "status" || state.rfStatus.has(w.status)) &&
+    (skip === "kv" || state.rfKv.has(w.kvg)) && (skip === "owner" || state.rfOwner.has(w.owner)) &&
+    (skip === "county" || !state.county || w.cks.includes(state.county)) && (!state.q || w.s.includes(state.q));
+  const legKey = l => [l.from, l.to].sort().join("|");
+
+  async function loadRf() {
+    if (rfs) return;
+    rfData = await fetch("data/reinforcements.json").then(r => r.json());
+    rfStations = rfData.stations;
+    rfs = rfData.works.map((w, i) => ({
+      ...w, i, rk: rfKindOf(w), kvg: rfKvGroup(w.kv), cks: w.counties.map(countyKeyOf).filter(Boolean), layers: [],
+      s: norm([w.id, w.title, w.type, w.points.join(" "), w.plan && w.plan.official, w.counties.join(" ")].join(" ")),
+    }));
+    // Works on the same stretch of line, so each card can point to the others.
+    const byLeg = new Map();
+    rfs.forEach(w => w.lines.forEach(l => (byLeg.get(legKey(l)) || byLeg.set(legKey(l), new Set()).get(legKey(l))).add(w)));
+    rfs.forEach(w => { w.same = [...new Set(w.lines.flatMap(l => [...byLeg.get(legKey(l))]))].filter(x => x !== w); });
+    state.rfKinds = new Set(RF_KINDS.map(k => k.v));
+    state.rfStatus = new Set(RF_STATUS.map(k => k.v));
+    state.rfKv = new Set(RF_KV.map(k => k.v));
+    state.rfOwner = new Set(RF_OWNER.map(k => k.v));
+    const legs = rfs.filter(w => w.kind === "L").flatMap(w => w.lines), routed = legs.filter(l => l.routed).length;
+    const st = Object.values(rfStations);
+    $("rfGeoStats").textContent = `${routed} of ${legs.length} sections of existing lines follow an OpenStreetMap route; ${st.filter(s => s.precision === "osm").length} of ${st.length} substations are OpenStreetMap substations.`;
+    $("rfBuilt").textContent = `Database built ${fmtDate(rfData.generated)}; OpenStreetMap data of ${fmtDate(rfData.osm_fetched)}.`;
+  }
+
+  const rfOpen = w => `<button type="button" class="linkbtn rf-open" data-i="${w.i}">${esc(w.id)}</button>`;
+
+  function rfPopup(w) {
+    const c = rfColor(w), p = w.plan;
+    const facts = [
+      `<div><b>${esc(w.kv || "–")}</b><span>kV</span></div>`,
+      `<div><b>${w.year || "–"}</b><span>${w.year ? "year (grid operator)" : "no date given"}</span></div>`,
+      w.km ? `<div><b>${fmtNum(w.km)}</b><span>km drawn${w.stated_km ? ` · ${fmtNum(w.stated_km)} in the source` : ""}</span></div>` : "",
+    ].join("");
+    const rows = [
+      ["Status", `<span class="pill" style="--c:${c}"><i></i>${esc(w.status)}</span>`],
+      ["Grid operator", esc(RF_OWNER_LONG[w.owner] || w.owner)],
+      ["Criterion", esc(w.criterion)],
+      ["Type", esc(w.type)],
+      w.wording ? ["In the sources", esc(w.wording)] : null,
+      w.counties.length ? ["County", esc(w.counties.map(k => labelOf(countyKeyOf(k) || k)).join(", "))] : null,
+    ].filter(r => r && r[1]);
+    let route = "";
+    if (w.kind === "N") route = "A new line: drawn straight between its end substations, since its route is not known yet.";
+    else if (w.kind === "L") {
+      const ok = w.lines.filter(l => l.routed).length;
+      route = !w.lines.length ? (w.points.length ? "Only one of its substations could be placed, so the line is not drawn." : "None of its substations could be placed, so it is not drawn.")
+        : ok === w.lines.length ? "Drawn along the line's route in OpenStreetMap."
+        : ok ? `${ok} of ${w.lines.length} sections follow the OpenStreetMap route; the others are drawn straight (dotted), since OpenStreetMap has no continuous line there.`
+        : "OpenStreetMap has no continuous line between its substations, so it is drawn straight (dotted).";
     }
+    const stations = w.points.map(n => {
+      const s = rfStations[n];
+      const extra = s.precision === "osm" && s.osm_name && norm(s.osm_name) !== norm(n) ? ` (“${esc(s.osm_name)}”)` : "";
+      return `<li>${esc(n)}${extra} <span>· ${esc(RF_PRECISION[s.precision] || s.precision)}${s.place && s.precision !== "osm" ? ": " + esc(s.place) : ""}</span></li>`;
+    }).join("");
+    const planRows = p ? [
+      ["Match", esc(p.match)], ["Official name", esc(p.official)], ["PD RET 2026–2035", p.pd_ret ? `completion ${p.pd_ret}` : ""],
+      ["PAI 2026", p.pai ? `commissioning ${p.pai}` : ""], ["Finding", esc(p.finding)], ["Note", esc(p.note)],
+    ].filter(r => r[1]) : [];
+    return `<div class="pp">
+      <span class="pp-tag" style="--c:${c}"><i></i>${esc(w.id)} · ${esc(RF_KIND_LONG[w.rk])}</span>
+      <div class="pp-name">${esc(w.title)}</div>
+      <div class="facts">${facts}</div>
+      <dl>${rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>
+      ${w.conflicts ? `<div class="warn">Sources disagree: ${esc(w.conflicts)}</div>` : ""}
+      ${w.note ? `<div class="warn">${esc(w.note)}</div>` : ""}
+      <h4>Transelectrica's plans</h4>
+      ${planRows.length ? `<dl>${planRows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>`
+        : `<div class="nets">${w.owner === "DSO" ? "A distribution operator's work: not part of Transelectrica's plans." : "Not compared."}</div>`}
+      <h4>On the map</h4>
+      ${stations ? `<ul class="stations">${stations}</ul>` : ""}
+      ${w.missing.length ? `<div class="nets">Not placed: ${esc(w.missing.join(", "))} (not found in OpenStreetMap or as a town).</div>` : ""}
+      ${route ? `<div class="note">${route}</div>` : ""}
+      ${w.same.length ? `<div class="note">Other works on the same line: ${w.same.map(rfOpen).join(" ")}</div>` : ""}
+    </div>`;
+  }
+
+  function rfStationPopup(name, works) {
+    const s = rfStations[name];
+    return `<div class="pp">
+      <span class="pp-tag" style="--c:var(--glow)"><i></i>Substation</span>
+      <div class="pp-name">${esc(name)}</div>
+      <div class="sub">${esc(RF_PRECISION[s.precision] || s.precision)}${s.place && s.precision !== "osm" ? ": " + esc(s.place) : ""}${s.kv ? ` · ${esc(s.kv)} kV` : ""}${s.county ? ` · ${esc(labelOf(countyKeyOf(s.county) || s.county))}` : ""}</div>
+      <h4>${works.length} work${works.length > 1 ? "s" : ""} shown here</h4>
+      <ul class="stations">${works.map(w => `<li>${rfOpen(w)} ${esc(w.title)} <span>· ${esc(w.status)}${w.year ? " · " + w.year : ""}</span></li>`).join("")}</ul>
+      ${s.note ? `<div class="note">${esc(s.note)}</div>` : ""}
+    </div>`;
+  }
+
+  function rfLineStyle(w, leg, hover) {
+    const base = { "400": 4, "220": 3, "110": 2.2 }[w.kvg] || 2.6;
+    const s = { renderer, color: hover ? colors.ink : rfColor(w), weight: base + (hover ? 2 : 0), opacity: 0.92, lineCap: "round", dashArray: null };
+    if (w.kind === "N") s.dashArray = "8 6";
+    else if (!leg.routed) Object.assign(s, { dashArray: "1 6", weight: s.weight + 0.6 });
+    return s;
+  }
+
+  function drawRf(list) {
+    rfLayer.clearLayers();
+    if (!state.showPlants) return;
+    const popOpts = { maxWidth: 380, maxHeight: 460, className: "rf-pop", autoPanPaddingTopLeft: [isPhone() ? 10 : 430, 20] };
+    // Thick lines first, so a thinner line sharing a corridor stays visible on top.
+    [...list].sort((a, b) => (+b.kvg || 0) - (+a.kvg || 0)).forEach(w => {
+      w.layers = w.lines.map(leg => {
+        const pl = L.polyline(leg.c, rfLineStyle(w, leg, false));
+        pl.bindTooltip(`<b>${esc(w.id)}</b> ${esc(w.title)}<br><span class="m">${esc(w.kv)} kV · ${esc(w.status)}${w.year ? " · " + w.year : ""}${leg.routed || w.kind === "N" ? "" : " · route not found, drawn straight"}</span>`, { sticky: true, direction: "top", offset: [0, -6] });
+        pl.bindPopup(() => rfPopup(w), popOpts);
+        pl.on("mouseover", () => w.layers.forEach((x, k) => x.setStyle(rfLineStyle(w, w.lines[k], true))));
+        pl.on("mouseout", () => w.layers.forEach((x, k) => x.setStyle(rfLineStyle(w, w.lines[k], false))));
+        rfLayer.addLayer(pl);
+        return pl;
+      });
+    });
+    // One marker per substation: a transformer or substation work shows its shape, a line's end a small ring.
+    const at = new Map();
+    list.forEach(w => w.points.forEach(n => (at.get(n) || at.set(n, []).get(n)).push(w)));
+    const rank = w => RF_STATUS.findIndex(s => s.v === w.status);
+    [...at.entries()].sort((a, b) => a[1].some(w => w.kind === "P") - b[1].some(w => w.kind === "P")).forEach(([name, works]) => {
+      const s = rfStations[name];
+      const own = works.filter(w => w.kind === "P").sort((a, b) => rank(a) - rank(b));
+      const lead = own[0] || [...works].sort((a, b) => rank(a) - rank(b))[0];
+      const kind = own.length ? (own.some(w => w.rk === "trafo") ? "trafo" : "station") : "end";
+      const z = kind === "end" ? 8 : 13;
+      const m = L.marker([s.lat, s.lon], {
+        icon: L.divIcon({ className: `rfm k-${kind}${s.precision === "town" ? " approx" : ""}`, html: `<i style="--c:${rfColor(lead)}"></i>`, iconSize: [z, z] }),
+        riseOnHover: true, keyboard: true, title: name, zIndexOffset: kind === "end" ? 0 : 500,
+      });
+      m.bindTooltip(`<b>${esc(name)}</b><br><span class="m">${works.length} work${works.length > 1 ? "s" : ""}${own.length ? ` · ${own.length} at the substation itself` : ""}</span>`, { direction: "top", offset: [0, -z / 2] });
+      m.bindPopup(() => own.length === 1 && works.length === 1 ? rfPopup(own[0]) : rfStationPopup(name, works), popOpts);
+      own.forEach(w => w.layers.push(m));
+      rfLayer.addLayer(m);
+    });
+  }
+
+  function renderRfPanel(list) {
+    const all = rfs.filter(w => !state.county || w.cks.includes(state.county));
+    $("rfZone").innerHTML = state.county
+      ? `<button class="back" id="rfBack" type="button"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Romania</button>
+         <h2>${esc(labelOf(state.county))}</h2><p>${list.length} of ${all.length} works touching this county</p>`
+      : `<h2>Grid reinforcement works</h2><p>${list.length} of ${rfs.length} works shown · click a line or substation for its details</p>`;
+    if ($("rfBack")) $("rfBack").onclick = () => selectCounty("");
+    const ico = {
+      pylon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 8 21.5M12 2.5l4 19M6.5 7.5h11M5 12h14M9.6 12l4.6 5.5M14.4 12l-4.6 5.5"/></svg>',
+      doc: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>',
+      route: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="18" r="2"/><circle cx="19" cy="6" r="2"/><path d="M7 18h6a3 3 0 0 0 0-6h-2a3 3 0 0 1 0-6h6"/></svg>',
+      trafo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg>',
+    };
+    // Each stretch of line counts once, however many works touch it.
+    const legs = new Map();
+    list.filter(w => w.kind !== "P").forEach(w => w.lines.forEach(l => legs.set(legKey(l), l.km)));
+    const km = [...legs.values()].reduce((s, v) => s + v, 0);
+    $("rfKpis").innerHTML = `
+      <div class="kpi"><span class="ico">${ico.pylon}</span><div><b>${list.length}</b><span>works shown</span></div></div>
+      <div class="kpi"><span class="ico">${ico.doc}</span><div><b>${list.filter(w => w.status === "In a plan").length}</b><span>in a grid operator's plan</span></div></div>
+      <div class="kpi"><span class="ico">${ico.route}</span><div><b>${fmtBig(km)}<small>km</small></b><span>of line drawn, each stretch once</span></div></div>
+      <div class="kpi"><span class="ico">${ico.trafo}</span><div><b>${list.filter(w => w.rk === "trafo" || w.rk === "station").length}</b><span>transformers and substations</span></div></div>`;
+    const seg = (id, items, set, skip, field) => {
+      $(id).innerHTML = items.map(it => {
+        const cnt = rfs.filter(w => w[field] === it.v && rfMatches(w, skip)).length;
+        return `<button type="button" data-v="${esc(it.v)}" aria-pressed="${set.has(it.v)}">${esc(it.label || it.v)} · ${cnt}</button>`;
+      }).join("");
+    };
+    seg("rfKind", RF_KINDS, state.rfKinds, "kind", "rk");
+    seg("rfStatus", RF_STATUS, state.rfStatus, "status", "status");
+    seg("rfKv", RF_KV, state.rfKv, "kv", "kvg");
+    seg("rfOwner", RF_OWNER, state.rfOwner, "owner", "owner");
+    const rows = [...list].sort((a, b) => (a.year || 9999) - (b.year || 9999) || (+b.kvg || 0) - (+a.kvg || 0) || a.id.localeCompare(b.id));
+    const dot = { line: "", new: "dash", trafo: "sq", station: "sq" };
+    $("rfList").innerHTML = rows.length ? rows.map(w => `<button type="button" class="prow" data-i="${w.i}" style="--c:${rfColor(w)}" title="${esc(w.title)}">
+      <span class="d ${dot[w.rk]}"></span>
+      <span class="nm">${esc(w.title)}<small>${esc(w.id)} · ${esc(w.kv || "–")} kV · ${esc(w.status)} · ${esc(w.owner)}</small></span>
+      <b>${w.year || "–"}</b></button>`).join("") : `<div class="empty">No works match these filters.</div>`;
+  }
+
+  function updateRf() {
+    rfCurrent = rfs.filter(w => rfMatches(w));
+    countyAgg = new Map(); // counties are not shaded in this view
+    pointLayer.clearLayers();
+    drawRf(rfCurrent);
+    styleCounties();
+    renderRfPanel(rfCurrent);
+  }
+
+  function focusRf(w) {
+    const pts = [...w.lines.flatMap(l => l.c), ...w.points.map(n => [rfStations[n].lat, rfStations[n].lon])];
+    if (!pts.length) return;
+    const b = L.latLngBounds(pts);
+    // Room for the panel on the left and the legend at the bottom right.
+    const opts = isPhone() ? { padding: [30, 30] } : { paddingTopLeft: [460, 80], paddingBottomRight: [320, 200] };
+    map.flyToBounds(b, { ...opts, maxZoom: 11, duration: 0.6 });
+    map.once("moveend", () => {
+      const lyr = w.layers[0];
+      // A work with nothing of its own on the map (a line with only one end placed) opens its card at that end.
+      if (!lyr) return L.popup({ maxWidth: 380, maxHeight: 460, className: "rf-pop" }).setLatLng(pts[0]).setContent(rfPopup(w)).openOn(map);
+      if (lyr.getLatLng) lyr.openPopup(); else lyr.openPopup(lyr.getCenter());
+    });
+  }
+
+  function exportRfCsv() {
+    const q = v => { const s = String(v ?? ""); return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
+    const head = ["ID", "Work", "Type", "kV", "Year", "Planning status", "Grid operator", "Criterion", "Substations", "Km drawn",
+      "Sections along OSM route", "Counties", "Transelectrica match", "Official name", "PD RET 2026-2035 completion", "PAI 2026 commissioning",
+      "Finding", "Plan note", "Sources disagree", "Note", "Not placed"];
+    const rows = rfCurrent.map(w => [w.id, w.title, w.type, w.kv, w.year, w.status, w.owner, w.criterion, w.points.join("; "), w.km,
+      w.kind === "L" ? `${w.lines.filter(l => l.routed).length}/${w.lines.length}` : "", w.counties.map(k => labelOf(countyKeyOf(k) || k)).join("; "),
+      w.plan && w.plan.match, w.plan && w.plan.official, w.plan && w.plan.pd_ret, w.plan && w.plan.pai, w.plan && w.plan.finding, w.plan && w.plan.note,
+      w.conflicts, w.note, w.missing.join("; ")].map(q).join(","));
+    const url = URL.createObjectURL(new Blob(["﻿" + [head.join(","), ...rows].join("\n")], { type: "text/csv" }));
+    const a = Object.assign(document.createElement("a"), { href: url, download: "romania-grid-reinforcements.csv" });
+    document.body.append(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  async function setMode(mode) {
+    try {
+      if (mode === "dc") await loadDcs();
+      if (mode === "rf") await loadRf();
+    } catch (e) { alert(`The ${mode === "dc" ? "data-centre list" : "list of grid works"} could not be loaded. Reload the page to try again.`); return; }
     state.mode = mode;
-    const dc = mode === "dc";
-    $("modeGen").setAttribute("aria-selected", !dc); $("modeDc").setAttribute("aria-selected", dc);
-    $("dcBtn").setAttribute("aria-pressed", dc);
-    $("link3d").href = dc ? "map3d.html#datacenters" : "map3d.html";
+    const gen = mode === "gen", dc = mode === "dc", rf = mode === "rf";
+    $("modeGen").setAttribute("aria-selected", gen); $("modeDc").setAttribute("aria-selected", dc); $("modeRf").setAttribute("aria-selected", rf);
+    $("dcBtn").setAttribute("aria-pressed", dc); $("rfBtn").setAttribute("aria-pressed", rf);
+    $("link3d").href = dc ? "map3d.html#datacenters" : rf ? "map3d.html#reinforcements" : "map3d.html";
     $("dcBtn").title = dc ? "Back to electricity generation" : "Show data centres";
-    $("pbody").hidden = dc; $("dcbody").hidden = !dc;
-    document.querySelector(".pfoot").hidden = dc;
-    $("legendGen").hidden = dc; $("legendDc").hidden = !dc;
-    $("listBtn").hidden = dc;
-    if (dc) toggleList(false);
-    $("q").placeholder = dc ? "Search data centre, operator or town" : "Search project, company or locality";
-    $("subtitle").textContent = dc ? "Data centres & projects" : "Operating plants & project pipeline";
+    $("rfBtn").title = rf ? "Back to electricity generation" : "Show grid reinforcement works";
+    $("pbody").hidden = !gen; $("dcbody").hidden = !dc; $("rfbody").hidden = !rf;
+    document.querySelector(".pfoot").hidden = !gen;
+    $("legendGen").hidden = !gen; $("legendDc").hidden = !dc; $("legendRf").hidden = !rf;
+    $("listBtn").hidden = !gen;
+    if (!gen) toggleList(false);
+    $("q").placeholder = dc ? "Search data centre, operator or town" : rf ? "Search work, line or substation" : "Search project, company or locality";
+    $("subtitle").textContent = dc ? "Data centres & projects" : rf ? "Grid reinforcement works" : "Operating plants & project pipeline";
     if (dc) $("dcStatusKey").innerHTML = DC_STATUS.map(st => `<span class="dcm k-facility"><i style="--c:var(${st.c})"></i></span><span>${st.v}</span>`).join("");
+    if (rf) $("rfStatusKey").innerHTML = RF_STATUS.map(st => `<span class="dcm k-facility"><i style="--c:var(${st.c})"></i></span><span>${st.v}</span>`).join("");
     map.closePopup();
-    dcLayer.clearLayers();
-    try { history.replaceState(null, "", dc ? "#datacenters" : location.pathname + location.search); } catch (e) {}
+    dcLayer.clearLayers(); rfLayer.clearLayers();
+    try { history.replaceState(null, "", dc ? "#datacenters" : rf ? "#reinforcements" : location.pathname + location.search); } catch (e) {}
     update();
   }
 
   function countyTooltip(k) {
+    if (state.mode === "rf") {
+      const list = rfs.filter(w => w.cks.includes(k) && rfMatches(w, "county"));
+      return `<div class="tt"><b>${esc(labelOf(k))}</b><br><span class="m">${list.length ? `${list.length} grid works (${list.filter(w => w.status === "In a plan").length} in a plan)` : "No grid works match these filters"}</span></div>`;
+    }
     if (state.mode === "dc") {
       const list = dcs.filter(d => d.ck === k && dcMatches(d, "county"));
       return `<div class="tt"><b>${esc(labelOf(k))}</b><br><span class="m">${list.length ? `${list.length} data-centre records (${list.filter(d => d.kind === "facility").length} buildings, ${list.filter(d => d.kind === "project").length} projects)` : "No data-centre records match these filters"}</span></div>`;
@@ -1419,7 +1738,7 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
     $("zHome").onclick = () => selectCounty("");
     $("layerPlants").onclick = () => {
       state.showPlants = !state.showPlants; $("layerPlants").setAttribute("aria-pressed", state.showPlants);
-      if (state.mode === "dc") drawDc(dcCurrent); else drawPoints(current);
+      if (state.mode === "dc") drawDc(dcCurrent); else if (state.mode === "rf") drawRf(rfCurrent); else drawPoints(current);
     };
     $("layerFill").onclick = () => { state.showFill = !state.showFill; $("layerFill").setAttribute("aria-pressed", state.showFill); styleCounties(); renderRank(); };
     $("layerLabels").onclick = () => {
@@ -1445,9 +1764,11 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
     $("modeGen").onclick = () => setMode("gen");
     $("modeDc").onclick = () => setMode("dc");
     $("dcBtn").onclick = () => setMode(state.mode === "dc" ? "gen" : "dc");
+    $("modeRf").onclick = () => setMode("rf");
+    $("rfBtn").onclick = () => setMode(state.mode === "rf" ? "gen" : "rf");
     const segToggle = (id, key) => $(id).addEventListener("click", e => {
       const b = e.target.closest("button"); if (!b) return;
-      const set = state[key], all = { dcKinds: DC_KINDS, dcStatus: DC_STATUS, dcGrades: DC_GRADES }[key];
+      const set = state[key], all = { dcKinds: DC_KINDS, dcStatus: DC_STATUS, dcGrades: DC_GRADES, rfKinds: RF_KINDS, rfStatus: RF_STATUS, rfKv: RF_KV, rfOwner: RF_OWNER }[key];
       // First click isolates a value; later clicks add or remove; an empty choice means all.
       if (set.size === all.length) state[key] = new Set([b.dataset.v]);
       else if (set.has(b.dataset.v)) { set.delete(b.dataset.v); if (!set.size) state[key] = new Set(all.map(x => x.v)); }
@@ -1455,13 +1776,22 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
       update();
     });
     segToggle("dcKind", "dcKinds"); segToggle("dcStatus", "dcStatus"); segToggle("dcGrade", "dcGrades");
+    segToggle("rfKind", "rfKinds"); segToggle("rfStatus", "rfStatus"); segToggle("rfKv", "rfKv"); segToggle("rfOwner", "rfOwner");
+    $("rfList").addEventListener("click", e => { const b = e.target.closest(".prow"); if (b) focusRf(rfs[+b.dataset.i]); });
+    // Work IDs inside popups (other works on the same line, works at a substation) open that work.
+    document.addEventListener("click", e => { const b = e.target.closest(".rf-open"); if (b && rfs) { map.closePopup(); focusRf(rfs[+b.dataset.i]); } });
+    $("rfCsv").onclick = exportRfCsv;
+    $("rfReset").onclick = () => {
+      Object.assign(state, { rfKinds: new Set(RF_KINDS.map(k => k.v)), rfStatus: new Set(RF_STATUS.map(k => k.v)), rfKv: new Set(RF_KV.map(k => k.v)), rfOwner: new Set(RF_OWNER.map(k => k.v)), county: "", q: "" });
+      $("q").value = ""; update(); fitRomania(true);
+    };
     $("dcList").addEventListener("click", e => { const b = e.target.closest(".prow"); if (b) focusDc(dcs[+b.dataset.i]); });
     $("dcCsv").onclick = exportDcCsv;
     $("dcReset").onclick = () => {
       Object.assign(state, { dcKinds: new Set(DC_KINDS.map(k => k.v)), dcStatus: new Set(DC_STATUS.map(k => k.v)), dcGrades: new Set(DC_GRADES.map(k => k.v)), county: "", q: "" });
       $("q").value = ""; update(); fitRomania(true);
     };
-    if (window.self !== window.top) $("dcCsv").hidden = true;
+    if (window.self !== window.top) { $("dcCsv").hidden = true; $("rfCsv").hidden = true; }
     // Inside an embedded preview the browser blocks downloads, so hide the button there.
     if (window.self !== window.top) $("csvBtn").hidden = true;
 
@@ -1531,10 +1861,12 @@ td .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; ba
     setTiles();
     pointLayer = L.layerGroup().addTo(map);
     dcLayer = L.layerGroup().addTo(map);
+    rfLayer = L.layerGroup().addTo(map);
 
     bind();
     applyTheme();
     if (location.hash === "#datacenters") setMode("dc");
+    if (location.hash === "#reinforcements") setMode("rf");
   }
 
   init().catch(err => {

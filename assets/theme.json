@@ -100,6 +100,16 @@
     "size_m": 250, "project_opacity": 0.45
   },
 
+  "reinforcements": {
+    "_about": "Grid reinforcement works (data/reinforcements.json), drawn on the terrain. Colour by planning status; width in pixels by voltage (the highest of the work). Existing lines follow their OpenStreetMap route; dash_straight is for an existing line whose route was not found, dash_new for a new line (dash lengths in line widths). Substations: station_radius for a line's end, work_radius where the work is at the substation itself.",
+    "label": "Grid works",
+    "status": { "In a plan": "#3ee8e0", "Outside any plan": "#f5c64a", "Sources disagree": "#ff6a55" },
+    "width": { "400": 3.4, "220": 2.6, "110": 1.8, "": 2.2 },
+    "glow_width": 7, "glow_opacity": 0.22,
+    "dash_new": [3, 2], "dash_straight": [0.4, 2.2],
+    "station_radius": 3.5, "work_radius": 6.5, "station_stroke": "#02070a"
+  },
+
   "tech": {
     "solar":   { "label": "Solar",           "color": "#f5c64a", "model": "assets/models/solar.glb", "model_low": "assets/models/solar_low.glb" },
     "wind":    { "label": "Wind",            "color": "#3b9cff", "model": "assets/models/wind.glb", "model_low": "assets/models/wind_low.glb" },

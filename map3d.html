@@ -70,8 +70,8 @@ body::after {
 .techs { display: flex; flex-direction: column; gap: 1px; }
 .techs[hidden] { display: none; }
 /* Tabs: electricity generation / data centres, as on the classic map */
-.modes { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); margin: 0 0 14px; }
-.modes button { padding: 8px; background: none; border: 0; color: var(--muted); font: 600 12px var(--f-display); letter-spacing: .1em; text-transform: uppercase; cursor: pointer; }
+.modes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--line); margin: 0 0 14px; }
+.modes button { padding: 8px 4px; background: none; border: 0; color: var(--muted); font: 600 12px var(--f-display); letter-spacing: .06em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-transform: uppercase; cursor: pointer; }
 .modes button + button { border-left: 1px solid var(--line); }
 .modes button:hover { color: var(--ink); }
 .modes button[aria-selected="true"] { color: var(--ink); background: rgba(62, 232, 224, .14); box-shadow: inset 0 -2px 0 var(--accent); }
@@ -178,10 +178,12 @@ body::after {
   <div class="modes" role="tablist" aria-label="What the map shows">
     <button type="button" role="tab" id="modeGen" aria-selected="true">Generation</button>
     <button type="button" role="tab" id="modeDc" aria-selected="false">Data centres</button>
+    <button type="button" role="tab" id="modeRf" aria-selected="false" title="Grid reinforcement works">Grid works</button>
   </div>
   <div class="total"><b id="total">–</b><span id="totalLabel">MW shown</span></div>
   <div class="techs" id="techs" role="group" aria-label="Technologies"></div>
   <div class="techs" id="dcKinds" role="group" aria-label="Data centres" hidden></div>
+  <div class="techs" id="rfStatus" role="group" aria-label="Grid works by planning status" hidden></div>
   <div class="row">
     <button class="btn" id="view3d" type="button" aria-pressed="true">3D</button>
     <button class="btn" id="view2d" type="button" aria-pressed="false">Flat</button>
@@ -209,6 +211,8 @@ body::after {
     json("data/basemap.json"), json("data/elevation.json").catch(() => ({})),
     json("data/datacenters.json").catch(() => ({ sites: [] })),
   ]);
+  const R = theme.reinforcements || null;
+  const rfFile = R ? await json("data/reinforcements.json").catch(() => null) : null;
   const M = theme.map, T = theme.tech;
   // ?flat starts without terrain, ?nomodels without models: lighter checks on slow devices.
   const params = new URLSearchParams(location.search);
@@ -254,9 +258,43 @@ body::after {
     const a = i * 2.39996, r = i ? 0.007 * Math.sqrt(i) : 0;
     d.x = d.lon + r * Math.cos(a) / Math.cos(d.lat * Math.PI / 180); d.y = d.lat + r * Math.sin(a);
   }));
-  // Tabs: the map shows either electricity generation or data centres (#datacenters opens the second).
-  let mode = location.hash === "#datacenters" && D ? "dc" : "gen";
+  // Grid reinforcement works: lines and substations drawn on the terrain by MapLibre itself (so they follow the relief).
+  const rfWorks = rfFile ? rfFile.works : [], rfSt = rfFile ? rfFile.stations : {};
+  const rfKv = kv => { const n = String(kv || "").split("/").map(Number).filter(Boolean); return n.length ? String(Math.max(...n)) : ""; };
+  const rfLines = { type: "FeatureCollection", features: rfWorks.flatMap((w, i) => w.lines.map(l => ({ type: "Feature",
+    properties: { i, status: w.status, w: R.width[rfKv(w.kv)] ?? R.width[""], look: w.kind === "N" ? "new" : l.routed ? "route" : "straight" },
+    geometry: { type: "LineString", coordinates: l.c.map(([la, lo]) => [lo, la]) } }))) };
+  const rfAt = {};
+  rfWorks.forEach((w, i) => w.points.forEach(n => (rfAt[n] ||= []).push(i)));
+  const rfRank = s => Object.keys(R ? R.status : {}).indexOf(s);
+  const rfPoints = { type: "FeatureCollection", features: Object.entries(rfAt).map(([name, ix]) => {
+    const own = ix.filter(i => rfWorks[i].kind === "P"), lead = [...(own.length ? own : ix)].sort((a, b) => rfRank(rfWorks[a].status) - rfRank(rfWorks[b].status))[0];
+    return { type: "Feature", properties: { name, status: rfWorks[lead].status, own: own.length > 0, statuses: [...new Set(ix.map(i => rfWorks[i].status))].join("|") },
+      geometry: { type: "Point", coordinates: [rfSt[name].lon, rfSt[name].lat] } };
+  }) };
+  // Tabs: generation, data centres (#datacenters) or grid works (#reinforcements).
+  let mode = location.hash === "#datacenters" && D ? "dc" : location.hash === "#reinforcements" && rfFile ? "rf" : "gen";
+  const rfOn = new Set(R ? Object.keys(R.status) : []);
   const dcKinds = new Set(["facility", "project"]);
+
+  // Grid works' map layers (shown only on their tab): a soft glow, then each line in its status colour, solid along
+  // its OpenStreetMap route, dotted where the route was not found, dashed for a new line; then the substations.
+  function rfStyleLayers() {
+    const colour = ["match", ["get", "status"], ...Object.entries(R.status).flat(), R.status["Outside any plan"]];
+    const hide = { visibility: "none" }, lineLayout = { ...hide, "line-cap": "round", "line-join": "round" };
+    return [
+      { id: "rf-glow", type: "line", source: "rf-lines", layout: lineLayout,
+        paint: { "line-color": colour, "line-width": ["+", ["get", "w"], R.glow_width], "line-blur": R.glow_width * 0.8, "line-opacity": R.glow_opacity } },
+      ...[["route", null], ["straight", R.dash_straight], ["new", R.dash_new]].map(([look, dash]) => ({
+        id: `rf-${look}`, type: "line", source: "rf-lines", filter: ["==", ["get", "look"], look], layout: lineLayout,
+        paint: { "line-color": colour, "line-width": ["get", "w"], ...(dash ? { "line-dasharray": dash } : {}) } })),
+      { id: "rf-points", type: "circle", source: "rf-points", layout: hide,
+        paint: { "circle-color": ["case", ["get", "own"], colour, R.station_stroke], "circle-radius": ["case", ["get", "own"], R.work_radius, R.station_radius],
+          "circle-stroke-color": ["case", ["get", "own"], R.station_stroke, colour], "circle-stroke-width": ["case", ["get", "own"], 1.5, 2],
+          "circle-pitch-alignment": "map" } },
+    ];
+  }
+  const RF_LAYERS = ["rf-glow", "rf-route", "rf-straight", "rf-new", "rf-points"];
 
   // Base map: every colour from the theme.
   const by = layer => ({ type: "FeatureCollection", features: basemap.features.filter(f => f.properties.layer === layer) });
@@ -268,6 +306,7 @@ body::after {
       lake: { type: "geojson", data: by("lake") },
       river: { type: "geojson", data: by("river") },
       counties: { type: "geojson", data: counties },
+      ...(rfFile ? { "rf-lines": { type: "geojson", data: rfLines }, "rf-points": { type: "geojson", data: rfPoints } } : {}),
       // One elevation source lifts the terrain, colours the land and shades it (loaded once).
       dem: { type: "raster-dem", encoding: "terrarium", tileSize: 256, maxzoom: 12,
         tiles: ["https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"],
@@ -300,6 +339,7 @@ body::after {
           "line-opacity": 0.4 } },
       { id: "country-border", type: "line", source: "country", filter: ["get", "ro"],
         paint: { "line-color": M.country_border, "line-width": M.country_border_width } },
+      ...(rfFile ? rfStyleLayers() : []),
     ],
     terrain: params.has("flat") ? undefined : { source: "dem", exaggeration: M.terrain_exaggeration },
     sky: { "sky-color": M.sky, "horizon-color": M.horizon, "fog-color": M.fog, "sky-horizon-blend": 0.6,
@@ -431,6 +471,49 @@ body::after {
     </div>`).addTo(map);
   };
 
+  // Grid works: a work's card, and a substation's list of works.
+  const RF_PREC = { osm: "OpenStreetMap substation", "line end": "line end nearest the town", town: "town only" };
+  const openRfCard = (w, at) => {
+    const ok = w.lines.filter(l => l.routed).length;
+    const route = w.kind === "N" ? "New line: drawn straight, its route is not known yet."
+      : w.kind === "P" ? "" : ok === w.lines.length ? "Drawn along the line's OpenStreetMap route."
+      : `${ok} of ${w.lines.length} sections follow the OpenStreetMap route; the others are drawn straight (dotted).`;
+    const p = w.plan;
+    const rows = [["Status", esc(w.status)], ["Year", w.year || "no date given"], ["Voltage", w.kv ? esc(w.kv) + " kV" : ""],
+      ["Grid operator", w.owner === "TSO" ? "Transelectrica (TSO)" : "Distribution operator (DSO)"], ["Criterion", esc(w.criterion)],
+      ["Length", w.km ? `${fmt(w.km)} km drawn${w.stated_km ? ` · ${fmt(w.stated_km)} km in the source` : ""}` : ""],
+      ["Substations", esc(w.points.join(" – "))],
+      ["Transelectrica's plans", p ? esc([p.match, p.official, p.pd_ret && `PD RET ${p.pd_ret}`, p.pai && `PAI ${p.pai}`, p.finding].filter(Boolean).join(" · ")) : w.owner === "DSO" ? "a distribution operator's work" : ""]]
+      .filter(([, v]) => v);
+    popup.setLngLat(at).setHTML(`<div class="pp">
+      <span class="pp-tag" style="--c:${R.status[w.status]}"><i></i>${esc(w.id)} · ${esc(w.type)}</span>
+      <div class="pp-name">${esc(w.title)}</div>
+      <dl>${rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>
+      ${w.conflicts || w.note ? `<div class="desc">${esc([w.conflicts && "Sources disagree: " + w.conflicts, w.note].filter(Boolean).join(" "))}</div>` : ""}
+      <div class="gm">${route} <a href="./#reinforcements">All grid works on the classic map</a></div>
+    </div>`).addTo(map);
+  };
+  const openRfStation = (name, at) => {
+    const s = rfSt[name], list = (rfAt[name] || []).map(i => rfWorks[i]).filter(w => rfOn.has(w.status));
+    popup.setLngLat(at).setHTML(`<div class="pp">
+      <span class="pp-tag" style="--c:var(--accent)"><i></i>Substation</span>
+      <div class="pp-name">${esc(name)}</div>
+      <div class="gm">${esc(RF_PREC[s.precision] || s.precision)}${s.kv ? " · " + esc(s.kv) + " kV" : ""}</div>
+      <dl>${list.map(w => `<dt>${esc(w.id)}</dt><dd>${esc(w.title)} <span style="color:${R.status[w.status]}">· ${esc(w.status)}${w.year ? " · " + w.year : ""}</span></dd>`).join("")}</dl>
+      <div class="gm"><a href="./#reinforcements">All grid works on the classic map</a></div>
+    </div>`).addTo(map);
+  };
+  // Show the grid works' layers on their tab, filtered by the status toggles.
+  const rfApply = () => {
+    if (!rfFile || !map.getLayer("rf-points")) return;
+    const vis = mode === "rf" ? "visible" : "none", st = ["in", ["get", "status"], ["literal", [...rfOn]]];
+    RF_LAYERS.forEach(id => map.setLayoutProperty(id, "visibility", vis));
+    map.setFilter("rf-glow", st);
+    ["route", "straight", "new"].forEach(l => map.setFilter(`rf-${l}`, ["all", ["==", ["get", "look"], l], st]));
+    map.setFilter("rf-points", ["any", ...[...rfOn].map(x => ["in", x, ["get", "statuses"]])]);
+  };
+  if (map.loaded()) rfApply(); else map.once("load", rfApply);
+
   // Light on the models, from the theme: a soft overall light plus a sun.
   const lightingFrom = (L) => { const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
     return new deck.LightingEffect({ ambient: new deck.AmbientLight({ color: [255, 255, 255], intensity: L.ambient }),
@@ -449,7 +532,18 @@ body::after {
   // Click a model: open its card. (Picked through deck, since the map receives the click.)
   map.on("click", e => {
     const hit = overlay.pickObject({ x: e.point.x, y: e.point.y, radius: 4 });
-    if (hit && hit.object) (hit.object.kind ? openDcCard : openCard)(hit.object);
+    if (hit && hit.object) return (hit.object.kind ? openDcCard : openCard)(hit.object);
+    if (mode !== "rf") return;
+    const box = [[e.point.x - 5, e.point.y - 5], [e.point.x + 5, e.point.y + 5]];
+    const f = map.queryRenderedFeatures(box, { layers: ["rf-points", "rf-route", "rf-straight", "rf-new"] })[0];
+    if (!f) return;
+    if (f.layer.id === "rf-points") openRfStation(f.properties.name, e.lngLat); else openRfCard(rfWorks[f.properties.i], e.lngLat);
+  });
+  map.on("mousemove", e => {
+    if (mode !== "rf") return;
+    const box = [[e.point.x - 5, e.point.y - 5], [e.point.x + 5, e.point.y + 5]];
+    const n = map.queryRenderedFeatures(box, { layers: ["rf-points", "rf-route", "rf-straight", "rf-new"] }).length;
+    map.getCanvas().style.cursor = n ? "pointer" : "";
   });
   const refresh = () => overlay.setProps({ layers: [...layers(), ...dcLayers()] });
   // Re-size the models when the zoom has changed by a quarter step or more.
@@ -466,26 +560,36 @@ body::after {
       $("dcKinds").innerHTML = [["facility", "Data-centre buildings", "operating"], ["project", "Projects not yet operating", "see-through"]]
         .map(([k, label, hint]) => `<button type="button" class="tech" data-k="${k}" aria-pressed="${dcKinds.has(k)}" style="--c:${D.color}"><i></i><span>${label}</span><b>${n(k)}</b></button>`).join("");
     }
-    const dc = mode === "dc";
-    $("modeGen").setAttribute("aria-selected", !dc); $("modeDc").setAttribute("aria-selected", dc);
-    $("techs").hidden = dc; $("dcKinds").hidden = !dc;
-    $("sub").textContent = dc ? "Data centres and projects, in 3D." : "Operating plants and storage, in 3D.";
-    $("totalLabel").textContent = dc ? "data centres shown" : "MW shown";
+    if (rfFile) $("rfStatus").innerHTML = Object.entries(R.status).map(([k, c]) => `<button type="button" class="tech" data-k="${esc(k)}"
+      aria-pressed="${rfOn.has(k)}" style="--c:${c}"><i></i><span>${esc(k)}</span><b>${rfWorks.filter(w => w.status === k).length}</b></button>`).join("");
+    const dc = mode === "dc", rf = mode === "rf";
+    $("modeGen").setAttribute("aria-selected", mode === "gen"); $("modeDc").setAttribute("aria-selected", dc); $("modeRf").setAttribute("aria-selected", rf);
+    $("techs").hidden = dc || rf; $("dcKinds").hidden = !dc; $("rfStatus").hidden = !rf;
+    $("sub").textContent = dc ? "Data centres and projects, in 3D." : rf ? "Grid reinforcement works, on the relief." : "Operating plants and storage, in 3D.";
+    $("totalLabel").textContent = dc ? "data centres shown" : rf ? "grid works shown" : "MW shown";
     if (dc) $("total").textContent = dcs.filter(d => dcKinds.has(d.kind)).length;
-    $("classicLink").href = dc ? "./#datacenters" : "./";
+    if (rf) $("total").textContent = rfWorks.filter(w => rfOn.has(w.status)).length;
+    $("classicLink").href = dc ? "./#datacenters" : rf ? "./#reinforcements" : "./";
   };
   $("dcKinds").addEventListener("click", e => {
     const b = e.target.closest(".tech"); if (!b) return;
     dcKinds.has(b.dataset.k) ? dcKinds.delete(b.dataset.k) : dcKinds.add(b.dataset.k);
     renderPanel(); refresh();
   });
+  $("rfStatus").addEventListener("click", e => {
+    const b = e.target.closest(".tech"); if (!b) return;
+    rfOn.has(b.dataset.k) ? rfOn.delete(b.dataset.k) : rfOn.add(b.dataset.k);
+    popup.remove(); renderPanel(); rfApply();
+  });
   const setMode = m => {
-    mode = m; popup.remove(); renderPanel(); refresh(); setNote();
-    try { history.replaceState(null, "", m === "dc" ? "#datacenters" : location.pathname + location.search); } catch (e) {}
+    mode = m; popup.remove(); renderPanel(); refresh(); rfApply(); setNote();
+    try { history.replaceState(null, "", m === "dc" ? "#datacenters" : m === "rf" ? "#reinforcements" : location.pathname + location.search); } catch (e) {}
   };
   $("modeGen").onclick = () => setMode("gen");
   $("modeDc").onclick = () => setMode("dc");
+  $("modeRf").onclick = () => setMode("rf");
   if (!D) $("modeDc").hidden = true;
+  if (!rfFile) $("modeRf").hidden = true;
   $("techs").addEventListener("click", e => {
     const b = e.target.closest(".tech"); if (!b) return;
     on.has(b.dataset.k) ? on.delete(b.dataset.k) : on.add(b.dataset.k);
@@ -503,7 +607,9 @@ body::after {
   const unplaced = plantsFile.plants.filter(p => p.lat == null && operating.has(p.st)).length;
   const noteGen = `${plants.length} plants drawn; ${unplaced} with no known location are not drawn. Click a model for details.`;
   const noteDc = `${dcs.filter(d => d.kind === "facility").length} data-centre buildings and ${dcs.filter(d => d.kind === "project").length} projects; projects are drawn see-through. Companies inside other buildings are listed on the classic map. Click a model for details.`;
-  const setNote = () => ($("note").textContent = mode === "dc" ? noteDc : noteGen);
+  const rfLegs = rfWorks.filter(w => w.kind === "L").flatMap(w => w.lines);
+  const noteRf = `${rfWorks.length} works. Lines: solid along their OpenStreetMap route (${rfLegs.filter(l => l.routed).length} of ${rfLegs.length} sections), dotted where the route was not found, dashed for new lines. Large dots: works at the substation itself. Click a line or substation for details.`;
+  const setNote = () => ($("note").textContent = mode === "dc" ? noteDc : mode === "rf" ? noteRf : noteGen);
   setNote();
   renderPanel();
 })().catch(err => {

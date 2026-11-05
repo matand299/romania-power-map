@@ -1,0 +1,65 @@
+he,en
+החלפת מוליכים בקו,Reconductoring
+שנאי,Transformer
+תחנה / תאים,Substation / bays
+הגדלת כושר העברה של קו,Line capacity increase
+קו / ציר,Line / axis
+הגדלת כושר העברה של קו/החלפת מוליכים בקו,Line capacity increase / reconductoring
+קו חדש,New line
+קו / ציר/קו חדש,Line / axis / new line
+קו / ציר/תחנה / תאים,Line / axis / substation
+בלי מועד,No date
+מחוץ לכל תוכנית,Outside any plan
+בתוכנית,In a plan
+סותר,Sources disagree
+סותר בין המקורות,Sources disagree
+N-1 (בתקלה של רכיב ברשת),N-1 (outage of one grid element)
+N (בעומס רגיל),N (normal load)
+N-1 (בתקלה של רכיב ברשת) / N (בעומס רגיל),N-1 (outage of one grid element) / N (normal load)
+N (בעומס רגיל) / N-1 (בתקלה של רכיב ברשת),N (normal load) / N-1 (outage of one grid element)
+לא צוין,Not stated
+זהה,Same wording in every source
+כנראה אותה עבודה (ניסוח שונה),"Probably the same work, worded differently"
+אותה עבודה,Same work
+חלק מפרויקט רשמי,Part of an official project
+לא נמצאה,Not found
+"קשורה, לא זהה","Related, not the same work"
+הושלמה,Completed
+אותה שנה,Same year
+"Transelectrica מתכננת 1 שנים אחרי המועד במקורות",Transelectrica plans it 1 year later than the sources
+"Transelectrica מתכננת 2 שנים אחרי המועד במקורות",Transelectrica plans it 2 years later than the sources
+"Transelectrica מתכננת 1 שנים לפני המועד במקורות",Transelectrica plans it 1 year earlier than the sources
+לא נמצאה בתוכניות של Transelectrica,Not found in Transelectrica's plans
+"בחלק מהמקורות מחוץ לתוכנית, אבל נכללה בתוכנית 2026–2035","Outside any plan in some sources, but included in the 2026–2035 plan"
+"בחלק מהמקורות מחוץ לתוכנית, אבל נכללה בתוכנית 2026–2035; אותה שנה","Outside any plan in some sources, but included in the 2026–2035 plan; same year"
+"במקורות מחוץ לתוכנית, אבל נכללה בתוכנית 2026–2035","Outside any plan in the sources, but included in the 2026–2035 plan"
+"בתוכנית לפי המקורות, אבל לא נמצאה ברשימות של Transelectrica","In a plan according to the sources, but not found in Transelectrica's lists"
+הושלמה לפי Transelectrica,Completed according to Transelectrica
+פרויקט חדש בתוכנית 2026–2035,New project in the 2026–2035 plan
+"Aiud נמצא על הקו Alba Iulia – Cluj Florești; פרויקט חדש בתוכנית 2026–2035",Aiud lies on the Alba Iulia – Cluj Florești line; new project in the 2026–2035 plan
+גם ברשימת הפרויקטים במימון EU (Fondul pentru modernizare),Also on the list of EU-funded projects (Modernisation Fund)
+במימון EU (Fondul pentru modernizare),EU-funded (Modernisation Fund)
+במימון EU (POIM),EU-funded (POIM)
+"PAI: הקו 2027, תחנת Timișoara ‏2028","PAI: the line 2027, Timișoara substation 2028"
+"PAI: הקו 2029, התחנות 2030","PAI: the line 2029, the substations 2030"
+"PD RET: AT4 Brazi Vest ‏2027, Teleajen ‏2028","PD RET: AT4 Brazi Vest 2027, Teleajen 2028"
+מעגל של קו Etapa II,A circuit of the stage II line
+מעגל של קו Etapa III,A circuit of the stage III line
+"החלפה באותו הספק (250 MVA), לא הגדלה ל-400 MVA","Replacement at the same rating (250 MVA), not an uprating to 400 MVA"
+"התוכנית בונה קו חדש; החלפת מוליכים בקו הקיים לא מופיעה",The plan builds a new line; reconductoring the existing line does not appear
+התוכנית לא מציינת אם ההחלפה מגדילה ל-400 MVA,The plan does not say whether the replacement raises the rating to 400 MVA
+התוכנית לא מציינת שנאי 400/110 kV חדש,The plan does not mention a new 400/110 kV transformer
+"אותו מסדרון; המקורות מונים את שתיהן כעבודות נפרדות",Same corridor; the sources list the two as separate works
+"אותו קו; החלפת מוליכים לא מופיעה בתוכנית",Same line; reconductoring does not appear in the plan
+"תחנה חדשה על הקו; לא בתוכנית",A new substation on the line; not in the plan
+מופיע ברשימת ההשקעות שהושלמו (מסמך התוכנית 2026–2035),Listed among the completed investments (2026–2035 plan document)
+LEA 400 kV d.c. Reșița – Timișoara – Săcălaz (Etapa II) – קו חדש,LEA 400 kV d.c. Reșița – Timișoara – Săcălaz (Etapa II) – new line
+LEA 400 kV d.c. Timișoara – Arad (Etapa III) – קו חדש,LEA 400 kV d.c. Timișoara – Arad (Etapa III) – new line
+"אורך קו שונה בין המסמכים: 12.2 / 23.3 ק""מ",The line length differs between the documents: 12.2 / 23.3 km
+"התיאור שונה: הגדלת כושר העברה של קו / החלפת מוליכים בקו",Described differently: line capacity increase / reconductoring
+"התיאור שונה: קו / ציר / תחנה / תאים",Described differently: line / axis / substation / bays
+"במסמך אחד בתוכנית ובאחר מחוץ לכל תוכנית; התיאור שונה: הגדלת כושר העברה של קו / החלפת מוליכים בקו",In a plan in one document and outside any plan in another; described differently: line capacity increase / reconductoring
+"במסמך אחד בתוכנית ובאחר מחוץ לכל תוכנית; בחלק מהמסמכים בלי מועד; התיאור שונה: קו / ציר / קו חדש",In a plan in one document and outside any plan in another; no date in some documents; described differently: line / axis / new line
+"מתוך כ-30 קווים, רק 4 מופיעים בשמם (LEU-DIF-A לא זוהה); שאר הקווים לא מסומנים.","Of about 30 lines, only 4 are named (LEU-DIF-A could not be identified); the other lines are not drawn."
+"תחנה חדשה על הקו; המיקום המדויק על הקו לא ידוע, לכן מסומן הקו כולו.","A new substation on the line; its exact place on the line is not known, so the whole line is marked."
+שם התחנה במקור: CEE Tataranu.,Station name in the source: CEE Tataranu.

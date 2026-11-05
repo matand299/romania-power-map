@@ -68,6 +68,7 @@ and remembered by the browser.
   To use a designed model, replace the file with one of the same name (Y up, about 10 units across, origin at
   the centre of the base).
 - **Data centres:** the buildings and projects of `data/datacenters.json`, drawn with `assets/models/datacenter.glb` at a fixed size (`datacenters` in the theme; projects see-through), with a panel toggle and a click card.
+- **Grid works:** the reinforcement works of `data/reinforcements.json`, drawn as lines and dots on the relief (`reinforcements` in the theme), with status toggles and a click card.
 - **Speed:** each technology has a light model (`<name>_low.glb`) shown from afar and a detailed one shown from
   `models.detail_zoom` in; the screen resolution is capped at `map.max_pixel_ratio`; one elevation source feeds
   the terrain, the land colours and the hillshade.
@@ -100,6 +101,23 @@ another operator's building, and projects (under construction, permitted, announ
 Each record has a reliability grade (A: the operator plus an independent source; B: the operator alone or two
 independent sources; C: one source) and a location precision (building, address, street, town). Power figures are
 entered only when a source states them clearly; conflicting figures are described in the notes instead.
+
+## Grid reinforcement works
+
+The classic map has a **Grid works** tab (`index.html#reinforcements`), and the 3D map one too (`map3d.html#reinforcements`).
+It shows the 122 reinforcement works of `data/reinforcements.json`: work on existing lines (reconductoring, capacity
+increases), new lines, transformers and substations, named as needed by Transelectrica (TSO) and the distribution
+operators (DSO). Colour = planning status as the grid operator stated it (in a plan, outside any plan, sources disagree).
+An existing line is drawn along its OpenStreetMap route (solid), or straight and dotted where OSM has no continuous route;
+a new line is straight and dashed; a transformer is a square and a substation a diamond at its substation. A work's card
+gives its year, voltage, criterion (N / N-1), the length drawn against the length in the source, the comparison with
+Transelectrica's plans (PD RET 2026–2035, PAI 2026) and how each substation was placed. The panel filters by type,
+status, voltage and grid operator, lists the works and downloads them as CSV. In the 3D map the lines lie on the relief
+(MapLibre layers; colours and widths in `reinforcements` in the theme).
+
+`data/reinforcements.json` is built by `scripts/build_reinforcements.py` from `data/source/reinforcements/`
+(see the README there): the works spreadsheet, English for its Hebrew text, the stations of each work, and an
+OpenStreetMap extract of substations and lines (`scripts/fetch_osm_grid.py` refreshes it).
 
 ## Hosting
 
